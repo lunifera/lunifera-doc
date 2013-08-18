@@ -7,7 +7,7 @@ Document returns doc::Document:
 	'Document' name=ID '{'
 	imports+=XImportDeclaration*
 	content+=RichString*
-	'}';
+	'}'; 
 
 RichString returns doc::RichString:
 	{doc::RichString} (expressions+=RichStringLiteral |
