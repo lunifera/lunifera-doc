@@ -1,3 +1,19 @@
+# Generated Files
+src-gen
+xtend-gen
+emf-gen
+
+# Compiled Files
+bin
+
+# Eclipse Files
+.externalToolBuilders
+.launch
+#.classpath
+#.project
+#.settings
+
+
 *.class
 
 # Package Files #

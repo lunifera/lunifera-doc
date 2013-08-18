@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.lunifera.doc.dsl.semantic/src" modelPluginID="org.lunifera.doc.dsl.semantic"
+    modelName="DocCompiler" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="LuniferaDocGrammar.genmodel#//luniferadoc ../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>DocCompiler.ecore</foreignModel>
+  <genPackages prefix="DocCompiler" basePackage="org.lunifera.doc.dsl" disposableProviderFactory="true"
+      fileExtensions="" ecorePackage="DocCompiler.ecore#/">
+    <genClasses ecoreClass="DocCompiler.ecore#//DocumentStart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//DocumentStart/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//DocumentStart/end"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//DocumentStart/document"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//DocumentEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//DocumentEnd/start"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//ProcessedRichString">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ProcessedRichString/richString"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ProcessedRichString/lines"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//Line">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//Line/parts"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DocCompiler.ecore#//Line/richString"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//LinePart">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DocCompiler.ecore#//LinePart/line"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//Literal">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//Literal/literal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocCompiler.ecore#//Literal/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocCompiler.ecore#//Literal/length"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//LineBreak"/>
+    <genClasses ecoreClass="DocCompiler.ecore#//ForLoopStart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ForLoopStart/loop"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ForLoopStart/end"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//ForLoopEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ForLoopEnd/start"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//PrintedExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//PrintedExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//IfConditionStart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//IfConditionStart/richStringIf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//IfConditionStart/elseStart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//IfConditionStart/elseIfConditions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//IfConditionStart/endIf"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//ElseIfCondition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ElseIfCondition/richStringElseIf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ElseIfCondition/ifConditionStart"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//ElseStart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ElseStart/ifConditionStart"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//EndIf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//EndIf/ifConditionStart"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//Markup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//Markup/markup"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//H1Start">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//H1Start/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//H1Start/end"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//H1End">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//H1End/start"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//H2Start">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//H2Start/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//H2Start/end"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//H2End">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//H2End/start"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//ExampleStart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ExampleStart/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ExampleStart/end"/>
+    </genClasses>
+    <genClasses ecoreClass="DocCompiler.ecore#//ExampleEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocCompiler.ecore#//ExampleEnd/start"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated LuniferaDocGrammar -->
+      <package
+            uri="http://www.lunifera.org/luniferadoc"
+            class="org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage"
+            genModel="model/LuniferaDocGrammar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DocCompiler -->
+      <package
+            uri="http://www.lunifera.org/doccompiler"
+            class="org.lunifera.doc.dsl.doccompiler.DocCompilerPackage"
+            genModel="model/DocCompiler.genmodel"/>
+   </extension>
+
+</plugin>

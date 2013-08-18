@@ -1,0 +1,105 @@
+grammar org.lunifera.doc.dsl.LuniferaDocGrammar with org.eclipse.xtext.xbase.Xbase
+
+import "http://www.lunifera.org/luniferadoc" as doc
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+
+Document returns doc::Document:
+	'Document' name=ID '{'
+	imports+=XImportDeclaration*
+	content+=RichString*
+	'}';
+
+RichString returns doc::RichString:
+	{doc::RichString} (expressions+=RichStringLiteral |
+	expressions+=RichStringLiteralStart expressions+=RichStringPart?
+	(expressions+=RichStringLiteralInbetween expressions+=RichStringPart?)*
+	expressions+=RichStringLiteralEnd);
+
+RichStringLiteral returns xbase::XExpression:
+	{doc::RichStringLiteral} value=RICH_TEXT;
+
+RichStringLiteralStart returns xbase::XExpression:
+	{doc::RichStringLiteral} value=RICH_TEXT_START;
+
+RichStringLiteralInbetween returns xbase::XExpression:
+	{doc::RichStringLiteral}
+	(value=RICH_TEXT_INBETWEEN | value=COMMENT_RICH_TEXT_INBETWEEN);
+
+RichStringLiteralEnd returns xbase::XExpression:
+	{doc::RichStringLiteral}
+	(value=RICH_TEXT_END | value=COMMENT_RICH_TEXT_END);
+
+InternalRichString returns xbase::XExpression:
+	{doc::RichString} (expressions+=RichStringLiteralInbetween (expressions+=RichStringPart?
+	expressions+=RichStringLiteralInbetween)*);
+
+RichStringPart returns xbase::XExpression:
+	XExpressionInsideBlock |
+	RichStringForLoop |
+	RichStringIf |
+	RichStringH1 | RichStringH2 | RichStringExample;
+
+RichStringExample returns xbase::XExpression:
+	{doc::RichStringExample}
+	"example"
+	expression=InternalRichString
+	"/example"
+;
+
+RichStringH2 returns xbase::XExpression:
+	{doc::RichStringH2}
+	"h2"
+	expression=InternalRichString
+	"/h2"
+;
+
+RichStringH1 returns xbase::XExpression:
+	{doc::RichStringH1}
+	"h1"
+	expression=InternalRichString
+	"/h1"
+;
+
+RichStringForLoop returns xbase::XExpression:
+	{doc::RichStringForLoop}
+	"FOR" declaredParam=JvmFormalParameter ':' forExpression=XExpression
+	("BEFORE" before=XExpression)?
+	("SEPARATOR" separator=XExpression)?
+	("AFTER" after=XExpression)?
+	eachExpression=InternalRichString
+	"ENDFOR";
+
+RichStringIf returns xbase::XExpression:
+	{doc::RichStringIf}
+	"IF" if=XExpression
+	then=InternalRichString
+	elseIfs+=RichStringElseIf*
+	("ELSE"
+	else=InternalRichString)?
+	"ENDIF";
+
+RichStringElseIf returns doc::RichStringElseIf:
+	"ELSEIF" if=XExpression then=InternalRichString;
+
+terminal RICH_TEXT:
+	"'''" IN_RICH_STRING* ("'''" | ("'" "'"?)? EOF);
+
+terminal RICH_TEXT_START:
+	"'''" IN_RICH_STRING* ("'" "'"?)? '«';
+
+terminal RICH_TEXT_END:
+	'»' IN_RICH_STRING* ("'''" | ("'" "'"?)? EOF);
+
+terminal RICH_TEXT_INBETWEEN:
+	'»' IN_RICH_STRING* ("'" "'"?)? '«';
+
+terminal COMMENT_RICH_TEXT_INBETWEEN:
+	"««" !('\n' | '\r')* ('\r'? '\n' IN_RICH_STRING* ("'" "'"?)? '«')?;
+
+terminal COMMENT_RICH_TEXT_END:
+	"««" !('\n' | '\r')* (('\r'? '\n' IN_RICH_STRING* ("'''" | ("'" "'"?)? EOF)) | EOF);
+
+terminal fragment IN_RICH_STRING:
+	"''" !('«' | "'")
+	| "'" !('«' | "'")
+	| !('«' | "'");
