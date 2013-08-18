@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LuniferaDocAPI
+Bundle-SymbolicName: org.lunifera.doc.dsl.api
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Lunifera
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.lunifera.doc.dsl.api,
+ org.lunifera.doc.dsl.api.impl

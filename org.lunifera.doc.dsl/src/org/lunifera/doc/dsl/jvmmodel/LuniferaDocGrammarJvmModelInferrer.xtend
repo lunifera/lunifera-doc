@@ -12,7 +12,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.lunifera.doc.dsl.luniferadoc.Document
 import org.lunifera.doc.dsl.richstring.IDTODocumentation
-import org.lunifera.doc.dsl.richstring.MetaDTO
+import org.lunifera.doc.dsl.api.IMetaPojo
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -66,8 +66,8 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDTODocumentation), element, null)
 				documentation = element.documentation
-				members += toField("it", typeReference.getTypeForName(typeof(MetaDTO), element, null))
-				members += toSetter("it", typeReference.getTypeForName(typeof(MetaDTO), element, null));
+				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null))
+				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null));
 				for (richString : element.content) {
 					val JvmOperation operation = typesFactory.createJvmOperation()
 					members += operation

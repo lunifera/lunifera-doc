@@ -1,13 +1,11 @@
-package org.lunifera.doc.dsl.richstring;
+package org.lunifera.doc.dsl.api.impl;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.lunifera.doc.dsl.api.IMetaPojoProperty;
 
-public class MetaDTO {
+public class MetaPojoProperty implements IMetaPojoProperty {
+	
 	private String name;
 	private String documentation;
-
-	private final List<MetaDTOProperty> properties = new ArrayList<MetaDTOProperty>();
 
 	public String getName() {
 		return name;
@@ -23,10 +21,6 @@ public class MetaDTO {
 
 	public void setDocumentation(String documentation) {
 		this.documentation = documentation;
-	}
-
-	public List<MetaDTOProperty> getProperties() {
-		return properties;
 	}
 
 }

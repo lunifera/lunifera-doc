@@ -1,8 +1,10 @@
 package org.lunifera.doc.dsl.richstring;
 
+import org.lunifera.doc.dsl.api.IMetaPojo;
+
 public interface IDTODocumentation {
 
-	void setIt(MetaDTO dto);
+	void setIt(IMetaPojo dto);
 
 	String serialize();
 
