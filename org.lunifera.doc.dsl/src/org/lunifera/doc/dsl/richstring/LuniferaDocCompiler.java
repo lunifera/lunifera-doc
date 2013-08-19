@@ -1,9 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.
+ * Copyright (c) 2013 Lunifera GmbH, Petra Bierleutgeb and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Work based on org.eclipse.xtend.core.compiler.XtendCompiler
  *******************************************************************************/
 package org.lunifera.doc.dsl.richstring;
 
@@ -38,11 +40,6 @@ import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-/**
- * @author Sven Efftinge - Initial contribution and API
- * @author Jan Koehnlein
- * @author Sebastian Zarnekow
- */
 @SuppressWarnings("deprecation")
 @NonNullByDefault
 public class LuniferaDocCompiler extends XbaseCompiler {

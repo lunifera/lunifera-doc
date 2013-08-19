@@ -1,9 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.
+ * Copyright (c) 2013 Lunifera GmbH, Petra Bierleutgeb and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Work based on org.eclipse.xtend.core.richstring.AbstractRichStringPartAcceptor
  *******************************************************************************/
 package org.lunifera.doc.dsl.richstring;
 
@@ -23,8 +25,6 @@ import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
  * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should
  * inherit from this class if they do not want to implement all methods. It is
  * mandatory to implement {@link #forLoopHasNext()}.
- * 
- * @author Sebastian Zarnekow - Initial contribution and API
  */
 @NonNullByDefault
 public abstract class AbstractRichStringPartAcceptor implements

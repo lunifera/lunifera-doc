@@ -1,9 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.
+ * Copyright (c) 2013 Lunifera GmbH, Petra Bierleutgeb and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Work based on org.eclipse.xtend.core.richstring.IRichStringPartAcceptor
  *******************************************************************************/
 package org.lunifera.doc.dsl.richstring;
 
@@ -23,8 +25,6 @@ import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
  * {@link org.eclipse.xtend.core.xtend.RichString} for a specific use case. It's
  * mainly an event sink but may influence the control flow of the
  * {@link RichStringProcessor} by means of {@link #forLoopHasNext()}.
- * 
- * @author Sebastian Zarnekow - Initial contribution and API
  */
 @NonNullByDefault
 public interface IRichStringPartAcceptor {
