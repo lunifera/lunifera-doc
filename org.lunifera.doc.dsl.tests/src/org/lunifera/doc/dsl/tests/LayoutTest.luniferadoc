@@ -1,0 +1,22 @@
+Document LayoutTest {
+	import org.lunifera.doc.dsl.richstring.*
+	
+	'''
+		«h1»Documentation für properties«/h1»
+		
+		Dokumentation für DTO «it.name»:
+		«it.documentation»
+		
+			«h2»Documentation für properties«/h2»
+		
+			«FOR MetaDTOProperty a : it.properties»
+				Property «a.name»: «a.documentation»
+			«ENDFOR»
+			
+			«example» 
+			Test 112233: Das Example sagt...
+			
+			Und so und anders.
+			«/example»
+	'''	
+}
