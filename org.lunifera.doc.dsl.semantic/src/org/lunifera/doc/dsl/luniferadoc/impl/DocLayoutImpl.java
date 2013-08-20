@@ -20,26 +20,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.xtype.XImportDeclaration;
 
-import org.lunifera.doc.dsl.luniferadoc.Document;
+import org.lunifera.doc.dsl.luniferadoc.DocLayout;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.RichString;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Document</b></em>'.
+ * An implementation of the model object '<em><b>Doc Layout</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentImpl#getContent <em>Content</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocLayoutImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocLayoutImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocLayoutImpl#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DocumentImpl extends MinimalEObjectImpl.Container implements Document {
+public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout {
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -85,7 +85,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DocumentImpl() {
+	protected DocLayoutImpl() {
 		super();
 	}
 
@@ -96,7 +96,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LuniferaDocPackage.Literals.DOCUMENT;
+		return LuniferaDocPackage.Literals.DOC_LAYOUT;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	 */
 	public EList<RichString> getContent() {
 		if (content == null) {
-			content = new EObjectContainmentEList<RichString>(RichString.class, this, LuniferaDocPackage.DOCUMENT__CONTENT);
+			content = new EObjectContainmentEList<RichString>(RichString.class, this, LuniferaDocPackage.DOC_LAYOUT__CONTENT);
 		}
 		return content;
 	}
@@ -129,7 +129,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DOCUMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DOC_LAYOUT__NAME, oldName, name));
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	 */
 	public EList<XImportDeclaration> getImports() {
 		if (imports == null) {
-			imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, LuniferaDocPackage.DOCUMENT__IMPORTS);
+			imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, LuniferaDocPackage.DOC_LAYOUT__IMPORTS);
 		}
 		return imports;
 	}
@@ -152,9 +152,9 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOCUMENT__CONTENT:
+			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
 				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
-			case LuniferaDocPackage.DOCUMENT__IMPORTS:
+			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
 				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -168,11 +168,11 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOCUMENT__CONTENT:
+			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
 				return getContent();
-			case LuniferaDocPackage.DOCUMENT__NAME:
+			case LuniferaDocPackage.DOC_LAYOUT__NAME:
 				return getName();
-			case LuniferaDocPackage.DOCUMENT__IMPORTS:
+			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
 				return getImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -187,14 +187,14 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOCUMENT__CONTENT:
+			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
 				getContent().clear();
 				getContent().addAll((Collection<? extends RichString>)newValue);
 				return;
-			case LuniferaDocPackage.DOCUMENT__NAME:
+			case LuniferaDocPackage.DOC_LAYOUT__NAME:
 				setName((String)newValue);
 				return;
-			case LuniferaDocPackage.DOCUMENT__IMPORTS:
+			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
 				getImports().clear();
 				getImports().addAll((Collection<? extends XImportDeclaration>)newValue);
 				return;
@@ -210,13 +210,13 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOCUMENT__CONTENT:
+			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
 				getContent().clear();
 				return;
-			case LuniferaDocPackage.DOCUMENT__NAME:
+			case LuniferaDocPackage.DOC_LAYOUT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case LuniferaDocPackage.DOCUMENT__IMPORTS:
+			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
 				getImports().clear();
 				return;
 		}
@@ -231,11 +231,11 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOCUMENT__CONTENT:
+			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
 				return content != null && !content.isEmpty();
-			case LuniferaDocPackage.DOCUMENT__NAME:
+			case LuniferaDocPackage.DOC_LAYOUT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case LuniferaDocPackage.DOCUMENT__IMPORTS:
+			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
 				return imports != null && !imports.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -257,4 +257,4 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 		return result.toString();
 	}
 
-} //DocumentImpl
+} //DocLayoutImpl

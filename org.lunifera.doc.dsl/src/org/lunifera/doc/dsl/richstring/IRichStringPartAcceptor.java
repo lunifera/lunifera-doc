@@ -13,7 +13,8 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
-import org.lunifera.doc.dsl.luniferadoc.Document;
+import org.lunifera.doc.dsl.luniferadoc.DocLayout;
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.RichStringH2;
@@ -213,7 +214,7 @@ public interface IRichStringPartAcceptor {
 
 	void acceptExampleEnd();
 
-	void acceptDocumentStart(Document object);
+	void acceptDocumentStart(LuniferaDocDocument object);
 
 	void acceptDocumentEnd();
 }

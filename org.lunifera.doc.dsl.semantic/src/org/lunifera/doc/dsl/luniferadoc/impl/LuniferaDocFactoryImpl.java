@@ -56,7 +56,8 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case LuniferaDocPackage.DOCUMENT: return createDocument();
+			case LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT: return createLuniferaDocDocument();
+			case LuniferaDocPackage.DOC_LAYOUT: return createDocLayout();
 			case LuniferaDocPackage.RICH_STRING_ELSE_IF: return createRichStringElseIf();
 			case LuniferaDocPackage.RICH_STRING: return createRichString();
 			case LuniferaDocPackage.RICH_STRING_LITERAL: return createRichStringLiteral();
@@ -66,6 +67,10 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 			case LuniferaDocPackage.RICH_STRING_H1: return createRichStringH1();
 			case LuniferaDocPackage.RICH_STRING_H2: return createRichStringH2();
 			case LuniferaDocPackage.RICH_STRING_MARKUP: return createRichStringMarkup();
+			case LuniferaDocPackage.DTO_DOCUMENT: return createDTODocument();
+			case LuniferaDocPackage.DTO_HEADER: return createDTOHeader();
+			case LuniferaDocPackage.DTO_DETAILS: return createDTODetails();
+			case LuniferaDocPackage.DTO_PROPERTY: return createDTOProperty();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,9 +81,19 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Document createDocument() {
-		DocumentImpl document = new DocumentImpl();
-		return document;
+	public LuniferaDocDocument createLuniferaDocDocument() {
+		LuniferaDocDocumentImpl luniferaDocDocument = new LuniferaDocDocumentImpl();
+		return luniferaDocDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DocLayout createDocLayout() {
+		DocLayoutImpl docLayout = new DocLayoutImpl();
+		return docLayout;
 	}
 
 	/**
@@ -169,6 +184,46 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 	public RichStringMarkup createRichStringMarkup() {
 		RichStringMarkupImpl richStringMarkup = new RichStringMarkupImpl();
 		return richStringMarkup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTODocument createDTODocument() {
+		DTODocumentImpl dtoDocument = new DTODocumentImpl();
+		return dtoDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTOHeader createDTOHeader() {
+		DTOHeaderImpl dtoHeader = new DTOHeaderImpl();
+		return dtoHeader;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTODetails createDTODetails() {
+		DTODetailsImpl dtoDetails = new DTODetailsImpl();
+		return dtoDetails;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTOProperty createDTOProperty() {
+		DTOPropertyImpl dtoProperty = new DTOPropertyImpl();
+		return dtoProperty;
 	}
 
 	/**

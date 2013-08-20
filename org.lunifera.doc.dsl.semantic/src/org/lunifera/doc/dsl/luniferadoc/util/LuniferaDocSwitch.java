@@ -71,9 +71,16 @@ public class LuniferaDocSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case LuniferaDocPackage.DOCUMENT: {
-				Document document = (Document)theEObject;
-				T result = caseDocument(document);
+			case LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT: {
+				LuniferaDocDocument luniferaDocDocument = (LuniferaDocDocument)theEObject;
+				T result = caseLuniferaDocDocument(luniferaDocDocument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LuniferaDocPackage.DOC_LAYOUT: {
+				DocLayout docLayout = (DocLayout)theEObject;
+				T result = caseDocLayout(docLayout);
+				if (result == null) result = caseLuniferaDocDocument(docLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -145,6 +152,31 @@ public class LuniferaDocSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case LuniferaDocPackage.DTO_DOCUMENT: {
+				DTODocument dtoDocument = (DTODocument)theEObject;
+				T result = caseDTODocument(dtoDocument);
+				if (result == null) result = caseLuniferaDocDocument(dtoDocument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LuniferaDocPackage.DTO_HEADER: {
+				DTOHeader dtoHeader = (DTOHeader)theEObject;
+				T result = caseDTOHeader(dtoHeader);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LuniferaDocPackage.DTO_DETAILS: {
+				DTODetails dtoDetails = (DTODetails)theEObject;
+				T result = caseDTODetails(dtoDetails);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LuniferaDocPackage.DTO_PROPERTY: {
+				DTOProperty dtoProperty = (DTOProperty)theEObject;
+				T result = caseDTOProperty(dtoProperty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -160,7 +192,22 @@ public class LuniferaDocSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDocument(Document object) {
+	public T caseLuniferaDocDocument(LuniferaDocDocument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Doc Layout</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Doc Layout</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocLayout(DocLayout object) {
 		return null;
 	}
 
@@ -296,6 +343,66 @@ public class LuniferaDocSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringMarkup(RichStringMarkup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Document</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDTODocument(DTODocument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Header</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Header</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDTOHeader(DTOHeader object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Details</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Details</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDTODetails(DTODetails object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDTOProperty(DTOProperty object) {
 		return null;
 	}
 

@@ -910,7 +910,7 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDocumentStart_Content(), this.getProcessedRichString(), null, "content", null, 0, 1, DocumentStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentStart_End(), this.getDocumentEnd(), this.getDocumentEnd_Start(), "end", null, 0, 1, DocumentStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentStart_Document(), theLuniferaDocPackage.getDocument(), null, "document", null, 0, 1, DocumentStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentStart_Document(), theLuniferaDocPackage.getLuniferaDocDocument(), null, "document", null, 0, 1, DocumentStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentEndEClass, DocumentEnd.class, "DocumentEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDocumentEnd_Start(), this.getDocumentStart(), this.getDocumentStart_End(), "start", null, 0, 1, DocumentEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

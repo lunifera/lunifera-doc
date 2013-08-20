@@ -2,7 +2,7 @@
  */
 package org.lunifera.doc.dsl.doccompiler;
 
-import org.lunifera.doc.dsl.luniferadoc.Document;
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,12 +86,12 @@ public interface DocumentStart extends LinePart {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Document</em>' reference.
-	 * @see #setDocument(Document)
+	 * @see #setDocument(LuniferaDocDocument)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getDocumentStart_Document()
 	 * @model
 	 * @generated
 	 */
-	Document getDocument();
+	LuniferaDocDocument getDocument();
 
 	/**
 	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getDocument <em>Document</em>}' reference.
@@ -101,6 +101,6 @@ public interface DocumentStart extends LinePart {
 	 * @see #getDocument()
 	 * @generated
 	 */
-	void setDocument(Document value);
+	void setDocument(LuniferaDocDocument value);
 
 } // DocumentStart

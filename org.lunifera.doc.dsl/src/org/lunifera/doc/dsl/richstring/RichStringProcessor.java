@@ -37,7 +37,8 @@ import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.util.DocCompilerSwitch;
-import org.lunifera.doc.dsl.luniferadoc.Document;
+import org.lunifera.doc.dsl.luniferadoc.DocLayout;
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocFactory;
 import org.lunifera.doc.dsl.luniferadoc.RichString;
 import org.lunifera.doc.dsl.luniferadoc.RichStringElseIf;
@@ -113,7 +114,7 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichString(RichString object) {
 
-			boolean root = object.eContainer() instanceof Document;
+			boolean root = object.eContainer() instanceof DocLayout;
 
 			DocumentStart start = null;
 			if (rootRichString == null) {
@@ -123,7 +124,7 @@ public class RichStringProcessor {
 				if (root) {
 					start = factory.createDocumentStart();
 					start.setContent(rootRichString);
-					start.setDocument((Document) object.eContainer());
+					start.setDocument((LuniferaDocDocument) object.eContainer());
 					addToCurrentLine(start);
 				}
 			}

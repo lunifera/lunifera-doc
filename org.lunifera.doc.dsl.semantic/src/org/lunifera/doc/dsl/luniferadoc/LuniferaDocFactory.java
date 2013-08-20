@@ -28,7 +28,16 @@ public interface LuniferaDocFactory extends EFactory {
 	 * @return a new object of class '<em>Document</em>'.
 	 * @generated
 	 */
-	Document createDocument();
+	LuniferaDocDocument createLuniferaDocDocument();
+
+	/**
+	 * Returns a new object of class '<em>Doc Layout</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Doc Layout</em>'.
+	 * @generated
+	 */
+	DocLayout createDocLayout();
 
 	/**
 	 * Returns a new object of class '<em>Rich String Else If</em>'.
@@ -110,6 +119,42 @@ public interface LuniferaDocFactory extends EFactory {
 	 * @generated
 	 */
 	RichStringMarkup createRichStringMarkup();
+
+	/**
+	 * Returns a new object of class '<em>DTO Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Document</em>'.
+	 * @generated
+	 */
+	DTODocument createDTODocument();
+
+	/**
+	 * Returns a new object of class '<em>DTO Header</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Header</em>'.
+	 * @generated
+	 */
+	DTOHeader createDTOHeader();
+
+	/**
+	 * Returns a new object of class '<em>DTO Details</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Details</em>'.
+	 * @generated
+	 */
+	DTODetails createDTODetails();
+
+	/**
+	 * Returns a new object of class '<em>DTO Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Property</em>'.
+	 * @generated
+	 */
+	DTOProperty createDTOProperty();
 
 	/**
 	 * Returns the package supported by this factory.

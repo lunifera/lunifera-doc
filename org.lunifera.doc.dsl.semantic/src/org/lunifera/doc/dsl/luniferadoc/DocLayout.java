@@ -10,23 +10,23 @@ import org.eclipse.xtext.xtype.XImportDeclaration;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Document</b></em>'.
+ * A representation of the model object '<em><b>Doc Layout</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.Document#getContent <em>Content</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.Document#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.Document#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocument()
+ * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout()
  * @model
  * @generated
  */
-public interface Document extends EObject {
+public interface DocLayout extends LuniferaDocDocument {
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' containment reference list.
 	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.RichString}.
@@ -37,7 +37,7 @@ public interface Document extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content</em>' containment reference list.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocument_Content()
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout_Content()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -53,14 +53,14 @@ public interface Document extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocument_Name()
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.Document#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -79,10 +79,10 @@ public interface Document extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Imports</em>' containment reference list.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocument_Imports()
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout_Imports()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<XImportDeclaration> getImports();
 
-} // Document
+} // DocLayout

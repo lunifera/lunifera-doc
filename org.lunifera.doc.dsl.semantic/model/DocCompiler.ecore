@@ -5,7 +5,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//ProcessedRichString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//DocumentEnd"
         eOpposite="#//DocumentEnd/start"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass LuniferaDocGrammar.ecore#//Document"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass LuniferaDocGrammar.ecore#//LuniferaDocDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//DocumentStart"

@@ -7,10 +7,11 @@
     editorPluginID="org.lunifera.doc.grammar.editor" runtimeVersion="2.9" usedGenPackages="../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="LuniferaDoc" basePackage="org.lunifera.doc.dsl" disposableProviderFactory="true"
       fileExtensions="luniferadoc" ecorePackage="LuniferaDocGrammar.ecore#/">
-    <genClasses ecoreClass="LuniferaDocGrammar.ecore#//Document">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//Document/content"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LuniferaDocGrammar.ecore#//Document/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//Document/imports"/>
+    <genClasses ecoreClass="LuniferaDocGrammar.ecore#//LuniferaDocDocument"/>
+    <genClasses ecoreClass="LuniferaDocGrammar.ecore#//DocLayout">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//DocLayout/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LuniferaDocGrammar.ecore#//DocLayout/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//DocLayout/imports"/>
     </genClasses>
     <genClasses ecoreClass="LuniferaDocGrammar.ecore#//RichStringElseIf">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//RichStringElseIf/if"/>
@@ -34,6 +35,21 @@
     <genClasses ecoreClass="LuniferaDocGrammar.ecore#//RichStringH2"/>
     <genClasses ecoreClass="LuniferaDocGrammar.ecore#//RichStringMarkup">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//RichStringMarkup/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="LuniferaDocGrammar.ecore#//DTODocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LuniferaDocGrammar.ecore#//DTODocument/class"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//DTODocument/header"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//DTODocument/details"/>
+    </genClasses>
+    <genClasses ecoreClass="LuniferaDocGrammar.ecore#//DTOHeader">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//DTOHeader/content"/>
+    </genClasses>
+    <genClasses ecoreClass="LuniferaDocGrammar.ecore#//DTODetails">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//DTODetails/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="LuniferaDocGrammar.ecore#//DTOProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LuniferaDocGrammar.ecore#//DTOProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LuniferaDocGrammar.ecore#//DTOProperty/description"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

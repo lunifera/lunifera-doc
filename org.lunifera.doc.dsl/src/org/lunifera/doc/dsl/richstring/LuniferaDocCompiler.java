@@ -27,7 +27,8 @@ import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
-import org.lunifera.doc.dsl.luniferadoc.Document;
+import org.lunifera.doc.dsl.luniferadoc.DocLayout;
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.RichString;
 import org.lunifera.doc.dsl.luniferadoc.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.RichStringForLoop;
@@ -154,7 +155,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		@Override
-		public void acceptDocumentStart(Document object) {
+		public void acceptDocumentStart(LuniferaDocDocument object) {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();

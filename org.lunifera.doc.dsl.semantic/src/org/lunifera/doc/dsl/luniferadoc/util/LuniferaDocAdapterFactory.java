@@ -73,8 +73,12 @@ public class LuniferaDocAdapterFactory extends AdapterFactoryImpl {
 	protected LuniferaDocSwitch<Adapter> modelSwitch =
 		new LuniferaDocSwitch<Adapter>() {
 			@Override
-			public Adapter caseDocument(Document object) {
-				return createDocumentAdapter();
+			public Adapter caseLuniferaDocDocument(LuniferaDocDocument object) {
+				return createLuniferaDocDocumentAdapter();
+			}
+			@Override
+			public Adapter caseDocLayout(DocLayout object) {
+				return createDocLayoutAdapter();
 			}
 			@Override
 			public Adapter caseRichStringElseIf(RichStringElseIf object) {
@@ -113,6 +117,22 @@ public class LuniferaDocAdapterFactory extends AdapterFactoryImpl {
 				return createRichStringMarkupAdapter();
 			}
 			@Override
+			public Adapter caseDTODocument(DTODocument object) {
+				return createDTODocumentAdapter();
+			}
+			@Override
+			public Adapter caseDTOHeader(DTOHeader object) {
+				return createDTOHeaderAdapter();
+			}
+			@Override
+			public Adapter caseDTODetails(DTODetails object) {
+				return createDTODetailsAdapter();
+			}
+			@Override
+			public Adapter caseDTOProperty(DTOProperty object) {
+				return createDTOPropertyAdapter();
+			}
+			@Override
 			public Adapter caseXExpression(XExpression object) {
 				return createXExpressionAdapter();
 			}
@@ -149,16 +169,30 @@ public class LuniferaDocAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.Document <em>Document</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.Document
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
 	 * @generated
 	 */
-	public Adapter createDocumentAdapter() {
+	public Adapter createLuniferaDocDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.DocLayout <em>Doc Layout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocLayout
+	 * @generated
+	 */
+	public Adapter createDocLayoutAdapter() {
 		return null;
 	}
 
@@ -285,6 +319,62 @@ public class LuniferaDocAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringMarkupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.DTODocument <em>DTO Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DTODocument
+	 * @generated
+	 */
+	public Adapter createDTODocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.DTOHeader <em>DTO Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DTOHeader
+	 * @generated
+	 */
+	public Adapter createDTOHeaderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.DTODetails <em>DTO Details</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DTODetails
+	 * @generated
+	 */
+	public Adapter createDTODetailsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.DTOProperty <em>DTO Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DTOProperty
+	 * @generated
+	 */
+	public Adapter createDTOPropertyAdapter() {
 		return null;
 	}
 

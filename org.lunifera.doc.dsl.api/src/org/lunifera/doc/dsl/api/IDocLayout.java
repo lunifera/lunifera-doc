@@ -6,11 +6,10 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
 
-package org.lunifera.doc.dsl.richstring;
+package org.lunifera.doc.dsl.api;
 
-import org.lunifera.doc.dsl.api.IMetaPojo;
 
-public interface IDTODocumentation {
+public interface IDocLayout {
 
 	void setIt(IMetaPojo dto);
 

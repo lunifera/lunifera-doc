@@ -11,11 +11,31 @@ grammar org.lunifera.doc.dsl.LuniferaDocGrammar with org.eclipse.xtext.xbase.Xba
 import "http://www.lunifera.org/luniferadoc" as doc
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
-Document returns doc::Document:
-	'Document' name=ID '{'
+LuniferaDocDocument returns doc::LuniferaDocDocument:
+	DocLayout | DTODocument
+;
+
+DocLayout returns doc::DocLayout:
+	'DocLayout' name=ID '{'
 	imports+=XImportDeclaration*
 	content+=RichString*
-	'}'; 
+	'}';
+	
+DTODocument returns doc::DTODocument:
+	'DTODocument' dtoClass=QualifiedName '{'
+	'header' '{' header=DTOHeader	'}'
+	'details' '{' details=DTODetails '}'
+	'}';
+	
+DTOHeader returns doc::DTOHeader:
+	{doc::DTOHeader} content+=RichString*;
+	
+DTODetails returns doc::DTODetails:
+	{doc::DTODetails} properties+=DTOProperty*;
+	
+DTOProperty returns doc::DTOProperty:
+	{doc::DTOProperty} 'name' name=ID
+	'description' '{' description+=RichString '}';
 
 RichString returns doc::RichString:
 	{doc::RichString} (expressions+=RichStringLiteral |

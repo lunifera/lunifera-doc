@@ -20,9 +20,10 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.lunifera.doc.dsl.luniferadoc.Document
-import org.lunifera.doc.dsl.richstring.IDTODocumentation
 import org.lunifera.doc.dsl.api.IMetaPojo
+import org.lunifera.doc.dsl.luniferadoc.DocLayout
+import org.lunifera.doc.dsl.luniferadoc.DTODocument
+import org.lunifera.doc.dsl.api.IDocLayout
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -68,13 +69,11 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-	def dispatch void infer(Document element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(DocLayout element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 
-		// Here you explain how your model is mapped to Java elements, by writing the actual translation code.
-		// An implementation for the initial hello world example could look like this:
 		acceptor.accept(element.toClass(element.name)).initializeLater(
 			[
-				superTypes += typeReference.getTypeForName(typeof(IDTODocumentation), element, null)
+				superTypes += typeReference.getTypeForName(typeof(IDocLayout), element, null)
 				documentation = element.documentation
 				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null))
 				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null));
@@ -90,6 +89,29 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					operation.setBody(richString)
 					associator.associateLogicalContainer(richString, operation)
 				}
+			])
+	}
+	
+	def dispatch void infer(DTODocument dtoDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+
+		acceptor.accept(dtoDocument.toClass(dtoDocument.dtoClass+"Document")).initializeLater(
+			[
+//				superTypes += typeReference.getTypeForName(typeof(IDTODocumentation), dtoDocument, null)
+//				documentation = element.documentation
+//				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null))
+//				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null));
+//				for (richString : element.content) {
+//					val JvmOperation operation = typesFactory.createJvmOperation()
+//					members += operation
+//					associator.associatePrimary(richString, operation)
+//					operation.setSimpleName("serialize")
+//					operation.setVisibility(JvmVisibility::PUBLIC)
+//					operation.setReturnType(typeReference.getTypeForName(typeof(String), element, null))
+//					val JvmTypeReference returnType = inferredType()
+//					operation.setReturnType(returnType)
+//					operation.setBody(richString)
+//					associator.associateLogicalContainer(richString, operation)
+//				}
 			])
 	}
 }
