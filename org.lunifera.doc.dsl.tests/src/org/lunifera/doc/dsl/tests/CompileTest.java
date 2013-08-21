@@ -15,9 +15,9 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
+import org.lunifera.doc.dsl.api.IDocLayout;
 import org.lunifera.doc.dsl.api.impl.MetaPojo;
 import org.lunifera.doc.dsl.api.impl.MetaPojoProperty;
-import org.lunifera.doc.dsl.richstring.IDTODocumentation;
 
 import com.google.inject.Inject;
 
@@ -45,7 +45,7 @@ public class CompileTest {
 		Class<?> clazz = result.getCompiledClass();
 
 		// create a new instance and execute the serialization
-		IDTODocumentation instance = (IDTODocumentation) clazz.newInstance();
+		IDocLayout instance = (IDocLayout) clazz.newInstance();
 		instance.setIt(createMetaPojo());
 		System.out.println(instance.serialize());
 	}

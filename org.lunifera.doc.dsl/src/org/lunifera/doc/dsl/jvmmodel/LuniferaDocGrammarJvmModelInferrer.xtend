@@ -12,7 +12,6 @@ package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
 import org.eclipse.xtext.common.types.JvmOperation
-import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.common.types.util.TypeReferences
@@ -20,10 +19,11 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.lunifera.doc.dsl.api.IMetaPojo
-import org.lunifera.doc.dsl.luniferadoc.DocLayout
-import org.lunifera.doc.dsl.luniferadoc.DTODocument
 import org.lunifera.doc.dsl.api.IDocLayout
+import org.lunifera.doc.dsl.api.IMetaPojo
+import org.lunifera.doc.dsl.api.impl.MetaPojo
+import org.lunifera.doc.dsl.luniferadoc.DTODocument
+import org.lunifera.doc.dsl.luniferadoc.DocLayout
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -95,25 +95,23 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IMetaPojo), dtoDocument, null)
 				documentation = dtoDocument.documentation
-				val JvmOperation operation = typesFactory.createJvmOperation()
-				operation.setSimpleName("serialize")
-				operation.setVisibility(JvmVisibility::PUBLIC)
-				operation.setReturnType(typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += operation
-//				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null))
-//				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null));
-//				for (richString : element.content) {
-//					val JvmOperation operation = typesFactory.createJvmOperation()
-//					members += operation
-//					associator.associatePrimary(richString, operation)
-//					operation.setSimpleName("serialize")
-//					operation.setVisibility(JvmVisibility::PUBLIC)
-//					operation.setReturnType(typeReference.getTypeForName(typeof(String), element, null))
-//					val JvmTypeReference returnType = inferredType()
-//					operation.setReturnType(returnType)
-//					operation.setBody(richString)
-//					associator.associateLogicalContainer(richString, operation)
-//				}
+
+				val headerRichString = dtoDocument.header.content
+				val JvmOperation serializeHeaderOperation = typesFactory.createJvmOperation()
+				associator.associatePrimary(headerRichString, serializeHeaderOperation)
+				serializeHeaderOperation.setSimpleName("serializeHeader")
+				serializeHeaderOperation.setVisibility(JvmVisibility::PUBLIC)
+				serializeHeaderOperation.setReturnType(inferredType())
+				serializeHeaderOperation.setBody(headerRichString)
+				associator.associateLogicalContainer(headerRichString, serializeHeaderOperation)
+				
+				members += dtoDocument.header.toField("documentation", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				val docGetter = dtoDocument.header.toGetter("documentation", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				docGetter.setBody[it.append('''return «serializeHeaderOperation.simpleName»();''')]
+				members += docGetter
+				members += dtoDocument.header.toSetter("documentation", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				
+				members += serializeHeaderOperation
 			])
 	}
 }
