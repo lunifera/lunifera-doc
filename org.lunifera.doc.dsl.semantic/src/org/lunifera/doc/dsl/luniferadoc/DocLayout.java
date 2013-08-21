@@ -28,20 +28,30 @@ import org.eclipse.xtext.xtype.XImportDeclaration;
  */
 public interface DocLayout extends LuniferaDocDocument {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' containment reference list.
-	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.RichString}.
+	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' containment reference list.
+	 * @return the value of the '<em>Content</em>' containment reference.
+	 * @see #setContent(RichString)
 	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout_Content()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RichString> getContent();
+	RichString getContent();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getContent <em>Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' containment reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(RichString value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

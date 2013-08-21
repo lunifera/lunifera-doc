@@ -69,26 +69,23 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-	def dispatch void infer(DocLayout element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(DocLayout docLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 
-		acceptor.accept(element.toClass(element.name)).initializeLater(
+		acceptor.accept(docLayout.toClass(docLayout.name)).initializeLater(
 			[
-				superTypes += typeReference.getTypeForName(typeof(IDocLayout), element, null)
-				documentation = element.documentation
-				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null))
-				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null));
-				for (richString : element.content) {
-					val JvmOperation operation = typesFactory.createJvmOperation()
-					members += operation
-					associator.associatePrimary(richString, operation)
-					operation.setSimpleName("serialize")
-					operation.setVisibility(JvmVisibility::PUBLIC)
-					operation.setReturnType(typeReference.getTypeForName(typeof(String), element, null))
-					val JvmTypeReference returnType = inferredType()
-					operation.setReturnType(returnType)
-					operation.setBody(richString)
-					associator.associateLogicalContainer(richString, operation)
-				}
+				superTypes += typeReference.getTypeForName(typeof(IDocLayout), docLayout, null)
+				documentation = docLayout.documentation
+				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), docLayout, null))
+				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), docLayout, null));
+				val richString = docLayout.content
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				associator.associatePrimary(richString, operation)
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(inferredType())
+				operation.setBody(richString)
+				associator.associateLogicalContainer(richString, operation)
+				members += operation
 			])
 	}
 	
@@ -96,8 +93,13 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 
 		acceptor.accept(dtoDocument.toClass(dtoDocument.dtoClass+"Document")).initializeLater(
 			[
-//				superTypes += typeReference.getTypeForName(typeof(IDTODocumentation), dtoDocument, null)
-//				documentation = element.documentation
+				superTypes += typeReference.getTypeForName(typeof(IMetaPojo), dtoDocument, null)
+				documentation = dtoDocument.documentation
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += operation
 //				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null))
 //				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), element, null));
 //				for (richString : element.content) {

@@ -35,14 +35,14 @@ import org.lunifera.doc.dsl.luniferadoc.RichString;
  */
 public class DTOHeaderImpl extends MinimalEObjectImpl.Container implements DTOHeader {
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RichString> content;
+	protected RichString content;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,11 +68,42 @@ public class DTOHeaderImpl extends MinimalEObjectImpl.Container implements DTOHe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RichString> getContent() {
-		if (content == null) {
-			content = new EObjectContainmentEList<RichString>(RichString.class, this, LuniferaDocPackage.DTO_HEADER__CONTENT);
-		}
+	public RichString getContent() {
 		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContent(RichString newContent, NotificationChain msgs) {
+		RichString oldContent = content;
+		content = newContent;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DTO_HEADER__CONTENT, oldContent, newContent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContent(RichString newContent) {
+		if (newContent != content) {
+			NotificationChain msgs = null;
+			if (content != null)
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DTO_HEADER__CONTENT, null, msgs);
+			if (newContent != null)
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DTO_HEADER__CONTENT, null, msgs);
+			msgs = basicSetContent(newContent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DTO_HEADER__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -84,7 +115,7 @@ public class DTOHeaderImpl extends MinimalEObjectImpl.Container implements DTOHe
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LuniferaDocPackage.DTO_HEADER__CONTENT:
-				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
+				return basicSetContent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -113,8 +144,7 @@ public class DTOHeaderImpl extends MinimalEObjectImpl.Container implements DTOHe
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LuniferaDocPackage.DTO_HEADER__CONTENT:
-				getContent().clear();
-				getContent().addAll((Collection<? extends RichString>)newValue);
+				setContent((RichString)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,7 +159,7 @@ public class DTOHeaderImpl extends MinimalEObjectImpl.Container implements DTOHe
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LuniferaDocPackage.DTO_HEADER__CONTENT:
-				getContent().clear();
+				setContent((RichString)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -144,7 +174,7 @@ public class DTOHeaderImpl extends MinimalEObjectImpl.Container implements DTOHe
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LuniferaDocPackage.DTO_HEADER__CONTENT:
-				return content != null && !content.isEmpty();
+				return content != null;
 		}
 		return super.eIsSet(featureID);
 	}

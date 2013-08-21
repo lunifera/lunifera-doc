@@ -50,19 +50,29 @@ public interface DTOProperty extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Description</b></em>' containment reference list.
-	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.RichString}.
+	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Description</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' containment reference list.
+	 * @return the value of the '<em>Description</em>' containment reference.
+	 * @see #setDescription(RichString)
 	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDTOProperty_Description()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RichString> getDescription();
+	RichString getDescription();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.DTOProperty#getDescription <em>Description</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' containment reference.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(RichString value);
 
 } // DTOProperty

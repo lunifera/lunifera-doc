@@ -87,7 +87,7 @@ public interface LuniferaDocPackage extends EPackage {
 	int DOC_LAYOUT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -513,7 +513,7 @@ public interface LuniferaDocPackage extends EPackage {
 	int DTO_HEADER = 12;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -578,7 +578,7 @@ public interface LuniferaDocPackage extends EPackage {
 	int DTO_PROPERTY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -617,10 +617,10 @@ public interface LuniferaDocPackage extends EPackage {
 	EClass getDocLayout();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Content</em>'.
+	 * @return the meta object for the containment reference '<em>Content</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.DocLayout#getContent()
 	 * @see #getDocLayout()
 	 * @generated
@@ -903,10 +903,10 @@ public interface LuniferaDocPackage extends EPackage {
 	EClass getDTOHeader();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.DTOHeader#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.DTOHeader#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Content</em>'.
+	 * @return the meta object for the containment reference '<em>Content</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.DTOHeader#getContent()
 	 * @see #getDTOHeader()
 	 * @generated
@@ -956,10 +956,10 @@ public interface LuniferaDocPackage extends EPackage {
 	EAttribute getDTOProperty_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.DTOProperty#getDescription <em>Description</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.DTOProperty#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Description</em>'.
+	 * @return the meta object for the containment reference '<em>Description</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.DTOProperty#getDescription()
 	 * @see #getDTOProperty()
 	 * @generated
@@ -1009,7 +1009,7 @@ public interface LuniferaDocPackage extends EPackage {
 		EClass DOC_LAYOUT = eINSTANCE.getDocLayout();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1247,7 +1247,7 @@ public interface LuniferaDocPackage extends EPackage {
 		EClass DTO_HEADER = eINSTANCE.getDTOHeader();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1291,7 +1291,7 @@ public interface LuniferaDocPackage extends EPackage {
 		EAttribute DTO_PROPERTY__NAME = eINSTANCE.getDTOProperty_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -41,14 +41,14 @@ import org.lunifera.doc.dsl.luniferadoc.RichString;
  */
 public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout {
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RichString> content;
+	protected RichString content;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -104,11 +104,42 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RichString> getContent() {
-		if (content == null) {
-			content = new EObjectContainmentEList<RichString>(RichString.class, this, LuniferaDocPackage.DOC_LAYOUT__CONTENT);
-		}
+	public RichString getContent() {
 		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContent(RichString newContent, NotificationChain msgs) {
+		RichString oldContent = content;
+		content = newContent;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DOC_LAYOUT__CONTENT, oldContent, newContent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContent(RichString newContent) {
+		if (newContent != content) {
+			NotificationChain msgs = null;
+			if (content != null)
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DOC_LAYOUT__CONTENT, null, msgs);
+			if (newContent != null)
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DOC_LAYOUT__CONTENT, null, msgs);
+			msgs = basicSetContent(newContent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DOC_LAYOUT__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -153,7 +184,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
-				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
+				return basicSetContent(null, msgs);
 			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
 				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 		}
@@ -188,8 +219,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
-				getContent().clear();
-				getContent().addAll((Collection<? extends RichString>)newValue);
+				setContent((RichString)newValue);
 				return;
 			case LuniferaDocPackage.DOC_LAYOUT__NAME:
 				setName((String)newValue);
@@ -211,7 +241,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
-				getContent().clear();
+				setContent((RichString)null);
 				return;
 			case LuniferaDocPackage.DOC_LAYOUT__NAME:
 				setName(NAME_EDEFAULT);
@@ -232,7 +262,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
-				return content != null && !content.isEmpty();
+				return content != null;
 			case LuniferaDocPackage.DOC_LAYOUT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:

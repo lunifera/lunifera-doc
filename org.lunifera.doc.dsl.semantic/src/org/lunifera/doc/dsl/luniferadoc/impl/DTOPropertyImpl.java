@@ -55,14 +55,14 @@ public class DTOPropertyImpl extends MinimalEObjectImpl.Container implements DTO
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference list.
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RichString> description;
+	protected RichString description;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,11 +109,42 @@ public class DTOPropertyImpl extends MinimalEObjectImpl.Container implements DTO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RichString> getDescription() {
-		if (description == null) {
-			description = new EObjectContainmentEList<RichString>(RichString.class, this, LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION);
-		}
+	public RichString getDescription() {
 		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDescription(RichString newDescription, NotificationChain msgs) {
+		RichString oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION, oldDescription, newDescription);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(RichString newDescription) {
+		if (newDescription != description) {
+			NotificationChain msgs = null;
+			if (description != null)
+				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION, null, msgs);
+			if (newDescription != null)
+				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION, null, msgs);
+			msgs = basicSetDescription(newDescription, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -125,7 +156,7 @@ public class DTOPropertyImpl extends MinimalEObjectImpl.Container implements DTO
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION:
-				return ((InternalEList<?>)getDescription()).basicRemove(otherEnd, msgs);
+				return basicSetDescription(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -159,8 +190,7 @@ public class DTOPropertyImpl extends MinimalEObjectImpl.Container implements DTO
 				setName((String)newValue);
 				return;
 			case LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION:
-				getDescription().clear();
-				getDescription().addAll((Collection<? extends RichString>)newValue);
+				setDescription((RichString)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -178,7 +208,7 @@ public class DTOPropertyImpl extends MinimalEObjectImpl.Container implements DTO
 				setName(NAME_EDEFAULT);
 				return;
 			case LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION:
-				getDescription().clear();
+				setDescription((RichString)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -195,7 +225,7 @@ public class DTOPropertyImpl extends MinimalEObjectImpl.Container implements DTO
 			case LuniferaDocPackage.DTO_PROPERTY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case LuniferaDocPackage.DTO_PROPERTY__DESCRIPTION:
-				return description != null && !description.isEmpty();
+				return description != null;
 		}
 		return super.eIsSet(featureID);
 	}

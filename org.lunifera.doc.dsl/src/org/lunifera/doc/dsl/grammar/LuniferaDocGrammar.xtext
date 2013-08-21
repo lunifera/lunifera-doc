@@ -18,7 +18,7 @@ LuniferaDocDocument returns doc::LuniferaDocDocument:
 DocLayout returns doc::DocLayout:
 	'DocLayout' name=ID '{'
 	imports+=XImportDeclaration*
-	content+=RichString*
+	content=RichString
 	'}';
 	
 DTODocument returns doc::DTODocument:
@@ -28,14 +28,14 @@ DTODocument returns doc::DTODocument:
 	'}';
 	
 DTOHeader returns doc::DTOHeader:
-	{doc::DTOHeader} content+=RichString*;
+	{doc::DTOHeader} content=RichString;
 	
 DTODetails returns doc::DTODetails:
 	{doc::DTODetails} properties+=DTOProperty*;
 	
 DTOProperty returns doc::DTOProperty:
 	{doc::DTOProperty} 'name' name=ID
-	'description' '{' description+=RichString '}';
+	'description' '{' description=RichString '}';
 
 RichString returns doc::RichString:
 	{doc::RichString} (expressions+=RichStringLiteral |
