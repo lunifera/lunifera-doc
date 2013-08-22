@@ -81,6 +81,14 @@ public class LuniferaDocAdapterFactory extends AdapterFactoryImpl {
 				return createDocLayoutAdapter();
 			}
 			@Override
+			public Adapter caseGeneralDocument(GeneralDocument object) {
+				return createGeneralDocumentAdapter();
+			}
+			@Override
+			public Adapter caseDocumentInclude(DocumentInclude object) {
+				return createDocumentIncludeAdapter();
+			}
+			@Override
 			public Adapter caseRichStringElseIf(RichStringElseIf object) {
 				return createRichStringElseIfAdapter();
 			}
@@ -193,6 +201,34 @@ public class LuniferaDocAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDocLayoutAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.GeneralDocument <em>General Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.GeneralDocument
+	 * @generated
+	 */
+	public Adapter createGeneralDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude <em>Document Include</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocumentInclude
+	 * @generated
+	 */
+	public Adapter createDocumentIncludeAdapter() {
 		return null;
 	}
 

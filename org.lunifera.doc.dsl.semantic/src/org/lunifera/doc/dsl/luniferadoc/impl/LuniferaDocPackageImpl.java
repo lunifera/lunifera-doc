@@ -20,6 +20,8 @@ import org.lunifera.doc.dsl.luniferadoc.DTODocument;
 import org.lunifera.doc.dsl.luniferadoc.DTOHeader;
 import org.lunifera.doc.dsl.luniferadoc.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.DocLayout;
+import org.lunifera.doc.dsl.luniferadoc.DocumentInclude;
+import org.lunifera.doc.dsl.luniferadoc.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocFactory;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
@@ -53,6 +55,20 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * @generated
 	 */
 	private EClass docLayoutEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass generalDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass documentIncludeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,6 +270,51 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 */
 	public EReference getDocLayout_Imports() {
 		return (EReference)docLayoutEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGeneralDocument() {
+		return generalDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGeneralDocument_Includes() {
+		return (EReference)generalDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDocumentInclude() {
+		return documentIncludeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocumentInclude_Include() {
+		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocumentInclude_VarName() {
+		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -561,6 +622,13 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		createEAttribute(docLayoutEClass, DOC_LAYOUT__NAME);
 		createEReference(docLayoutEClass, DOC_LAYOUT__IMPORTS);
 
+		generalDocumentEClass = createEClass(GENERAL_DOCUMENT);
+		createEReference(generalDocumentEClass, GENERAL_DOCUMENT__INCLUDES);
+
+		documentIncludeEClass = createEClass(DOCUMENT_INCLUDE);
+		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__INCLUDE);
+		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__VAR_NAME);
+
 		richStringElseIfEClass = createEClass(RICH_STRING_ELSE_IF);
 		createEReference(richStringElseIfEClass, RICH_STRING_ELSE_IF__IF);
 		createEReference(richStringElseIfEClass, RICH_STRING_ELSE_IF__THEN);
@@ -638,6 +706,7 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 
 		// Add supertypes to classes
 		docLayoutEClass.getESuperTypes().add(this.getLuniferaDocDocument());
+		generalDocumentEClass.getESuperTypes().add(this.getDocLayout());
 		richStringEClass.getESuperTypes().add(theXbasePackage.getXBlockExpression());
 		richStringLiteralEClass.getESuperTypes().add(theXbasePackage.getXStringLiteral());
 		richStringForLoopEClass.getESuperTypes().add(theXbasePackage.getXForLoopExpression());
@@ -655,6 +724,13 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		initEReference(getDocLayout_Content(), this.getRichString(), null, "content", null, 0, 1, DocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocLayout_Name(), ecorePackage.getEString(), "name", null, 0, 1, DocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocLayout_Imports(), theXtypePackage.getXImportDeclaration(), null, "imports", null, 0, -1, DocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(generalDocumentEClass, GeneralDocument.class, "GeneralDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGeneralDocument_Includes(), this.getDocumentInclude(), null, "includes", null, 0, -1, GeneralDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(documentIncludeEClass, DocumentInclude.class, "DocumentInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDocumentInclude_Include(), ecorePackage.getEString(), "include", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRichStringElseIf_If(), theXbasePackage.getXExpression(), null, "if", null, 0, 1, RichStringElseIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

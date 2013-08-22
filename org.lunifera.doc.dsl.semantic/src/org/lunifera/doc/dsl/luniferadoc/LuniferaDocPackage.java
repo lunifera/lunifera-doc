@@ -123,6 +123,98 @@ public interface LuniferaDocPackage extends EPackage {
 	int DOC_LAYOUT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.GeneralDocumentImpl <em>General Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.GeneralDocumentImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getGeneralDocument()
+	 * @generated
+	 */
+	int GENERAL_DOCUMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_DOCUMENT__CONTENT = DOC_LAYOUT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_DOCUMENT__NAME = DOC_LAYOUT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_DOCUMENT__IMPORTS = DOC_LAYOUT__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Includes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_DOCUMENT__INCLUDES = DOC_LAYOUT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>General Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_DOCUMENT_FEATURE_COUNT = DOC_LAYOUT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl <em>Document Include</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDocumentInclude()
+	 * @generated
+	 */
+	int DOCUMENT_INCLUDE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Include</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_INCLUDE__INCLUDE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Var Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_INCLUDE__VAR_NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Document Include</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_INCLUDE_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.RichStringElseIfImpl <em>Rich String Else If</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +222,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringElseIf()
 	 * @generated
 	 */
-	int RICH_STRING_ELSE_IF = 2;
+	int RICH_STRING_ELSE_IF = 4;
 
 	/**
 	 * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -167,7 +259,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichString()
 	 * @generated
 	 */
-	int RICH_STRING = 3;
+	int RICH_STRING = 5;
 
 	/**
 	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -195,7 +287,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringLiteral()
 	 * @generated
 	 */
-	int RICH_STRING_LITERAL = 4;
+	int RICH_STRING_LITERAL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -223,7 +315,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringForLoop()
 	 * @generated
 	 */
-	int RICH_STRING_FOR_LOOP = 5;
+	int RICH_STRING_FOR_LOOP = 7;
 
 	/**
 	 * The feature id for the '<em><b>For Expression</b></em>' containment reference.
@@ -296,7 +388,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringIf()
 	 * @generated
 	 */
-	int RICH_STRING_IF = 6;
+	int RICH_STRING_IF = 8;
 
 	/**
 	 * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -351,7 +443,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringMarkup()
 	 * @generated
 	 */
-	int RICH_STRING_MARKUP = 10;
+	int RICH_STRING_MARKUP = 12;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -379,7 +471,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringExample()
 	 * @generated
 	 */
-	int RICH_STRING_EXAMPLE = 7;
+	int RICH_STRING_EXAMPLE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -407,7 +499,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringH1()
 	 * @generated
 	 */
-	int RICH_STRING_H1 = 8;
+	int RICH_STRING_H1 = 10;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -435,7 +527,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getRichStringH2()
 	 * @generated
 	 */
-	int RICH_STRING_H2 = 9;
+	int RICH_STRING_H2 = 11;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -464,7 +556,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDTODocument()
 	 * @generated
 	 */
-	int DTO_DOCUMENT = 11;
+	int DTO_DOCUMENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Dto Class</b></em>' attribute.
@@ -510,7 +602,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDTOHeader()
 	 * @generated
 	 */
-	int DTO_HEADER = 12;
+	int DTO_HEADER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -538,7 +630,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDTODetails()
 	 * @generated
 	 */
-	int DTO_DETAILS = 13;
+	int DTO_DETAILS = 15;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -566,7 +658,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDTOProperty()
 	 * @generated
 	 */
-	int DTO_PROPERTY = 14;
+	int DTO_PROPERTY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -648,6 +740,59 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDocLayout_Imports();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.GeneralDocument <em>General Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>General Document</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.GeneralDocument
+	 * @generated
+	 */
+	EClass getGeneralDocument();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.GeneralDocument#getIncludes <em>Includes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Includes</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.GeneralDocument#getIncludes()
+	 * @see #getGeneralDocument()
+	 * @generated
+	 */
+	EReference getGeneralDocument_Includes();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude <em>Document Include</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Document Include</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocumentInclude
+	 * @generated
+	 */
+	EClass getDocumentInclude();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getInclude <em>Include</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Include</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getInclude()
+	 * @see #getDocumentInclude()
+	 * @generated
+	 */
+	EAttribute getDocumentInclude_Include();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getVarName <em>Var Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Var Name</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getVarName()
+	 * @see #getDocumentInclude()
+	 * @generated
+	 */
+	EAttribute getDocumentInclude_VarName();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.RichStringElseIf <em>Rich String Else If</em>}'.
@@ -1031,6 +1176,50 @@ public interface LuniferaDocPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOC_LAYOUT__IMPORTS = eINSTANCE.getDocLayout_Imports();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.GeneralDocumentImpl <em>General Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.GeneralDocumentImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getGeneralDocument()
+		 * @generated
+		 */
+		EClass GENERAL_DOCUMENT = eINSTANCE.getGeneralDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Includes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GENERAL_DOCUMENT__INCLUDES = eINSTANCE.getGeneralDocument_Includes();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl <em>Document Include</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDocumentInclude()
+		 * @generated
+		 */
+		EClass DOCUMENT_INCLUDE = eINSTANCE.getDocumentInclude();
+
+		/**
+		 * The meta object literal for the '<em><b>Include</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENT_INCLUDE__INCLUDE = eINSTANCE.getDocumentInclude_Include();
+
+		/**
+		 * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENT_INCLUDE__VAR_NAME = eINSTANCE.getDocumentInclude_VarName();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.RichStringElseIfImpl <em>Rich String Else If</em>}' class.

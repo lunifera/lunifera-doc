@@ -10,6 +10,16 @@
         eType="ecore:EClass platform:/plugin/org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralDocument" eSuperTypes="#//DocLayout">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
+        eType="#//DocumentInclude" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentInclude">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="include" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringElseIf">
     <eStructuralFeatures xsi:type="ecore:EReference" name="if" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
         containment="true"/>

@@ -24,6 +24,7 @@ import org.lunifera.doc.dsl.api.IMetaPojo
 import org.lunifera.doc.dsl.api.impl.MetaPojo
 import org.lunifera.doc.dsl.luniferadoc.DTODocument
 import org.lunifera.doc.dsl.luniferadoc.DocLayout
+import org.lunifera.doc.dsl.luniferadoc.GeneralDocument
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -70,13 +71,12 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	 *            <code>true</code>.
 	 */
 	def dispatch void infer(DocLayout docLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-
 		acceptor.accept(docLayout.toClass(docLayout.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDocLayout), docLayout, null)
 				documentation = docLayout.documentation
 				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), docLayout, null))
-				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), docLayout, null));
+				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), docLayout, null))
 				val richString = docLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -89,8 +89,39 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			])
 	}
 	
+	def dispatch void infer(GeneralDocument generalDoc, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(generalDoc.toClass(generalDoc.name+"Document")).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IDocLayout), generalDoc, null)
+				documentation = generalDoc.documentation
+				
+				for(inc : generalDoc.includes) {
+					members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaPojo), generalDoc, null))
+				}
+				
+				members += generalDoc.toConstructor[
+					body = [it.append('''
+						«FOR inc : generalDoc.includes»
+							this.«inc.varName» = new «inc.include»();
+						«ENDFOR»
+						''')]
+				]
+				
+				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), generalDoc, null))
+				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), generalDoc, null))
+				val richString = generalDoc.content
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				associator.associatePrimary(richString, operation)
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(inferredType())
+				operation.setBody(richString)
+				associator.associateLogicalContainer(richString, operation)
+				members += operation
+			])
+	}
+	
 	def dispatch void infer(DTODocument dtoDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-
 		acceptor.accept(dtoDocument.toClass(dtoDocument.dtoClass+"Document")).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IMetaPojo), dtoDocument, null)

@@ -58,6 +58,8 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 		switch (eClass.getClassifierID()) {
 			case LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT: return createLuniferaDocDocument();
 			case LuniferaDocPackage.DOC_LAYOUT: return createDocLayout();
+			case LuniferaDocPackage.GENERAL_DOCUMENT: return createGeneralDocument();
+			case LuniferaDocPackage.DOCUMENT_INCLUDE: return createDocumentInclude();
 			case LuniferaDocPackage.RICH_STRING_ELSE_IF: return createRichStringElseIf();
 			case LuniferaDocPackage.RICH_STRING: return createRichString();
 			case LuniferaDocPackage.RICH_STRING_LITERAL: return createRichStringLiteral();
@@ -94,6 +96,26 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 	public DocLayout createDocLayout() {
 		DocLayoutImpl docLayout = new DocLayoutImpl();
 		return docLayout;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeneralDocument createGeneralDocument() {
+		GeneralDocumentImpl generalDocument = new GeneralDocumentImpl();
+		return generalDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DocumentInclude createDocumentInclude() {
+		DocumentIncludeImpl documentInclude = new DocumentIncludeImpl();
+		return documentInclude;
 	}
 
 	/**

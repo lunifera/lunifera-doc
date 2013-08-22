@@ -40,6 +40,24 @@ public interface LuniferaDocFactory extends EFactory {
 	DocLayout createDocLayout();
 
 	/**
+	 * Returns a new object of class '<em>General Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>General Document</em>'.
+	 * @generated
+	 */
+	GeneralDocument createGeneralDocument();
+
+	/**
+	 * Returns a new object of class '<em>Document Include</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Document Include</em>'.
+	 * @generated
+	 */
+	DocumentInclude createDocumentInclude();
+
+	/**
 	 * Returns a new object of class '<em>Rich String Else If</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

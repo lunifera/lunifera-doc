@@ -12,7 +12,7 @@ import "http://www.lunifera.org/luniferadoc" as doc
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
 LuniferaDocDocument returns doc::LuniferaDocDocument:
-	DocLayout | DTODocument
+	DocLayout | GeneralDocument | DTODocument
 ;
 
 DocLayout returns doc::DocLayout:
@@ -20,6 +20,16 @@ DocLayout returns doc::DocLayout:
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
+	
+GeneralDocument returns doc::GeneralDocument:
+	'GeneralDocument' name=ID '{'
+	imports+=XImportDeclaration*
+	includes+=DocumentInclude*
+	content=RichString
+	'}';
+	
+DocumentInclude returns doc::DocumentInclude:
+	'include' include=QualifiedName 'as' varName=ID;
 	
 DTODocument returns doc::DTODocument:
 	'DTODocument' dtoClass=QualifiedName '{'
