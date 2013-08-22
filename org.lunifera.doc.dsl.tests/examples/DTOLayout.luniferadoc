@@ -1,0 +1,21 @@
+DocLayout DTOLayout {
+	
+	'''
+	Some text before the first headline.
+	
+	«h1»This is a headline«/h1»
+	
+	«val i = 2»
+	
+	«val a = it.properties»
+	«val b = it.documentation»
+	«val c = it.^name»
+	
+	«IF i < 10»
+		«i» is smaller than 10
+	«ENDIF»
+	
+	test
+	'''
+	
+}

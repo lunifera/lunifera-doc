@@ -1,0 +1,20 @@
+DTODocument org.lunifera.sample.MyDTO {
+	header {
+		'''«h1»This is MyDTO.«/h1»'''
+	}
+	details {
+		name propA
+		description {
+			'''
+				This is the description of property A.
+			'''
+		}
+		
+		name propB
+		description {
+			'''
+				This is the description of property B.
+			'''
+		}
+	}
+}
