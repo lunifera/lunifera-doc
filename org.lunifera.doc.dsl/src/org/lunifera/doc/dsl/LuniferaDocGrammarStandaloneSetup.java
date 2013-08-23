@@ -11,6 +11,11 @@
 */
 package org.lunifera.doc.dsl;
 
+import org.eclipse.emf.ecore.EPackage;
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
+
+import com.google.inject.Injector;
+
 /**
  * Initialization support for running Xtext languages 
  * without equinox extension registry
@@ -20,5 +25,15 @@ public class LuniferaDocGrammarStandaloneSetup extends LuniferaDocGrammarStandal
 	public static void doSetup() {
 		new LuniferaDocGrammarStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
+
+	@Override
+	public void register(Injector injector) {
+		if (!EPackage.Registry.INSTANCE.containsKey(LuniferaDocPackage.eNS_URI)) {
+			EPackage.Registry.INSTANCE.put(LuniferaDocPackage.eNS_URI,
+					LuniferaDocPackage.eINSTANCE);
+		}
+		super.register(injector);
+	}
+	
 }
 
