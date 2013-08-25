@@ -1,0 +1,8 @@
+GeneralDocument Introduction {
+	include org.lunifera.sample.MyDTODocument as myDTODoc
+	include org.lunifera.sample.AnotherDTODocument as anotherDTODoc
+	
+	'''
+	«h1»Once there was a Pojo named «myDTODoc.^name».«/h1»
+	'''
+}
