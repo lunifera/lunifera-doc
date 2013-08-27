@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
 
-package org.lunifera.doc.dsl.tests.generaldoc
+package org.lunifera.doc.dsl.tests.doclayout
 
 import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
@@ -17,48 +17,30 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider
-import org.lunifera.doc.dsl.luniferadoc.GeneralDocument
-import org.lunifera.doc.dsl.luniferadoc.impl.RichStringImpl
+import org.lunifera.doc.dsl.luniferadoc.DocLayout
+import org.lunifera.doc.dsl.luniferadoc.impl.RichStringH1Impl
+import org.lunifera.doc.dsl.luniferadoc.impl.RichStringLiteralImpl
 
 import static org.junit.Assert.*
 import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
-import org.lunifera.doc.dsl.luniferadoc.RichStringH1
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))
 class ParserTest {
 	
-	@Inject extension ParseHelper<GeneralDocument>
+	@Inject extension ParseHelper<DocLayout>
 	@Inject extension ValidationTestHelper
 	@Inject extension IJvmModelAssociations
 	
 	@Test
 	def void testParsing() {
-		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/GeneralDocument.luniferadoc").parse
+		val dtoLayout = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/DTOLayout.luniferadoc").parse
 		
-		assertEquals("Introduction", testDoc.name)
-		assertEquals(2, testDoc.includes.size)
-		assertEquals("org.lunifera.sample.MyDTODocument", testDoc.includes.get(0).include)
-		assertEquals("myDTODoc", testDoc.includes.get(0).varName)
-		assertEquals(typeof(RichStringImpl), testDoc.content.class)
+		assertEquals("DTOLayout", dtoLayout.name)
 		
-	}
-	
-	/**
-	 * Currently unused but kept as a sample
-	 */
-	@SuppressWarnings("unused")
-	private def String generateTestDoc() {
-		'''
-			GeneralDocument Introduction {
-				include org.lunifera.sample.MyDTODocument as myDTODoc
-				include org.lunifera.sample.AnotherDTODocument as anotherDTODoc
-	
-				«"'''"»
-				«"«"»h1«"»"»Once there was a Pojo named «"«"»myDTODoc.^name«"»"».«"«"»/h1«"»"»
-				«"'''"»
-			}
-		'''
+		val content = dtoLayout.content
+		assertEquals(typeof(RichStringLiteralImpl), dtoLayout.content.expressions.get(0).class)
+		assertEquals(typeof(RichStringH1Impl), dtoLayout.content.expressions.get(1).class)
 	}
 	
 }

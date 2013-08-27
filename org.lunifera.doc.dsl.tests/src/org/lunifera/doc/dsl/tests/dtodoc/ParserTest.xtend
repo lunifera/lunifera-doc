@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
 
-package org.lunifera.doc.dsl.tests.generaldoc
+package org.lunifera.doc.dsl.tests.dtodoc
 
 import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
@@ -17,48 +17,36 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider
-import org.lunifera.doc.dsl.luniferadoc.GeneralDocument
 import org.lunifera.doc.dsl.luniferadoc.impl.RichStringImpl
 
 import static org.junit.Assert.*
 import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
-import org.lunifera.doc.dsl.luniferadoc.RichStringH1
+import org.lunifera.doc.dsl.luniferadoc.DTODocument
+import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))
 class ParserTest {
 	
-	@Inject extension ParseHelper<GeneralDocument>
+	@Inject extension ParseHelper<DTODocument>
 	@Inject extension ValidationTestHelper
 	@Inject extension IJvmModelAssociations
 	
 	@Test
 	def void testParsing() {
-		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/GeneralDocument.luniferadoc").parse
+		val dtoDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/DTODocument.luniferadoc").parse
 		
-		assertEquals("Introduction", testDoc.name)
-		assertEquals(2, testDoc.includes.size)
-		assertEquals("org.lunifera.sample.MyDTODocument", testDoc.includes.get(0).include)
-		assertEquals("myDTODoc", testDoc.includes.get(0).varName)
-		assertEquals(typeof(RichStringImpl), testDoc.content.class)
+		assertEquals("org.lunifera.sample.MyDTO", dtoDoc.dtoClass)
+		assertEquals(2, dtoDoc.details.properties.size)
+		assertEquals("propA", dtoDoc.details.properties.get(0).name)
+		assertEquals(typeof(RichStringImpl), dtoDoc.details.properties.get(0).description.class)
+		assertEquals("propB", dtoDoc.details.properties.get(1).name)
 		
-	}
-	
-	/**
-	 * Currently unused but kept as a sample
-	 */
-	@SuppressWarnings("unused")
-	private def String generateTestDoc() {
-		'''
-			GeneralDocument Introduction {
-				include org.lunifera.sample.MyDTODocument as myDTODoc
-				include org.lunifera.sample.AnotherDTODocument as anotherDTODoc
-	
-				«"'''"»
-				«"«"»h1«"»"»Once there was a Pojo named «"«"»myDTODoc.^name«"»"».«"«"»/h1«"»"»
-				«"'''"»
-			}
-		'''
+		val propADesc = dtoDoc.details.properties.get(0).description
+		val propBDesc = dtoDoc.details.properties.get(1).description
+		
+		assertEquals("This is the description of property A.", (propADesc.expressions.get(0) as RichStringLiteral).value.trim)
+		assertEquals("This is the description of property B.", (propBDesc.expressions.get(0) as RichStringLiteral).value.trim)
 	}
 	
 }
