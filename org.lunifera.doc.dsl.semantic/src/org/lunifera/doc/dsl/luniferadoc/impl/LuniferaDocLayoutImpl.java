@@ -6,39 +6,33 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.xtext.xtype.XImportDeclaration;
-
-import org.lunifera.doc.dsl.luniferadoc.DocLayout;
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.RichString;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Doc Layout</b></em>'.
+ * An implementation of the model object '<em><b>Layout</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocLayoutImpl#getContent <em>Content</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocLayoutImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.DocLayoutImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocLayoutImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocLayoutImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocLayoutImpl#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout {
+public class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl implements LuniferaDocLayout {
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -84,7 +78,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DocLayoutImpl() {
+	protected LuniferaDocLayoutImpl() {
 		super();
 	}
 
@@ -95,7 +89,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LuniferaDocPackage.Literals.DOC_LAYOUT;
+		return LuniferaDocPackage.Literals.LUNIFERA_DOC_LAYOUT;
 	}
 
 	/**
@@ -116,7 +110,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 		RichString oldContent = content;
 		content = newContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DOC_LAYOUT__CONTENT, oldContent, newContent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT, oldContent, newContent);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -131,14 +125,14 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 		if (newContent != content) {
 			NotificationChain msgs = null;
 			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DOC_LAYOUT__CONTENT, null, msgs);
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT, null, msgs);
 			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.DOC_LAYOUT__CONTENT, null, msgs);
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT, null, msgs);
 			msgs = basicSetContent(newContent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DOC_LAYOUT__CONTENT, newContent, newContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -159,7 +153,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.DOC_LAYOUT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__NAME, oldName, name));
 	}
 
 	/**
@@ -169,7 +163,7 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	 */
 	public EList<XImportDeclaration> getImports() {
 		if (imports == null) {
-			imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, LuniferaDocPackage.DOC_LAYOUT__IMPORTS);
+			imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__IMPORTS);
 		}
 		return imports;
 	}
@@ -182,9 +176,9 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
 				return basicSetContent(null, msgs);
-			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -198,11 +192,11 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
 				return getContent();
-			case LuniferaDocPackage.DOC_LAYOUT__NAME:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				return getName();
-			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				return getImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -217,13 +211,13 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
 				setContent((RichString)newValue);
 				return;
-			case LuniferaDocPackage.DOC_LAYOUT__NAME:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				setName((String)newValue);
 				return;
-			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				getImports().clear();
 				getImports().addAll((Collection<? extends XImportDeclaration>)newValue);
 				return;
@@ -239,13 +233,13 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
 				setContent((RichString)null);
 				return;
-			case LuniferaDocPackage.DOC_LAYOUT__NAME:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				getImports().clear();
 				return;
 		}
@@ -260,11 +254,11 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LuniferaDocPackage.DOC_LAYOUT__CONTENT:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
 				return content != null;
-			case LuniferaDocPackage.DOC_LAYOUT__NAME:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case LuniferaDocPackage.DOC_LAYOUT__IMPORTS:
+			case LuniferaDocPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				return imports != null && !imports.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -286,4 +280,4 @@ public class DocLayoutImpl extends LuniferaDocDocumentImpl implements DocLayout 
 		return result.toString();
 	}
 
-} //DocLayoutImpl
+} //LuniferaDocLayoutImpl

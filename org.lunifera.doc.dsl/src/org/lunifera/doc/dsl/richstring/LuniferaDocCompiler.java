@@ -27,7 +27,6 @@ import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
-import org.lunifera.doc.dsl.luniferadoc.DocLayout;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.RichString;
 import org.lunifera.doc.dsl.luniferadoc.RichStringExample;

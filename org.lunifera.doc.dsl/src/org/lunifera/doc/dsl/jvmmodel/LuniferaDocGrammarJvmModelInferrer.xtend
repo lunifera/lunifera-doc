@@ -23,7 +23,7 @@ import org.lunifera.doc.dsl.api.IDocLayout
 import org.lunifera.doc.dsl.api.IMetaPojo
 import org.lunifera.doc.dsl.api.impl.MetaPojo
 import org.lunifera.doc.dsl.luniferadoc.DTODocument
-import org.lunifera.doc.dsl.luniferadoc.DocLayout
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout
 import org.lunifera.doc.dsl.luniferadoc.GeneralDocument
 
 /**
@@ -70,7 +70,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-	def dispatch void infer(DocLayout docLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(LuniferaDocLayout docLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(docLayout.toClass(docLayout.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDocLayout), docLayout, null)

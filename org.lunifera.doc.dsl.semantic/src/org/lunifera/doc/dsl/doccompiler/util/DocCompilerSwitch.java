@@ -4,10 +4,29 @@ package org.lunifera.doc.dsl.doccompiler.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.lunifera.doc.dsl.doccompiler.*;
+import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
+import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
+import org.lunifera.doc.dsl.doccompiler.DocumentStart;
+import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
+import org.lunifera.doc.dsl.doccompiler.ElseStart;
+import org.lunifera.doc.dsl.doccompiler.EndIf;
+import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
+import org.lunifera.doc.dsl.doccompiler.ExampleStart;
+import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
+import org.lunifera.doc.dsl.doccompiler.ForLoopStart;
+import org.lunifera.doc.dsl.doccompiler.H1End;
+import org.lunifera.doc.dsl.doccompiler.H1Start;
+import org.lunifera.doc.dsl.doccompiler.H2End;
+import org.lunifera.doc.dsl.doccompiler.H2Start;
+import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
+import org.lunifera.doc.dsl.doccompiler.Line;
+import org.lunifera.doc.dsl.doccompiler.LineBreak;
+import org.lunifera.doc.dsl.doccompiler.LinePart;
+import org.lunifera.doc.dsl.doccompiler.Literal;
+import org.lunifera.doc.dsl.doccompiler.Markup;
+import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
+import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 
 /**
  * <!-- begin-user-doc -->

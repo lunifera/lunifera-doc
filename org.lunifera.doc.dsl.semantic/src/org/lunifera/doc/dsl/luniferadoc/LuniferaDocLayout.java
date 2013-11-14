@@ -3,48 +3,45 @@
 package org.lunifera.doc.dsl.luniferadoc;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.xtype.XImportDeclaration;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Doc Layout</b></em>'.
+ * A representation of the model object '<em><b>Layout</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getContent <em>Content</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout()
+ * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getLuniferaDocLayout()
  * @model
  * @generated
  */
-public interface DocLayout extends LuniferaDocDocument {
+public interface LuniferaDocLayout extends LuniferaDocDocument {
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Content</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content</em>' containment reference.
 	 * @see #setContent(RichString)
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout_Content()
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getLuniferaDocLayout_Content()
 	 * @model containment="true"
 	 * @generated
 	 */
 	RichString getContent();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getContent <em>Content</em>}' containment reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout#getContent <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Content</em>' containment reference.
@@ -63,14 +60,14 @@ public interface DocLayout extends LuniferaDocDocument {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout_Name()
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getLuniferaDocLayout_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.DocLayout#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -89,10 +86,10 @@ public interface DocLayout extends LuniferaDocDocument {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Imports</em>' containment reference list.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocLayout_Imports()
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getLuniferaDocLayout_Imports()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<XImportDeclaration> getImports();
 
-} // DocLayout
+} // LuniferaDocLayout

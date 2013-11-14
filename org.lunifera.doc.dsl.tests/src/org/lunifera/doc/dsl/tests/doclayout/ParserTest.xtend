@@ -17,7 +17,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider
-import org.lunifera.doc.dsl.luniferadoc.DocLayout
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout
 import org.lunifera.doc.dsl.luniferadoc.impl.RichStringH1Impl
 import org.lunifera.doc.dsl.luniferadoc.impl.RichStringLiteralImpl
 
@@ -28,7 +28,7 @@ import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))
 class ParserTest {
 	
-	@Inject extension ParseHelper<DocLayout>
+	@Inject extension ParseHelper<LuniferaDocLayout>
 	@Inject extension ValidationTestHelper
 	@Inject extension IJvmModelAssociations
 	

@@ -3,7 +3,6 @@
 package org.lunifera.doc.dsl.doccompiler;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.lunifera.doc.dsl.luniferadoc.RichStringIf;
 
 /**

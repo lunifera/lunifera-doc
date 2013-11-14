@@ -15,7 +15,7 @@ LuniferaDocDocument returns doc::LuniferaDocDocument:
 	DocLayout | GeneralDocument | DTODocument
 ;
 
-DocLayout returns doc::DocLayout:
+DocLayout returns doc::LuniferaDocLayout:
 	'DocLayout' name=ID '{'
 	imports+=XImportDeclaration*
 	content=RichString

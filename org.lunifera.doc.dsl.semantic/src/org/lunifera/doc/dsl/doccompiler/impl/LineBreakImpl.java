@@ -3,7 +3,6 @@
 package org.lunifera.doc.dsl.doccompiler.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 

@@ -3,7 +3,6 @@
 package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.RichStringExample;
 

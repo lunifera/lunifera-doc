@@ -4,7 +4,6 @@ package org.lunifera.doc.dsl.luniferadoc;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>General Document</b></em>'.
@@ -21,14 +20,13 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface GeneralDocument extends DocLayout {
-
+public interface GeneralDocument extends LuniferaDocLayout {
 	/**
 	 * Returns the value of the '<em><b>Includes</b></em>' containment reference list.
 	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Includes</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Includes</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -38,4 +36,5 @@ public interface GeneralDocument extends DocLayout {
 	 * @generated
 	 */
 	EList<DocumentInclude> getIncludes();
+
 } // GeneralDocument

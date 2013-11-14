@@ -2,7 +2,6 @@
  */
 package org.lunifera.doc.dsl.luniferadoc;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +52,7 @@ public interface DTODocument extends LuniferaDocDocument {
 	 * Returns the value of the '<em><b>Header</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Header</em>' reference isn't clear,
+	 * If the meaning of the '<em>Header</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -79,7 +78,7 @@ public interface DTODocument extends LuniferaDocDocument {
 	 * Returns the value of the '<em><b>Details</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Details</em>' reference isn't clear,
+	 * If the meaning of the '<em>Details</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

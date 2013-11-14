@@ -4,24 +4,24 @@ package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
-import org.lunifera.doc.dsl.luniferadoc.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.RichStringURL;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rich String H2</b></em>'.
+ * An implementation of the model object '<em><b>Rich String URL</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class RichStringH2Impl extends RichStringMarkupImpl implements RichStringH2 {
+public class RichStringURLImpl extends RichStringMarkupImpl implements RichStringURL {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RichStringH2Impl() {
+	protected RichStringURLImpl() {
 		super();
 	}
 
@@ -32,7 +32,7 @@ public class RichStringH2Impl extends RichStringMarkupImpl implements RichString
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LuniferaDocPackage.Literals.RICH_STRING_H2;
+		return LuniferaDocPackage.Literals.RICH_STRING_URL;
 	}
 
-} //RichStringH2Impl
+} //RichStringURLImpl

@@ -4,12 +4,9 @@ package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.lunifera.doc.dsl.luniferadoc.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.DTODocument;
 import org.lunifera.doc.dsl.luniferadoc.DTOHeader;

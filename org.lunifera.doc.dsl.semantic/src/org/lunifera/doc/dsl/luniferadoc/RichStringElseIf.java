@@ -3,7 +3,6 @@
 package org.lunifera.doc.dsl.luniferadoc;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.xbase.XExpression;
 
 /**

@@ -6,24 +6,19 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.xtext.xbase.XbasePackage;
-
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
-
 import org.eclipse.xtext.xtype.XtypePackage;
-
 import org.lunifera.doc.dsl.luniferadoc.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.DTODocument;
 import org.lunifera.doc.dsl.luniferadoc.DTOHeader;
 import org.lunifera.doc.dsl.luniferadoc.DTOProperty;
-import org.lunifera.doc.dsl.luniferadoc.DocLayout;
 import org.lunifera.doc.dsl.luniferadoc.DocumentInclude;
 import org.lunifera.doc.dsl.luniferadoc.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocFactory;
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.RichString;
 import org.lunifera.doc.dsl.luniferadoc.RichStringElseIf;
@@ -34,6 +29,7 @@ import org.lunifera.doc.dsl.luniferadoc.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.RichStringURL;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +50,7 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass docLayoutEClass = null;
+	private EClass luniferaDocLayoutEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,6 +65,34 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * @generated
 	 */
 	private EClass documentIncludeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dtoDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dtoHeaderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dtoDetailsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dtoPropertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,35 +155,14 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass richStringURLEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass richStringMarkupEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dtoDocumentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dtoHeaderEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dtoDetailsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dtoPropertyEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -241,8 +244,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDocLayout() {
-		return docLayoutEClass;
+	public EClass getLuniferaDocLayout() {
+		return luniferaDocLayoutEClass;
 	}
 
 	/**
@@ -250,8 +253,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocLayout_Content() {
-		return (EReference)docLayoutEClass.getEStructuralFeatures().get(0);
+	public EReference getLuniferaDocLayout_Content() {
+		return (EReference)luniferaDocLayoutEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -259,8 +262,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocLayout_Name() {
-		return (EAttribute)docLayoutEClass.getEStructuralFeatures().get(1);
+	public EAttribute getLuniferaDocLayout_Name() {
+		return (EAttribute)luniferaDocLayoutEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -268,8 +271,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocLayout_Imports() {
-		return (EReference)docLayoutEClass.getEStructuralFeatures().get(2);
+	public EReference getLuniferaDocLayout_Imports() {
+		return (EReference)luniferaDocLayoutEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -315,6 +318,105 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 */
 	public EAttribute getDocumentInclude_VarName() {
 		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDTODocument() {
+		return dtoDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDTODocument_DtoClass() {
+		return (EAttribute)dtoDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTODocument_Header() {
+		return (EReference)dtoDocumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTODocument_Details() {
+		return (EReference)dtoDocumentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDTOHeader() {
+		return dtoHeaderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTOHeader_Content() {
+		return (EReference)dtoHeaderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDTODetails() {
+		return dtoDetailsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTODetails_Properties() {
+		return (EReference)dtoDetailsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDTOProperty() {
+		return dtoPropertyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDTOProperty_Name() {
+		return (EAttribute)dtoPropertyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTOProperty_Description() {
+		return (EReference)dtoPropertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -475,6 +577,15 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRichStringURL() {
+		return richStringURLEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRichStringMarkup() {
 		return richStringMarkupEClass;
 	}
@@ -486,105 +597,6 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 */
 	public EReference getRichStringMarkup_Expression() {
 		return (EReference)richStringMarkupEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDTODocument() {
-		return dtoDocumentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDTODocument_DtoClass() {
-		return (EAttribute)dtoDocumentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDTODocument_Header() {
-		return (EReference)dtoDocumentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDTODocument_Details() {
-		return (EReference)dtoDocumentEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDTOHeader() {
-		return dtoHeaderEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDTOHeader_Content() {
-		return (EReference)dtoHeaderEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDTODetails() {
-		return dtoDetailsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDTODetails_Properties() {
-		return (EReference)dtoDetailsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDTOProperty() {
-		return dtoPropertyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDTOProperty_Name() {
-		return (EAttribute)dtoPropertyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDTOProperty_Description() {
-		return (EReference)dtoPropertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -617,10 +629,10 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		// Create classes and their features
 		luniferaDocDocumentEClass = createEClass(LUNIFERA_DOC_DOCUMENT);
 
-		docLayoutEClass = createEClass(DOC_LAYOUT);
-		createEReference(docLayoutEClass, DOC_LAYOUT__CONTENT);
-		createEAttribute(docLayoutEClass, DOC_LAYOUT__NAME);
-		createEReference(docLayoutEClass, DOC_LAYOUT__IMPORTS);
+		luniferaDocLayoutEClass = createEClass(LUNIFERA_DOC_LAYOUT);
+		createEReference(luniferaDocLayoutEClass, LUNIFERA_DOC_LAYOUT__CONTENT);
+		createEAttribute(luniferaDocLayoutEClass, LUNIFERA_DOC_LAYOUT__NAME);
+		createEReference(luniferaDocLayoutEClass, LUNIFERA_DOC_LAYOUT__IMPORTS);
 
 		generalDocumentEClass = createEClass(GENERAL_DOCUMENT);
 		createEReference(generalDocumentEClass, GENERAL_DOCUMENT__INCLUDES);
@@ -628,6 +640,21 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		documentIncludeEClass = createEClass(DOCUMENT_INCLUDE);
 		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__INCLUDE);
 		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__VAR_NAME);
+
+		dtoDocumentEClass = createEClass(DTO_DOCUMENT);
+		createEAttribute(dtoDocumentEClass, DTO_DOCUMENT__DTO_CLASS);
+		createEReference(dtoDocumentEClass, DTO_DOCUMENT__HEADER);
+		createEReference(dtoDocumentEClass, DTO_DOCUMENT__DETAILS);
+
+		dtoHeaderEClass = createEClass(DTO_HEADER);
+		createEReference(dtoHeaderEClass, DTO_HEADER__CONTENT);
+
+		dtoDetailsEClass = createEClass(DTO_DETAILS);
+		createEReference(dtoDetailsEClass, DTO_DETAILS__PROPERTIES);
+
+		dtoPropertyEClass = createEClass(DTO_PROPERTY);
+		createEAttribute(dtoPropertyEClass, DTO_PROPERTY__NAME);
+		createEReference(dtoPropertyEClass, DTO_PROPERTY__DESCRIPTION);
 
 		richStringElseIfEClass = createEClass(RICH_STRING_ELSE_IF);
 		createEReference(richStringElseIfEClass, RICH_STRING_ELSE_IF__IF);
@@ -654,23 +681,10 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 
 		richStringH2EClass = createEClass(RICH_STRING_H2);
 
+		richStringURLEClass = createEClass(RICH_STRING_URL);
+
 		richStringMarkupEClass = createEClass(RICH_STRING_MARKUP);
 		createEReference(richStringMarkupEClass, RICH_STRING_MARKUP__EXPRESSION);
-
-		dtoDocumentEClass = createEClass(DTO_DOCUMENT);
-		createEAttribute(dtoDocumentEClass, DTO_DOCUMENT__DTO_CLASS);
-		createEReference(dtoDocumentEClass, DTO_DOCUMENT__HEADER);
-		createEReference(dtoDocumentEClass, DTO_DOCUMENT__DETAILS);
-
-		dtoHeaderEClass = createEClass(DTO_HEADER);
-		createEReference(dtoHeaderEClass, DTO_HEADER__CONTENT);
-
-		dtoDetailsEClass = createEClass(DTO_DETAILS);
-		createEReference(dtoDetailsEClass, DTO_DETAILS__PROPERTIES);
-
-		dtoPropertyEClass = createEClass(DTO_PROPERTY);
-		createEAttribute(dtoPropertyEClass, DTO_PROPERTY__NAME);
-		createEReference(dtoPropertyEClass, DTO_PROPERTY__DESCRIPTION);
 	}
 
 	/**
@@ -705,8 +719,9 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		docLayoutEClass.getESuperTypes().add(this.getLuniferaDocDocument());
-		generalDocumentEClass.getESuperTypes().add(this.getDocLayout());
+		luniferaDocLayoutEClass.getESuperTypes().add(this.getLuniferaDocDocument());
+		generalDocumentEClass.getESuperTypes().add(this.getLuniferaDocLayout());
+		dtoDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
 		richStringEClass.getESuperTypes().add(theXbasePackage.getXBlockExpression());
 		richStringLiteralEClass.getESuperTypes().add(theXbasePackage.getXStringLiteral());
 		richStringForLoopEClass.getESuperTypes().add(theXbasePackage.getXForLoopExpression());
@@ -714,16 +729,16 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		richStringExampleEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringH1EClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringH2EClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringURLEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringMarkupEClass.getESuperTypes().add(theXbasePackage.getXExpression());
-		dtoDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(luniferaDocDocumentEClass, LuniferaDocDocument.class, "LuniferaDocDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(docLayoutEClass, DocLayout.class, "DocLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDocLayout_Content(), this.getRichString(), null, "content", null, 0, 1, DocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocLayout_Name(), ecorePackage.getEString(), "name", null, 0, 1, DocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocLayout_Imports(), theXtypePackage.getXImportDeclaration(), null, "imports", null, 0, -1, DocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(luniferaDocLayoutEClass, LuniferaDocLayout.class, "LuniferaDocLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLuniferaDocLayout_Content(), this.getRichString(), null, "content", null, 0, 1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLuniferaDocLayout_Name(), ecorePackage.getEString(), "name", null, 0, 1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLuniferaDocLayout_Imports(), theXtypePackage.getXImportDeclaration(), null, "imports", null, 0, -1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalDocumentEClass, GeneralDocument.class, "GeneralDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGeneralDocument_Includes(), this.getDocumentInclude(), null, "includes", null, 0, -1, GeneralDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -731,6 +746,21 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		initEClass(documentIncludeEClass, DocumentInclude.class, "DocumentInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentInclude_Include(), ecorePackage.getEString(), "include", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dtoDocumentEClass, DTODocument.class, "DTODocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDTODocument_DtoClass(), ecorePackage.getEString(), "dtoClass", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDTODocument_Header(), this.getDTOHeader(), null, "header", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDTODocument_Details(), this.getDTODetails(), null, "details", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dtoHeaderEClass, DTOHeader.class, "DTOHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDTOHeader_Content(), this.getRichString(), null, "content", null, 0, 1, DTOHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dtoDetailsEClass, DTODetails.class, "DTODetails", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDTODetails_Properties(), this.getDTOProperty(), null, "properties", null, 0, -1, DTODetails.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dtoPropertyEClass, DTOProperty.class, "DTOProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDTOProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, DTOProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDTOProperty_Description(), this.getRichString(), null, "description", null, 0, 1, DTOProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRichStringElseIf_If(), theXbasePackage.getXExpression(), null, "if", null, 0, 1, RichStringElseIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -757,23 +787,10 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 
 		initEClass(richStringH2EClass, RichStringH2.class, "RichStringH2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(richStringURLEClass, RichStringURL.class, "RichStringURL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(richStringMarkupEClass, RichStringMarkup.class, "RichStringMarkup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRichStringMarkup_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, RichStringMarkup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dtoDocumentEClass, DTODocument.class, "DTODocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDTODocument_DtoClass(), ecorePackage.getEString(), "dtoClass", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDTODocument_Header(), this.getDTOHeader(), null, "header", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDTODocument_Details(), this.getDTODetails(), null, "details", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dtoHeaderEClass, DTOHeader.class, "DTOHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDTOHeader_Content(), this.getRichString(), null, "content", null, 0, 1, DTOHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dtoDetailsEClass, DTODetails.class, "DTODetails", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDTODetails_Properties(), this.getDTOProperty(), null, "properties", null, 0, -1, DTODetails.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dtoPropertyEClass, DTOProperty.class, "DTOProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDTOProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, DTOProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDTOProperty_Description(), this.getRichString(), null, "description", null, 0, 1, DTOProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

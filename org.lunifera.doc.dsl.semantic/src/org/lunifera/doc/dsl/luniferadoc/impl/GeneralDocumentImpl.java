@@ -3,12 +3,11 @@
 package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.lunifera.doc.dsl.luniferadoc.DocumentInclude;
@@ -28,7 +27,7 @@ import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
  *
  * @generated
  */
-public class GeneralDocumentImpl extends DocLayoutImpl implements GeneralDocument {
+public class GeneralDocumentImpl extends LuniferaDocLayoutImpl implements GeneralDocument {
 	/**
 	 * The cached value of the '{@link #getIncludes() <em>Includes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
