@@ -1,12 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2013 Lunifera GmbH, Petra Bierleutgeb and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Work based org.eclipse.xtend.core.richstring.TextLine
- *******************************************************************************/
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ ******************************************************************************/
 
 package org.lunifera.doc.dsl.jvmmodel
 
@@ -20,11 +18,17 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.lunifera.doc.dsl.api.IDocLayout
-import org.lunifera.doc.dsl.api.IMetaPojo
-import org.lunifera.doc.dsl.api.impl.MetaPojo
+import org.lunifera.doc.dsl.api.document.IMetaBPMProcess
+import org.lunifera.doc.dsl.api.document.IMetaBPMTask
+import org.lunifera.doc.dsl.api.document.IMetaDTO
+import org.lunifera.doc.dsl.api.document.IMetaEntity
+import org.lunifera.doc.dsl.api.document.IMetaPojo
+import org.lunifera.doc.dsl.api.document.IMetaUI
+import org.lunifera.doc.dsl.api.document.IMetaVaaclipseView
 import org.lunifera.doc.dsl.luniferadoc.DTODocument
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout
+import org.lunifera.doc.dsl.luniferadoc.DocType
 import org.lunifera.doc.dsl.luniferadoc.GeneralDocument
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -96,7 +100,14 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				documentation = generalDoc.documentation
 				
 				for(inc : generalDoc.includes) {
-					members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaPojo), generalDoc, null))
+					switch inc.incType {
+					 case DocType.ENTITY: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaEntity), generalDoc, null))
+					 case DocType.DTO: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaDTO), generalDoc, null))
+					 case DocType.BPM_PROCESS: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaBPMProcess), generalDoc, null))
+					 case DocType.BPM_TASK: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaBPMTask), generalDoc, null))
+					 case DocType.VAACLIPSE_VIEW: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaVaaclipseView), generalDoc, null))
+					 case DocType.UI: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaUI), generalDoc, null))
+					}
 				}
 				
 				members += generalDoc.toConstructor[

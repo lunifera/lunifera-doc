@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2013 Lunifera GmbH, Petra Bierleutgeb and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Work based on org.eclipse.xtend.core.richstring.IRichStringPartAcceptor
- *******************************************************************************/
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Based on work by the Xtend team (xtend-lang.org)
+ ******************************************************************************/
+
 package org.lunifera.doc.dsl.richstring;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;

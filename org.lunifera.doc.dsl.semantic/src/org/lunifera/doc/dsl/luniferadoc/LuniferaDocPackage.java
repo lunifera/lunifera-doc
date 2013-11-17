@@ -4,6 +4,7 @@ package org.lunifera.doc.dsl.luniferadoc;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.xbase.XbasePackage;
@@ -205,13 +206,22 @@ public interface LuniferaDocPackage extends EPackage {
 	int DOCUMENT_INCLUDE__VAR_NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Inc Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_INCLUDE__INC_TYPE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Document Include</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_INCLUDE_FEATURE_COUNT = 2;
+	int DOCUMENT_INCLUDE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DTODocumentImpl <em>DTO Document</em>}' class.
@@ -713,6 +723,16 @@ public interface LuniferaDocPackage extends EPackage {
 	 */
 	int RICH_STRING_URL_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.DocType <em>Doc Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocType
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDocType()
+	 * @generated
+	 */
+	int DOC_TYPE = 18;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}'.
@@ -819,6 +839,17 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDocumentInclude_VarName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getIncType <em>Inc Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Inc Type</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getIncType()
+	 * @see #getDocumentInclude()
+	 * @generated
+	 */
+	EAttribute getDocumentInclude_IncType();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.DTODocument <em>DTO Document</em>}'.
@@ -1148,6 +1179,16 @@ public interface LuniferaDocPackage extends EPackage {
 	EReference getRichStringMarkup_Expression();
 
 	/**
+	 * Returns the meta object for enum '{@link org.lunifera.doc.dsl.luniferadoc.DocType <em>Doc Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Doc Type</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocType
+	 * @generated
+	 */
+	EEnum getDocType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1256,6 +1297,14 @@ public interface LuniferaDocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOCUMENT_INCLUDE__VAR_NAME = eINSTANCE.getDocumentInclude_VarName();
+
+		/**
+		 * The meta object literal for the '<em><b>Inc Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENT_INCLUDE__INC_TYPE = eINSTANCE.getDocumentInclude_IncType();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DTODocumentImpl <em>DTO Document</em>}' class.
@@ -1532,6 +1581,16 @@ public interface LuniferaDocPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_MARKUP__EXPRESSION = eINSTANCE.getRichStringMarkup_Expression();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.DocType <em>Doc Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.DocType
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getDocType()
+		 * @generated
+		 */
+		EEnum DOC_TYPE = eINSTANCE.getDocType();
 
 	}
 

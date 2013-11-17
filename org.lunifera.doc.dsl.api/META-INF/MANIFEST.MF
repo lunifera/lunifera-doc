@@ -6,4 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Lunifera
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.lunifera.doc.dsl.api,
- org.lunifera.doc.dsl.api.impl
+ org.lunifera.doc.dsl.api.document,
+ org.lunifera.doc.dsl.api.impl.document,
+ org.lunifera.doc.dsl.api.layout

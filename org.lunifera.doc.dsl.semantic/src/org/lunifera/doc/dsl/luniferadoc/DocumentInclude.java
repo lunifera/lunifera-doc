@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getInclude <em>Include</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getVarName <em>Var Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getIncType <em>Inc Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,34 @@ public interface DocumentInclude extends EObject {
 	 * @generated
 	 */
 	void setVarName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Inc Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.lunifera.doc.dsl.luniferadoc.DocType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inc Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inc Type</em>' attribute.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocType
+	 * @see #setIncType(DocType)
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#getDocumentInclude_IncType()
+	 * @model required="true"
+	 * @generated
+	 */
+	DocType getIncType();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getIncType <em>Inc Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Inc Type</em>' attribute.
+	 * @see org.lunifera.doc.dsl.luniferadoc.DocType
+	 * @see #getIncType()
+	 * @generated
+	 */
+	void setIncType(DocType value);
 
 } // DocumentInclude

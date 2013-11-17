@@ -4,6 +4,7 @@ package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -14,6 +15,7 @@ import org.lunifera.doc.dsl.luniferadoc.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.DTODocument;
 import org.lunifera.doc.dsl.luniferadoc.DTOHeader;
 import org.lunifera.doc.dsl.luniferadoc.DTOProperty;
+import org.lunifera.doc.dsl.luniferadoc.DocType;
 import org.lunifera.doc.dsl.luniferadoc.DocumentInclude;
 import org.lunifera.doc.dsl.luniferadoc.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
@@ -163,6 +165,13 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * @generated
 	 */
 	private EClass richStringMarkupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum docTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -318,6 +327,15 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 */
 	public EAttribute getDocumentInclude_VarName() {
 		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocumentInclude_IncType() {
+		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -604,6 +622,15 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getDocType() {
+		return docTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LuniferaDocFactory getLuniferaDocFactory() {
 		return (LuniferaDocFactory)getEFactoryInstance();
 	}
@@ -640,6 +667,7 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		documentIncludeEClass = createEClass(DOCUMENT_INCLUDE);
 		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__INCLUDE);
 		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__VAR_NAME);
+		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__INC_TYPE);
 
 		dtoDocumentEClass = createEClass(DTO_DOCUMENT);
 		createEAttribute(dtoDocumentEClass, DTO_DOCUMENT__DTO_CLASS);
@@ -685,6 +713,9 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 
 		richStringMarkupEClass = createEClass(RICH_STRING_MARKUP);
 		createEReference(richStringMarkupEClass, RICH_STRING_MARKUP__EXPRESSION);
+
+		// Create enums
+		docTypeEEnum = createEEnum(DOC_TYPE);
 	}
 
 	/**
@@ -746,6 +777,7 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		initEClass(documentIncludeEClass, DocumentInclude.class, "DocumentInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentInclude_Include(), ecorePackage.getEString(), "include", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentInclude_IncType(), this.getDocType(), "incType", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dtoDocumentEClass, DTODocument.class, "DTODocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDTODocument_DtoClass(), ecorePackage.getEString(), "dtoClass", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -791,6 +823,15 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 
 		initEClass(richStringMarkupEClass, RichStringMarkup.class, "RichStringMarkup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRichStringMarkup_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, RichStringMarkup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(docTypeEEnum, DocType.class, "DocType");
+		addEEnumLiteral(docTypeEEnum, DocType.ENTITY);
+		addEEnumLiteral(docTypeEEnum, DocType.DTO);
+		addEEnumLiteral(docTypeEEnum, DocType.BPM_PROCESS);
+		addEEnumLiteral(docTypeEEnum, DocType.BPM_TASK);
+		addEEnumLiteral(docTypeEEnum, DocType.VAACLIPSE_VIEW);
+		addEEnumLiteral(docTypeEEnum, DocType.UI);
 
 		// Create resource
 		createResource(eNS_URI);
