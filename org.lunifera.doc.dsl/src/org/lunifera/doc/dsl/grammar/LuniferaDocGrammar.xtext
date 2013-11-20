@@ -15,8 +15,8 @@ import "http://www.lunifera.org/luniferadoc/richstring" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
 LuniferaDocDocument returns luniferadoc::LuniferaDocDocument:
-	DocLayout | GeneralDocument | DTODocument
-;
+	DocLayout | EntityLayout | DTOLayout | BPMProcessLayout | BPMTaskLayout | VaaclipseViewLayout | UILayout |
+	GeneralDocument | EntityDocument | DTODocument | BPMProcessDocument | BPMTaskDocument | VaaclipseViewDocument | UIDocument;
 
 DocumentInclude returns luniferadoc::DocumentInclude:
 	'include' include=QualifiedName 'as' varName=ID 'type' incType=IncludeType;
@@ -25,11 +25,51 @@ enum IncludeType returns luniferadoc::DocType:
 	ENTITY = 'ENTITY' | DTO = 'DTO' | BPM_PROCESS = 'BPM_PROCESS' | BPM_TASK = 'BPM_TASK' | 
 	VAACLIPSE_VIEW = 'VAACLIPSE_VIEW' | UI = 'UI';
 
+// LAYOUTS
+
 DocLayout returns layout::LuniferaDocLayout:
 	'DocLayout' name=ID '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
+	
+EntityLayout returns layout::EntityLayout:
+	'EntityLayout' name=ID '{'
+	imports+=XImportDeclaration*
+	content=RichString
+	'}';
+	
+DTOLayout returns layout::DTOLayout:
+	'DTOLayout' name=ID '{'
+	imports+=XImportDeclaration*
+	content=RichString
+	'}';
+	
+BPMProcessLayout returns layout::BPMProcessLayout:
+	'BPMProcessLayout' name=ID '{'
+	imports+=XImportDeclaration*
+	content=RichString
+	'}';
+	
+BPMTaskLayout returns layout::BPMTaskLayout:
+	'BPMTaskLayout' name=ID '{'
+	imports+=XImportDeclaration*
+	content=RichString
+	'}';
+	
+VaaclipseViewLayout returns layout::VaaclipseViewLayout:
+	'VaaclipseViewLayout' name=ID '{'
+	imports+=XImportDeclaration*
+	content=RichString
+	'}';
+	
+UILayout returns layout::UILayout:
+	'UILayout' name=ID '{'
+	imports+=XImportDeclaration*
+	content=RichString
+	'}';
+	
+// DOCUMENTS
 	
 GeneralDocument returns document::GeneralDocument:
 	'GeneralDocument' name=ID '{'
@@ -37,6 +77,9 @@ GeneralDocument returns document::GeneralDocument:
 	includes+=DocumentInclude*
 	content=RichString
 	'}';
+	
+EntityDocument returns document::EntityDocument:
+	'EntityDocument';
 	
 DTODocument returns document::DTODocument:
 	'DTODocument' dtoClass=QualifiedName '{'
@@ -53,6 +96,18 @@ DTODetails returns document::DTODetails:
 DTOProperty returns document::DTOProperty:
 	{document::DTOProperty} 'name' name=ID
 	'description' '{' description=RichString '}';
+
+BPMProcessDocument returns document::BPMProcessDocument:
+	'BPMProcessDocument';
+	
+BPMTaskDocument returns document::BPMTaskDocument:
+	'BPMTaskDocument';
+
+VaaclipseViewDocument returns document::VaaclipseViewDocument:
+	'VaaclipseViewDocument';
+	
+UIDocument returns document::UIDocument:
+	'UIDocument';
 
 // RichString
 

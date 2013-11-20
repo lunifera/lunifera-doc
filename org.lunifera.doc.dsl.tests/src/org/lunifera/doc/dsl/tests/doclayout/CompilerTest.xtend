@@ -34,8 +34,8 @@ class CompilerTest {
 			import java.util.List;
 			import org.eclipse.xtend2.lib.StringConcatenation;
 			import org.lunifera.doc.dsl.api.IDocLayout;
-			import org.lunifera.doc.dsl.api.IMetaPojo;
-			import org.lunifera.doc.dsl.api.IMetaPojoProperty;
+			import org.lunifera.doc.dsl.api.document.IMetaPojo;
+			import org.lunifera.doc.dsl.api.document.IMetaPojoProperty;
 			
 			@SuppressWarnings("all")
 			public class DTOLayout implements IDocLayout {

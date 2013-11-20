@@ -34,7 +34,7 @@ class CompilerTest {
 			package org.lunifera.sample;
 			
 			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.IMetaPojo;
+			import org.lunifera.doc.dsl.api.document.IMetaPojo;
 			
 			@SuppressWarnings("all")
 			public class MyDTODocument implements IMetaPojo {
