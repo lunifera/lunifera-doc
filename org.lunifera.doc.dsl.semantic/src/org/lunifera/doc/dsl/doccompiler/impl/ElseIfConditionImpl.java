@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.luniferadoc.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 
 /**
  * <!-- begin-user-doc -->

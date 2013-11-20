@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
 import org.lunifera.doc.dsl.doccompiler.ExampleStart;
-import org.lunifera.doc.dsl.luniferadoc.RichStringExample;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 
 /**
  * <!-- begin-user-doc -->

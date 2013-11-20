@@ -17,7 +17,7 @@ import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
 import org.lunifera.doc.dsl.doccompiler.ElseStart;
 import org.lunifera.doc.dsl.doccompiler.EndIf;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.luniferadoc.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 
 /**
  * <!-- begin-user-doc -->

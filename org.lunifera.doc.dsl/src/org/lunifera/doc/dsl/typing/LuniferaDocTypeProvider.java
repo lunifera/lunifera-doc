@@ -19,12 +19,12 @@ import org.eclipse.xtext.xbase.XForLoopExpression;
 import org.eclipse.xtext.xbase.annotations.typing.XbaseWithAnnotationsTypeProvider;
 import org.eclipse.xtext.xbase.controlflow.IEarlyExitComputer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
-import org.lunifera.doc.dsl.luniferadoc.RichString;
-import org.lunifera.doc.dsl.luniferadoc.RichStringElseIf;
-import org.lunifera.doc.dsl.luniferadoc.RichStringForLoop;
-import org.lunifera.doc.dsl.luniferadoc.RichStringIf;
-import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -111,7 +111,7 @@ public class LuniferaDocTypeProvider extends XbaseWithAnnotationsTypeProvider {
 
 	protected JvmTypeReference _expectedType(RichStringIf container,
 			EReference reference, int index, boolean rawType) {
-		if (reference == LuniferaDocPackage.Literals.RICH_STRING_IF__IF) {
+		if (reference == RichstringPackage.Literals.RICH_STRING_IF__IF) {
 			return getTypeReferences().getTypeForName(Boolean.TYPE, container);
 		}
 		return getTypeReferences()
@@ -120,7 +120,7 @@ public class LuniferaDocTypeProvider extends XbaseWithAnnotationsTypeProvider {
 
 	protected JvmTypeReference _expectedType(RichStringElseIf container,
 			EReference reference, int index, boolean rawType) {
-		if (reference == LuniferaDocPackage.Literals.RICH_STRING_ELSE_IF__IF) {
+		if (reference == RichstringPackage.Literals.RICH_STRING_ELSE_IF__IF) {
 			return getTypeReferences().getTypeForName(Boolean.TYPE, container);
 		}
 		return getTypeReferences()
@@ -129,9 +129,9 @@ public class LuniferaDocTypeProvider extends XbaseWithAnnotationsTypeProvider {
 
 	protected JvmTypeReference _expectedType(RichStringForLoop expr,
 			EReference reference, int index, boolean rawType) {
-		if (reference == LuniferaDocPackage.Literals.RICH_STRING_FOR_LOOP__BEFORE
-				|| reference == LuniferaDocPackage.Literals.RICH_STRING_FOR_LOOP__SEPARATOR
-				|| reference == LuniferaDocPackage.Literals.RICH_STRING_FOR_LOOP__AFTER)
+		if (reference == RichstringPackage.Literals.RICH_STRING_FOR_LOOP__BEFORE
+				|| reference == RichstringPackage.Literals.RICH_STRING_FOR_LOOP__SEPARATOR
+				|| reference == RichstringPackage.Literals.RICH_STRING_FOR_LOOP__AFTER)
 			return getTypeReferences().getTypeForName(Object.class, expr);
 		return _expectedType((XForLoopExpression) expr, reference, index,
 				rawType);

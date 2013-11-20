@@ -13,8 +13,8 @@ package org.lunifera.doc.dsl.validation
 
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.xbase.XExpression
-import org.lunifera.doc.dsl.luniferadoc.RichString
-import org.lunifera.doc.dsl.luniferadoc.RichStringForLoop
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop
 
 //import org.eclipse.xtext.validation.Check
 /**

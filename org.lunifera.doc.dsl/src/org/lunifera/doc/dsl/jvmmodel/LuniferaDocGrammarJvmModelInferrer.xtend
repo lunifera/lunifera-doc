@@ -25,10 +25,10 @@ import org.lunifera.doc.dsl.api.document.IMetaEntity
 import org.lunifera.doc.dsl.api.document.IMetaPojo
 import org.lunifera.doc.dsl.api.document.IMetaUI
 import org.lunifera.doc.dsl.api.document.IMetaVaaclipseView
-import org.lunifera.doc.dsl.luniferadoc.DTODocument
 import org.lunifera.doc.dsl.luniferadoc.DocType
-import org.lunifera.doc.dsl.luniferadoc.GeneralDocument
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout
+import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
+import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
+import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -74,14 +74,14 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-	def dispatch void infer(LuniferaDocLayout docLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		acceptor.accept(docLayout.toClass(docLayout.name)).initializeLater(
+	def dispatch void infer(DTOLayout dtoLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(dtoLayout.toClass(dtoLayout.name)).initializeLater(
 			[
-				superTypes += typeReference.getTypeForName(typeof(IDocLayout), docLayout, null)
-				documentation = docLayout.documentation
-				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), docLayout, null))
-				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), docLayout, null))
-				val richString = docLayout.content
+				superTypes += typeReference.getTypeForName(typeof(IDocLayout), dtoLayout, null)
+				documentation = dtoLayout.documentation
+				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), dtoLayout, null))
+				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), dtoLayout, null))
+				val richString = dtoLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
 				operation.setSimpleName("serialize")

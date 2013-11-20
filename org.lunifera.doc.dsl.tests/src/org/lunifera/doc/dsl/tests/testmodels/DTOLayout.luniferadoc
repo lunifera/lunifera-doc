@@ -1,4 +1,4 @@
-DocLayout DTOLayout {
+DTOLayout DefaultDTOLayout {
 	
 	'''
 	Some text before the first headline.

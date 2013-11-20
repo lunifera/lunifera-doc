@@ -24,12 +24,12 @@ import org.eclipse.xtext.xbase.typesystem.computation.ITypeComputationState;
 import org.eclipse.xtext.xbase.typesystem.computation.ITypeExpectation;
 import org.eclipse.xtext.xbase.typesystem.conformance.ConformanceHint;
 import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
-import org.lunifera.doc.dsl.luniferadoc.RichString;
-import org.lunifera.doc.dsl.luniferadoc.RichStringElseIf;
-import org.lunifera.doc.dsl.luniferadoc.RichStringForLoop;
-import org.lunifera.doc.dsl.luniferadoc.RichStringIf;
-import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
-import org.lunifera.doc.dsl.luniferadoc.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 
 /**
  * Customized type computer for Xtend specific expressions.

@@ -14,16 +14,16 @@ import java.util.List;
 
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
-import org.lunifera.doc.dsl.luniferadoc.RichString;
-import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
-import org.lunifera.doc.dsl.luniferadoc.util.LuniferaDocSwitch;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
 
 /**
  * Computes the initial indentation of a rich string according to
  * the semantics in the Xtend language specification. That is, especially
  * the first and the last line have to be ignored if they only consist whitespace.
  */
-public class InitialTemplateIndentationComputer extends LuniferaDocSwitch<String> {
+public class InitialTemplateIndentationComputer extends RichstringSwitch<String> {
 	
 	private final String initial;
 

@@ -15,6 +15,30 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated LuniferaDocGrammar -->
+      <package
+            uri="http://www.lunifera.org/luniferadoc/document"
+            class="org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage"
+            genModel="model/LuniferaDocGrammar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated LuniferaDocGrammar -->
+      <package
+            uri="http://www.lunifera.org/luniferadoc/layout"
+            class="org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage"
+            genModel="model/LuniferaDocGrammar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated LuniferaDocGrammar -->
+      <package
+            uri="http://www.lunifera.org/luniferadoc/richstring"
+            class="org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage"
+            genModel="model/LuniferaDocGrammar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated DocCompiler -->
       <package
             uri="http://www.lunifera.org/doccompiler"

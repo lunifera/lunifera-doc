@@ -4,7 +4,7 @@ package org.lunifera.doc.dsl.doccompiler;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.lunifera.doc.dsl.luniferadoc.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
 /**
  * <!-- begin-user-doc -->

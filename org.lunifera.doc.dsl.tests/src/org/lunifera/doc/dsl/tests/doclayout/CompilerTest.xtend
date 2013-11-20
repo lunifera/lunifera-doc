@@ -38,7 +38,7 @@ class CompilerTest {
 			import org.lunifera.doc.dsl.api.document.IMetaPojoProperty;
 			
 			@SuppressWarnings("all")
-			public class DTOLayout implements IDocLayout {
+			public class DefaultDTOLayout implements IDocLayout {
 			  private IMetaPojo it;
 			  
 			  public void setIt(final IMetaPojo it) {

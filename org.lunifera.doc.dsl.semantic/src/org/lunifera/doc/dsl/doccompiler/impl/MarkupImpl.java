@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.Markup;
-import org.lunifera.doc.dsl.luniferadoc.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 
 /**
  * <!-- begin-user-doc -->

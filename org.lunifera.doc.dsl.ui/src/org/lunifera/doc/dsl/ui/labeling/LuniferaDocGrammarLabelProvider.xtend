@@ -15,20 +15,20 @@ import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider
-import org.lunifera.doc.dsl.luniferadoc.RichString
-import org.lunifera.doc.dsl.luniferadoc.RichStringExample
-import org.lunifera.doc.dsl.luniferadoc.RichStringForLoop
-import org.lunifera.doc.dsl.luniferadoc.RichStringH1
-import org.lunifera.doc.dsl.luniferadoc.RichStringH2
-import org.lunifera.doc.dsl.luniferadoc.RichStringIf
-import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral
 
 /**
  * Provides labels for a EObjects.
  * 
  * see http://www.eclipse.org/Xtext/documentation.html#labelProvider
  */
-class LuniferaDocGrammarLabelProvider extends org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider {
+class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 
 	@Inject
 	new(AdapterFactoryLabelProvider delegate) {

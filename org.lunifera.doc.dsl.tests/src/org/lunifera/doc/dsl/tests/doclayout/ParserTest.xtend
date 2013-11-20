@@ -17,9 +17,9 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout
-import org.lunifera.doc.dsl.luniferadoc.impl.RichStringH1Impl
-import org.lunifera.doc.dsl.luniferadoc.impl.RichStringLiteralImpl
+import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
+import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringH1Impl
+import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringLiteralImpl
 
 import static org.junit.Assert.*
 import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
@@ -28,7 +28,7 @@ import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))
 class ParserTest {
 	
-	@Inject extension ParseHelper<LuniferaDocLayout>
+	@Inject extension ParseHelper<DTOLayout>
 	@Inject extension ValidationTestHelper
 	@Inject extension IJvmModelAssociations
 	
@@ -36,7 +36,7 @@ class ParserTest {
 	def void testParsing() {
 		val dtoLayout = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/DTOLayout.luniferadoc").parse
 		
-		assertEquals("DTOLayout", dtoLayout.name)
+		assertEquals("DefaultDTOLayout", dtoLayout.name)
 		
 		val content = dtoLayout.content
 		assertEquals(typeof(RichStringLiteralImpl), dtoLayout.content.expressions.get(0).class)

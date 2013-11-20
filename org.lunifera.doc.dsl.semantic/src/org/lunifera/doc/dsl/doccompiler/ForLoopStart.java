@@ -2,7 +2,7 @@
  */
 package org.lunifera.doc.dsl.doccompiler;
 
-import org.lunifera.doc.dsl.luniferadoc.RichStringForLoop;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 
 /**
  * <!-- begin-user-doc -->

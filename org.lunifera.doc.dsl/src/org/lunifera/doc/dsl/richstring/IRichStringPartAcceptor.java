@@ -15,10 +15,10 @@ import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
-import org.lunifera.doc.dsl.luniferadoc.RichStringExample;
-import org.lunifera.doc.dsl.luniferadoc.RichStringH1;
-import org.lunifera.doc.dsl.luniferadoc.RichStringH2;
-import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 
 /**
  * The {@link IRichStringPartAcceptor} can be passed into a

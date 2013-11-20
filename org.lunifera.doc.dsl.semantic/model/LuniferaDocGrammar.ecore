@@ -51,7 +51,8 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="layout" nsURI="http://www.lunifera.org/luniferadoc/layout" nsPrefix="layout">
-    <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocLayout" eSuperTypes="#//LuniferaDocDocument">
+    <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocLayout" abstract="true"
+        eSuperTypes="#//LuniferaDocDocument">
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

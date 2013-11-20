@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
-import org.lunifera.doc.dsl.luniferadoc.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
 /**
  * <!-- begin-user-doc -->

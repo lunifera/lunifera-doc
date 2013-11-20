@@ -2,7 +2,7 @@
  */
 package org.lunifera.doc.dsl.doccompiler;
 
-import org.lunifera.doc.dsl.luniferadoc.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 
 /**
  * <!-- begin-user-doc -->

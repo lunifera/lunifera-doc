@@ -17,12 +17,13 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider
-import org.lunifera.doc.dsl.luniferadoc.impl.RichStringImpl
+import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral
 
 import static org.junit.Assert.*
 import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
-import org.lunifera.doc.dsl.luniferadoc.DTODocument
-import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral
+import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImpl
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))

@@ -39,17 +39,17 @@ import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.util.DocCompilerSwitch;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocLayout;
-import org.lunifera.doc.dsl.luniferadoc.RichString;
-import org.lunifera.doc.dsl.luniferadoc.RichStringElseIf;
-import org.lunifera.doc.dsl.luniferadoc.RichStringExample;
-import org.lunifera.doc.dsl.luniferadoc.RichStringForLoop;
-import org.lunifera.doc.dsl.luniferadoc.RichStringH1;
-import org.lunifera.doc.dsl.luniferadoc.RichStringH2;
-import org.lunifera.doc.dsl.luniferadoc.RichStringIf;
-import org.lunifera.doc.dsl.luniferadoc.RichStringLiteral;
-import org.lunifera.doc.dsl.luniferadoc.RichStringMarkup;
-import org.lunifera.doc.dsl.luniferadoc.util.LuniferaDocSwitch;
+import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
 
 import com.google.inject.Inject;
 
@@ -66,7 +66,7 @@ public class RichStringProcessor {
 	}
 
 	public static class ProcessedRichStringBuilder extends
-			LuniferaDocSwitch<Boolean> {
+			RichstringSwitch<Boolean> {
 
 		@Inject
 		private DocCompilerFactory factory = DocCompilerFactory.eINSTANCE;
