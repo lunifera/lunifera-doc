@@ -8,71 +8,76 @@
 
 grammar org.lunifera.doc.dsl.LuniferaDocGrammar with org.eclipse.xtext.xbase.Xbase
 
-import "http://www.lunifera.org/luniferadoc" as doc
+import "http://www.lunifera.org/luniferadoc" as luniferadoc
+import "http://www.lunifera.org/luniferadoc/layout" as layout
+import "http://www.lunifera.org/luniferadoc/document" as document
+import "http://www.lunifera.org/luniferadoc/richstring" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
-LuniferaDocDocument returns doc::LuniferaDocDocument:
+LuniferaDocDocument returns luniferadoc::LuniferaDocDocument:
 	DocLayout | GeneralDocument | DTODocument
 ;
 
-DocLayout returns doc::LuniferaDocLayout:
+DocumentInclude returns luniferadoc::DocumentInclude:
+	'include' include=QualifiedName 'as' varName=ID 'type' incType=IncludeType;
+
+enum IncludeType returns luniferadoc::DocType:
+	ENTITY = 'ENTITY' | DTO = 'DTO' | BPM_PROCESS = 'BPM_PROCESS' | BPM_TASK = 'BPM_TASK' | 
+	VAACLIPSE_VIEW = 'VAACLIPSE_VIEW' | UI = 'UI';
+
+DocLayout returns layout::LuniferaDocLayout:
 	'DocLayout' name=ID '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
-GeneralDocument returns doc::GeneralDocument:
+GeneralDocument returns document::GeneralDocument:
 	'GeneralDocument' name=ID '{'
 	imports+=XImportDeclaration*
 	includes+=DocumentInclude*
 	content=RichString
 	'}';
 	
-DocumentInclude returns doc::DocumentInclude:
-	'include' include=QualifiedName 'as' varName=ID 'type' incType=IncludeType;
-
-enum IncludeType returns doc::DocType:
-	ENTITY = 'ENTITY' | DTO = 'DTO' | BPM_PROCESS = 'BPM_PROCESS' | BPM_TASK = 'BPM_TASK' | 
-	VAACLIPSE_VIEW = 'VAACLIPSE_VIEW' | UI = 'UI';
-	
-DTODocument returns doc::DTODocument:
+DTODocument returns document::DTODocument:
 	'DTODocument' dtoClass=QualifiedName '{'
 	'header' '{' header=DTOHeader	'}'
 	'details' '{' details=DTODetails '}'
 	'}';
 
-DTOHeader returns doc::DTOHeader:
-	{doc::DTOHeader} content=RichString;
+DTOHeader returns document::DTOHeader:
+	{document::DTOHeader} content=RichString;
 	
-DTODetails returns doc::DTODetails:
-	{doc::DTODetails} properties+=DTOProperty*;
+DTODetails returns document::DTODetails:
+	{document::DTODetails} properties+=DTOProperty*;
 	
-DTOProperty returns doc::DTOProperty:
-	{doc::DTOProperty} 'name' name=ID
+DTOProperty returns document::DTOProperty:
+	{document::DTOProperty} 'name' name=ID
 	'description' '{' description=RichString '}';
 
-RichString returns doc::RichString:
-	{doc::RichString} (expressions+=RichStringLiteral |
+// RichString
+
+RichString returns richstring::RichString:
+	{richstring::RichString} (expressions+=RichStringLiteral |
 	expressions+=RichStringLiteralStart expressions+=RichStringPart?
 	(expressions+=RichStringLiteralInbetween expressions+=RichStringPart?)*
 	expressions+=RichStringLiteralEnd);
 
 RichStringLiteral returns xbase::XExpression:
-	{doc::RichStringLiteral} value=RICH_TEXT;
+	{richstring::RichStringLiteral} value=RICH_TEXT;
 
 RichStringLiteralStart returns xbase::XExpression:
-	{doc::RichStringLiteral} value=RICH_TEXT_START;
+	{richstring::RichStringLiteral} value=RICH_TEXT_START;
 
 RichStringLiteralInbetween returns xbase::XExpression:
-	{doc::RichStringLiteral}
+	{richstring::RichStringLiteral}
 	(value=RICH_TEXT_INBETWEEN | value=COMMENT_RICH_TEXT_INBETWEEN);
 
 RichStringLiteralEnd returns xbase::XExpression:
-	{doc::RichStringLiteral}
+	{richstring::RichStringLiteral}
 	(value=RICH_TEXT_END | value=COMMENT_RICH_TEXT_END);
 
 InternalRichString returns xbase::XExpression:
-	{doc::RichString} (expressions+=RichStringLiteralInbetween (expressions+=RichStringPart?
+	{richstring::RichString} (expressions+=RichStringLiteralInbetween (expressions+=RichStringPart?
 	expressions+=RichStringLiteralInbetween)*);
 
 RichStringPart returns xbase::XExpression:
@@ -82,28 +87,28 @@ RichStringPart returns xbase::XExpression:
 	RichStringH1 | RichStringH2 | RichStringExample;
 
 RichStringExample returns xbase::XExpression:
-	{doc::RichStringExample}
+	{richstring::RichStringExample}
 	"example"
 	expression=InternalRichString
 	"/example"
 ;
 
 RichStringH1 returns xbase::XExpression:
-	{doc::RichStringH1}
+	{richstring::RichStringH1}
 	"h1"
 	expression=InternalRichString
 	"/h1"
 ;
 
 RichStringH2 returns xbase::XExpression:
-	{doc::RichStringH2}
+	{richstring::RichStringH2}
 	"h2"
 	expression=InternalRichString
 	"/h2"
 ;
 
 RichStringForLoop returns xbase::XExpression:
-	{doc::RichStringForLoop}
+	{richstring::RichStringForLoop}
 	"FOR" declaredParam=JvmFormalParameter ':' forExpression=XExpression
 	("BEFORE" before=XExpression)?
 	("SEPARATOR" separator=XExpression)?
@@ -112,7 +117,7 @@ RichStringForLoop returns xbase::XExpression:
 	"ENDFOR";
 
 RichStringIf returns xbase::XExpression:
-	{doc::RichStringIf}
+	{richstring::RichStringIf}
 	"IF" if=XExpression
 	then=InternalRichString
 	elseIfs+=RichStringElseIf*
@@ -120,7 +125,7 @@ RichStringIf returns xbase::XExpression:
 	else=InternalRichString)?
 	"ENDIF";
 
-RichStringElseIf returns doc::RichStringElseIf:
+RichStringElseIf returns richstring::RichStringElseIf:
 	"ELSEIF" if=XExpression then=InternalRichString;
 
 terminal RICH_TEXT:
