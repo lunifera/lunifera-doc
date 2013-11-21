@@ -1,4 +1,4 @@
-lunifera-doc
+LuniferaDoc
 ============
 
-Repository for all artefacts to create documentation
+LuniferaDoc is a DSL for the documentation of enterprise software systems.
