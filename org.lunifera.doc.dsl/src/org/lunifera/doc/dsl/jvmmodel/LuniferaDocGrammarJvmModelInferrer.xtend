@@ -17,7 +17,6 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.lunifera.doc.dsl.api.IDocLayout
 import org.lunifera.doc.dsl.api.document.IMetaBPMProcess
 import org.lunifera.doc.dsl.api.document.IMetaBPMTask
 import org.lunifera.doc.dsl.api.document.IMetaDTO
@@ -25,6 +24,7 @@ import org.lunifera.doc.dsl.api.document.IMetaEntity
 import org.lunifera.doc.dsl.api.document.IMetaPojo
 import org.lunifera.doc.dsl.api.document.IMetaUI
 import org.lunifera.doc.dsl.api.document.IMetaVaaclipseView
+import org.lunifera.doc.dsl.api.impl.layout.IDocLayout
 import org.lunifera.doc.dsl.luniferadoc.DocType
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument

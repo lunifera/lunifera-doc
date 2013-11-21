@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 
-package org.lunifera.doc.dsl.api;
+package org.lunifera.doc.dsl.api.impl.layout;
 
 import org.lunifera.doc.dsl.api.document.IMetaPojo;
 

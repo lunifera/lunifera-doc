@@ -23,9 +23,9 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
-import org.lunifera.doc.dsl.api.IDocLayout;
 import org.lunifera.doc.dsl.api.impl.document.MetaPojo;
 import org.lunifera.doc.dsl.api.impl.document.MetaPojoProperty;
+import org.lunifera.doc.dsl.api.impl.layout.IDocLayout;
 
 import com.google.inject.Inject;
 
