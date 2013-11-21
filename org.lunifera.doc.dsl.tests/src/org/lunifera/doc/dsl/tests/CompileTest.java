@@ -20,6 +20,7 @@ import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
@@ -38,6 +39,7 @@ public class CompileTest {
 	CompilationTestHelper helper;
 
 	@Test
+	@Ignore
 	public void test() throws URISyntaxException, IOException,
 			InstantiationException, IllegalAccessException {
 

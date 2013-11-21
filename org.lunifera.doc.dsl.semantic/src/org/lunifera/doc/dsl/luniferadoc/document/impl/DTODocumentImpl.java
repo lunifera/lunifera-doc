@@ -7,9 +7,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
-import org.lunifera.doc.dsl.luniferadoc.document.DTOHeader;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
 
@@ -21,7 +21,7 @@ import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDtoClass <em>Dto Class</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDetails <em>Details</em>}</li>
  * </ul>
  * </p>
@@ -50,14 +50,14 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	protected String dtoClass = DTO_CLASS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHeader()
+	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected DTOHeader header;
+	protected DTODescription description;
 
 	/**
 	 * The cached value of the '{@link #getDetails() <em>Details</em>}' containment reference.
@@ -114,8 +114,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DTOHeader getHeader() {
-		return header;
+	public DTODescription getDescription() {
+		return description;
 	}
 
 	/**
@@ -123,11 +123,11 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetHeader(DTOHeader newHeader, NotificationChain msgs) {
-		DTOHeader oldHeader = header;
-		header = newHeader;
+	public NotificationChain basicSetDescription(DTODescription newDescription, NotificationChain msgs) {
+		DTODescription oldDescription = description;
+		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__HEADER, oldHeader, newHeader);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__DESCRIPTION, oldDescription, newDescription);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -138,18 +138,18 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHeader(DTOHeader newHeader) {
-		if (newHeader != header) {
+	public void setDescription(DTODescription newDescription) {
+		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (header != null)
-				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__HEADER, null, msgs);
-			if (newHeader != null)
-				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__HEADER, null, msgs);
-			msgs = basicSetHeader(newHeader, msgs);
+			if (description != null)
+				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__DESCRIPTION, null, msgs);
+			if (newDescription != null)
+				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__DESCRIPTION, null, msgs);
+			msgs = basicSetDescription(newDescription, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__HEADER, newHeader, newHeader));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -203,8 +203,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DocumentPackage.DTO_DOCUMENT__HEADER:
-				return basicSetHeader(null, msgs);
+			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
+				return basicSetDescription(null, msgs);
 			case DocumentPackage.DTO_DOCUMENT__DETAILS:
 				return basicSetDetails(null, msgs);
 		}
@@ -221,8 +221,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 		switch (featureID) {
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				return getDtoClass();
-			case DocumentPackage.DTO_DOCUMENT__HEADER:
-				return getHeader();
+			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
+				return getDescription();
 			case DocumentPackage.DTO_DOCUMENT__DETAILS:
 				return getDetails();
 		}
@@ -240,8 +240,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				setDtoClass((String)newValue);
 				return;
-			case DocumentPackage.DTO_DOCUMENT__HEADER:
-				setHeader((DTOHeader)newValue);
+			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
+				setDescription((DTODescription)newValue);
 				return;
 			case DocumentPackage.DTO_DOCUMENT__DETAILS:
 				setDetails((DTODetails)newValue);
@@ -261,8 +261,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				setDtoClass(DTO_CLASS_EDEFAULT);
 				return;
-			case DocumentPackage.DTO_DOCUMENT__HEADER:
-				setHeader((DTOHeader)null);
+			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
+				setDescription((DTODescription)null);
 				return;
 			case DocumentPackage.DTO_DOCUMENT__DETAILS:
 				setDetails((DTODetails)null);
@@ -281,8 +281,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 		switch (featureID) {
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				return DTO_CLASS_EDEFAULT == null ? dtoClass != null : !DTO_CLASS_EDEFAULT.equals(dtoClass);
-			case DocumentPackage.DTO_DOCUMENT__HEADER:
-				return header != null;
+			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
+				return description != null;
 			case DocumentPackage.DTO_DOCUMENT__DETAILS:
 				return details != null;
 		}

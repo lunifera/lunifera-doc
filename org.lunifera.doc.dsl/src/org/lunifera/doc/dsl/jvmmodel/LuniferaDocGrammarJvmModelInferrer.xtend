@@ -5,7 +5,6 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-
 package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
@@ -29,6 +28,9 @@ import org.lunifera.doc.dsl.luniferadoc.DocType
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
+import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage
+import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -37,6 +39,7 @@ import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
  * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
 class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
+
 	/**
      * convenience API to build and initialize JVM types and their members.
      */
@@ -79,8 +82,8 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDocLayout), dtoLayout, null)
 				documentation = dtoLayout.documentation
-				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), dtoLayout, null))
-				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), dtoLayout, null))
+				members += toField("it", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
+				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
 				val richString = dtoLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -92,32 +95,38 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += operation
 			])
 	}
-	
+
 	def dispatch void infer(GeneralDocument generalDoc, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		acceptor.accept(generalDoc.toClass(generalDoc.name+"Document")).initializeLater(
+		acceptor.accept(generalDoc.toClass(generalDoc.name + "Document")).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDocLayout), generalDoc, null)
 				documentation = generalDoc.documentation
-				
-				for(inc : generalDoc.includes) {
+				for (inc : generalDoc.includes) {
 					switch inc.incType {
-					 case DocType.ENTITY: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaEntity), generalDoc, null))
-					 case DocType.DTO: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaDTO), generalDoc, null))
-					 case DocType.BPM_PROCESS: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaBPMProcess), generalDoc, null))
-					 case DocType.BPM_TASK: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaBPMTask), generalDoc, null))
-					 case DocType.VAACLIPSE_VIEW: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaVaaclipseView), generalDoc, null))
-					 case DocType.UI: members += toField(inc.varName, typeReference.getTypeForName(typeof(IMetaUI), generalDoc, null))
+						case DocType.ENTITY: members +=
+							toField(inc.varName, typeReference.getTypeForName(typeof(IMetaEntity), generalDoc, null))
+						case DocType.DTO: members +=
+							toField(inc.varName, typeReference.getTypeForName(typeof(IMetaDTO), generalDoc, null))
+						case DocType.BPM_PROCESS: members +=
+							toField(inc.varName, typeReference.getTypeForName(typeof(IMetaBPMProcess), generalDoc, null))
+						case DocType.BPM_TASK: members +=
+							toField(inc.varName, typeReference.getTypeForName(typeof(IMetaBPMTask), generalDoc, null))
+						case DocType.VAACLIPSE_VIEW: members +=
+							toField(inc.varName,
+								typeReference.getTypeForName(typeof(IMetaVaaclipseView), generalDoc, null))
+						case DocType.UI: members +=
+							toField(inc.varName, typeReference.getTypeForName(typeof(IMetaUI), generalDoc, null))
 					}
 				}
-				
-				members += generalDoc.toConstructor[
-					body = [it.append('''
-						«FOR inc : generalDoc.includes»
-							this.«inc.varName» = new «inc.include»();
-						«ENDFOR»
-						''')]
+				members += generalDoc.toConstructor [
+					body = [
+						it.append(
+							'''
+								«FOR inc : generalDoc.includes»
+									this.«inc.varName» = new «inc.include»();
+								«ENDFOR»
+							''')]
 				]
-				
 				members += toField("it", typeReference.getTypeForName(typeof(IMetaPojo), generalDoc, null))
 				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaPojo), generalDoc, null))
 				val richString = generalDoc.content
@@ -131,29 +140,71 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += operation
 			])
 	}
-	
-	def dispatch void infer(DTODocument dtoDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		acceptor.accept(dtoDocument.toClass(dtoDocument.dtoClass+"Document")).initializeLater(
-			[
-				superTypes += typeReference.getTypeForName(typeof(IMetaPojo), dtoDocument, null)
-				documentation = dtoDocument.documentation
 
-				val headerRichString = dtoDocument.header.content
-				val JvmOperation serializeHeaderOperation = typesFactory.createJvmOperation()
-				associator.associatePrimary(headerRichString, serializeHeaderOperation)
-				serializeHeaderOperation.setSimpleName("serializeHeader")
-				serializeHeaderOperation.setVisibility(JvmVisibility::PUBLIC)
-				serializeHeaderOperation.setReturnType(inferredType())
-				serializeHeaderOperation.setBody(headerRichString)
-				associator.associateLogicalContainer(headerRichString, serializeHeaderOperation)
-				
-				members += dtoDocument.header.toField("documentation", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				val docGetter = dtoDocument.header.toGetter("documentation", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				docGetter.setBody[it.append('''return «serializeHeaderOperation.simpleName»();''')]
+	/**
+	 * Inferrer for DTODocument.
+	 */
+	def dispatch void infer(DTODocument dtoDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(dtoDocument.toClass(dtoDocument.dtoClass + "Document")).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IMetaDTO), dtoDocument, null)
+				documentation = dtoDocument.documentation
+				val descriptionRichString = dtoDocument.description.content
+				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+				associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+				serializeDescriptionOperation.setSimpleName("serializeDescription")
+				serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+				serializeDescriptionOperation.setReturnType(inferredType())
+				serializeDescriptionOperation.setBody(descriptionRichString)
+				associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+				val dtoClassField = toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += dtoClassField
+				members += dtoDocument.description.toField("description",
+						typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toGetter("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toSetter("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				val docGetter = dtoDocument.description.toGetter("description",
+					typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				docGetter.setBody[it.append('''return «serializeDescriptionOperation.simpleName»().toString();''')]
 				members += docGetter
-				members += dtoDocument.header.toSetter("documentation", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				
-				members += serializeHeaderOperation
+				members +=
+					dtoDocument.description.toSetter("description",
+						typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += serializeDescriptionOperation
+			])
+	}
+
+	/**
+	 * Inferrer for EntityDocument.
+	 */
+	def dispatch void infer(EntityDocument entityDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(entityDocument.toClass(entityDocument.entityClass + "Document")).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IMetaEntity), entityDocument, null)
+				documentation = entityDocument.documentation
+				val descriptionRichString = entityDocument.description.content
+				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+				associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+				serializeDescriptionOperation.setSimpleName("serializeDescription")
+				serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+				serializeDescriptionOperation.setReturnType(inferredType())
+				serializeDescriptionOperation.setBody(descriptionRichString)
+				associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+				val entityClassField = toField("entityClass", typeReference.getTypeForName(typeof(String), 
+					entityDocument, null))
+				members += entityClassField
+				members += entityDocument.description.toField("description",
+						typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += toSetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
+				val docGetter = entityDocument.description.toGetter("description",
+					typeReference.getTypeForName(typeof(String), entityDocument, null))
+				docGetter.setBody[it.append('''return «serializeDescriptionOperation.simpleName»();''')]
+				members += docGetter
+				members +=
+					entityDocument.description.toSetter("description",
+						typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += serializeDescriptionOperation
 			])
 	}
 }

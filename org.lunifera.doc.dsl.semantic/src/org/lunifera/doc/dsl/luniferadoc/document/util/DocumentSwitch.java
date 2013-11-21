@@ -8,12 +8,15 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
-import org.lunifera.doc.dsl.luniferadoc.document.DTOHeader;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
@@ -76,6 +79,31 @@ public class DocumentSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case DocumentPackage.ENTITY_DOCUMENT: {
+				EntityDocument entityDocument = (EntityDocument)theEObject;
+				T result = caseEntityDocument(entityDocument);
+				if (result == null) result = caseLuniferaDocDocument(entityDocument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DocumentPackage.ENTITY_DESCRIPTION: {
+				EntityDescription entityDescription = (EntityDescription)theEObject;
+				T result = caseEntityDescription(entityDescription);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DocumentPackage.ENTITY_FIELDS: {
+				EntityFields entityFields = (EntityFields)theEObject;
+				T result = caseEntityFields(entityFields);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DocumentPackage.ENTITY_FIELD: {
+				EntityField entityField = (EntityField)theEObject;
+				T result = caseEntityField(entityField);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case DocumentPackage.DTO_DOCUMENT: {
 				DTODocument dtoDocument = (DTODocument)theEObject;
 				T result = caseDTODocument(dtoDocument);
@@ -83,9 +111,9 @@ public class DocumentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DocumentPackage.DTO_HEADER: {
-				DTOHeader dtoHeader = (DTOHeader)theEObject;
-				T result = caseDTOHeader(dtoHeader);
+			case DocumentPackage.DTO_DESCRIPTION: {
+				DTODescription dtoDescription = (DTODescription)theEObject;
+				T result = caseDTODescription(dtoDescription);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,13 +126,6 @@ public class DocumentSwitch<T> extends Switch<T> {
 			case DocumentPackage.DTO_PROPERTY: {
 				DTOProperty dtoProperty = (DTOProperty)theEObject;
 				T result = caseDTOProperty(dtoProperty);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocumentPackage.ENTITY_DOCUMENT: {
-				EntityDocument entityDocument = (EntityDocument)theEObject;
-				T result = caseEntityDocument(entityDocument);
-				if (result == null) result = caseLuniferaDocDocument(entityDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -164,17 +185,17 @@ public class DocumentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>DTO Header</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>DTO Header</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDTOHeader(DTOHeader object) {
+	public T caseDTODescription(DTODescription object) {
 		return null;
 	}
 
@@ -220,6 +241,51 @@ public class DocumentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntityDocument(EntityDocument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityDescription(EntityDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Fields</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Fields</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityFields(EntityFields object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityField(EntityField object) {
 		return null;
 	}
 

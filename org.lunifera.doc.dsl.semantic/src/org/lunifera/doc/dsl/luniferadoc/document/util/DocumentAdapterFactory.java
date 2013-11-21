@@ -9,12 +9,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
-import org.lunifera.doc.dsl.luniferadoc.document.DTOHeader;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
@@ -77,12 +80,28 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	protected DocumentSwitch<Adapter> modelSwitch =
 		new DocumentSwitch<Adapter>() {
 			@Override
+			public Adapter caseEntityDocument(EntityDocument object) {
+				return createEntityDocumentAdapter();
+			}
+			@Override
+			public Adapter caseEntityDescription(EntityDescription object) {
+				return createEntityDescriptionAdapter();
+			}
+			@Override
+			public Adapter caseEntityFields(EntityFields object) {
+				return createEntityFieldsAdapter();
+			}
+			@Override
+			public Adapter caseEntityField(EntityField object) {
+				return createEntityFieldAdapter();
+			}
+			@Override
 			public Adapter caseDTODocument(DTODocument object) {
 				return createDTODocumentAdapter();
 			}
 			@Override
-			public Adapter caseDTOHeader(DTOHeader object) {
-				return createDTOHeaderAdapter();
+			public Adapter caseDTODescription(DTODescription object) {
+				return createDTODescriptionAdapter();
 			}
 			@Override
 			public Adapter caseDTODetails(DTODetails object) {
@@ -91,10 +110,6 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDTOProperty(DTOProperty object) {
 				return createDTOPropertyAdapter();
-			}
-			@Override
-			public Adapter caseEntityDocument(EntityDocument object) {
-				return createEntityDocumentAdapter();
 			}
 			@Override
 			public Adapter caseBPMProcessDocument(BPMProcessDocument object) {
@@ -159,16 +174,16 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOHeader <em>DTO Header</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription <em>DTO Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOHeader
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODescription
 	 * @generated
 	 */
-	public Adapter createDTOHeaderAdapter() {
+	public Adapter createDTODescriptionAdapter() {
 		return null;
 	}
 
@@ -211,6 +226,48 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDescription <em>Entity Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityDescription
+	 * @generated
+	 */
+	public Adapter createEntityDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityFields <em>Entity Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityFields
+	 * @generated
+	 */
+	public Adapter createEntityFieldsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField <em>Entity Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField
+	 * @generated
+	 */
+	public Adapter createEntityFieldAdapter() {
 		return null;
 	}
 

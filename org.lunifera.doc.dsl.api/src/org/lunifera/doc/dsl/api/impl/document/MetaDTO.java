@@ -8,32 +8,37 @@
 
 package org.lunifera.doc.dsl.api.impl.document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.lunifera.doc.dsl.api.document.IMetaDTO;
+import org.lunifera.doc.dsl.api.document.IMetaPojoProperty;
 
 public class MetaDTO implements IMetaDTO {
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+	private String dtoClass;
+	private String description;
+
+	private final List<IMetaPojoProperty> properties = new ArrayList<IMetaPojoProperty>();
+
+	public String getDtoClass() {
+		return dtoClass;
 	}
 
-	@Override
-	public void setName(String name) {
-		// TODO Auto-generated method stub
-		
+	public void setDtoClass(String name) {
+		this.dtoClass = name;
 	}
 
-	@Override
-	public String getDocumentation() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getDescription() {
+		return description;
 	}
 
-	@Override
-	public void setDocumentation(String documentation) {
-		// TODO Auto-generated method stub
-		
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<IMetaPojoProperty> getProperties() {
+		return properties;
 	}
 
 }

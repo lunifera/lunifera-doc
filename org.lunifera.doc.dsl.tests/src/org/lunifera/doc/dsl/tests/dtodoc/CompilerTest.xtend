@@ -34,21 +34,31 @@ class CompilerTest {
 			package org.lunifera.sample;
 			
 			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.document.IMetaPojo;
+			import org.lunifera.doc.dsl.api.document.IMetaDTO;
 			
 			@SuppressWarnings("all")
-			public class MyDTODocument implements IMetaPojo {
-			  private String documentation;
+			public class MyDTODocument implements IMetaDTO {
+			  private String dtoClass;
 			  
-			  public String getDocumentation() {
-			    return serializeHeader();
+			  private String description;
+			  
+			  public String getDtoClass() {
+			    return this.dtoClass;
 			  }
 			  
-			  public void setDocumentation(final String documentation) {
-			    this.documentation = documentation;
+			  public void setDtoClass(final String dtoClass) {
+			    this.dtoClass = dtoClass;
 			  }
 			  
-			  public CharSequence serializeHeader() {
+			  public String getDescription() {
+			    return serializeDescription().toString();
+			  }
+			  
+			  public void setDescription(final String description) {
+			    this.description = description;
+			  }
+			  
+			  public CharSequence serializeDescription() {
 			    StringConcatenation _builder = new StringConcatenation();
 			    _builder.append("<h1>");
 			    _builder.append("This is MyDTO.");

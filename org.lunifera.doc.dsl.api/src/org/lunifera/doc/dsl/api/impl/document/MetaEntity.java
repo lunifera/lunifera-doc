@@ -12,31 +12,25 @@ import org.lunifera.doc.dsl.api.document.IMetaEntity;
 
 public class MetaEntity implements IMetaEntity {
 
-	private String name;
-	private String documentation;
+	private String entityClass;
+	private String description;
+
+	// TODO add fields
 	
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getEntityClass() {
+		return entityClass;
 	}
 
-	@Override
-	public void setName(String name) {
-		// TODO Auto-generated method stub
-
+	public void setEntityClass(String entityClass) {
+		this.entityClass = entityClass;
 	}
 
-	@Override
-	public String getDocumentation() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getDescription() {
+		return description;
 	}
 
-	@Override
-	public void setDocumentation(String documentation) {
-		// TODO Auto-generated method stub
-
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

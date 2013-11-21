@@ -8,15 +8,19 @@
 
 package org.lunifera.doc.dsl.api.document;
 
+import java.util.List;
+
 
 public interface IMetaDTO {
 	
-	String getName();
+	String getDtoClass();
 
-	void setName(String name);
+	void setDtoClass(String dtoClass);
 
-	String getDocumentation();
+	String getDescription();
 
-	void setDocumentation(String documentation);
+	void setDescription(String description);
+
+	List<IMetaPojoProperty> getProperties();
 
 }

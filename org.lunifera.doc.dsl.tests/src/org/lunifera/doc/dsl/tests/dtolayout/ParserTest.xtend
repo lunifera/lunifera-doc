@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 
-package org.lunifera.doc.dsl.tests.doclayout
+package org.lunifera.doc.dsl.tests.dtolayout
 
 import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith

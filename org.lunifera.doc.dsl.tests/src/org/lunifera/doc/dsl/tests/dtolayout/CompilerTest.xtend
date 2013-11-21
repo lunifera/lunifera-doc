@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 
-package org.lunifera.doc.dsl.tests.doclayout
+package org.lunifera.doc.dsl.tests.dtolayout
 
 import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
@@ -33,9 +33,9 @@ class CompilerTest {
 		testDoc.compile[assertEquals('''
 			import java.util.List;
 			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.IDocLayout;
 			import org.lunifera.doc.dsl.api.document.IMetaPojo;
 			import org.lunifera.doc.dsl.api.document.IMetaPojoProperty;
+			import org.lunifera.doc.dsl.api.impl.layout.IDocLayout;
 			
 			@SuppressWarnings("all")
 			public class DefaultDTOLayout implements IDocLayout {

@@ -20,14 +20,38 @@
   </eClassifiers>
   <eSubpackages name="document" nsURI="http://www.lunifera.org/luniferadoc/document"
       nsPrefix="document">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityDocument" eSuperTypes="#//LuniferaDocDocument">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/EntityDescription"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fields" eType="#//document/EntityFields"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityDescription">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityFields">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+          eType="#//document/EntityField" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityField">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="pk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//richstring/RichString"
+          containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DTODocument" eSuperTypes="#//LuniferaDocDocument">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtoClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//document/DTOHeader"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/DTODescription"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="details" eType="#//document/DTODetails"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DTOHeader">
+    <eClassifiers xsi:type="ecore:EClass" name="DTODescription">
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
@@ -40,7 +64,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityDocument" eSuperTypes="#//LuniferaDocDocument"/>
     <eClassifiers xsi:type="ecore:EClass" name="BPMProcessDocument" eSuperTypes="#//LuniferaDocDocument"/>
     <eClassifiers xsi:type="ecore:EClass" name="BPMTaskDocument" eSuperTypes="#//LuniferaDocDocument"/>
     <eClassifiers xsi:type="ecore:EClass" name="VaaclipseViewDocument" eSuperTypes="#//LuniferaDocDocument"/>

@@ -11,12 +11,12 @@ package org.lunifera.doc.dsl.api.document;
 
 public interface IMetaEntity {
 	
-	String getName();
+	String getEntityClass();
 
-	void setName(String name);
+	void setEntityClass(String entityClass);
 
-	String getDocumentation();
+	String getDescription();
 
-	void setDocumentation(String documentation);
+	void setDescription(String description);
 
 }

@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 
-package org.lunifera.doc.dsl.tests.generaldoc
+package org.lunifera.doc.dsl.tests.entitydoc
 
 import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
@@ -30,49 +30,41 @@ class CompilerTest {
 	
 	@Test
 	def void compareGeneratedJava() {
-		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/GeneralDocument.luniferadoc")
+		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/EntityDocument.luniferadoc")
 		testDoc.compile[assertEquals('''
+			package org.lunifera.sample;
+			
 			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.document.IMetaDTO;
-			import org.lunifera.doc.dsl.api.document.IMetaPojo;
-			import org.lunifera.doc.dsl.api.impl.layout.IDocLayout;
+			import org.lunifera.doc.dsl.api.document.IMetaEntity;
 			
 			@SuppressWarnings("all")
-			public class IntroductionDocument implements IDocLayout {
-			  private IMetaDTO myDTODoc;
+			public class MyEntityDocument implements IMetaEntity {
+			  private String entityClass;
 			  
-			  private IMetaDTO anotherDTODoc;
+			  private String description;
 			  
-			  public IntroductionDocument() {
-			    this.myDTODoc = new org.lunifera.sample.MyDTODocument();
-			    this.anotherDTODoc = new org.lunifera.sample.AnotherDTODocument();
-			    
+			  public String getEntityClass() {
+			    return this.entityClass;
 			  }
 			  
-			  private IMetaPojo it;
-			  
-			  public void setIt(final IMetaPojo it) {
-			    this.it = it;
+			  public void setEntityClass(final String entityClass) {
+			    this.entityClass = entityClass;
 			  }
 			  
-			  public String serialize() {
+			  public String getDescription() {
+			    return serializeDescription();
+			  }
+			  
+			  public void setDescription(final String description) {
+			    this.description = description;
+			  }
+			  
+			  public CharSequence serializeDescription() {
 			    StringConcatenation _builder = new StringConcatenation();
-			    _builder.append("<html>");
-			    _builder.append("<body>");
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("<h1>");
-			      _builder.append("Once there was a Pojo named ");
-			      String _name = this.myDTODoc.getName();
-			      _builder.append(_name, "	");
-			      _builder.append(".");
-			      _builder.append("</h1>");
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("</body>");_builder.append("</html>");
-			    return _builder.toString();
+			    _builder.append("<h1>");
+			    _builder.append("This is MyEntity.");
+			    _builder.append("</h1>");
+			    return _builder;
 			  }
 			}
 		'''.toString, getSingleGeneratedCode)

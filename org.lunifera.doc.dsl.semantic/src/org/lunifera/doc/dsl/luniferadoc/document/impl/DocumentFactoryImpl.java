@@ -9,13 +9,16 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
-import org.lunifera.doc.dsl.luniferadoc.document.DTOHeader;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentFactory;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
@@ -64,11 +67,14 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case DocumentPackage.ENTITY_DOCUMENT: return createEntityDocument();
+			case DocumentPackage.ENTITY_DESCRIPTION: return createEntityDescription();
+			case DocumentPackage.ENTITY_FIELDS: return createEntityFields();
+			case DocumentPackage.ENTITY_FIELD: return createEntityField();
 			case DocumentPackage.DTO_DOCUMENT: return createDTODocument();
-			case DocumentPackage.DTO_HEADER: return createDTOHeader();
+			case DocumentPackage.DTO_DESCRIPTION: return createDTODescription();
 			case DocumentPackage.DTO_DETAILS: return createDTODetails();
 			case DocumentPackage.DTO_PROPERTY: return createDTOProperty();
-			case DocumentPackage.ENTITY_DOCUMENT: return createEntityDocument();
 			case DocumentPackage.BPM_PROCESS_DOCUMENT: return createBPMProcessDocument();
 			case DocumentPackage.BPM_TASK_DOCUMENT: return createBPMTaskDocument();
 			case DocumentPackage.VAACLIPSE_VIEW_DOCUMENT: return createVaaclipseViewDocument();
@@ -94,9 +100,9 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DTOHeader createDTOHeader() {
-		DTOHeaderImpl dtoHeader = new DTOHeaderImpl();
-		return dtoHeader;
+	public DTODescription createDTODescription() {
+		DTODescriptionImpl dtoDescription = new DTODescriptionImpl();
+		return dtoDescription;
 	}
 
 	/**
@@ -127,6 +133,36 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	public EntityDocument createEntityDocument() {
 		EntityDocumentImpl entityDocument = new EntityDocumentImpl();
 		return entityDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityDescription createEntityDescription() {
+		EntityDescriptionImpl entityDescription = new EntityDescriptionImpl();
+		return entityDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityFields createEntityFields() {
+		EntityFieldsImpl entityFields = new EntityFieldsImpl();
+		return entityFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityField createEntityField() {
+		EntityFieldImpl entityField = new EntityFieldImpl();
+		return entityField;
 	}
 
 	/**

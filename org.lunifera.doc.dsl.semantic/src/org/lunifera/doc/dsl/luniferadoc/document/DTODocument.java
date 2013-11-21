@@ -13,7 +13,7 @@ import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDtoClass <em>Dto Class</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDescription <em>Description</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDetails <em>Details</em>}</li>
  * </ul>
  * </p>
@@ -50,30 +50,30 @@ public interface DTODocument extends LuniferaDocDocument {
 	void setDtoClass(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Header</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Header</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Description</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Header</em>' containment reference.
-	 * @see #setHeader(DTOHeader)
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODocument_Header()
+	 * @return the value of the '<em>Description</em>' containment reference.
+	 * @see #setDescription(DTODescription)
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODocument_Description()
 	 * @model containment="true"
 	 * @generated
 	 */
-	DTOHeader getHeader();
+	DTODescription getDescription();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getHeader <em>Header</em>}' containment reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDescription <em>Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Header</em>' containment reference.
-	 * @see #getHeader()
+	 * @param value the new value of the '<em>Description</em>' containment reference.
+	 * @see #getDescription()
 	 * @generated
 	 */
-	void setHeader(DTOHeader value);
+	void setDescription(DTODescription value);
 
 	/**
 	 * Returns the value of the '<em><b>Details</b></em>' containment reference.

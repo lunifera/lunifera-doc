@@ -73,16 +73,33 @@ GeneralDocument returns document::GeneralDocument:
 	'}';
 	
 EntityDocument returns document::EntityDocument:
-	'EntityDocument';
+	'EntityDocument' entityClass=QualifiedName '{'
+	'description' '{' description=EntityDescription	'}'
+	'fields' '{' fields=EntityFields '}'
+	'}';
+	
+EntityDescription returns document::EntityDescription:
+	{document::EntityDescription} content=RichString;
+	
+EntityFields returns document::EntityFields:
+	{document::EntityFields} fields+=EntityField*;
+	
+EntityField returns document::EntityField:
+	{document::EntityField} 'name' name=ID
+	('type' type=ID)?
+	('length' length=INT)?
+	('pk' pk?="true")?
+	('nullable' nullable?="true")?
+	'description' '{' description=RichString '}';
 	
 DTODocument returns document::DTODocument:
 	'DTODocument' dtoClass=QualifiedName '{'
-	'header' '{' header=DTOHeader	'}'
+	'description' '{' description=DTODescription '}'
 	'details' '{' details=DTODetails '}'
 	'}';
 
-DTOHeader returns document::DTOHeader:
-	{document::DTOHeader} content=RichString;
+DTODescription returns document::DTODescription:
+	{document::DTODescription} content=RichString;
 	
 DTODetails returns document::DTODetails:
 	{document::DTODetails} properties+=DTOProperty*;

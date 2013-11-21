@@ -1,0 +1,26 @@
+EntityDocument org.lunifera.sample.MyEntity {
+	description {
+		'''«h1»This is MyEntity.«/h1»'''
+	}
+	fields {
+		name fieldA
+		type int
+		length 11
+		pk true
+		description {
+			'''
+				This is the description of fieldA. FieldA is of type int(11), a primary key and hence not nullable.
+			'''
+		}
+		
+		name fieldB
+		type varchar
+		length 255
+		nullable true
+		description {
+			'''
+				This is the description of property B.
+			'''
+		}
+	}
+}

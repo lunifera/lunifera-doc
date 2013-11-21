@@ -1,5 +1,5 @@
 DTODocument org.lunifera.sample.AnotherDTO {
-	header {
+	description {
 		'''«h1»This is another DTO.«/h1»'''
 	}
 	details {

@@ -31,13 +31,13 @@ public interface DocumentFactory extends EFactory {
 	DTODocument createDTODocument();
 
 	/**
-	 * Returns a new object of class '<em>DTO Header</em>'.
+	 * Returns a new object of class '<em>DTO Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DTO Header</em>'.
+	 * @return a new object of class '<em>DTO Description</em>'.
 	 * @generated
 	 */
-	DTOHeader createDTOHeader();
+	DTODescription createDTODescription();
 
 	/**
 	 * Returns a new object of class '<em>DTO Details</em>'.
@@ -65,6 +65,33 @@ public interface DocumentFactory extends EFactory {
 	 * @generated
 	 */
 	EntityDocument createEntityDocument();
+
+	/**
+	 * Returns a new object of class '<em>Entity Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entity Description</em>'.
+	 * @generated
+	 */
+	EntityDescription createEntityDescription();
+
+	/**
+	 * Returns a new object of class '<em>Entity Fields</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entity Fields</em>'.
+	 * @generated
+	 */
+	EntityFields createEntityFields();
+
+	/**
+	 * Returns a new object of class '<em>Entity Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entity Field</em>'.
+	 * @generated
+	 */
+	EntityField createEntityField();
 
 	/**
 	 * Returns a new object of class '<em>BPM Process Document</em>'.
