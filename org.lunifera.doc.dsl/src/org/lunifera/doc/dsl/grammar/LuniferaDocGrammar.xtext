@@ -19,7 +19,7 @@ LuniferaDocDocument returns luniferadoc::LuniferaDocDocument:
 	GeneralDocument | EntityDocument | DTODocument | BPMProcessDocument | BPMTaskDocument | VaaclipseViewDocument | UIDocument;
 
 DocumentInclude returns luniferadoc::DocumentInclude:
-	'include' include=QualifiedName 'as' varName=ID 'type' incType=IncludeType;
+	'include' include=[luniferadoc::LuniferaDocDocument|QualifiedName] 'as' varName=ID;
 
 enum IncludeType returns luniferadoc::DocType:
 	ENTITY = 'ENTITY' | DTO = 'DTO' | BPM_PROCESS = 'BPM_PROCESS' | BPM_TASK = 'BPM_TASK' | 
@@ -73,7 +73,7 @@ GeneralDocument returns document::GeneralDocument:
 	'}';
 	
 EntityDocument returns document::EntityDocument:
-	'EntityDocument' entityClass=QualifiedName '{'
+	'EntityDocument' name=QualifiedName 'for' entityClass=QualifiedName '{'
 	'description' '{' description=EntityDescription	'}'
 	'fields' '{' fields=EntityFields '}'
 	'}';
@@ -93,7 +93,7 @@ EntityField returns document::EntityField:
 	'description' '{' description=RichString '}';
 	
 DTODocument returns document::DTODocument:
-	'DTODocument' dtoClass=QualifiedName '{'
+	'DTODocument' name=QualifiedName 'for' dtoClass=QualifiedName '{'
 	'description' '{' description=DTODescription '}'
 	'details' '{' details=DTODetails '}'
 	'}';

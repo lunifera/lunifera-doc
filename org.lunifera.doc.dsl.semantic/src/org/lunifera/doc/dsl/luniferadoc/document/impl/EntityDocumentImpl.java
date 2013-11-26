@@ -7,11 +7,11 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
-import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +20,7 @@ import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl#getEntityClass <em>Entity Class</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl#getFields <em>Fields</em>}</li>
@@ -28,7 +29,27 @@ import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
  *
  * @generated
  */
-public class EntityDocumentImpl extends LuniferaDocDocumentImpl implements EntityDocument {
+public class EntityDocumentImpl extends MinimalEObjectImpl.Container implements EntityDocument {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getEntityClass() <em>Entity Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,6 +107,27 @@ public class EntityDocumentImpl extends LuniferaDocDocumentImpl implements Entit
 	@Override
 	protected EClass eStaticClass() {
 		return DocumentPackage.Literals.ENTITY_DOCUMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.ENTITY_DOCUMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -219,6 +261,8 @@ public class EntityDocumentImpl extends LuniferaDocDocumentImpl implements Entit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DocumentPackage.ENTITY_DOCUMENT__NAME:
+				return getName();
 			case DocumentPackage.ENTITY_DOCUMENT__ENTITY_CLASS:
 				return getEntityClass();
 			case DocumentPackage.ENTITY_DOCUMENT__DESCRIPTION:
@@ -237,6 +281,9 @@ public class EntityDocumentImpl extends LuniferaDocDocumentImpl implements Entit
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DocumentPackage.ENTITY_DOCUMENT__NAME:
+				setName((String)newValue);
+				return;
 			case DocumentPackage.ENTITY_DOCUMENT__ENTITY_CLASS:
 				setEntityClass((String)newValue);
 				return;
@@ -258,6 +305,9 @@ public class EntityDocumentImpl extends LuniferaDocDocumentImpl implements Entit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DocumentPackage.ENTITY_DOCUMENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case DocumentPackage.ENTITY_DOCUMENT__ENTITY_CLASS:
 				setEntityClass(ENTITY_CLASS_EDEFAULT);
 				return;
@@ -279,6 +329,8 @@ public class EntityDocumentImpl extends LuniferaDocDocumentImpl implements Entit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DocumentPackage.ENTITY_DOCUMENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DocumentPackage.ENTITY_DOCUMENT__ENTITY_CLASS:
 				return ENTITY_CLASS_EDEFAULT == null ? entityClass != null : !ENTITY_CLASS_EDEFAULT.equals(entityClass);
 			case DocumentPackage.ENTITY_DOCUMENT__DESCRIPTION:
@@ -299,7 +351,9 @@ public class EntityDocumentImpl extends LuniferaDocDocumentImpl implements Entit
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (entityClass: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", entityClass: ");
 		result.append(entityClass);
 		result.append(')');
 		return result.toString();

@@ -2,7 +2,6 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.layout.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -182,17 +181,8 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLuniferaDocLayout_Name() {
-		return (EAttribute)luniferaDocLayoutEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getLuniferaDocLayout_Imports() {
-		return (EReference)luniferaDocLayoutEClass.getEStructuralFeatures().get(2);
+		return (EReference)luniferaDocLayoutEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -279,7 +269,6 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 		// Create classes and their features
 		luniferaDocLayoutEClass = createEClass(LUNIFERA_DOC_LAYOUT);
 		createEReference(luniferaDocLayoutEClass, LUNIFERA_DOC_LAYOUT__CONTENT);
-		createEAttribute(luniferaDocLayoutEClass, LUNIFERA_DOC_LAYOUT__NAME);
 		createEReference(luniferaDocLayoutEClass, LUNIFERA_DOC_LAYOUT__IMPORTS);
 
 		entityLayoutEClass = createEClass(ENTITY_LAYOUT);
@@ -339,7 +328,6 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(luniferaDocLayoutEClass, LuniferaDocLayout.class, "LuniferaDocLayout", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLuniferaDocLayout_Content(), theRichstringPackage.getRichString(), null, "content", null, 0, 1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLuniferaDocLayout_Name(), ecorePackage.getEString(), "name", null, 0, 1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLuniferaDocLayout_Imports(), theXtypePackage.getXImportDeclaration(), null, "imports", null, 0, -1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityLayoutEClass, EntityLayout.class, "EntityLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

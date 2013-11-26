@@ -7,11 +7,11 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
-import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +20,7 @@ import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDtoClass <em>Dto Class</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDetails <em>Details</em>}</li>
@@ -28,7 +29,27 @@ import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
  *
  * @generated
  */
-public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocument {
+public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTODocument {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getDtoClass() <em>Dto Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,6 +107,27 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	@Override
 	protected EClass eStaticClass() {
 		return DocumentPackage.Literals.DTO_DOCUMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -219,6 +261,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DocumentPackage.DTO_DOCUMENT__NAME:
+				return getName();
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				return getDtoClass();
 			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
@@ -237,6 +281,9 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DocumentPackage.DTO_DOCUMENT__NAME:
+				setName((String)newValue);
+				return;
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				setDtoClass((String)newValue);
 				return;
@@ -258,6 +305,9 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DocumentPackage.DTO_DOCUMENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				setDtoClass(DTO_CLASS_EDEFAULT);
 				return;
@@ -279,6 +329,8 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DocumentPackage.DTO_DOCUMENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DocumentPackage.DTO_DOCUMENT__DTO_CLASS:
 				return DTO_CLASS_EDEFAULT == null ? dtoClass != null : !DTO_CLASS_EDEFAULT.equals(dtoClass);
 			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
@@ -299,7 +351,9 @@ public class DTODocumentImpl extends LuniferaDocDocumentImpl implements DTODocum
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (dtoClass: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", dtoClass: ");
 		result.append(dtoClass);
 		result.append(')');
 		return result.toString();

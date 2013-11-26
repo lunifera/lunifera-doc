@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="luniferadoc" nsURI="http://www.lunifera.org/luniferadoc" nsPrefix="luniferadoc">
-  <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocDocument"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocDocument" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentInclude">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="include" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="include" eType="#//LuniferaDocDocument"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incType" lowerBound="1"
-        eType="#//DocType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocType">
     <eLiterals name="ENTITY"/>
@@ -78,7 +78,6 @@
         eSuperTypes="#//LuniferaDocDocument">
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
           eType="ecore:EClass platform:/plugin/org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"
           containment="true"/>

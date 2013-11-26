@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.luniferadoc.DocType;
 import org.lunifera.doc.dsl.luniferadoc.DocumentInclude;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocFactory;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 
@@ -58,7 +57,6 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT: return createLuniferaDocDocument();
 			case LuniferaDocPackage.DOCUMENT_INCLUDE: return createDocumentInclude();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -93,16 +91,6 @@ public class LuniferaDocFactoryImpl extends EFactoryImpl implements LuniferaDocF
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LuniferaDocDocument createLuniferaDocDocument() {
-		LuniferaDocDocumentImpl luniferaDocDocument = new LuniferaDocDocumentImpl();
-		return luniferaDocDocument;
 	}
 
 	/**

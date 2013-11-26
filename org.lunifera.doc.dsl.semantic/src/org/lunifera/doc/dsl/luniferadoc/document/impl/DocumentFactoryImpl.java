@@ -90,46 +90,6 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DTODocument createDTODocument() {
-		DTODocumentImpl dtoDocument = new DTODocumentImpl();
-		return dtoDocument;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DTODescription createDTODescription() {
-		DTODescriptionImpl dtoDescription = new DTODescriptionImpl();
-		return dtoDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DTODetails createDTODetails() {
-		DTODetailsImpl dtoDetails = new DTODetailsImpl();
-		return dtoDetails;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DTOProperty createDTOProperty() {
-		DTOPropertyImpl dtoProperty = new DTOPropertyImpl();
-		return dtoProperty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EntityDocument createEntityDocument() {
 		EntityDocumentImpl entityDocument = new EntityDocumentImpl();
 		return entityDocument;
@@ -163,6 +123,46 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	public EntityField createEntityField() {
 		EntityFieldImpl entityField = new EntityFieldImpl();
 		return entityField;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTODocument createDTODocument() {
+		DTODocumentImpl dtoDocument = new DTODocumentImpl();
+		return dtoDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTODescription createDTODescription() {
+		DTODescriptionImpl dtoDescription = new DTODescriptionImpl();
+		return dtoDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTODetails createDTODetails() {
+		DTODetailsImpl dtoDetails = new DTODetailsImpl();
+		return dtoDetails;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTOProperty createDTOProperty() {
+		DTOPropertyImpl dtoProperty = new DTOPropertyImpl();
+		return dtoProperty;
 	}
 
 	/**

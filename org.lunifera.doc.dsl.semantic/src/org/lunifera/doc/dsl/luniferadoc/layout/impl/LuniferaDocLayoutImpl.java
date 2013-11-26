@@ -10,10 +10,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.xtext.xtype.XImportDeclaration;
-import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
@@ -25,25 +25,15 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl implements LuniferaDocLayout {
-	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected RichString content;
-
+public abstract class LuniferaDocLayoutImpl extends MinimalEObjectImpl.Container implements LuniferaDocLayout {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -63,6 +53,16 @@ public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl impl
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected RichString content;
 
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
@@ -91,6 +91,27 @@ public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl impl
 	@Override
 	protected EClass eStaticClass() {
 		return LayoutPackage.Literals.LUNIFERA_DOC_LAYOUT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LayoutPackage.LUNIFERA_DOC_LAYOUT__NAME, oldName, name));
 	}
 
 	/**
@@ -141,27 +162,6 @@ public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LayoutPackage.LUNIFERA_DOC_LAYOUT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<XImportDeclaration> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, LayoutPackage.LUNIFERA_DOC_LAYOUT__IMPORTS);
@@ -193,10 +193,10 @@ public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
-				return getContent();
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				return getName();
+			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
+				return getContent();
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				return getImports();
 		}
@@ -212,11 +212,11 @@ public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
-				setContent((RichString)newValue);
-				return;
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				setName((String)newValue);
+				return;
+			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
+				setContent((RichString)newValue);
 				return;
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				getImports().clear();
@@ -234,11 +234,11 @@ public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
-				setContent((RichString)null);
-				return;
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
+				setContent((RichString)null);
 				return;
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				getImports().clear();
@@ -255,10 +255,10 @@ public abstract class LuniferaDocLayoutImpl extends LuniferaDocDocumentImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
-				return content != null;
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT:
+				return content != null;
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT__IMPORTS:
 				return imports != null && !imports.isEmpty();
 		}

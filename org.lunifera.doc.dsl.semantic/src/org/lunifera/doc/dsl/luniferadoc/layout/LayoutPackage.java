@@ -2,7 +2,6 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.layout;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -67,6 +66,15 @@ public interface LayoutPackage extends EPackage {
 	int LUNIFERA_DOC_LAYOUT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LUNIFERA_DOC_LAYOUT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,22 +84,13 @@ public interface LayoutPackage extends EPackage {
 	int LUNIFERA_DOC_LAYOUT__CONTENT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LUNIFERA_DOC_LAYOUT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_LAYOUT__IMPORTS = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
+	int LUNIFERA_DOC_LAYOUT__IMPORTS = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Lunifera Doc Layout</em>' class.
@@ -100,7 +99,7 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_LAYOUT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
+	int LUNIFERA_DOC_LAYOUT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.EntityLayoutImpl <em>Entity Layout</em>}' class.
@@ -113,15 +112,6 @@ public interface LayoutPackage extends EPackage {
 	int ENTITY_LAYOUT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +119,15 @@ public interface LayoutPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -159,15 +158,6 @@ public interface LayoutPackage extends EPackage {
 	int DTO_LAYOUT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DTO_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,6 +165,15 @@ public interface LayoutPackage extends EPackage {
 	 * @ordered
 	 */
 	int DTO_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DTO_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -205,15 +204,6 @@ public interface LayoutPackage extends EPackage {
 	int BPM_PROCESS_LAYOUT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BPM_PROCESS_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,6 +211,15 @@ public interface LayoutPackage extends EPackage {
 	 * @ordered
 	 */
 	int BPM_PROCESS_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_PROCESS_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -251,15 +250,6 @@ public interface LayoutPackage extends EPackage {
 	int BPM_TASK_LAYOUT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BPM_TASK_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,6 +257,15 @@ public interface LayoutPackage extends EPackage {
 	 * @ordered
 	 */
 	int BPM_TASK_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_TASK_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -297,15 +296,6 @@ public interface LayoutPackage extends EPackage {
 	int VAACLIPSE_VIEW_LAYOUT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAACLIPSE_VIEW_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -313,6 +303,15 @@ public interface LayoutPackage extends EPackage {
 	 * @ordered
 	 */
 	int VAACLIPSE_VIEW_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAACLIPSE_VIEW_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -343,15 +342,6 @@ public interface LayoutPackage extends EPackage {
 	int UI_LAYOUT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UI_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,6 +349,15 @@ public interface LayoutPackage extends EPackage {
 	 * @ordered
 	 */
 	int UI_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -399,17 +398,6 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLuniferaDocLayout_Content();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout#getName()
-	 * @see #getLuniferaDocLayout()
-	 * @generated
-	 */
-	EAttribute getLuniferaDocLayout_Name();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout#getImports <em>Imports</em>}'.
@@ -521,14 +509,6 @@ public interface LayoutPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LUNIFERA_DOC_LAYOUT__CONTENT = eINSTANCE.getLuniferaDocLayout_Content();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LUNIFERA_DOC_LAYOUT__NAME = eINSTANCE.getLuniferaDocLayout_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.

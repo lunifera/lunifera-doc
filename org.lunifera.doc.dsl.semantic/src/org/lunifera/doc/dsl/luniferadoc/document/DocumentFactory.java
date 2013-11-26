@@ -22,42 +22,6 @@ public interface DocumentFactory extends EFactory {
 	DocumentFactory eINSTANCE = org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>DTO Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DTO Document</em>'.
-	 * @generated
-	 */
-	DTODocument createDTODocument();
-
-	/**
-	 * Returns a new object of class '<em>DTO Description</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DTO Description</em>'.
-	 * @generated
-	 */
-	DTODescription createDTODescription();
-
-	/**
-	 * Returns a new object of class '<em>DTO Details</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DTO Details</em>'.
-	 * @generated
-	 */
-	DTODetails createDTODetails();
-
-	/**
-	 * Returns a new object of class '<em>DTO Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DTO Property</em>'.
-	 * @generated
-	 */
-	DTOProperty createDTOProperty();
-
-	/**
 	 * Returns a new object of class '<em>Entity Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +56,42 @@ public interface DocumentFactory extends EFactory {
 	 * @generated
 	 */
 	EntityField createEntityField();
+
+	/**
+	 * Returns a new object of class '<em>DTO Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Document</em>'.
+	 * @generated
+	 */
+	DTODocument createDTODocument();
+
+	/**
+	 * Returns a new object of class '<em>DTO Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Description</em>'.
+	 * @generated
+	 */
+	DTODescription createDTODescription();
+
+	/**
+	 * Returns a new object of class '<em>DTO Details</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Details</em>'.
+	 * @generated
+	 */
+	DTODetails createDTODetails();
+
+	/**
+	 * Returns a new object of class '<em>DTO Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTO Property</em>'.
+	 * @generated
+	 */
+	DTOProperty createDTOProperty();
 
 	/**
 	 * Returns a new object of class '<em>BPM Process Document</em>'.

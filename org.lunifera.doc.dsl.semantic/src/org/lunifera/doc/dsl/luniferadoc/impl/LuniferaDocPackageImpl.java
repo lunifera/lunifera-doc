@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
@@ -141,6 +142,15 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLuniferaDocDocument_Name() {
+		return (EAttribute)luniferaDocDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDocumentInclude() {
 		return documentIncludeEClass;
 	}
@@ -150,8 +160,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocumentInclude_Include() {
-		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(0);
+	public EReference getDocumentInclude_Include() {
+		return (EReference)documentIncludeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -161,15 +171,6 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 */
 	public EAttribute getDocumentInclude_VarName() {
 		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDocumentInclude_IncType() {
-		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -210,11 +211,11 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 
 		// Create classes and their features
 		luniferaDocDocumentEClass = createEClass(LUNIFERA_DOC_DOCUMENT);
+		createEAttribute(luniferaDocDocumentEClass, LUNIFERA_DOC_DOCUMENT__NAME);
 
 		documentIncludeEClass = createEClass(DOCUMENT_INCLUDE);
-		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__INCLUDE);
+		createEReference(documentIncludeEClass, DOCUMENT_INCLUDE__INCLUDE);
 		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__VAR_NAME);
-		createEAttribute(documentIncludeEClass, DOCUMENT_INCLUDE__INC_TYPE);
 
 		// Create enums
 		docTypeEEnum = createEEnum(DOC_TYPE);
@@ -260,12 +261,12 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(luniferaDocDocumentEClass, LuniferaDocDocument.class, "LuniferaDocDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(luniferaDocDocumentEClass, LuniferaDocDocument.class, "LuniferaDocDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLuniferaDocDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, LuniferaDocDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentIncludeEClass, DocumentInclude.class, "DocumentInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocumentInclude_Include(), ecorePackage.getEString(), "include", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentInclude_Include(), this.getLuniferaDocDocument(), null, "include", null, 0, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocumentInclude_IncType(), this.getDocType(), "incType", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(docTypeEEnum, DocType.class, "DocType");

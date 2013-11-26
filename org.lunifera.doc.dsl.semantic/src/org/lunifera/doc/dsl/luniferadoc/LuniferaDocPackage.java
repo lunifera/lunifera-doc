@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,14 +57,23 @@ public interface LuniferaDocPackage extends EPackage {
 	LuniferaDocPackage eINSTANCE = org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl <em>Document</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getLuniferaDocDocument()
 	 * @generated
 	 */
 	int LUNIFERA_DOC_DOCUMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LUNIFERA_DOC_DOCUMENT__NAME = 0;
 
 	/**
 	 * The number of structural features of the '<em>Document</em>' class.
@@ -72,7 +82,7 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT = 0;
+	int LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl <em>Document Include</em>}' class.
@@ -85,7 +95,7 @@ public interface LuniferaDocPackage extends EPackage {
 	int DOCUMENT_INCLUDE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Include</b></em>' attribute.
+	 * The feature id for the '<em><b>Include</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,22 +113,13 @@ public interface LuniferaDocPackage extends EPackage {
 	int DOCUMENT_INCLUDE__VAR_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Inc Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT_INCLUDE__INC_TYPE = 2;
-
-	/**
 	 * The number of structural features of the '<em>Document Include</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_INCLUDE_FEATURE_COUNT = 3;
+	int DOCUMENT_INCLUDE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.DocType <em>Doc Type</em>}' enum.
@@ -142,6 +143,17 @@ public interface LuniferaDocPackage extends EPackage {
 	EClass getLuniferaDocDocument();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument#getName()
+	 * @see #getLuniferaDocDocument()
+	 * @generated
+	 */
+	EAttribute getLuniferaDocDocument_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude <em>Document Include</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,15 +164,15 @@ public interface LuniferaDocPackage extends EPackage {
 	EClass getDocumentInclude();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getInclude <em>Include</em>}'.
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getInclude <em>Include</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Include</em>'.
+	 * @return the meta object for the reference '<em>Include</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getInclude()
 	 * @see #getDocumentInclude()
 	 * @generated
 	 */
-	EAttribute getDocumentInclude_Include();
+	EReference getDocumentInclude_Include();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getVarName <em>Var Name</em>}'.
@@ -172,17 +184,6 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDocumentInclude_VarName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getIncType <em>Inc Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inc Type</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.DocumentInclude#getIncType()
-	 * @see #getDocumentInclude()
-	 * @generated
-	 */
-	EAttribute getDocumentInclude_IncType();
 
 	/**
 	 * Returns the meta object for enum '{@link org.lunifera.doc.dsl.luniferadoc.DocType <em>Doc Type</em>}'.
@@ -217,14 +218,22 @@ public interface LuniferaDocPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl <em>Document</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocDocumentImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
 		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getLuniferaDocDocument()
 		 * @generated
 		 */
 		EClass LUNIFERA_DOC_DOCUMENT = eINSTANCE.getLuniferaDocDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LUNIFERA_DOC_DOCUMENT__NAME = eINSTANCE.getLuniferaDocDocument_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl <em>Document Include</em>}' class.
@@ -237,12 +246,12 @@ public interface LuniferaDocPackage extends EPackage {
 		EClass DOCUMENT_INCLUDE = eINSTANCE.getDocumentInclude();
 
 		/**
-		 * The meta object literal for the '<em><b>Include</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Include</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT_INCLUDE__INCLUDE = eINSTANCE.getDocumentInclude_Include();
+		EReference DOCUMENT_INCLUDE__INCLUDE = eINSTANCE.getDocumentInclude_Include();
 
 		/**
 		 * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
@@ -251,14 +260,6 @@ public interface LuniferaDocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOCUMENT_INCLUDE__VAR_NAME = eINSTANCE.getDocumentInclude_VarName();
-
-		/**
-		 * The meta object literal for the '<em><b>Inc Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DOCUMENT_INCLUDE__INC_TYPE = eINSTANCE.getDocumentInclude_IncType();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.DocType <em>Doc Type</em>}' enum.

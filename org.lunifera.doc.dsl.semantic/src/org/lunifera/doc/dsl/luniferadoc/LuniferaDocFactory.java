@@ -22,15 +22,6 @@ public interface LuniferaDocFactory extends EFactory {
 	LuniferaDocFactory eINSTANCE = org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Document</em>'.
-	 * @generated
-	 */
-	LuniferaDocDocument createLuniferaDocDocument();
-
-	/**
 	 * Returns a new object of class '<em>Document Include</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
