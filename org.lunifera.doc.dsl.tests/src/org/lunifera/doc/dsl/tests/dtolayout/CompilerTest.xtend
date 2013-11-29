@@ -31,86 +31,49 @@ class CompilerTest {
 	def void compareGeneratedJava() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/DTOLayout.luniferadoc")
 		testDoc.compile[assertEquals('''
-			import java.util.List;
+			package doc.dto;
+			
 			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.document.IMetaPojo;
-			import org.lunifera.doc.dsl.api.document.IMetaPojoProperty;
-			import org.lunifera.doc.dsl.api.impl.layout.IDocLayout;
+			import org.lunifera.doc.dsl.api.document.IMetaDTO;
 			
 			@SuppressWarnings("all")
-			public class DefaultDTOLayout implements IDocLayout {
-			  private IMetaPojo it;
+			public class MyDTO implements IMetaDTO {
+			  private String name;
 			  
-			  public void setIt(final IMetaPojo it) {
-			    this.it = it;
+			  private String dtoClass;
+			  
+			  private String description;
+			  
+			  public CharSequence serializeDescription() {
+			    StringConcatenation _builder = new StringConcatenation();
+			    _builder.append("<h1>");
+			    _builder.append("This is MyDTO .");
+			    _builder.append("</h1>");
+			    return _builder;
 			  }
 			  
-			  public String serialize() {
-			    StringConcatenation _builder = new StringConcatenation();
-			    _builder.append("<html>");
-			    _builder.append("<body>");
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("Some text before the first headline.");
-			      _builder.newLine();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.newLine();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("<h1>");
-			      _builder.append("This is a headline");
-			      _builder.append("</h1>");
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.newLine();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      final int i = 2;
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.newLine();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      final List<IMetaPojoProperty> a = this.it.getProperties();
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      final String b = this.it.getDocumentation();
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      final String c = this.it.getName();
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.newLine();
-			      _builder.newLine();
-			      {
-			        boolean _lessThan = (i < 10);
-			        if (_lessThan) {
-			          _builder.newLine();
-			          _builder.append("\t");
-			          _builder.append(i, "	");
-			          _builder.append(" is smaller than 10");
-			          _builder.newLineIfNotEmpty();
-			          _builder.newLine();
-			        }
-			      }
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.newLine();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("test");
-			      _builder.newLine();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("</body>");_builder.append("</html>");
-			    return _builder.toString();
+			  public String getName() {
+			    return this.name;
+			  }
+			  
+			  public void setName(final String name) {
+			    this.name = name;
+			  }
+			  
+			  public String getDtoClass() {
+			    return this.dtoClass;
+			  }
+			  
+			  public void setDtoClass(final String dtoClass) {
+			    this.dtoClass = dtoClass;
+			  }
+			  
+			  public String getDescription() {
+			    return serializeDescription().toString();
+			  }
+			  
+			  public void setDescription(final String description) {
+			    this.description = description;
 			  }
 			}
 		'''.toString, getSingleGeneratedCode)

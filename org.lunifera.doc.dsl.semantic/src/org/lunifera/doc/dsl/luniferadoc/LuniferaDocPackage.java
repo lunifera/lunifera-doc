@@ -57,14 +57,14 @@ public interface LuniferaDocPackage extends EPackage {
 	LuniferaDocPackage eINSTANCE = org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.NamedDocument <em>Named Document</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
-	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getLuniferaDocDocument()
+	 * @see org.lunifera.doc.dsl.luniferadoc.NamedDocument
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getNamedDocument()
 	 * @generated
 	 */
-	int LUNIFERA_DOC_DOCUMENT = 0;
+	int NAMED_DOCUMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -73,16 +73,16 @@ public interface LuniferaDocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_DOCUMENT__NAME = 0;
+	int NAMED_DOCUMENT__NAME = 0;
 
 	/**
-	 * The number of structural features of the '<em>Document</em>' class.
+	 * The number of structural features of the '<em>Named Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT = 1;
+	int NAMED_DOCUMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl <em>Document Include</em>}' class.
@@ -133,25 +133,25 @@ public interface LuniferaDocPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}'.
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.NamedDocument <em>Named Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Document</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
+	 * @return the meta object for class '<em>Named Document</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.NamedDocument
 	 * @generated
 	 */
-	EClass getLuniferaDocDocument();
+	EClass getNamedDocument();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.NamedDocument#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument#getName()
-	 * @see #getLuniferaDocDocument()
+	 * @see org.lunifera.doc.dsl.luniferadoc.NamedDocument#getName()
+	 * @see #getNamedDocument()
 	 * @generated
 	 */
-	EAttribute getLuniferaDocDocument_Name();
+	EAttribute getNamedDocument_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.DocumentInclude <em>Document Include</em>}'.
@@ -218,14 +218,14 @@ public interface LuniferaDocPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.NamedDocument <em>Named Document</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
-		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getLuniferaDocDocument()
+		 * @see org.lunifera.doc.dsl.luniferadoc.NamedDocument
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl#getNamedDocument()
 		 * @generated
 		 */
-		EClass LUNIFERA_DOC_DOCUMENT = eINSTANCE.getLuniferaDocDocument();
+		EClass NAMED_DOCUMENT = eINSTANCE.getNamedDocument();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -233,7 +233,7 @@ public interface LuniferaDocPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LUNIFERA_DOC_DOCUMENT__NAME = eINSTANCE.getLuniferaDocDocument_Name();
+		EAttribute NAMED_DOCUMENT__NAME = eINSTANCE.getNamedDocument_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.DocumentIncludeImpl <em>Document Include</em>}' class.

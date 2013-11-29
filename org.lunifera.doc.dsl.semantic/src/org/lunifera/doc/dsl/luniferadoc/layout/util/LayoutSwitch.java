@@ -5,7 +5,7 @@ package org.lunifera.doc.dsl.luniferadoc.layout.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout;
@@ -75,7 +75,7 @@ public class LayoutSwitch<T> extends Switch<T> {
 			case LayoutPackage.LUNIFERA_DOC_LAYOUT: {
 				LuniferaDocLayout luniferaDocLayout = (LuniferaDocLayout)theEObject;
 				T result = caseLuniferaDocLayout(luniferaDocLayout);
-				if (result == null) result = caseLuniferaDocDocument(luniferaDocLayout);
+				if (result == null) result = caseNamedDocument(luniferaDocLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -83,7 +83,7 @@ public class LayoutSwitch<T> extends Switch<T> {
 				EntityLayout entityLayout = (EntityLayout)theEObject;
 				T result = caseEntityLayout(entityLayout);
 				if (result == null) result = caseLuniferaDocLayout(entityLayout);
-				if (result == null) result = caseLuniferaDocDocument(entityLayout);
+				if (result == null) result = caseNamedDocument(entityLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -91,7 +91,7 @@ public class LayoutSwitch<T> extends Switch<T> {
 				DTOLayout dtoLayout = (DTOLayout)theEObject;
 				T result = caseDTOLayout(dtoLayout);
 				if (result == null) result = caseLuniferaDocLayout(dtoLayout);
-				if (result == null) result = caseLuniferaDocDocument(dtoLayout);
+				if (result == null) result = caseNamedDocument(dtoLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -99,7 +99,7 @@ public class LayoutSwitch<T> extends Switch<T> {
 				BPMProcessLayout bpmProcessLayout = (BPMProcessLayout)theEObject;
 				T result = caseBPMProcessLayout(bpmProcessLayout);
 				if (result == null) result = caseLuniferaDocLayout(bpmProcessLayout);
-				if (result == null) result = caseLuniferaDocDocument(bpmProcessLayout);
+				if (result == null) result = caseNamedDocument(bpmProcessLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -107,7 +107,7 @@ public class LayoutSwitch<T> extends Switch<T> {
 				BPMTaskLayout bpmTaskLayout = (BPMTaskLayout)theEObject;
 				T result = caseBPMTaskLayout(bpmTaskLayout);
 				if (result == null) result = caseLuniferaDocLayout(bpmTaskLayout);
-				if (result == null) result = caseLuniferaDocDocument(bpmTaskLayout);
+				if (result == null) result = caseNamedDocument(bpmTaskLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,7 +115,7 @@ public class LayoutSwitch<T> extends Switch<T> {
 				VaaclipseViewLayout vaaclipseViewLayout = (VaaclipseViewLayout)theEObject;
 				T result = caseVaaclipseViewLayout(vaaclipseViewLayout);
 				if (result == null) result = caseLuniferaDocLayout(vaaclipseViewLayout);
-				if (result == null) result = caseLuniferaDocDocument(vaaclipseViewLayout);
+				if (result == null) result = caseNamedDocument(vaaclipseViewLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,7 +123,7 @@ public class LayoutSwitch<T> extends Switch<T> {
 				UILayout uiLayout = (UILayout)theEObject;
 				T result = caseUILayout(uiLayout);
 				if (result == null) result = caseLuniferaDocLayout(uiLayout);
-				if (result == null) result = caseLuniferaDocDocument(uiLayout);
+				if (result == null) result = caseNamedDocument(uiLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -237,17 +237,17 @@ public class LayoutSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Document</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Document</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Document</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLuniferaDocDocument(LuniferaDocDocument object) {
+	public T caseNamedDocument(NamedDocument object) {
 		return null;
 	}
 

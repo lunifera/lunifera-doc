@@ -21,6 +21,6 @@ public interface IMetaDTO {
 
 	void setDescription(String description);
 
-	List<IMetaPojoProperty> getProperties();
+	List<IDTOProperty> getProperties();
 
 }

@@ -1,6 +1,6 @@
-DTODocument org.lunifera.sample.MyDTO {
+DTODocument doc.dto.MyDTO for org.lunifera.sample.MyDTO {
 	description {
-		'''«h1»This is MyDTO.«/h1»'''
+		'''«h1»This is MyDTO .«/h1»'''
 	}
 	details {
 		name propA

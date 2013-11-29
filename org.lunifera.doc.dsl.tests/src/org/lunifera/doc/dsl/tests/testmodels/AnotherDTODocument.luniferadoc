@@ -1,4 +1,4 @@
-DTODocument org.lunifera.sample.AnotherDTO {
+DTODocument AnotherDTODocument for org.lunifera.sample.AnotherDTO {
 	description {
 		'''«h1»This is another DTO.«/h1»'''
 	}
@@ -6,9 +6,10 @@ DTODocument org.lunifera.sample.AnotherDTO {
 		name propA
 		description {
 			'''
-				This is the description of property A.
+				This is the description of property A. Test.
 			'''
 		}
+		
 		
 		name propB
 		description {

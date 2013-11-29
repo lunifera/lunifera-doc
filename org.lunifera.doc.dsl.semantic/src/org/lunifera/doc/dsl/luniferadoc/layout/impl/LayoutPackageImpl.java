@@ -317,7 +317,7 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		luniferaDocLayoutEClass.getESuperTypes().add(theLuniferaDocPackage.getLuniferaDocDocument());
+		luniferaDocLayoutEClass.getESuperTypes().add(theLuniferaDocPackage.getNamedDocument());
 		entityLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 		dtoLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 		bpmProcessLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
@@ -326,7 +326,7 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 		uiLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(luniferaDocLayoutEClass, LuniferaDocLayout.class, "LuniferaDocLayout", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(luniferaDocLayoutEClass, LuniferaDocLayout.class, "LuniferaDocLayout", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLuniferaDocLayout_Content(), theRichstringPackage.getRichString(), null, "content", null, 0, 1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLuniferaDocLayout_Imports(), theXtypePackage.getXImportDeclaration(), null, "imports", null, 0, -1, LuniferaDocLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

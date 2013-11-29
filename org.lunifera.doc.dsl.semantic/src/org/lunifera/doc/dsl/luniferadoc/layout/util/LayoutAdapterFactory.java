@@ -6,7 +6,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout;
@@ -101,8 +101,8 @@ public class LayoutAdapterFactory extends AdapterFactoryImpl {
 				return createUILayoutAdapter();
 			}
 			@Override
-			public Adapter caseLuniferaDocDocument(LuniferaDocDocument object) {
-				return createLuniferaDocDocumentAdapter();
+			public Adapter caseNamedDocument(NamedDocument object) {
+				return createNamedDocumentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -223,16 +223,16 @@ public class LayoutAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.NamedDocument <em>Named Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
+	 * @see org.lunifera.doc.dsl.luniferadoc.NamedDocument
 	 * @generated
 	 */
-	public Adapter createLuniferaDocDocumentAdapter() {
+	public Adapter createNamedDocumentAdapter() {
 		return null;
 	}
 

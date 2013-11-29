@@ -31,16 +31,34 @@ class CompilerTest {
 	def void compareGeneratedJava() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/DTODocument.luniferadoc")
 		testDoc.compile[assertEquals('''
-			package org.lunifera.sample;
+			package doc.dto;
 			
 			import org.eclipse.xtend2.lib.StringConcatenation;
 			import org.lunifera.doc.dsl.api.document.IMetaDTO;
 			
 			@SuppressWarnings("all")
-			public class MyDTODocument implements IMetaDTO {
+			public class MyDTO implements IMetaDTO {
+			  private String name;
+			  
 			  private String dtoClass;
 			  
 			  private String description;
+			  
+			  public CharSequence serializeDescription() {
+			    StringConcatenation _builder = new StringConcatenation();
+			    _builder.append("<h1>");
+			    _builder.append("This is MyDTO .");
+			    _builder.append("</h1>");
+			    return _builder;
+			  }
+			  
+			  public String getName() {
+			    return this.name;
+			  }
+			  
+			  public void setName(final String name) {
+			    this.name = name;
+			  }
 			  
 			  public String getDtoClass() {
 			    return this.dtoClass;
@@ -56,14 +74,6 @@ class CompilerTest {
 			  
 			  public void setDescription(final String description) {
 			    this.description = description;
-			  }
-			  
-			  public CharSequence serializeDescription() {
-			    StringConcatenation _builder = new StringConcatenation();
-			    _builder.append("<h1>");
-			    _builder.append("This is MyDTO.");
-			    _builder.append("</h1>");
-			    return _builder;
 			  }
 			}
 		'''.toString, getSingleGeneratedCode)

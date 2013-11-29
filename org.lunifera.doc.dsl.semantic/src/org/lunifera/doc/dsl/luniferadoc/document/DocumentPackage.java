@@ -58,14 +58,14 @@ public interface DocumentPackage extends EPackage {
 	DocumentPackage eINSTANCE = org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl <em>Entity Document</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument <em>Lunifera Doc Document</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityDocument()
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getLuniferaDocDocument()
 	 * @generated
 	 */
-	int ENTITY_DOCUMENT = 0;
+	int LUNIFERA_DOC_DOCUMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -74,7 +74,35 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_DOCUMENT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+	int LUNIFERA_DOC_DOCUMENT__NAME = LuniferaDocPackage.NAMED_DOCUMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Lunifera Doc Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.NAMED_DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl <em>Entity Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityDocument()
+	 * @generated
+	 */
+	int ENTITY_DOCUMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Entity Class</b></em>' attribute.
@@ -83,7 +111,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_DOCUMENT__ENTITY_CLASS = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int ENTITY_DOCUMENT__ENTITY_CLASS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -92,7 +120,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_DOCUMENT__DESCRIPTION = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
+	int ENTITY_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference.
@@ -101,7 +129,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_DOCUMENT__FIELDS = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
+	int ENTITY_DOCUMENT__FIELDS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity Document</em>' class.
@@ -110,7 +138,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
+	int ENTITY_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl <em>Entity Description</em>}' class.
@@ -120,7 +148,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityDescription()
 	 * @generated
 	 */
-	int ENTITY_DESCRIPTION = 1;
+	int ENTITY_DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -148,7 +176,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityFields()
 	 * @generated
 	 */
-	int ENTITY_FIELDS = 2;
+	int ENTITY_FIELDS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -176,7 +204,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityField()
 	 * @generated
 	 */
-	int ENTITY_FIELD = 3;
+	int ENTITY_FIELD = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -249,7 +277,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODocument()
 	 * @generated
 	 */
-	int DTO_DOCUMENT = 4;
+	int DTO_DOCUMENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -258,7 +286,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DOCUMENT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+	int DTO_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Dto Class</b></em>' attribute.
@@ -267,7 +295,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DOCUMENT__DTO_CLASS = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int DTO_DOCUMENT__DTO_CLASS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -276,7 +304,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DOCUMENT__DESCRIPTION = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
+	int DTO_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Details</b></em>' containment reference.
@@ -285,7 +313,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DOCUMENT__DETAILS = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
+	int DTO_DOCUMENT__DETAILS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>DTO Document</em>' class.
@@ -294,7 +322,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
+	int DTO_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl <em>DTO Description</em>}' class.
@@ -304,7 +332,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODescription()
 	 * @generated
 	 */
-	int DTO_DESCRIPTION = 5;
+	int DTO_DESCRIPTION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -332,7 +360,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODetails()
 	 * @generated
 	 */
-	int DTO_DETAILS = 6;
+	int DTO_DETAILS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -360,7 +388,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTOProperty()
 	 * @generated
 	 */
-	int DTO_PROPERTY = 7;
+	int DTO_PROPERTY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -397,7 +425,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMProcessDocument()
 	 * @generated
 	 */
-	int BPM_PROCESS_DOCUMENT = 8;
+	int BPM_PROCESS_DOCUMENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -406,7 +434,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_PROCESS_DOCUMENT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+	int BPM_PROCESS_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>BPM Process Document</em>' class.
@@ -415,7 +443,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_PROCESS_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int BPM_PROCESS_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMTaskDocumentImpl <em>BPM Task Document</em>}' class.
@@ -425,7 +453,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMTaskDocument()
 	 * @generated
 	 */
-	int BPM_TASK_DOCUMENT = 9;
+	int BPM_TASK_DOCUMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -434,7 +462,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_DOCUMENT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+	int BPM_TASK_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>BPM Task Document</em>' class.
@@ -443,7 +471,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int BPM_TASK_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDocumentImpl <em>Vaaclipse View Document</em>}' class.
@@ -453,7 +481,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getVaaclipseViewDocument()
 	 * @generated
 	 */
-	int VAACLIPSE_VIEW_DOCUMENT = 10;
+	int VAACLIPSE_VIEW_DOCUMENT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -462,7 +490,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAACLIPSE_VIEW_DOCUMENT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+	int VAACLIPSE_VIEW_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Vaaclipse View Document</em>' class.
@@ -471,7 +499,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAACLIPSE_VIEW_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int VAACLIPSE_VIEW_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl <em>UI Document</em>}' class.
@@ -481,7 +509,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getUIDocument()
 	 * @generated
 	 */
-	int UI_DOCUMENT = 11;
+	int UI_DOCUMENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -490,7 +518,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_DOCUMENT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+	int UI_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>UI Document</em>' class.
@@ -499,7 +527,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int UI_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl <em>General Document</em>}' class.
@@ -509,7 +537,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getGeneralDocument()
 	 * @generated
 	 */
-	int GENERAL_DOCUMENT = 12;
+	int GENERAL_DOCUMENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -556,6 +584,16 @@ public interface DocumentPackage extends EPackage {
 	 */
 	int GENERAL_DOCUMENT_FEATURE_COUNT = LayoutPackage.LUNIFERA_DOC_LAYOUT_FEATURE_COUNT + 1;
 
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument <em>Lunifera Doc Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Lunifera Doc Document</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
+	 * @generated
+	 */
+	EClass getLuniferaDocDocument();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument <em>Entity Document</em>}'.
@@ -918,6 +956,16 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument <em>Lunifera Doc Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getLuniferaDocDocument()
+		 * @generated
+		 */
+		EClass LUNIFERA_DOC_DOCUMENT = eINSTANCE.getLuniferaDocDocument();
+
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl <em>Entity Document</em>}' class.
 		 * <!-- begin-user-doc -->

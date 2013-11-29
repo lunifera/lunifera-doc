@@ -4,7 +4,7 @@ package org.lunifera.doc.dsl.luniferadoc.layout;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xtype.XImportDeclaration;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
 /**
@@ -21,10 +21,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * </p>
  *
  * @see org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage#getLuniferaDocLayout()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface LuniferaDocLayout extends LuniferaDocDocument {
+public interface LuniferaDocLayout extends NamedDocument {
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

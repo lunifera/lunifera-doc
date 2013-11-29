@@ -13,9 +13,9 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.lunifera.doc.dsl.luniferadoc.DocType;
 import org.lunifera.doc.dsl.luniferadoc.DocumentInclude;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocFactory;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
+import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
@@ -35,7 +35,7 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass luniferaDocDocumentEClass = null;
+	private EClass namedDocumentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,8 +133,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLuniferaDocDocument() {
-		return luniferaDocDocumentEClass;
+	public EClass getNamedDocument() {
+		return namedDocumentEClass;
 	}
 
 	/**
@@ -142,8 +142,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLuniferaDocDocument_Name() {
-		return (EAttribute)luniferaDocDocumentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNamedDocument_Name() {
+		return (EAttribute)namedDocumentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -210,8 +210,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		isCreated = true;
 
 		// Create classes and their features
-		luniferaDocDocumentEClass = createEClass(LUNIFERA_DOC_DOCUMENT);
-		createEAttribute(luniferaDocDocumentEClass, LUNIFERA_DOC_DOCUMENT__NAME);
+		namedDocumentEClass = createEClass(NAMED_DOCUMENT);
+		createEAttribute(namedDocumentEClass, NAMED_DOCUMENT__NAME);
 
 		documentIncludeEClass = createEClass(DOCUMENT_INCLUDE);
 		createEReference(documentIncludeEClass, DOCUMENT_INCLUDE__INCLUDE);
@@ -261,11 +261,11 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(luniferaDocDocumentEClass, LuniferaDocDocument.class, "LuniferaDocDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLuniferaDocDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, LuniferaDocDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(namedDocumentEClass, NamedDocument.class, "NamedDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentIncludeEClass, DocumentInclude.class, "DocumentInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDocumentInclude_Include(), this.getLuniferaDocDocument(), null, "include", null, 0, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentInclude_Include(), theDocumentPackage.getLuniferaDocDocument(), null, "include", null, 0, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

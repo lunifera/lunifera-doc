@@ -13,6 +13,6 @@ import org.lunifera.doc.dsl.api.document.IMetaDTO;
 
 public interface IDTOLayout extends IGenericLayout {
 
-	void setDto(IMetaDTO dto);
+	void setDoc(IMetaDTO dto);
 
 }

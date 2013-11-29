@@ -32,49 +32,7 @@ class CompilerTest {
 	def void compareGeneratedJava() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/GeneralDocument.luniferadoc")
 		testDoc.compile[assertEquals('''
-			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.document.IMetaDTO;
-			import org.lunifera.doc.dsl.api.document.IMetaPojo;
-			import org.lunifera.doc.dsl.api.impl.layout.IDocLayout;
-			
-			@SuppressWarnings("all")
-			public class IntroductionDocument implements IDocLayout {
-			  private IMetaDTO myDTODoc;
-			  
-			  private IMetaDTO anotherDTODoc;
-			  
-			  public IntroductionDocument() {
-			    this.myDTODoc = new org.lunifera.sample.MyDTODocument();
-			    this.anotherDTODoc = new org.lunifera.sample.AnotherDTODocument();
-			    
-			  }
-			  
-			  private IMetaPojo it;
-			  
-			  public void setIt(final IMetaPojo it) {
-			    this.it = it;
-			  }
-			  
-			  public String serialize() {
-			    StringConcatenation _builder = new StringConcatenation();
-			    _builder.append("<html>");
-			    _builder.append("<body>");
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("<h1>");
-			      _builder.append("Once there was a Pojo named ");
-			      String _name = this.myDTODoc.getName();
-			      _builder.append(_name, "	");
-			      _builder.append(".");
-			      _builder.append("</h1>");
-			      _builder.newLineIfNotEmpty();
-			      _builder.newLine();
-			      _builder.append("\t");
-			      _builder.append("</body>");_builder.append("</html>");
-			    return _builder.toString();
-			  }
-			}
+
 		'''.toString, getSingleGeneratedCode)
 		]
 	}	

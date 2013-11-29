@@ -14,12 +14,17 @@ import "http://www.lunifera.org/luniferadoc/document" as document
 import "http://www.lunifera.org/luniferadoc/richstring" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
-LuniferaDocDocument returns luniferadoc::LuniferaDocDocument:
-	EntityLayout | DTOLayout | BPMProcessLayout | BPMTaskLayout | VaaclipseViewLayout | UILayout |
-	GeneralDocument | EntityDocument | DTODocument | BPMProcessDocument | BPMTaskDocument | VaaclipseViewDocument | UIDocument;
+NamedDocument returns luniferadoc::NamedDocument:
+	LuniferaDocLayout | LuniferaDocDocument;
+
+LuniferaDocDocument returns document::LuniferaDocDocument:
+	EntityDocument | DTODocument | BPMProcessDocument | BPMTaskDocument | VaaclipseViewDocument | UIDocument;
+	
+LuniferaDocLayout returns layout::LuniferaDocLayout:
+	GeneralDocument | EntityLayout | DTOLayout | BPMProcessLayout | BPMTaskLayout | VaaclipseViewLayout | UILayout;
 
 DocumentInclude returns luniferadoc::DocumentInclude:
-	'include' include=[luniferadoc::LuniferaDocDocument|QualifiedName] 'as' varName=ID;
+	'include' include=[document::LuniferaDocDocument|QualifiedName] 'as' varName=ID;
 
 enum IncludeType returns luniferadoc::DocType:
 	ENTITY = 'ENTITY' | DTO = 'DTO' | BPM_PROCESS = 'BPM_PROCESS' | BPM_TASK = 'BPM_TASK' | 

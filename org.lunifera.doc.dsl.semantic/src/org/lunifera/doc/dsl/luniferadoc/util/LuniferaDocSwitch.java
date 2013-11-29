@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.lunifera.doc.dsl.luniferadoc.DocumentInclude;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
+import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class LuniferaDocSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT: {
-				LuniferaDocDocument luniferaDocDocument = (LuniferaDocDocument)theEObject;
-				T result = caseLuniferaDocDocument(luniferaDocDocument);
+			case LuniferaDocPackage.NAMED_DOCUMENT: {
+				NamedDocument namedDocument = (NamedDocument)theEObject;
+				T result = caseNamedDocument(namedDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -83,17 +83,17 @@ public class LuniferaDocSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Document</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Document</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Document</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLuniferaDocDocument(LuniferaDocDocument object) {
+	public T caseNamedDocument(NamedDocument object) {
 		return null;
 	}
 

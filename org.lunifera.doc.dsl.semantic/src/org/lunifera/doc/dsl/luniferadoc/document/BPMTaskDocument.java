@@ -2,7 +2,6 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.document;
 
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
 
 /**
  * <!-- begin-user-doc -->

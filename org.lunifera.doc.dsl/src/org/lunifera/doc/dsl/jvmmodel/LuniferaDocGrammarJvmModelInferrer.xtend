@@ -38,6 +38,10 @@ import org.lunifera.doc.dsl.luniferadoc.document.UIDocument
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 import org.lunifera.doc.dsl.api.layout.IGenericLayout
 import org.lunifera.doc.dsl.api.layout.IDTOLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout
+import java.util.List
+import java.util.ArrayList
+import org.lunifera.doc.dsl.api.layout.IEntityLayout
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -60,37 +64,37 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	private IJvmModelAssociator associator;
 
 	/**
-	 * The dispatch method {@code infer} is called for each instance of the
-	 * given element's type that is contained in a resource.
-	 * 
-	 * @param element
-	 *            the model to create one or more
-	 *            {@link org.eclipse.xtext.common.types.JvmDeclaredType declared
-	 *            types} from.
-	 * @param acceptor
-	 *            each created
-	 *            {@link org.eclipse.xtext.common.types.JvmDeclaredType type}
-	 *            without a container should be passed to the acceptor in order
-	 *            get attached to the current resource. The acceptor's
-	 *            {@link IJvmDeclaredTypeAcceptor#accept(org.eclipse.xtext.common.types.JvmDeclaredType)
-	 *            accept(..)} method takes the constructed empty type for the
-	 *            pre-indexing phase. This one is further initialized in the
-	 *            indexing phase using the closure you pass to the returned
-	 *            {@link org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing#initializeLater(org.eclipse.xtext.xbase.lib.Procedures.Procedure1)
-	 *            initializeLater(..)}.
-	 * @param isPreIndexingPhase
-	 *            whether the method is called in a pre-indexing phase, i.e.
-	 *            when the global index is not yet fully updated. You must not
-	 *            rely on linking using the index if isPreIndexingPhase is
-	 *            <code>true</code>.
+	 * Infer method for EntityLayout elements
+	 */
+	def dispatch void infer(EntityLayout entityLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(entityLayout.toClass(entityLayout.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IEntityLayout), entityLayout, null)
+				documentation = entityLayout.documentation
+				members += toField("doc", typeReference.getTypeForName(typeof(EntityDocument), entityLayout, null))
+				members += toSetter("doc", typeReference.getTypeForName(typeof(EntityDocument), entityLayout, null))
+				val contentRichString = entityLayout.content
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				associator.associatePrimary(contentRichString, operation)
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(inferredType())
+				operation.setBody(contentRichString)
+				associator.associateLogicalContainer(contentRichString, operation)
+				members += operation
+			])
+	}
+	
+	/**
+	 * Infer method for DTOLayout elements
 	 */
 	def dispatch void infer(DTOLayout dtoLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(dtoLayout.toClass(dtoLayout.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDTOLayout), dtoLayout, null)
 				documentation = dtoLayout.documentation
-				members += toField("it", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
-				members += toSetter("it", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
+				members += toField("doc", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
+				members += toSetter("doc", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
 				val richString = dtoLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -103,6 +107,9 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			])
 	}
 
+	/**
+	 * Infer method for GeneralDocument elements
+	 */
 	def dispatch void infer(GeneralDocument generalDoc, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(generalDoc.toClass(generalDoc.name.toString)).initializeLater(
 			[
@@ -111,14 +118,14 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				for (inc : generalDoc.includes) {
 					members += inc.include.toIncField(inc.varName, generalDoc)
 				}
-				members += generalDoc.toConstructor [
-					body = [it.append(
-							'''
-								«FOR inc : generalDoc.includes»
-									this.«inc.varName» = new «inc.include.name»();
-								«ENDFOR»
-							''')]
-				]
+//				members += generalDoc.toConstructor [
+//					body = [it.append(
+//							'''
+//								«FOR inc : generalDoc.includes»
+//									this.«inc.varName» = new «inc.include.name»();
+//								«ENDFOR»
+//							''')]
+//				]
 				val richString = generalDoc.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -132,15 +139,15 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	/**
-	 * Inferrer for DTODocument.
+	 * Infer method for DTODocument elements
 	 */
 	def dispatch void infer(DTODocument dtoDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(dtoDocument.toClass(dtoDocument.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IMetaDTO), dtoDocument, null)
 				documentation = dtoDocument.documentation
-				val dtoClassField = toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += dtoClassField
+				members += toField("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
 						typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				
@@ -159,6 +166,8 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += serializeDescriptionOperation
 				
 				// getter/setter
+				members += toGetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toSetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += toGetter("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += toSetter("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				val descriptionGetter = dtoDocument.description.toGetter("description",
@@ -171,7 +180,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	/**
-	 * Inferrer for EntityDocument.
+	 * Infer method for EntityDocument elements
 	 */
 	def dispatch void infer(EntityDocument entityDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(entityDocument.toClass(entityDocument.name)).initializeLater(
@@ -179,6 +188,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				superTypes += typeReference.getTypeForName(typeof(IMetaEntity), entityDocument, null)
 				documentation = entityDocument.documentation
 
+				members += toField("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				val entityClassField = toField("entityClass", typeReference.getTypeForName(typeof(String), 
 					entityDocument, null))
 				members += entityClassField
@@ -198,6 +208,9 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
 				}				
 				
+				// getter/setter
+				members += toGetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += toSetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				val docGetter = entityDocument.description.toGetter("description",
 					typeReference.getTypeForName(typeof(String), entityDocument, null))
 				docGetter.setBody[it.append('''return «serializeDescriptionOperation.simpleName»();''')]
@@ -209,26 +222,49 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			])
 	}
 	
+	
+	/*****************
+	 * Helper methods
+	 ****************/
+	
+	/**
+	 * Create field for an included EntityDocument
+	 */
 	def dispatch JvmField toIncField(EntityDocument entityDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaEntity), generalDoc, null))
 	}
 	
+	/**
+	 * Create field for an included DTODocument
+	 */
 	def dispatch JvmField toIncField(DTODocument dtoDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaDTO), generalDoc, null))
 	}
 	
+	/**
+	 * Create field for an included BPMDocument
+	 */
 	def dispatch JvmField toIncField(BPMProcessDocument bpmProcessDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaBPMProcess), generalDoc, null))
 	}
 	
+	/**
+	 * Create field for an included BPMTaskDocument
+	 */
 	def dispatch JvmField toIncField(BPMTaskDocument bpmTaskDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaBPMTask), generalDoc, null))
 	}
 	
+	/**
+	 * Create field for an included VaaclipseViewDocument
+	 */
 	def dispatch JvmField toIncField(VaaclipseViewDocument vaaclipseViewDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaVaaclipseView), generalDoc, null))
 	}
 	
+	/**
+	 * Create field for an included UIDocument
+	 */
 	def dispatch JvmField toIncField(UIDocument uiDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaUI), generalDoc, null))
 	}

@@ -23,12 +23,13 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 import static org.junit.Assert.*
 import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
 import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImpl
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))
 class ParserTest {
 	
-	@Inject extension ParseHelper<GeneralDocument>
+	@Inject extension ParseHelper<EntityDocument>
 	@Inject extension ValidationTestHelper
 	@Inject extension IJvmModelAssociations
 	
@@ -36,29 +37,6 @@ class ParserTest {
 	def void testParsing() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/EntityDocument.luniferadoc").parse
 		
-		assertEquals("Introduction", testDoc.name)
-		assertEquals(2, testDoc.includes.size)
-		assertEquals("org.lunifera.sample.MyDTODocument", testDoc.includes.get(0).include)
-		assertEquals("myDTODoc", testDoc.includes.get(0).varName)
-		assertEquals(typeof(RichStringImpl), testDoc.content.class)
-		
-	}
-	
-	/**
-	 * Currently unused but kept as a sample
-	 */
-	@SuppressWarnings("unused")
-	private def String generateTestDoc() {
-		'''
-			GeneralDocument Introduction {
-				include org.lunifera.sample.MyDTODocument as myDTODoc
-				include org.lunifera.sample.AnotherDTODocument as anotherDTODoc
-	
-				«"'''"»
-				«"«"»h1«"»"»Once there was a Pojo named «"«"»myDTODoc.^name«"»"».«"«"»/h1«"»"»
-				«"'''"»
-			}
-		'''
 	}
 	
 }

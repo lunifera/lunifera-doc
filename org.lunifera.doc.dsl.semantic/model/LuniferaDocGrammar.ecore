@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="luniferadoc" nsURI="http://www.lunifera.org/luniferadoc" nsPrefix="luniferadoc">
-  <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocDocument" abstract="true"
-      interface="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DocumentInclude">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="include" eType="#//LuniferaDocDocument"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocType">
     <eLiterals name="ENTITY"/>
     <eLiterals name="DTO" value="1"/>
@@ -18,9 +9,19 @@
     <eLiterals name="VAACLIPSE_VIEW" value="4"/>
     <eLiterals name="UI" value="5"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedDocument" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentInclude">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="include" eType="#//document/LuniferaDocDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eSubpackages name="document" nsURI="http://www.lunifera.org/luniferadoc/document"
       nsPrefix="document">
-    <eClassifiers xsi:type="ecore:EClass" name="EntityDocument" eSuperTypes="#//LuniferaDocDocument">
+    <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocDocument" abstract="true"
+        interface="true" eSuperTypes="#//NamedDocument"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityDocument" eSuperTypes="#//document/LuniferaDocDocument">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/EntityDescription"
           containment="true"/>
@@ -44,7 +45,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DTODocument" eSuperTypes="#//LuniferaDocDocument">
+    <eClassifiers xsi:type="ecore:EClass" name="DTODocument" eSuperTypes="#//document/LuniferaDocDocument">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtoClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/DTODescription"
           containment="true"/>
@@ -64,10 +65,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BPMProcessDocument" eSuperTypes="#//LuniferaDocDocument"/>
-    <eClassifiers xsi:type="ecore:EClass" name="BPMTaskDocument" eSuperTypes="#//LuniferaDocDocument"/>
-    <eClassifiers xsi:type="ecore:EClass" name="VaaclipseViewDocument" eSuperTypes="#//LuniferaDocDocument"/>
-    <eClassifiers xsi:type="ecore:EClass" name="UIDocument" eSuperTypes="#//LuniferaDocDocument"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMProcessDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMTaskDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VaaclipseViewDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UIDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
     <eClassifiers xsi:type="ecore:EClass" name="GeneralDocument" eSuperTypes="#//layout/LuniferaDocLayout">
       <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
           eType="#//DocumentInclude" containment="true"/>
@@ -75,7 +76,7 @@
   </eSubpackages>
   <eSubpackages name="layout" nsURI="http://www.lunifera.org/luniferadoc/layout" nsPrefix="layout">
     <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocLayout" abstract="true"
-        eSuperTypes="#//LuniferaDocDocument">
+        interface="true" eSuperTypes="#//NamedDocument">
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"

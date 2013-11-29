@@ -56,10 +56,10 @@ public interface LayoutPackage extends EPackage {
 	LayoutPackage eINSTANCE = org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl <em>Lunifera Doc Layout</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout <em>Lunifera Doc Layout</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout
 	 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl#getLuniferaDocLayout()
 	 * @generated
 	 */
@@ -72,7 +72,7 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_LAYOUT__NAME = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT__NAME;
+	int LUNIFERA_DOC_LAYOUT__NAME = LuniferaDocPackage.NAMED_DOCUMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -81,7 +81,7 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_LAYOUT__CONTENT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int LUNIFERA_DOC_LAYOUT__CONTENT = LuniferaDocPackage.NAMED_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -90,7 +90,7 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_LAYOUT__IMPORTS = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
+	int LUNIFERA_DOC_LAYOUT__IMPORTS = LuniferaDocPackage.NAMED_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Lunifera Doc Layout</em>' class.
@@ -99,7 +99,7 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LUNIFERA_DOC_LAYOUT_FEATURE_COUNT = LuniferaDocPackage.LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
+	int LUNIFERA_DOC_LAYOUT_FEATURE_COUNT = LuniferaDocPackage.NAMED_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.EntityLayoutImpl <em>Entity Layout</em>}' class.
@@ -493,10 +493,10 @@ public interface LayoutPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl <em>Lunifera Doc Layout</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout <em>Lunifera Doc Layout</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LuniferaDocLayoutImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout
 		 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl#getLuniferaDocLayout()
 		 * @generated
 		 */

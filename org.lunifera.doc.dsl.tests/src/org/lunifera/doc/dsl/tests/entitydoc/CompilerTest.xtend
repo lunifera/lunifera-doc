@@ -32,13 +32,13 @@ class CompilerTest {
 	def void compareGeneratedJava() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/EntityDocument.luniferadoc")
 		testDoc.compile[assertEquals('''
-			package org.lunifera.sample;
-			
 			import org.eclipse.xtend2.lib.StringConcatenation;
 			import org.lunifera.doc.dsl.api.document.IMetaEntity;
 			
 			@SuppressWarnings("all")
-			public class MyEntityDocument implements IMetaEntity {
+			public class MyEntity implements IMetaEntity {
+			  private String name;
+			  
 			  private String entityClass;
 			  
 			  private String description;
@@ -51,6 +51,14 @@ class CompilerTest {
 			    this.entityClass = entityClass;
 			  }
 			  
+			  public String getName() {
+			    return this.name;
+			  }
+			  
+			  public void setName(final String name) {
+			    this.name = name;
+			  }
+			  
 			  public String getDescription() {
 			    return serializeDescription();
 			  }
@@ -61,9 +69,7 @@ class CompilerTest {
 			  
 			  public CharSequence serializeDescription() {
 			    StringConcatenation _builder = new StringConcatenation();
-			    _builder.append("<h1>");
-			    _builder.append("This is MyEntity.");
-			    _builder.append("</h1>");
+			    _builder.append("This is MyEntity");
 			    return _builder;
 			  }
 			}

@@ -13,6 +13,6 @@ import org.lunifera.doc.dsl.api.document.IMetaEntity;
 
 public interface IEntityLayout extends IGenericLayout {
 
-	void setEntity(IMetaEntity entity);
+	void setDoc(IMetaEntity entity);
 
 }

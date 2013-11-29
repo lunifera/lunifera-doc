@@ -11,7 +11,7 @@ import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
 import org.lunifera.doc.dsl.doccompiler.DocumentStart;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +57,7 @@ public class DocumentStartImpl extends LinePartImpl implements DocumentStart {
 	 * @generated
 	 * @ordered
 	 */
-	protected LuniferaDocDocument document;
+	protected NamedDocument document;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,10 +181,10 @@ public class DocumentStartImpl extends LinePartImpl implements DocumentStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LuniferaDocDocument getDocument() {
+	public NamedDocument getDocument() {
 		if (document != null && document.eIsProxy()) {
 			InternalEObject oldDocument = (InternalEObject)document;
-			document = (LuniferaDocDocument)eResolveProxy(oldDocument);
+			document = (NamedDocument)eResolveProxy(oldDocument);
 			if (document != oldDocument) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocCompilerPackage.DOCUMENT_START__DOCUMENT, oldDocument, document));
@@ -198,7 +198,7 @@ public class DocumentStartImpl extends LinePartImpl implements DocumentStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LuniferaDocDocument basicGetDocument() {
+	public NamedDocument basicGetDocument() {
 		return document;
 	}
 
@@ -207,8 +207,8 @@ public class DocumentStartImpl extends LinePartImpl implements DocumentStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDocument(LuniferaDocDocument newDocument) {
-		LuniferaDocDocument oldDocument = document;
+	public void setDocument(NamedDocument newDocument) {
+		NamedDocument oldDocument = document;
 		document = newDocument;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.DOCUMENT_START__DOCUMENT, oldDocument, document));
@@ -280,7 +280,7 @@ public class DocumentStartImpl extends LinePartImpl implements DocumentStart {
 				setEnd((DocumentEnd)newValue);
 				return;
 			case DocCompilerPackage.DOCUMENT_START__DOCUMENT:
-				setDocument((LuniferaDocDocument)newValue);
+				setDocument((NamedDocument)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -301,7 +301,7 @@ public class DocumentStartImpl extends LinePartImpl implements DocumentStart {
 				setEnd((DocumentEnd)null);
 				return;
 			case DocCompilerPackage.DOCUMENT_START__DOCUMENT:
-				setDocument((LuniferaDocDocument)null);
+				setDocument((NamedDocument)null);
 				return;
 		}
 		super.eUnset(featureID);

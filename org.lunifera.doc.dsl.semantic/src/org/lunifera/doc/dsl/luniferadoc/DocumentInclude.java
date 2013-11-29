@@ -3,6 +3,7 @@
 package org.lunifera.doc.dsl.luniferadoc;
 
 import org.eclipse.emf.ecore.EObject;
+import org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument;
 
 /**
  * <!-- begin-user-doc -->

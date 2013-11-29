@@ -7,9 +7,9 @@ DTOLayout DefaultDTOLayout {
 	
 	«val i = 2»
 	
-	«val a = it.properties»
-	«val b = it.documentation»
-	«val c = it.^name»
+	«val a = doc.properties»
+	«val b = doc.description»
+	«val c = doc.^name»
 	
 	«IF i < 10»
 		«i» is smaller than 10

@@ -6,7 +6,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
@@ -19,6 +19,7 @@ import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
@@ -80,6 +81,10 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	protected DocumentSwitch<Adapter> modelSwitch =
 		new DocumentSwitch<Adapter>() {
 			@Override
+			public Adapter caseLuniferaDocDocument(LuniferaDocDocument object) {
+				return createLuniferaDocDocumentAdapter();
+			}
+			@Override
 			public Adapter caseEntityDocument(EntityDocument object) {
 				return createEntityDocumentAdapter();
 			}
@@ -132,8 +137,8 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 				return createGeneralDocumentAdapter();
 			}
 			@Override
-			public Adapter caseLuniferaDocDocument(LuniferaDocDocument object) {
-				return createLuniferaDocDocumentAdapter();
+			public Adapter caseNamedDocument(NamedDocument object) {
+				return createNamedDocumentAdapter();
 			}
 			@Override
 			public Adapter caseLuniferaDocLayout(LuniferaDocLayout object) {
@@ -158,6 +163,20 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument <em>Lunifera Doc Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
+	 * @generated
+	 */
+	public Adapter createLuniferaDocDocumentAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument <em>Entity Document</em>}'.
@@ -342,16 +361,16 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument <em>Document</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.NamedDocument <em>Named Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocDocument
+	 * @see org.lunifera.doc.dsl.luniferadoc.NamedDocument
 	 * @generated
 	 */
-	public Adapter createLuniferaDocDocumentAdapter() {
+	public Adapter createNamedDocumentAdapter() {
 		return null;
 	}
 

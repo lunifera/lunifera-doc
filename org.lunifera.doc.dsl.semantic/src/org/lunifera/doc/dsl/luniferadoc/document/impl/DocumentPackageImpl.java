@@ -24,6 +24,7 @@ import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
 import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl;
@@ -39,6 +40,13 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl;
  * @generated
  */
 public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass luniferaDocDocumentEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,6 +213,15 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DocumentPackage.eNS_URI, theDocumentPackage);
 		return theDocumentPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLuniferaDocDocument() {
+		return luniferaDocDocumentEClass;
 	}
 
 	/**
@@ -523,6 +540,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		isCreated = true;
 
 		// Create classes and their features
+		luniferaDocDocumentEClass = createEClass(LUNIFERA_DOC_DOCUMENT);
+
 		entityDocumentEClass = createEClass(ENTITY_DOCUMENT);
 		createEAttribute(entityDocumentEClass, ENTITY_DOCUMENT__ENTITY_CLASS);
 		createEReference(entityDocumentEClass, ENTITY_DOCUMENT__DESCRIPTION);
@@ -602,15 +621,18 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		entityDocumentEClass.getESuperTypes().add(theLuniferaDocPackage.getLuniferaDocDocument());
-		dtoDocumentEClass.getESuperTypes().add(theLuniferaDocPackage.getLuniferaDocDocument());
-		bpmProcessDocumentEClass.getESuperTypes().add(theLuniferaDocPackage.getLuniferaDocDocument());
-		bpmTaskDocumentEClass.getESuperTypes().add(theLuniferaDocPackage.getLuniferaDocDocument());
-		vaaclipseViewDocumentEClass.getESuperTypes().add(theLuniferaDocPackage.getLuniferaDocDocument());
-		uiDocumentEClass.getESuperTypes().add(theLuniferaDocPackage.getLuniferaDocDocument());
+		luniferaDocDocumentEClass.getESuperTypes().add(theLuniferaDocPackage.getNamedDocument());
+		entityDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
+		dtoDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
+		bpmProcessDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
+		bpmTaskDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
+		vaaclipseViewDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
+		uiDocumentEClass.getESuperTypes().add(this.getLuniferaDocDocument());
 		generalDocumentEClass.getESuperTypes().add(theLayoutPackage.getLuniferaDocLayout());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(luniferaDocDocumentEClass, LuniferaDocDocument.class, "LuniferaDocDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(entityDocumentEClass, EntityDocument.class, "EntityDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityDocument_EntityClass(), ecorePackage.getEString(), "entityClass", null, 0, 1, EntityDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityDocument_Description(), this.getEntityDescription(), null, "description", null, 0, 1, EntityDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
