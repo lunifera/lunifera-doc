@@ -118,14 +118,14 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				for (inc : generalDoc.includes) {
 					members += inc.include.toIncField(inc.varName, generalDoc)
 				}
-//				members += generalDoc.toConstructor [
-//					body = [it.append(
-//							'''
-//								«FOR inc : generalDoc.includes»
-//									this.«inc.varName» = new «inc.include.name»();
-//								«ENDFOR»
-//							''')]
-//				]
+				members += generalDoc.toConstructor [
+					body = [it.append(
+							'''
+								«FOR inc : generalDoc.includes»
+									this.«inc.varName» = new «inc.include.name»();
+								«ENDFOR»
+							''')]
+				]
 				val richString = generalDoc.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -150,6 +150,15 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
 						typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				
+				// constructor
+				members += dtoDocument.toConstructor [
+					body = [it.append(
+							'''
+								this.name = "«dtoDocument.name»";
+								this.dtcClass = "«dtoDocument.dtoClass»";
+							''')]
+				]
 				
 				// serialize operation		
 				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
@@ -194,8 +203,15 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += entityClassField
 				members += entityDocument.description.toField("description",
 						typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += toSetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
+						
+				// constructor
+				members += entityDocument.toConstructor [
+					body = [it.append(
+							'''
+								this.name = "«entityDocument.name»";
+								this.entityClass = "«entityDocument.entityClass»";
+							''')]
+				]
 				
 				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
 				if(entityDocument.description.content != null) {
@@ -211,6 +227,8 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				// getter/setter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += toSetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += toSetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				val docGetter = entityDocument.description.toGetter("description",
 					typeReference.getTypeForName(typeof(String), entityDocument, null))
 				docGetter.setBody[it.append('''return «serializeDescriptionOperation.simpleName»();''')]
