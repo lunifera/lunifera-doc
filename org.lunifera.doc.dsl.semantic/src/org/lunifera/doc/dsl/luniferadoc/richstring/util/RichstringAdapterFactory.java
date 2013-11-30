@@ -99,6 +99,10 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 				return createRichStringIfAdapter();
 			}
 			@Override
+			public Adapter caseRichStringMarkup(RichStringMarkup object) {
+				return createRichStringMarkupAdapter();
+			}
+			@Override
 			public Adapter caseRichStringExample(RichStringExample object) {
 				return createRichStringExampleAdapter();
 			}
@@ -113,10 +117,6 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRichStringURL(RichStringURL object) {
 				return createRichStringURLAdapter();
-			}
-			@Override
-			public Adapter caseRichStringMarkup(RichStringMarkup object) {
-				return createRichStringMarkupAdapter();
 			}
 			@Override
 			public Adapter caseXExpression(XExpression object) {
@@ -225,6 +225,20 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup <em>Rich String Markup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup
+	 * @generated
+	 */
+	public Adapter createRichStringMarkupAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample <em>Rich String Example</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -277,20 +291,6 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringURLAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup <em>Rich String Markup</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup
-	 * @generated
-	 */
-	public Adapter createRichStringMarkupAdapter() {
 		return null;
 	}
 

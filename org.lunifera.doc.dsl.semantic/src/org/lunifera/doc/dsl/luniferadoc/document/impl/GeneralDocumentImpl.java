@@ -45,6 +45,7 @@ public class GeneralDocumentImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,6 +55,7 @@ public class GeneralDocumentImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -63,6 +65,7 @@ public class GeneralDocumentImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected RichString content;
+
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -72,6 +75,7 @@ public class GeneralDocumentImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<XImportDeclaration> imports;
+
 	/**
 	 * The cached value of the '{@link #getIncludes() <em>Includes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

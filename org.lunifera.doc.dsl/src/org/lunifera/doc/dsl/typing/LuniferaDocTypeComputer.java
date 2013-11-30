@@ -30,6 +30,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 /**
  * Customized type computer for Xtend specific expressions.
@@ -47,6 +48,8 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 	public void computeTypes(XExpression expression, ITypeComputationState state) {
 		if (expression instanceof RichStringMarkup) {
 			_computeTypes((RichStringMarkup) expression, state);
+		} else if (expression instanceof RichStringURL) {
+			_computeTypes((RichStringURL) expression, state);
 		} else if (expression instanceof RichString) {
 			_computeTypes((RichString) expression, state);
 		} else if (expression instanceof RichStringForLoop) {
@@ -161,6 +164,16 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 
 		state.withExpectation(charSequence)
 				.computeTypes(object.getExpression());
+		state.acceptActualType(charSequence);
+	}
+	
+	protected void _computeTypes(RichStringURL object,
+			ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(
+				CharSequence.class, state);
+
+		state.withExpectation(charSequence)
+				.computeTypes(object.getText());
 		state.acceptActualType(charSequence);
 	}
 

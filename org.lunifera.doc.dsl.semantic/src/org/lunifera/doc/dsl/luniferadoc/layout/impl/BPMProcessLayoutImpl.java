@@ -43,6 +43,7 @@ public class BPMProcessLayoutImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,6 +53,7 @@ public class BPMProcessLayoutImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -61,6 +63,7 @@ public class BPMProcessLayoutImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected RichString content;
+
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

@@ -37,6 +37,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.URLEnd;
+import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.util.DocCompilerSwitch;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
@@ -49,6 +51,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
 
 import com.google.inject.Inject;
@@ -276,6 +279,20 @@ public class RichStringProcessor {
 			addToCurrentLine(end);
 			return Boolean.TRUE;
 		}
+		
+		@Override
+		public Boolean caseRichStringURL(RichStringURL object) {
+			URLStart start = factory.createURLStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getText());
+
+			URLEnd end = factory.createURLEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
 
 	}
 
@@ -469,6 +486,20 @@ public class RichStringProcessor {
 			return Boolean.TRUE;
 		}
 
+		@Override
+		public Boolean caseURLStart(URLStart object) {
+			acceptor.acceptURLStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseURLEnd(URLEnd object) {
+			acceptor.acceptURLEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+		
 		@Override
 		public Boolean caseExampleStart(ExampleStart object) {
 			acceptor.acceptExampleStart(object.getContent());

@@ -36,6 +36,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -204,6 +205,24 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</h2>");
+			popAppendable();
+		}
+		
+		@Override
+		public void acceptURLStart(RichStringURL object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"");
+			append(object.getLocation());
+			append("\">");
+		}
+
+		@Override
+		public void acceptURLEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
 			popAppendable();
 		}
 

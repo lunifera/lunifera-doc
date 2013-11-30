@@ -12,6 +12,7 @@ import "http://www.lunifera.org/luniferadoc" as luniferadoc
 import "http://www.lunifera.org/luniferadoc/layout" as layout
 import "http://www.lunifera.org/luniferadoc/document" as document
 import "http://www.lunifera.org/luniferadoc/richstring" as richstring
+import "http://www.lunifera.org/luniferadoc/markup" as markup
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
 NamedDocument returns luniferadoc::NamedDocument:
@@ -125,6 +126,15 @@ VaaclipseViewDocument returns document::VaaclipseViewDocument:
 UIDocument returns document::UIDocument:
 	'UIDocument';
 
+// Non-RichString Tags
+
+//TagURL returns markup::TagURL:
+//	'**'
+//		'url' url=ID
+//		'text' text=RichString
+//	'**'
+//;
+
 // RichString
 
 RichString returns richstring::RichString:
@@ -155,28 +165,28 @@ RichStringPart returns xbase::XExpression:
 	XExpressionInsideBlock |
 	RichStringForLoop |
 	RichStringIf |
-	RichStringH1 | RichStringH2 | RichStringExample;
+	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL;
 
 RichStringExample returns xbase::XExpression:
 	{richstring::RichStringExample}
-	"example"
-	expression=InternalRichString
-	"/example"
+	"example" expression=InternalRichString	"/example"
 ;
 
 RichStringH1 returns xbase::XExpression:
 	{richstring::RichStringH1}
-	"h1"
-	expression=InternalRichString
-	"/h1"
+	"h1" expression=InternalRichString "/h1"
 ;
 
 RichStringH2 returns xbase::XExpression:
 	{richstring::RichStringH2}
-	"h2"
-	expression=InternalRichString
-	"/h2"
+	"h2" expression=InternalRichString "/h2"
 ;
+
+RichStringURL returns xbase::XExpression:
+	{richstring::RichStringURL}
+	"url" location=ID 
+	text=InternalRichString
+	"/url";
 
 RichStringForLoop returns xbase::XExpression:
 	{richstring::RichStringForLoop}

@@ -31,6 +31,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.URLEnd;
+import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -187,6 +189,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass exampleEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass urlStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass urlEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -752,6 +768,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getURLStart() {
+		return urlStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getURLStart_Content() {
+		return (EReference)urlStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getURLStart_End() {
+		return (EReference)urlStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getURLEnd() {
+		return urlEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getURLEnd_Start() {
+		return (EReference)urlEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory)getEFactoryInstance();
 	}
@@ -850,6 +911,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		exampleEndEClass = createEClass(EXAMPLE_END);
 		createEReference(exampleEndEClass, EXAMPLE_END__START);
+
+		urlStartEClass = createEClass(URL_START);
+		createEReference(urlStartEClass, URL_START__CONTENT);
+		createEReference(urlStartEClass, URL_START__END);
+
+		urlEndEClass = createEClass(URL_END);
+		createEReference(urlEndEClass, URL_END__START);
 	}
 
 	/**
@@ -903,6 +971,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		h2EndEClass.getESuperTypes().add(this.getLinePart());
 		exampleStartEClass.getESuperTypes().add(this.getLinePart());
 		exampleEndEClass.getESuperTypes().add(this.getLinePart());
+		urlStartEClass.getESuperTypes().add(this.getLinePart());
+		urlEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -980,6 +1050,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		initEClass(exampleEndEClass, ExampleEnd.class, "ExampleEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExampleEnd_Start(), this.getExampleStart(), this.getExampleStart_End(), "start", null, 0, 1, ExampleEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(urlStartEClass, URLStart.class, "URLStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getURLStart_Content(), theRichstringPackage.getRichStringURL(), null, "content", null, 0, 1, URLStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getURLStart_End(), this.getURLEnd(), this.getURLEnd_Start(), "end", null, 0, 1, URLStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(urlEndEClass, URLEnd.class, "URLEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getURLEnd_Start(), this.getURLStart(), this.getURLStart_End(), "start", null, 0, 1, URLEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -39,6 +39,14 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated LuniferaDocGrammar -->
+      <package
+            uri="http://www.lunifera.org/luniferadoc/markup"
+            class="org.lunifera.doc.dsl.luniferadoc.markup.MarkupPackage"
+            genModel="model/LuniferaDocGrammar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated DocCompiler -->
       <package
             uri="http://www.lunifera.org/doccompiler"

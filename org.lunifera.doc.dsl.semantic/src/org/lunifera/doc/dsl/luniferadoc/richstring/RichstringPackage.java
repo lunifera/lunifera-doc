@@ -2,6 +2,7 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.richstring;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -284,7 +285,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMarkup()
 	 * @generated
 	 */
-	int RICH_STRING_MARKUP = 9;
+	int RICH_STRING_MARKUP = 5;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -312,7 +313,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringExample()
 	 * @generated
 	 */
-	int RICH_STRING_EXAMPLE = 5;
+	int RICH_STRING_EXAMPLE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -340,7 +341,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringH1()
 	 * @generated
 	 */
-	int RICH_STRING_H1 = 6;
+	int RICH_STRING_H1 = 7;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -368,7 +369,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringH2()
 	 * @generated
 	 */
-	int RICH_STRING_H2 = 7;
+	int RICH_STRING_H2 = 8;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -396,16 +397,25 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringURL()
 	 * @generated
 	 */
-	int RICH_STRING_URL = 8;
+	int RICH_STRING_URL = 9;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_URL__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+	int RICH_STRING_URL__LOCATION = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_URL__TEXT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Rich String URL</em>' class.
@@ -414,7 +424,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_URL_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+	int RICH_STRING_URL_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
 
 
 	/**
@@ -567,6 +577,27 @@ public interface RichstringPackage extends EPackage {
 	EReference getRichStringIf_Else();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup <em>Rich String Markup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rich String Markup</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup
+	 * @generated
+	 */
+	EClass getRichStringMarkup();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getExpression()
+	 * @see #getRichStringMarkup()
+	 * @generated
+	 */
+	EReference getRichStringMarkup_Expression();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample <em>Rich String Example</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -607,25 +638,26 @@ public interface RichstringPackage extends EPackage {
 	EClass getRichStringURL();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup <em>Rich String Markup</em>}'.
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Rich String Markup</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup
+	 * @return the meta object for the attribute '<em>Location</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL#getLocation()
+	 * @see #getRichStringURL()
 	 * @generated
 	 */
-	EClass getRichStringMarkup();
+	EAttribute getRichStringURL_Location();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getExpression <em>Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getExpression()
-	 * @see #getRichStringMarkup()
+	 * @return the meta object for the containment reference '<em>Text</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL#getText()
+	 * @see #getRichStringURL()
 	 * @generated
 	 */
-	EReference getRichStringMarkup_Expression();
+	EReference getRichStringURL_Text();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -772,6 +804,24 @@ public interface RichstringPackage extends EPackage {
 		EReference RICH_STRING_IF__ELSE = eINSTANCE.getRichStringIf_Else();
 
 		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl <em>Rich String Markup</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMarkup()
+		 * @generated
+		 */
+		EClass RICH_STRING_MARKUP = eINSTANCE.getRichStringMarkup();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RICH_STRING_MARKUP__EXPRESSION = eINSTANCE.getRichStringMarkup_Expression();
+
+		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringExampleImpl <em>Rich String Example</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -812,22 +862,20 @@ public interface RichstringPackage extends EPackage {
 		EClass RICH_STRING_URL = eINSTANCE.getRichStringURL();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl <em>Rich String Markup</em>}' class.
+		 * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl
-		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMarkup()
 		 * @generated
 		 */
-		EClass RICH_STRING_MARKUP = eINSTANCE.getRichStringMarkup();
+		EAttribute RICH_STRING_URL__LOCATION = eINSTANCE.getRichStringURL_Location();
 
 		/**
-		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RICH_STRING_MARKUP__EXPRESSION = eINSTANCE.getRichStringMarkup_Expression();
+		EReference RICH_STRING_URL__TEXT = eINSTANCE.getRichStringURL_Text();
 
 	}
 

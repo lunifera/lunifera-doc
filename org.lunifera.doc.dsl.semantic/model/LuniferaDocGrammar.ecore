@@ -118,12 +118,24 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
           containment="true"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringMarkup" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+          containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringExample" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringH1" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringH2" eSuperTypes="#//richstring/RichStringMarkup"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RichStringURL" eSuperTypes="#//richstring/RichStringMarkup"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RichStringMarkup" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringURL" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+          containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="markup" nsURI="http://www.lunifera.org/luniferadoc/markup" nsPrefix="markup">
+    <eClassifiers xsi:type="ecore:EClass" name="TagURL">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>

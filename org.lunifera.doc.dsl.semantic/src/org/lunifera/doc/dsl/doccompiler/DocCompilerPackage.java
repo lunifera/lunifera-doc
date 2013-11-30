@@ -1141,6 +1141,108 @@ public interface DocCompilerPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.URLStartImpl <em>URL Start</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.URLStartImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getURLStart()
+	 * @generated
+	 */
+	int URL_START = 21;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_START__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_START__END = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>URL Start</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>URL Start</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.URLEndImpl <em>URL End</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.URLEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getURLEnd()
+	 * @generated
+	 */
+	int URL_END = 22;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>URL End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>URL End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart <em>Document Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1725,6 +1827,59 @@ public interface DocCompilerPackage extends EPackage {
 	EReference getExampleEnd_Start();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.URLStart <em>URL Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>URL Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.URLStart
+	 * @generated
+	 */
+	EClass getURLStart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.URLStart#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.URLStart#getContent()
+	 * @see #getURLStart()
+	 * @generated
+	 */
+	EReference getURLStart_Content();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.URLStart#getEnd <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.URLStart#getEnd()
+	 * @see #getURLStart()
+	 * @generated
+	 */
+	EReference getURLStart_End();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.URLEnd <em>URL End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>URL End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.URLEnd
+	 * @generated
+	 */
+	EClass getURLEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.URLEnd#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.URLEnd#getStart()
+	 * @see #getURLEnd()
+	 * @generated
+	 */
+	EReference getURLEnd_Start();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2228,6 +2383,50 @@ public interface DocCompilerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXAMPLE_END__START = eINSTANCE.getExampleEnd_Start();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.URLStartImpl <em>URL Start</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.URLStartImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getURLStart()
+		 * @generated
+		 */
+		EClass URL_START = eINSTANCE.getURLStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference URL_START__CONTENT = eINSTANCE.getURLStart_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference URL_START__END = eINSTANCE.getURLStart_End();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.URLEndImpl <em>URL End</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.URLEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getURLEnd()
+		 * @generated
+		 */
+		EClass URL_END = eINSTANCE.getURLEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference URL_END__START = eINSTANCE.getURLEnd_Start();
 
 	}
 

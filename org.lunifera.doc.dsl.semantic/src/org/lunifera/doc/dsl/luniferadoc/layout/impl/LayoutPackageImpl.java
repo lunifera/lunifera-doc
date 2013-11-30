@@ -22,6 +22,8 @@ import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.UILayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.VaaclipseViewLayout;
+import org.lunifera.doc.dsl.luniferadoc.markup.MarkupPackage;
+import org.lunifera.doc.dsl.luniferadoc.markup.impl.MarkupPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl;
 
@@ -136,18 +138,21 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 		LuniferaDocPackageImpl theLuniferaDocPackage = (LuniferaDocPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LuniferaDocPackage.eNS_URI) instanceof LuniferaDocPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LuniferaDocPackage.eNS_URI) : LuniferaDocPackage.eINSTANCE);
 		DocumentPackageImpl theDocumentPackage = (DocumentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DocumentPackage.eNS_URI) instanceof DocumentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DocumentPackage.eNS_URI) : DocumentPackage.eINSTANCE);
 		RichstringPackageImpl theRichstringPackage = (RichstringPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RichstringPackage.eNS_URI) instanceof RichstringPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RichstringPackage.eNS_URI) : RichstringPackage.eINSTANCE);
+		MarkupPackageImpl theMarkupPackage = (MarkupPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MarkupPackage.eNS_URI) instanceof MarkupPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MarkupPackage.eNS_URI) : MarkupPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theLayoutPackage.createPackageContents();
 		theLuniferaDocPackage.createPackageContents();
 		theDocumentPackage.createPackageContents();
 		theRichstringPackage.createPackageContents();
+		theMarkupPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theLayoutPackage.initializePackageContents();
 		theLuniferaDocPackage.initializePackageContents();
 		theDocumentPackage.initializePackageContents();
 		theRichstringPackage.initializePackageContents();
+		theMarkupPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theLayoutPackage.freeze();

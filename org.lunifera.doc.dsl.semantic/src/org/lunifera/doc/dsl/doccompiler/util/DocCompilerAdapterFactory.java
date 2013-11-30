@@ -28,6 +28,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.URLEnd;
+import org.lunifera.doc.dsl.doccompiler.URLStart;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,6 +170,14 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExampleEnd(ExampleEnd object) {
 				return createExampleEndAdapter();
+			}
+			@Override
+			public Adapter caseURLStart(URLStart object) {
+				return createURLStartAdapter();
+			}
+			@Override
+			public Adapter caseURLEnd(URLEnd object) {
+				return createURLEndAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -480,6 +490,34 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExampleEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.URLStart <em>URL Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.URLStart
+	 * @generated
+	 */
+	public Adapter createURLStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.URLEnd <em>URL End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.URLEnd
+	 * @generated
+	 */
+	public Adapter createURLEndAdapter() {
 		return null;
 	}
 

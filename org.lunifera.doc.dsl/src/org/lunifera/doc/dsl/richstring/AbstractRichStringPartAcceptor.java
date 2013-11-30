@@ -21,6 +21,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 /**
  * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should
@@ -87,6 +88,14 @@ public abstract class AbstractRichStringPartAcceptor implements
 
 	@Override
 	public void acceptH2End() {
+	}
+	
+	@Override
+	public void acceptURLStart(RichStringURL object) {
+	}
+
+	@Override
+	public void acceptURLEnd() {
 	}
 
 	@Override

@@ -27,6 +27,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.URLEnd;
+import org.lunifera.doc.dsl.doccompiler.URLStart;
 
 /**
  * <!-- begin-user-doc -->
@@ -227,6 +229,20 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 				ExampleEnd exampleEnd = (ExampleEnd)theEObject;
 				T result = caseExampleEnd(exampleEnd);
 				if (result == null) result = caseLinePart(exampleEnd);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DocCompilerPackage.URL_START: {
+				URLStart urlStart = (URLStart)theEObject;
+				T result = caseURLStart(urlStart);
+				if (result == null) result = caseLinePart(urlStart);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DocCompilerPackage.URL_END: {
+				URLEnd urlEnd = (URLEnd)theEObject;
+				T result = caseURLEnd(urlEnd);
+				if (result == null) result = caseLinePart(urlEnd);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -546,6 +562,36 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExampleEnd(ExampleEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>URL Start</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>URL Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseURLStart(URLStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>URL End</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>URL End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseURLEnd(URLEnd object) {
 		return null;
 	}
 

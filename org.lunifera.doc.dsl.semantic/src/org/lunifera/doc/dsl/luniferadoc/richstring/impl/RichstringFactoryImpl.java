@@ -69,11 +69,11 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			case RichstringPackage.RICH_STRING_LITERAL: return createRichStringLiteral();
 			case RichstringPackage.RICH_STRING_FOR_LOOP: return createRichStringForLoop();
 			case RichstringPackage.RICH_STRING_IF: return createRichStringIf();
+			case RichstringPackage.RICH_STRING_MARKUP: return createRichStringMarkup();
 			case RichstringPackage.RICH_STRING_EXAMPLE: return createRichStringExample();
 			case RichstringPackage.RICH_STRING_H1: return createRichStringH1();
 			case RichstringPackage.RICH_STRING_H2: return createRichStringH2();
 			case RichstringPackage.RICH_STRING_URL: return createRichStringURL();
-			case RichstringPackage.RICH_STRING_MARKUP: return createRichStringMarkup();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -134,6 +134,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RichStringMarkup createRichStringMarkup() {
+		RichStringMarkupImpl richStringMarkup = new RichStringMarkupImpl();
+		return richStringMarkup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RichStringExample createRichStringExample() {
 		RichStringExampleImpl richStringExample = new RichStringExampleImpl();
 		return richStringExample;
@@ -167,16 +177,6 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringURL createRichStringURL() {
 		RichStringURLImpl richStringURL = new RichStringURLImpl();
 		return richStringURL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RichStringMarkup createRichStringMarkup() {
-		RichStringMarkupImpl richStringMarkup = new RichStringMarkupImpl();
-		return richStringMarkup;
 	}
 
 	/**

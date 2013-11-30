@@ -67,6 +67,15 @@ public interface RichstringFactory extends EFactory {
 	RichStringIf createRichStringIf();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Markup</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rich String Markup</em>'.
+	 * @generated
+	 */
+	RichStringMarkup createRichStringMarkup();
+
+	/**
 	 * Returns a new object of class '<em>Rich String Example</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,15 +110,6 @@ public interface RichstringFactory extends EFactory {
 	 * @generated
 	 */
 	RichStringURL createRichStringURL();
-
-	/**
-	 * Returns a new object of class '<em>Rich String Markup</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rich String Markup</em>'.
-	 * @generated
-	 */
-	RichStringMarkup createRichStringMarkup();
 
 	/**
 	 * Returns the package supported by this factory.

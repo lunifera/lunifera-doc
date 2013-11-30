@@ -19,6 +19,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 /**
  * The {@link IRichStringPartAcceptor} can be passed into a
@@ -209,6 +210,10 @@ public interface IRichStringPartAcceptor {
 	void acceptH2Start(RichStringH2 object);
 
 	void acceptH2End();
+	
+	void acceptURLStart(RichStringURL object);
+
+	void acceptURLEnd();
 
 	void acceptExampleStart(RichStringExample object);
 

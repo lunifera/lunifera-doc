@@ -30,6 +30,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.URLEnd;
+import org.lunifera.doc.dsl.doccompiler.URLStart;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,6 +98,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			case DocCompilerPackage.H2_END: return createH2End();
 			case DocCompilerPackage.EXAMPLE_START: return createExampleStart();
 			case DocCompilerPackage.EXAMPLE_END: return createExampleEnd();
+			case DocCompilerPackage.URL_START: return createURLStart();
+			case DocCompilerPackage.URL_END: return createURLEnd();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -309,6 +313,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public ExampleEnd createExampleEnd() {
 		ExampleEndImpl exampleEnd = new ExampleEndImpl();
 		return exampleEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public URLStart createURLStart() {
+		URLStartImpl urlStart = new URLStartImpl();
+		return urlStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public URLEnd createURLEnd() {
+		URLEndImpl urlEnd = new URLEndImpl();
+		return urlEnd;
 	}
 
 	/**

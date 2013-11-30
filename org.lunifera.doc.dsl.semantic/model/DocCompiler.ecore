@@ -91,4 +91,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ExampleStart"
         eOpposite="#//ExampleStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URLStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringURL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//URLEnd"
+        eOpposite="#//URLEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URLEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//URLStart"
+        eOpposite="#//URLStart/end"/>
+  </eClassifiers>
 </ecore:EPackage>

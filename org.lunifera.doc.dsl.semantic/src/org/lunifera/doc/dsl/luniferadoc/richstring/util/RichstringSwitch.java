@@ -115,6 +115,13 @@ public class RichstringSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RichstringPackage.RICH_STRING_MARKUP: {
+				RichStringMarkup richStringMarkup = (RichStringMarkup)theEObject;
+				T result = caseRichStringMarkup(richStringMarkup);
+				if (result == null) result = caseXExpression(richStringMarkup);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RichstringPackage.RICH_STRING_EXAMPLE: {
 				RichStringExample richStringExample = (RichStringExample)theEObject;
 				T result = caseRichStringExample(richStringExample);
@@ -142,15 +149,7 @@ public class RichstringSwitch<T> extends Switch<T> {
 			case RichstringPackage.RICH_STRING_URL: {
 				RichStringURL richStringURL = (RichStringURL)theEObject;
 				T result = caseRichStringURL(richStringURL);
-				if (result == null) result = caseRichStringMarkup(richStringURL);
 				if (result == null) result = caseXExpression(richStringURL);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RichstringPackage.RICH_STRING_MARKUP: {
-				RichStringMarkup richStringMarkup = (RichStringMarkup)theEObject;
-				T result = caseRichStringMarkup(richStringMarkup);
-				if (result == null) result = caseXExpression(richStringMarkup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -234,6 +233,21 @@ public class RichstringSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Markup</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Markup</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringMarkup(RichStringMarkup object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Rich String Example</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -290,21 +304,6 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringURL(RichStringURL object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Rich String Markup</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Rich String Markup</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRichStringMarkup(RichStringMarkup object) {
 		return null;
 	}
 
