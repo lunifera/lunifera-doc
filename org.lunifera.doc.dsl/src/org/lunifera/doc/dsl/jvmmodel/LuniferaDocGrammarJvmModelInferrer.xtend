@@ -42,6 +42,7 @@ import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout
 import java.util.List
 import java.util.ArrayList
 import org.lunifera.doc.dsl.api.layout.IEntityLayout
+import org.lunifera.doc.dsl.api.document.IDTOProperty
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -150,13 +151,16 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
 						typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toField("properties", dtoDocument.newTypeRef(typeof(List), 
+					typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
+				))
 				
 				// constructor
 				members += dtoDocument.toConstructor [
 					body = [it.append(
 							'''
 								this.name = "«dtoDocument.name»";
-								this.dtcClass = "«dtoDocument.dtoClass»";
+								this.dtoClass = "«dtoDocument.dtoClass»";
 							''')]
 				]
 				
@@ -185,6 +189,12 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += descriptionGetter
 				members += dtoDocument.description.toSetter("description",
 						typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toGetter("properties", dtoDocument.newTypeRef(typeof(List), 
+					typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
+				))
+				members += toSetter("properties", dtoDocument.newTypeRef(typeof(List), 
+					typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
+				))
 			])
 	}
 

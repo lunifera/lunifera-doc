@@ -1,5 +1,5 @@
 GeneralDocument Introduction {
-	include doc.dto.MyDTO as myDTODoc
+	include samples.doc.dto.MyDTO as myDTODoc
 		
 	'''
 	«h1»Once there was a Pojo named «myDTODoc.^description».«/h1»

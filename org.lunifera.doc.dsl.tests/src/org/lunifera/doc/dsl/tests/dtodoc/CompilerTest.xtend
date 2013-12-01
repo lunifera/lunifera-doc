@@ -33,7 +33,9 @@ class CompilerTest {
 		testDoc.compile[assertEquals('''
 			package doc.dto;
 			
+			import java.util.List;
 			import org.eclipse.xtend2.lib.StringConcatenation;
+			import org.lunifera.doc.dsl.api.document.IDTOProperty;
 			import org.lunifera.doc.dsl.api.document.IMetaDTO;
 			
 			@SuppressWarnings("all")
@@ -44,9 +46,11 @@ class CompilerTest {
 			  
 			  private String description;
 			  
+			  private List<IDTOProperty> properties;
+			  
 			  public MyDTO() {
 			    this.name = "doc.dto.MyDTO";
-			    this.dtcClass = "org.lunifera.sample.MyDTO";
+			    this.dtoClass = "org.lunifera.sample.MyDTO";
 			    
 			  }
 			  
@@ -89,6 +93,14 @@ class CompilerTest {
 			  
 			  public void setDescription(final String description) {
 			    this.description = description;
+			  }
+			  
+			  public List<IDTOProperty> getProperties() {
+			    return this.properties;
+			  }
+			  
+			  public void setProperties(final List<IDTOProperty> properties) {
+			    this.properties = properties;
 			  }
 			}
 		'''.toString, getSingleGeneratedCode)
