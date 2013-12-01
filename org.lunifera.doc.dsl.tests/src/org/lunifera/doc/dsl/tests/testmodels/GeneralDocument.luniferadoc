@@ -1,7 +1,5 @@
 GeneralDocument Introduction {
 	include doc.dto.MyDTO as myDTODoc
-	include AnotherDTODocument as anotherDTODoc
-	include MyEntity as myEntity
 		
 	'''
 	«h1»Once there was a Pojo named «myDTODoc.^description».«/h1»

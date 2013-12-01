@@ -43,12 +43,10 @@ class CompilerTest {
 			  
 			  private String description;
 			  
-			  public String getEntityClass() {
-			    return this.entityClass;
-			  }
-			  
-			  public void setEntityClass(final String entityClass) {
-			    this.entityClass = entityClass;
+			  public MyEntity() {
+			    this.name = "MyEntity";
+			    this.entityClass = "org.lunifera.sample.MyEntity";
+			    
 			  }
 			  
 			  public String getName() {
@@ -57,6 +55,14 @@ class CompilerTest {
 			  
 			  public void setName(final String name) {
 			    this.name = name;
+			  }
+			  
+			  public String getEntityClass() {
+			    return this.entityClass;
+			  }
+			  
+			  public void setEntityClass(final String entityClass) {
+			    this.entityClass = entityClass;
 			  }
 			  
 			  public String getDescription() {

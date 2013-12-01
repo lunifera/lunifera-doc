@@ -44,11 +44,26 @@ class CompilerTest {
 			  
 			  private String description;
 			  
+			  public MyDTO() {
+			    this.name = "doc.dto.MyDTO";
+			    this.dtcClass = "org.lunifera.sample.MyDTO";
+			    
+			  }
+			  
 			  public CharSequence serializeDescription() {
 			    StringConcatenation _builder = new StringConcatenation();
+			    _builder.newLine();
 			    _builder.append("<h1>");
-			    _builder.append("This is MyDTO .");
+			    _builder.append("This is MyDTO.");
 			    _builder.append("</h1>");
+			    _builder.newLineIfNotEmpty();
+			    _builder.newLine();
+			    _builder.append("This is an ");
+			    _builder.append("<a href=\"");_builder.append("http://www.example.org");_builder.append("\">");
+			    _builder.append("example url");
+			    _builder.append("</a>");
+			    _builder.newLineIfNotEmpty();
+			    _builder.newLine();
 			    return _builder;
 			  }
 			  

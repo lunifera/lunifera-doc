@@ -1,6 +1,9 @@
 DTODocument doc.dto.MyDTO for org.lunifera.sample.MyDTO {
 	description {
-		'''«h1»This is MyDTO .«/h1»'''
+		'''
+		«h1»This is MyDTO.«/h1»
+		This is an «url "http://www.example.org"»example url«/url»
+		'''
 	}
 	details {
 		name propA
