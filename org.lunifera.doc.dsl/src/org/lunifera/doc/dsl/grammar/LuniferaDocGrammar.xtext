@@ -184,7 +184,7 @@ RichStringH2 returns xbase::XExpression:
 
 RichStringURL returns xbase::XExpression:
 	{richstring::RichStringURL}
-	"url" location=ID 
+	"url" location=STRING 
 	text=InternalRichString
 	"/url";
 
