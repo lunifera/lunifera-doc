@@ -43,6 +43,7 @@ import java.util.List
 import java.util.ArrayList
 import org.lunifera.doc.dsl.api.layout.IEntityLayout
 import org.lunifera.doc.dsl.api.document.IDTOProperty
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -147,6 +148,15 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IMetaDTO), dtoDocument, null)
 				documentation = dtoDocument.documentation
+				
+				// gen classes for properties
+				for(prop : dtoDocument.properties.properties) {
+					val propClass = prop.toClass(prop.name.toFirstUpper)
+					propClass.superTypes += typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
+					members += propClass
+				}
+				
+				// fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
@@ -161,6 +171,10 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 							'''
 								this.name = "«dtoDocument.name»";
 								this.dtoClass = "«dtoDocument.dtoClass»";
+								this.properties = new java.util.ArrayList<IDTOProperty>();
+								«FOR prop : dtoDocument.properties.properties»
+									this.properties.add(new «prop.name.toFirstUpper»());
+								«ENDFOR»
 							''')]
 				]
 				
@@ -197,6 +211,17 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				))
 			])
 	}
+
+	/**
+	 * Infer method for DTOProperty elements
+	 */
+//	def dispatch void infer(DTOProperty dtoProperty, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+//		acceptor.accept(dtoProperty.toClass(dtoProperty.name)).initializeLater(
+//			[
+//				superTypes += typeReference.getTypeForName(typeof(DTOProperty), dtoProperty, null)
+//			]	
+//		)	
+//	}
 
 	/**
 	 * Infer method for EntityDocument elements

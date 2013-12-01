@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
-import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentFactory;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
@@ -73,7 +73,7 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 			case DocumentPackage.ENTITY_FIELD: return createEntityField();
 			case DocumentPackage.DTO_DOCUMENT: return createDTODocument();
 			case DocumentPackage.DTO_DESCRIPTION: return createDTODescription();
-			case DocumentPackage.DTO_DETAILS: return createDTODetails();
+			case DocumentPackage.DTO_PROPERTIES: return createDTOProperties();
 			case DocumentPackage.DTO_PROPERTY: return createDTOProperty();
 			case DocumentPackage.BPM_PROCESS_DOCUMENT: return createBPMProcessDocument();
 			case DocumentPackage.BPM_TASK_DOCUMENT: return createBPMTaskDocument();
@@ -150,9 +150,9 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DTODetails createDTODetails() {
-		DTODetailsImpl dtoDetails = new DTODetailsImpl();
-		return dtoDetails;
+	public DTOProperties createDTOProperties() {
+		DTOPropertiesImpl dtoProperties = new DTOPropertiesImpl();
+		return dtoProperties;
 	}
 
 	/**

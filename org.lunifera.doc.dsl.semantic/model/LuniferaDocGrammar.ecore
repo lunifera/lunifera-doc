@@ -49,14 +49,14 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtoClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/DTODescription"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="details" eType="#//document/DTODetails"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="properties" eType="#//document/DTOProperties"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DTODescription">
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DTODetails">
+    <eClassifiers xsi:type="ecore:EClass" name="DTOProperties">
       <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
           eType="#//document/DTOProperty" containment="true"/>
     </eClassifiers>

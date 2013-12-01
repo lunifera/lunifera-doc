@@ -101,14 +101,14 @@ EntityField returns document::EntityField:
 DTODocument returns document::DTODocument:
 	'DTODocument' name=QualifiedName 'for' dtoClass=QualifiedName '{'
 	'description' '{' description=DTODescription '}'
-	'details' '{' details=DTODetails '}'
+	'properties' '{' properties=DTOProperties '}'
 	'}';
 
 DTODescription returns document::DTODescription:
 	{document::DTODescription} content=RichString;
 	
-DTODetails returns document::DTODetails:
-	{document::DTODetails} properties+=DTOProperty*;
+DTOProperties returns document::DTOProperties:
+	{document::DTOProperties} properties+=DTOProperty*;
 	
 DTOProperty returns document::DTOProperty:
 	{document::DTOProperty} 'name' name=ID

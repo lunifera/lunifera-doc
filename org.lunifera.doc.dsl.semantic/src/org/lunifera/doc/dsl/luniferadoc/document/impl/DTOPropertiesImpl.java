@@ -11,24 +11,24 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DTO Details</b></em>'.
+ * An implementation of the model object '<em><b>DTO Properties</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODetailsImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTODetails {
+public class DTOPropertiesImpl extends MinimalEObjectImpl.Container implements DTOProperties {
 	/**
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -44,7 +44,7 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DTODetailsImpl() {
+	protected DTOPropertiesImpl() {
 		super();
 	}
 
@@ -55,7 +55,7 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentPackage.Literals.DTO_DETAILS;
+		return DocumentPackage.Literals.DTO_PROPERTIES;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	 */
 	public EList<DTOProperty> getProperties() {
 		if (properties == null) {
-			properties = new EObjectContainmentEList<DTOProperty>(DTOProperty.class, this, DocumentPackage.DTO_DETAILS__PROPERTIES);
+			properties = new EObjectContainmentEList<DTOProperty>(DTOProperty.class, this, DocumentPackage.DTO_PROPERTIES__PROPERTIES);
 		}
 		return properties;
 	}
@@ -78,7 +78,7 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DocumentPackage.DTO_DETAILS__PROPERTIES:
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -92,7 +92,7 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocumentPackage.DTO_DETAILS__PROPERTIES:
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
 				return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocumentPackage.DTO_DETAILS__PROPERTIES:
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends DTOProperty>)newValue);
 				return;
@@ -123,7 +123,7 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocumentPackage.DTO_DETAILS__PROPERTIES:
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
 				getProperties().clear();
 				return;
 		}
@@ -138,10 +138,10 @@ public class DTODetailsImpl extends MinimalEObjectImpl.Container implements DTOD
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocumentPackage.DTO_DETAILS__PROPERTIES:
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //DTODetailsImpl
+} //DTOPropertiesImpl

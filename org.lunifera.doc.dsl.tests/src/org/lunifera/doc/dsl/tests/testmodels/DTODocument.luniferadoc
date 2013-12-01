@@ -5,7 +5,7 @@ DTODocument doc.dto.MyDTO for org.lunifera.sample.MyDTO {
 		This is an «url "http://www.example.org"»example url«/url»
 		'''
 	}
-	details {
+	properties {
 		name propA
 		description {
 			'''

@@ -9,8 +9,8 @@ import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
-import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription;
@@ -127,9 +127,9 @@ public class DocumentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DocumentPackage.DTO_DETAILS: {
-				DTODetails dtoDetails = (DTODetails)theEObject;
-				T result = caseDTODetails(dtoDetails);
+			case DocumentPackage.DTO_PROPERTIES: {
+				DTOProperties dtoProperties = (DTOProperties)theEObject;
+				T result = caseDTOProperties(dtoProperties);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,17 +289,17 @@ public class DocumentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>DTO Details</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Properties</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>DTO Details</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Properties</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDTODetails(DTODetails object) {
+	public T caseDTOProperties(DTOProperties object) {
 		return null;
 	}
 

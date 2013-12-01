@@ -307,13 +307,13 @@ public interface DocumentPackage extends EPackage {
 	int DTO_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Details</b></em>' containment reference.
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DOCUMENT__DETAILS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
+	int DTO_DOCUMENT__PROPERTIES = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>DTO Document</em>' class.
@@ -353,14 +353,14 @@ public interface DocumentPackage extends EPackage {
 	int DTO_DESCRIPTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODetailsImpl <em>DTO Details</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl <em>DTO Properties</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTODetailsImpl
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODetails()
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTOProperties()
 	 * @generated
 	 */
-	int DTO_DETAILS = 7;
+	int DTO_PROPERTIES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -369,16 +369,16 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DETAILS__PROPERTIES = 0;
+	int DTO_PROPERTIES__PROPERTIES = 0;
 
 	/**
-	 * The number of structural features of the '<em>DTO Details</em>' class.
+	 * The number of structural features of the '<em>DTO Properties</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DTO_DETAILS_FEATURE_COUNT = 1;
+	int DTO_PROPERTIES_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl <em>DTO Property</em>}' class.
@@ -789,15 +789,15 @@ public interface DocumentPackage extends EPackage {
 	EReference getDTODocument_Description();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDetails <em>Details</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Details</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDetails()
+	 * @return the meta object for the containment reference '<em>Properties</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getProperties()
 	 * @see #getDTODocument()
 	 * @generated
 	 */
-	EReference getDTODocument_Details();
+	EReference getDTODocument_Properties();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription <em>DTO Description</em>}'.
@@ -821,25 +821,25 @@ public interface DocumentPackage extends EPackage {
 	EReference getDTODescription_Content();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODetails <em>DTO Details</em>}'.
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties <em>DTO Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>DTO Details</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODetails
+	 * @return the meta object for class '<em>DTO Properties</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperties
 	 * @generated
 	 */
-	EClass getDTODetails();
+	EClass getDTOProperties();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODetails#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Properties</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODetails#getProperties()
-	 * @see #getDTODetails()
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperties#getProperties()
+	 * @see #getDTOProperties()
 	 * @generated
 	 */
-	EReference getDTODetails_Properties();
+	EReference getDTOProperties_Properties();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty <em>DTO Property</em>}'.
@@ -1121,12 +1121,12 @@ public interface DocumentPackage extends EPackage {
 		EReference DTO_DOCUMENT__DESCRIPTION = eINSTANCE.getDTODocument_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Details</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DTO_DOCUMENT__DETAILS = eINSTANCE.getDTODocument_Details();
+		EReference DTO_DOCUMENT__PROPERTIES = eINSTANCE.getDTODocument_Properties();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl <em>DTO Description</em>}' class.
@@ -1147,14 +1147,14 @@ public interface DocumentPackage extends EPackage {
 		EReference DTO_DESCRIPTION__CONTENT = eINSTANCE.getDTODescription_Content();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODetailsImpl <em>DTO Details</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl <em>DTO Properties</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTODetailsImpl
-		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODetails()
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTOProperties()
 		 * @generated
 		 */
-		EClass DTO_DETAILS = eINSTANCE.getDTODetails();
+		EClass DTO_PROPERTIES = eINSTANCE.getDTOProperties();
 
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
@@ -1162,7 +1162,7 @@ public interface DocumentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DTO_DETAILS__PROPERTIES = eINSTANCE.getDTODetails_Properties();
+		EReference DTO_PROPERTIES__PROPERTIES = eINSTANCE.getDTOProperties_Properties();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl <em>DTO Property</em>}' class.

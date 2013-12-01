@@ -10,8 +10,8 @@ import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
-import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription;
@@ -109,8 +109,8 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 				return createDTODescriptionAdapter();
 			}
 			@Override
-			public Adapter caseDTODetails(DTODetails object) {
-				return createDTODetailsAdapter();
+			public Adapter caseDTOProperties(DTOProperties object) {
+				return createDTOPropertiesAdapter();
 			}
 			@Override
 			public Adapter caseDTOProperty(DTOProperty object) {
@@ -263,16 +263,16 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODetails <em>DTO Details</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties <em>DTO Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODetails
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperties
 	 * @generated
 	 */
-	public Adapter createDTODetailsAdapter() {
+	public Adapter createDTOPropertiesAdapter() {
 		return null;
 	}
 

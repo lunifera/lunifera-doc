@@ -38,13 +38,13 @@ class ParserTest {
 		val dtoDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/DTODocument.luniferadoc").parse
 		
 		assertEquals("org.lunifera.sample.MyDTO", dtoDoc.dtoClass)
-		assertEquals(2, dtoDoc.details.properties.size)
-		assertEquals("propA", dtoDoc.details.properties.get(0).name)
-		assertEquals(typeof(RichStringImpl), dtoDoc.details.properties.get(0).description.class)
-		assertEquals("propB", dtoDoc.details.properties.get(1).name)
+		assertEquals(2, dtoDoc.properties.properties.size)
+		assertEquals("propA", dtoDoc.properties.properties.get(0).name)
+		assertEquals(typeof(RichStringImpl), dtoDoc.properties.properties.get(0).description.class)
+		assertEquals("propB", dtoDoc.properties.properties.get(1).name)
 		
-		val propADesc = dtoDoc.details.properties.get(0).description
-		val propBDesc = dtoDoc.details.properties.get(1).description
+		val propADesc = dtoDoc.properties.properties.get(0).description
+		val propBDesc = dtoDoc.properties.properties.get(1).description
 		
 		assertEquals("This is the description of property A.", (propADesc.expressions.get(0) as RichStringLiteral).value.trim)
 		assertEquals("This is the description of property B.", (propBDesc.expressions.get(0) as RichStringLiteral).value.trim)

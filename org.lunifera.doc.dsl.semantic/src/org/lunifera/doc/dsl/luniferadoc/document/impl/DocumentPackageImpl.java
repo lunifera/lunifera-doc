@@ -14,8 +14,8 @@ import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
-import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties;
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentFactory;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
@@ -96,7 +96,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dtoDetailsEClass = null;
+	private EClass dtoPropertiesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -396,7 +396,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDTODocument_Details() {
+	public EReference getDTODocument_Properties() {
 		return (EReference)dtoDocumentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -423,8 +423,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDTODetails() {
-		return dtoDetailsEClass;
+	public EClass getDTOProperties() {
+		return dtoPropertiesEClass;
 	}
 
 	/**
@@ -432,8 +432,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDTODetails_Properties() {
-		return (EReference)dtoDetailsEClass.getEStructuralFeatures().get(0);
+	public EReference getDTOProperties_Properties() {
+		return (EReference)dtoPropertiesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -569,13 +569,13 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		dtoDocumentEClass = createEClass(DTO_DOCUMENT);
 		createEAttribute(dtoDocumentEClass, DTO_DOCUMENT__DTO_CLASS);
 		createEReference(dtoDocumentEClass, DTO_DOCUMENT__DESCRIPTION);
-		createEReference(dtoDocumentEClass, DTO_DOCUMENT__DETAILS);
+		createEReference(dtoDocumentEClass, DTO_DOCUMENT__PROPERTIES);
 
 		dtoDescriptionEClass = createEClass(DTO_DESCRIPTION);
 		createEReference(dtoDescriptionEClass, DTO_DESCRIPTION__CONTENT);
 
-		dtoDetailsEClass = createEClass(DTO_DETAILS);
-		createEReference(dtoDetailsEClass, DTO_DETAILS__PROPERTIES);
+		dtoPropertiesEClass = createEClass(DTO_PROPERTIES);
+		createEReference(dtoPropertiesEClass, DTO_PROPERTIES__PROPERTIES);
 
 		dtoPropertyEClass = createEClass(DTO_PROPERTY);
 		createEAttribute(dtoPropertyEClass, DTO_PROPERTY__NAME);
@@ -660,13 +660,13 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEClass(dtoDocumentEClass, DTODocument.class, "DTODocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDTODocument_DtoClass(), ecorePackage.getEString(), "dtoClass", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDTODocument_Description(), this.getDTODescription(), null, "description", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDTODocument_Details(), this.getDTODetails(), null, "details", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDTODocument_Properties(), this.getDTOProperties(), null, "properties", null, 0, 1, DTODocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dtoDescriptionEClass, DTODescription.class, "DTODescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDTODescription_Content(), theRichstringPackage.getRichString(), null, "content", null, 0, 1, DTODescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dtoDetailsEClass, DTODetails.class, "DTODetails", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDTODetails_Properties(), this.getDTOProperty(), null, "properties", null, 0, -1, DTODetails.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dtoPropertiesEClass, DTOProperties.class, "DTOProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDTOProperties_Properties(), this.getDTOProperty(), null, "properties", null, 0, -1, DTOProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dtoPropertyEClass, DTOProperty.class, "DTOProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDTOProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, DTOProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

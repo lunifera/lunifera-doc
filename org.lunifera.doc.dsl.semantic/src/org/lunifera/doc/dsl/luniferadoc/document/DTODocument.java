@@ -13,7 +13,7 @@ package org.lunifera.doc.dsl.luniferadoc.document;
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDtoClass <em>Dto Class</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDescription <em>Description</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDetails <em>Details</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,29 +75,29 @@ public interface DTODocument extends LuniferaDocDocument {
 	void setDescription(DTODescription value);
 
 	/**
-	 * Returns the value of the '<em><b>Details</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Properties</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Details</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Properties</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Details</em>' containment reference.
-	 * @see #setDetails(DTODetails)
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODocument_Details()
+	 * @return the value of the '<em>Properties</em>' containment reference.
+	 * @see #setProperties(DTOProperties)
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODocument_Properties()
 	 * @model containment="true"
 	 * @generated
 	 */
-	DTODetails getDetails();
+	DTOProperties getProperties();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDetails <em>Details</em>}' containment reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getProperties <em>Properties</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Details</em>' containment reference.
-	 * @see #getDetails()
+	 * @param value the new value of the '<em>Properties</em>' containment reference.
+	 * @see #getProperties()
 	 * @generated
 	 */
-	void setDetails(DTODetails value);
+	void setProperties(DTOProperties value);
 
 } // DTODocument

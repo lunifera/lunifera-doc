@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DTO Details</b></em>'.
+ * A representation of the model object '<em><b>DTO Properties</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODetails#getProperties <em>Properties</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODetails()
+ * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTOProperties()
  * @model
  * @generated
  */
-public interface DTODetails extends EObject {
+public interface DTOProperties extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
 	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty}.
@@ -32,10 +32,10 @@ public interface DTODetails extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' containment reference list.
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODetails_Properties()
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTOProperties_Properties()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<DTOProperty> getProperties();
 
-} // DTODetails
+} // DTOProperties

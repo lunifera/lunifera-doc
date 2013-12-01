@@ -40,6 +40,16 @@ class CompilerTest {
 			
 			@SuppressWarnings("all")
 			public class MyDTO implements IMetaDTO {
+			  @SuppressWarnings("all")
+			  public class PropA implements IDTOProperty {
+			  }
+			  
+			  
+			  @SuppressWarnings("all")
+			  public class PropB implements IDTOProperty {
+			  }
+			  
+			  
 			  private String name;
 			  
 			  private String dtoClass;
@@ -51,6 +61,9 @@ class CompilerTest {
 			  public MyDTO() {
 			    this.name = "doc.dto.MyDTO";
 			    this.dtoClass = "org.lunifera.sample.MyDTO";
+			    this.properties = new java.util.ArrayList<IDTOProperty>();
+			    this.properties.add(new PropA());
+			    this.properties.add(new PropB());
 			    
 			  }
 			  

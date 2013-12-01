@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODescription;
-import org.lunifera.doc.dsl.luniferadoc.document.DTODetails;
 import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 
 /**
@@ -23,7 +23,7 @@ import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDtoClass <em>Dto Class</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getDetails <em>Details</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,14 +81,14 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 	protected DTODescription description;
 
 	/**
-	 * The cached value of the '{@link #getDetails() <em>Details</em>}' containment reference.
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDetails()
+	 * @see #getProperties()
 	 * @generated
 	 * @ordered
 	 */
-	protected DTODetails details;
+	protected DTOProperties properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,8 +199,8 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DTODetails getDetails() {
-		return details;
+	public DTOProperties getProperties() {
+		return properties;
 	}
 
 	/**
@@ -208,11 +208,11 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDetails(DTODetails newDetails, NotificationChain msgs) {
-		DTODetails oldDetails = details;
-		details = newDetails;
+	public NotificationChain basicSetProperties(DTOProperties newProperties, NotificationChain msgs) {
+		DTOProperties oldProperties = properties;
+		properties = newProperties;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__DETAILS, oldDetails, newDetails);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__PROPERTIES, oldProperties, newProperties);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -223,18 +223,18 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDetails(DTODetails newDetails) {
-		if (newDetails != details) {
+	public void setProperties(DTOProperties newProperties) {
+		if (newProperties != properties) {
 			NotificationChain msgs = null;
-			if (details != null)
-				msgs = ((InternalEObject)details).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__DETAILS, null, msgs);
-			if (newDetails != null)
-				msgs = ((InternalEObject)newDetails).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__DETAILS, null, msgs);
-			msgs = basicSetDetails(newDetails, msgs);
+			if (properties != null)
+				msgs = ((InternalEObject)properties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__PROPERTIES, null, msgs);
+			if (newProperties != null)
+				msgs = ((InternalEObject)newProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DOCUMENT__PROPERTIES, null, msgs);
+			msgs = basicSetProperties(newProperties, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__DETAILS, newDetails, newDetails));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DOCUMENT__PROPERTIES, newProperties, newProperties));
 	}
 
 	/**
@@ -247,8 +247,8 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 		switch (featureID) {
 			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
 				return basicSetDescription(null, msgs);
-			case DocumentPackage.DTO_DOCUMENT__DETAILS:
-				return basicSetDetails(null, msgs);
+			case DocumentPackage.DTO_DOCUMENT__PROPERTIES:
+				return basicSetProperties(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -267,8 +267,8 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 				return getDtoClass();
 			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
 				return getDescription();
-			case DocumentPackage.DTO_DOCUMENT__DETAILS:
-				return getDetails();
+			case DocumentPackage.DTO_DOCUMENT__PROPERTIES:
+				return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -290,8 +290,8 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
 				setDescription((DTODescription)newValue);
 				return;
-			case DocumentPackage.DTO_DOCUMENT__DETAILS:
-				setDetails((DTODetails)newValue);
+			case DocumentPackage.DTO_DOCUMENT__PROPERTIES:
+				setProperties((DTOProperties)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -314,8 +314,8 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
 				setDescription((DTODescription)null);
 				return;
-			case DocumentPackage.DTO_DOCUMENT__DETAILS:
-				setDetails((DTODetails)null);
+			case DocumentPackage.DTO_DOCUMENT__PROPERTIES:
+				setProperties((DTOProperties)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -335,8 +335,8 @@ public class DTODocumentImpl extends MinimalEObjectImpl.Container implements DTO
 				return DTO_CLASS_EDEFAULT == null ? dtoClass != null : !DTO_CLASS_EDEFAULT.equals(dtoClass);
 			case DocumentPackage.DTO_DOCUMENT__DESCRIPTION:
 				return description != null;
-			case DocumentPackage.DTO_DOCUMENT__DETAILS:
-				return details != null;
+			case DocumentPackage.DTO_DOCUMENT__PROPERTIES:
+				return properties != null;
 		}
 		return super.eIsSet(featureID);
 	}

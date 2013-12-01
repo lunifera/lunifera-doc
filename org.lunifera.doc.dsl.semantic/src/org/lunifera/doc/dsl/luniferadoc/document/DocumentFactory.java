@@ -76,13 +76,13 @@ public interface DocumentFactory extends EFactory {
 	DTODescription createDTODescription();
 
 	/**
-	 * Returns a new object of class '<em>DTO Details</em>'.
+	 * Returns a new object of class '<em>DTO Properties</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DTO Details</em>'.
+	 * @return a new object of class '<em>DTO Properties</em>'.
 	 * @generated
 	 */
-	DTODetails createDTODetails();
+	DTOProperties createDTOProperties();
 
 	/**
 	 * Returns a new object of class '<em>DTO Property</em>'.
