@@ -34,35 +34,32 @@ import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static DocCompilerFactory init() {
 		try {
-			DocCompilerFactory theDocCompilerFactory = (DocCompilerFactory)EPackage.Registry.INSTANCE.getEFactory(DocCompilerPackage.eNS_URI);
+			DocCompilerFactory theDocCompilerFactory = (DocCompilerFactory) EPackage.Registry.INSTANCE
+					.getEFactory(DocCompilerPackage.eNS_URI);
 			if (theDocCompilerFactory != null) {
 				return theDocCompilerFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DocCompilerFactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocCompilerFactoryImpl() {
@@ -70,44 +67,67 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DocCompilerPackage.DOCUMENT_START: return createDocumentStart();
-			case DocCompilerPackage.DOCUMENT_END: return createDocumentEnd();
-			case DocCompilerPackage.PROCESSED_RICH_STRING: return createProcessedRichString();
-			case DocCompilerPackage.LINE: return createLine();
-			case DocCompilerPackage.LINE_PART: return createLinePart();
-			case DocCompilerPackage.LITERAL: return createLiteral();
-			case DocCompilerPackage.LINE_BREAK: return createLineBreak();
-			case DocCompilerPackage.FOR_LOOP_START: return createForLoopStart();
-			case DocCompilerPackage.FOR_LOOP_END: return createForLoopEnd();
-			case DocCompilerPackage.PRINTED_EXPRESSION: return createPrintedExpression();
-			case DocCompilerPackage.IF_CONDITION_START: return createIfConditionStart();
-			case DocCompilerPackage.ELSE_IF_CONDITION: return createElseIfCondition();
-			case DocCompilerPackage.ELSE_START: return createElseStart();
-			case DocCompilerPackage.END_IF: return createEndIf();
-			case DocCompilerPackage.MARKUP: return createMarkup();
-			case DocCompilerPackage.H1_START: return createH1Start();
-			case DocCompilerPackage.H1_END: return createH1End();
-			case DocCompilerPackage.H2_START: return createH2Start();
-			case DocCompilerPackage.H2_END: return createH2End();
-			case DocCompilerPackage.EXAMPLE_START: return createExampleStart();
-			case DocCompilerPackage.EXAMPLE_END: return createExampleEnd();
-			case DocCompilerPackage.URL_START: return createURLStart();
-			case DocCompilerPackage.URL_END: return createURLEnd();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case DocCompilerPackage.DOCUMENT_START:
+			return createDocumentStart();
+		case DocCompilerPackage.DOCUMENT_END:
+			return createDocumentEnd();
+		case DocCompilerPackage.PROCESSED_RICH_STRING:
+			return createProcessedRichString();
+		case DocCompilerPackage.LINE:
+			return createLine();
+		case DocCompilerPackage.LINE_PART:
+			return createLinePart();
+		case DocCompilerPackage.LITERAL:
+			return createLiteral();
+		case DocCompilerPackage.LINE_BREAK:
+			return createLineBreak();
+		case DocCompilerPackage.FOR_LOOP_START:
+			return createForLoopStart();
+		case DocCompilerPackage.FOR_LOOP_END:
+			return createForLoopEnd();
+		case DocCompilerPackage.PRINTED_EXPRESSION:
+			return createPrintedExpression();
+		case DocCompilerPackage.IF_CONDITION_START:
+			return createIfConditionStart();
+		case DocCompilerPackage.ELSE_IF_CONDITION:
+			return createElseIfCondition();
+		case DocCompilerPackage.ELSE_START:
+			return createElseStart();
+		case DocCompilerPackage.END_IF:
+			return createEndIf();
+		case DocCompilerPackage.MARKUP:
+			return createMarkup();
+		case DocCompilerPackage.H1_START:
+			return createH1Start();
+		case DocCompilerPackage.H1_END:
+			return createH1End();
+		case DocCompilerPackage.H2_START:
+			return createH2Start();
+		case DocCompilerPackage.H2_END:
+			return createH2End();
+		case DocCompilerPackage.EXAMPLE_START:
+			return createExampleStart();
+		case DocCompilerPackage.EXAMPLE_END:
+			return createExampleEnd();
+		case DocCompilerPackage.URL_START:
+			return createURLStart();
+		case DocCompilerPackage.URL_END:
+			return createURLEnd();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocumentStart createDocumentStart() {
@@ -116,8 +136,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocumentEnd createDocumentEnd() {
@@ -126,8 +146,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ProcessedRichString createProcessedRichString() {
@@ -136,8 +156,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Line createLine() {
@@ -146,8 +166,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LinePart createLinePart() {
@@ -156,8 +176,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Literal createLiteral() {
@@ -166,8 +186,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LineBreak createLineBreak() {
@@ -176,8 +196,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ForLoopStart createForLoopStart() {
@@ -186,8 +206,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ForLoopEnd createForLoopEnd() {
@@ -196,8 +216,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PrintedExpression createPrintedExpression() {
@@ -206,8 +226,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IfConditionStart createIfConditionStart() {
@@ -216,8 +236,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ElseIfCondition createElseIfCondition() {
@@ -226,8 +246,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ElseStart createElseStart() {
@@ -236,8 +256,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EndIf createEndIf() {
@@ -246,8 +266,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Markup createMarkup() {
@@ -256,8 +276,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public H1Start createH1Start() {
@@ -266,8 +286,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public H1End createH1End() {
@@ -276,8 +296,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public H2Start createH2Start() {
@@ -286,8 +306,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public H2End createH2End() {
@@ -296,8 +316,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ExampleStart createExampleStart() {
@@ -306,8 +326,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ExampleEnd createExampleEnd() {
@@ -316,8 +336,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public URLStart createURLStart() {
@@ -326,8 +346,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public URLEnd createURLEnd() {
@@ -336,17 +356,17 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocCompilerPackage getDocCompilerPackage() {
-		return (DocCompilerPackage)getEPackage();
+		return (DocCompilerPackage) getEPackage();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -355,4 +375,4 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 		return DocCompilerPackage.eINSTANCE;
 	}
 
-} //DocCompilerFactoryImpl
+} // DocCompilerFactoryImpl

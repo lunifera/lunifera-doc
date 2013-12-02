@@ -1,10 +1,8 @@
 /*******************************************************************************
- * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+ * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Based on work by the Xtend team (xtend-lang.org)
  ******************************************************************************/
 
@@ -37,8 +35,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
  * 
  * The template expression and its dedicated child expressions are handled.
  * 
- * TODO: RichStringIf with instanceof cascades should downcast the checked
- * values iff immutable.
+ * TODO: RichStringIf with instanceof cascades should downcast the checked values iff immutable.
  */
 @NonNullByDefault
 @SuppressWarnings("restriction")
@@ -166,7 +163,7 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 				.computeTypes(object.getExpression());
 		state.acceptActualType(charSequence);
 	}
-	
+
 	protected void _computeTypes(RichStringURL object,
 			ITypeComputationState state) {
 		LightweightTypeReference charSequence = getTypeForName(

@@ -24,35 +24,32 @@ import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static DocumentFactory init() {
 		try {
-			DocumentFactory theDocumentFactory = (DocumentFactory)EPackage.Registry.INSTANCE.getEFactory(DocumentPackage.eNS_URI);
+			DocumentFactory theDocumentFactory = (DocumentFactory) EPackage.Registry.INSTANCE
+					.getEFactory(DocumentPackage.eNS_URI);
 			if (theDocumentFactory != null) {
 				return theDocumentFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DocumentFactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocumentFactoryImpl() {
@@ -60,34 +57,47 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DocumentPackage.ENTITY_DOCUMENT: return createEntityDocument();
-			case DocumentPackage.ENTITY_DESCRIPTION: return createEntityDescription();
-			case DocumentPackage.ENTITY_FIELDS: return createEntityFields();
-			case DocumentPackage.ENTITY_FIELD: return createEntityField();
-			case DocumentPackage.DTO_DOCUMENT: return createDTODocument();
-			case DocumentPackage.DTO_DESCRIPTION: return createDTODescription();
-			case DocumentPackage.DTO_PROPERTIES: return createDTOProperties();
-			case DocumentPackage.DTO_PROPERTY: return createDTOProperty();
-			case DocumentPackage.BPM_PROCESS_DOCUMENT: return createBPMProcessDocument();
-			case DocumentPackage.BPM_TASK_DOCUMENT: return createBPMTaskDocument();
-			case DocumentPackage.VAACLIPSE_VIEW_DOCUMENT: return createVaaclipseViewDocument();
-			case DocumentPackage.UI_DOCUMENT: return createUIDocument();
-			case DocumentPackage.GENERAL_DOCUMENT: return createGeneralDocument();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case DocumentPackage.ENTITY_DOCUMENT:
+			return createEntityDocument();
+		case DocumentPackage.ENTITY_DESCRIPTION:
+			return createEntityDescription();
+		case DocumentPackage.ENTITY_FIELDS:
+			return createEntityFields();
+		case DocumentPackage.ENTITY_FIELD:
+			return createEntityField();
+		case DocumentPackage.DTO_DOCUMENT:
+			return createDTODocument();
+		case DocumentPackage.DTO_DESCRIPTION:
+			return createDTODescription();
+		case DocumentPackage.DTO_PROPERTIES:
+			return createDTOProperties();
+		case DocumentPackage.DTO_PROPERTY:
+			return createDTOProperty();
+		case DocumentPackage.BPM_PROCESS_DOCUMENT:
+			return createBPMProcessDocument();
+		case DocumentPackage.BPM_TASK_DOCUMENT:
+			return createBPMTaskDocument();
+		case DocumentPackage.VAACLIPSE_VIEW_DOCUMENT:
+			return createVaaclipseViewDocument();
+		case DocumentPackage.UI_DOCUMENT:
+			return createUIDocument();
+		case DocumentPackage.GENERAL_DOCUMENT:
+			return createGeneralDocument();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EntityDocument createEntityDocument() {
@@ -96,8 +106,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EntityDescription createEntityDescription() {
@@ -106,8 +116,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EntityFields createEntityFields() {
@@ -116,8 +126,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EntityField createEntityField() {
@@ -126,8 +136,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DTODocument createDTODocument() {
@@ -136,8 +146,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DTODescription createDTODescription() {
@@ -146,8 +156,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DTOProperties createDTOProperties() {
@@ -156,8 +166,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DTOProperty createDTOProperty() {
@@ -166,8 +176,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BPMProcessDocument createBPMProcessDocument() {
@@ -176,8 +186,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BPMTaskDocument createBPMTaskDocument() {
@@ -186,8 +196,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VaaclipseViewDocument createVaaclipseViewDocument() {
@@ -196,8 +206,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UIDocument createUIDocument() {
@@ -206,8 +216,8 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GeneralDocument createGeneralDocument() {
@@ -216,17 +226,17 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocumentPackage getDocumentPackage() {
-		return (DocumentPackage)getEPackage();
+		return (DocumentPackage) getEPackage();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -235,4 +245,4 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 		return DocumentPackage.eINSTANCE;
 	}
 
-} //DocumentFactoryImpl
+} // DocumentFactoryImpl

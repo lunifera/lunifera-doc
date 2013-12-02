@@ -1,10 +1,8 @@
 /*******************************************************************************
- * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+ * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Based on work by the Xtend team (xtend-lang.org)
  ******************************************************************************/
 
@@ -17,27 +15,26 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import com.google.common.collect.Lists;
 
 /**
- * Default indentation handler for rich strings. Tries to be graceful with
- * inconsistent indentation.
+ * Default indentation handler for rich strings. Tries to be graceful with inconsistent indentation.
  */
 @NonNullByDefault
 public class DefaultIndentationHandler implements IRichStringIndentationHandler {
 
 	protected static abstract class IndentationData {
 		protected CharSequence value;
-		
+
 		protected IndentationData(CharSequence value) {
 			this.value = value;
 		}
-		
+
 		protected abstract void accept(IRichStringPartAcceptor acceptor);
-		
+
 		@Override
 		public String toString() {
 			return getClass().getSimpleName() + " [" + value + "]";
 		}
 	}
-	
+
 	protected static class SemanticIndentationData extends IndentationData {
 
 		protected SemanticIndentationData(CharSequence value) {
@@ -48,7 +45,7 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 		protected void accept(IRichStringPartAcceptor acceptor) {
 			acceptor.acceptSemanticText(value, null);
 		}
-		
+
 	}
 
 	protected static class TemplateIndentationData extends IndentationData {
@@ -61,18 +58,18 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 		protected void accept(IRichStringPartAcceptor acceptor) {
 			acceptor.acceptTemplateText(value, null);
 		}
-		
+
 	}
 
 	private LinkedList<IndentationData> indentationData;
 	private LinkedList<LinkedList<IndentationData>> indentationDataStack;
-	
+
 	public DefaultIndentationHandler() {
 		this.indentationData = Lists.newLinkedList();
 		this.indentationDataStack = Lists.newLinkedList();
 		indentationDataStack.add(indentationData);
 	}
-	
+
 	public void popIndentation() {
 		indentationData.removeLast();
 		if (indentationData.isEmpty() && indentationDataStack.size() > 1) {
@@ -97,7 +94,7 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 			}
 		}
 	}
-	
+
 	public void pushSemanticIndentation(CharSequence indentation) {
 		if (indentationData.isEmpty()) {
 			indentationData.add(new SemanticIndentationData(indentation));
@@ -114,26 +111,26 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 			}
 		}
 	}
-	
+
 	public CharSequence getTotalSemanticIndentation() {
 		StringBuilder result = new StringBuilder();
-		for(IndentationData data: indentationData) {
+		for (IndentationData data : indentationData) {
 			if (data instanceof SemanticIndentationData)
 				result.append(data.value);
 		}
 		return result.toString();
 	}
-	
+
 	public String getTotalIndentation() {
 		StringBuilder result = new StringBuilder();
-		for(IndentationData data: indentationData) {
+		for (IndentationData data : indentationData) {
 			result.append(data.value);
 		}
 		return result.toString();
 	}
-	
+
 	public void accept(IRichStringPartAcceptor acceptor) {
-		for(IndentationData data: indentationData) {
+		for (IndentationData data : indentationData) {
 			data.accept(acceptor);
 		}
 	}

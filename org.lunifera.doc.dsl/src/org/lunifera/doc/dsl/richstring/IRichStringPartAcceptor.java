@@ -1,10 +1,8 @@
 /*******************************************************************************
- * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+ * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Based on work by the Xtend team (xtend-lang.org)
  ******************************************************************************/
 
@@ -22,11 +20,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 /**
- * The {@link IRichStringPartAcceptor} can be passed into a
- * {@link RichStringProcessor} to handle the semantics of a
- * {@link org.eclipse.xtend.core.xtend.RichString} for a specific use case. It's
- * mainly an event sink but may influence the control flow of the
- * {@link RichStringProcessor} by means of {@link #forLoopHasNext()}.
+ * The {@link IRichStringPartAcceptor} can be passed into a {@link RichStringProcessor} to handle the semantics of a
+ * {@link org.eclipse.xtend.core.xtend.RichString} for a specific use case. It's mainly an event sink but may influence
+ * the control flow of the {@link RichStringProcessor} by means of {@link #forLoopHasNext()}.
  */
 @NonNullByDefault
 public interface IRichStringPartAcceptor {
@@ -53,13 +49,11 @@ public interface IRichStringPartAcceptor {
 	 * Indicates a semantic line break in a rich string literal.
 	 * 
 	 * @param origin
-	 *            the instance holding the complete text value that contains the
-	 *            line break.
+	 *            the instance holding the complete text value that contains the line break.
 	 * @param charCount
 	 *            the number of characters in the line break.
 	 * @param whether
-	 *            or not the line break occurs in a line that contains a control
-	 *            structure.
+	 *            or not the line break occurs in a line that contains a control structure.
 	 */
 	void acceptSemanticLineBreak(int charCount, RichStringLiteral origin,
 			boolean controlStructureSeen);
@@ -68,8 +62,7 @@ public interface IRichStringPartAcceptor {
 	 * Indicates a template line break in a rich string literal.
 	 * 
 	 * @param origin
-	 *            the instance holding the complete text value that contains the
-	 *            line break.
+	 *            the instance holding the complete text value that contains the line break.
 	 * @param charCount
 	 *            the number of characters in the line break.
 	 */
@@ -85,8 +78,7 @@ public interface IRichStringPartAcceptor {
 	 * has been consumed.
 	 * 
 	 * @param condition
-	 *            the condition of an
-	 *            {@link org.eclipse.xtend.core.xtend.RichStringIf}.
+	 *            the condition of an {@link org.eclipse.xtend.core.xtend.RichStringIf}.
 	 */
 	void acceptIfCondition(XExpression condition);
 
@@ -100,8 +92,7 @@ public interface IRichStringPartAcceptor {
 	 * has been consumed.
 	 * 
 	 * @param condition
-	 *            the condition of an
-	 *            {@link org.eclipse.xtend.core.xtend.RichStringElseIf}.
+	 *            the condition of an {@link org.eclipse.xtend.core.xtend.RichStringElseIf}.
 	 */
 	void acceptElseIfCondition(XExpression condition);
 
@@ -144,15 +135,12 @@ public interface IRichStringPartAcceptor {
 	void acceptForLoop(JvmFormalParameter parameter, XExpression expression);
 
 	/**
-	 * Queried to determine whether the body of the for-loop should be evaluated
-	 * (again).
+	 * Queried to determine whether the body of the for-loop should be evaluated (again).
 	 * 
 	 * @param before
-	 *            the expression that should be evaluated prior to the first
-	 *            item of the loop, if any.
+	 *            the expression that should be evaluated prior to the first item of the loop, if any.
 	 * @param separator
-	 *            the expression that should be evaluated prior to the second
-	 *            and all subsequent items of the loop.
+	 *            the expression that should be evaluated prior to the second and all subsequent items of the loop.
 	 * @param indentation
 	 *            the additional indentation for any line besides the first one.
 	 * @return <code>true</code> if the for-loop body should be evaluated.
@@ -170,8 +158,7 @@ public interface IRichStringPartAcceptor {
 	 * has been consumed.
 	 * 
 	 * @param after
-	 *            the expression that should be evaluated after the last item of
-	 *            the loop, if any.
+	 *            the expression that should be evaluated after the last item of the loop, if any.
 	 * @param indentation
 	 *            the additional indentation for any line besides the first one.
 	 */
@@ -184,9 +171,8 @@ public interface IRichStringPartAcceptor {
 	 * �expression�
 	 * </pre>
 	 * 
-	 * has been consumed. If the expression's evaluation result contains more
-	 * than one line, any line besides the first one may be prefixed with the
-	 * given indentation.
+	 * has been consumed. If the expression's evaluation result contains more than one line, any line besides the first
+	 * one may be prefixed with the given indentation.
 	 * 
 	 * @param expression
 	 *            the consumed expression. May not be <code>null</code>.
@@ -210,7 +196,7 @@ public interface IRichStringPartAcceptor {
 	void acceptH2Start(RichStringH2 object);
 
 	void acceptH2End();
-	
+
 	void acceptURLStart(RichStringURL object);
 
 	void acceptURLEnd();

@@ -7,18 +7,17 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rich String Example</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Rich String Example</b></em>'. <!--
+ * end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
 public class RichStringExampleImpl extends RichStringMarkupImpl implements RichStringExample {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RichStringExampleImpl() {
@@ -26,8 +25,8 @@ public class RichStringExampleImpl extends RichStringMarkupImpl implements RichS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -35,4 +34,4 @@ public class RichStringExampleImpl extends RichStringMarkupImpl implements RichS
 		return RichstringPackage.Literals.RICH_STRING_EXAMPLE;
 	}
 
-} //RichStringExampleImpl
+} // RichStringExampleImpl

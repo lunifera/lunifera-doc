@@ -1,10 +1,8 @@
 /*******************************************************************************
- * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+ * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Based on work by the Xtend team (xtend-lang.org)
  ******************************************************************************/
 
@@ -24,9 +22,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 /**
- * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should
- * inherit from this class if they do not want to implement all methods. It is
- * mandatory to implement {@link #forLoopHasNext()}.
+ * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should inherit from this class if they do not
+ * want to implement all methods. It is mandatory to implement {@link #forLoopHasNext()}.
  */
 @NonNullByDefault
 public abstract class AbstractRichStringPartAcceptor implements
@@ -89,7 +86,7 @@ public abstract class AbstractRichStringPartAcceptor implements
 	@Override
 	public void acceptH2End() {
 	}
-	
+
 	@Override
 	public void acceptURLStart(RichStringURL object) {
 	}

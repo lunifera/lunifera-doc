@@ -5,32 +5,30 @@ package org.lunifera.doc.dsl.doccompiler;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Literal</b></em>'.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Literal</b></em>'. <!-- end-user-doc -->
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.Literal#getLiteral <em>Literal</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.Literal#getOffset <em>Offset</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.Literal#getLength <em>Length</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.Literal#getLiteral <em>Literal</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.Literal#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.Literal#getLength <em>Length</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getLiteral()
  * @model
  * @generated
  */
 public interface Literal extends LinePart {
 	/**
-	 * Returns the value of the '<em><b>Literal</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Literal</b></em>' reference. <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Literal</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Literal</em>' reference isn't clear, there really should be more of a description
+	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Literal</em>' reference.
 	 * @see #setLiteral(RichStringLiteral)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getLiteral_Literal()
@@ -41,22 +39,23 @@ public interface Literal extends LinePart {
 
 	/**
 	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.Literal#getLiteral <em>Literal</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Literal</em>' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Literal</em>' reference.
 	 * @see #getLiteral()
 	 * @generated
 	 */
 	void setLiteral(RichStringLiteral value);
 
 	/**
-	 * Returns the value of the '<em><b>Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Offset</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Offset</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Offset</em>' attribute isn't clear, there really should be more of a description
+	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Offset</em>' attribute.
 	 * @see #setOffset(int)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getLiteral_Offset()
@@ -67,22 +66,23 @@ public interface Literal extends LinePart {
 
 	/**
 	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.Literal#getOffset <em>Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Offset</em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Offset</em>' attribute.
 	 * @see #getOffset()
 	 * @generated
 	 */
 	void setOffset(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Length</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Length</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Length</em>' attribute isn't clear, there really should be more of a description
+	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #setLength(int)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getLiteral_Length()
@@ -93,9 +93,10 @@ public interface Literal extends LinePart {
 
 	/**
 	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.Literal#getLength <em>Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Length</em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Length</em>' attribute.
 	 * @see #getLength()
 	 * @generated
 	 */

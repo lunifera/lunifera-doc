@@ -1,18 +1,16 @@
 /*******************************************************************************
- * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+ * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Based on work by the Xtend team (xtend-lang.org)
  ******************************************************************************/
 
 package org.lunifera.doc.dsl.richstring;
 
 /**
- * Implementation {@link CharSequence} that is tailored to line-per-line processing of text
- * and supports special handling of whitespace.
+ * Implementation {@link CharSequence} that is tailored to line-per-line processing of text and supports special
+ * handling of whitespace.
  */
 public class TextLine implements CharSequence {
 
@@ -21,23 +19,23 @@ public class TextLine implements CharSequence {
 		public LeadingWSTextLinePart(String completeText, int offset, int length) {
 			super(completeText, offset, length, 0);
 		}
-		
+
 		@Override
 		public CharSequence getLeadingWhiteSpace() {
 			return this;
 		}
-		
+
 		@Override
 		public boolean hasLeadingWhiteSpace() {
 			return length() > 0;
 		}
-		
+
 		@Override
 		public boolean containsOnlyWhitespace() {
 			return true;
 		}
 	}
-	
+
 	private final String completeText;
 	private final int offset;
 	private final int length;
@@ -53,42 +51,42 @@ public class TextLine implements CharSequence {
 	public String getCompleteText() {
 		return completeText;
 	}
-	
+
 	public boolean hasLeadingWhiteSpace() {
 		if (length == 0)
 			return false;
 		boolean result = Character.isWhitespace(charAt(0));
 		return result;
 	}
-	
+
 	public boolean containsOnlyWhitespace() {
-		for(int i=0; i < length(); i++) {
+		for (int i = 0; i < length(); i++) {
 			if (!Character.isWhitespace(charAt(i))) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	public CharSequence getLeadingWhiteSpace() {
-		for(int i=0; i < length(); i++) {
+		for (int i = 0; i < length(); i++) {
 			if (!Character.isWhitespace(charAt(i))) {
 				if (i == 0)
 					return "";
-				return new LeadingWSTextLinePart(completeText, offset, i); 
+				return new LeadingWSTextLinePart(completeText, offset, i);
 			}
 		}
 		return new LeadingWSTextLinePart(completeText, offset, length);
 	}
-	
+
 	public boolean hasTrailingLineBreak() {
 		return delimiterLength > 0;
 	}
-	
+
 	public int getRelativeOffset() {
 		return offset;
 	}
-	
+
 	public int length() {
 		return length;
 	}
@@ -96,16 +94,16 @@ public class TextLine implements CharSequence {
 	public char charAt(int index) {
 		return completeText.charAt(index + offset);
 	}
-	
+
 	public int getDelimiterLength() {
 		return delimiterLength;
 	}
-	
+
 	@Override
 	public String toString() {
 		return completeText.substring(offset, offset + length);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -134,10 +132,9 @@ public class TextLine implements CharSequence {
 	}
 
 	/**
-     * @throws  IndexOutOfBoundsException
-     *          if <tt>start</tt> or <tt>end</tt> are negative,
-     *          if <tt>end</tt> is greater than <tt>length()</tt>,
-     *          or if <tt>start</tt> is greater than <tt>end</tt>
+	 * @throws IndexOutOfBoundsException
+	 *             if <tt>start</tt> or <tt>end</tt> are negative, if <tt>end</tt> is greater than <tt>length()</tt>, or
+	 *             if <tt>start</tt> is greater than <tt>end</tt>
 	 */
 	public CharSequence subSequence(int start, int end) {
 		if (start < 0 || start > end) {

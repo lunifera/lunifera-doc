@@ -1,10 +1,8 @@
 /*******************************************************************************
- * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+ * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Based on work by the Xtend team (xtend-lang.org)
  ******************************************************************************/
 
@@ -19,31 +17,31 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
 
 /**
- * Computes the initial indentation of a rich string according to
- * the semantics in the Xtend language specification. That is, especially
- * the first and the last line have to be ignored if they only consist whitespace.
+ * Computes the initial indentation of a rich string according to the semantics in the Xtend language specification.
+ * That is, especially the first and the last line have to be ignored if they only consist whitespace.
  */
 public class InitialTemplateIndentationComputer extends RichstringSwitch<String> {
-	
+
 	private final String initial;
 
 	/**
-	 * @param initial the assumed indentation if the first line contains text. May not be <code>null</code>.
+	 * @param initial
+	 *            the assumed indentation if the first line contains text. May not be <code>null</code>.
 	 */
 	public InitialTemplateIndentationComputer(CharSequence initial) {
 		if (initial == null)
 			throw new IllegalArgumentException("Initial indentation must not be null.");
 		this.initial = initial.toString();
 	}
-	
+
 	@Override
 	public String caseRichString(RichString object) {
 		String result = null;
 		List<XExpression> elements = object.getExpressions();
-		for(int i= 0; i< elements.size();) {
+		for (int i = 0; i < elements.size();) {
 			XExpression element = elements.get(i);
 			String elementResult = null;
-			int nextIndex = i+1;
+			int nextIndex = i + 1;
 			if (element instanceof RichStringLiteral) {
 				RichStringLiteral literal = (RichStringLiteral) element;
 				if (nextIndex == elements.size()) { // last one
@@ -57,7 +55,7 @@ public class InitialTemplateIndentationComputer extends RichstringSwitch<String>
 						next = (RichStringLiteral) elements.get(nextIndex);
 						run.append(next.getValue());
 						nextIndex++;
-					} while(nextIndex < elements.size() && elements.get(nextIndex) instanceof RichStringLiteral);
+					} while (nextIndex < elements.size() && elements.get(nextIndex) instanceof RichStringLiteral);
 					elementResult = getLeadingWhitespace(run.toString(), next);
 				}
 			}
@@ -80,7 +78,7 @@ public class InitialTemplateIndentationComputer extends RichstringSwitch<String>
 			current = candidate;
 		return current;
 	}
-	
+
 	private String getLeadingWhitespace(String value, RichStringLiteral lastLiteral) {
 		List<TextLine> lines = TextLines.splitString(value);
 		// no line breaks or immediately closed string literal => no initial indentation
@@ -89,7 +87,7 @@ public class InitialTemplateIndentationComputer extends RichstringSwitch<String>
 		}
 		TextLine firstLine = lines.get(0);
 		// first line has content == no initial indentation
-		if (!firstLine.containsOnlyWhitespace()) { 
+		if (!firstLine.containsOnlyWhitespace()) {
 			return null;
 		}
 		String result = null;
@@ -120,5 +118,5 @@ public class InitialTemplateIndentationComputer extends RichstringSwitch<String>
 			return "";
 		return result;
 	}
-	
+
 }

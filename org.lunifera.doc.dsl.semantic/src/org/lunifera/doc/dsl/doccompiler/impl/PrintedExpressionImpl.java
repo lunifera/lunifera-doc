@@ -11,23 +11,22 @@ import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Printed Expression</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Printed Expression</b></em>'. <!-- end-user-doc
+ * -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.impl.PrintedExpressionImpl#getExpression <em>Expression</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.PrintedExpressionImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PrintedExpressionImpl extends LinePartImpl implements PrintedExpression {
 	/**
-	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -35,8 +34,8 @@ public class PrintedExpressionImpl extends LinePartImpl implements PrintedExpres
 	protected XExpression expression;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PrintedExpressionImpl() {
@@ -44,8 +43,8 @@ public class PrintedExpressionImpl extends LinePartImpl implements PrintedExpres
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -54,25 +53,26 @@ public class PrintedExpressionImpl extends LinePartImpl implements PrintedExpres
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public XExpression getExpression() {
 		if (expression != null && expression.eIsProxy()) {
-			InternalEObject oldExpression = (InternalEObject)expression;
-			expression = (XExpression)eResolveProxy(oldExpression);
+			InternalEObject oldExpression = (InternalEObject) expression;
+			expression = (XExpression) eResolveProxy(oldExpression);
 			if (expression != oldExpression) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION, oldExpression, expression));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION, oldExpression, expression));
 			}
 		}
 		return expression;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public XExpression basicGetExpression() {
@@ -80,74 +80,76 @@ public class PrintedExpressionImpl extends LinePartImpl implements PrintedExpres
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setExpression(XExpression newExpression) {
 		XExpression oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION, oldExpression, expression));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION,
+					oldExpression, expression));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
-				if (resolve) return getExpression();
-				return basicGetExpression();
+		case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
+			if (resolve)
+				return getExpression();
+			return basicGetExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
-				setExpression((XExpression)newValue);
-				return;
+		case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
+			setExpression((XExpression) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
-				setExpression((XExpression)null);
-				return;
+		case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
+			setExpression((XExpression) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
-				return expression != null;
+		case DocCompilerPackage.PRINTED_EXPRESSION__EXPRESSION:
+			return expression != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PrintedExpressionImpl
+} // PrintedExpressionImpl

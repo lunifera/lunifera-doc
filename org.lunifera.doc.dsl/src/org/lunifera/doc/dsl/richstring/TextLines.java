@@ -1,10 +1,8 @@
 /*******************************************************************************
- * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2013 Loetz KG (Heidelberg), Petra Bierleutgeb and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+ * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Based on work by the Xtend team (xtend-lang.org)
  ******************************************************************************/
 
@@ -22,17 +20,17 @@ public class TextLines {
 		appendLines(text, result);
 		return Collections.unmodifiableList(result);
 	}
-	
+
 	/**
 	 * adapted from org.eclipse.jface.text.DefaultLineTracker.nextDelimiterInfo(String, int)
 	 */
 	public static void appendLines(String text, List<TextLine> result) {
 		if (text == null)
 			return;
-		int length= text.length();
+		int length = text.length();
 		int nextLineOffset = 0;
 		int idx = 0;
-		while(idx < length) {
+		while (idx < length) {
 			char currentChar = text.charAt(idx);
 			// check for \r or \r\n
 			if (currentChar == '\r') {
@@ -59,5 +57,5 @@ public class TextLines {
 			result.add(line);
 		}
 	}
-	
+
 }
