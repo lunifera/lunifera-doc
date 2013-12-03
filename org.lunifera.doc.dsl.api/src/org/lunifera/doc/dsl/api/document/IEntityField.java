@@ -6,18 +6,18 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-import java.util.List;
+public interface IEntityField {
 
-public interface IMetaEntity {
-
-	String getEntityClass();
-
-	void setEntityClass(String entityClass);
-
-	String getDescription();
-
-	void setDescription(String description);
+	String getName();
 	
-	List<IEntityField> getEntityFields();
-
+	String getType();
+	
+	int getLength();
+	
+	boolean isPk();
+	
+	boolean isNullable();
+	
+	String description();
+	
 }

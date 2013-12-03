@@ -44,6 +44,9 @@ import java.util.ArrayList
 import org.lunifera.doc.dsl.api.layout.IEntityLayout
 import org.lunifera.doc.dsl.api.document.IDTOProperty
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty
+import org.lunifera.doc.dsl.api.document.IEntityField
+import org.eclipse.xtext.common.types.JvmGenericType
+import org.lunifera.doc.dsl.luniferadoc.document.EntityField
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -86,7 +89,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += operation
 			])
 	}
-	
+
 	/**
 	 * Infer method for DTOLayout elements
 	 */
@@ -121,7 +124,8 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					members += inc.include.toIncField(inc.varName, generalDoc)
 				}
 				members += generalDoc.toConstructor [
-					body = [it.append(
+					body = [
+						it.append(
 							'''
 								«FOR inc : generalDoc.includes»
 									this.«inc.varName» = new «inc.include.name»();
@@ -148,73 +152,35 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IMetaDTO), dtoDocument, null)
 				documentation = dtoDocument.documentation
-				
-				// gen classes for properties
-				for(prop : dtoDocument.properties.properties) {
-					val propClass = prop.toClass(prop.name.toFirstUpper)
-					propClass.superTypes += typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
-					// fields
-					propClass.members += toField("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-					propClass.members += toField("description", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-					//constructor					
-					propClass.members += toConstructor[
-						body = [it.append(
-							'''
-								this.name = "«prop.name»";
-								this.description = serializeDescription().toString();
-							''')]
-					]
-					
-					// serialization
-					val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
-					if(prop.description != null) {
-						val RichString descriptionRichString = prop.description
-						associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
-						serializeDescriptionOperation.setSimpleName("serializeDescription")
-						serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
-						serializeDescriptionOperation.setReturnType(inferredType())
-						serializeDescriptionOperation.setBody(descriptionRichString)
-						associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
-						propClass.members += serializeDescriptionOperation
-					} else {
-						// TODO return empty CharSequence
-					}
-					
-					//getter/setter
-					propClass.members += toGetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-					propClass.members += toSetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-					propClass.members += toGetter("description", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-					propClass.members += toSetter("description", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-					
-					members += propClass
+				// gen inner classes for properties
+				for (prop : dtoDocument.properties.properties) {
+					members += toInnerClass(prop, dtoDocument)
 				}
-				
 				// fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
-						typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += toField("properties", dtoDocument.newTypeRef(typeof(List), 
-					typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
-				))
-				
+					typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toField("properties",
+					dtoDocument.newTypeRef(typeof(List),
+						typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)))
 				// constructor
 				members += dtoDocument.toConstructor [
-					body = [it.append(
+					body = [
+						it.append(
 							'''
 								this.name = "«dtoDocument.name»";
 								this.dtoClass = "«dtoDocument.dtoClass»";
-								this.description = serializeDescription();
+								this.description = serializeDescription().toString();
 								this.properties = new java.util.ArrayList<IDTOProperty>();
 								«FOR prop : dtoDocument.properties.properties»
 									this.properties.add(new «prop.name.toFirstUpper»());
 								«ENDFOR»
 							''')]
 				]
-				
 				// serialization		
 				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
-				if(dtoDocument.description != null) {
+				if (dtoDocument.description != null) {
 					val RichString descriptionRichString = dtoDocument.description.content
 					associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
 					serializeDescriptionOperation.setSimpleName("serializeDescription")
@@ -222,11 +188,10 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					serializeDescriptionOperation.setReturnType(inferredType())
 					serializeDescriptionOperation.setBody(descriptionRichString)
 					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
-					members += serializeDescriptionOperation
 				} else {
 					// TODO return empty CharSequence
 				}
-				
+				members += serializeDescriptionOperation
 				// getter/setter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += toSetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
@@ -234,16 +199,21 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toSetter("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				val descriptionGetter = dtoDocument.description.toGetter("description",
 					typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				descriptionGetter.setBody[it.append('''return «serializeDescriptionOperation.simpleName»().toString();''')]
+				descriptionGetter.setBody[
+					it.append('''return «serializeDescriptionOperation.simpleName»().toString();''')]
 				members += descriptionGetter
 				members += dtoDocument.description.toSetter("description",
-						typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += toGetter("properties", dtoDocument.newTypeRef(typeof(List), 
-					typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
-				))
-				members += toSetter("properties", dtoDocument.newTypeRef(typeof(List), 
-					typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
-				))
+					typeReference.getTypeForName(typeof(String), dtoDocument, null))
+				members += toGetter("properties",
+					dtoDocument.newTypeRef(
+						typeof(List),
+						typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
+					))
+				members += toSetter("properties",
+					dtoDocument.newTypeRef(
+						typeof(List),
+						typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
+					))
 			])
 	}
 
@@ -255,25 +225,36 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IMetaEntity), entityDocument, null)
 				documentation = entityDocument.documentation
-
+				// gen inner classes for fields
+				for (field : entityDocument.fields.fields) {
+					members += toInnerClass(field, entityDocument)
+				}
+				// class fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				val entityClassField = toField("entityClass", typeReference.getTypeForName(typeof(String), 
-					entityDocument, null))
+				val entityClassField = toField("entityClass",
+					typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += entityClassField
 				members += entityDocument.description.toField("description",
-						typeReference.getTypeForName(typeof(String), entityDocument, null))
-						
+					typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += toField("fields",
+					entityDocument.newTypeRef(typeof(List),
+						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)))
 				// constructor
 				members += entityDocument.toConstructor [
-					body = [it.append(
+					body = [
+						it.append(
 							'''
 								this.name = "«entityDocument.name»";
 								this.entityClass = "«entityDocument.entityClass»";
+								this.description = serializeDescription().toString();
+								this.fields = new java.util.ArrayList<IEntityField>();
+								«FOR field : entityDocument.fields.fields»
+									this.fields.add(new «field.name.toFirstUpper»());
+								«ENDFOR»
 							''')]
 				]
-				
 				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
-				if(entityDocument.description.content != null) {
+				if (entityDocument.description != null) {
 					val descriptionRichString = entityDocument.description.content
 					associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
 					serializeDescriptionOperation.setSimpleName("serializeDescription")
@@ -281,64 +262,181 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					serializeDescriptionOperation.setReturnType(inferredType())
 					serializeDescriptionOperation.setBody(descriptionRichString)
 					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
-				}				
-				
+				} else {
+					// TODO return emtpy CharSequence
+				}
+				members += serializeDescriptionOperation
 				// getter/setter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += toSetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += toSetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				val docGetter = entityDocument.description.toGetter("description",
-					typeReference.getTypeForName(typeof(String), entityDocument, null))
-				docGetter.setBody[it.append('''return «serializeDescriptionOperation.simpleName»();''')]
-				members += docGetter
-				members +=
-					entityDocument.description.toSetter("description",
-						typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += serializeDescriptionOperation
+				members += entityDocument.description.toGetter(
+					"description",
+					typeReference.getTypeForName(typeof(String), entityDocument, null)
+				)
+				members += toGetter("fields",
+					entityDocument.newTypeRef(
+						typeof(List),
+						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)
+					))
 			])
 	}
-	
-	
+
 	/*****************
 	 * Helper methods
 	 ****************/
-	
+	/**
+	* Generate inner class for DTOProperty 
+	*/
+	def dispatch JvmGenericType toInnerClass(DTOProperty dtoProperty, DTODocument parentDoc) {
+		val propClass = dtoProperty.toClass(dtoProperty.name.toFirstUpper)
+		propClass.superTypes += typeReference.getTypeForName(typeof(IDTOProperty), parentDoc, null)
+
+		// fields
+		propClass.members += toField(dtoProperty, "name", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members +=
+			toField(dtoProperty, "description", typeReference.getTypeForName(typeof(String), parentDoc, null))
+
+		//constructor					
+		propClass.members += toConstructor(parentDoc,
+			[
+				body = [
+					it.append(
+						'''
+							this.name = "«dtoProperty.name»";
+							this.description = serializeDescription().toString();
+						''')]
+			])
+
+		// serialization
+		val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+		if (dtoProperty.description != null) {
+			val RichString descriptionRichString = dtoProperty.description
+			associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+			serializeDescriptionOperation.setSimpleName("serializeDescription")
+			serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+			serializeDescriptionOperation.setReturnType(inferredType())
+			serializeDescriptionOperation.setBody(descriptionRichString)
+			associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+			propClass.members += serializeDescriptionOperation
+		} else {
+			// TODO return empty CharSequence
+		}
+
+		//getter/setter
+		propClass.members +=
+			toGetter(dtoProperty, "name", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members +=
+			toSetter(dtoProperty, "name", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members +=
+			toGetter(dtoProperty, "description", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members +=
+			toSetter(dtoProperty, "description", typeReference.getTypeForName(typeof(String), parentDoc, null))
+
+		return propClass
+	}
+
+	/**
+	* Generate inner class for EntityField 
+	*/
+	def dispatch JvmGenericType toInnerClass(EntityField entityField, EntityDocument parentDoc) {
+		val propClass = entityField.toClass(entityField.name.toFirstUpper)
+		propClass.superTypes += typeReference.getTypeForName(typeof(IEntityField), parentDoc, null)
+
+		// fields
+		propClass.members += toField(entityField, "name", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members += toField(entityField, "type", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members +=
+			toField(entityField, "length", typeReference.getTypeForName(typeof(Integer), parentDoc, null))
+		propClass.members += toField(entityField, "pk", typeReference.getTypeForName(typeof(Boolean), parentDoc, null))
+		propClass.members +=
+			toField(entityField, "nullable", typeReference.getTypeForName(typeof(Boolean), parentDoc, null))
+		propClass.members +=
+			toField(entityField, "description", typeReference.getTypeForName(typeof(String), parentDoc, null))
+
+		//constructor					
+		propClass.members += toConstructor(parentDoc,
+			[
+				body = [
+					it.append(
+						'''
+							this.name = "«entityField.name»";
+							this.type = "«entityField.type»";
+							this.length = «entityField.length»;
+							this.pk = «entityField.pk»;
+							this.nullable = «entityField.nullable»;
+							this.description = serializeDescription().toString();
+						''')]
+			])
+
+		// serialization
+		val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+		if (entityField.description != null) {
+			val RichString descriptionRichString = entityField.description
+			associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+			serializeDescriptionOperation.setSimpleName("serializeDescription")
+			serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+			serializeDescriptionOperation.setReturnType(inferredType())
+			serializeDescriptionOperation.setBody(descriptionRichString)
+			associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+			propClass.members += serializeDescriptionOperation
+		} else {
+			// TODO return empty CharSequence
+		}
+
+		//getter/setter
+		propClass.members +=
+			toGetter(entityField, "name", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members +=
+			toGetter(entityField, "type", typeReference.getTypeForName(typeof(String), parentDoc, null))
+		propClass.members +=
+			toGetter(entityField, "length", typeReference.getTypeForName(typeof(Integer), parentDoc, null))
+		propClass.members +=
+			toGetter(entityField, "pk", typeReference.getTypeForName(typeof(Boolean), parentDoc, null))
+		propClass.members +=
+			toGetter(entityField, "nullable", typeReference.getTypeForName(typeof(Boolean), parentDoc, null))
+		propClass.members +=
+			toGetter(entityField, "description", typeReference.getTypeForName(typeof(String), parentDoc, null))
+
+		return propClass
+	}
+
 	/**
 	 * Create field for an included EntityDocument
 	 */
 	def dispatch JvmField toIncField(EntityDocument entityDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaEntity), generalDoc, null))
 	}
-	
+
 	/**
 	 * Create field for an included DTODocument
 	 */
 	def dispatch JvmField toIncField(DTODocument dtoDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaDTO), generalDoc, null))
 	}
-	
+
 	/**
 	 * Create field for an included BPMDocument
 	 */
 	def dispatch JvmField toIncField(BPMProcessDocument bpmProcessDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaBPMProcess), generalDoc, null))
 	}
-	
+
 	/**
 	 * Create field for an included BPMTaskDocument
 	 */
 	def dispatch JvmField toIncField(BPMTaskDocument bpmTaskDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaBPMTask), generalDoc, null))
 	}
-	
+
 	/**
 	 * Create field for an included VaaclipseViewDocument
 	 */
 	def dispatch JvmField toIncField(VaaclipseViewDocument vaaclipseViewDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaVaaclipseView), generalDoc, null))
 	}
-	
+
 	/**
 	 * Create field for an included UIDocument
 	 */

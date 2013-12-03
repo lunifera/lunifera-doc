@@ -42,11 +42,79 @@ class CompilerTest {
 			public class MyDTO implements IMetaDTO {
 			  @SuppressWarnings("all")
 			  public class PropA implements IDTOProperty {
+			    private String name;
+			    
+			    private String description;
+			    
+			    public PropA() {
+			      this.name = "propA";
+			      this.description = serializeDescription().toString();
+			      
+			    }
+			    
+			    public CharSequence serializeDescription() {
+			      StringConcatenation _builder = new StringConcatenation();
+			      _builder.newLine();
+			      _builder.append("This is the description of property A.");
+			      _builder.newLine();
+			      _builder.newLine();
+			      return _builder;
+			    }
+			    
+			    public String getName() {
+			      return this.name;
+			    }
+			    
+			    public void setName(final String name) {
+			      this.name = name;
+			    }
+			    
+			    public String getDescription() {
+			      return this.description;
+			    }
+			    
+			    public void setDescription(final String description) {
+			      this.description = description;
+			    }
 			  }
 			  
 			  
 			  @SuppressWarnings("all")
 			  public class PropB implements IDTOProperty {
+			    private String name;
+			    
+			    private String description;
+			    
+			    public PropB() {
+			      this.name = "propB";
+			      this.description = serializeDescription().toString();
+			      
+			    }
+			    
+			    public CharSequence serializeDescription() {
+			      StringConcatenation _builder = new StringConcatenation();
+			      _builder.newLine();
+			      _builder.append("This is the description of property B.");
+			      _builder.newLine();
+			      _builder.newLine();
+			      return _builder;
+			    }
+			    
+			    public String getName() {
+			      return this.name;
+			    }
+			    
+			    public void setName(final String name) {
+			      this.name = name;
+			    }
+			    
+			    public String getDescription() {
+			      return this.description;
+			    }
+			    
+			    public void setDescription(final String description) {
+			      this.description = description;
+			    }
 			  }
 			  
 			  
@@ -61,6 +129,7 @@ class CompilerTest {
 			  public MyDTO() {
 			    this.name = "doc.dto.MyDTO";
 			    this.dtoClass = "org.lunifera.sample.MyDTO";
+			    this.description = serializeDescription().toString();
 			    this.properties = new java.util.ArrayList<IDTOProperty>();
 			    this.properties.add(new PropA());
 			    this.properties.add(new PropB());
