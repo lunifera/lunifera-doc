@@ -19,24 +19,26 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Rich String If</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Rich String If</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getIf <em>If</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getThen <em>Then</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getElseIfs <em>Else Ifs</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getElse <em>Else</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getIf <em>If</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getThen <em>Then</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getElseIfs <em>Else Ifs</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringIfImpl#getElse <em>Else</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	/**
-	 * The cached value of the '{@link #getIf() <em>If</em>}' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getIf() <em>If</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getIf()
 	 * @generated
 	 * @ordered
@@ -44,9 +46,9 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	protected XExpression if_;
 
 	/**
-	 * The cached value of the '{@link #getThen() <em>Then</em>}' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getThen() <em>Then</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getThen()
 	 * @generated
 	 * @ordered
@@ -54,9 +56,9 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	protected XExpression then;
 
 	/**
-	 * The cached value of the '{@link #getElseIfs() <em>Else Ifs</em>}' containment reference list. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getElseIfs() <em>Else Ifs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getElseIfs()
 	 * @generated
 	 * @ordered
@@ -64,9 +66,9 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	protected EList<RichStringElseIf> elseIfs;
 
 	/**
-	 * The cached value of the '{@link #getElse() <em>Else</em>}' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getElse() <em>Else</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getElse()
 	 * @generated
 	 * @ordered
@@ -74,8 +76,8 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	protected XExpression else_;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected RichStringIfImpl() {
@@ -83,8 +85,8 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -93,8 +95,8 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public XExpression getIf() {
@@ -102,49 +104,42 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetIf(XExpression newIf, NotificationChain msgs) {
 		XExpression oldIf = if_;
 		if_ = newIf;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_IF__IF, oldIf, newIf);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__IF, oldIf, newIf);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setIf(XExpression newIf) {
 		if (newIf != if_) {
 			NotificationChain msgs = null;
 			if (if_ != null)
-				msgs = ((InternalEObject) if_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- RichstringPackage.RICH_STRING_IF__IF, null, msgs);
+				msgs = ((InternalEObject)if_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_IF__IF, null, msgs);
 			if (newIf != null)
-				msgs = ((InternalEObject) newIf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- RichstringPackage.RICH_STRING_IF__IF, null, msgs);
+				msgs = ((InternalEObject)newIf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_IF__IF, null, msgs);
 			msgs = basicSetIf(newIf, msgs);
-			if (msgs != null)
-				msgs.dispatch();
+			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__IF, newIf, newIf));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public XExpression getThen() {
@@ -152,63 +147,54 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetThen(XExpression newThen, NotificationChain msgs) {
 		XExpression oldThen = then;
 		then = newThen;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_IF__THEN, oldThen, newThen);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__THEN, oldThen, newThen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setThen(XExpression newThen) {
 		if (newThen != then) {
 			NotificationChain msgs = null;
 			if (then != null)
-				msgs = ((InternalEObject) then).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- RichstringPackage.RICH_STRING_IF__THEN, null, msgs);
+				msgs = ((InternalEObject)then).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_IF__THEN, null, msgs);
 			if (newThen != null)
-				msgs = ((InternalEObject) newThen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- RichstringPackage.RICH_STRING_IF__THEN, null, msgs);
+				msgs = ((InternalEObject)newThen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_IF__THEN, null, msgs);
 			msgs = basicSetThen(newThen, msgs);
-			if (msgs != null)
-				msgs.dispatch();
+			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__THEN, newThen,
-					newThen));
+			eNotify(new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__THEN, newThen, newThen));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<RichStringElseIf> getElseIfs() {
 		if (elseIfs == null) {
-			elseIfs = new EObjectContainmentEList<RichStringElseIf>(RichStringElseIf.class, this,
-					RichstringPackage.RICH_STRING_IF__ELSE_IFS);
+			elseIfs = new EObjectContainmentEList<RichStringElseIf>(RichStringElseIf.class, this, RichstringPackage.RICH_STRING_IF__ELSE_IFS);
 		}
 		return elseIfs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public XExpression getElse() {
@@ -216,155 +202,147 @@ public class RichStringIfImpl extends XExpressionImpl implements RichStringIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetElse(XExpression newElse, NotificationChain msgs) {
 		XExpression oldElse = else_;
 		else_ = newElse;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_IF__ELSE, oldElse, newElse);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__ELSE, oldElse, newElse);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setElse(XExpression newElse) {
 		if (newElse != else_) {
 			NotificationChain msgs = null;
 			if (else_ != null)
-				msgs = ((InternalEObject) else_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- RichstringPackage.RICH_STRING_IF__ELSE, null, msgs);
+				msgs = ((InternalEObject)else_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_IF__ELSE, null, msgs);
 			if (newElse != null)
-				msgs = ((InternalEObject) newElse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- RichstringPackage.RICH_STRING_IF__ELSE, null, msgs);
+				msgs = ((InternalEObject)newElse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_IF__ELSE, null, msgs);
 			msgs = basicSetElse(newElse, msgs);
-			if (msgs != null)
-				msgs.dispatch();
+			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__ELSE, newElse,
-					newElse));
+			eNotify(new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_IF__ELSE, newElse, newElse));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_IF__IF:
-			return basicSetIf(null, msgs);
-		case RichstringPackage.RICH_STRING_IF__THEN:
-			return basicSetThen(null, msgs);
-		case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
-			return ((InternalEList<?>) getElseIfs()).basicRemove(otherEnd, msgs);
-		case RichstringPackage.RICH_STRING_IF__ELSE:
-			return basicSetElse(null, msgs);
+			case RichstringPackage.RICH_STRING_IF__IF:
+				return basicSetIf(null, msgs);
+			case RichstringPackage.RICH_STRING_IF__THEN:
+				return basicSetThen(null, msgs);
+			case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
+				return ((InternalEList<?>)getElseIfs()).basicRemove(otherEnd, msgs);
+			case RichstringPackage.RICH_STRING_IF__ELSE:
+				return basicSetElse(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_IF__IF:
-			return getIf();
-		case RichstringPackage.RICH_STRING_IF__THEN:
-			return getThen();
-		case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
-			return getElseIfs();
-		case RichstringPackage.RICH_STRING_IF__ELSE:
-			return getElse();
+			case RichstringPackage.RICH_STRING_IF__IF:
+				return getIf();
+			case RichstringPackage.RICH_STRING_IF__THEN:
+				return getThen();
+			case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
+				return getElseIfs();
+			case RichstringPackage.RICH_STRING_IF__ELSE:
+				return getElse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_IF__IF:
-			setIf((XExpression) newValue);
-			return;
-		case RichstringPackage.RICH_STRING_IF__THEN:
-			setThen((XExpression) newValue);
-			return;
-		case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
-			getElseIfs().clear();
-			getElseIfs().addAll((Collection<? extends RichStringElseIf>) newValue);
-			return;
-		case RichstringPackage.RICH_STRING_IF__ELSE:
-			setElse((XExpression) newValue);
-			return;
+			case RichstringPackage.RICH_STRING_IF__IF:
+				setIf((XExpression)newValue);
+				return;
+			case RichstringPackage.RICH_STRING_IF__THEN:
+				setThen((XExpression)newValue);
+				return;
+			case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
+				getElseIfs().clear();
+				getElseIfs().addAll((Collection<? extends RichStringElseIf>)newValue);
+				return;
+			case RichstringPackage.RICH_STRING_IF__ELSE:
+				setElse((XExpression)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_IF__IF:
-			setIf((XExpression) null);
-			return;
-		case RichstringPackage.RICH_STRING_IF__THEN:
-			setThen((XExpression) null);
-			return;
-		case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
-			getElseIfs().clear();
-			return;
-		case RichstringPackage.RICH_STRING_IF__ELSE:
-			setElse((XExpression) null);
-			return;
+			case RichstringPackage.RICH_STRING_IF__IF:
+				setIf((XExpression)null);
+				return;
+			case RichstringPackage.RICH_STRING_IF__THEN:
+				setThen((XExpression)null);
+				return;
+			case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
+				getElseIfs().clear();
+				return;
+			case RichstringPackage.RICH_STRING_IF__ELSE:
+				setElse((XExpression)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_IF__IF:
-			return if_ != null;
-		case RichstringPackage.RICH_STRING_IF__THEN:
-			return then != null;
-		case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
-			return elseIfs != null && !elseIfs.isEmpty();
-		case RichstringPackage.RICH_STRING_IF__ELSE:
-			return else_ != null;
+			case RichstringPackage.RICH_STRING_IF__IF:
+				return if_ != null;
+			case RichstringPackage.RICH_STRING_IF__THEN:
+				return then != null;
+			case RichstringPackage.RICH_STRING_IF__ELSE_IFS:
+				return elseIfs != null && !elseIfs.isEmpty();
+			case RichstringPackage.RICH_STRING_IF__ELSE:
+				return else_ != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} // RichStringIfImpl
+} //RichStringIfImpl

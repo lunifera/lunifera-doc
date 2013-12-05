@@ -117,7 +117,7 @@ DTOProperty returns document::DTOProperty:
 BPMProcessDocument returns document::BPMProcessDocument:
 	'BPMProcessDocument';
 	
-BPMTaskDocument returns document::BPMTaskDocument:
+BPMTaskDocument returns document::BPMHumanTaskDocument:
 	'BPMTaskDocument';
 
 VaaclipseViewDocument returns document::VaaclipseViewDocument:

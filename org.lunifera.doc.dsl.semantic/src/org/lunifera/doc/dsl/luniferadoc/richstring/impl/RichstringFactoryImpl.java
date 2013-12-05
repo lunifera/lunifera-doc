@@ -21,32 +21,35 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringFactory;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
  * @generated
  */
 public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFactory {
 	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static RichstringFactory init() {
 		try {
-			RichstringFactory theRichstringFactory = (RichstringFactory) EPackage.Registry.INSTANCE
-					.getEFactory(RichstringPackage.eNS_URI);
+			RichstringFactory theRichstringFactory = (RichstringFactory)EPackage.Registry.INSTANCE.getEFactory(RichstringPackage.eNS_URI);
 			if (theRichstringFactory != null) {
 				return theRichstringFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RichstringFactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichstringFactoryImpl() {
@@ -54,41 +57,31 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case RichstringPackage.RICH_STRING_ELSE_IF:
-			return createRichStringElseIf();
-		case RichstringPackage.RICH_STRING:
-			return createRichString();
-		case RichstringPackage.RICH_STRING_LITERAL:
-			return createRichStringLiteral();
-		case RichstringPackage.RICH_STRING_FOR_LOOP:
-			return createRichStringForLoop();
-		case RichstringPackage.RICH_STRING_IF:
-			return createRichStringIf();
-		case RichstringPackage.RICH_STRING_MARKUP:
-			return createRichStringMarkup();
-		case RichstringPackage.RICH_STRING_EXAMPLE:
-			return createRichStringExample();
-		case RichstringPackage.RICH_STRING_H1:
-			return createRichStringH1();
-		case RichstringPackage.RICH_STRING_H2:
-			return createRichStringH2();
-		case RichstringPackage.RICH_STRING_URL:
-			return createRichStringURL();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			case RichstringPackage.RICH_STRING_ELSE_IF: return createRichStringElseIf();
+			case RichstringPackage.RICH_STRING: return createRichString();
+			case RichstringPackage.RICH_STRING_LITERAL: return createRichStringLiteral();
+			case RichstringPackage.RICH_STRING_FOR_LOOP: return createRichStringForLoop();
+			case RichstringPackage.RICH_STRING_IF: return createRichStringIf();
+			case RichstringPackage.RICH_STRING_MARKUP: return createRichStringMarkup();
+			case RichstringPackage.RICH_STRING_EXAMPLE: return createRichStringExample();
+			case RichstringPackage.RICH_STRING_H1: return createRichStringH1();
+			case RichstringPackage.RICH_STRING_H2: return createRichStringH2();
+			case RichstringPackage.RICH_STRING_URL: return createRichStringURL();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringElseIf createRichStringElseIf() {
@@ -97,8 +90,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichString createRichString() {
@@ -107,8 +100,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringLiteral createRichStringLiteral() {
@@ -117,8 +110,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringForLoop createRichStringForLoop() {
@@ -127,8 +120,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringIf createRichStringIf() {
@@ -137,8 +130,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringMarkup createRichStringMarkup() {
@@ -147,8 +140,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringExample createRichStringExample() {
@@ -157,8 +150,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringH1 createRichStringH1() {
@@ -167,8 +160,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringH2 createRichStringH2() {
@@ -177,8 +170,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichStringURL createRichStringURL() {
@@ -187,17 +180,17 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichstringPackage getRichstringPackage() {
-		return (RichstringPackage) getEPackage();
+		return (RichstringPackage)getEPackage();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -206,4 +199,4 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 		return RichstringPackage.eINSTANCE;
 	}
 
-} // RichstringFactoryImpl
+} //RichstringFactoryImpl

@@ -8,24 +8,24 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
-import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Entity Description</b></em>'.
+ * An implementation of the model object '<em><b>BPM Human Task Description</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDescriptionImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implements EntityDescription {
+public class BPMHumanTaskDescriptionImpl extends MinimalEObjectImpl.Container implements BPMHumanTaskDescription {
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntityDescriptionImpl() {
+	protected BPMHumanTaskDescriptionImpl() {
 		super();
 	}
 
@@ -52,7 +52,7 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentPackage.Literals.ENTITY_DESCRIPTION;
+		return DocumentPackage.Literals.BPM_HUMAN_TASK_DESCRIPTION;
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 		RichString oldContent = content;
 		content = newContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentPackage.ENTITY_DESCRIPTION__CONTENT, oldContent, newContent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT, oldContent, newContent);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -88,14 +88,14 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 		if (newContent != content) {
 			NotificationChain msgs = null;
 			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.ENTITY_DESCRIPTION__CONTENT, null, msgs);
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT, null, msgs);
 			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.ENTITY_DESCRIPTION__CONTENT, null, msgs);
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT, null, msgs);
 			msgs = basicSetContent(newContent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.ENTITY_DESCRIPTION__CONTENT, newContent, newContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DocumentPackage.ENTITY_DESCRIPTION__CONTENT:
+			case DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT:
 				return basicSetContent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -120,7 +120,7 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocumentPackage.ENTITY_DESCRIPTION__CONTENT:
+			case DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT:
 				return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -134,7 +134,7 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocumentPackage.ENTITY_DESCRIPTION__CONTENT:
+			case DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT:
 				setContent((RichString)newValue);
 				return;
 		}
@@ -149,7 +149,7 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocumentPackage.ENTITY_DESCRIPTION__CONTENT:
+			case DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT:
 				setContent((RichString)null);
 				return;
 		}
@@ -164,10 +164,10 @@ public class EntityDescriptionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocumentPackage.ENTITY_DESCRIPTION__CONTENT:
+			case DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION__CONTENT:
 				return content != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //EntityDescriptionImpl
+} //BPMHumanTaskDescriptionImpl

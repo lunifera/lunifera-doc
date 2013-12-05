@@ -7,21 +7,21 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DTO Description</b></em>'.
+ * A representation of the model object '<em><b>BPM Human Task Description</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODescription()
+ * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getBPMHumanTaskDescription()
  * @model
  * @generated
  */
-public interface DTODescription extends EObject {
+public interface BPMHumanTaskDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface DTODescription extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content</em>' containment reference.
 	 * @see #setContent(RichString)
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getDTODescription_Content()
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getBPMHumanTaskDescription_Content()
 	 * @model containment="true"
 	 * @generated
 	 */
 	RichString getContent();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription#getContent <em>Content</em>}' containment reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription#getContent <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Content</em>' containment reference.
@@ -48,4 +48,4 @@ public interface DTODescription extends EObject {
 	 */
 	void setContent(RichString value);
 
-} // DTODescription
+} // BPMHumanTaskDescription

@@ -2,11 +2,13 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.document;
 
+
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Vaaclipse View Document</b></em>'. <!--
- * end-user-doc -->
- * 
- * 
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Vaaclipse View Document</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
  * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getVaaclipseViewDocument()
  * @model
  * @generated

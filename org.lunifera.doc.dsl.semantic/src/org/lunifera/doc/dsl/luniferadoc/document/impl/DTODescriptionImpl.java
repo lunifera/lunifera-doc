@@ -13,22 +13,23 @@ import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>DTO Description</b></em>'. <!-- end-user-doc
- * -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>DTO Description</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class DTODescriptionImpl extends MinimalEObjectImpl.Container implements DTODescription {
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -36,8 +37,8 @@ public class DTODescriptionImpl extends MinimalEObjectImpl.Container implements 
 	protected RichString content;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DTODescriptionImpl() {
@@ -45,8 +46,8 @@ public class DTODescriptionImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -55,8 +56,8 @@ public class DTODescriptionImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RichString getContent() {
@@ -64,117 +65,109 @@ public class DTODescriptionImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetContent(RichString newContent, NotificationChain msgs) {
 		RichString oldContent = content;
 		content = newContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DocumentPackage.DTO_DESCRIPTION__CONTENT, oldContent, newContent);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DESCRIPTION__CONTENT, oldContent, newContent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setContent(RichString newContent) {
 		if (newContent != content) {
 			NotificationChain msgs = null;
 			if (content != null)
-				msgs = ((InternalEObject) content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- DocumentPackage.DTO_DESCRIPTION__CONTENT, null, msgs);
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DESCRIPTION__CONTENT, null, msgs);
 			if (newContent != null)
-				msgs = ((InternalEObject) newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- DocumentPackage.DTO_DESCRIPTION__CONTENT, null, msgs);
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentPackage.DTO_DESCRIPTION__CONTENT, null, msgs);
 			msgs = basicSetContent(newContent, msgs);
-			if (msgs != null)
-				msgs.dispatch();
+			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DESCRIPTION__CONTENT, newContent,
-					newContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DTO_DESCRIPTION__CONTENT, newContent, newContent));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentPackage.DTO_DESCRIPTION__CONTENT:
-			return basicSetContent(null, msgs);
+			case DocumentPackage.DTO_DESCRIPTION__CONTENT:
+				return basicSetContent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentPackage.DTO_DESCRIPTION__CONTENT:
-			return getContent();
+			case DocumentPackage.DTO_DESCRIPTION__CONTENT:
+				return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentPackage.DTO_DESCRIPTION__CONTENT:
-			setContent((RichString) newValue);
-			return;
+			case DocumentPackage.DTO_DESCRIPTION__CONTENT:
+				setContent((RichString)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentPackage.DTO_DESCRIPTION__CONTENT:
-			setContent((RichString) null);
-			return;
+			case DocumentPackage.DTO_DESCRIPTION__CONTENT:
+				setContent((RichString)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentPackage.DTO_DESCRIPTION__CONTENT:
-			return content != null;
+			case DocumentPackage.DTO_DESCRIPTION__CONTENT:
+				return content != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} // DTODescriptionImpl
+} //DTODescriptionImpl

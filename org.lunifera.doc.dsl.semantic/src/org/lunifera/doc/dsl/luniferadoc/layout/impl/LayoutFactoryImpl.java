@@ -17,32 +17,35 @@ import org.lunifera.doc.dsl.luniferadoc.layout.UILayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.VaaclipseViewLayout;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
  * @generated
  */
 public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static LayoutFactory init() {
 		try {
-			LayoutFactory theLayoutFactory = (LayoutFactory) EPackage.Registry.INSTANCE
-					.getEFactory(LayoutPackage.eNS_URI);
+			LayoutFactory theLayoutFactory = (LayoutFactory)EPackage.Registry.INSTANCE.getEFactory(LayoutPackage.eNS_URI);
 			if (theLayoutFactory != null) {
 				return theLayoutFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new LayoutFactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public LayoutFactoryImpl() {
@@ -50,33 +53,27 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case LayoutPackage.ENTITY_LAYOUT:
-			return createEntityLayout();
-		case LayoutPackage.DTO_LAYOUT:
-			return createDTOLayout();
-		case LayoutPackage.BPM_PROCESS_LAYOUT:
-			return createBPMProcessLayout();
-		case LayoutPackage.BPM_TASK_LAYOUT:
-			return createBPMTaskLayout();
-		case LayoutPackage.VAACLIPSE_VIEW_LAYOUT:
-			return createVaaclipseViewLayout();
-		case LayoutPackage.UI_LAYOUT:
-			return createUILayout();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			case LayoutPackage.ENTITY_LAYOUT: return createEntityLayout();
+			case LayoutPackage.DTO_LAYOUT: return createDTOLayout();
+			case LayoutPackage.BPM_PROCESS_LAYOUT: return createBPMProcessLayout();
+			case LayoutPackage.BPM_TASK_LAYOUT: return createBPMTaskLayout();
+			case LayoutPackage.VAACLIPSE_VIEW_LAYOUT: return createVaaclipseViewLayout();
+			case LayoutPackage.UI_LAYOUT: return createUILayout();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EntityLayout createEntityLayout() {
@@ -85,8 +82,8 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DTOLayout createDTOLayout() {
@@ -95,8 +92,8 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public BPMProcessLayout createBPMProcessLayout() {
@@ -105,8 +102,8 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public BPMTaskLayout createBPMTaskLayout() {
@@ -115,8 +112,8 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public VaaclipseViewLayout createVaaclipseViewLayout() {
@@ -125,8 +122,8 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public UILayout createUILayout() {
@@ -135,17 +132,17 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public LayoutPackage getLayoutPackage() {
-		return (LayoutPackage) getEPackage();
+		return (LayoutPackage)getEPackage();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -154,4 +151,4 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 		return LayoutPackage.eINSTANCE;
 	}
 
-} // LayoutFactoryImpl
+} //LayoutFactoryImpl

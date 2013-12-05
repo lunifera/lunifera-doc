@@ -16,21 +16,23 @@ import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>DTO Properties</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>DTO Properties</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class DTOPropertiesImpl extends MinimalEObjectImpl.Container implements DTOProperties {
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -38,8 +40,8 @@ public class DTOPropertiesImpl extends MinimalEObjectImpl.Container implements D
 	protected EList<DTOProperty> properties;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DTOPropertiesImpl() {
@@ -47,8 +49,8 @@ public class DTOPropertiesImpl extends MinimalEObjectImpl.Container implements D
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -57,90 +59,89 @@ public class DTOPropertiesImpl extends MinimalEObjectImpl.Container implements D
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<DTOProperty> getProperties() {
 		if (properties == null) {
-			properties = new EObjectContainmentEList<DTOProperty>(DTOProperty.class, this,
-					DocumentPackage.DTO_PROPERTIES__PROPERTIES);
+			properties = new EObjectContainmentEList<DTOProperty>(DTOProperty.class, this, DocumentPackage.DTO_PROPERTIES__PROPERTIES);
 		}
 		return properties;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
-			return ((InternalEList<?>) getProperties()).basicRemove(otherEnd, msgs);
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
-			return getProperties();
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
+				return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
-			getProperties().clear();
-			getProperties().addAll((Collection<? extends DTOProperty>) newValue);
-			return;
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends DTOProperty>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
-			getProperties().clear();
-			return;
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
+				getProperties().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
-			return properties != null && !properties.isEmpty();
+			case DocumentPackage.DTO_PROPERTIES__PROPERTIES:
+				return properties != null && !properties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} // DTOPropertiesImpl
+} //DTOPropertiesImpl

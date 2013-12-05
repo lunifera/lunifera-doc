@@ -8,6 +8,9 @@
 package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
+import java.util.List
+import org.eclipse.xtext.common.types.JvmField
+import org.eclipse.xtext.common.types.JvmGenericType
 import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.TypesFactory
@@ -16,37 +19,29 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.lunifera.doc.dsl.api.document.IDTOProperty
+import org.lunifera.doc.dsl.api.document.IEntityField
 import org.lunifera.doc.dsl.api.document.IMetaBPMProcess
 import org.lunifera.doc.dsl.api.document.IMetaBPMTask
 import org.lunifera.doc.dsl.api.document.IMetaDTO
 import org.lunifera.doc.dsl.api.document.IMetaEntity
-import org.lunifera.doc.dsl.api.document.IMetaPojo
 import org.lunifera.doc.dsl.api.document.IMetaUI
 import org.lunifera.doc.dsl.api.document.IMetaVaaclipseView
-import org.lunifera.doc.dsl.luniferadoc.DocType
-import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
-import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
-import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
-import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
-import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage
-import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage
-import org.eclipse.xtext.common.types.JvmField
-import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument
-import org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument
-import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument
-import org.lunifera.doc.dsl.luniferadoc.document.UIDocument
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
-import org.lunifera.doc.dsl.api.layout.IGenericLayout
 import org.lunifera.doc.dsl.api.layout.IDTOLayout
-import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout
-import java.util.List
-import java.util.ArrayList
 import org.lunifera.doc.dsl.api.layout.IEntityLayout
-import org.lunifera.doc.dsl.api.document.IDTOProperty
+import org.lunifera.doc.dsl.api.layout.IGenericLayout
+import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument
+import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument
+import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
 import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty
-import org.lunifera.doc.dsl.api.document.IEntityField
-import org.eclipse.xtext.common.types.JvmGenericType
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
 import org.lunifera.doc.dsl.luniferadoc.document.EntityField
+import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
+import org.lunifera.doc.dsl.luniferadoc.document.UIDocument
+import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument
+import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -426,7 +421,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	/**
 	 * Create field for an included BPMTaskDocument
 	 */
-	def dispatch JvmField toIncField(BPMTaskDocument bpmTaskDoc, String name, GeneralDocument generalDoc) {
+	def dispatch JvmField toIncField(BPMHumanTaskDocument bpmTaskDoc, String name, GeneralDocument generalDoc) {
 		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaBPMTask), generalDoc, null))
 	}
 

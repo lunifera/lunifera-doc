@@ -65,8 +65,23 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BPMProcessDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
-    <eClassifiers xsi:type="ecore:EClass" name="BPMTaskDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMProcessDocument" eSuperTypes="#//document/LuniferaDocDocument">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="process" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/BPMProcessDescription"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMProcessDescription">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMHumanTaskDocument" eSuperTypes="#//document/LuniferaDocDocument">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/BPMHumanTaskDescription"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMHumanTaskDescription">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
+          containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VaaclipseViewDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
     <eClassifiers xsi:type="ecore:EClass" name="UIDocument" eSuperTypes="#//document/LuniferaDocDocument"/>
     <eClassifiers xsi:type="ecore:EClass" name="GeneralDocument" eSuperTypes="#//layout/LuniferaDocLayout">

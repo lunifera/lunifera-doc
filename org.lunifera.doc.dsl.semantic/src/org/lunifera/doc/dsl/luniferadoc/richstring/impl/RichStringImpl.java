@@ -8,16 +8,18 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Rich String</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Rich String</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class RichStringImpl extends XBlockExpressionImpl implements RichString {
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected RichStringImpl() {
@@ -25,8 +27,8 @@ public class RichStringImpl extends XBlockExpressionImpl implements RichString {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +36,4 @@ public class RichStringImpl extends XBlockExpressionImpl implements RichString {
 		return RichstringPackage.Literals.RICH_STRING;
 	}
 
-} // RichStringImpl
+} //RichStringImpl

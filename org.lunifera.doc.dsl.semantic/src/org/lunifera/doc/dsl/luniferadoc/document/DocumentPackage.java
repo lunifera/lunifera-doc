@@ -10,52 +10,57 @@ import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
 
 /**
- * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains accessors for the meta objects to represent
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
  * <ul>
- * <li>each class,</li>
- * <li>each feature of each class,</li>
- * <li>each enum,</li>
- * <li>and each data type</li>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
  * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentFactory
  * @model kind="package"
  * @generated
  */
 public interface DocumentPackage extends EPackage {
 	/**
-	 * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNAME = "document";
 
 	/**
-	 * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_URI = "http://www.lunifera.org/luniferadoc/document";
 
 	/**
-	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_PREFIX = "document";
 
 	/**
-	 * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	DocumentPackage eINSTANCE = org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
-	 * <em>Lunifera Doc Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument <em>Lunifera Doc Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getLuniferaDocDocument()
 	 * @generated
@@ -63,26 +68,27 @@ public interface DocumentPackage extends EPackage {
 	int LUNIFERA_DOC_DOCUMENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int LUNIFERA_DOC_DOCUMENT__NAME = LuniferaDocPackage.NAMED_DOCUMENT__NAME;
 
 	/**
-	 * The number of structural features of the '<em>Lunifera Doc Document</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Lunifera Doc Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT = LuniferaDocPackage.NAMED_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl
-	 * <em>Entity Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl <em>Entity Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityDocument()
 	 * @generated
@@ -90,52 +96,54 @@ public interface DocumentPackage extends EPackage {
 	int ENTITY_DOCUMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Entity Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Entity Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_DOCUMENT__ENTITY_CLASS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fields</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_DOCUMENT__FIELDS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Entity Document</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Entity Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl
-	 * <em>Entity Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl <em>Entity Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityDescription()
 	 * @generated
@@ -143,27 +151,27 @@ public interface DocumentPackage extends EPackage {
 	int ENTITY_DESCRIPTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_DESCRIPTION__CONTENT = 0;
 
 	/**
-	 * The number of structural features of the '<em>Entity Description</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Entity Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_DESCRIPTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldsImpl
-	 * <em>Entity Fields</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldsImpl <em>Entity Fields</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldsImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityFields()
 	 * @generated
@@ -171,27 +179,27 @@ public interface DocumentPackage extends EPackage {
 	int ENTITY_FIELDS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Fields</b></em>' containment reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELDS__FIELDS = 0;
 
 	/**
-	 * The number of structural features of the '<em>Entity Fields</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Entity Fields</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELDS_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldImpl
-	 * <em>Entity Field</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldImpl <em>Entity Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityField()
 	 * @generated
@@ -199,67 +207,72 @@ public interface DocumentPackage extends EPackage {
 	int ENTITY_FIELD = 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELD__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELD__TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELD__LENGTH = 2;
 
 	/**
-	 * The feature id for the '<em><b>Pk</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Pk</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELD__PK = 3;
 
 	/**
-	 * The feature id for the '<em><b>Nullable</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Nullable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELD__NULLABLE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELD__DESCRIPTION = 5;
 
 	/**
-	 * The number of structural features of the '<em>Entity Field</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The number of structural features of the '<em>Entity Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_FIELD_FEATURE_COUNT = 6;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl
-	 * <em>DTO Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl <em>DTO Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODocument()
 	 * @generated
@@ -267,52 +280,54 @@ public interface DocumentPackage extends EPackage {
 	int DTO_DOCUMENT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Dto Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Dto Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_DOCUMENT__DTO_CLASS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_DOCUMENT__PROPERTIES = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>DTO Document</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The number of structural features of the '<em>DTO Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl
-	 * <em>DTO Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl <em>DTO Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODescription()
 	 * @generated
@@ -320,27 +335,27 @@ public interface DocumentPackage extends EPackage {
 	int DTO_DESCRIPTION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_DESCRIPTION__CONTENT = 0;
 
 	/**
-	 * The number of structural features of the '<em>DTO Description</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>DTO Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_DESCRIPTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl
-	 * <em>DTO Properties</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl <em>DTO Properties</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTOProperties()
 	 * @generated
@@ -348,27 +363,27 @@ public interface DocumentPackage extends EPackage {
 	int DTO_PROPERTIES = 7;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' containment reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_PROPERTIES__PROPERTIES = 0;
 
 	/**
-	 * The number of structural features of the '<em>DTO Properties</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>DTO Properties</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_PROPERTIES_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl
-	 * <em>DTO Property</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl <em>DTO Property</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTOProperty()
 	 * @generated
@@ -376,35 +391,36 @@ public interface DocumentPackage extends EPackage {
 	int DTO_PROPERTY = 8;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_PROPERTY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_PROPERTY__DESCRIPTION = 1;
 
 	/**
-	 * The number of structural features of the '<em>DTO Property</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The number of structural features of the '<em>DTO Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DTO_PROPERTY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDocumentImpl
-	 * <em>BPM Process Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDocumentImpl <em>BPM Process Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDocumentImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMProcessDocument()
 	 * @generated
@@ -412,161 +428,250 @@ public interface DocumentPackage extends EPackage {
 	int BPM_PROCESS_DOCUMENT = 9;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int BPM_PROCESS_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
-	 * The number of structural features of the '<em>BPM Process Document</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Process</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_PROCESS_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int BPM_PROCESS_DOCUMENT__PROCESS = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMTaskDocumentImpl
-	 * <em>BPM Task Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMTaskDocumentImpl
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMTaskDocument()
-	 * @generated
-	 */
-	int BPM_TASK_DOCUMENT = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
+	int BPM_PROCESS_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>BPM Task Document</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>BPM Process Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int BPM_PROCESS_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDocumentImpl
-	 * <em>Vaaclipse View Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDescriptionImpl <em>BPM Process Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDescriptionImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMProcessDescription()
+	 * @generated
+	 */
+	int BPM_PROCESS_DESCRIPTION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_PROCESS_DESCRIPTION__CONTENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>BPM Process Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_PROCESS_DESCRIPTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDocumentImpl <em>BPM Human Task Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDocumentImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMHumanTaskDocument()
+	 * @generated
+	 */
+	int BPM_HUMAN_TASK_DOCUMENT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_HUMAN_TASK_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>BPM Human Task Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_HUMAN_TASK_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDescriptionImpl <em>BPM Human Task Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDescriptionImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMHumanTaskDescription()
+	 * @generated
+	 */
+	int BPM_HUMAN_TASK_DESCRIPTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_HUMAN_TASK_DESCRIPTION__CONTENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>BPM Human Task Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_HUMAN_TASK_DESCRIPTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDocumentImpl <em>Vaaclipse View Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDocumentImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getVaaclipseViewDocument()
 	 * @generated
 	 */
-	int VAACLIPSE_VIEW_DOCUMENT = 11;
+	int VAACLIPSE_VIEW_DOCUMENT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int VAACLIPSE_VIEW_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
-	 * The number of structural features of the '<em>Vaaclipse View Document</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Vaaclipse View Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int VAACLIPSE_VIEW_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl
-	 * <em>UI Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl <em>UI Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getUIDocument()
 	 * @generated
 	 */
-	int UI_DOCUMENT = 12;
+	int UI_DOCUMENT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int UI_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
-	 * The number of structural features of the '<em>UI Document</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The number of structural features of the '<em>UI Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int UI_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl
-	 * <em>General Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl <em>General Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getGeneralDocument()
 	 * @generated
 	 */
-	int GENERAL_DOCUMENT = 13;
+	int GENERAL_DOCUMENT = 15;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GENERAL_DOCUMENT__NAME = LayoutPackage.LUNIFERA_DOC_LAYOUT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GENERAL_DOCUMENT__CONTENT = LayoutPackage.LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
-	 * The feature id for the '<em><b>Imports</b></em>' containment reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GENERAL_DOCUMENT__IMPORTS = LayoutPackage.LUNIFERA_DOC_LAYOUT__IMPORTS;
 
 	/**
-	 * The feature id for the '<em><b>Includes</b></em>' containment reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Includes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GENERAL_DOCUMENT__INCLUDES = LayoutPackage.LUNIFERA_DOC_LAYOUT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>General Document</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>General Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GENERAL_DOCUMENT_FEATURE_COUNT = LayoutPackage.LUNIFERA_DOC_LAYOUT_FEATURE_COUNT + 1;
 
+
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
-	 * <em>Lunifera Doc Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument <em>Lunifera Doc Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Lunifera Doc Document</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
 	 * @generated
@@ -574,9 +679,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getLuniferaDocDocument();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
-	 * <em>Entity Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument <em>Entity Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Entity Document</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
 	 * @generated
@@ -584,10 +689,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getEntityDocument();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getEntityClass <em>Entity Class</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getEntityClass <em>Entity Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Entity Class</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getEntityClass()
 	 * @see #getEntityDocument()
@@ -596,10 +700,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getEntityDocument_EntityClass();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getDescription <em>Description</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Description</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getDescription()
 	 * @see #getEntityDocument()
@@ -608,10 +711,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getEntityDocument_Description();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getFields <em>Fields</em>}'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Fields</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityDocument#getFields()
 	 * @see #getEntityDocument()
@@ -620,9 +722,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getEntityDocument_Fields();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDescription
-	 * <em>Entity Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDescription <em>Entity Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Entity Description</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityDescription
 	 * @generated
@@ -630,10 +732,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getEntityDescription();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityDescription#getContent <em>Content</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityDescription#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Content</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityDescription#getContent()
 	 * @see #getEntityDescription()
@@ -642,9 +743,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getEntityDescription_Content();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityFields
-	 * <em>Entity Fields</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityFields <em>Entity Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Entity Fields</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityFields
 	 * @generated
@@ -652,10 +753,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getEntityFields();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityFields#getFields <em>Fields</em>}'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityFields#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Fields</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityFields#getFields()
 	 * @see #getEntityFields()
@@ -664,9 +764,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getEntityFields_Fields();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField
-	 * <em>Entity Field</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField <em>Entity Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Entity Field</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField
 	 * @generated
@@ -674,9 +774,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getEntityField();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getName
-	 * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField#getName()
 	 * @see #getEntityField()
@@ -685,9 +785,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getEntityField_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getType
-	 * <em>Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField#getType()
 	 * @see #getEntityField()
@@ -696,10 +796,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getEntityField_Type();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getLength <em>Length</em>}'. <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Length</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField#getLength()
 	 * @see #getEntityField()
@@ -708,9 +807,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getEntityField_Length();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#isPk
-	 * <em>Pk</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#isPk <em>Pk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Pk</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField#isPk()
 	 * @see #getEntityField()
@@ -719,10 +818,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getEntityField_Pk();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#isNullable <em>Nullable</em>}'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#isNullable <em>Nullable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Nullable</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField#isNullable()
 	 * @see #getEntityField()
@@ -731,10 +829,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getEntityField_Nullable();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getDescription <em>Description</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.EntityField#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Description</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.EntityField#getDescription()
 	 * @see #getEntityField()
@@ -743,9 +840,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getEntityField_Description();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument
-	 * <em>DTO Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument <em>DTO Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>DTO Document</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODocument
 	 * @generated
@@ -753,10 +850,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getDTODocument();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDtoClass <em>Dto Class</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDtoClass <em>Dto Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Dto Class</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDtoClass()
 	 * @see #getDTODocument()
@@ -765,10 +861,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getDTODocument_DtoClass();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDescription <em>Description</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Description</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getDescription()
 	 * @see #getDTODocument()
@@ -777,10 +872,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getDTODocument_Description();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getProperties <em>Properties</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Properties</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODocument#getProperties()
 	 * @see #getDTODocument()
@@ -789,9 +883,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getDTODocument_Properties();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription
-	 * <em>DTO Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription <em>DTO Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>DTO Description</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODescription
 	 * @generated
@@ -799,10 +893,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getDTODescription();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription#getContent <em>Content</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.DTODescription#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Content</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTODescription#getContent()
 	 * @see #getDTODescription()
@@ -811,9 +904,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getDTODescription_Content();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties
-	 * <em>DTO Properties</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties <em>DTO Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>DTO Properties</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperties
 	 * @generated
@@ -821,10 +914,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getDTOProperties();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties#getProperties <em>Properties</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperties#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Properties</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperties#getProperties()
 	 * @see #getDTOProperties()
@@ -833,9 +925,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getDTOProperties_Properties();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty
-	 * <em>DTO Property</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty <em>DTO Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>DTO Property</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperty
 	 * @generated
@@ -843,9 +935,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getDTOProperty();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty#getName
-	 * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperty#getName()
 	 * @see #getDTOProperty()
@@ -854,10 +946,9 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getDTOProperty_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty#getDescription <em>Description</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.DTOProperty#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Description</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.DTOProperty#getDescription()
 	 * @see #getDTOProperty()
@@ -866,9 +957,9 @@ public interface DocumentPackage extends EPackage {
 	EReference getDTOProperty_Description();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument
-	 * <em>BPM Process Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument <em>BPM Process Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>BPM Process Document</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument
 	 * @generated
@@ -876,19 +967,94 @@ public interface DocumentPackage extends EPackage {
 	EClass getBPMProcessDocument();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument
-	 * <em>BPM Task Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for class '<em>BPM Task Document</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMTaskDocument
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument#getProcess <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Process</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument#getProcess()
+	 * @see #getBPMProcessDocument()
 	 * @generated
 	 */
-	EClass getBPMTaskDocument();
+	EAttribute getBPMProcessDocument_Process();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument
-	 * <em>Vaaclipse View Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument#getDescription()
+	 * @see #getBPMProcessDocument()
+	 * @generated
+	 */
+	EReference getBPMProcessDocument_Description();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDescription <em>BPM Process Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>BPM Process Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDescription
+	 * @generated
+	 */
+	EClass getBPMProcessDescription();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDescription#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDescription#getContent()
+	 * @see #getBPMProcessDescription()
+	 * @generated
+	 */
+	EReference getBPMProcessDescription_Content();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument <em>BPM Human Task Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>BPM Human Task Document</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument
+	 * @generated
+	 */
+	EClass getBPMHumanTaskDocument();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getDescription()
+	 * @see #getBPMHumanTaskDocument()
+	 * @generated
+	 */
+	EReference getBPMHumanTaskDocument_Description();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription <em>BPM Human Task Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>BPM Human Task Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription
+	 * @generated
+	 */
+	EClass getBPMHumanTaskDescription();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription#getContent()
+	 * @see #getBPMHumanTaskDescription()
+	 * @generated
+	 */
+	EReference getBPMHumanTaskDescription_Content();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument <em>Vaaclipse View Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Vaaclipse View Document</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument
 	 * @generated
@@ -896,9 +1062,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getVaaclipseViewDocument();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDocument
-	 * <em>UI Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDocument <em>UI Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>UI Document</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.UIDocument
 	 * @generated
@@ -906,9 +1072,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getUIDocument();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
-	 * <em>General Document</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument <em>General Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>General Document</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
 	 * @generated
@@ -916,10 +1082,9 @@ public interface DocumentPackage extends EPackage {
 	EClass getGeneralDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument#getIncludes <em>Includes</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument#getIncludes <em>Includes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Includes</em>'.
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument#getIncludes()
 	 * @see #getGeneralDocument()
@@ -928,30 +1093,31 @@ public interface DocumentPackage extends EPackage {
 	EReference getGeneralDocument_Includes();
 
 	/**
-	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
 	DocumentFactory getDocumentFactory();
 
 	/**
-	 * <!-- begin-user-doc --> Defines literals for the meta objects that represent
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 * <li>each class,</li>
-	 * <li>each feature of each class,</li>
-	 * <li>each enum,</li>
-	 * <li>and each data type</li>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
-		 * <em>Lunifera Doc Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument <em>Lunifera Doc Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getLuniferaDocDocument()
 		 * @generated
@@ -959,9 +1125,9 @@ public interface DocumentPackage extends EPackage {
 		EClass LUNIFERA_DOC_DOCUMENT = eINSTANCE.getLuniferaDocDocument();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl
-		 * <em>Entity Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl <em>Entity Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDocumentImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityDocument()
 		 * @generated
@@ -969,33 +1135,33 @@ public interface DocumentPackage extends EPackage {
 		EClass ENTITY_DOCUMENT = eINSTANCE.getEntityDocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Class</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Entity Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute ENTITY_DOCUMENT__ENTITY_CLASS = eINSTANCE.getEntityDocument_EntityClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ENTITY_DOCUMENT__DESCRIPTION = eINSTANCE.getEntityDocument_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ENTITY_DOCUMENT__FIELDS = eINSTANCE.getEntityDocument_Fields();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl
-		 * <em>Entity Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl <em>Entity Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityDescriptionImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityDescription()
 		 * @generated
@@ -1003,17 +1169,17 @@ public interface DocumentPackage extends EPackage {
 		EClass ENTITY_DESCRIPTION = eINSTANCE.getEntityDescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ENTITY_DESCRIPTION__CONTENT = eINSTANCE.getEntityDescription_Content();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldsImpl
-		 * <em>Entity Fields</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldsImpl <em>Entity Fields</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldsImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityFields()
 		 * @generated
@@ -1021,17 +1187,17 @@ public interface DocumentPackage extends EPackage {
 		EClass ENTITY_FIELDS = eINSTANCE.getEntityFields();
 
 		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ENTITY_FIELDS__FIELDS = eINSTANCE.getEntityFields_Fields();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldImpl
-		 * <em>Entity Field</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldImpl <em>Entity Field</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.EntityFieldImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getEntityField()
 		 * @generated
@@ -1039,57 +1205,57 @@ public interface DocumentPackage extends EPackage {
 		EClass ENTITY_FIELD = eINSTANCE.getEntityField();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ENTITY_FIELD__NAME = eINSTANCE.getEntityField_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ENTITY_FIELD__TYPE = eINSTANCE.getEntityField_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ENTITY_FIELD__LENGTH = eINSTANCE.getEntityField_Length();
 
 		/**
-		 * The meta object literal for the '<em><b>Pk</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Pk</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ENTITY_FIELD__PK = eINSTANCE.getEntityField_Pk();
 
 		/**
-		 * The meta object literal for the '<em><b>Nullable</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Nullable</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ENTITY_FIELD__NULLABLE = eINSTANCE.getEntityField_Nullable();
 
 		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ENTITY_FIELD__DESCRIPTION = eINSTANCE.getEntityField_Description();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl
-		 * <em>DTO Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl <em>DTO Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTODocumentImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODocument()
 		 * @generated
@@ -1097,33 +1263,33 @@ public interface DocumentPackage extends EPackage {
 		EClass DTO_DOCUMENT = eINSTANCE.getDTODocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Dto Class</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Dto Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DTO_DOCUMENT__DTO_CLASS = eINSTANCE.getDTODocument_DtoClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DTO_DOCUMENT__DESCRIPTION = eINSTANCE.getDTODocument_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DTO_DOCUMENT__PROPERTIES = eINSTANCE.getDTODocument_Properties();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl
-		 * <em>DTO Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl <em>DTO Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTODescriptionImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTODescription()
 		 * @generated
@@ -1131,17 +1297,17 @@ public interface DocumentPackage extends EPackage {
 		EClass DTO_DESCRIPTION = eINSTANCE.getDTODescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DTO_DESCRIPTION__CONTENT = eINSTANCE.getDTODescription_Content();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl
-		 * <em>DTO Properties</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl <em>DTO Properties</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertiesImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTOProperties()
 		 * @generated
@@ -1149,17 +1315,17 @@ public interface DocumentPackage extends EPackage {
 		EClass DTO_PROPERTIES = eINSTANCE.getDTOProperties();
 
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DTO_PROPERTIES__PROPERTIES = eINSTANCE.getDTOProperties_Properties();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl
-		 * <em>DTO Property</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl <em>DTO Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DTOPropertyImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getDTOProperty()
 		 * @generated
@@ -1167,26 +1333,25 @@ public interface DocumentPackage extends EPackage {
 		EClass DTO_PROPERTY = eINSTANCE.getDTOProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DTO_PROPERTY__NAME = eINSTANCE.getDTOProperty_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DTO_PROPERTY__DESCRIPTION = eINSTANCE.getDTOProperty_Description();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDocumentImpl <em>BPM Process Document</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDocumentImpl <em>BPM Process Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDocumentImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMProcessDocument()
 		 * @generated
@@ -1194,20 +1359,79 @@ public interface DocumentPackage extends EPackage {
 		EClass BPM_PROCESS_DOCUMENT = eINSTANCE.getBPMProcessDocument();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMTaskDocumentImpl
-		 * <em>BPM Task Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMTaskDocumentImpl
-		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMTaskDocument()
+		 * The meta object literal for the '<em><b>Process</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EClass BPM_TASK_DOCUMENT = eINSTANCE.getBPMTaskDocument();
+		EAttribute BPM_PROCESS_DOCUMENT__PROCESS = eINSTANCE.getBPMProcessDocument_Process();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDocumentImpl
-		 * <em>Vaaclipse View Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BPM_PROCESS_DOCUMENT__DESCRIPTION = eINSTANCE.getBPMProcessDocument_Description();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDescriptionImpl <em>BPM Process Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMProcessDescriptionImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMProcessDescription()
+		 * @generated
+		 */
+		EClass BPM_PROCESS_DESCRIPTION = eINSTANCE.getBPMProcessDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BPM_PROCESS_DESCRIPTION__CONTENT = eINSTANCE.getBPMProcessDescription_Content();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDocumentImpl <em>BPM Human Task Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDocumentImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMHumanTaskDocument()
+		 * @generated
+		 */
+		EClass BPM_HUMAN_TASK_DOCUMENT = eINSTANCE.getBPMHumanTaskDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION = eINSTANCE.getBPMHumanTaskDocument_Description();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDescriptionImpl <em>BPM Human Task Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDescriptionImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getBPMHumanTaskDescription()
+		 * @generated
+		 */
+		EClass BPM_HUMAN_TASK_DESCRIPTION = eINSTANCE.getBPMHumanTaskDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BPM_HUMAN_TASK_DESCRIPTION__CONTENT = eINSTANCE.getBPMHumanTaskDescription_Content();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDocumentImpl <em>Vaaclipse View Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDocumentImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getVaaclipseViewDocument()
 		 * @generated
@@ -1215,9 +1439,9 @@ public interface DocumentPackage extends EPackage {
 		EClass VAACLIPSE_VIEW_DOCUMENT = eINSTANCE.getVaaclipseViewDocument();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl
-		 * <em>UI Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl <em>UI Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getUIDocument()
 		 * @generated
@@ -1225,9 +1449,9 @@ public interface DocumentPackage extends EPackage {
 		EClass UI_DOCUMENT = eINSTANCE.getUIDocument();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl
-		 * <em>General Document</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl <em>General Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getGeneralDocument()
 		 * @generated
@@ -1235,13 +1459,13 @@ public interface DocumentPackage extends EPackage {
 		EClass GENERAL_DOCUMENT = eINSTANCE.getGeneralDocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Includes</b></em>' containment reference list feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Includes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference GENERAL_DOCUMENT__INCLUDES = eINSTANCE.getGeneralDocument_Includes();
 
 	}
 
-} // DocumentPackage
+} //DocumentPackage

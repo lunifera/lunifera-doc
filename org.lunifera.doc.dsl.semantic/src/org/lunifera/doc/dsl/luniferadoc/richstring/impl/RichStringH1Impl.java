@@ -7,16 +7,18 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Rich String H1</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Rich String H1</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class RichStringH1Impl extends RichStringMarkupImpl implements RichStringH1 {
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected RichStringH1Impl() {
@@ -24,8 +26,8 @@ public class RichStringH1Impl extends RichStringMarkupImpl implements RichString
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -33,4 +35,4 @@ public class RichStringH1Impl extends RichStringMarkupImpl implements RichString
 		return RichstringPackage.Literals.RICH_STRING_H1;
 	}
 
-} // RichStringH1Impl
+} //RichStringH1Impl
