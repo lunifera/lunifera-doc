@@ -6,7 +6,7 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-public interface IMetaUI {
+public interface IVaaclipseViewDocument {
 
 	String getName();
 

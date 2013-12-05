@@ -6,10 +6,10 @@
 
 package org.lunifera.doc.dsl.api.layout;
 
-import org.lunifera.doc.dsl.api.document.IMetaEntity;
+import org.lunifera.doc.dsl.api.document.IEntityDocument;
 
 public interface IEntityLayout extends IGenericLayout {
 
-	void setDoc(IMetaEntity entity);
+	void setDoc(IEntityDocument entity);
 
 }

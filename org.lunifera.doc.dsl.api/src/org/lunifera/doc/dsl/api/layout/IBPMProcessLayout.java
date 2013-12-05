@@ -6,10 +6,10 @@
 
 package org.lunifera.doc.dsl.api.layout;
 
-import org.lunifera.doc.dsl.api.document.IMetaBPMProcess;
+import org.lunifera.doc.dsl.api.document.IBPMProcessDocument;
 
 public interface IBPMProcessLayout extends IGenericLayout {
 
-	void setBpmProcess(IMetaBPMProcess bpmProcess);
+	void setBpmProcess(IBPMProcessDocument bpmProcess);
 
 }

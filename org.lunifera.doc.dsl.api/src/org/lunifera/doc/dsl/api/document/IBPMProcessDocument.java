@@ -6,18 +6,12 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-import java.util.List;
+public interface IBPMProcessDocument {
 
-public interface IMetaDTO {
-
-	String getDtoClass();
-
-	void setDtoClass(String dtoClass);
+	String getName();
+	
+	String getProcess();
 
 	String getDescription();
-
-	void setDescription(String description);
-
-	List<IDTOProperty> getProperties();
 
 }

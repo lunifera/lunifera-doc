@@ -6,7 +6,7 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-public interface IMetaPojoProperty {
+public interface IUIDocument {
 
 	String getName();
 

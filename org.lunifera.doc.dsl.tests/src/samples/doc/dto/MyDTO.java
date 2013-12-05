@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.lunifera.doc.dsl.api.document.IDTOProperty;
-import org.lunifera.doc.dsl.api.document.IMetaDTO;
+import org.lunifera.doc.dsl.api.document.IDTODocument;
 
 @SuppressWarnings("all")
-public class MyDTO implements IMetaDTO {
+public class MyDTO implements IDTODocument {
   @SuppressWarnings("all")
   public class PropA implements IDTOProperty {
     private String name;

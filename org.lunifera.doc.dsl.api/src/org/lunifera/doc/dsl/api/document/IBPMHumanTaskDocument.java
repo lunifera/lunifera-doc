@@ -6,14 +6,10 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-public interface IMetaBPMTask {
+public interface IBPMHumanTaskDocument {
 
 	String getName();
 
-	void setName(String name);
-
-	String getDocumentation();
-
-	void setDocumentation(String documentation);
+	String getDescription();
 
 }

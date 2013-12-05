@@ -8,16 +8,14 @@ package org.lunifera.doc.dsl.api.document;
 
 import java.util.List;
 
-public interface IMetaEntity {
+public interface IDTODocument {
 
-	String getEntityClass();
-
-	void setEntityClass(String entityClass);
+	String getName();
+	
+	String getDtoClass();
 
 	String getDescription();
 
-	void setDescription(String description);
-	
-	List<IEntityField> getEntityFields();
+	List<IDTOProperty> getProperties();
 
 }

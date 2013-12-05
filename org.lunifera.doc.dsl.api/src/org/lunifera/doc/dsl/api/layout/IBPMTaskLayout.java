@@ -6,10 +6,10 @@
 
 package org.lunifera.doc.dsl.api.layout;
 
-import org.lunifera.doc.dsl.api.document.IMetaBPMTask;
+import org.lunifera.doc.dsl.api.document.IBPMHumanTaskDocument;
 
 public interface IBPMTaskLayout extends IGenericLayout {
 
-	void setBpmTask(IMetaBPMTask bpmTask);
+	void setBpmTask(IBPMHumanTaskDocument bpmTask);
 
 }

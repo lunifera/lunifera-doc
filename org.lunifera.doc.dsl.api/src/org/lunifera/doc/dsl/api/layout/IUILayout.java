@@ -6,10 +6,10 @@
 
 package org.lunifera.doc.dsl.api.layout;
 
-import org.lunifera.doc.dsl.api.document.IMetaUI;
+import org.lunifera.doc.dsl.api.document.IUIDocument;
 
 public interface IUILayout extends IGenericLayout {
 
-	void setUi(IMetaUI ui);
+	void setUi(IUIDocument ui);
 
 }

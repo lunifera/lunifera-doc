@@ -6,14 +6,16 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-public interface IMetaVaaclipseView {
+import java.util.List;
+
+public interface IEntityDocument {
 
 	String getName();
+	
+	String getEntityClass();
 
-	void setName(String name);
+	String getDescription();
 
-	String getDocumentation();
-
-	void setDocumentation(String documentation);
+	List<IEntityField> getEntityFields();
 
 }

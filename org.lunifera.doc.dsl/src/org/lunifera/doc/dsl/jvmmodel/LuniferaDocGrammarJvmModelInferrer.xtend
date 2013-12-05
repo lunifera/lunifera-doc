@@ -21,12 +21,6 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.lunifera.doc.dsl.api.document.IDTOProperty
 import org.lunifera.doc.dsl.api.document.IEntityField
-import org.lunifera.doc.dsl.api.document.IMetaBPMProcess
-import org.lunifera.doc.dsl.api.document.IMetaBPMTask
-import org.lunifera.doc.dsl.api.document.IMetaDTO
-import org.lunifera.doc.dsl.api.document.IMetaEntity
-import org.lunifera.doc.dsl.api.document.IMetaUI
-import org.lunifera.doc.dsl.api.document.IMetaVaaclipseView
 import org.lunifera.doc.dsl.api.layout.IDTOLayout
 import org.lunifera.doc.dsl.api.layout.IEntityLayout
 import org.lunifera.doc.dsl.api.layout.IGenericLayout
@@ -42,6 +36,12 @@ import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
 import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.doc.dsl.api.document.IBPMProcessDocument
+import org.lunifera.doc.dsl.api.document.IBPMHumanTaskDocument
+import org.lunifera.doc.dsl.api.document.IDTODocument
+import org.lunifera.doc.dsl.api.document.IEntityDocument
+import org.lunifera.doc.dsl.api.document.IUIDocument
+import org.lunifera.doc.dsl.api.document.IVaaclipseViewDocument
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -93,8 +93,8 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDTOLayout), dtoLayout, null)
 				documentation = dtoLayout.documentation
-				members += toField("doc", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
-				members += toSetter("doc", typeReference.getTypeForName(typeof(IMetaDTO), dtoLayout, null))
+				members += toField("doc", typeReference.getTypeForName(typeof(IDTODocument), dtoLayout, null))
+				members += toSetter("doc", typeReference.getTypeForName(typeof(IDTODocument), dtoLayout, null))
 				val richString = dtoLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -145,7 +145,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	def dispatch void infer(DTODocument dtoDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(dtoDocument.toClass(dtoDocument.name)).initializeLater(
 			[
-				superTypes += typeReference.getTypeForName(typeof(IMetaDTO), dtoDocument, null)
+				superTypes += typeReference.getTypeForName(typeof(IDTODocument), dtoDocument, null)
 				documentation = dtoDocument.documentation
 				// gen inner classes for properties
 				for (prop : dtoDocument.properties.properties) {
@@ -218,7 +218,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	def dispatch void infer(EntityDocument entityDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(entityDocument.toClass(entityDocument.name)).initializeLater(
 			[
-				superTypes += typeReference.getTypeForName(typeof(IMetaEntity), entityDocument, null)
+				superTypes += typeReference.getTypeForName(typeof(IEntityDocument), entityDocument, null)
 				documentation = entityDocument.documentation
 				// gen inner classes for fields
 				for (field : entityDocument.fields.fields) {
@@ -401,41 +401,41 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	 * Create field for an included EntityDocument
 	 */
 	def dispatch JvmField toIncField(EntityDocument entityDoc, String name, GeneralDocument generalDoc) {
-		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaEntity), generalDoc, null))
+		toField(generalDoc, name, typeReference.getTypeForName(typeof(IEntityDocument), generalDoc, null))
 	}
 
 	/**
 	 * Create field for an included DTODocument
 	 */
 	def dispatch JvmField toIncField(DTODocument dtoDoc, String name, GeneralDocument generalDoc) {
-		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaDTO), generalDoc, null))
+		toField(generalDoc, name, typeReference.getTypeForName(typeof(IDTODocument), generalDoc, null))
 	}
 
 	/**
 	 * Create field for an included BPMDocument
 	 */
 	def dispatch JvmField toIncField(BPMProcessDocument bpmProcessDoc, String name, GeneralDocument generalDoc) {
-		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaBPMProcess), generalDoc, null))
+		toField(generalDoc, name, typeReference.getTypeForName(typeof(IBPMProcessDocument), generalDoc, null))
 	}
 
 	/**
 	 * Create field for an included BPMTaskDocument
 	 */
 	def dispatch JvmField toIncField(BPMHumanTaskDocument bpmTaskDoc, String name, GeneralDocument generalDoc) {
-		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaBPMTask), generalDoc, null))
+		toField(generalDoc, name, typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), generalDoc, null))
 	}
 
 	/**
 	 * Create field for an included VaaclipseViewDocument
 	 */
 	def dispatch JvmField toIncField(VaaclipseViewDocument vaaclipseViewDoc, String name, GeneralDocument generalDoc) {
-		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaVaaclipseView), generalDoc, null))
+		toField(generalDoc, name, typeReference.getTypeForName(typeof(IVaaclipseViewDocument), generalDoc, null))
 	}
 
 	/**
 	 * Create field for an included UIDocument
 	 */
 	def dispatch JvmField toIncField(UIDocument uiDoc, String name, GeneralDocument generalDoc) {
-		toField(generalDoc, name, typeReference.getTypeForName(typeof(IMetaUI), generalDoc, null))
+		toField(generalDoc, name, typeReference.getTypeForName(typeof(IUIDocument), generalDoc, null))
 	}
 }

@@ -6,10 +6,10 @@
 
 package org.lunifera.doc.dsl.api.layout;
 
-import org.lunifera.doc.dsl.api.document.IMetaVaaclipseView;
+import org.lunifera.doc.dsl.api.document.IVaaclipseViewDocument;
 
 public interface IVaaclipseViewLayout extends IGenericLayout {
 
-	void setVaaclipseView(IMetaVaaclipseView vaaclipseView);
+	void setVaaclipseView(IVaaclipseViewDocument vaaclipseView);
 
 }

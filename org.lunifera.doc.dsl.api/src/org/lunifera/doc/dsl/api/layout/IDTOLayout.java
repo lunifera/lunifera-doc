@@ -6,10 +6,10 @@
 
 package org.lunifera.doc.dsl.api.layout;
 
-import org.lunifera.doc.dsl.api.document.IMetaDTO;
+import org.lunifera.doc.dsl.api.document.IDTODocument;
 
 public interface IDTOLayout extends IGenericLayout {
 
-	void setDoc(IMetaDTO dto);
+	void setDoc(IDTODocument dto);
 
 }
