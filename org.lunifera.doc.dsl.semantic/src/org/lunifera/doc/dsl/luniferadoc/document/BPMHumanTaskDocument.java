@@ -11,6 +11,7 @@ package org.lunifera.doc.dsl.luniferadoc.document;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getTask <em>Task</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -20,6 +21,32 @@ package org.lunifera.doc.dsl.luniferadoc.document;
  * @generated
  */
 public interface BPMHumanTaskDocument extends LuniferaDocDocument {
+	/**
+	 * Returns the value of the '<em><b>Task</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Task</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Task</em>' attribute.
+	 * @see #setTask(String)
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage#getBPMHumanTaskDocument_Task()
+	 * @model
+	 * @generated
+	 */
+	String getTask();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getTask <em>Task</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Task</em>' attribute.
+	 * @see #getTask()
+	 * @generated
+	 */
+	void setTask(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

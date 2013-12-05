@@ -538,8 +538,17 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBPMHumanTaskDocument_Task() {
+		return (EAttribute)bpmHumanTaskDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getBPMHumanTaskDocument_Description() {
-		return (EReference)bpmHumanTaskDocumentEClass.getEStructuralFeatures().get(0);
+		return (EReference)bpmHumanTaskDocumentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -668,6 +677,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createEReference(bpmProcessDescriptionEClass, BPM_PROCESS_DESCRIPTION__CONTENT);
 
 		bpmHumanTaskDocumentEClass = createEClass(BPM_HUMAN_TASK_DOCUMENT);
+		createEAttribute(bpmHumanTaskDocumentEClass, BPM_HUMAN_TASK_DOCUMENT__TASK);
 		createEReference(bpmHumanTaskDocumentEClass, BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION);
 
 		bpmHumanTaskDescriptionEClass = createEClass(BPM_HUMAN_TASK_DESCRIPTION);
@@ -768,6 +778,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEReference(getBPMProcessDescription_Content(), theRichstringPackage.getRichString(), null, "content", null, 0, 1, BPMProcessDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bpmHumanTaskDocumentEClass, BPMHumanTaskDocument.class, "BPMHumanTaskDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBPMHumanTaskDocument_Task(), ecorePackage.getEString(), "task", null, 0, 1, BPMHumanTaskDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBPMHumanTaskDocument_Description(), this.getBPMHumanTaskDescription(), null, "description", null, 0, 1, BPMHumanTaskDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bpmHumanTaskDescriptionEClass, BPMHumanTaskDescription.class, "BPMHumanTaskDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

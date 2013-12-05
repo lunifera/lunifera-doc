@@ -277,6 +277,98 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					))
 			])
 	}
+	
+	/**
+	 * Infer method for BPMProcessDocument elements
+	 */
+	def dispatch void infer(BPMProcessDocument processDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(processDocument.toClass(processDocument.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IEntityDocument), processDocument, null)
+				documentation = processDocument.documentation
+				// class fields
+				members += toField("name", typeReference.getTypeForName(typeof(String), processDocument, null))
+				members += toField("process", typeReference.getTypeForName(typeof(String), processDocument, null))
+				members += processDocument.description.toField("description",
+					typeReference.getTypeForName(typeof(String), processDocument, null))
+				// constructor
+				members += processDocument.toConstructor [
+					body = [
+						it.append(
+							'''
+								this.name = "«processDocument.name»";
+								this.process = "«processDocument.process»";
+								this.description = serializeDescription().toString();
+							''')]
+				]
+				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+				if (processDocument.description != null) {
+					val descriptionRichString = processDocument.description.content
+					associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+					serializeDescriptionOperation.setSimpleName("serializeDescription")
+					serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+					serializeDescriptionOperation.setReturnType(inferredType())
+					serializeDescriptionOperation.setBody(descriptionRichString)
+					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+				} else {
+					// TODO return emtpy CharSequence
+				}
+				members += serializeDescriptionOperation
+				// getter/setter
+				members += toGetter("name", typeReference.getTypeForName(typeof(String), processDocument, null))
+				members += toGetter("process", typeReference.getTypeForName(typeof(String), processDocument, null))
+				members += processDocument.description.toGetter(
+					"description",
+					typeReference.getTypeForName(typeof(String), processDocument, null)
+				)
+			])
+	}
+	
+		/**
+	 * Infer method for BPMHumanTaskDocument elements
+	 */
+	def dispatch void infer(BPMHumanTaskDocument taskDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(taskDocument.toClass(taskDocument.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IEntityDocument), taskDocument, null)
+				documentation = taskDocument.documentation
+				// class fields
+				members += toField("name", typeReference.getTypeForName(typeof(String), taskDocument, null))
+				members += toField("task", typeReference.getTypeForName(typeof(String), taskDocument, null))
+				members += taskDocument.description.toField("description",
+					typeReference.getTypeForName(typeof(String), taskDocument, null))
+				// constructor
+				members += taskDocument.toConstructor [
+					body = [
+						it.append(
+							'''
+								this.name = "«taskDocument.name»";
+								this.task = "«taskDocument.task»";
+								this.description = serializeDescription().toString();
+							''')]
+				]
+				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+				if (taskDocument.description != null) {
+					val descriptionRichString = taskDocument.description.content
+					associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+					serializeDescriptionOperation.setSimpleName("serializeDescription")
+					serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+					serializeDescriptionOperation.setReturnType(inferredType())
+					serializeDescriptionOperation.setBody(descriptionRichString)
+					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+				} else {
+					// TODO return emtpy CharSequence
+				}
+				members += serializeDescriptionOperation
+				// getter/setter
+				members += toGetter("name", typeReference.getTypeForName(typeof(String), taskDocument, null))
+				members += toGetter("task", typeReference.getTypeForName(typeof(String), taskDocument, null))
+				members += taskDocument.description.toGetter(
+					"description",
+					typeReference.getTypeForName(typeof(String), taskDocument, null)
+				)
+			])
+	}
 
 	/*****************
 	 * Helper methods

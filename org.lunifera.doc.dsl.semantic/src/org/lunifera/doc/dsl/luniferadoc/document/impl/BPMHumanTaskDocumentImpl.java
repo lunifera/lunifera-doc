@@ -20,6 +20,7 @@ import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDocumentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDocumentImpl#getTask <em>Task</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDocumentImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -46,6 +47,26 @@ public class BPMHumanTaskDocumentImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTask() <em>Task</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTask()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TASK_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTask() <em>Task</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTask()
+	 * @generated
+	 * @ordered
+	 */
+	protected String task = TASK_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -95,6 +116,27 @@ public class BPMHumanTaskDocumentImpl extends MinimalEObjectImpl.Container imple
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTask() {
+		return task;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTask(String newTask) {
+		String oldTask = task;
+		task = newTask;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__TASK, oldTask, task));
 	}
 
 	/**
@@ -164,6 +206,8 @@ public class BPMHumanTaskDocumentImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__NAME:
 				return getName();
+			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__TASK:
+				return getTask();
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				return getDescription();
 		}
@@ -180,6 +224,9 @@ public class BPMHumanTaskDocumentImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__NAME:
 				setName((String)newValue);
+				return;
+			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__TASK:
+				setTask((String)newValue);
 				return;
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				setDescription((BPMHumanTaskDescription)newValue);
@@ -199,6 +246,9 @@ public class BPMHumanTaskDocumentImpl extends MinimalEObjectImpl.Container imple
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__TASK:
+				setTask(TASK_EDEFAULT);
+				return;
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				setDescription((BPMHumanTaskDescription)null);
 				return;
@@ -216,6 +266,8 @@ public class BPMHumanTaskDocumentImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__TASK:
+				return TASK_EDEFAULT == null ? task != null : !TASK_EDEFAULT.equals(task);
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				return description != null;
 		}
@@ -234,6 +286,8 @@ public class BPMHumanTaskDocumentImpl extends MinimalEObjectImpl.Container imple
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", task: ");
+		result.append(task);
 		result.append(')');
 		return result.toString();
 	}

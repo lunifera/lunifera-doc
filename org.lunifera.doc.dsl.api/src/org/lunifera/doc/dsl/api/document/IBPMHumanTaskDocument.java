@@ -9,6 +9,8 @@ package org.lunifera.doc.dsl.api.document;
 public interface IBPMHumanTaskDocument {
 
 	String getName();
+	
+	String getTask();
 
 	String getDescription();
 

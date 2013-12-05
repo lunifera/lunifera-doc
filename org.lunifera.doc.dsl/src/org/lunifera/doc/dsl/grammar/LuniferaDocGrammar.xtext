@@ -19,7 +19,7 @@ NamedDocument returns luniferadoc::NamedDocument:
 	LuniferaDocLayout | LuniferaDocDocument;
 
 LuniferaDocDocument returns document::LuniferaDocDocument:
-	EntityDocument | DTODocument | BPMProcessDocument | BPMTaskDocument | VaaclipseViewDocument | UIDocument;
+	EntityDocument | DTODocument | BPMProcessDocument | BPMHumanTaskDocument | VaaclipseViewDocument | UIDocument;
 	
 LuniferaDocLayout returns layout::LuniferaDocLayout:
 	GeneralDocument | EntityLayout | DTOLayout | BPMProcessLayout | BPMTaskLayout | VaaclipseViewLayout | UILayout;
@@ -115,10 +115,20 @@ DTOProperty returns document::DTOProperty:
 	'description' '{' description=RichString '}';
 
 BPMProcessDocument returns document::BPMProcessDocument:
-	'BPMProcessDocument';
+	'BPMProcessDocument' name=QualifiedName 'for' process=STRING '{'
+	'description' '{' description=BPMProcessDescription '}'
+	'}';
 	
-BPMTaskDocument returns document::BPMHumanTaskDocument:
-	'BPMTaskDocument';
+BPMProcessDescription returns document::BPMProcessDescription:
+	{document::BPMProcessDescription} content=RichString;
+	
+BPMHumanTaskDocument returns document::BPMHumanTaskDocument:
+	'BPMHumanTaskDocument' name=QualifiedName 'for' task=STRING '{'
+	'description' '{' description=BPMHumanTaskDescription '}'
+	'}';
+	
+BPMHumanTaskDescription returns document::BPMHumanTaskDescription:
+	{document::BPMHumanTaskDescription} content=RichString;
 
 VaaclipseViewDocument returns document::VaaclipseViewDocument:
 	'VaaclipseViewDocument';

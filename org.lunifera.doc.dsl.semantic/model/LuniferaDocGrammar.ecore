@@ -75,6 +75,7 @@
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BPMHumanTaskDocument" eSuperTypes="#//document/LuniferaDocDocument">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="task" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//document/BPMHumanTaskDescription"
           containment="true"/>
     </eClassifiers>

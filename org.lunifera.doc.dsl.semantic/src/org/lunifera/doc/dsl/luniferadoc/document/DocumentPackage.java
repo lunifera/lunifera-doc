@@ -511,13 +511,22 @@ public interface DocumentPackage extends EPackage {
 	int BPM_HUMAN_TASK_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Task</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPM_HUMAN_TASK_DOCUMENT__TASK = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int BPM_HUMAN_TASK_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>BPM Human Task Document</em>' class.
@@ -526,7 +535,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_HUMAN_TASK_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
+	int BPM_HUMAN_TASK_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.BPMHumanTaskDescriptionImpl <em>BPM Human Task Description</em>}' class.
@@ -1020,6 +1029,17 @@ public interface DocumentPackage extends EPackage {
 	EClass getBPMHumanTaskDocument();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getTask <em>Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Task</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getTask()
+	 * @see #getBPMHumanTaskDocument()
+	 * @generated
+	 */
+	EAttribute getBPMHumanTaskDocument_Task();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1401,6 +1421,14 @@ public interface DocumentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BPM_HUMAN_TASK_DOCUMENT = eINSTANCE.getBPMHumanTaskDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Task</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BPM_HUMAN_TASK_DOCUMENT__TASK = eINSTANCE.getBPMHumanTaskDocument_Task();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
