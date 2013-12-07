@@ -284,7 +284,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	def dispatch void infer(BPMProcessDocument processDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(processDocument.toClass(processDocument.name)).initializeLater(
 			[
-				superTypes += typeReference.getTypeForName(typeof(IEntityDocument), processDocument, null)
+				superTypes += typeReference.getTypeForName(typeof(IBPMProcessDocument), processDocument, null)
 				documentation = processDocument.documentation
 				// class fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), processDocument, null))
@@ -324,13 +324,13 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			])
 	}
 	
-		/**
+	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */
 	def dispatch void infer(BPMHumanTaskDocument taskDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(taskDocument.toClass(taskDocument.name)).initializeLater(
 			[
-				superTypes += typeReference.getTypeForName(typeof(IEntityDocument), taskDocument, null)
+				superTypes += typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), taskDocument, null)
 				documentation = taskDocument.documentation
 				// class fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), taskDocument, null))
@@ -366,6 +366,98 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += taskDocument.description.toGetter(
 					"description",
 					typeReference.getTypeForName(typeof(String), taskDocument, null)
+				)
+			])
+	}
+	
+	/**
+	 * Infer method for BPMHumanTaskDocument elements
+	 */
+	def dispatch void infer(VaaclipseViewDocument viewDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(viewDocument.toClass(viewDocument.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IVaaclipseViewDocument), viewDocument, null)
+				documentation = viewDocument.documentation
+				// class fields
+				members += toField("name", typeReference.getTypeForName(typeof(String), viewDocument, null))
+				members += toField("view", typeReference.getTypeForName(typeof(String), viewDocument, null))
+				members += viewDocument.description.toField("description",
+					typeReference.getTypeForName(typeof(String), viewDocument, null))
+				// constructor
+				members += viewDocument.toConstructor [
+					body = [
+						it.append(
+							'''
+								this.name = "«viewDocument.name»";
+								this.view = "«viewDocument.view»";
+								this.description = serializeDescription().toString();
+							''')]
+				]
+				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+				if (viewDocument.description != null) {
+					val descriptionRichString = viewDocument.description.content
+					associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+					serializeDescriptionOperation.setSimpleName("serializeDescription")
+					serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+					serializeDescriptionOperation.setReturnType(inferredType())
+					serializeDescriptionOperation.setBody(descriptionRichString)
+					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+				} else {
+					// TODO return emtpy CharSequence
+				}
+				members += serializeDescriptionOperation
+				// getter/setter
+				members += toGetter("name", typeReference.getTypeForName(typeof(String), viewDocument, null))
+				members += toGetter("view", typeReference.getTypeForName(typeof(String), viewDocument, null))
+				members += viewDocument.description.toGetter(
+					"description",
+					typeReference.getTypeForName(typeof(String), viewDocument, null)
+				)
+			])
+	}
+	
+	/**
+	 * Infer method for BPMHumanTaskDocument elements
+	 */
+	def dispatch void infer(UIDocument uiDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(uiDocument.toClass(uiDocument.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IUIDocument), uiDocument, null)
+				documentation = uiDocument.documentation
+				// class fields
+				members += toField("name", typeReference.getTypeForName(typeof(String), uiDocument, null))
+				members += toField("ui", typeReference.getTypeForName(typeof(String), uiDocument, null))
+				members += uiDocument.description.toField("description",
+					typeReference.getTypeForName(typeof(String), uiDocument, null))
+				// constructor
+				members += uiDocument.toConstructor [
+					body = [
+						it.append(
+							'''
+								this.name = "«uiDocument.name»";
+								this.ui = "«uiDocument.ui»";
+								this.description = serializeDescription().toString();
+							''')]
+				]
+				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
+				if (uiDocument.description != null) {
+					val descriptionRichString = uiDocument.description.content
+					associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
+					serializeDescriptionOperation.setSimpleName("serializeDescription")
+					serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
+					serializeDescriptionOperation.setReturnType(inferredType())
+					serializeDescriptionOperation.setBody(descriptionRichString)
+					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
+				} else {
+					// TODO return emtpy CharSequence
+				}
+				members += serializeDescriptionOperation
+				// getter/setter
+				members += toGetter("name", typeReference.getTypeForName(typeof(String), uiDocument, null))
+				members += toGetter("ui", typeReference.getTypeForName(typeof(String), uiDocument, null))
+				members += uiDocument.description.toGetter(
+					"description",
+					typeReference.getTypeForName(typeof(String), uiDocument, null)
 				)
 			])
 	}

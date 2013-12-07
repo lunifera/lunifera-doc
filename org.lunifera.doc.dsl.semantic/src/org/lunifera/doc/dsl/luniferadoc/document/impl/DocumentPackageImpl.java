@@ -27,7 +27,9 @@ import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.UIDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
 import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
@@ -147,7 +149,21 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass vaaclipseViewDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass uiDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass uiDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -583,8 +599,80 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVaaclipseViewDocument_View() {
+		return (EAttribute)vaaclipseViewDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVaaclipseViewDocument_Description() {
+		return (EReference)vaaclipseViewDocumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVaaclipseViewDescription() {
+		return vaaclipseViewDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVaaclipseViewDescription_Content() {
+		return (EReference)vaaclipseViewDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUIDocument() {
 		return uiDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUIDocument_Ui() {
+		return (EAttribute)uiDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUIDocument_Description() {
+		return (EReference)uiDocumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUIDescription() {
+		return uiDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUIDescription_Content() {
+		return (EReference)uiDescriptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -684,8 +772,18 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createEReference(bpmHumanTaskDescriptionEClass, BPM_HUMAN_TASK_DESCRIPTION__CONTENT);
 
 		vaaclipseViewDocumentEClass = createEClass(VAACLIPSE_VIEW_DOCUMENT);
+		createEAttribute(vaaclipseViewDocumentEClass, VAACLIPSE_VIEW_DOCUMENT__VIEW);
+		createEReference(vaaclipseViewDocumentEClass, VAACLIPSE_VIEW_DOCUMENT__DESCRIPTION);
+
+		vaaclipseViewDescriptionEClass = createEClass(VAACLIPSE_VIEW_DESCRIPTION);
+		createEReference(vaaclipseViewDescriptionEClass, VAACLIPSE_VIEW_DESCRIPTION__CONTENT);
 
 		uiDocumentEClass = createEClass(UI_DOCUMENT);
+		createEAttribute(uiDocumentEClass, UI_DOCUMENT__UI);
+		createEReference(uiDocumentEClass, UI_DOCUMENT__DESCRIPTION);
+
+		uiDescriptionEClass = createEClass(UI_DESCRIPTION);
+		createEReference(uiDescriptionEClass, UI_DESCRIPTION__CONTENT);
 
 		generalDocumentEClass = createEClass(GENERAL_DOCUMENT);
 		createEReference(generalDocumentEClass, GENERAL_DOCUMENT__INCLUDES);
@@ -785,8 +883,18 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEReference(getBPMHumanTaskDescription_Content(), theRichstringPackage.getRichString(), null, "content", null, 0, 1, BPMHumanTaskDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vaaclipseViewDocumentEClass, VaaclipseViewDocument.class, "VaaclipseViewDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVaaclipseViewDocument_View(), ecorePackage.getEString(), "view", null, 0, 1, VaaclipseViewDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVaaclipseViewDocument_Description(), this.getVaaclipseViewDescription(), null, "description", null, 0, 1, VaaclipseViewDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(vaaclipseViewDescriptionEClass, VaaclipseViewDescription.class, "VaaclipseViewDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVaaclipseViewDescription_Content(), theRichstringPackage.getRichString(), null, "content", null, 0, 1, VaaclipseViewDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(uiDocumentEClass, UIDocument.class, "UIDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUIDocument_Ui(), ecorePackage.getEString(), "ui", null, 0, 1, UIDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUIDocument_Description(), this.getUIDescription(), null, "description", null, 0, 1, UIDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(uiDescriptionEClass, UIDescription.class, "UIDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUIDescription_Content(), theRichstringPackage.getRichString(), null, "content", null, 0, 1, UIDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalDocumentEClass, GeneralDocument.class, "GeneralDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGeneralDocument_Includes(), theLuniferaDocPackage.getDocumentInclude(), null, "includes", null, 0, -1, GeneralDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

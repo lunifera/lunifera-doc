@@ -139,6 +139,15 @@ public interface DocumentFactory extends EFactory {
 	VaaclipseViewDocument createVaaclipseViewDocument();
 
 	/**
+	 * Returns a new object of class '<em>Vaaclipse View Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vaaclipse View Description</em>'.
+	 * @generated
+	 */
+	VaaclipseViewDescription createVaaclipseViewDescription();
+
+	/**
 	 * Returns a new object of class '<em>UI Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +155,15 @@ public interface DocumentFactory extends EFactory {
 	 * @generated
 	 */
 	UIDocument createUIDocument();
+
+	/**
+	 * Returns a new object of class '<em>UI Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>UI Description</em>'.
+	 * @generated
+	 */
+	UIDescription createUIDescription();
 
 	/**
 	 * Returns a new object of class '<em>General Document</em>'.

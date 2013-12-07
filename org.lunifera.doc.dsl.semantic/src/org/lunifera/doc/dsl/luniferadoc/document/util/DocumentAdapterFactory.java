@@ -22,7 +22,9 @@ import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.UIDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
 
@@ -139,8 +141,16 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 				return createVaaclipseViewDocumentAdapter();
 			}
 			@Override
+			public Adapter caseVaaclipseViewDescription(VaaclipseViewDescription object) {
+				return createVaaclipseViewDescriptionAdapter();
+			}
+			@Override
 			public Adapter caseUIDocument(UIDocument object) {
 				return createUIDocumentAdapter();
+			}
+			@Override
+			public Adapter caseUIDescription(UIDescription object) {
+				return createUIDescriptionAdapter();
 			}
 			@Override
 			public Adapter caseGeneralDocument(GeneralDocument object) {
@@ -371,6 +381,20 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription <em>Vaaclipse View Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription
+	 * @generated
+	 */
+	public Adapter createVaaclipseViewDescriptionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDocument <em>UI Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -381,6 +405,20 @@ public class DocumentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUIDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDescription <em>UI Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.UIDescription
+	 * @generated
+	 */
+	public Adapter createUIDescriptionAdapter() {
 		return null;
 	}
 

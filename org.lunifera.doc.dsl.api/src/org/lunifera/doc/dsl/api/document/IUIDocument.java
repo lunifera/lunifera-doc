@@ -10,10 +10,6 @@ public interface IUIDocument {
 
 	String getName();
 
-	void setName(String name);
-
-	String getDocumentation();
-
-	void setDocumentation(String documentation);
+	String getDescription();
 
 }

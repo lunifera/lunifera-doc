@@ -131,19 +131,20 @@ BPMHumanTaskDescription returns document::BPMHumanTaskDescription:
 	{document::BPMHumanTaskDescription} content=RichString;
 
 VaaclipseViewDocument returns document::VaaclipseViewDocument:
-	'VaaclipseViewDocument';
+	'VaaclipseViewDocument' name=QualifiedName 'for' view=STRING '{'
+	'description' '{' description=VaaclipseViewDescription '}'
+	'}';
+	
+VaaclipseViewDescription returns document::VaaclipseViewDescription:
+	{document::VaaclipseViewDescription} content=RichString;
 	
 UIDocument returns document::UIDocument:
-	'UIDocument';
-
-// Non-RichString Tags
-
-//TagURL returns markup::TagURL:
-//	'**'
-//		'url' url=ID
-//		'text' text=RichString
-//	'**'
-//;
+	'UIDocument' name=QualifiedName 'for' ui=STRING '{'
+	'description' '{' description=UIDescription '}'
+	'}';
+	
+UIDescription returns document::UIDescription:
+	{document::UIDescription} content=RichString;
 
 // RichString
 

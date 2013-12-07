@@ -21,7 +21,9 @@ import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.LuniferaDocDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.UIDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
 
@@ -177,11 +179,23 @@ public class DocumentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DocumentPackage.VAACLIPSE_VIEW_DESCRIPTION: {
+				VaaclipseViewDescription vaaclipseViewDescription = (VaaclipseViewDescription)theEObject;
+				T result = caseVaaclipseViewDescription(vaaclipseViewDescription);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case DocumentPackage.UI_DOCUMENT: {
 				UIDocument uiDocument = (UIDocument)theEObject;
 				T result = caseUIDocument(uiDocument);
 				if (result == null) result = caseLuniferaDocDocument(uiDocument);
 				if (result == null) result = caseNamedDocument(uiDocument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DocumentPackage.UI_DESCRIPTION: {
+				UIDescription uiDescription = (UIDescription)theEObject;
+				T result = caseUIDescription(uiDescription);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -408,6 +422,21 @@ public class DocumentSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vaaclipse View Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vaaclipse View Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVaaclipseViewDescription(VaaclipseViewDescription object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>UI Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -419,6 +448,21 @@ public class DocumentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUIDocument(UIDocument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UI Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UI Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUIDescription(UIDescription object) {
 		return null;
 	}
 

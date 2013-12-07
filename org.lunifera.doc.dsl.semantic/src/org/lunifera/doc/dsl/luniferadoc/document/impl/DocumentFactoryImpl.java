@@ -22,7 +22,9 @@ import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityField;
 import org.lunifera.doc.dsl.luniferadoc.document.EntityFields;
 import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.UIDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
+import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription;
 import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument;
 
 /**
@@ -82,7 +84,9 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 			case DocumentPackage.BPM_HUMAN_TASK_DOCUMENT: return createBPMHumanTaskDocument();
 			case DocumentPackage.BPM_HUMAN_TASK_DESCRIPTION: return createBPMHumanTaskDescription();
 			case DocumentPackage.VAACLIPSE_VIEW_DOCUMENT: return createVaaclipseViewDocument();
+			case DocumentPackage.VAACLIPSE_VIEW_DESCRIPTION: return createVaaclipseViewDescription();
 			case DocumentPackage.UI_DOCUMENT: return createUIDocument();
+			case DocumentPackage.UI_DESCRIPTION: return createUIDescription();
 			case DocumentPackage.GENERAL_DOCUMENT: return createGeneralDocument();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -224,9 +228,29 @@ public class DocumentFactoryImpl extends EFactoryImpl implements DocumentFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public VaaclipseViewDescription createVaaclipseViewDescription() {
+		VaaclipseViewDescriptionImpl vaaclipseViewDescription = new VaaclipseViewDescriptionImpl();
+		return vaaclipseViewDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UIDocument createUIDocument() {
 		UIDocumentImpl uiDocument = new UIDocumentImpl();
 		return uiDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UIDescription createUIDescription() {
+		UIDescriptionImpl uiDescription = new UIDescriptionImpl();
+		return uiDescription;
 	}
 
 	/**

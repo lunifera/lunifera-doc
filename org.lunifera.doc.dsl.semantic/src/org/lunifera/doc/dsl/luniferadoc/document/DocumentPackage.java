@@ -585,13 +585,59 @@ public interface DocumentPackage extends EPackage {
 	int VAACLIPSE_VIEW_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAACLIPSE_VIEW_DOCUMENT__VIEW = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAACLIPSE_VIEW_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Vaaclipse View Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VAACLIPSE_VIEW_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int VAACLIPSE_VIEW_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDescriptionImpl <em>Vaaclipse View Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDescriptionImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getVaaclipseViewDescription()
+	 * @generated
+	 */
+	int VAACLIPSE_VIEW_DESCRIPTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAACLIPSE_VIEW_DESCRIPTION__CONTENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Vaaclipse View Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAACLIPSE_VIEW_DESCRIPTION_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl <em>UI Document</em>}' class.
@@ -601,7 +647,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getUIDocument()
 	 * @generated
 	 */
-	int UI_DOCUMENT = 14;
+	int UI_DOCUMENT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -613,13 +659,59 @@ public interface DocumentPackage extends EPackage {
 	int UI_DOCUMENT__NAME = LUNIFERA_DOC_DOCUMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Ui</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_DOCUMENT__UI = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_DOCUMENT__DESCRIPTION = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>UI Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UI_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 0;
+	int UI_DOCUMENT_FEATURE_COUNT = LUNIFERA_DOC_DOCUMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDescriptionImpl <em>UI Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.UIDescriptionImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getUIDescription()
+	 * @generated
+	 */
+	int UI_DESCRIPTION = 16;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_DESCRIPTION__CONTENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>UI Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_DESCRIPTION_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl <em>General Document</em>}' class.
@@ -629,7 +721,7 @@ public interface DocumentPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getGeneralDocument()
 	 * @generated
 	 */
-	int GENERAL_DOCUMENT = 15;
+	int GENERAL_DOCUMENT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1082,6 +1174,49 @@ public interface DocumentPackage extends EPackage {
 	EClass getVaaclipseViewDocument();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument#getView()
+	 * @see #getVaaclipseViewDocument()
+	 * @generated
+	 */
+	EAttribute getVaaclipseViewDocument_View();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument#getDescription()
+	 * @see #getVaaclipseViewDocument()
+	 * @generated
+	 */
+	EReference getVaaclipseViewDocument_Description();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription <em>Vaaclipse View Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Vaaclipse View Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription
+	 * @generated
+	 */
+	EClass getVaaclipseViewDescription();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription#getContent()
+	 * @see #getVaaclipseViewDescription()
+	 * @generated
+	 */
+	EReference getVaaclipseViewDescription_Content();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDocument <em>UI Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1090,6 +1225,49 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUIDocument();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDocument#getUi <em>Ui</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ui</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.UIDocument#getUi()
+	 * @see #getUIDocument()
+	 * @generated
+	 */
+	EAttribute getUIDocument_Ui();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDocument#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.UIDocument#getDescription()
+	 * @see #getUIDocument()
+	 * @generated
+	 */
+	EReference getUIDocument_Description();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDescription <em>UI Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>UI Description</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.UIDescription
+	 * @generated
+	 */
+	EClass getUIDescription();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.document.UIDescription#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.document.UIDescription#getContent()
+	 * @see #getUIDescription()
+	 * @generated
+	 */
+	EReference getUIDescription_Content();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument <em>General Document</em>}'.
@@ -1467,6 +1645,40 @@ public interface DocumentPackage extends EPackage {
 		EClass VAACLIPSE_VIEW_DOCUMENT = eINSTANCE.getVaaclipseViewDocument();
 
 		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VAACLIPSE_VIEW_DOCUMENT__VIEW = eINSTANCE.getVaaclipseViewDocument_View();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VAACLIPSE_VIEW_DOCUMENT__DESCRIPTION = eINSTANCE.getVaaclipseViewDocument_Description();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDescriptionImpl <em>Vaaclipse View Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.VaaclipseViewDescriptionImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getVaaclipseViewDescription()
+		 * @generated
+		 */
+		EClass VAACLIPSE_VIEW_DESCRIPTION = eINSTANCE.getVaaclipseViewDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VAACLIPSE_VIEW_DESCRIPTION__CONTENT = eINSTANCE.getVaaclipseViewDescription_Content();
+
+		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDocumentImpl <em>UI Document</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1475,6 +1687,40 @@ public interface DocumentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UI_DOCUMENT = eINSTANCE.getUIDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Ui</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UI_DOCUMENT__UI = eINSTANCE.getUIDocument_Ui();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UI_DOCUMENT__DESCRIPTION = eINSTANCE.getUIDocument_Description();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.UIDescriptionImpl <em>UI Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.UIDescriptionImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl#getUIDescription()
+		 * @generated
+		 */
+		EClass UI_DESCRIPTION = eINSTANCE.getUIDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UI_DESCRIPTION__CONTENT = eINSTANCE.getUIDescription_Content();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.document.impl.GeneralDocumentImpl <em>General Document</em>}' class.
