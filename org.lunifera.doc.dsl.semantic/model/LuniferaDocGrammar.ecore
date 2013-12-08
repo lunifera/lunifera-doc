@@ -118,7 +118,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="EntityLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
     <eClassifiers xsi:type="ecore:EClass" name="DTOLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
     <eClassifiers xsi:type="ecore:EClass" name="BPMProcessLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
-    <eClassifiers xsi:type="ecore:EClass" name="BPMTaskLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMHumanTaskLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
     <eClassifiers xsi:type="ecore:EClass" name="VaaclipseViewLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
     <eClassifiers xsi:type="ecore:EClass" name="UILayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
   </eSubpackages>

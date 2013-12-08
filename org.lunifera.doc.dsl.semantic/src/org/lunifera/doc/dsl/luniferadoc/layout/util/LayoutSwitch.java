@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout;
-import org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
@@ -103,11 +103,11 @@ public class LayoutSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case LayoutPackage.BPM_TASK_LAYOUT: {
-				BPMTaskLayout bpmTaskLayout = (BPMTaskLayout)theEObject;
-				T result = caseBPMTaskLayout(bpmTaskLayout);
-				if (result == null) result = caseLuniferaDocLayout(bpmTaskLayout);
-				if (result == null) result = caseNamedDocument(bpmTaskLayout);
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT: {
+				BPMHumanTaskLayout bpmHumanTaskLayout = (BPMHumanTaskLayout)theEObject;
+				T result = caseBPMHumanTaskLayout(bpmHumanTaskLayout);
+				if (result == null) result = caseLuniferaDocLayout(bpmHumanTaskLayout);
+				if (result == null) result = caseNamedDocument(bpmHumanTaskLayout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -192,17 +192,17 @@ public class LayoutSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>BPM Task Layout</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>BPM Human Task Layout</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>BPM Task Layout</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>BPM Human Task Layout</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBPMTaskLayout(BPMTaskLayout object) {
+	public T caseBPMHumanTaskLayout(BPMHumanTaskLayout object) {
 		return null;
 	}
 

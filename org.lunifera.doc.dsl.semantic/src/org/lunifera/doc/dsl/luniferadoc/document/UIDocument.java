@@ -21,7 +21,6 @@ package org.lunifera.doc.dsl.luniferadoc.document;
  * @generated
  */
 public interface UIDocument extends LuniferaDocDocument {
-
 	/**
 	 * Returns the value of the '<em><b>Ui</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,4 +72,5 @@ public interface UIDocument extends LuniferaDocDocument {
 	 * @generated
 	 */
 	void setDescription(UIDescription value);
+
 } // UIDocument

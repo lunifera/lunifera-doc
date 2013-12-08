@@ -240,14 +240,14 @@ public interface LayoutPackage extends EPackage {
 	int BPM_PROCESS_LAYOUT_FEATURE_COUNT = LUNIFERA_DOC_LAYOUT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMTaskLayoutImpl <em>BPM Task Layout</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMHumanTaskLayoutImpl <em>BPM Human Task Layout</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMTaskLayoutImpl
-	 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl#getBPMTaskLayout()
+	 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMHumanTaskLayoutImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl#getBPMHumanTaskLayout()
 	 * @generated
 	 */
-	int BPM_TASK_LAYOUT = 4;
+	int BPM_HUMAN_TASK_LAYOUT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -256,7 +256,7 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
+	int BPM_HUMAN_TASK_LAYOUT__NAME = LUNIFERA_DOC_LAYOUT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -265,7 +265,7 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
+	int BPM_HUMAN_TASK_LAYOUT__CONTENT = LUNIFERA_DOC_LAYOUT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -274,16 +274,16 @@ public interface LayoutPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_LAYOUT__IMPORTS = LUNIFERA_DOC_LAYOUT__IMPORTS;
+	int BPM_HUMAN_TASK_LAYOUT__IMPORTS = LUNIFERA_DOC_LAYOUT__IMPORTS;
 
 	/**
-	 * The number of structural features of the '<em>BPM Task Layout</em>' class.
+	 * The number of structural features of the '<em>BPM Human Task Layout</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BPM_TASK_LAYOUT_FEATURE_COUNT = LUNIFERA_DOC_LAYOUT_FEATURE_COUNT + 0;
+	int BPM_HUMAN_TASK_LAYOUT_FEATURE_COUNT = LUNIFERA_DOC_LAYOUT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.VaaclipseViewLayoutImpl <em>Vaaclipse View Layout</em>}' class.
@@ -441,14 +441,14 @@ public interface LayoutPackage extends EPackage {
 	EClass getBPMProcessLayout();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout <em>BPM Task Layout</em>}'.
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout <em>BPM Human Task Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>BPM Task Layout</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout
+	 * @return the meta object for class '<em>BPM Human Task Layout</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout
 	 * @generated
 	 */
-	EClass getBPMTaskLayout();
+	EClass getBPMHumanTaskLayout();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.layout.VaaclipseViewLayout <em>Vaaclipse View Layout</em>}'.
@@ -549,14 +549,14 @@ public interface LayoutPackage extends EPackage {
 		EClass BPM_PROCESS_LAYOUT = eINSTANCE.getBPMProcessLayout();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMTaskLayoutImpl <em>BPM Task Layout</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMHumanTaskLayoutImpl <em>BPM Human Task Layout</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMTaskLayoutImpl
-		 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl#getBPMTaskLayout()
+		 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMHumanTaskLayoutImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl#getBPMHumanTaskLayout()
 		 * @generated
 		 */
-		EClass BPM_TASK_LAYOUT = eINSTANCE.getBPMTaskLayout();
+		EClass BPM_HUMAN_TASK_LAYOUT = eINSTANCE.getBPMHumanTaskLayout();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.VaaclipseViewLayoutImpl <em>Vaaclipse View Layout</em>}' class.

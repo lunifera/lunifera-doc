@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout;
-import org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutFactory;
@@ -63,7 +63,7 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 			case LayoutPackage.ENTITY_LAYOUT: return createEntityLayout();
 			case LayoutPackage.DTO_LAYOUT: return createDTOLayout();
 			case LayoutPackage.BPM_PROCESS_LAYOUT: return createBPMProcessLayout();
-			case LayoutPackage.BPM_TASK_LAYOUT: return createBPMTaskLayout();
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT: return createBPMHumanTaskLayout();
 			case LayoutPackage.VAACLIPSE_VIEW_LAYOUT: return createVaaclipseViewLayout();
 			case LayoutPackage.UI_LAYOUT: return createUILayout();
 			default:
@@ -106,9 +106,9 @@ public class LayoutFactoryImpl extends EFactoryImpl implements LayoutFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BPMTaskLayout createBPMTaskLayout() {
-		BPMTaskLayoutImpl bpmTaskLayout = new BPMTaskLayoutImpl();
-		return bpmTaskLayout;
+	public BPMHumanTaskLayout createBPMHumanTaskLayout() {
+		BPMHumanTaskLayoutImpl bpmHumanTaskLayout = new BPMHumanTaskLayoutImpl();
+		return bpmHumanTaskLayout;
 	}
 
 	/**

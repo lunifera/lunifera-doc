@@ -42,6 +42,14 @@ import org.lunifera.doc.dsl.api.document.IDTODocument
 import org.lunifera.doc.dsl.api.document.IEntityDocument
 import org.lunifera.doc.dsl.api.document.IUIDocument
 import org.lunifera.doc.dsl.api.document.IVaaclipseViewDocument
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout
+import org.lunifera.doc.dsl.api.layout.IBPMProcessLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout
+import org.lunifera.doc.dsl.api.layout.IBPMHumanTaskLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.VaaclipseViewLayout
+import org.lunifera.doc.dsl.api.layout.IVaaclipseViewLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.UILayout
+import org.lunifera.doc.dsl.api.layout.IUILayout
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -96,6 +104,94 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toField("doc", typeReference.getTypeForName(typeof(IDTODocument), dtoLayout, null))
 				members += toSetter("doc", typeReference.getTypeForName(typeof(IDTODocument), dtoLayout, null))
 				val richString = dtoLayout.content
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				associator.associatePrimary(richString, operation)
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(inferredType())
+				operation.setBody(richString)
+				associator.associateLogicalContainer(richString, operation)
+				members += operation
+			])
+	}
+	
+	/**
+	 * Infer method for BPMProcess elements
+	 */
+	def dispatch void infer(BPMProcessLayout bpmProcessLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(bpmProcessLayout.toClass(bpmProcessLayout.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IBPMProcessLayout), bpmProcessLayout, null)
+				documentation = bpmProcessLayout.documentation
+				members += toField("doc", typeReference.getTypeForName(typeof(IBPMProcessDocument), bpmProcessLayout, null))
+				members += toSetter("doc", typeReference.getTypeForName(typeof(IBPMProcessDocument), bpmProcessLayout, null))
+				val richString = bpmProcessLayout.content
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				associator.associatePrimary(richString, operation)
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(inferredType())
+				operation.setBody(richString)
+				associator.associateLogicalContainer(richString, operation)
+				members += operation
+			])
+	}
+	
+	/**
+	 * Infer method for BPMHumanTask elements
+	 */
+	def dispatch void infer(BPMHumanTaskLayout bpmHumanTaskLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(bpmHumanTaskLayout.toClass(bpmHumanTaskLayout.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IBPMHumanTaskLayout), bpmHumanTaskLayout, null)
+				documentation = bpmHumanTaskLayout.documentation
+				members += toField("doc", typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), bpmHumanTaskLayout, null))
+				members += toSetter("doc", typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), bpmHumanTaskLayout, null))
+				val richString = bpmHumanTaskLayout.content
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				associator.associatePrimary(richString, operation)
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(inferredType())
+				operation.setBody(richString)
+				associator.associateLogicalContainer(richString, operation)
+				members += operation
+			])
+	}
+	
+	/**
+	 * Infer method for VaaclipseViewLayout elements
+	 */
+	def dispatch void infer(VaaclipseViewLayout vaaclipseViewLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(vaaclipseViewLayout.toClass(vaaclipseViewLayout.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IVaaclipseViewLayout), vaaclipseViewLayout, null)
+				documentation = vaaclipseViewLayout.documentation
+				members += toField("doc", typeReference.getTypeForName(typeof(IVaaclipseViewDocument), vaaclipseViewLayout, null))
+				members += toSetter("doc", typeReference.getTypeForName(typeof(IVaaclipseViewDocument), vaaclipseViewLayout, null))
+				val richString = vaaclipseViewLayout.content
+				val JvmOperation operation = typesFactory.createJvmOperation()
+				associator.associatePrimary(richString, operation)
+				operation.setSimpleName("serialize")
+				operation.setVisibility(JvmVisibility::PUBLIC)
+				operation.setReturnType(inferredType())
+				operation.setBody(richString)
+				associator.associateLogicalContainer(richString, operation)
+				members += operation
+			])
+	}
+	
+	/**
+	 * Infer method for UILayout elements
+	 */
+	def dispatch void infer(UILayout uiLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(uiLayout.toClass(uiLayout.name)).initializeLater(
+			[
+				superTypes += typeReference.getTypeForName(typeof(IUILayout), uiLayout, null)
+				documentation = uiLayout.documentation
+				members += toField("doc", typeReference.getTypeForName(typeof(IUIDocument), uiLayout, null))
+				members += toSetter("doc", typeReference.getTypeForName(typeof(IUIDocument), uiLayout, null))
+				val richString = uiLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
 				operation.setSimpleName("serialize")

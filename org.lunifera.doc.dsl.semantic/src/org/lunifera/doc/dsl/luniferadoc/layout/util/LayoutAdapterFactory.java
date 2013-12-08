@@ -7,8 +7,8 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout;
-import org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
@@ -89,8 +89,8 @@ public class LayoutAdapterFactory extends AdapterFactoryImpl {
 				return createBPMProcessLayoutAdapter();
 			}
 			@Override
-			public Adapter caseBPMTaskLayout(BPMTaskLayout object) {
-				return createBPMTaskLayoutAdapter();
+			public Adapter caseBPMHumanTaskLayout(BPMHumanTaskLayout object) {
+				return createBPMHumanTaskLayoutAdapter();
 			}
 			@Override
 			public Adapter caseVaaclipseViewLayout(VaaclipseViewLayout object) {
@@ -181,16 +181,16 @@ public class LayoutAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout <em>BPM Task Layout</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout <em>BPM Human Task Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout
+	 * @see org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout
 	 * @generated
 	 */
-	public Adapter createBPMTaskLayoutAdapter() {
+	public Adapter createBPMHumanTaskLayoutAdapter() {
 		return null;
 	}
 

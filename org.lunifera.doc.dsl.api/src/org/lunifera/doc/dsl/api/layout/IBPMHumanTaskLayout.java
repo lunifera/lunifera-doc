@@ -8,7 +8,7 @@ package org.lunifera.doc.dsl.api.layout;
 
 import org.lunifera.doc.dsl.api.document.IBPMHumanTaskDocument;
 
-public interface IBPMTaskLayout extends IGenericLayout {
+public interface IBPMHumanTaskLayout extends IGenericLayout {
 
 	void setBpmTask(IBPMHumanTaskDocument bpmTask);
 

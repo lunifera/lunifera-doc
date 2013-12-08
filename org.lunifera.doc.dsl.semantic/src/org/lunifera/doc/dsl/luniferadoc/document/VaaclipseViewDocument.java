@@ -21,7 +21,6 @@ package org.lunifera.doc.dsl.luniferadoc.document;
  * @generated
  */
 public interface VaaclipseViewDocument extends LuniferaDocDocument {
-
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,4 +72,5 @@ public interface VaaclipseViewDocument extends LuniferaDocDocument {
 	 * @generated
 	 */
 	void setDescription(VaaclipseViewDescription value);
+
 } // VaaclipseViewDocument

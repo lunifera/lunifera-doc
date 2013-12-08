@@ -13,8 +13,8 @@ import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.impl.LuniferaDocPackageImpl;
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout;
-import org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutFactory;
@@ -67,7 +67,7 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bpmTaskLayoutEClass = null;
+	private EClass bpmHumanTaskLayoutEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,8 +222,8 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBPMTaskLayout() {
-		return bpmTaskLayoutEClass;
+	public EClass getBPMHumanTaskLayout() {
+		return bpmHumanTaskLayoutEClass;
 	}
 
 	/**
@@ -282,7 +282,7 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 
 		bpmProcessLayoutEClass = createEClass(BPM_PROCESS_LAYOUT);
 
-		bpmTaskLayoutEClass = createEClass(BPM_TASK_LAYOUT);
+		bpmHumanTaskLayoutEClass = createEClass(BPM_HUMAN_TASK_LAYOUT);
 
 		vaaclipseViewLayoutEClass = createEClass(VAACLIPSE_VIEW_LAYOUT);
 
@@ -326,7 +326,7 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 		entityLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 		dtoLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 		bpmProcessLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
-		bpmTaskLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
+		bpmHumanTaskLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 		vaaclipseViewLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 		uiLayoutEClass.getESuperTypes().add(this.getLuniferaDocLayout());
 
@@ -341,7 +341,7 @@ public class LayoutPackageImpl extends EPackageImpl implements LayoutPackage {
 
 		initEClass(bpmProcessLayoutEClass, BPMProcessLayout.class, "BPMProcessLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(bpmTaskLayoutEClass, BPMTaskLayout.class, "BPMTaskLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(bpmHumanTaskLayoutEClass, BPMHumanTaskLayout.class, "BPMHumanTaskLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(vaaclipseViewLayoutEClass, VaaclipseViewLayout.class, "VaaclipseViewLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -49,13 +49,13 @@ public interface LayoutFactory extends EFactory {
 	BPMProcessLayout createBPMProcessLayout();
 
 	/**
-	 * Returns a new object of class '<em>BPM Task Layout</em>'.
+	 * Returns a new object of class '<em>BPM Human Task Layout</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>BPM Task Layout</em>'.
+	 * @return a new object of class '<em>BPM Human Task Layout</em>'.
 	 * @generated
 	 */
-	BPMTaskLayout createBPMTaskLayout();
+	BPMHumanTaskLayout createBPMHumanTaskLayout();
 
 	/**
 	 * Returns a new object of class '<em>Vaaclipse View Layout</em>'.

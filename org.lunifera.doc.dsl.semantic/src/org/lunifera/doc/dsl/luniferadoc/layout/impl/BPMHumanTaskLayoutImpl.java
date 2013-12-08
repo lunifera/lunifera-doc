@@ -14,26 +14,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.xtext.xtype.XImportDeclaration;
-import org.lunifera.doc.dsl.luniferadoc.layout.BPMTaskLayout;
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>BPM Task Layout</b></em>'.
+ * An implementation of the model object '<em><b>BPM Human Task Layout</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMTaskLayoutImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMTaskLayoutImpl#getContent <em>Content</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMTaskLayoutImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMHumanTaskLayoutImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMHumanTaskLayoutImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.layout.impl.BPMHumanTaskLayoutImpl#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements BPMTaskLayout {
+public class BPMHumanTaskLayoutImpl extends MinimalEObjectImpl.Container implements BPMHumanTaskLayout {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BPMTaskLayoutImpl() {
+	protected BPMHumanTaskLayoutImpl() {
 		super();
 	}
 
@@ -90,7 +90,7 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LayoutPackage.Literals.BPM_TASK_LAYOUT;
+		return LayoutPackage.Literals.BPM_HUMAN_TASK_LAYOUT;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LayoutPackage.BPM_TASK_LAYOUT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, LayoutPackage.BPM_HUMAN_TASK_LAYOUT__NAME, oldName, name));
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 		RichString oldContent = content;
 		content = newContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LayoutPackage.BPM_TASK_LAYOUT__CONTENT, oldContent, newContent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT, oldContent, newContent);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -147,14 +147,14 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 		if (newContent != content) {
 			NotificationChain msgs = null;
 			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayoutPackage.BPM_TASK_LAYOUT__CONTENT, null, msgs);
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT, null, msgs);
 			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayoutPackage.BPM_TASK_LAYOUT__CONTENT, null, msgs);
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT, null, msgs);
 			msgs = basicSetContent(newContent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LayoutPackage.BPM_TASK_LAYOUT__CONTENT, newContent, newContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -164,7 +164,7 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	 */
 	public EList<XImportDeclaration> getImports() {
 		if (imports == null) {
-			imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, LayoutPackage.BPM_TASK_LAYOUT__IMPORTS);
+			imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, LayoutPackage.BPM_HUMAN_TASK_LAYOUT__IMPORTS);
 		}
 		return imports;
 	}
@@ -177,9 +177,9 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayoutPackage.BPM_TASK_LAYOUT__CONTENT:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT:
 				return basicSetContent(null, msgs);
-			case LayoutPackage.BPM_TASK_LAYOUT__IMPORTS:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__IMPORTS:
 				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -193,11 +193,11 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayoutPackage.BPM_TASK_LAYOUT__NAME:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__NAME:
 				return getName();
-			case LayoutPackage.BPM_TASK_LAYOUT__CONTENT:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT:
 				return getContent();
-			case LayoutPackage.BPM_TASK_LAYOUT__IMPORTS:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__IMPORTS:
 				return getImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -212,13 +212,13 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayoutPackage.BPM_TASK_LAYOUT__NAME:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__NAME:
 				setName((String)newValue);
 				return;
-			case LayoutPackage.BPM_TASK_LAYOUT__CONTENT:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT:
 				setContent((RichString)newValue);
 				return;
-			case LayoutPackage.BPM_TASK_LAYOUT__IMPORTS:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__IMPORTS:
 				getImports().clear();
 				getImports().addAll((Collection<? extends XImportDeclaration>)newValue);
 				return;
@@ -234,13 +234,13 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayoutPackage.BPM_TASK_LAYOUT__NAME:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case LayoutPackage.BPM_TASK_LAYOUT__CONTENT:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT:
 				setContent((RichString)null);
 				return;
-			case LayoutPackage.BPM_TASK_LAYOUT__IMPORTS:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__IMPORTS:
 				getImports().clear();
 				return;
 		}
@@ -255,11 +255,11 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayoutPackage.BPM_TASK_LAYOUT__NAME:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case LayoutPackage.BPM_TASK_LAYOUT__CONTENT:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__CONTENT:
 				return content != null;
-			case LayoutPackage.BPM_TASK_LAYOUT__IMPORTS:
+			case LayoutPackage.BPM_HUMAN_TASK_LAYOUT__IMPORTS:
 				return imports != null && !imports.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -281,4 +281,4 @@ public class BPMTaskLayoutImpl extends MinimalEObjectImpl.Container implements B
 		return result.toString();
 	}
 
-} //BPMTaskLayoutImpl
+} //BPMHumanTaskLayoutImpl

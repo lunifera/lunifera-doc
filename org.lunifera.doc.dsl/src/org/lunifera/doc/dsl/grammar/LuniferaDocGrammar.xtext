@@ -22,7 +22,7 @@ LuniferaDocDocument returns document::LuniferaDocDocument:
 	EntityDocument | DTODocument | BPMProcessDocument | BPMHumanTaskDocument | VaaclipseViewDocument | UIDocument;
 	
 LuniferaDocLayout returns layout::LuniferaDocLayout:
-	GeneralDocument | EntityLayout | DTOLayout | BPMProcessLayout | BPMTaskLayout | VaaclipseViewLayout | UILayout;
+	GeneralDocument | EntityLayout | DTOLayout | BPMProcessLayout | BPMHumanTaskLayout | VaaclipseViewLayout | UILayout;
 
 DocumentInclude returns luniferadoc::DocumentInclude:
 	'include' include=[document::LuniferaDocDocument|QualifiedName] 'as' varName=ID;
@@ -51,8 +51,8 @@ BPMProcessLayout returns layout::BPMProcessLayout:
 	content=RichString
 	'}';
 	
-BPMTaskLayout returns layout::BPMTaskLayout:
-	'BPMTaskLayout' name=ID '{'
+BPMHumanTaskLayout returns layout::BPMHumanTaskLayout:
+	'BPMHumanTaskLayout' name=ID '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
