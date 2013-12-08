@@ -428,6 +428,91 @@ public interface RichstringPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringBoldImpl <em>Rich String Bold</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringBoldImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringBold()
+	 * @generated
+	 */
+	int RICH_STRING_BOLD = 10;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_BOLD__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Bold</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_BOLD_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUnderlineImpl <em>Rich String Underline</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUnderlineImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringUnderline()
+	 * @generated
+	 */
+	int RICH_STRING_UNDERLINE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UNDERLINE__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Underline</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UNDERLINE_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringItalicImpl <em>Rich String Italic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringItalicImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringItalic()
+	 * @generated
+	 */
+	int RICH_STRING_ITALIC = 12;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ITALIC__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Italic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ITALIC_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf <em>Rich String Else If</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -660,6 +745,36 @@ public interface RichstringPackage extends EPackage {
 	EReference getRichStringURL_Text();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold <em>Rich String Bold</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rich String Bold</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold
+	 * @generated
+	 */
+	EClass getRichStringBold();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline <em>Rich String Underline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rich String Underline</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline
+	 * @generated
+	 */
+	EClass getRichStringUnderline();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic <em>Rich String Italic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rich String Italic</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic
+	 * @generated
+	 */
+	EClass getRichStringItalic();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -876,6 +991,36 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_URL__TEXT = eINSTANCE.getRichStringURL_Text();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringBoldImpl <em>Rich String Bold</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringBoldImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringBold()
+		 * @generated
+		 */
+		EClass RICH_STRING_BOLD = eINSTANCE.getRichStringBold();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUnderlineImpl <em>Rich String Underline</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUnderlineImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringUnderline()
+		 * @generated
+		 */
+		EClass RICH_STRING_UNDERLINE = eINSTANCE.getRichStringUnderline();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringItalicImpl <em>Rich String Italic</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringItalicImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringItalic()
+		 * @generated
+		 */
+		EClass RICH_STRING_ITALIC = eINSTANCE.getRichStringItalic();
 
 	}
 

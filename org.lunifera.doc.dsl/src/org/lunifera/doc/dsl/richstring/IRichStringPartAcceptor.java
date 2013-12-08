@@ -13,11 +13,14 @@ import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 
 /**
  * The {@link IRichStringPartAcceptor} can be passed into a {@link RichStringProcessor} to handle the semantics of a
@@ -200,6 +203,18 @@ public interface IRichStringPartAcceptor {
 	void acceptURLStart(RichStringURL object);
 
 	void acceptURLEnd();
+	
+	void acceptBoldStart(RichStringBold object);
+
+	void acceptBoldEnd();
+	
+	void acceptUnderlineStart(RichStringUnderline object);
+
+	void acceptUnderlineEnd();
+	
+	void acceptItalicStart(RichStringItalic object);
+
+	void acceptItalicEnd();
 
 	void acceptExampleStart(RichStringExample object);
 

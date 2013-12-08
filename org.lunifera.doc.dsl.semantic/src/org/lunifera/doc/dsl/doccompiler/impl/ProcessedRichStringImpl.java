@@ -24,18 +24,18 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.ProcessedRichStringImpl#getRichString <em>Rich String</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.ProcessedRichStringImpl#getLines <em>Lines</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.doccompiler.impl.ProcessedRichStringImpl#getRichString <em>Rich String</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.doccompiler.impl.ProcessedRichStringImpl#getLines <em>Lines</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ProcessedRichStringImpl extends MinimalEObjectImpl.Container implements ProcessedRichString {
 	/**
-	 * The cached value of the '{@link #getRichString() <em>Rich String</em>}' reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getRichString() <em>Rich String</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getRichString()
 	 * @generated
 	 * @ordered
@@ -43,9 +43,9 @@ public class ProcessedRichStringImpl extends MinimalEObjectImpl.Container implem
 	protected RichString richString;
 
 	/**
-	 * The cached value of the '{@link #getLines() <em>Lines</em>}' containment reference list. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLines() <em>Lines</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getLines()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,6 @@ public class ProcessedRichStringImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ProcessedRichStringImpl() {
@@ -63,7 +62,6 @@ public class ProcessedRichStringImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,17 +71,15 @@ public class ProcessedRichStringImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public RichString getRichString() {
 		if (richString != null && richString.eIsProxy()) {
-			InternalEObject oldRichString = (InternalEObject) richString;
-			richString = (RichString) eResolveProxy(oldRichString);
+			InternalEObject oldRichString = (InternalEObject)richString;
+			richString = (RichString)eResolveProxy(oldRichString);
 			if (richString != oldRichString) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING, oldRichString, richString));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING, oldRichString, richString));
 			}
 		}
 		return richString;
@@ -91,7 +87,6 @@ public class ProcessedRichStringImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public RichString basicGetRichString() {
@@ -100,127 +95,116 @@ public class ProcessedRichStringImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setRichString(RichString newRichString) {
 		RichString oldRichString = richString;
 		richString = newRichString;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING, oldRichString, richString));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING, oldRichString, richString));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Line> getLines() {
 		if (lines == null) {
-			lines = new EObjectContainmentWithInverseEList<Line>(Line.class, this,
-					DocCompilerPackage.PROCESSED_RICH_STRING__LINES, DocCompilerPackage.LINE__RICH_STRING);
+			lines = new EObjectContainmentWithInverseEList<Line>(Line.class, this, DocCompilerPackage.PROCESSED_RICH_STRING__LINES, DocCompilerPackage.LINE__RICH_STRING);
 		}
 		return lines;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLines()).basicAdd(otherEnd, msgs);
+			case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLines()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
-			return ((InternalEList<?>) getLines()).basicRemove(otherEnd, msgs);
+			case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
+				return ((InternalEList<?>)getLines()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
-			if (resolve)
-				return getRichString();
-			return basicGetRichString();
-		case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
-			return getLines();
+			case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
+				if (resolve) return getRichString();
+				return basicGetRichString();
+			case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
+				return getLines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
-			setRichString((RichString) newValue);
-			return;
-		case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
-			getLines().clear();
-			getLines().addAll((Collection<? extends Line>) newValue);
-			return;
+			case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
+				setRichString((RichString)newValue);
+				return;
+			case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
+				getLines().clear();
+				getLines().addAll((Collection<? extends Line>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
-			setRichString((RichString) null);
-			return;
-		case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
-			getLines().clear();
-			return;
+			case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
+				setRichString((RichString)null);
+				return;
+			case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
+				getLines().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
-			return richString != null;
-		case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
-			return lines != null && !lines.isEmpty();
+			case DocCompilerPackage.PROCESSED_RICH_STRING__RICH_STRING:
+				return richString != null;
+			case DocCompilerPackage.PROCESSED_RICH_STRING__LINES:
+				return lines != null && !lines.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

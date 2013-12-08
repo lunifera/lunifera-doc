@@ -8,15 +8,18 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringFactory;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -74,6 +77,9 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			case RichstringPackage.RICH_STRING_H1: return createRichStringH1();
 			case RichstringPackage.RICH_STRING_H2: return createRichStringH2();
 			case RichstringPackage.RICH_STRING_URL: return createRichStringURL();
+			case RichstringPackage.RICH_STRING_BOLD: return createRichStringBold();
+			case RichstringPackage.RICH_STRING_UNDERLINE: return createRichStringUnderline();
+			case RichstringPackage.RICH_STRING_ITALIC: return createRichStringItalic();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -177,6 +183,36 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringURL createRichStringURL() {
 		RichStringURLImpl richStringURL = new RichStringURLImpl();
 		return richStringURL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RichStringBold createRichStringBold() {
+		RichStringBoldImpl richStringBold = new RichStringBoldImpl();
+		return richStringBold;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RichStringUnderline createRichStringUnderline() {
+		RichStringUnderlineImpl richStringUnderline = new RichStringUnderlineImpl();
+		return richStringUnderline;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RichStringItalic createRichStringItalic() {
+		RichStringItalicImpl richStringItalic = new RichStringItalicImpl();
+		return richStringItalic;
 	}
 
 	/**

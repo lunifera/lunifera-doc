@@ -15,11 +15,14 @@ import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 
 /**
  * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should inherit from this class if they do not
@@ -93,6 +96,30 @@ public abstract class AbstractRichStringPartAcceptor implements
 
 	@Override
 	public void acceptURLEnd() {
+	}
+	
+	@Override
+	public void acceptBoldStart(RichStringBold object) {
+	}
+
+	@Override
+	public void acceptBoldEnd() {
+	}
+
+	@Override
+	public void acceptUnderlineStart(RichStringUnderline object) {
+	}
+
+	@Override
+	public void acceptUnderlineEnd() {
+	}
+
+	@Override
+	public void acceptItalicStart(RichStringItalic object) {
+	}
+
+	@Override
+	public void acceptItalicEnd() {
 	}
 
 	@Override

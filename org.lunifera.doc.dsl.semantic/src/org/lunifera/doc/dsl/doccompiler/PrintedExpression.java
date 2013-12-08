@@ -21,13 +21,13 @@ import org.eclipse.xtext.xbase.XExpression;
  */
 public interface PrintedExpression extends LinePart {
 	/**
-	 * Returns the value of the '<em><b>Expression</b></em>' reference. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Expression</b></em>' reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Expression</em>' reference isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Expression</em>' reference.
 	 * @see #setExpression(XExpression)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getPrintedExpression_Expression()
@@ -37,11 +37,9 @@ public interface PrintedExpression extends LinePart {
 	XExpression getExpression();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.PrintedExpression#getExpression
-	 * <em>Expression</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Expression</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.PrintedExpression#getExpression <em>Expression</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expression</em>' reference.
 	 * @see #getExpression()
 	 * @generated
 	 */

@@ -11,15 +11,18 @@ import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.XForLoopExpression;
 import org.eclipse.xtext.xbase.XStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
@@ -117,6 +120,18 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRichStringURL(RichStringURL object) {
 				return createRichStringURLAdapter();
+			}
+			@Override
+			public Adapter caseRichStringBold(RichStringBold object) {
+				return createRichStringBoldAdapter();
+			}
+			@Override
+			public Adapter caseRichStringUnderline(RichStringUnderline object) {
+				return createRichStringUnderlineAdapter();
+			}
+			@Override
+			public Adapter caseRichStringItalic(RichStringItalic object) {
+				return createRichStringItalicAdapter();
 			}
 			@Override
 			public Adapter caseXExpression(XExpression object) {
@@ -291,6 +306,48 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringURLAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold <em>Rich String Bold</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold
+	 * @generated
+	 */
+	public Adapter createRichStringBoldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline <em>Rich String Underline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline
+	 * @generated
+	 */
+	public Adapter createRichStringUnderlineAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic <em>Rich String Italic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic
+	 * @generated
+	 */
+	public Adapter createRichStringItalicAdapter() {
 		return null;
 	}
 

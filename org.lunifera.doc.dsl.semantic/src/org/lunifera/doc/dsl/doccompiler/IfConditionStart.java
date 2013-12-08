@@ -25,13 +25,13 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
  */
 public interface IfConditionStart extends LinePart {
 	/**
-	 * Returns the value of the '<em><b>Rich String If</b></em>' reference. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Rich String If</b></em>' reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rich String If</em>' reference isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Rich String If</em>' reference.
 	 * @see #setRichStringIf(RichStringIf)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getIfConditionStart_RichStringIf()
@@ -41,11 +41,9 @@ public interface IfConditionStart extends LinePart {
 	RichStringIf getRichStringIf();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.IfConditionStart#getRichStringIf
-	 * <em>Rich String If</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Rich String If</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.IfConditionStart#getRichStringIf <em>Rich String If</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rich String If</em>' reference.
 	 * @see #getRichStringIf()
 	 * @generated
 	 */
@@ -71,11 +69,9 @@ public interface IfConditionStart extends LinePart {
 	ElseStart getElseStart();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.IfConditionStart#getElseStart <em>Else Start</em>}
-	 * ' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Else Start</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.IfConditionStart#getElseStart <em>Else Start</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Else Start</em>' reference.
 	 * @see #getElseStart()
 	 * @generated
 	 */
@@ -101,13 +97,13 @@ public interface IfConditionStart extends LinePart {
 	EList<ElseIfCondition> getElseIfConditions();
 
 	/**
-	 * Returns the value of the '<em><b>End If</b></em>' reference. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>End If</b></em>' reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>End If</em>' reference isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>End If</em>' reference.
 	 * @see #setEndIf(EndIf)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getIfConditionStart_EndIf()
@@ -117,11 +113,9 @@ public interface IfConditionStart extends LinePart {
 	EndIf getEndIf();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.IfConditionStart#getEndIf <em>End If</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>End If</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.IfConditionStart#getEndIf <em>End If</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>End If</em>' reference.
 	 * @see #getEndIf()
 	 * @generated
 	 */

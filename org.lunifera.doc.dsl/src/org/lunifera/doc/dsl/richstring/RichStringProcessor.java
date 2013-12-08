@@ -13,6 +13,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
+import org.lunifera.doc.dsl.doccompiler.BoldEnd;
+import org.lunifera.doc.dsl.doccompiler.BoldStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
 import org.lunifera.doc.dsl.doccompiler.DocumentStart;
@@ -28,6 +30,8 @@ import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
+import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
+import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
@@ -37,19 +41,24 @@ import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
+import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
+import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
 import org.lunifera.doc.dsl.doccompiler.util.DocCompilerSwitch;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
 
 import com.google.inject.Inject;
@@ -292,6 +301,48 @@ public class RichStringProcessor {
 			return Boolean.TRUE;
 		}
 
+		@Override
+		public Boolean caseRichStringBold(RichStringBold object) {
+			BoldStart start = factory.createBoldStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			BoldEnd end = factory.createBoldEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringUnderline(RichStringUnderline object) {
+			UnderlineStart start = factory.createUnderlineStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			UnderlineEnd end = factory.createUnderlineEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringItalic(RichStringItalic object) {
+			ItalicStart start = factory.createItalicStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ItalicEnd end = factory.createItalicEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+		
 	}
 
 	public static class Implementation extends DocCompilerSwitch<Boolean> {

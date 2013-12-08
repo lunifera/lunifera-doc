@@ -176,7 +176,8 @@ RichStringPart returns xbase::XExpression:
 	XExpressionInsideBlock |
 	RichStringForLoop |
 	RichStringIf |
-	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL;
+	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL | 
+	RichStringBold | RichStringUnderline | RichStringItalic;
 
 RichStringExample returns xbase::XExpression:
 	{richstring::RichStringExample}
@@ -185,19 +186,29 @@ RichStringExample returns xbase::XExpression:
 
 RichStringH1 returns xbase::XExpression:
 	{richstring::RichStringH1}
-	"h1" expression=InternalRichString "/h1"
-;
+	"h1" expression=InternalRichString "/h1";
 
 RichStringH2 returns xbase::XExpression:
 	{richstring::RichStringH2}
-	"h2" expression=InternalRichString "/h2"
-;
+	"h2" expression=InternalRichString "/h2";
 
 RichStringURL returns xbase::XExpression:
 	{richstring::RichStringURL}
 	"url" location=STRING 
 	text=InternalRichString
 	"/url";
+	
+RichStringBold returns xbase::XExpression:
+	{richstring::RichStringBold}
+	"b" expression=InternalRichString "/b";
+
+RichStringUnderline returns xbase::XExpression:
+	{richstring::RichStringUnderline}
+	"ul" expression=InternalRichString "/ul";
+	
+RichStringItalic returns xbase::XExpression:
+	{richstring::RichStringItalic}
+	"i" expression=InternalRichString "/i";
 
 RichStringForLoop returns xbase::XExpression:
 	{richstring::RichStringForLoop}

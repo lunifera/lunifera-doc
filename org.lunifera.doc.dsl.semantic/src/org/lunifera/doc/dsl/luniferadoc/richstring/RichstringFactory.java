@@ -112,6 +112,33 @@ public interface RichstringFactory extends EFactory {
 	RichStringURL createRichStringURL();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Bold</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rich String Bold</em>'.
+	 * @generated
+	 */
+	RichStringBold createRichStringBold();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Underline</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rich String Underline</em>'.
+	 * @generated
+	 */
+	RichStringUnderline createRichStringUnderline();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Italic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rich String Italic</em>'.
+	 * @generated
+	 */
+	RichStringItalic createRichStringItalic();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

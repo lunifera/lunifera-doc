@@ -10,15 +10,18 @@ import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.XForLoopExpression;
 import org.eclipse.xtext.xbase.XStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
@@ -150,6 +153,30 @@ public class RichstringSwitch<T> extends Switch<T> {
 				RichStringURL richStringURL = (RichStringURL)theEObject;
 				T result = caseRichStringURL(richStringURL);
 				if (result == null) result = caseXExpression(richStringURL);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RichstringPackage.RICH_STRING_BOLD: {
+				RichStringBold richStringBold = (RichStringBold)theEObject;
+				T result = caseRichStringBold(richStringBold);
+				if (result == null) result = caseRichStringMarkup(richStringBold);
+				if (result == null) result = caseXExpression(richStringBold);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RichstringPackage.RICH_STRING_UNDERLINE: {
+				RichStringUnderline richStringUnderline = (RichStringUnderline)theEObject;
+				T result = caseRichStringUnderline(richStringUnderline);
+				if (result == null) result = caseRichStringMarkup(richStringUnderline);
+				if (result == null) result = caseXExpression(richStringUnderline);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RichstringPackage.RICH_STRING_ITALIC: {
+				RichStringItalic richStringItalic = (RichStringItalic)theEObject;
+				T result = caseRichStringItalic(richStringItalic);
+				if (result == null) result = caseRichStringMarkup(richStringItalic);
+				if (result == null) result = caseXExpression(richStringItalic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -304,6 +331,51 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringURL(RichStringURL object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Bold</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Bold</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringBold(RichStringBold object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Underline</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Underline</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringUnderline(RichStringUnderline object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Italic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Italic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringItalic(RichStringItalic object) {
 		return null;
 	}
 

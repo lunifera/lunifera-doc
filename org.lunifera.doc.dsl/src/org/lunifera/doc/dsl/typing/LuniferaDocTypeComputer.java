@@ -173,46 +173,4 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 				.computeTypes(object.getText());
 		state.acceptActualType(charSequence);
 	}
-
-	// protected void _computeTypes(XtendVariableDeclaration object,
-	// ITypeComputationState state) {
-	// if (object.isExtension()) {
-	// // basically the same as in the super implementation but we want to use
-	// // an object expectation
-	// JvmTypeReference declaredType = object.getType();
-	// LightweightTypeReference lightweightTypeReference = declaredType != null
-	// ? state.getConverter().toLightweightReference(declaredType) : null;
-	// if (lightweightTypeReference != null) {
-	// // primitives may not be extensions
-	// lightweightTypeReference =
-	// lightweightTypeReference.getWrapperTypeIfPrimitive();
-	// }
-	// if (lightweightTypeReference != null && object.getRight() instanceof
-	// XClosure) {
-	// ITypeComputationState initializerState = state.assignType(object,
-	// lightweightTypeReference).withExpectation(lightweightTypeReference);
-	// initializerState.computeTypes(object.getRight());
-	// } else {
-	// ITypeComputationState initializerState = lightweightTypeReference != null
-	// ? state.withExpectation(lightweightTypeReference) :
-	// state.withExpectation(getTypeForName(Object.class, state));
-	// ITypeComputationResult computedType =
-	// initializerState.computeTypes(object.getRight());
-	// /*
-	// * TODO keep information about the actual type, e.g. automatic cast
-	// insertion should be possible for
-	// *
-	// * val Object o = ""
-	// * o.substring(1)
-	// */
-	// state.assignType(object, lightweightTypeReference != null ?
-	// lightweightTypeReference : computedType.getActualExpressionType(),
-	// false);
-	// }
-	// LightweightTypeReference primitiveVoid = getPrimitiveVoid(state);
-	// state.acceptActualType(primitiveVoid);
-	// } else {
-	// super._computeTypes(object, state);
-	// }
-	// }
 }
