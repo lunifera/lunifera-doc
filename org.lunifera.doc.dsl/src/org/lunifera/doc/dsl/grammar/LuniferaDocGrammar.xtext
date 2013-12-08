@@ -34,37 +34,37 @@ enum IncludeType returns luniferadoc::DocType:
 // LAYOUTS
 
 EntityLayout returns layout::EntityLayout:
-	'EntityLayout' name=ID '{'
+	'EntityLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
 DTOLayout returns layout::DTOLayout:
-	'DTOLayout' name=ID '{'
+	'DTOLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
 BPMProcessLayout returns layout::BPMProcessLayout:
-	'BPMProcessLayout' name=ID '{'
+	'BPMProcessLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
 BPMHumanTaskLayout returns layout::BPMHumanTaskLayout:
-	'BPMHumanTaskLayout' name=ID '{'
+	'BPMHumanTaskLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
 VaaclipseViewLayout returns layout::VaaclipseViewLayout:
-	'VaaclipseViewLayout' name=ID '{'
+	'VaaclipseViewLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
 UILayout returns layout::UILayout:
-	'UILayout' name=ID '{'
+	'UILayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
@@ -72,7 +72,7 @@ UILayout returns layout::UILayout:
 // DOCUMENTS
 	
 GeneralDocument returns document::GeneralDocument:
-	'GeneralDocument' name=ID '{'
+	'GeneralDocument' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	includes+=DocumentInclude*
 	content=RichString
