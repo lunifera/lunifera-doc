@@ -26,43 +26,40 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Package</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocPackage {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass namedDocumentEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass documentIncludeEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum docTypeEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
+	 * EPackage.Registry} by the package package URI value.
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also
+	 * performs initialization of the package, or returns the registered package, if one already exists. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage#eNS_URI
 	 * @see #init()
@@ -73,8 +70,8 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -82,20 +79,25 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link LuniferaDocPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * This method is used to initialize {@link LuniferaDocPackage#eINSTANCE} when that field is accessed. Clients
+	 * should not invoke it directly. Instead, they should simply access that field to obtain the package. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static LuniferaDocPackage init() {
-		if (isInited) return (LuniferaDocPackage)EPackage.Registry.INSTANCE.getEPackage(LuniferaDocPackage.eNS_URI);
+		if (isInited)
+			return (LuniferaDocPackage) EPackage.Registry.INSTANCE
+					.getEPackage(LuniferaDocPackage.eNS_URI);
 
 		// Obtain or create and register package
-		LuniferaDocPackageImpl theLuniferaDocPackage = (LuniferaDocPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LuniferaDocPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LuniferaDocPackageImpl());
+		LuniferaDocPackageImpl theLuniferaDocPackage = (LuniferaDocPackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof LuniferaDocPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new LuniferaDocPackageImpl());
 
 		isInited = true;
 
@@ -105,10 +107,18 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		XtypePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		DocumentPackageImpl theDocumentPackage = (DocumentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DocumentPackage.eNS_URI) instanceof DocumentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DocumentPackage.eNS_URI) : DocumentPackage.eINSTANCE);
-		LayoutPackageImpl theLayoutPackage = (LayoutPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LayoutPackage.eNS_URI) instanceof LayoutPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LayoutPackage.eNS_URI) : LayoutPackage.eINSTANCE);
-		RichstringPackageImpl theRichstringPackage = (RichstringPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RichstringPackage.eNS_URI) instanceof RichstringPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RichstringPackage.eNS_URI) : RichstringPackage.eINSTANCE);
-		MarkupPackageImpl theMarkupPackage = (MarkupPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MarkupPackage.eNS_URI) instanceof MarkupPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MarkupPackage.eNS_URI) : MarkupPackage.eINSTANCE);
+		DocumentPackageImpl theDocumentPackage = (DocumentPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(DocumentPackage.eNS_URI) instanceof DocumentPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(DocumentPackage.eNS_URI) : DocumentPackage.eINSTANCE);
+		LayoutPackageImpl theLayoutPackage = (LayoutPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(LayoutPackage.eNS_URI) instanceof LayoutPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(LayoutPackage.eNS_URI) : LayoutPackage.eINSTANCE);
+		RichstringPackageImpl theRichstringPackage = (RichstringPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(RichstringPackage.eNS_URI) instanceof RichstringPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(RichstringPackage.eNS_URI) : RichstringPackage.eINSTANCE);
+		MarkupPackageImpl theMarkupPackage = (MarkupPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(MarkupPackage.eNS_URI) instanceof MarkupPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(MarkupPackage.eNS_URI) : MarkupPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theLuniferaDocPackage.createPackageContents();
@@ -127,15 +137,14 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		// Mark meta-data to indicate it can't be changed
 		theLuniferaDocPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(LuniferaDocPackage.eNS_URI, theLuniferaDocPackage);
 		return theLuniferaDocPackage;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getNamedDocument() {
@@ -143,17 +152,17 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getNamedDocument_Name() {
-		return (EAttribute)namedDocumentEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) namedDocumentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getDocumentInclude() {
@@ -161,26 +170,26 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDocumentInclude_Include() {
-		return (EReference)documentIncludeEClass.getEStructuralFeatures().get(0);
+		return (EReference) documentIncludeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDocumentInclude_VarName() {
-		return (EAttribute)documentIncludeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) documentIncludeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getDocType() {
@@ -188,30 +197,30 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LuniferaDocFactory getLuniferaDocFactory() {
-		return (LuniferaDocFactory)getEFactoryInstance();
+		return (LuniferaDocFactory) getEFactoryInstance();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but
+	 * its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -227,21 +236,21 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any
+	 * invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -250,10 +259,14 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		DocumentPackage theDocumentPackage = (DocumentPackage)EPackage.Registry.INSTANCE.getEPackage(DocumentPackage.eNS_URI);
-		LayoutPackage theLayoutPackage = (LayoutPackage)EPackage.Registry.INSTANCE.getEPackage(LayoutPackage.eNS_URI);
-		RichstringPackage theRichstringPackage = (RichstringPackage)EPackage.Registry.INSTANCE.getEPackage(RichstringPackage.eNS_URI);
-		MarkupPackage theMarkupPackage = (MarkupPackage)EPackage.Registry.INSTANCE.getEPackage(MarkupPackage.eNS_URI);
+		DocumentPackage theDocumentPackage = (DocumentPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentPackage.eNS_URI);
+		LayoutPackage theLayoutPackage = (LayoutPackage) EPackage.Registry.INSTANCE
+				.getEPackage(LayoutPackage.eNS_URI);
+		RichstringPackage theRichstringPackage = (RichstringPackage) EPackage.Registry.INSTANCE
+				.getEPackage(RichstringPackage.eNS_URI);
+		MarkupPackage theMarkupPackage = (MarkupPackage) EPackage.Registry.INSTANCE
+				.getEPackage(MarkupPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theDocumentPackage);
@@ -268,12 +281,21 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(namedDocumentEClass, NamedDocument.class, "NamedDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(namedDocumentEClass, NamedDocument.class, "NamedDocument", IS_ABSTRACT,
+				IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				NamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(documentIncludeEClass, DocumentInclude.class, "DocumentInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDocumentInclude_Include(), theDocumentPackage.getLuniferaDocDocument(), null, "include", null, 0, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocumentInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(documentIncludeEClass, DocumentInclude.class, "DocumentInclude", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDocumentInclude_Include(), theDocumentPackage.getLuniferaDocDocument(),
+				null, "include", null, 0, 1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentInclude_VarName(), ecorePackage.getEString(), "varName", null, 1,
+				1, DocumentInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(docTypeEEnum, DocType.class, "DocType");
@@ -288,4 +310,4 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		createResource(eNS_URI);
 	}
 
-} //LuniferaDocPackageImpl
+} // LuniferaDocPackageImpl

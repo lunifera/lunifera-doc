@@ -6,29 +6,29 @@ import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Document Start</b></em>'. <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getContent <em>Content</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getEnd <em>End</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getDocument <em>Document</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getContent <em>Content</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getEnd <em>End</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getDocument <em>Document</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getDocumentStart()
  * @model
  * @generated
  */
 public interface DocumentStart extends LinePart {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Content</b></em>' reference. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content</em>' reference isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Content</em>' reference.
 	 * @see #setContent(ProcessedRichString)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getDocumentStart_Content()
@@ -38,22 +38,24 @@ public interface DocumentStart extends LinePart {
 	ProcessedRichString getContent();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getContent <em>Content</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getContent <em>Content</em>}'
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Content</em>' reference.
 	 * @see #getContent()
 	 * @generated
 	 */
 	void setContent(ProcessedRichString value);
 
 	/**
-	 * Returns the value of the '<em><b>End</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.lunifera.doc.dsl.doccompiler.DocumentEnd#getStart <em>Start</em>}'.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>End</b></em>' reference. It is bidirectional and its opposite is '
+	 * {@link org.lunifera.doc.dsl.doccompiler.DocumentEnd#getStart <em>Start</em>}'. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>End</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>End</em>' reference.
 	 * @see #setEnd(DocumentEnd)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getDocumentStart_End()
@@ -66,20 +68,22 @@ public interface DocumentStart extends LinePart {
 	/**
 	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getEnd <em>End</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>End</em>' reference.
 	 * @see #getEnd()
 	 * @generated
 	 */
 	void setEnd(DocumentEnd value);
 
 	/**
-	 * Returns the value of the '<em><b>Document</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Document</b></em>' reference. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Document</em>' reference isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Document</em>' reference.
 	 * @see #setDocument(NamedDocument)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getDocumentStart_Document()
@@ -89,9 +93,11 @@ public interface DocumentStart extends LinePart {
 	NamedDocument getDocument();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getDocument <em>Document</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Document</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart#getDocument <em>Document</em>}'
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Document</em>' reference.
 	 * @see #getDocument()
 	 * @generated
 	 */

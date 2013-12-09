@@ -29,19 +29,16 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
  * want to implement all methods. It is mandatory to implement {@link #forLoopHasNext()}.
  */
 @NonNullByDefault
-public abstract class AbstractRichStringPartAcceptor implements
-		IRichStringPartAcceptor {
+public abstract class AbstractRichStringPartAcceptor implements IRichStringPartAcceptor {
 
-	public void acceptSemanticText(CharSequence text,
-			@Nullable RichStringLiteral origin) {
+	public void acceptSemanticText(CharSequence text, @Nullable RichStringLiteral origin) {
 	}
 
-	public void acceptTemplateText(CharSequence text,
-			@Nullable RichStringLiteral origin) {
+	public void acceptTemplateText(CharSequence text, @Nullable RichStringLiteral origin) {
 	}
 
-	public void acceptSemanticLineBreak(int charCount,
-			RichStringLiteral origin, boolean controlStructureSeen) {
+	public void acceptSemanticLineBreak(int charCount, RichStringLiteral origin,
+			boolean controlStructureSeen) {
 	}
 
 	public void acceptTemplateLineBreak(int charCount, RichStringLiteral origin) {
@@ -59,16 +56,13 @@ public abstract class AbstractRichStringPartAcceptor implements
 	public void acceptEndIf() {
 	}
 
-	public void acceptForLoop(JvmFormalParameter parameter,
-			XExpression expression) {
+	public void acceptForLoop(JvmFormalParameter parameter, XExpression expression) {
 	}
 
-	public void acceptEndFor(@Nullable XExpression after,
-			CharSequence indentation) {
+	public void acceptEndFor(@Nullable XExpression after, CharSequence indentation) {
 	}
 
-	public void acceptExpression(XExpression expression,
-			CharSequence indentation) {
+	public void acceptExpression(XExpression expression, CharSequence indentation) {
 	}
 
 	public void announceNextLiteral(RichStringLiteral object) {
@@ -97,7 +91,7 @@ public abstract class AbstractRichStringPartAcceptor implements
 	@Override
 	public void acceptURLEnd() {
 	}
-	
+
 	@Override
 	public void acceptBoldStart(RichStringBold object) {
 	}
@@ -146,8 +140,7 @@ public abstract class AbstractRichStringPartAcceptor implements
 		private int forLoopStackPointer = -1;
 
 		@Override
-		public void acceptForLoop(JvmFormalParameter parameter,
-				@Nullable XExpression expression) {
+		public void acceptForLoop(JvmFormalParameter parameter, @Nullable XExpression expression) {
 			forLoopStackPointer++;
 			forLoopStack.set(forLoopStackPointer);
 		}
@@ -162,8 +155,7 @@ public abstract class AbstractRichStringPartAcceptor implements
 		}
 
 		@Override
-		public void acceptEndFor(@Nullable XExpression after,
-				CharSequence indentation) {
+		public void acceptEndFor(@Nullable XExpression after, CharSequence indentation) {
 			forLoopStackPointer--;
 		}
 	}

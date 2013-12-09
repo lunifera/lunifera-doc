@@ -36,8 +36,7 @@ public interface IRichStringPartAcceptor {
 	 * @param origin
 	 *            the value holder for the full text or null, if unknown.
 	 */
-	void acceptSemanticText(CharSequence text,
-			@Nullable RichStringLiteral origin);
+	void acceptSemanticText(CharSequence text, @Nullable RichStringLiteral origin);
 
 	/**
 	 * @param text
@@ -45,8 +44,7 @@ public interface IRichStringPartAcceptor {
 	 * @param origin
 	 *            the value holder for the full text or null, if unknown.
 	 */
-	void acceptTemplateText(CharSequence text,
-			@Nullable RichStringLiteral origin);
+	void acceptTemplateText(CharSequence text, @Nullable RichStringLiteral origin);
 
 	/**
 	 * Indicates a semantic line break in a rich string literal.
@@ -148,8 +146,8 @@ public interface IRichStringPartAcceptor {
 	 *            the additional indentation for any line besides the first one.
 	 * @return <code>true</code> if the for-loop body should be evaluated.
 	 */
-	boolean forLoopHasNext(@Nullable XExpression before,
-			@Nullable XExpression separator, CharSequence indentation);
+	boolean forLoopHasNext(@Nullable XExpression before, @Nullable XExpression separator,
+			CharSequence indentation);
 
 	/**
 	 * Announces that an
@@ -203,15 +201,15 @@ public interface IRichStringPartAcceptor {
 	void acceptURLStart(RichStringURL object);
 
 	void acceptURLEnd();
-	
+
 	void acceptBoldStart(RichStringBold object);
 
 	void acceptBoldEnd();
-	
+
 	void acceptUnderlineStart(RichStringUnderline object);
 
 	void acceptUnderlineEnd();
-	
+
 	void acceptItalicStart(RichStringItalic object);
 
 	void acceptItalicEnd();

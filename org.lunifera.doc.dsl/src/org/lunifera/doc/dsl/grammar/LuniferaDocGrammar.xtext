@@ -253,3 +253,7 @@ terminal fragment IN_RICH_STRING:
 	"''" !('«' | "'")
 	| "'" !('«' | "'")
 	| !('«' | "'");
+	
+terminal ID_WITH_KEYWORD:
+	'b' | ID
+;

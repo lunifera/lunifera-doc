@@ -41,20 +41,21 @@ import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
  * {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
  * returned, which is the result of the switch. <!-- end-user-doc -->
+ * 
  * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage
  * @generated
  */
 public class DocCompilerSwitch<T> extends Switch<T> {
 	/**
-	 * The cached model package
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static DocCompilerPackage modelPackage;
 
 	/**
-	 * Creates an instance of the switch.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocCompilerSwitch() {
@@ -64,8 +65,8 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Checks whether this is a switch for the given package.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -76,216 +77,274 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
+	 * result. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case DocCompilerPackage.DOCUMENT_START: {
-				DocumentStart documentStart = (DocumentStart)theEObject;
-				T result = caseDocumentStart(documentStart);
-				if (result == null) result = caseLinePart(documentStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.DOCUMENT_END: {
-				DocumentEnd documentEnd = (DocumentEnd)theEObject;
-				T result = caseDocumentEnd(documentEnd);
-				if (result == null) result = caseLinePart(documentEnd);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.PROCESSED_RICH_STRING: {
-				ProcessedRichString processedRichString = (ProcessedRichString)theEObject;
-				T result = caseProcessedRichString(processedRichString);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.LINE: {
-				Line line = (Line)theEObject;
-				T result = caseLine(line);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.LINE_PART: {
-				LinePart linePart = (LinePart)theEObject;
-				T result = caseLinePart(linePart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.LITERAL: {
-				Literal literal = (Literal)theEObject;
-				T result = caseLiteral(literal);
-				if (result == null) result = caseLinePart(literal);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.LINE_BREAK: {
-				LineBreak lineBreak = (LineBreak)theEObject;
-				T result = caseLineBreak(lineBreak);
-				if (result == null) result = caseLiteral(lineBreak);
-				if (result == null) result = caseLinePart(lineBreak);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.FOR_LOOP_START: {
-				ForLoopStart forLoopStart = (ForLoopStart)theEObject;
-				T result = caseForLoopStart(forLoopStart);
-				if (result == null) result = caseLinePart(forLoopStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.FOR_LOOP_END: {
-				ForLoopEnd forLoopEnd = (ForLoopEnd)theEObject;
-				T result = caseForLoopEnd(forLoopEnd);
-				if (result == null) result = caseLinePart(forLoopEnd);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.PRINTED_EXPRESSION: {
-				PrintedExpression printedExpression = (PrintedExpression)theEObject;
-				T result = casePrintedExpression(printedExpression);
-				if (result == null) result = caseLinePart(printedExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.IF_CONDITION_START: {
-				IfConditionStart ifConditionStart = (IfConditionStart)theEObject;
-				T result = caseIfConditionStart(ifConditionStart);
-				if (result == null) result = caseLinePart(ifConditionStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.ELSE_IF_CONDITION: {
-				ElseIfCondition elseIfCondition = (ElseIfCondition)theEObject;
-				T result = caseElseIfCondition(elseIfCondition);
-				if (result == null) result = caseLinePart(elseIfCondition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.ELSE_START: {
-				ElseStart elseStart = (ElseStart)theEObject;
-				T result = caseElseStart(elseStart);
-				if (result == null) result = caseLinePart(elseStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.END_IF: {
-				EndIf endIf = (EndIf)theEObject;
-				T result = caseEndIf(endIf);
-				if (result == null) result = caseLinePart(endIf);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.MARKUP: {
-				Markup markup = (Markup)theEObject;
-				T result = caseMarkup(markup);
-				if (result == null) result = caseLinePart(markup);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.H1_START: {
-				H1Start h1Start = (H1Start)theEObject;
-				T result = caseH1Start(h1Start);
-				if (result == null) result = caseLinePart(h1Start);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.H1_END: {
-				H1End h1End = (H1End)theEObject;
-				T result = caseH1End(h1End);
-				if (result == null) result = caseLinePart(h1End);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.H2_START: {
-				H2Start h2Start = (H2Start)theEObject;
-				T result = caseH2Start(h2Start);
-				if (result == null) result = caseLinePart(h2Start);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.H2_END: {
-				H2End h2End = (H2End)theEObject;
-				T result = caseH2End(h2End);
-				if (result == null) result = caseLinePart(h2End);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.EXAMPLE_START: {
-				ExampleStart exampleStart = (ExampleStart)theEObject;
-				T result = caseExampleStart(exampleStart);
-				if (result == null) result = caseLinePart(exampleStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.EXAMPLE_END: {
-				ExampleEnd exampleEnd = (ExampleEnd)theEObject;
-				T result = caseExampleEnd(exampleEnd);
-				if (result == null) result = caseLinePart(exampleEnd);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.URL_START: {
-				URLStart urlStart = (URLStart)theEObject;
-				T result = caseURLStart(urlStart);
-				if (result == null) result = caseLinePart(urlStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.URL_END: {
-				URLEnd urlEnd = (URLEnd)theEObject;
-				T result = caseURLEnd(urlEnd);
-				if (result == null) result = caseLinePart(urlEnd);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.BOLD_START: {
-				BoldStart boldStart = (BoldStart)theEObject;
-				T result = caseBoldStart(boldStart);
-				if (result == null) result = caseLinePart(boldStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.UNDERLINE_START: {
-				UnderlineStart underlineStart = (UnderlineStart)theEObject;
-				T result = caseUnderlineStart(underlineStart);
-				if (result == null) result = caseLinePart(underlineStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.ITALIC_START: {
-				ItalicStart italicStart = (ItalicStart)theEObject;
-				T result = caseItalicStart(italicStart);
-				if (result == null) result = caseLinePart(italicStart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.BOLD_END: {
-				BoldEnd boldEnd = (BoldEnd)theEObject;
-				T result = caseBoldEnd(boldEnd);
-				if (result == null) result = caseLinePart(boldEnd);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.UNDERLINE_END: {
-				UnderlineEnd underlineEnd = (UnderlineEnd)theEObject;
-				T result = caseUnderlineEnd(underlineEnd);
-				if (result == null) result = caseLinePart(underlineEnd);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DocCompilerPackage.ITALIC_END: {
-				ItalicEnd italicEnd = (ItalicEnd)theEObject;
-				T result = caseItalicEnd(italicEnd);
-				if (result == null) result = caseLinePart(italicEnd);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case DocCompilerPackage.DOCUMENT_START: {
+			DocumentStart documentStart = (DocumentStart) theEObject;
+			T result = caseDocumentStart(documentStart);
+			if (result == null)
+				result = caseLinePart(documentStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.DOCUMENT_END: {
+			DocumentEnd documentEnd = (DocumentEnd) theEObject;
+			T result = caseDocumentEnd(documentEnd);
+			if (result == null)
+				result = caseLinePart(documentEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.PROCESSED_RICH_STRING: {
+			ProcessedRichString processedRichString = (ProcessedRichString) theEObject;
+			T result = caseProcessedRichString(processedRichString);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LINE: {
+			Line line = (Line) theEObject;
+			T result = caseLine(line);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LINE_PART: {
+			LinePart linePart = (LinePart) theEObject;
+			T result = caseLinePart(linePart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LITERAL: {
+			Literal literal = (Literal) theEObject;
+			T result = caseLiteral(literal);
+			if (result == null)
+				result = caseLinePart(literal);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LINE_BREAK: {
+			LineBreak lineBreak = (LineBreak) theEObject;
+			T result = caseLineBreak(lineBreak);
+			if (result == null)
+				result = caseLiteral(lineBreak);
+			if (result == null)
+				result = caseLinePart(lineBreak);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.FOR_LOOP_START: {
+			ForLoopStart forLoopStart = (ForLoopStart) theEObject;
+			T result = caseForLoopStart(forLoopStart);
+			if (result == null)
+				result = caseLinePart(forLoopStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.FOR_LOOP_END: {
+			ForLoopEnd forLoopEnd = (ForLoopEnd) theEObject;
+			T result = caseForLoopEnd(forLoopEnd);
+			if (result == null)
+				result = caseLinePart(forLoopEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.PRINTED_EXPRESSION: {
+			PrintedExpression printedExpression = (PrintedExpression) theEObject;
+			T result = casePrintedExpression(printedExpression);
+			if (result == null)
+				result = caseLinePart(printedExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.IF_CONDITION_START: {
+			IfConditionStart ifConditionStart = (IfConditionStart) theEObject;
+			T result = caseIfConditionStart(ifConditionStart);
+			if (result == null)
+				result = caseLinePart(ifConditionStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ELSE_IF_CONDITION: {
+			ElseIfCondition elseIfCondition = (ElseIfCondition) theEObject;
+			T result = caseElseIfCondition(elseIfCondition);
+			if (result == null)
+				result = caseLinePart(elseIfCondition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ELSE_START: {
+			ElseStart elseStart = (ElseStart) theEObject;
+			T result = caseElseStart(elseStart);
+			if (result == null)
+				result = caseLinePart(elseStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.END_IF: {
+			EndIf endIf = (EndIf) theEObject;
+			T result = caseEndIf(endIf);
+			if (result == null)
+				result = caseLinePart(endIf);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.MARKUP: {
+			Markup markup = (Markup) theEObject;
+			T result = caseMarkup(markup);
+			if (result == null)
+				result = caseLinePart(markup);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H1_START: {
+			H1Start h1Start = (H1Start) theEObject;
+			T result = caseH1Start(h1Start);
+			if (result == null)
+				result = caseLinePart(h1Start);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H1_END: {
+			H1End h1End = (H1End) theEObject;
+			T result = caseH1End(h1End);
+			if (result == null)
+				result = caseLinePart(h1End);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H2_START: {
+			H2Start h2Start = (H2Start) theEObject;
+			T result = caseH2Start(h2Start);
+			if (result == null)
+				result = caseLinePart(h2Start);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H2_END: {
+			H2End h2End = (H2End) theEObject;
+			T result = caseH2End(h2End);
+			if (result == null)
+				result = caseLinePart(h2End);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.EXAMPLE_START: {
+			ExampleStart exampleStart = (ExampleStart) theEObject;
+			T result = caseExampleStart(exampleStart);
+			if (result == null)
+				result = caseLinePart(exampleStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.EXAMPLE_END: {
+			ExampleEnd exampleEnd = (ExampleEnd) theEObject;
+			T result = caseExampleEnd(exampleEnd);
+			if (result == null)
+				result = caseLinePart(exampleEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.URL_START: {
+			URLStart urlStart = (URLStart) theEObject;
+			T result = caseURLStart(urlStart);
+			if (result == null)
+				result = caseLinePart(urlStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.URL_END: {
+			URLEnd urlEnd = (URLEnd) theEObject;
+			T result = caseURLEnd(urlEnd);
+			if (result == null)
+				result = caseLinePart(urlEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.BOLD_START: {
+			BoldStart boldStart = (BoldStart) theEObject;
+			T result = caseBoldStart(boldStart);
+			if (result == null)
+				result = caseLinePart(boldStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.UNDERLINE_START: {
+			UnderlineStart underlineStart = (UnderlineStart) theEObject;
+			T result = caseUnderlineStart(underlineStart);
+			if (result == null)
+				result = caseLinePart(underlineStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ITALIC_START: {
+			ItalicStart italicStart = (ItalicStart) theEObject;
+			T result = caseItalicStart(italicStart);
+			if (result == null)
+				result = caseLinePart(italicStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.BOLD_END: {
+			BoldEnd boldEnd = (BoldEnd) theEObject;
+			T result = caseBoldEnd(boldEnd);
+			if (result == null)
+				result = caseLinePart(boldEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.UNDERLINE_END: {
+			UnderlineEnd underlineEnd = (UnderlineEnd) theEObject;
+			T result = caseUnderlineEnd(underlineEnd);
+			if (result == null)
+				result = caseLinePart(underlineEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ITALIC_END: {
+			ItalicEnd italicEnd = (ItalicEnd) theEObject;
+			T result = caseItalicEnd(italicEnd);
+			if (result == null)
+				result = caseLinePart(italicEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -305,10 +364,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Document End</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Document End</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Document End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -333,10 +393,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Line</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>Line</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Line</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -346,10 +407,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Line Part</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Line Part</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Line Part</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -359,10 +421,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>Literal</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -372,10 +435,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Line Break</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Line Break</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Line Break</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -400,10 +464,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>For Loop End</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>For Loop End</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>For Loop End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -458,10 +523,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Else Start</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Else Start</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Else Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -471,10 +537,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>End If</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>End If</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>End If</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -484,10 +551,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Markup</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>Markup</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Markup</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -497,10 +565,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>H1 Start</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>H1 Start</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>H1 Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -510,10 +579,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>H1 End</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>H1 End</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>H1 End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -523,10 +593,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>H2 Start</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>H2 Start</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>H2 Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -536,10 +607,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>H2 End</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>H2 End</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>H2 End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -549,10 +621,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Example Start</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Example Start</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Example Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -562,10 +635,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Example End</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Example End</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Example End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -575,10 +649,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>URL Start</em>'.
-	 * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>URL Start</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>URL Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -588,10 +663,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>URL End</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>URL End</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>URL End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -601,12 +677,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bold Start</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * Returns the result of interpreting the object as an instance of '<em>Bold Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Bold Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -616,12 +691,12 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Underline Start</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * Returns the result of interpreting the object as an instance of '<em>Underline Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Underline Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -631,12 +706,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Italic Start</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * Returns the result of interpreting the object as an instance of '<em>Italic Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Italic Start</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -646,12 +720,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bold End</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * Returns the result of interpreting the object as an instance of '<em>Bold End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Bold End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -661,12 +734,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Underline End</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * Returns the result of interpreting the object as an instance of '<em>Underline End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Underline End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -676,12 +748,11 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Italic End</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * Returns the result of interpreting the object as an instance of '<em>Italic End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Italic End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -691,11 +762,12 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
-	 * <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch, but this is the last case
 	 * anyway. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated

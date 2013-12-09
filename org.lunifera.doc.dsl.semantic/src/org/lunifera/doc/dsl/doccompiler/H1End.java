@@ -4,28 +4,28 @@ package org.lunifera.doc.dsl.doccompiler;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>H1 End</b></em>'. <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.H1End#getStart <em>Start</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.H1End#getStart <em>Start</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getH1End()
  * @model
  * @generated
  */
 public interface H1End extends LinePart {
 	/**
-	 * Returns the value of the '<em><b>Start</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.lunifera.doc.dsl.doccompiler.H1Start#getEnd <em>End</em>}'.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Start</b></em>' reference. It is bidirectional and its opposite is '
+	 * {@link org.lunifera.doc.dsl.doccompiler.H1Start#getEnd <em>End</em>}'. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Start</em>' reference isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Start</em>' reference.
 	 * @see #setStart(H1Start)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getH1End_Start()

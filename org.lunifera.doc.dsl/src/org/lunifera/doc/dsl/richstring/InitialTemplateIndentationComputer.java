@@ -55,7 +55,8 @@ public class InitialTemplateIndentationComputer extends RichstringSwitch<String>
 						next = (RichStringLiteral) elements.get(nextIndex);
 						run.append(next.getValue());
 						nextIndex++;
-					} while (nextIndex < elements.size() && elements.get(nextIndex) instanceof RichStringLiteral);
+					} while (nextIndex < elements.size()
+							&& elements.get(nextIndex) instanceof RichStringLiteral);
 					elementResult = getLeadingWhitespace(run.toString(), next);
 				}
 			}

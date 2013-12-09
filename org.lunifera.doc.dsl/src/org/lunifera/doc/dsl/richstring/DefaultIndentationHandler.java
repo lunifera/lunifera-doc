@@ -84,7 +84,8 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 		} else {
 			String currentIndentation = getTotalIndentation();
 			if (indentation.toString().startsWith(currentIndentation)) {
-				String trimmedIndentation = indentation.toString().substring(currentIndentation.length());
+				String trimmedIndentation = indentation.toString().substring(
+						currentIndentation.length());
 				indentationData.add(new TemplateIndentationData(trimmedIndentation));
 			} else {
 				LinkedList<IndentationData> newIndentationData = Lists.newLinkedList();
@@ -101,7 +102,8 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 		} else {
 			String currentIndentation = getTotalIndentation();
 			if (indentation.toString().startsWith(currentIndentation)) {
-				String trimmedIndentation = indentation.toString().substring(currentIndentation.length());
+				String trimmedIndentation = indentation.toString().substring(
+						currentIndentation.length());
 				indentationData.add(new SemanticIndentationData(trimmedIndentation));
 			} else {
 				LinkedList<IndentationData> newIndentationData = Lists.newLinkedList();

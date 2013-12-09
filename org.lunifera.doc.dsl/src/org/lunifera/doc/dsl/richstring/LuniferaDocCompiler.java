@@ -64,8 +64,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 	}
 
 	@SuppressWarnings("restriction")
-	public class RichStringPrepareCompiler extends
-			AbstractRichStringPartAcceptor.ForLoopOnce {
+	public class RichStringPrepareCompiler extends AbstractRichStringPartAcceptor.ForLoopOnce {
 
 		private final LinkedList<ITreeAppendable> appendableStack;
 		private final LinkedList<RichStringIf> ifStack;
@@ -74,22 +73,21 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		private ITreeAppendable appendable;
 		private ITreeAppendable currentAppendable;
 
-		public RichStringPrepareCompiler(ITreeAppendable appendable,
-				String variableName, RichString richString) {
+		public RichStringPrepareCompiler(ITreeAppendable appendable, String variableName,
+				RichString richString) {
 			this.ifStack = Lists.newLinkedList();
 			this.forStack = Lists.newLinkedList();
 			this.appendableStack = Lists.newLinkedList();
 			this.appendable = appendable;
 			this.variableName = variableName;
 			List<XExpression> expressions = richString.getExpressions();
-			if (!expressions.isEmpty()
-					&& expressions.get(0) instanceof RichStringLiteral)
+			if (!expressions.isEmpty() && expressions.get(0) instanceof RichStringLiteral)
 				setCurrentAppendable((RichStringLiteral) expressions.get(0));
 		}
 
 		@Override
-		public void acceptSemanticLineBreak(int charCount,
-				RichStringLiteral origin, boolean controlStructureSeen) {
+		public void acceptSemanticLineBreak(int charCount, RichStringLiteral origin,
+				boolean controlStructureSeen) {
 			setCurrentAppendable(origin);
 			currentAppendable.newLine();
 			currentAppendable.append(variableName);
@@ -105,28 +103,24 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 				ITextRegionWithLineInformation region = (ITextRegionWithLineInformation) getLocationInFileProvider()
 						.getSignificantTextRegion(origin,
 								XbasePackage.Literals.XSTRING_LITERAL__VALUE, 0);
-				currentAppendable = appendable.trace(new LocationData(region,
-						null), true);
+				currentAppendable = appendable.trace(new LocationData(region, null), true);
 			}
 		}
 
 		@Override
-		public void acceptTemplateLineBreak(int charCount,
-				RichStringLiteral origin) {
+		public void acceptTemplateLineBreak(int charCount, RichStringLiteral origin) {
 			setCurrentAppendable(origin);
 		}
 
 		@Override
-		public void acceptSemanticText(CharSequence text,
-				@Nullable RichStringLiteral origin) {
+		public void acceptSemanticText(CharSequence text, @Nullable RichStringLiteral origin) {
 			setCurrentAppendable(origin);
 			if (text.length() == 0)
 				return;
 			currentAppendable.newLine();
 			currentAppendable.append(variableName);
 			currentAppendable.append(".append(\"");
-			currentAppendable.append(Strings.convertToJavaString(text
-					.toString()));
+			currentAppendable.append(Strings.convertToJavaString(text.toString()));
 			currentAppendable.append("\");");
 		}
 
@@ -226,7 +220,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			append("</a>");
 			popAppendable();
 		}
-		
+
 		@Override
 		public void acceptBoldStart(RichStringBold object) {
 			currentAppendable = null;
@@ -292,8 +286,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		protected void writeIf(XExpression condition) {
-			ITreeAppendable debugAppendable = appendable.trace(
-					condition.eContainer(), true);
+			ITreeAppendable debugAppendable = appendable.trace(condition.eContainer(), true);
 			internalToJavaStatement(condition, debugAppendable, true);
 			debugAppendable.newLine();
 			debugAppendable.append("if (");
@@ -338,14 +331,12 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		@Override
-		public void acceptForLoop(JvmFormalParameter parameter,
-				@Nullable XExpression expression) {
+		public void acceptForLoop(JvmFormalParameter parameter, @Nullable XExpression expression) {
 			currentAppendable = null;
 			super.acceptForLoop(parameter, expression);
 			if (expression == null)
 				throw new IllegalArgumentException("expression may not be null");
-			RichStringForLoop forLoop = (RichStringForLoop) expression
-					.eContainer();
+			RichStringForLoop forLoop = (RichStringForLoop) expression.eContainer();
 			forStack.add(forLoop);
 			appendable.newLine();
 			pushAppendable(forLoop);
@@ -356,8 +347,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			String variableName = null;
 			if (forLoop.getBefore() != null || forLoop.getSeparator() != null
 					|| forLoop.getAfter() != null) {
-				variableName = debugAppendable.declareSyntheticVariable(
-						forLoop, "_hasElements");
+				variableName = debugAppendable.declareSyntheticVariable(forLoop, "_hasElements");
 				debugAppendable.newLine();
 				debugAppendable.append("boolean ");
 				debugAppendable.append(variableName);
@@ -365,12 +355,11 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			}
 			debugAppendable.newLine();
 			debugAppendable.append("for(final ");
-			LightweightTypeReference paramType = getTypeResolver()
-					.resolveTypes(parameter).getActualType(parameter);
+			LightweightTypeReference paramType = getTypeResolver().resolveTypes(parameter)
+					.getActualType(parameter);
 			debugAppendable.append(paramType);
 			debugAppendable.append(" ");
-			String loopParam = debugAppendable.declareVariable(parameter,
-					parameter.getName());
+			String loopParam = debugAppendable.declareVariable(parameter, parameter.getName());
 			debugAppendable.append(loopParam);
 			debugAppendable.append(" : ");
 			internalToJavaExpression(expression, debugAppendable);
@@ -413,8 +402,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		@Override
-		public void acceptEndFor(@Nullable XExpression after,
-				CharSequence indentation) {
+		public void acceptEndFor(@Nullable XExpression after, CharSequence indentation) {
 			currentAppendable = null;
 			super.acceptEndFor(after, indentation);
 			appendable.decreaseIndentation();
@@ -442,19 +430,17 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		@Override
-		public void acceptExpression(XExpression expression,
-				CharSequence indentation) {
+		public void acceptExpression(XExpression expression, CharSequence indentation) {
 			currentAppendable = null;
 			writeExpression(expression, indentation, false);
 		}
 
-		protected void writeExpression(XExpression expression,
-				CharSequence indentation, boolean immediate) {
+		protected void writeExpression(XExpression expression, CharSequence indentation,
+				boolean immediate) {
 			boolean referenced = !isPrimitiveVoid(expression);
 			internalToJavaStatement(expression, appendable, referenced);
 			if (referenced) {
-				ITreeAppendable tracingAppendable = appendable.trace(
-						expression, true);
+				ITreeAppendable tracingAppendable = appendable.trace(expression, true);
 				tracingAppendable.newLine();
 				tracingAppendable.append(variableName);
 				if (immediate)
@@ -478,22 +464,20 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 	}
 
 	@Override
-	public void doInternalToJavaStatement(XExpression obj,
-			ITreeAppendable appendable, boolean isReferenced) {
+	public void doInternalToJavaStatement(XExpression obj, ITreeAppendable appendable,
+			boolean isReferenced) {
 		if (obj instanceof RichString)
 			_toJavaStatement((RichString) obj, appendable, isReferenced);
 		else
 			super.doInternalToJavaStatement(obj, appendable, isReferenced);
 	}
 
-	public void _toJavaStatement(RichString richString, ITreeAppendable b,
-			boolean isReferenced) {
+	public void _toJavaStatement(RichString richString, ITreeAppendable b, boolean isReferenced) {
 		b = b.trace(richString);
 		// declare variable
-		JvmTypeReference type = getTypeReferences().getTypeForName(
-				StringConcatenation.class, richString);
-		String variableName = b
-				.declareSyntheticVariable(richString, "_builder");
+		JvmTypeReference type = getTypeReferences().getTypeForName(StringConcatenation.class,
+				richString);
+		String variableName = b.declareSyntheticVariable(richString, "_builder");
 		b.newLine();
 		serialize(type, richString, b);
 		b.append(" ");
@@ -501,15 +485,13 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		b.append(" = new ");
 		serialize(type, richString, b);
 		b.append("();");
-		RichStringPrepareCompiler compiler = new RichStringPrepareCompiler(b,
-				variableName, richString);
-		richStringProcessor.process(richString, compiler,
-				indentationHandler.get());
+		RichStringPrepareCompiler compiler = new RichStringPrepareCompiler(b, variableName,
+				richString);
+		richStringProcessor.process(richString, compiler, indentationHandler.get());
 	}
 
 	@Override
-	public void internalToConvertedExpression(XExpression obj,
-			ITreeAppendable appendable) {
+	public void internalToConvertedExpression(XExpression obj, ITreeAppendable appendable) {
 		if (obj instanceof RichString)
 			_toJavaExpression((RichString) obj, appendable);
 		else
@@ -518,8 +500,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 	public void _toJavaExpression(RichString richString, ITreeAppendable b) {
 		b.append(getVarName(richString, b));
-		if (getTypeReferences().is(typeProvider.getType(richString),
-				String.class))
+		if (getTypeReferences().is(typeProvider.getType(richString), String.class))
 			b.append(".toString()");
 	}
 

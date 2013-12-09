@@ -18,15 +18,16 @@ import org.lunifera.doc.dsl.doccompiler.LinePart;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.doccompiler.impl.LinePartImpl#getLine <em>Line</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.LinePartImpl#getLine <em>Line</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class LinePartImpl extends MinimalEObjectImpl.Container implements LinePart {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LinePartImpl() {
@@ -35,6 +36,7 @@ public class LinePartImpl extends MinimalEObjectImpl.Container implements LinePa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -44,133 +46,152 @@ public class LinePartImpl extends MinimalEObjectImpl.Container implements LinePa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Line getLine() {
-		if (eContainerFeatureID() != DocCompilerPackage.LINE_PART__LINE) return null;
-		return (Line)eInternalContainer();
+		if (eContainerFeatureID() != DocCompilerPackage.LINE_PART__LINE)
+			return null;
+		return (Line) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetLine(Line newLine, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newLine, DocCompilerPackage.LINE_PART__LINE, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newLine, DocCompilerPackage.LINE_PART__LINE,
+				msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLine(Line newLine) {
-		if (newLine != eInternalContainer() || (eContainerFeatureID() != DocCompilerPackage.LINE_PART__LINE && newLine != null)) {
+		if (newLine != eInternalContainer()
+				|| (eContainerFeatureID() != DocCompilerPackage.LINE_PART__LINE && newLine != null)) {
 			if (EcoreUtil.isAncestor(this, newLine))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for "
+						+ toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newLine != null)
-				msgs = ((InternalEObject)newLine).eInverseAdd(this, DocCompilerPackage.LINE__PARTS, Line.class, msgs);
+				msgs = ((InternalEObject) newLine).eInverseAdd(this,
+						DocCompilerPackage.LINE__PARTS, Line.class, msgs);
 			msgs = basicSetLine(newLine, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.LINE_PART__LINE, newLine, newLine));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DocCompilerPackage.LINE_PART__LINE, newLine, newLine));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID,
+			NotificationChain msgs) {
 		switch (featureID) {
-			case DocCompilerPackage.LINE_PART__LINE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetLine((Line)otherEnd, msgs);
+		case DocCompilerPackage.LINE_PART__LINE:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetLine((Line) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
+			NotificationChain msgs) {
 		switch (featureID) {
-			case DocCompilerPackage.LINE_PART__LINE:
-				return basicSetLine(null, msgs);
+		case DocCompilerPackage.LINE_PART__LINE:
+			return basicSetLine(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case DocCompilerPackage.LINE_PART__LINE:
-				return eInternalContainer().eInverseRemove(this, DocCompilerPackage.LINE__PARTS, Line.class, msgs);
+		case DocCompilerPackage.LINE_PART__LINE:
+			return eInternalContainer().eInverseRemove(this, DocCompilerPackage.LINE__PARTS,
+					Line.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocCompilerPackage.LINE_PART__LINE:
-				return getLine();
+		case DocCompilerPackage.LINE_PART__LINE:
+			return getLine();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocCompilerPackage.LINE_PART__LINE:
-				setLine((Line)newValue);
-				return;
+		case DocCompilerPackage.LINE_PART__LINE:
+			setLine((Line) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocCompilerPackage.LINE_PART__LINE:
-				setLine((Line)null);
-				return;
+		case DocCompilerPackage.LINE_PART__LINE:
+			setLine((Line) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocCompilerPackage.LINE_PART__LINE:
-				return getLine() != null;
+		case DocCompilerPackage.LINE_PART__LINE:
+			return getLine() != null;
 		}
 		return super.eIsSet(featureID);
 	}

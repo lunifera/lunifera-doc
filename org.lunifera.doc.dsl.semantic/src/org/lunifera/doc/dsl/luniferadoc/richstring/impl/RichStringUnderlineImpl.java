@@ -7,18 +7,17 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rich String Underline</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Rich String Underline</b></em>'. <!--
+ * end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
 public class RichStringUnderlineImpl extends RichStringMarkupImpl implements RichStringUnderline {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RichStringUnderlineImpl() {
@@ -26,8 +25,8 @@ public class RichStringUnderlineImpl extends RichStringMarkupImpl implements Ric
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -35,4 +34,4 @@ public class RichStringUnderlineImpl extends RichStringMarkupImpl implements Ric
 		return RichstringPackage.Literals.RICH_STRING_UNDERLINE;
 	}
 
-} //RichStringUnderlineImpl
+} // RichStringUnderlineImpl

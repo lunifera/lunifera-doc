@@ -13,23 +13,22 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rich String Markup</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Rich String Markup</b></em>'. <!-- end-user-doc
+ * -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl#getExpression <em>Expression</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class RichStringMarkupImpl extends XExpressionImpl implements RichStringMarkup {
 	/**
-	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -37,8 +36,8 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	protected XExpression expression;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RichStringMarkupImpl() {
@@ -46,8 +45,8 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -56,8 +55,8 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public XExpression getExpression() {
@@ -65,109 +64,117 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetExpression(XExpression newExpression, NotificationChain msgs) {
 		XExpression oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, oldExpression, newExpression);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, oldExpression, newExpression);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setExpression(XExpression newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
 			if (expression != null)
-				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, null, msgs);
 			if (newExpression != null)
-				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, null, msgs);
 			msgs = basicSetExpression(newExpression, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, newExpression, newExpression));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					RichstringPackage.RICH_STRING_MARKUP__EXPRESSION, newExpression, newExpression));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
+			NotificationChain msgs) {
 		switch (featureID) {
-			case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
-				return basicSetExpression(null, msgs);
+		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
+			return basicSetExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
-				return getExpression();
+		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
+			return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
-				setExpression((XExpression)newValue);
-				return;
+		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
+			setExpression((XExpression) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
-				setExpression((XExpression)null);
-				return;
+		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
+			setExpression((XExpression) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
-				return expression != null;
+		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
+			return expression != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RichStringMarkupImpl
+} // RichStringMarkupImpl

@@ -22,13 +22,13 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
  */
 public interface ElseIfCondition extends LinePart {
 	/**
-	 * Returns the value of the '<em><b>Rich String Else If</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Rich String Else If</b></em>' reference. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rich String Else If</em>' reference isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Rich String Else If</em>' reference.
 	 * @see #setRichStringElseIf(RichStringElseIf)
 	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getElseIfCondition_RichStringElseIf()
@@ -38,9 +38,11 @@ public interface ElseIfCondition extends LinePart {
 	RichStringElseIf getRichStringElseIf();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.ElseIfCondition#getRichStringElseIf <em>Rich String Else If</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rich String Else If</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.ElseIfCondition#getRichStringElseIf
+	 * <em>Rich String Else If</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Rich String Else If</em>' reference.
 	 * @see #getRichStringElseIf()
 	 * @generated
 	 */
@@ -66,9 +68,11 @@ public interface ElseIfCondition extends LinePart {
 	IfConditionStart getIfConditionStart();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.ElseIfCondition#getIfConditionStart <em>If Condition Start</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>If Condition Start</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.ElseIfCondition#getIfConditionStart
+	 * <em>If Condition Start</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>If Condition Start</em>' reference.
 	 * @see #getIfConditionStart()
 	 * @generated
 	 */

@@ -26,8 +26,8 @@ public class LuniferaDocGrammarStandaloneSetup extends LuniferaDocGrammarStandal
 	@Override
 	public void register(Injector injector) {
 		if (!EPackage.Registry.INSTANCE.containsKey(LuniferaDocPackage.eNS_URI)) {
-			EPackage.Registry.INSTANCE.put(LuniferaDocPackage.eNS_URI,
-					LuniferaDocPackage.eINSTANCE);
+			EPackage.Registry.INSTANCE
+					.put(LuniferaDocPackage.eNS_URI, LuniferaDocPackage.eINSTANCE);
 		}
 		super.register(injector);
 	}

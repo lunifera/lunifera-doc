@@ -64,55 +64,43 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 		List<XExpression> expressions = object.getExpressions();
 		if (!expressions.isEmpty()) {
 			for (XExpression expression : expressions) {
-				ITypeComputationState expressionState = state
-						.withoutExpectation();
+				ITypeComputationState expressionState = state.withoutExpectation();
 				expressionState.computeTypes(expression);
 				if (expression instanceof XVariableDeclaration) {
-					addLocalToCurrentScope((XVariableDeclaration) expression,
-							state);
+					addLocalToCurrentScope((XVariableDeclaration) expression, state);
 				}
 			}
 		}
 		for (ITypeExpectation expectation : state.getExpectations()) {
-			LightweightTypeReference expectedType = expectation
-					.getExpectedType();
-			if (expectedType != null
-					&& expectedType.isType(StringConcatenation.class)) {
-				expectation.acceptActualType(expectedType,
-						ConformanceHint.SUCCESS, ConformanceHint.CHECKED,
-						ConformanceHint.DEMAND_CONVERSION);
-			} else if (expectedType != null
-					&& expectedType.isType(String.class)) {
-				expectation.acceptActualType(expectedType,
-						ConformanceHint.SUCCESS, ConformanceHint.CHECKED,
-						ConformanceHint.DEMAND_CONVERSION);
+			LightweightTypeReference expectedType = expectation.getExpectedType();
+			if (expectedType != null && expectedType.isType(StringConcatenation.class)) {
+				expectation.acceptActualType(expectedType, ConformanceHint.SUCCESS,
+						ConformanceHint.CHECKED, ConformanceHint.DEMAND_CONVERSION);
+			} else if (expectedType != null && expectedType.isType(String.class)) {
+				expectation.acceptActualType(expectedType, ConformanceHint.SUCCESS,
+						ConformanceHint.CHECKED, ConformanceHint.DEMAND_CONVERSION);
 				// TODO this special treatment here should become obsolete as
 				// soon as the expectations are properly propagated
 			} else if (!(object.eContainer() instanceof XCastedExpression)
 					&& object.eContainingFeature() != XbasePackage.Literals.XMEMBER_FEATURE_CALL__MEMBER_CALL_TARGET
 					&& (expectedType != null && !expectedType.isResolved() || expectedType == null
 							&& !expectation.isVoidTypeAllowed())) {
-				LightweightTypeReference type = getTypeForName(String.class,
-						state);
+				LightweightTypeReference type = getTypeForName(String.class, state);
 				expectation.acceptActualType(type, ConformanceHint.UNCHECKED,
 						ConformanceHint.DEMAND_CONVERSION);
 			} else {
-				LightweightTypeReference type = getTypeForName(
-						CharSequence.class, state);
+				LightweightTypeReference type = getTypeForName(CharSequence.class, state);
 				expectation.acceptActualType(type, ConformanceHint.UNCHECKED);
 			}
 		}
 	}
 
-	protected void _computeTypes(RichStringForLoop object,
-			ITypeComputationState state) {
-		LightweightTypeReference charSequence = getTypeForName(
-				CharSequence.class, state);
+	protected void _computeTypes(RichStringForLoop object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
 		ITypeComputationState eachState = state.withExpectation(charSequence);
 		JvmFormalParameter parameter = object.getDeclaredParam();
 		if (parameter != null) {
-			LightweightTypeReference parameterType = computeForLoopParameterType(
-					object, state);
+			LightweightTypeReference parameterType = computeForLoopParameterType(object, state);
 			eachState = eachState.assignType(parameter, parameterType);
 		}
 		eachState.computeTypes(object.getEachExpression());
@@ -127,15 +115,11 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 		state.acceptActualType(charSequence);
 	}
 
-	protected void _computeTypes(RichStringIf object,
-			ITypeComputationState state) {
-		LightweightTypeReference charSequence = getTypeForName(
-				CharSequence.class, state);
-		LightweightTypeReference booleanType = getTypeForName(Boolean.TYPE,
-				state);
+	protected void _computeTypes(RichStringIf object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
+		LightweightTypeReference booleanType = getTypeForName(Boolean.TYPE, state);
 
-		ITypeComputationState conditionExpectation = state
-				.withExpectation(booleanType);
+		ITypeComputationState conditionExpectation = state.withExpectation(booleanType);
 		conditionExpectation.computeTypes(object.getIf());
 		// TODO instanceof may specialize the types in the nested expression
 		state.withExpectation(charSequence).computeTypes(object.getThen());
@@ -147,30 +131,22 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 		state.acceptActualType(charSequence);
 	}
 
-	protected void _computeTypes(RichStringLiteral object,
-			ITypeComputationState state) {
-		LightweightTypeReference type = getTypeForName(CharSequence.class,
-				state);
+	protected void _computeTypes(RichStringLiteral object, ITypeComputationState state) {
+		LightweightTypeReference type = getTypeForName(CharSequence.class, state);
 		state.acceptActualType(type);
 	}
 
-	protected void _computeTypes(RichStringMarkup object,
-			ITypeComputationState state) {
-		LightweightTypeReference charSequence = getTypeForName(
-				CharSequence.class, state);
+	protected void _computeTypes(RichStringMarkup object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
 
-		state.withExpectation(charSequence)
-				.computeTypes(object.getExpression());
+		state.withExpectation(charSequence).computeTypes(object.getExpression());
 		state.acceptActualType(charSequence);
 	}
 
-	protected void _computeTypes(RichStringURL object,
-			ITypeComputationState state) {
-		LightweightTypeReference charSequence = getTypeForName(
-				CharSequence.class, state);
+	protected void _computeTypes(RichStringURL object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
 
-		state.withExpectation(charSequence)
-				.computeTypes(object.getText());
+		state.withExpectation(charSequence).computeTypes(object.getText());
 		state.acceptActualType(charSequence);
 	}
 }

@@ -50,6 +50,7 @@ public class ElseIfConditionImpl extends LinePartImpl implements ElseIfCondition
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ElseIfConditionImpl() {
@@ -58,6 +59,7 @@ public class ElseIfConditionImpl extends LinePartImpl implements ElseIfCondition
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -67,15 +69,18 @@ public class ElseIfConditionImpl extends LinePartImpl implements ElseIfCondition
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RichStringElseIf getRichStringElseIf() {
 		if (richStringElseIf != null && richStringElseIf.eIsProxy()) {
-			InternalEObject oldRichStringElseIf = (InternalEObject)richStringElseIf;
-			richStringElseIf = (RichStringElseIf)eResolveProxy(oldRichStringElseIf);
+			InternalEObject oldRichStringElseIf = (InternalEObject) richStringElseIf;
+			richStringElseIf = (RichStringElseIf) eResolveProxy(oldRichStringElseIf);
 			if (richStringElseIf != oldRichStringElseIf) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF, oldRichStringElseIf, richStringElseIf));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF,
+							oldRichStringElseIf, richStringElseIf));
 			}
 		}
 		return richStringElseIf;
@@ -83,6 +88,7 @@ public class ElseIfConditionImpl extends LinePartImpl implements ElseIfCondition
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RichStringElseIf basicGetRichStringElseIf() {
@@ -91,26 +97,32 @@ public class ElseIfConditionImpl extends LinePartImpl implements ElseIfCondition
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRichStringElseIf(RichStringElseIf newRichStringElseIf) {
 		RichStringElseIf oldRichStringElseIf = richStringElseIf;
 		richStringElseIf = newRichStringElseIf;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF, oldRichStringElseIf, richStringElseIf));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF, oldRichStringElseIf,
+					richStringElseIf));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IfConditionStart getIfConditionStart() {
 		if (ifConditionStart != null && ifConditionStart.eIsProxy()) {
-			InternalEObject oldIfConditionStart = (InternalEObject)ifConditionStart;
-			ifConditionStart = (IfConditionStart)eResolveProxy(oldIfConditionStart);
+			InternalEObject oldIfConditionStart = (InternalEObject) ifConditionStart;
+			ifConditionStart = (IfConditionStart) eResolveProxy(oldIfConditionStart);
 			if (ifConditionStart != oldIfConditionStart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START, oldIfConditionStart, ifConditionStart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START,
+							oldIfConditionStart, ifConditionStart));
 			}
 		}
 		return ifConditionStart;
@@ -118,6 +130,7 @@ public class ElseIfConditionImpl extends LinePartImpl implements ElseIfCondition
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IfConditionStart basicGetIfConditionStart() {
@@ -126,126 +139,152 @@ public class ElseIfConditionImpl extends LinePartImpl implements ElseIfCondition
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetIfConditionStart(IfConditionStart newIfConditionStart, NotificationChain msgs) {
+	public NotificationChain basicSetIfConditionStart(IfConditionStart newIfConditionStart,
+			NotificationChain msgs) {
 		IfConditionStart oldIfConditionStart = ifConditionStart;
 		ifConditionStart = newIfConditionStart;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START, oldIfConditionStart, newIfConditionStart);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START, oldIfConditionStart,
+					newIfConditionStart);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIfConditionStart(IfConditionStart newIfConditionStart) {
 		if (newIfConditionStart != ifConditionStart) {
 			NotificationChain msgs = null;
 			if (ifConditionStart != null)
-				msgs = ((InternalEObject)ifConditionStart).eInverseRemove(this, DocCompilerPackage.IF_CONDITION_START__ELSE_IF_CONDITIONS, IfConditionStart.class, msgs);
+				msgs = ((InternalEObject) ifConditionStart).eInverseRemove(this,
+						DocCompilerPackage.IF_CONDITION_START__ELSE_IF_CONDITIONS,
+						IfConditionStart.class, msgs);
 			if (newIfConditionStart != null)
-				msgs = ((InternalEObject)newIfConditionStart).eInverseAdd(this, DocCompilerPackage.IF_CONDITION_START__ELSE_IF_CONDITIONS, IfConditionStart.class, msgs);
+				msgs = ((InternalEObject) newIfConditionStart).eInverseAdd(this,
+						DocCompilerPackage.IF_CONDITION_START__ELSE_IF_CONDITIONS,
+						IfConditionStart.class, msgs);
 			msgs = basicSetIfConditionStart(newIfConditionStart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START, newIfConditionStart, newIfConditionStart));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START, newIfConditionStart,
+					newIfConditionStart));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID,
+			NotificationChain msgs) {
 		switch (featureID) {
-			case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
-				if (ifConditionStart != null)
-					msgs = ((InternalEObject)ifConditionStart).eInverseRemove(this, DocCompilerPackage.IF_CONDITION_START__ELSE_IF_CONDITIONS, IfConditionStart.class, msgs);
-				return basicSetIfConditionStart((IfConditionStart)otherEnd, msgs);
+		case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
+			if (ifConditionStart != null)
+				msgs = ((InternalEObject) ifConditionStart).eInverseRemove(this,
+						DocCompilerPackage.IF_CONDITION_START__ELSE_IF_CONDITIONS,
+						IfConditionStart.class, msgs);
+			return basicSetIfConditionStart((IfConditionStart) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
+			NotificationChain msgs) {
 		switch (featureID) {
-			case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
-				return basicSetIfConditionStart(null, msgs);
+		case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
+			return basicSetIfConditionStart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
-				if (resolve) return getRichStringElseIf();
-				return basicGetRichStringElseIf();
-			case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
-				if (resolve) return getIfConditionStart();
-				return basicGetIfConditionStart();
+		case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
+			if (resolve)
+				return getRichStringElseIf();
+			return basicGetRichStringElseIf();
+		case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
+			if (resolve)
+				return getIfConditionStart();
+			return basicGetIfConditionStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
-				setRichStringElseIf((RichStringElseIf)newValue);
-				return;
-			case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
-				setIfConditionStart((IfConditionStart)newValue);
-				return;
+		case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
+			setRichStringElseIf((RichStringElseIf) newValue);
+			return;
+		case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
+			setIfConditionStart((IfConditionStart) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
-				setRichStringElseIf((RichStringElseIf)null);
-				return;
-			case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
-				setIfConditionStart((IfConditionStart)null);
-				return;
+		case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
+			setRichStringElseIf((RichStringElseIf) null);
+			return;
+		case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
+			setIfConditionStart((IfConditionStart) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
-				return richStringElseIf != null;
-			case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
-				return ifConditionStart != null;
+		case DocCompilerPackage.ELSE_IF_CONDITION__RICH_STRING_ELSE_IF:
+			return richStringElseIf != null;
+		case DocCompilerPackage.ELSE_IF_CONDITION__IF_CONDITION_START:
+			return ifConditionStart != null;
 		}
 		return super.eIsSet(featureID);
 	}

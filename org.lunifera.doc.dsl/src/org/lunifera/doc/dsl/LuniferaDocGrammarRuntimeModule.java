@@ -20,7 +20,8 @@ import org.lunifera.doc.dsl.typing.LuniferaDocTypeComputer;
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
-public class LuniferaDocGrammarRuntimeModule extends org.lunifera.doc.dsl.AbstractLuniferaDocGrammarRuntimeModule {
+public class LuniferaDocGrammarRuntimeModule extends
+		org.lunifera.doc.dsl.AbstractLuniferaDocGrammarRuntimeModule {
 
 	public Class<? extends XExpressionHelper> bindXExpressionHelper() {
 		return LuniferaDocExpressionHelper.class;

@@ -80,25 +80,29 @@ public abstract class AbstractRichTextValueConverter extends AbstractLexerBasedC
 			String withoutLeadingTerminal = getWithoutLeadingTerminal(string);
 			String trailingTerminal = getTrailingTerminal();
 			if (withoutLeadingTerminal.endsWith(trailingTerminal)) {
-				String result = withoutLeadingTerminal.substring(0,
-						withoutLeadingTerminal.length() - trailingTerminal.length());
+				String result = withoutLeadingTerminal.substring(0, withoutLeadingTerminal.length()
+						- trailingTerminal.length());
 				return result;
 			}
 			List<String> trailingSubsequences = getTrailingSubsequences();
 			for (String subsequence : trailingSubsequences) {
 				if (withoutLeadingTerminal.endsWith(subsequence)) {
-					throw stringLiteralIsNotClosed(node,
-							withoutLeadingTerminal.substring(0, withoutLeadingTerminal.length() - subsequence.length()));
+					throw stringLiteralIsNotClosed(
+							node,
+							withoutLeadingTerminal.substring(0, withoutLeadingTerminal.length()
+									- subsequence.length()));
 				}
 			}
-			throw stringLiteralIsNotClosed(node, withoutLeadingTerminal.substring(0, withoutLeadingTerminal.length()));
+			throw stringLiteralIsNotClosed(node,
+					withoutLeadingTerminal.substring(0, withoutLeadingTerminal.length()));
 		} catch (StringIndexOutOfBoundsException e) {
 			throw new ValueConverterException(e.getMessage(), node, e);
 		}
 	}
 
 	private ValueConverterWithValueException stringLiteralIsNotClosed(INode node, String value) {
-		return new ValueConverterWithValueException("String literal is not closed", node, value, null);
+		return new ValueConverterWithValueException("String literal is not closed", node, value,
+				null);
 	}
 
 	protected String getWithoutLeadingTerminal(String string) {

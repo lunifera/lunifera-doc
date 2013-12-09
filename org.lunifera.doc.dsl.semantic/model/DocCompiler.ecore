@@ -104,19 +104,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringBold"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//BoldEnd"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoldEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//BoldStart"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnderlineStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringUnderline"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//UnderlineEnd"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnderlineEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//UnderlineStart"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ItalicStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringItalic"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ItalicEnd"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BoldEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//BoldStart"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnderlineEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//UnderlineStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ItalicEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ItalicStart"/>
