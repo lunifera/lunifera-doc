@@ -15,6 +15,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
@@ -90,6 +91,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringUnderline();
 		case RichstringPackage.RICH_STRING_ITALIC:
 			return createRichStringItalic();
+		case RichstringPackage.RICH_STRING_IMG:
+			return createRichStringImg();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -224,6 +227,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringItalic createRichStringItalic() {
 		RichStringItalicImpl richStringItalic = new RichStringItalicImpl();
 		return richStringItalic;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringImg createRichStringImg() {
+		RichStringImgImpl richStringImg = new RichStringImgImpl();
+		return richStringImg;
 	}
 
 	/**

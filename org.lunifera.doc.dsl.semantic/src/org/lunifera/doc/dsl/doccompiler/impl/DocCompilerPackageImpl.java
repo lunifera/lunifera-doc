@@ -26,6 +26,8 @@ import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
+import org.lunifera.doc.dsl.doccompiler.ImgEnd;
+import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
 import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
@@ -250,6 +252,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass italicEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass imgStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass imgEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -997,6 +1013,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getImgStart() {
+		return imgStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getImgStart_Content() {
+		return (EReference) imgStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getImgStart_End() {
+		return (EReference) imgStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getImgEnd() {
+		return imgEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getImgEnd_Start() {
+		return (EReference) imgEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -1123,6 +1184,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		italicEndEClass = createEClass(ITALIC_END);
 		createEReference(italicEndEClass, ITALIC_END__START);
+
+		imgStartEClass = createEClass(IMG_START);
+		createEReference(imgStartEClass, IMG_START__CONTENT);
+		createEReference(imgStartEClass, IMG_START__END);
+
+		imgEndEClass = createEClass(IMG_END);
+		createEReference(imgEndEClass, IMG_END__START);
 	}
 
 	/**
@@ -1187,6 +1255,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		underlineEndEClass.getESuperTypes().add(this.getLinePart());
 		italicStartEClass.getESuperTypes().add(this.getLinePart());
 		italicEndEClass.getESuperTypes().add(this.getLinePart());
+		imgStartEClass.getESuperTypes().add(this.getLinePart());
+		imgEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -1442,6 +1512,22 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getItalicEnd_Start(), this.getItalicStart(), null, "start", null, 0, 1,
 				ItalicEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(imgStartEClass, ImgStart.class, "ImgStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImgStart_Content(), theRichstringPackage.getRichStringImg(), null,
+				"content", null, 0, 1, ImgStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getImgStart_End(), this.getImgEnd(), null, "end", null, 0, 1,
+				ImgStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(imgEndEClass, ImgEnd.class, "ImgEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImgEnd_Start(), this.getImgStart(), null, "start", null, 0, 1,
+				ImgEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

@@ -166,5 +166,13 @@
     <eClassifiers xsi:type="ecore:EClass" name="RichStringBold" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringUnderline" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringItalic" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringImg" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="alt" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

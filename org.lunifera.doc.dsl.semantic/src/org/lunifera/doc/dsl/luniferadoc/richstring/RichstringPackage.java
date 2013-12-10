@@ -503,6 +503,57 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_ITALIC_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImgImpl
+	 * <em>Rich String Img</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImgImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringImg()
+	 * @generated
+	 */
+	int RICH_STRING_IMG = 13;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG__SRC = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Alt</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG__ALT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG__WIDTH = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Height</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG__HEIGHT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Img</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 4;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 	 * <em>Rich String Else If</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -777,6 +828,64 @@ public interface RichstringPackage extends EPackage {
 	EClass getRichStringItalic();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg
+	 * <em>Rich String Img</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Img</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg
+	 * @generated
+	 */
+	EClass getRichStringImg();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getSrc <em>Src</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Src</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getSrc()
+	 * @see #getRichStringImg()
+	 * @generated
+	 */
+	EAttribute getRichStringImg_Src();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getAlt <em>Alt</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Alt</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getAlt()
+	 * @see #getRichStringImg()
+	 * @generated
+	 */
+	EAttribute getRichStringImg_Alt();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getWidth <em>Width</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getWidth()
+	 * @see #getRichStringImg()
+	 * @generated
+	 */
+	EAttribute getRichStringImg_Width();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getHeight <em>Height</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Height</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg#getHeight()
+	 * @see #getRichStringImg()
+	 * @generated
+	 */
+	EAttribute getRichStringImg_Height();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -1029,6 +1138,48 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RICH_STRING_ITALIC = eINSTANCE.getRichStringItalic();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImgImpl
+		 * <em>Rich String Img</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImgImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringImg()
+		 * @generated
+		 */
+		EClass RICH_STRING_IMG = eINSTANCE.getRichStringImg();
+
+		/**
+		 * The meta object literal for the '<em><b>Src</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_IMG__SRC = eINSTANCE.getRichStringImg_Src();
+
+		/**
+		 * The meta object literal for the '<em><b>Alt</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_IMG__ALT = eINSTANCE.getRichStringImg_Alt();
+
+		/**
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_IMG__WIDTH = eINSTANCE.getRichStringImg_Width();
+
+		/**
+		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_IMG__HEIGHT = eINSTANCE.getRichStringImg_Height();
 
 	}
 

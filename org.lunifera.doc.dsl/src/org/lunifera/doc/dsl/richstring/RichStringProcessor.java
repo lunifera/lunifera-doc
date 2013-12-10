@@ -30,6 +30,8 @@ import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
+import org.lunifera.doc.dsl.doccompiler.ImgEnd;
+import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
 import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
@@ -54,6 +56,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
@@ -289,6 +292,18 @@ public class RichStringProcessor {
 			doSwitch(object.getText());
 
 			URLEnd end = factory.createURLEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringImg(RichStringImg object) {
+			ImgStart start = factory.createImgStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			ImgEnd end = factory.createImgEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -560,6 +575,20 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseItalicEnd(ItalicEnd object) {
 			acceptor.acceptItalicEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseImgStart(ImgStart object) {
+			acceptor.acceptImgStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseImgEnd(ImgEnd object) {
+			acceptor.acceptImgEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

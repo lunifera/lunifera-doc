@@ -253,6 +253,22 @@ public interface DocCompilerFactory extends EFactory {
 	ItalicEnd createItalicEnd();
 
 	/**
+	 * Returns a new object of class '<em>Img Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Img Start</em>'.
+	 * @generated
+	 */
+	ImgStart createImgStart();
+
+	/**
+	 * Returns a new object of class '<em>Img End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Img End</em>'.
+	 * @generated
+	 */
+	ImgEnd createImgEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

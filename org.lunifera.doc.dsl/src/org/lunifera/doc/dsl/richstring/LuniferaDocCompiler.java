@@ -34,6 +34,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
@@ -218,6 +219,30 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptImgStart(RichStringImg object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<img src=\"");
+			append(object.getSrc());
+			append("\" alt=\"");
+			append(object.getAlt());
+			append("\" width=\"");
+			append(object.getWidth());
+			append("\" height=\"");
+			append(object.getHeight());
+			append("\">");
+		}
+
+		@Override
+		public void acceptImgEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</img>");
 			popAppendable();
 		}
 

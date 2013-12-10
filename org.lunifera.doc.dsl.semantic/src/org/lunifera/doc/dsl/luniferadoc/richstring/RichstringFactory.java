@@ -125,6 +125,14 @@ public interface RichstringFactory extends EFactory {
 	RichStringItalic createRichStringItalic();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Img</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Img</em>'.
+	 * @generated
+	 */
+	RichStringImg createRichStringImg();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

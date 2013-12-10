@@ -24,6 +24,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
@@ -128,6 +129,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringItalicEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringImgEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -444,6 +452,51 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringImg() {
+		return richStringImgEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringImg_Src() {
+		return (EAttribute) richStringImgEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringImg_Alt() {
+		return (EAttribute) richStringImgEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringImg_Width() {
+		return (EAttribute) richStringImgEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringImg_Height() {
+		return (EAttribute) richStringImgEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public RichstringFactory getRichstringFactory() {
 		return (RichstringFactory) getEFactoryInstance();
 	}
@@ -504,6 +557,12 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringUnderlineEClass = createEClass(RICH_STRING_UNDERLINE);
 
 		richStringItalicEClass = createEClass(RICH_STRING_ITALIC);
+
+		richStringImgEClass = createEClass(RICH_STRING_IMG);
+		createEAttribute(richStringImgEClass, RICH_STRING_IMG__SRC);
+		createEAttribute(richStringImgEClass, RICH_STRING_IMG__ALT);
+		createEAttribute(richStringImgEClass, RICH_STRING_IMG__WIDTH);
+		createEAttribute(richStringImgEClass, RICH_STRING_IMG__HEIGHT);
 	}
 
 	/**
@@ -550,6 +609,7 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringBoldEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringUnderlineEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringItalicEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringImgEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf",
@@ -636,6 +696,21 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		initEClass(richStringItalicEClass, RichStringItalic.class, "RichStringItalic",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringImgEClass, RichStringImg.class, "RichStringImg", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringImg_Src(), ecorePackage.getEString(), "src", null, 1, 1,
+				RichStringImg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRichStringImg_Alt(), ecorePackage.getEString(), "alt", null, 1, 1,
+				RichStringImg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRichStringImg_Width(), ecorePackage.getEString(), "width", null, 1, 1,
+				RichStringImg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRichStringImg_Height(), ecorePackage.getEString(), "height", null, 1, 1,
+				RichStringImg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } // RichstringPackageImpl
