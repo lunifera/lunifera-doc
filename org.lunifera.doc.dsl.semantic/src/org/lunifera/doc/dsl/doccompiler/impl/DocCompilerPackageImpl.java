@@ -221,20 +221,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	private EClass underlineStartEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass italicStartEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	private EClass boldEndEClass = null;
 
 	/**
@@ -242,7 +228,21 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	private EClass underlineStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	private EClass underlineEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass italicStartEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -889,6 +889,24 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getBoldEnd() {
+		return boldEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getBoldEnd_Start() {
+		return (EReference) boldEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getUnderlineStart() {
 		return underlineStartEClass;
 	}
@@ -916,6 +934,24 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getUnderlineEnd() {
+		return underlineEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getUnderlineEnd_Start() {
+		return (EReference) underlineEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getItalicStart() {
 		return italicStartEClass;
 	}
@@ -936,42 +972,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 */
 	public EReference getItalicStart_End() {
 		return (EReference) italicStartEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getBoldEnd() {
-		return boldEndEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getBoldEnd_Start() {
-		return (EReference) boldEndEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getUnderlineEnd() {
-		return underlineEndEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getUnderlineEnd_Start() {
-		return (EReference) underlineEndEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1107,19 +1107,19 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		createEReference(boldStartEClass, BOLD_START__CONTENT);
 		createEReference(boldStartEClass, BOLD_START__END);
 
+		boldEndEClass = createEClass(BOLD_END);
+		createEReference(boldEndEClass, BOLD_END__START);
+
 		underlineStartEClass = createEClass(UNDERLINE_START);
 		createEReference(underlineStartEClass, UNDERLINE_START__CONTENT);
 		createEReference(underlineStartEClass, UNDERLINE_START__END);
 
+		underlineEndEClass = createEClass(UNDERLINE_END);
+		createEReference(underlineEndEClass, UNDERLINE_END__START);
+
 		italicStartEClass = createEClass(ITALIC_START);
 		createEReference(italicStartEClass, ITALIC_START__CONTENT);
 		createEReference(italicStartEClass, ITALIC_START__END);
-
-		boldEndEClass = createEClass(BOLD_END);
-		createEReference(boldEndEClass, BOLD_END__START);
-
-		underlineEndEClass = createEClass(UNDERLINE_END);
-		createEReference(underlineEndEClass, UNDERLINE_END__START);
 
 		italicEndEClass = createEClass(ITALIC_END);
 		createEReference(italicEndEClass, ITALIC_END__START);
@@ -1182,10 +1182,10 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		urlStartEClass.getESuperTypes().add(this.getLinePart());
 		urlEndEClass.getESuperTypes().add(this.getLinePart());
 		boldStartEClass.getESuperTypes().add(this.getLinePart());
-		underlineStartEClass.getESuperTypes().add(this.getLinePart());
-		italicStartEClass.getESuperTypes().add(this.getLinePart());
 		boldEndEClass.getESuperTypes().add(this.getLinePart());
+		underlineStartEClass.getESuperTypes().add(this.getLinePart());
 		underlineEndEClass.getESuperTypes().add(this.getLinePart());
+		italicStartEClass.getESuperTypes().add(this.getLinePart());
 		italicEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
@@ -1406,6 +1406,12 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				BoldStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(boldEndEClass, BoldEnd.class, "BoldEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBoldEnd_Start(), this.getBoldStart(), null, "start", null, 0, 1,
+				BoldEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(underlineStartEClass, UnderlineStart.class, "UnderlineStart", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnderlineStart_Content(), theRichstringPackage.getRichStringUnderline(),
@@ -1416,6 +1422,12 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				UnderlineStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(underlineEndEClass, UnderlineEnd.class, "UnderlineEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUnderlineEnd_Start(), this.getUnderlineStart(), null, "start", null, 0,
+				1, UnderlineEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(italicStartEClass, ItalicStart.class, "ItalicStart", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getItalicStart_Content(), theRichstringPackage.getRichStringItalic(), null,
@@ -1424,18 +1436,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				!IS_DERIVED, IS_ORDERED);
 		initEReference(getItalicStart_End(), this.getItalicEnd(), null, "end", null, 0, 1,
 				ItalicStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(boldEndEClass, BoldEnd.class, "BoldEnd", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBoldEnd_Start(), this.getBoldStart(), null, "start", null, 0, 1,
-				BoldEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(underlineEndEClass, UnderlineEnd.class, "UnderlineEnd", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnderlineEnd_Start(), this.getUnderlineStart(), null, "start", null, 0,
-				1, UnderlineEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(italicEndEClass, ItalicEnd.class, "ItalicEnd", !IS_ABSTRACT, !IS_INTERFACE,

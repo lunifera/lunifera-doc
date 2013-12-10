@@ -1207,6 +1207,48 @@ public interface DocCompilerPackage extends EPackage {
 	int BOLD_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl <em>Bold End</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getBoldEnd()
+	 * @generated
+	 */
+	int BOLD_END = 24;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Bold End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Bold End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.UnderlineStartImpl
 	 * <em>Underline Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1214,7 +1256,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getUnderlineStart()
 	 * @generated
 	 */
-	int UNDERLINE_START = 24;
+	int UNDERLINE_START = 25;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1258,6 +1300,49 @@ public interface DocCompilerPackage extends EPackage {
 	int UNDERLINE_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl <em>Underline End</em>}
+	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getUnderlineEnd()
+	 * @generated
+	 */
+	int UNDERLINE_END = 26;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UNDERLINE_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UNDERLINE_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Underline End</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UNDERLINE_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Underline End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UNDERLINE_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ItalicStartImpl <em>Italic Start</em>}'
 	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1265,7 +1350,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getItalicStart()
 	 * @generated
 	 */
-	int ITALIC_START = 25;
+	int ITALIC_START = 27;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1307,91 +1392,6 @@ public interface DocCompilerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ITALIC_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl <em>Bold End</em>}' class.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl
-	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getBoldEnd()
-	 * @generated
-	 */
-	int BOLD_END = 26;
-
-	/**
-	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int BOLD_END__LINE = LINE_PART__LINE;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int BOLD_END__START = LINE_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Bold End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int BOLD_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Bold End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int BOLD_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl <em>Underline End</em>}
-	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl
-	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getUnderlineEnd()
-	 * @generated
-	 */
-	int UNDERLINE_END = 27;
-
-	/**
-	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UNDERLINE_END__LINE = LINE_PART__LINE;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UNDERLINE_END__START = LINE_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Underline End</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UNDERLINE_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Underline End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UNDERLINE_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ItalicEndImpl <em>Italic End</em>}'
@@ -2114,6 +2114,27 @@ public interface DocCompilerPackage extends EPackage {
 	EReference getBoldStart_End();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.BoldEnd <em>Bold End</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Bold End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.BoldEnd
+	 * @generated
+	 */
+	EClass getBoldEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.BoldEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.BoldEnd#getStart()
+	 * @see #getBoldEnd()
+	 * @generated
+	 */
+	EReference getBoldEnd_Start();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.UnderlineStart
 	 * <em>Underline Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2146,6 +2167,27 @@ public interface DocCompilerPackage extends EPackage {
 	EReference getUnderlineStart_End();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.UnderlineEnd <em>Underline End</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Underline End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.UnderlineEnd
+	 * @generated
+	 */
+	EClass getUnderlineEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.UnderlineEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.UnderlineEnd#getStart()
+	 * @see #getUnderlineEnd()
+	 * @generated
+	 */
+	EReference getUnderlineEnd_Start();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.ItalicStart <em>Italic Start</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2176,48 +2218,6 @@ public interface DocCompilerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getItalicStart_End();
-
-	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.BoldEnd <em>Bold End</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for class '<em>Bold End</em>'.
-	 * @see org.lunifera.doc.dsl.doccompiler.BoldEnd
-	 * @generated
-	 */
-	EClass getBoldEnd();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.BoldEnd#getStart
-	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Start</em>'.
-	 * @see org.lunifera.doc.dsl.doccompiler.BoldEnd#getStart()
-	 * @see #getBoldEnd()
-	 * @generated
-	 */
-	EReference getBoldEnd_Start();
-
-	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.UnderlineEnd <em>Underline End</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for class '<em>Underline End</em>'.
-	 * @see org.lunifera.doc.dsl.doccompiler.UnderlineEnd
-	 * @generated
-	 */
-	EClass getUnderlineEnd();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.UnderlineEnd#getStart
-	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Start</em>'.
-	 * @see org.lunifera.doc.dsl.doccompiler.UnderlineEnd#getStart()
-	 * @see #getUnderlineEnd()
-	 * @generated
-	 */
-	EReference getUnderlineEnd_Start();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.ItalicEnd <em>Italic End</em>}'. <!--
@@ -2820,6 +2820,24 @@ public interface DocCompilerPackage extends EPackage {
 		EReference BOLD_START__END = eINSTANCE.getBoldStart_End();
 
 		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl <em>Bold End</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getBoldEnd()
+		 * @generated
+		 */
+		EClass BOLD_END = eINSTANCE.getBoldEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference BOLD_END__START = eINSTANCE.getBoldEnd_Start();
+
+		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.UnderlineStartImpl
 		 * <em>Underline Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -2846,6 +2864,24 @@ public interface DocCompilerPackage extends EPackage {
 		EReference UNDERLINE_START__END = eINSTANCE.getUnderlineStart_End();
 
 		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl
+		 * <em>Underline End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getUnderlineEnd()
+		 * @generated
+		 */
+		EClass UNDERLINE_END = eINSTANCE.getUnderlineEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference UNDERLINE_END__START = eINSTANCE.getUnderlineEnd_Start();
+
+		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ItalicStartImpl
 		 * <em>Italic Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -2870,42 +2906,6 @@ public interface DocCompilerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ITALIC_START__END = eINSTANCE.getItalicStart_End();
-
-		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl <em>Bold End</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @see org.lunifera.doc.dsl.doccompiler.impl.BoldEndImpl
-		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getBoldEnd()
-		 * @generated
-		 */
-		EClass BOLD_END = eINSTANCE.getBoldEnd();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference BOLD_END__START = eINSTANCE.getBoldEnd_Start();
-
-		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl
-		 * <em>Underline End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @see org.lunifera.doc.dsl.doccompiler.impl.UnderlineEndImpl
-		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getUnderlineEnd()
-		 * @generated
-		 */
-		EClass UNDERLINE_END = eINSTANCE.getUnderlineEnd();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference UNDERLINE_END__START = eINSTANCE.getUnderlineEnd_Start();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ItalicEndImpl

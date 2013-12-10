@@ -213,22 +213,6 @@ public interface DocCompilerFactory extends EFactory {
 	BoldStart createBoldStart();
 
 	/**
-	 * Returns a new object of class '<em>Underline Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>Underline Start</em>'.
-	 * @generated
-	 */
-	UnderlineStart createUnderlineStart();
-
-	/**
-	 * Returns a new object of class '<em>Italic Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>Italic Start</em>'.
-	 * @generated
-	 */
-	ItalicStart createItalicStart();
-
-	/**
 	 * Returns a new object of class '<em>Bold End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Bold End</em>'.
@@ -237,12 +221,28 @@ public interface DocCompilerFactory extends EFactory {
 	BoldEnd createBoldEnd();
 
 	/**
+	 * Returns a new object of class '<em>Underline Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Underline Start</em>'.
+	 * @generated
+	 */
+	UnderlineStart createUnderlineStart();
+
+	/**
 	 * Returns a new object of class '<em>Underline End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Underline End</em>'.
 	 * @generated
 	 */
 	UnderlineEnd createUnderlineEnd();
+
+	/**
+	 * Returns a new object of class '<em>Italic Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Italic Start</em>'.
+	 * @generated
+	 */
+	ItalicStart createItalicStart();
 
 	/**
 	 * Returns a new object of class '<em>Italic End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->

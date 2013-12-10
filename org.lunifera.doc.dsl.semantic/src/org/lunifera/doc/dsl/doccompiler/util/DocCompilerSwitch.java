@@ -298,24 +298,6 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DocCompilerPackage.UNDERLINE_START: {
-			UnderlineStart underlineStart = (UnderlineStart) theEObject;
-			T result = caseUnderlineStart(underlineStart);
-			if (result == null)
-				result = caseLinePart(underlineStart);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.ITALIC_START: {
-			ItalicStart italicStart = (ItalicStart) theEObject;
-			T result = caseItalicStart(italicStart);
-			if (result == null)
-				result = caseLinePart(italicStart);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case DocCompilerPackage.BOLD_END: {
 			BoldEnd boldEnd = (BoldEnd) theEObject;
 			T result = caseBoldEnd(boldEnd);
@@ -325,11 +307,29 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case DocCompilerPackage.UNDERLINE_START: {
+			UnderlineStart underlineStart = (UnderlineStart) theEObject;
+			T result = caseUnderlineStart(underlineStart);
+			if (result == null)
+				result = caseLinePart(underlineStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case DocCompilerPackage.UNDERLINE_END: {
 			UnderlineEnd underlineEnd = (UnderlineEnd) theEObject;
 			T result = caseUnderlineEnd(underlineEnd);
 			if (result == null)
 				result = caseLinePart(underlineEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ITALIC_START: {
+			ItalicStart italicStart = (ItalicStart) theEObject;
+			T result = caseItalicStart(italicStart);
+			if (result == null)
+				result = caseLinePart(italicStart);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -691,6 +691,20 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bold End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bold End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBoldEnd(BoldEnd object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Underline Start</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
@@ -706,34 +720,6 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Italic Start</em>'. <!-- begin-user-doc -->
-	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Italic Start</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseItalicStart(ItalicStart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bold End</em>'. <!-- begin-user-doc --> This
-	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bold End</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBoldEnd(BoldEnd object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Underline End</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
 	 * 
@@ -744,6 +730,20 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnderlineEnd(UnderlineEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Italic Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Italic Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseItalicStart(ItalicStart object) {
 		return null;
 	}
 

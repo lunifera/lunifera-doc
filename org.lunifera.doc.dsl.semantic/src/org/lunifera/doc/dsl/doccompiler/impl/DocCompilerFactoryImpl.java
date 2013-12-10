@@ -128,14 +128,14 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createURLEnd();
 		case DocCompilerPackage.BOLD_START:
 			return createBoldStart();
-		case DocCompilerPackage.UNDERLINE_START:
-			return createUnderlineStart();
-		case DocCompilerPackage.ITALIC_START:
-			return createItalicStart();
 		case DocCompilerPackage.BOLD_END:
 			return createBoldEnd();
+		case DocCompilerPackage.UNDERLINE_START:
+			return createUnderlineStart();
 		case DocCompilerPackage.UNDERLINE_END:
 			return createUnderlineEnd();
+		case DocCompilerPackage.ITALIC_START:
+			return createItalicStart();
 		case DocCompilerPackage.ITALIC_END:
 			return createItalicEnd();
 		default:
@@ -389,26 +389,6 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	 * 
 	 * @generated
 	 */
-	public UnderlineStart createUnderlineStart() {
-		UnderlineStartImpl underlineStart = new UnderlineStartImpl();
-		return underlineStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ItalicStart createItalicStart() {
-		ItalicStartImpl italicStart = new ItalicStartImpl();
-		return italicStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public BoldEnd createBoldEnd() {
 		BoldEndImpl boldEnd = new BoldEndImpl();
 		return boldEnd;
@@ -419,9 +399,29 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	 * 
 	 * @generated
 	 */
+	public UnderlineStart createUnderlineStart() {
+		UnderlineStartImpl underlineStart = new UnderlineStartImpl();
+		return underlineStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public UnderlineEnd createUnderlineEnd() {
 		UnderlineEndImpl underlineEnd = new UnderlineEndImpl();
 		return underlineEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ItalicStart createItalicStart() {
+		ItalicStartImpl italicStart = new ItalicStartImpl();
+		return italicStart;
 	}
 
 	/**

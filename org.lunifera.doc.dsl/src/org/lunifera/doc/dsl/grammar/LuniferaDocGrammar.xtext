@@ -12,7 +12,6 @@ import "http://www.lunifera.org/luniferadoc" as luniferadoc
 import "http://www.lunifera.org/luniferadoc/layout" as layout
 import "http://www.lunifera.org/luniferadoc/document" as document
 import "http://www.lunifera.org/luniferadoc/richstring" as richstring
-import "http://www.lunifera.org/luniferadoc/markup" as markup
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
 NamedDocument returns luniferadoc::NamedDocument:
@@ -200,7 +199,7 @@ RichStringURL returns xbase::XExpression:
 	
 RichStringBold returns xbase::XExpression:
 	{richstring::RichStringBold}
-	"b" expression=InternalRichString "/b";
+	"bold" expression=InternalRichString "/bold";
 
 RichStringUnderline returns xbase::XExpression:
 	{richstring::RichStringUnderline}
@@ -208,7 +207,7 @@ RichStringUnderline returns xbase::XExpression:
 	
 RichStringItalic returns xbase::XExpression:
 	{richstring::RichStringItalic}
-	"i" expression=InternalRichString "/i";
+	"italic" expression=InternalRichString "/italic";
 
 RichStringForLoop returns xbase::XExpression:
 	{richstring::RichStringForLoop}
@@ -253,7 +252,3 @@ terminal fragment IN_RICH_STRING:
 	"''" !('«' | "'")
 	| "'" !('«' | "'")
 	| !('«' | "'");
-	
-terminal ID_WITH_KEYWORD:
-	'b' | ID
-;

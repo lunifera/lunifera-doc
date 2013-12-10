@@ -167,9 +167,4 @@
     <eClassifiers xsi:type="ecore:EClass" name="RichStringUnderline" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringItalic" eSuperTypes="#//richstring/RichStringMarkup"/>
   </eSubpackages>
-  <eSubpackages name="markup" nsURI="http://www.lunifera.org/luniferadoc/markup" nsPrefix="markup">
-    <eClassifiers xsi:type="ecore:EClass" name="TagImg">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-  </eSubpackages>
 </ecore:EPackage>

@@ -20,8 +20,6 @@ import org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage;
 import org.lunifera.doc.dsl.luniferadoc.document.impl.DocumentPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
 import org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl;
-import org.lunifera.doc.dsl.luniferadoc.markup.MarkupPackage;
-import org.lunifera.doc.dsl.luniferadoc.markup.impl.MarkupPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl;
 
@@ -116,23 +114,18 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 		RichstringPackageImpl theRichstringPackage = (RichstringPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(RichstringPackage.eNS_URI) instanceof RichstringPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(RichstringPackage.eNS_URI) : RichstringPackage.eINSTANCE);
-		MarkupPackageImpl theMarkupPackage = (MarkupPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(MarkupPackage.eNS_URI) instanceof MarkupPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(MarkupPackage.eNS_URI) : MarkupPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theLuniferaDocPackage.createPackageContents();
 		theDocumentPackage.createPackageContents();
 		theLayoutPackage.createPackageContents();
 		theRichstringPackage.createPackageContents();
-		theMarkupPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theLuniferaDocPackage.initializePackageContents();
 		theDocumentPackage.initializePackageContents();
 		theLayoutPackage.initializePackageContents();
 		theRichstringPackage.initializePackageContents();
-		theMarkupPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theLuniferaDocPackage.freeze();
@@ -265,14 +258,11 @@ public class LuniferaDocPackageImpl extends EPackageImpl implements LuniferaDocP
 				.getEPackage(LayoutPackage.eNS_URI);
 		RichstringPackage theRichstringPackage = (RichstringPackage) EPackage.Registry.INSTANCE
 				.getEPackage(RichstringPackage.eNS_URI);
-		MarkupPackage theMarkupPackage = (MarkupPackage) EPackage.Registry.INSTANCE
-				.getEPackage(MarkupPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theDocumentPackage);
 		getESubpackages().add(theLayoutPackage);
 		getESubpackages().add(theRichstringPackage);
-		getESubpackages().add(theMarkupPackage);
 
 		// Create type parameters
 
