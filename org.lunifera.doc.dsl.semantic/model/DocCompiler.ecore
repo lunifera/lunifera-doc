@@ -124,4 +124,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="ImgStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringImg"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MailtoStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringMailto"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//MailtoEnd"
+        eOpposite="#//MailtoEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MailtoEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//MailtoStart"
+        eOpposite="#//MailtoStart/end"/>
+  </eClassifiers>
 </ecore:EPackage>

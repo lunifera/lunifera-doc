@@ -554,6 +554,42 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_IMG_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMailtoImpl
+	 * <em>Rich String Mailto</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMailtoImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMailto()
+	 * @generated
+	 */
+	int RICH_STRING_MAILTO = 14;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MAILTO__EMAIL = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MAILTO__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Mailto</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MAILTO_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 	 * <em>Rich String Else If</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -886,6 +922,40 @@ public interface RichstringPackage extends EPackage {
 	EAttribute getRichStringImg_Height();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto
+	 * <em>Rich String Mailto</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Mailto</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto
+	 * @generated
+	 */
+	EClass getRichStringMailto();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto#getEmail <em>Email</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Email</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto#getEmail()
+	 * @see #getRichStringMailto()
+	 * @generated
+	 */
+	EAttribute getRichStringMailto_Email();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto#getContent <em>Content</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto#getContent()
+	 * @see #getRichStringMailto()
+	 * @generated
+	 */
+	EReference getRichStringMailto_Content();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -1180,6 +1250,33 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RICH_STRING_IMG__HEIGHT = eINSTANCE.getRichStringImg_Height();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMailtoImpl <em>Rich String Mailto</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMailtoImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMailto()
+		 * @generated
+		 */
+		EClass RICH_STRING_MAILTO = eINSTANCE.getRichStringMailto();
+
+		/**
+		 * The meta object literal for the '<em><b>Email</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_MAILTO__EMAIL = eINSTANCE.getRichStringMailto_Email();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_MAILTO__CONTENT = eINSTANCE.getRichStringMailto_Content();
 
 	}
 

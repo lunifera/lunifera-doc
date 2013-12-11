@@ -27,6 +27,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
@@ -136,6 +137,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringImgEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringMailtoEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -497,6 +505,33 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringMailto() {
+		return richStringMailtoEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringMailto_Email() {
+		return (EAttribute) richStringMailtoEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringMailto_Content() {
+		return (EReference) richStringMailtoEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public RichstringFactory getRichstringFactory() {
 		return (RichstringFactory) getEFactoryInstance();
 	}
@@ -563,6 +598,10 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		createEAttribute(richStringImgEClass, RICH_STRING_IMG__ALT);
 		createEAttribute(richStringImgEClass, RICH_STRING_IMG__WIDTH);
 		createEAttribute(richStringImgEClass, RICH_STRING_IMG__HEIGHT);
+
+		richStringMailtoEClass = createEClass(RICH_STRING_MAILTO);
+		createEAttribute(richStringMailtoEClass, RICH_STRING_MAILTO__EMAIL);
+		createEReference(richStringMailtoEClass, RICH_STRING_MAILTO__CONTENT);
 	}
 
 	/**
@@ -610,6 +649,7 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringUnderlineEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringItalicEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringImgEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringMailtoEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf",
@@ -711,6 +751,16 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		initEAttribute(getRichStringImg_Height(), ecorePackage.getEString(), "height", null, 1, 1,
 				RichStringImg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringMailtoEClass, RichStringMailto.class, "RichStringMailto",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringMailto_Email(), ecorePackage.getEString(), "email", null, 1, 1,
+				RichStringMailto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringMailto_Content(), theXbasePackage.getXExpression(), null,
+				"content", null, 0, 1, RichStringMailto.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 	}
 
 } // RichstringPackageImpl

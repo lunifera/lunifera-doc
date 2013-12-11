@@ -33,6 +33,8 @@ import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
+import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
+import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
@@ -258,6 +260,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass imgStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass mailtoStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass mailtoEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1023,6 +1039,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getMailtoStart() {
+		return mailtoStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getMailtoStart_Content() {
+		return (EReference) mailtoStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getMailtoStart_End() {
+		return (EReference) mailtoStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getMailtoEnd() {
+		return mailtoEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getMailtoEnd_Start() {
+		return (EReference) mailtoEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -1152,6 +1213,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		imgStartEClass = createEClass(IMG_START);
 		createEReference(imgStartEClass, IMG_START__CONTENT);
+
+		mailtoStartEClass = createEClass(MAILTO_START);
+		createEReference(mailtoStartEClass, MAILTO_START__CONTENT);
+		createEReference(mailtoStartEClass, MAILTO_START__END);
+
+		mailtoEndEClass = createEClass(MAILTO_END);
+		createEReference(mailtoEndEClass, MAILTO_END__START);
 	}
 
 	/**
@@ -1217,6 +1285,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		italicStartEClass.getESuperTypes().add(this.getLinePart());
 		italicEndEClass.getESuperTypes().add(this.getLinePart());
 		imgStartEClass.getESuperTypes().add(this.getLinePart());
+		mailtoStartEClass.getESuperTypes().add(this.getLinePart());
+		mailtoEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -1478,6 +1548,24 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImgStart_Content(), theRichstringPackage.getRichStringImg(), null,
 				"content", null, 0, 1, ImgStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(mailtoStartEClass, MailtoStart.class, "MailtoStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMailtoStart_Content(), theRichstringPackage.getRichStringMailto(), null,
+				"content", null, 0, 1, MailtoStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getMailtoStart_End(), this.getMailtoEnd(), this.getMailtoEnd_Start(), "end",
+				null, 0, 1, MailtoStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(mailtoEndEClass, MailtoEnd.class, "MailtoEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMailtoEnd_Start(), this.getMailtoStart(), this.getMailtoStart_End(),
+				"start", null, 0, 1, MailtoEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

@@ -20,6 +20,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
@@ -213,6 +214,15 @@ public class RichstringSwitch<T> extends Switch<T> {
 			T result = caseRichStringImg(richStringImg);
 			if (result == null)
 				result = caseXExpression(richStringImg);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_MAILTO: {
+			RichStringMailto richStringMailto = (RichStringMailto) theEObject;
+			T result = caseRichStringMailto(richStringMailto);
+			if (result == null)
+				result = caseXExpression(richStringMailto);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -428,6 +438,21 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringImg(RichStringImg object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Mailto</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Mailto</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringMailto(RichStringMailto object) {
 		return null;
 	}
 

@@ -133,6 +133,14 @@ public interface RichstringFactory extends EFactory {
 	RichStringImg createRichStringImg();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Mailto</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Mailto</em>'.
+	 * @generated
+	 */
+	RichStringMailto createRichStringMailto();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

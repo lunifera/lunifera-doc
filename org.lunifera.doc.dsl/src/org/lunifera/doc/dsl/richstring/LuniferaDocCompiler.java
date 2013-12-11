@@ -37,6 +37,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 
@@ -216,6 +217,24 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 		@Override
 		public void acceptURLEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptMailtoStart(RichStringMailto object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"mailto:");
+			append(object.getEmail());
+			append("\">");
+		}
+
+		@Override
+		public void acceptMailtoEnd() {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");

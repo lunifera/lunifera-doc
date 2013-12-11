@@ -29,6 +29,8 @@ import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
+import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
+import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
@@ -349,6 +351,24 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseImgStart(imgStart);
 			if (result == null)
 				result = caseLinePart(imgStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.MAILTO_START: {
+			MailtoStart mailtoStart = (MailtoStart) theEObject;
+			T result = caseMailtoStart(mailtoStart);
+			if (result == null)
+				result = caseLinePart(mailtoStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.MAILTO_END: {
+			MailtoEnd mailtoEnd = (MailtoEnd) theEObject;
+			T result = caseMailtoEnd(mailtoEnd);
+			if (result == null)
+				result = caseLinePart(mailtoEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -782,6 +802,34 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseImgStart(ImgStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mailto Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mailto Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMailtoStart(MailtoStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mailto End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mailto End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMailtoEnd(MailtoEnd object) {
 		return null;
 	}
 

@@ -21,6 +21,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
@@ -145,6 +146,11 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseRichStringImg(RichStringImg object) {
 			return createRichStringImgAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringMailto(RichStringMailto object) {
+			return createRichStringMailtoAdapter();
 		}
 
 		@Override
@@ -379,6 +385,20 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringImgAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto <em>Rich String Mailto</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto
+	 * @generated
+	 */
+	public Adapter createRichStringMailtoAdapter() {
 		return null;
 	}
 

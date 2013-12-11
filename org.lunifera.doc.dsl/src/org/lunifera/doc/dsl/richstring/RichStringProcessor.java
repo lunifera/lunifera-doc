@@ -37,6 +37,8 @@ import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
+import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
+import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
@@ -58,6 +60,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
@@ -291,6 +294,20 @@ public class RichStringProcessor {
 			doSwitch(object.getText());
 
 			URLEnd end = factory.createURLEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringMailto(RichStringMailto object) {
+			MailtoStart start = factory.createMailtoStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getContent());
+
+			MailtoEnd end = factory.createMailtoEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -591,6 +608,20 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseURLEnd(URLEnd object) {
 			acceptor.acceptURLEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseMailtoStart(MailtoStart object) {
+			acceptor.acceptMailtoStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseMailtoEnd(MailtoEnd object) {
+			acceptor.acceptMailtoEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

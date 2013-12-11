@@ -30,6 +30,8 @@ import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
+import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
+import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
@@ -237,6 +239,16 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseImgStart(ImgStart object) {
 			return createImgStartAdapter();
+		}
+
+		@Override
+		public Adapter caseMailtoStart(MailtoStart object) {
+			return createMailtoStartAdapter();
+		}
+
+		@Override
+		public Adapter caseMailtoEnd(MailtoEnd object) {
+			return createMailtoEndAdapter();
 		}
 
 		@Override
@@ -665,6 +677,34 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createImgStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.MailtoStart
+	 * <em>Mailto Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.MailtoStart
+	 * @generated
+	 */
+	public Adapter createMailtoStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.MailtoEnd
+	 * <em>Mailto End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.MailtoEnd
+	 * @generated
+	 */
+	public Adapter createMailtoEndAdapter() {
 		return null;
 	}
 

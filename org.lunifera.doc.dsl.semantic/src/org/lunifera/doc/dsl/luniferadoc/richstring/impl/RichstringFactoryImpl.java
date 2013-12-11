@@ -18,6 +18,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
@@ -93,6 +94,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringItalic();
 		case RichstringPackage.RICH_STRING_IMG:
 			return createRichStringImg();
+		case RichstringPackage.RICH_STRING_MAILTO:
+			return createRichStringMailto();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -237,6 +240,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringImg createRichStringImg() {
 		RichStringImgImpl richStringImg = new RichStringImgImpl();
 		return richStringImg;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringMailto createRichStringMailto() {
+		RichStringMailtoImpl richStringMailto = new RichStringMailtoImpl();
+		return richStringMailto;
 	}
 
 	/**

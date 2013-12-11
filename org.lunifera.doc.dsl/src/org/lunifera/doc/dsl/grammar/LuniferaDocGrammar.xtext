@@ -175,7 +175,7 @@ RichStringPart returns xbase::XExpression:
 	XExpressionInsideBlock |
 	RichStringForLoop |
 	RichStringIf |
-	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL | RichStringImg |
+	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL | RichStringMailto | RichStringImg |
 	RichStringBold | RichStringUnderline | RichStringItalic;
 
 RichStringExample returns xbase::XExpression:
@@ -196,6 +196,12 @@ RichStringURL returns xbase::XExpression:
 	"url" location=STRING 
 	text=InternalRichString
 	"/url";
+	
+RichStringMailto returns xbase::XExpression:
+	{richstring::RichStringMailto}
+	"mailto" email=STRING 
+	content=InternalRichString
+	"/mailto";
 	
 RichStringImg returns xbase::XExpression:
 	{richstring::RichStringImg}

@@ -32,6 +32,8 @@ import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
+import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
+import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
@@ -141,6 +143,10 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createItalicEnd();
 		case DocCompilerPackage.IMG_START:
 			return createImgStart();
+		case DocCompilerPackage.MAILTO_START:
+			return createMailtoStart();
+		case DocCompilerPackage.MAILTO_END:
+			return createMailtoEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -445,6 +451,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public ImgStart createImgStart() {
 		ImgStartImpl imgStart = new ImgStartImpl();
 		return imgStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public MailtoStart createMailtoStart() {
+		MailtoStartImpl mailtoStart = new MailtoStartImpl();
+		return mailtoStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public MailtoEnd createMailtoEnd() {
+		MailtoEndImpl mailtoEnd = new MailtoEndImpl();
+		return mailtoEnd;
 	}
 
 	/**

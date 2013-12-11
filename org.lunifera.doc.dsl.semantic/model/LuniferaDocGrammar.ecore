@@ -174,5 +174,11 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringMailto" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+          containment="true"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

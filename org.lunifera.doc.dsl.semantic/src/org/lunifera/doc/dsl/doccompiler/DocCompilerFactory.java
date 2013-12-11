@@ -261,6 +261,22 @@ public interface DocCompilerFactory extends EFactory {
 	ImgStart createImgStart();
 
 	/**
+	 * Returns a new object of class '<em>Mailto Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Mailto Start</em>'.
+	 * @generated
+	 */
+	MailtoStart createMailtoStart();
+
+	/**
+	 * Returns a new object of class '<em>Mailto End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Mailto End</em>'.
+	 * @generated
+	 */
+	MailtoEnd createMailtoEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.
