@@ -259,14 +259,14 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<ul>");
+			append("<span style=\"text-decoration: underline;\">");
 		}
 
 		@Override
 		public void acceptUnderlineEnd() {
 			currentAppendable = null;
 			appendable.newLine();
-			append("</ul>");
+			append("</span>");
 			popAppendable();
 		}
 

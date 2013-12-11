@@ -207,7 +207,7 @@ RichStringBold returns xbase::XExpression:
 
 RichStringUnderline returns xbase::XExpression:
 	{richstring::RichStringUnderline}
-	"ul" expression=InternalRichString "/ul";
+	"u" expression=InternalRichString "/u";
 	
 RichStringItalic returns xbase::XExpression:
 	{richstring::RichStringItalic}
