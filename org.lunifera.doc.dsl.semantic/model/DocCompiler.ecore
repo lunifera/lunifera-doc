@@ -123,9 +123,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImgStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringImg"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ImgEnd"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImgEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ImgStart"/>
   </eClassifiers>
 </ecore:EPackage>

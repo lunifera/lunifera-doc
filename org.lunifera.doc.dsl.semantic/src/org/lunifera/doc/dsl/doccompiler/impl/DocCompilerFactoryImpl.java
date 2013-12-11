@@ -25,7 +25,6 @@ import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.doccompiler.ImgEnd;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
 import org.lunifera.doc.dsl.doccompiler.ItalicStart;
@@ -142,8 +141,6 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createItalicEnd();
 		case DocCompilerPackage.IMG_START:
 			return createImgStart();
-		case DocCompilerPackage.IMG_END:
-			return createImgEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -448,16 +445,6 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public ImgStart createImgStart() {
 		ImgStartImpl imgStart = new ImgStartImpl();
 		return imgStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ImgEnd createImgEnd() {
-		ImgEndImpl imgEnd = new ImgEndImpl();
-		return imgEnd;
 	}
 
 	/**

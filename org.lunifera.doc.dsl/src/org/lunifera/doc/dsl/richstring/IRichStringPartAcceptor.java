@@ -205,8 +205,6 @@ public interface IRichStringPartAcceptor {
 
 	void acceptImgStart(RichStringImg object);
 
-	void acceptImgEnd();
-
 	void acceptBoldStart(RichStringBold object);
 
 	void acceptBoldEnd();

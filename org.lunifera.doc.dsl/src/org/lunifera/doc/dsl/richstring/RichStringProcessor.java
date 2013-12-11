@@ -30,7 +30,6 @@ import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.doccompiler.ImgEnd;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
 import org.lunifera.doc.dsl.doccompiler.ItalicStart;
@@ -302,10 +301,6 @@ public class RichStringProcessor {
 			ImgStart start = factory.createImgStart();
 			start.setContent(object);
 			addToCurrentLine(start);
-
-			ImgEnd end = factory.createImgEnd();
-			end.setStart(start);
-			addToCurrentLine(end);
 			return Boolean.TRUE;
 		}
 
@@ -582,13 +577,6 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseImgStart(ImgStart object) {
 			acceptor.acceptImgStart(object.getContent());
-			computeNextPart(object);
-			return Boolean.TRUE;
-		}
-
-		@Override
-		public Boolean caseImgEnd(ImgEnd object) {
-			acceptor.acceptImgEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

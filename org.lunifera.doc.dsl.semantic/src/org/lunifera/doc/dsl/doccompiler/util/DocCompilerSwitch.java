@@ -22,7 +22,6 @@ import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.doccompiler.ImgEnd;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
 import org.lunifera.doc.dsl.doccompiler.ItalicStart;
@@ -350,15 +349,6 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseImgStart(imgStart);
 			if (result == null)
 				result = caseLinePart(imgStart);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.IMG_END: {
-			ImgEnd imgEnd = (ImgEnd) theEObject;
-			T result = caseImgEnd(imgEnd);
-			if (result == null)
-				result = caseLinePart(imgEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -792,20 +782,6 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseImgStart(ImgStart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Img End</em>'. <!-- begin-user-doc --> This
-	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Img End</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseImgEnd(ImgEnd object) {
 		return null;
 	}
 

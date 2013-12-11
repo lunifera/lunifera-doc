@@ -11,7 +11,6 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
  * The following features are supported:
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.ImgStart#getContent <em>Content</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.ImgStart#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
  * 
@@ -46,31 +45,5 @@ public interface ImgStart extends LinePart {
 	 * @generated
 	 */
 	void setContent(RichStringImg value);
-
-	/**
-	 * Returns the value of the '<em><b>End</b></em>' reference. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>End</em>' reference isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>End</em>' reference.
-	 * @see #setEnd(ImgEnd)
-	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getImgStart_End()
-	 * @model
-	 * @generated
-	 */
-	ImgEnd getEnd();
-
-	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.ImgStart#getEnd <em>End</em>}' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>End</em>' reference.
-	 * @see #getEnd()
-	 * @generated
-	 */
-	void setEnd(ImgEnd value);
 
 } // ImgStart

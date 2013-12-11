@@ -1463,21 +1463,13 @@ public interface DocCompilerPackage extends EPackage {
 	int IMG_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>End</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int IMG_START__END = LINE_PART_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Img Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int IMG_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+	int IMG_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Img Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1486,48 +1478,6 @@ public interface DocCompilerPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMG_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ImgEndImpl <em>Img End</em>}' class.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see org.lunifera.doc.dsl.doccompiler.impl.ImgEndImpl
-	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getImgEnd()
-	 * @generated
-	 */
-	int IMG_END = 30;
-
-	/**
-	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int IMG_END__LINE = LINE_PART__LINE;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int IMG_END__START = LINE_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Img End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int IMG_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Img End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int IMG_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart <em>Document Start</em>}
@@ -2355,38 +2305,6 @@ public interface DocCompilerPackage extends EPackage {
 	EReference getImgStart_Content();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.ImgStart#getEnd <em>End</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>End</em>'.
-	 * @see org.lunifera.doc.dsl.doccompiler.ImgStart#getEnd()
-	 * @see #getImgStart()
-	 * @generated
-	 */
-	EReference getImgStart_End();
-
-	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.ImgEnd <em>Img End</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for class '<em>Img End</em>'.
-	 * @see org.lunifera.doc.dsl.doccompiler.ImgEnd
-	 * @generated
-	 */
-	EClass getImgEnd();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.ImgEnd#getStart
-	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Start</em>'.
-	 * @see org.lunifera.doc.dsl.doccompiler.ImgEnd#getStart()
-	 * @see #getImgEnd()
-	 * @generated
-	 */
-	EReference getImgEnd_Start();
-
-	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -3088,32 +3006,6 @@ public interface DocCompilerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IMG_START__CONTENT = eINSTANCE.getImgStart_Content();
-
-		/**
-		 * The meta object literal for the '<em><b>End</b></em>' reference feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference IMG_START__END = eINSTANCE.getImgStart_End();
-
-		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ImgEndImpl <em>Img End</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @see org.lunifera.doc.dsl.doccompiler.impl.ImgEndImpl
-		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getImgEnd()
-		 * @generated
-		 */
-		EClass IMG_END = eINSTANCE.getImgEnd();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference IMG_END__START = eINSTANCE.getImgEnd_Start();
 
 	}
 

@@ -23,7 +23,6 @@ import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.doccompiler.ImgEnd;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
 import org.lunifera.doc.dsl.doccompiler.ItalicStart;
@@ -238,11 +237,6 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseImgStart(ImgStart object) {
 			return createImgStartAdapter();
-		}
-
-		@Override
-		public Adapter caseImgEnd(ImgEnd object) {
-			return createImgEndAdapter();
 		}
 
 		@Override
@@ -671,19 +665,6 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createImgStartAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ImgEnd <em>Img End</em>}'.
-	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
-	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.doccompiler.ImgEnd
-	 * @generated
-	 */
-	public Adapter createImgEndAdapter() {
 		return null;
 	}
 

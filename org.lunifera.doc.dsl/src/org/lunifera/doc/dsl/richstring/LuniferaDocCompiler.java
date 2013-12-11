@@ -235,15 +235,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			append(object.getWidth());
 			append("\" height=\"");
 			append(object.getHeight());
-			append("\">");
-		}
-
-		@Override
-		public void acceptImgEnd() {
-			currentAppendable = null;
-			appendable.newLine();
-			append("</img>");
-			popAppendable();
+			append("\" />");
 		}
 
 		@Override

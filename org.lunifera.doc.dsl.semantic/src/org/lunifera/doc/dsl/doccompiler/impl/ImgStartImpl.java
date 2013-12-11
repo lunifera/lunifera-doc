@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
-import org.lunifera.doc.dsl.doccompiler.ImgEnd;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 
@@ -17,7 +16,6 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.ImgStartImpl#getContent <em>Content</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.ImgStartImpl#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
  * 
@@ -33,15 +31,6 @@ public class ImgStartImpl extends LinePartImpl implements ImgStart {
 	 * @ordered
 	 */
 	protected RichStringImg content;
-
-	/**
-	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getEnd()
-	 * @generated
-	 * @ordered
-	 */
-	protected ImgEnd end;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -107,46 +96,6 @@ public class ImgStartImpl extends LinePartImpl implements ImgStart {
 	 * 
 	 * @generated
 	 */
-	public ImgEnd getEnd() {
-		if (end != null && end.eIsProxy()) {
-			InternalEObject oldEnd = (InternalEObject) end;
-			end = (ImgEnd) eResolveProxy(oldEnd);
-			if (end != oldEnd) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DocCompilerPackage.IMG_START__END, oldEnd, end));
-			}
-		}
-		return end;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ImgEnd basicGetEnd() {
-		return end;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setEnd(ImgEnd newEnd) {
-		ImgEnd oldEnd = end;
-		end = newEnd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DocCompilerPackage.IMG_START__END, oldEnd, end));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -154,10 +103,6 @@ public class ImgStartImpl extends LinePartImpl implements ImgStart {
 			if (resolve)
 				return getContent();
 			return basicGetContent();
-		case DocCompilerPackage.IMG_START__END:
-			if (resolve)
-				return getEnd();
-			return basicGetEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,9 +117,6 @@ public class ImgStartImpl extends LinePartImpl implements ImgStart {
 		switch (featureID) {
 		case DocCompilerPackage.IMG_START__CONTENT:
 			setContent((RichStringImg) newValue);
-			return;
-		case DocCompilerPackage.IMG_START__END:
-			setEnd((ImgEnd) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,9 +133,6 @@ public class ImgStartImpl extends LinePartImpl implements ImgStart {
 		case DocCompilerPackage.IMG_START__CONTENT:
 			setContent((RichStringImg) null);
 			return;
-		case DocCompilerPackage.IMG_START__END:
-			setEnd((ImgEnd) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,8 +147,6 @@ public class ImgStartImpl extends LinePartImpl implements ImgStart {
 		switch (featureID) {
 		case DocCompilerPackage.IMG_START__CONTENT:
 			return content != null;
-		case DocCompilerPackage.IMG_START__END:
-			return end != null;
 		}
 		return super.eIsSet(featureID);
 	}
