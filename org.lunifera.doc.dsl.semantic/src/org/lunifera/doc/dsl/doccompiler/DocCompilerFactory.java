@@ -277,6 +277,22 @@ public interface DocCompilerFactory extends EFactory {
 	MailtoEnd createMailtoEnd();
 
 	/**
+	 * Returns a new object of class '<em>Skype Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Skype Start</em>'.
+	 * @generated
+	 */
+	SkypeStart createSkypeStart();
+
+	/**
+	 * Returns a new object of class '<em>Skype End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Skype End</em>'.
+	 * @generated
+	 */
+	SkypeEnd createSkypeEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

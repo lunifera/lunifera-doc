@@ -38,6 +38,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 
@@ -235,6 +236,24 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 		@Override
 		public void acceptMailtoEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptSkypeStart(RichStringSkype object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"skype:");
+			append(object.getTarget());
+			append("?call\">");
+		}
+
+		@Override
+		public void acceptSkypeEnd() {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");

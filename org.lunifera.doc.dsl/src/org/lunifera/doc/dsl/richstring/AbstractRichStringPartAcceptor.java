@@ -23,6 +23,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 
@@ -100,6 +101,14 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 
 	@Override
 	public void acceptMailtoEnd() {
+	}
+
+	@Override
+	public void acceptSkypeStart(RichStringSkype object) {
+	}
+
+	@Override
+	public void acceptSkypeEnd() {
 	}
 
 	@Override

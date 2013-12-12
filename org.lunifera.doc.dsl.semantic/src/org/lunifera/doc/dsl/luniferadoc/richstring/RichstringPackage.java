@@ -590,6 +590,42 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_MAILTO_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSkypeImpl
+	 * <em>Rich String Skype</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSkypeImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSkype()
+	 * @generated
+	 */
+	int RICH_STRING_SKYPE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SKYPE__TARGET = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SKYPE__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Skype</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SKYPE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 	 * <em>Rich String Else If</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -956,6 +992,40 @@ public interface RichstringPackage extends EPackage {
 	EReference getRichStringMailto_Content();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype
+	 * <em>Rich String Skype</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Skype</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype
+	 * @generated
+	 */
+	EClass getRichStringSkype();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype#getTarget <em>Target</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Target</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype#getTarget()
+	 * @see #getRichStringSkype()
+	 * @generated
+	 */
+	EAttribute getRichStringSkype_Target();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype#getContent <em>Content</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype#getContent()
+	 * @see #getRichStringSkype()
+	 * @generated
+	 */
+	EReference getRichStringSkype_Content();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -1277,6 +1347,32 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_MAILTO__CONTENT = eINSTANCE.getRichStringMailto_Content();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSkypeImpl
+		 * <em>Rich String Skype</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSkypeImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSkype()
+		 * @generated
+		 */
+		EClass RICH_STRING_SKYPE = eINSTANCE.getRichStringSkype();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_SKYPE__TARGET = eINSTANCE.getRichStringSkype_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_SKYPE__CONTENT = eINSTANCE.getRichStringSkype_Content();
 
 	}
 

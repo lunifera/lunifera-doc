@@ -38,6 +38,8 @@ import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
+import org.lunifera.doc.dsl.doccompiler.SkypeStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -274,6 +276,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass mailtoEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass skypeStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass skypeEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1084,6 +1100,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getSkypeStart() {
+		return skypeStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSkypeStart_Content() {
+		return (EReference) skypeStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSkypeStart_End() {
+		return (EReference) skypeStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getSkypeEnd() {
+		return skypeEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSkypeEnd_Start() {
+		return (EReference) skypeEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -1220,6 +1281,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		mailtoEndEClass = createEClass(MAILTO_END);
 		createEReference(mailtoEndEClass, MAILTO_END__START);
+
+		skypeStartEClass = createEClass(SKYPE_START);
+		createEReference(skypeStartEClass, SKYPE_START__CONTENT);
+		createEReference(skypeStartEClass, SKYPE_START__END);
+
+		skypeEndEClass = createEClass(SKYPE_END);
+		createEReference(skypeEndEClass, SKYPE_END__START);
 	}
 
 	/**
@@ -1287,6 +1355,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		imgStartEClass.getESuperTypes().add(this.getLinePart());
 		mailtoStartEClass.getESuperTypes().add(this.getLinePart());
 		mailtoEndEClass.getESuperTypes().add(this.getLinePart());
+		skypeStartEClass.getESuperTypes().add(this.getLinePart());
+		skypeEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -1566,6 +1636,24 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMailtoEnd_Start(), this.getMailtoStart(), this.getMailtoStart_End(),
 				"start", null, 0, 1, MailtoEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(skypeStartEClass, SkypeStart.class, "SkypeStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSkypeStart_Content(), theRichstringPackage.getRichStringSkype(), null,
+				"content", null, 0, 1, SkypeStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getSkypeStart_End(), this.getSkypeEnd(), this.getSkypeEnd_Start(), "end",
+				null, 0, 1, SkypeStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(skypeEndEClass, SkypeEnd.class, "SkypeEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSkypeEnd_Start(), this.getSkypeStart(), this.getSkypeStart_End(),
+				"start", null, 0, 1, SkypeEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

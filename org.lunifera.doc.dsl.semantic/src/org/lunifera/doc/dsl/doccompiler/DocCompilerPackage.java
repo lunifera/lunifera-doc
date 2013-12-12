@@ -1574,6 +1574,100 @@ public interface DocCompilerPackage extends EPackage {
 	int MAILTO_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SkypeStartImpl <em>Skype Start</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SkypeStartImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSkypeStart()
+	 * @generated
+	 */
+	int SKYPE_START = 32;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_START__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_START__END = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Skype Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Skype Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SkypeEndImpl <em>Skype End</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SkypeEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSkypeEnd()
+	 * @generated
+	 */
+	int SKYPE_END = 33;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Skype End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Skype End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SKYPE_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart <em>Document Start</em>}
 	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2452,6 +2546,59 @@ public interface DocCompilerPackage extends EPackage {
 	EReference getMailtoEnd_Start();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SkypeStart <em>Skype Start</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Skype Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SkypeStart
+	 * @generated
+	 */
+	EClass getSkypeStart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SkypeStart#getContent
+	 * <em>Content</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SkypeStart#getContent()
+	 * @see #getSkypeStart()
+	 * @generated
+	 */
+	EReference getSkypeStart_Content();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SkypeStart#getEnd
+	 * <em>End</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SkypeStart#getEnd()
+	 * @see #getSkypeStart()
+	 * @generated
+	 */
+	EReference getSkypeStart_End();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SkypeEnd <em>Skype End</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Skype End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SkypeEnd
+	 * @generated
+	 */
+	EClass getSkypeEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SkypeEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SkypeEnd#getStart()
+	 * @see #getSkypeEnd()
+	 * @generated
+	 */
+	EReference getSkypeEnd_Start();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -3197,6 +3344,50 @@ public interface DocCompilerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MAILTO_END__START = eINSTANCE.getMailtoEnd_Start();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SkypeStartImpl
+		 * <em>Skype Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SkypeStartImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSkypeStart()
+		 * @generated
+		 */
+		EClass SKYPE_START = eINSTANCE.getSkypeStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SKYPE_START__CONTENT = eINSTANCE.getSkypeStart_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SKYPE_START__END = eINSTANCE.getSkypeStart_End();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SkypeEndImpl
+		 * <em>Skype End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SkypeEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSkypeEnd()
+		 * @generated
+		 */
+		EClass SKYPE_END = eINSTANCE.getSkypeEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SKYPE_END__START = eINSTANCE.getSkypeEnd_Start();
 
 	}
 

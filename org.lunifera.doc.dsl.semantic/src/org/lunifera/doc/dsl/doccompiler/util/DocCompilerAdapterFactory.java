@@ -35,6 +35,8 @@ import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
+import org.lunifera.doc.dsl.doccompiler.SkypeStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -249,6 +251,16 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseMailtoEnd(MailtoEnd object) {
 			return createMailtoEndAdapter();
+		}
+
+		@Override
+		public Adapter caseSkypeStart(SkypeStart object) {
+			return createSkypeStartAdapter();
+		}
+
+		@Override
+		public Adapter caseSkypeEnd(SkypeEnd object) {
+			return createSkypeEndAdapter();
 		}
 
 		@Override
@@ -705,6 +717,34 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMailtoEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SkypeStart
+	 * <em>Skype Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SkypeStart
+	 * @generated
+	 */
+	public Adapter createSkypeStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SkypeEnd
+	 * <em>Skype End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SkypeEnd
+	 * @generated
+	 */
+	public Adapter createSkypeEndAdapter() {
 		return null;
 	}
 

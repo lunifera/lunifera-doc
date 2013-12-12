@@ -133,4 +133,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//MailtoStart"
         eOpposite="#//MailtoStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SkypeStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringSkype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SkypeEnd"
+        eOpposite="#//SkypeEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SkypeEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SkypeStart"
+        eOpposite="#//SkypeStart/end"/>
+  </eClassifiers>
 </ecore:EPackage>

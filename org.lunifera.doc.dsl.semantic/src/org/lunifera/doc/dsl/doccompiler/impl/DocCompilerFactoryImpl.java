@@ -37,6 +37,8 @@ import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
+import org.lunifera.doc.dsl.doccompiler.SkypeStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -147,6 +149,10 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createMailtoStart();
 		case DocCompilerPackage.MAILTO_END:
 			return createMailtoEnd();
+		case DocCompilerPackage.SKYPE_START:
+			return createSkypeStart();
+		case DocCompilerPackage.SKYPE_END:
+			return createSkypeEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -471,6 +477,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public MailtoEnd createMailtoEnd() {
 		MailtoEndImpl mailtoEnd = new MailtoEndImpl();
 		return mailtoEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SkypeStart createSkypeStart() {
+		SkypeStartImpl skypeStart = new SkypeStartImpl();
+		return skypeStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SkypeEnd createSkypeEnd() {
+		SkypeEndImpl skypeEnd = new SkypeEndImpl();
+		return skypeEnd;
 	}
 
 	/**

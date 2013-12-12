@@ -141,6 +141,14 @@ public interface RichstringFactory extends EFactory {
 	RichStringMailto createRichStringMailto();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Skype</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Skype</em>'.
+	 * @generated
+	 */
+	RichStringSkype createRichStringSkype();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

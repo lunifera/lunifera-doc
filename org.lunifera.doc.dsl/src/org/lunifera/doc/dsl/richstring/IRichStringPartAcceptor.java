@@ -21,6 +21,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 
@@ -207,6 +208,10 @@ public interface IRichStringPartAcceptor {
 	void acceptMailtoStart(RichStringMailto object);
 
 	void acceptMailtoEnd();
+
+	void acceptSkypeStart(RichStringSkype object);
+
+	void acceptSkypeEnd();
 
 	void acceptImgStart(RichStringImg object);
 

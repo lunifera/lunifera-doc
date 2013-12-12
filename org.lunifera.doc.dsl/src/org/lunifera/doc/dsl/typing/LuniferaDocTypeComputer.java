@@ -30,6 +30,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 /**
@@ -51,6 +52,8 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 			_computeTypes((RichStringURL) expression, state);
 		} else if (expression instanceof RichStringMailto) {
 			_computeTypes((RichStringMailto) expression, state);
+		} else if (expression instanceof RichStringSkype) {
+			_computeTypes((RichStringSkype) expression, state);
 		} else if (expression instanceof RichStringImg) {
 			_computeTypes((RichStringImg) expression, state);
 		} else if (expression instanceof RichString) {
@@ -157,6 +160,13 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 	}
 
 	protected void _computeTypes(RichStringMailto object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
+
+		state.withExpectation(charSequence).computeTypes(object.getContent());
+		state.acceptActualType(charSequence);
+	}
+
+	protected void _computeTypes(RichStringSkype object, ITypeComputationState state) {
 		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
 
 		state.withExpectation(charSequence).computeTypes(object.getContent());
