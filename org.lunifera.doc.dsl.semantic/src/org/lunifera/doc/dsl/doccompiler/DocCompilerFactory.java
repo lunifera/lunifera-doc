@@ -293,6 +293,22 @@ public interface DocCompilerFactory extends EFactory {
 	SkypeEnd createSkypeEnd();
 
 	/**
+	 * Returns a new object of class '<em>Code Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Code Start</em>'.
+	 * @generated
+	 */
+	CodeStart createCodeStart();
+
+	/**
+	 * Returns a new object of class '<em>Code End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Code End</em>'.
+	 * @generated
+	 */
+	CodeEnd createCodeEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

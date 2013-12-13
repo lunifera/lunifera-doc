@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.CodeEnd;
+import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
@@ -290,6 +292,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass skypeEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass codeStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass codeEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1145,6 +1161,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getCodeStart() {
+		return codeStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getCodeStart_Content() {
+		return (EReference) codeStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getCodeStart_End() {
+		return (EReference) codeStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getCodeEnd() {
+		return codeEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getCodeEnd_Start() {
+		return (EReference) codeEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -1288,6 +1349,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		skypeEndEClass = createEClass(SKYPE_END);
 		createEReference(skypeEndEClass, SKYPE_END__START);
+
+		codeStartEClass = createEClass(CODE_START);
+		createEReference(codeStartEClass, CODE_START__CONTENT);
+		createEReference(codeStartEClass, CODE_START__END);
+
+		codeEndEClass = createEClass(CODE_END);
+		createEReference(codeEndEClass, CODE_END__START);
 	}
 
 	/**
@@ -1357,6 +1425,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		mailtoEndEClass.getESuperTypes().add(this.getLinePart());
 		skypeStartEClass.getESuperTypes().add(this.getLinePart());
 		skypeEndEClass.getESuperTypes().add(this.getLinePart());
+		codeStartEClass.getESuperTypes().add(this.getLinePart());
+		codeEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -1654,6 +1724,23 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSkypeEnd_Start(), this.getSkypeStart(), this.getSkypeStart_End(),
 				"start", null, 0, 1, SkypeEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(codeStartEClass, CodeStart.class, "CodeStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCodeStart_Content(), theRichstringPackage.getRichStringCode(), null,
+				"content", null, 0, 1, CodeStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getCodeStart_End(), this.getCodeEnd(), this.getCodeEnd_Start(), "end", null,
+				0, 1, CodeStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(codeEndEClass, CodeEnd.class, "CodeEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCodeEnd_Start(), this.getCodeStart(), this.getCodeStart_End(), "start",
+				null, 0, 1, CodeEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

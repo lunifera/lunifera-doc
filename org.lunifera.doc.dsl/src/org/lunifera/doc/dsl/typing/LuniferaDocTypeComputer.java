@@ -23,6 +23,7 @@ import org.eclipse.xtext.xbase.typesystem.computation.ITypeExpectation;
 import org.eclipse.xtext.xbase.typesystem.conformance.ConformanceHint;
 import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
@@ -54,6 +55,8 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 			_computeTypes((RichStringMailto) expression, state);
 		} else if (expression instanceof RichStringSkype) {
 			_computeTypes((RichStringSkype) expression, state);
+		} else if (expression instanceof RichStringCode) {
+			_computeTypes((RichStringCode) expression, state);
 		} else if (expression instanceof RichStringImg) {
 			_computeTypes((RichStringImg) expression, state);
 		} else if (expression instanceof RichString) {
@@ -167,6 +170,13 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 	}
 
 	protected void _computeTypes(RichStringSkype object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
+
+		state.withExpectation(charSequence).computeTypes(object.getContent());
+		state.acceptActualType(charSequence);
+	}
+
+	protected void _computeTypes(RichStringCode object, ITypeComputationState state) {
 		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
 
 		state.withExpectation(charSequence).computeTypes(object.getContent());

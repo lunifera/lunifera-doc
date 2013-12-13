@@ -18,6 +18,7 @@ import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
 import org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
@@ -152,6 +153,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringSkypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringCodeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -567,6 +575,33 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringCode() {
+		return richStringCodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringCode_Lang() {
+		return (EAttribute) richStringCodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringCode_Content() {
+		return (EReference) richStringCodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public RichstringFactory getRichstringFactory() {
 		return (RichstringFactory) getEFactoryInstance();
 	}
@@ -641,6 +676,10 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringSkypeEClass = createEClass(RICH_STRING_SKYPE);
 		createEAttribute(richStringSkypeEClass, RICH_STRING_SKYPE__TARGET);
 		createEReference(richStringSkypeEClass, RICH_STRING_SKYPE__CONTENT);
+
+		richStringCodeEClass = createEClass(RICH_STRING_CODE);
+		createEAttribute(richStringCodeEClass, RICH_STRING_CODE__LANG);
+		createEReference(richStringCodeEClass, RICH_STRING_CODE__CONTENT);
 	}
 
 	/**
@@ -690,6 +729,7 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringImgEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringMailtoEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringSkypeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringCodeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf",
@@ -809,6 +849,16 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRichStringSkype_Content(), theXbasePackage.getXExpression(), null,
 				"content", null, 0, 1, RichStringSkype.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringCodeEClass, RichStringCode.class, "RichStringCode", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringCode_Lang(), ecorePackage.getEString(), "lang", null, 0, 1,
+				RichStringCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringCode_Content(), theXbasePackage.getXExpression(), null,
+				"content", null, 0, 1, RichStringCode.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 	}

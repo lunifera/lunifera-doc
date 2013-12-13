@@ -29,6 +29,7 @@ import org.eclipse.xtext.xbase.typing.ITypeProvider;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -257,6 +258,22 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptCodeStart(RichStringCode object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<div class=\"lundoc-sourcecode\">");
+		}
+
+		@Override
+		public void acceptCodeEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</div>");
 			popAppendable();
 		}
 

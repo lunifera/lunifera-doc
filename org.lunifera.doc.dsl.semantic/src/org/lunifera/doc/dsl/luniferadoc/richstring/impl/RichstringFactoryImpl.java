@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
@@ -99,6 +100,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringMailto();
 		case RichstringPackage.RICH_STRING_SKYPE:
 			return createRichStringSkype();
+		case RichstringPackage.RICH_STRING_CODE:
+			return createRichStringCode();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -263,6 +266,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringSkype createRichStringSkype() {
 		RichStringSkypeImpl richStringSkype = new RichStringSkypeImpl();
 		return richStringSkype;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringCode createRichStringCode() {
+		RichStringCodeImpl richStringCode = new RichStringCodeImpl();
+		return richStringCode;
 	}
 
 	/**

@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.CodeEnd;
+import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
@@ -153,6 +155,10 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createSkypeStart();
 		case DocCompilerPackage.SKYPE_END:
 			return createSkypeEnd();
+		case DocCompilerPackage.CODE_START:
+			return createCodeStart();
+		case DocCompilerPackage.CODE_END:
+			return createCodeEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -497,6 +503,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public SkypeEnd createSkypeEnd() {
 		SkypeEndImpl skypeEnd = new SkypeEndImpl();
 		return skypeEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public CodeStart createCodeStart() {
+		CodeStartImpl codeStart = new CodeStartImpl();
+		return codeStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public CodeEnd createCodeEnd() {
+		CodeEndImpl codeEnd = new CodeEndImpl();
+		return codeEnd;
 	}
 
 	/**

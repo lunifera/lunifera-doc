@@ -15,6 +15,8 @@ import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.CodeEnd;
+import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
 import org.lunifera.doc.dsl.doccompiler.DocumentStart;
@@ -53,6 +55,7 @@ import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
@@ -325,6 +328,20 @@ public class RichStringProcessor {
 			doSwitch(object.getContent());
 
 			SkypeEnd end = factory.createSkypeEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringCode(RichStringCode object) {
+			CodeStart start = factory.createCodeStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getContent());
+
+			CodeEnd end = factory.createCodeEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -653,6 +670,20 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseSkypeEnd(SkypeEnd object) {
 			acceptor.acceptSkypeEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseCodeStart(CodeStart object) {
+			acceptor.acceptCodeStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseCodeEnd(CodeEnd object) {
+			acceptor.acceptCodeEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

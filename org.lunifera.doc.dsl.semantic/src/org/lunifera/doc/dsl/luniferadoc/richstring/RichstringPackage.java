@@ -626,6 +626,42 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SKYPE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringCodeImpl
+	 * <em>Rich String Code</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringCodeImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringCode()
+	 * @generated
+	 */
+	int RICH_STRING_CODE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Lang</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CODE__LANG = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CODE__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Code</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CODE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 	 * <em>Rich String Else If</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1026,6 +1062,40 @@ public interface RichstringPackage extends EPackage {
 	EReference getRichStringSkype_Content();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode
+	 * <em>Rich String Code</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Code</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode
+	 * @generated
+	 */
+	EClass getRichStringCode();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode#getLang <em>Lang</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Lang</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode#getLang()
+	 * @see #getRichStringCode()
+	 * @generated
+	 */
+	EAttribute getRichStringCode_Lang();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode#getContent <em>Content</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode#getContent()
+	 * @see #getRichStringCode()
+	 * @generated
+	 */
+	EReference getRichStringCode_Content();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -1373,6 +1443,32 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_SKYPE__CONTENT = eINSTANCE.getRichStringSkype_Content();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringCodeImpl
+		 * <em>Rich String Code</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringCodeImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringCode()
+		 * @generated
+		 */
+		EClass RICH_STRING_CODE = eINSTANCE.getRichStringCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Lang</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_CODE__LANG = eINSTANCE.getRichStringCode_Lang();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_CODE__CONTENT = eINSTANCE.getRichStringCode_Content();
 
 	}
 

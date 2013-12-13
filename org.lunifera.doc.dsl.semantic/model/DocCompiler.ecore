@@ -142,4 +142,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SkypeStart"
         eOpposite="#//SkypeStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringCode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//CodeEnd"
+        eOpposite="#//CodeEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//CodeStart"
+        eOpposite="#//CodeStart/end"/>
+  </eClassifiers>
 </ecore:EPackage>
