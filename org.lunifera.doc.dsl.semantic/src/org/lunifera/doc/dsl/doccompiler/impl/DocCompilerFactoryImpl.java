@@ -37,6 +37,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
+import org.lunifera.doc.dsl.doccompiler.MovieEnd;
+import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -161,6 +163,10 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createSkypeStart();
 		case DocCompilerPackage.SKYPE_END:
 			return createSkypeEnd();
+		case DocCompilerPackage.MOVIE_START:
+			return createMovieStart();
+		case DocCompilerPackage.MOVIE_END:
+			return createMovieEnd();
 		case DocCompilerPackage.CODE_START:
 			return createCodeStart();
 		case DocCompilerPackage.CODE_END:
@@ -521,6 +527,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public SkypeEnd createSkypeEnd() {
 		SkypeEndImpl skypeEnd = new SkypeEndImpl();
 		return skypeEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public MovieStart createMovieStart() {
+		MovieStartImpl movieStart = new MovieStartImpl();
+		return movieStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public MovieEnd createMovieEnd() {
+		MovieEndImpl movieEnd = new MovieEndImpl();
+		return movieEnd;
 	}
 
 	/**

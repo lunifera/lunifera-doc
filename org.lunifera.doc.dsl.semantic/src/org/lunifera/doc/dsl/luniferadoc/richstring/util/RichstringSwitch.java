@@ -23,6 +23,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
@@ -237,6 +238,15 @@ public class RichstringSwitch<T> extends Switch<T> {
 			T result = caseRichStringSkype(richStringSkype);
 			if (result == null)
 				result = caseXExpression(richStringSkype);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_MOVIE: {
+			RichStringMovie richStringMovie = (RichStringMovie) theEObject;
+			T result = caseRichStringMovie(richStringMovie);
+			if (result == null)
+				result = caseXExpression(richStringMovie);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -520,6 +530,21 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringSkype(RichStringSkype object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Movie</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Movie</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringMovie(RichStringMovie object) {
 		return null;
 	}
 

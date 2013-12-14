@@ -38,6 +38,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
+import org.lunifera.doc.dsl.doccompiler.MovieEnd;
+import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -298,6 +300,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass skypeEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass movieStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass movieEndEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1209,6 +1225,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getMovieStart() {
+		return movieStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getMovieStart_Content() {
+		return (EReference) movieStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getMovieStart_End() {
+		return (EReference) movieStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getMovieEnd() {
+		return movieEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getMovieEnd_Start() {
+		return (EReference) movieEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getCodeStart() {
 		return codeStartEClass;
 	}
@@ -1551,6 +1612,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		skypeEndEClass = createEClass(SKYPE_END);
 		createEReference(skypeEndEClass, SKYPE_END__START);
 
+		movieStartEClass = createEClass(MOVIE_START);
+		createEReference(movieStartEClass, MOVIE_START__CONTENT);
+		createEReference(movieStartEClass, MOVIE_START__END);
+
+		movieEndEClass = createEClass(MOVIE_END);
+		createEReference(movieEndEClass, MOVIE_END__START);
+
 		codeStartEClass = createEClass(CODE_START);
 		createEReference(codeStartEClass, CODE_START__CONTENT);
 		createEReference(codeStartEClass, CODE_START__END);
@@ -1649,6 +1717,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		mailtoEndEClass.getESuperTypes().add(this.getLinePart());
 		skypeStartEClass.getESuperTypes().add(this.getLinePart());
 		skypeEndEClass.getESuperTypes().add(this.getLinePart());
+		movieStartEClass.getESuperTypes().add(this.getLinePart());
+		movieEndEClass.getESuperTypes().add(this.getLinePart());
 		codeStartEClass.getESuperTypes().add(this.getLinePart());
 		codeEndEClass.getESuperTypes().add(this.getLinePart());
 		tableStartEClass.getESuperTypes().add(this.getLinePart());
@@ -1954,6 +2024,24 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSkypeEnd_Start(), this.getSkypeStart(), this.getSkypeStart_End(),
 				"start", null, 0, 1, SkypeEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(movieStartEClass, MovieStart.class, "MovieStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMovieStart_Content(), theRichstringPackage.getRichStringMovie(), null,
+				"content", null, 0, 1, MovieStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getMovieStart_End(), this.getMovieEnd(), this.getMovieEnd_Start(), "end",
+				null, 0, 1, MovieStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(movieEndEClass, MovieEnd.class, "MovieEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMovieEnd_Start(), this.getMovieStart(), this.getMovieStart_End(),
+				"start", null, 0, 1, MovieEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

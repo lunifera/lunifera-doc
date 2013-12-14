@@ -42,6 +42,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
+import org.lunifera.doc.dsl.doccompiler.MovieEnd;
+import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -73,6 +75,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
@@ -337,6 +340,20 @@ public class RichStringProcessor {
 			doSwitch(object.getContent());
 
 			SkypeEnd end = factory.createSkypeEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringMovie(RichStringMovie object) {
+			MovieStart start = factory.createMovieStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getContent());
+
+			MovieEnd end = factory.createMovieEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -706,6 +723,20 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseSkypeEnd(SkypeEnd object) {
 			acceptor.acceptSkypeEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseMovieStart(MovieStart object) {
+			acceptor.acceptMovieStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseMovieEnd(MovieEnd object) {
+			acceptor.acceptMovieEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

@@ -175,8 +175,9 @@ RichStringPart returns xbase::XExpression:
 	XExpressionInsideBlock |
 	RichStringForLoop |
 	RichStringIf |
-	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL | RichStringMailto | RichStringSkype | 
-	RichStringImg |	RichStringBold | RichStringUnderline | RichStringItalic | RichStringCode | RichStringTable;
+	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL | RichStringMailto | 
+	RichStringSkype | RichStringMovie | RichStringImg |	RichStringBold | RichStringUnderline | 
+	RichStringItalic | RichStringCode | RichStringTable;
 
 RichStringExample returns xbase::XExpression:
 	{richstring::RichStringExample}
@@ -208,6 +209,12 @@ RichStringSkype returns xbase::XExpression:
 	"skype" target=STRING 
 	content=InternalRichString
 	"/skype";
+	
+RichStringMovie returns xbase::XExpression:
+	{richstring::RichStringMovie}
+	"movie" "src="src=STRING "type="type=STRING "width="width=STRING "height="height=STRING 
+	content=InternalRichString
+	"/movie";
 	
 RichStringImg returns xbase::XExpression:
 	{richstring::RichStringImg}

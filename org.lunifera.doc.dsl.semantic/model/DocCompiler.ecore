@@ -142,6 +142,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SkypeStart"
         eOpposite="#//SkypeStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MovieStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringMovie"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//MovieEnd"
+        eOpposite="#//MovieEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MovieEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//MovieStart"
+        eOpposite="#//MovieStart/end"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CodeStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringCode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//CodeEnd"

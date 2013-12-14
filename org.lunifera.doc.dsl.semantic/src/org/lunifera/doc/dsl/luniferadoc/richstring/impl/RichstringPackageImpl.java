@@ -30,6 +30,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
@@ -156,6 +157,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringSkypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringMovieEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -599,6 +607,60 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringMovie() {
+		return richStringMovieEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringMovie_Src() {
+		return (EAttribute) richStringMovieEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringMovie_Width() {
+		return (EAttribute) richStringMovieEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringMovie_Height() {
+		return (EAttribute) richStringMovieEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringMovie_Type() {
+		return (EAttribute) richStringMovieEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringMovie_Content() {
+		return (EReference) richStringMovieEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getRichStringCode() {
 		return richStringCodeEClass;
 	}
@@ -746,6 +808,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		createEAttribute(richStringSkypeEClass, RICH_STRING_SKYPE__TARGET);
 		createEReference(richStringSkypeEClass, RICH_STRING_SKYPE__CONTENT);
 
+		richStringMovieEClass = createEClass(RICH_STRING_MOVIE);
+		createEAttribute(richStringMovieEClass, RICH_STRING_MOVIE__SRC);
+		createEAttribute(richStringMovieEClass, RICH_STRING_MOVIE__WIDTH);
+		createEAttribute(richStringMovieEClass, RICH_STRING_MOVIE__HEIGHT);
+		createEAttribute(richStringMovieEClass, RICH_STRING_MOVIE__TYPE);
+		createEReference(richStringMovieEClass, RICH_STRING_MOVIE__CONTENT);
+
 		richStringCodeEClass = createEClass(RICH_STRING_CODE);
 		createEAttribute(richStringCodeEClass, RICH_STRING_CODE__LANG);
 		createEReference(richStringCodeEClass, RICH_STRING_CODE__CONTENT);
@@ -806,6 +875,7 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringImgEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringMailtoEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringSkypeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringMovieEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringCodeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringTableEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringTableRowEClass.getESuperTypes().add(theXbasePackage.getXExpression());
@@ -929,6 +999,25 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRichStringSkype_Content(), theXbasePackage.getXExpression(), null,
 				"content", null, 0, 1, RichStringSkype.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringMovieEClass, RichStringMovie.class, "RichStringMovie", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringMovie_Src(), ecorePackage.getEString(), "src", null, 1, 1,
+				RichStringMovie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRichStringMovie_Width(), ecorePackage.getEString(), "width", null, 1, 1,
+				RichStringMovie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRichStringMovie_Height(), ecorePackage.getEString(), "height", null, 1,
+				1, RichStringMovie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRichStringMovie_Type(), ecorePackage.getEString(), "type", null, 1, 1,
+				RichStringMovie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringMovie_Content(), theXbasePackage.getXExpression(), null,
+				"content", null, 0, 1, RichStringMovie.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

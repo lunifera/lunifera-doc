@@ -34,6 +34,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
+import org.lunifera.doc.dsl.doccompiler.MovieEnd;
+import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -397,6 +399,24 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseSkypeEnd(skypeEnd);
 			if (result == null)
 				result = caseLinePart(skypeEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.MOVIE_START: {
+			MovieStart movieStart = (MovieStart) theEObject;
+			T result = caseMovieStart(movieStart);
+			if (result == null)
+				result = caseLinePart(movieStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.MOVIE_END: {
+			MovieEnd movieEnd = (MovieEnd) theEObject;
+			T result = caseMovieEnd(movieEnd);
+			if (result == null)
+				result = caseLinePart(movieEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -958,6 +978,34 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSkypeEnd(SkypeEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Movie Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Movie Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMovieStart(MovieStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Movie End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Movie End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMovieEnd(MovieEnd object) {
 		return null;
 	}
 

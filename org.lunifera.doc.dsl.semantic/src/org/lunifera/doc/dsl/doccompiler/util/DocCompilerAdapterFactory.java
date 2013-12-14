@@ -35,6 +35,8 @@ import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
+import org.lunifera.doc.dsl.doccompiler.MovieEnd;
+import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -269,6 +271,16 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseSkypeEnd(SkypeEnd object) {
 			return createSkypeEndAdapter();
+		}
+
+		@Override
+		public Adapter caseMovieStart(MovieStart object) {
+			return createMovieStartAdapter();
+		}
+
+		@Override
+		public Adapter caseMovieEnd(MovieEnd object) {
+			return createMovieEndAdapter();
 		}
 
 		@Override
@@ -793,6 +805,34 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSkypeEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.MovieStart
+	 * <em>Movie Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.MovieStart
+	 * @generated
+	 */
+	public Adapter createMovieStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.MovieEnd
+	 * <em>Movie End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.MovieEnd
+	 * @generated
+	 */
+	public Adapter createMovieEndAdapter() {
 		return null;
 	}
 

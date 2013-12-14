@@ -39,6 +39,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
@@ -261,6 +262,31 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptMovieStart(RichStringMovie object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<video width=\"");
+			append(object.getWidth());
+			append("\" height=\"");
+			append(object.getHeight());
+			append("\" controls>");
+			append("<source src=\"");
+			append(object.getSrc());
+			append("\" type=\"");
+			append(object.getType());
+			append("\" />");
+		}
+
+		@Override
+		public void acceptMovieEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</video>");
 			popAppendable();
 		}
 

@@ -22,6 +22,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
@@ -216,6 +217,10 @@ public interface IRichStringPartAcceptor {
 	void acceptSkypeStart(RichStringSkype object);
 
 	void acceptSkypeEnd();
+
+	void acceptMovieStart(RichStringMovie object);
+
+	void acceptMovieEnd();
 
 	void acceptCodeStart(RichStringCode object);
 

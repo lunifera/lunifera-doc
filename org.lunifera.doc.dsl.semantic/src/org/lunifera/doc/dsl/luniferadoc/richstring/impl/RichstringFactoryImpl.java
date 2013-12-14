@@ -21,6 +21,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
@@ -103,6 +104,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringMailto();
 		case RichstringPackage.RICH_STRING_SKYPE:
 			return createRichStringSkype();
+		case RichstringPackage.RICH_STRING_MOVIE:
+			return createRichStringMovie();
 		case RichstringPackage.RICH_STRING_CODE:
 			return createRichStringCode();
 		case RichstringPackage.RICH_STRING_TABLE:
@@ -275,6 +278,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringSkype createRichStringSkype() {
 		RichStringSkypeImpl richStringSkype = new RichStringSkypeImpl();
 		return richStringSkype;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringMovie createRichStringMovie() {
+		RichStringMovieImpl richStringMovie = new RichStringMovieImpl();
+		return richStringMovie;
 	}
 
 	/**

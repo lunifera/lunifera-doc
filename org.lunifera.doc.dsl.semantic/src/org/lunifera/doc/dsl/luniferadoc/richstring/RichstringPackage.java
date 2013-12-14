@@ -626,6 +626,66 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SKYPE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMovieImpl
+	 * <em>Rich String Movie</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMovieImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMovie()
+	 * @generated
+	 */
+	int RICH_STRING_MOVIE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__SRC = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__WIDTH = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Height</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__HEIGHT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__TYPE = XbasePackage.XEXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Movie</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 5;
+
+	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringCodeImpl
 	 * <em>Rich String Code</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -633,7 +693,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringCode()
 	 * @generated
 	 */
-	int RICH_STRING_CODE = 16;
+	int RICH_STRING_CODE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Lang</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -669,7 +729,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTable()
 	 * @generated
 	 */
-	int RICH_STRING_TABLE = 17;
+	int RICH_STRING_TABLE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' containment reference list. <!-- begin-user-doc --> <!--
@@ -697,7 +757,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableRow()
 	 * @generated
 	 */
-	int RICH_STRING_TABLE_ROW = 18;
+	int RICH_STRING_TABLE_ROW = 19;
 
 	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list. <!-- begin-user-doc --> <!--
@@ -725,7 +785,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableData()
 	 * @generated
 	 */
-	int RICH_STRING_TABLE_DATA = 19;
+	int RICH_STRING_TABLE_DATA = 20;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1144,6 +1204,76 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRichStringSkype_Content();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie
+	 * <em>Rich String Movie</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Movie</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie
+	 * @generated
+	 */
+	EClass getRichStringMovie();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getSrc <em>Src</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Src</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getSrc()
+	 * @see #getRichStringMovie()
+	 * @generated
+	 */
+	EAttribute getRichStringMovie_Src();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getWidth <em>Width</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getWidth()
+	 * @see #getRichStringMovie()
+	 * @generated
+	 */
+	EAttribute getRichStringMovie_Width();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getHeight <em>Height</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Height</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getHeight()
+	 * @see #getRichStringMovie()
+	 * @generated
+	 */
+	EAttribute getRichStringMovie_Height();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getType <em>Type</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getType()
+	 * @see #getRichStringMovie()
+	 * @generated
+	 */
+	EAttribute getRichStringMovie_Type();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getContent <em>Content</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie#getContent()
+	 * @see #getRichStringMovie()
+	 * @generated
+	 */
+	EReference getRichStringMovie_Content();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode
@@ -1581,6 +1711,56 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_SKYPE__CONTENT = eINSTANCE.getRichStringSkype_Content();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMovieImpl
+		 * <em>Rich String Movie</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMovieImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMovie()
+		 * @generated
+		 */
+		EClass RICH_STRING_MOVIE = eINSTANCE.getRichStringMovie();
+
+		/**
+		 * The meta object literal for the '<em><b>Src</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_MOVIE__SRC = eINSTANCE.getRichStringMovie_Src();
+
+		/**
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_MOVIE__WIDTH = eINSTANCE.getRichStringMovie_Width();
+
+		/**
+		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_MOVIE__HEIGHT = eINSTANCE.getRichStringMovie_Height();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_MOVIE__TYPE = eINSTANCE.getRichStringMovie_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_MOVIE__CONTENT = eINSTANCE.getRichStringMovie_Content();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringCodeImpl
