@@ -11,6 +11,7 @@ import org.eclipse.xtext.xbase.XForLoopExpression;
 import org.eclipse.xtext.xbase.XStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
@@ -24,7 +25,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -169,6 +172,39 @@ public class RichstringSwitch<T> extends Switch<T> {
 				result = caseRichStringMarkup(richStringH2);
 			if (result == null)
 				result = caseXExpression(richStringH2);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_CHAPTER: {
+			RichStringChapter richStringChapter = (RichStringChapter) theEObject;
+			T result = caseRichStringChapter(richStringChapter);
+			if (result == null)
+				result = caseRichStringMarkup(richStringChapter);
+			if (result == null)
+				result = caseXExpression(richStringChapter);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_SECTION: {
+			RichStringSection richStringSection = (RichStringSection) theEObject;
+			T result = caseRichStringSection(richStringSection);
+			if (result == null)
+				result = caseRichStringMarkup(richStringSection);
+			if (result == null)
+				result = caseXExpression(richStringSection);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_SUBSECTION: {
+			RichStringSubsection richStringSubsection = (RichStringSubsection) theEObject;
+			T result = caseRichStringSubsection(richStringSubsection);
+			if (result == null)
+				result = caseRichStringMarkup(richStringSubsection);
+			if (result == null)
+				result = caseXExpression(richStringSubsection);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -425,6 +461,51 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringH2(RichStringH2 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Chapter</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Chapter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringChapter(RichStringChapter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Section</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringSection(RichStringSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Subsection</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Subsection</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringSubsection(RichStringSubsection object) {
 		return null;
 	}
 

@@ -12,6 +12,7 @@ import org.eclipse.xtext.xbase.XForLoopExpression;
 import org.eclipse.xtext.xbase.XStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
@@ -25,7 +26,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -127,6 +130,21 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseRichStringH2(RichStringH2 object) {
 			return createRichStringH2Adapter();
+		}
+
+		@Override
+		public Adapter caseRichStringChapter(RichStringChapter object) {
+			return createRichStringChapterAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringSection(RichStringSection object) {
+			return createRichStringSectionAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringSubsection(RichStringSubsection object) {
+			return createRichStringSubsectionAdapter();
 		}
 
 		@Override
@@ -351,6 +369,48 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringH2Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter <em>Rich String Chapter</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter
+	 * @generated
+	 */
+	public Adapter createRichStringChapterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection <em>Rich String Section</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection
+	 * @generated
+	 */
+	public Adapter createRichStringSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection <em>Rich String Subsection</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection
+	 * @generated
+	 */
+	public Adapter createRichStringSubsectionAdapter() {
 		return null;
 	}
 

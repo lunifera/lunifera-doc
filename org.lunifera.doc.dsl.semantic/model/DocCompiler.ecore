@@ -184,4 +184,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="TableDataEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableDataStart"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChapterStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringChapter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ChapterEnd"
+        eOpposite="#//ChapterEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChapterEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ChapterStart"
+        eOpposite="#//ChapterStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringSection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SectionEnd"
+        eOpposite="#//SectionEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SectionStart"
+        eOpposite="#//SectionStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubsectionStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringSubsection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SubsectionEnd"
+        eOpposite="#//SubsectionEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubsectionEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SubsectionStart"
+        eOpposite="#//SubsectionStart/end"/>
+  </eClassifiers>
 </ecore:EPackage>

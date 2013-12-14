@@ -93,6 +93,30 @@ public interface RichstringFactory extends EFactory {
 	RichStringH2 createRichStringH2();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Chapter</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Chapter</em>'.
+	 * @generated
+	 */
+	RichStringChapter createRichStringChapter();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Section</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Section</em>'.
+	 * @generated
+	 */
+	RichStringSection createRichStringSection();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Subsection</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Subsection</em>'.
+	 * @generated
+	 */
+	RichStringSubsection createRichStringSubsection();
+
+	/**
 	 * Returns a new object of class '<em>Rich String URL</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Rich String URL</em>'.

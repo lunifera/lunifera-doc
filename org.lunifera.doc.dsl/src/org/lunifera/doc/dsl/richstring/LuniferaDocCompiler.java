@@ -29,6 +29,7 @@ import org.eclipse.xtext.xbase.typing.ITypeProvider;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
@@ -40,7 +41,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -208,6 +211,60 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</h2>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptChapterStart(RichStringChapter object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a id=\">");
+			append(object.getId());
+			append("\" class=\"lundoc-chapter\">");
+		}
+
+		@Override
+		public void acceptChapterEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptSectionStart(RichStringSection object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a id=\">");
+			append(object.getId());
+			append("\" class=\"lundoc-section\">");
+		}
+
+		@Override
+		public void acceptSectionEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptSubsectionStart(RichStringSubsection object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a id=\">");
+			append(object.getId());
+			append("\" class=\"lundoc-subsection\">");
+		}
+
+		@Override
+		public void acceptSubsectionEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
 			popAppendable();
 		}
 

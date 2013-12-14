@@ -16,6 +16,7 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -25,7 +26,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -90,6 +93,30 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 
 	@Override
 	public void acceptH2End() {
+	}
+
+	@Override
+	public void acceptChapterStart(RichStringChapter object) {
+	}
+
+	@Override
+	public void acceptChapterEnd() {
+	}
+
+	@Override
+	public void acceptSectionStart(RichStringSection object) {
+	}
+
+	@Override
+	public void acceptSectionEnd() {
+	}
+
+	@Override
+	public void acceptSubsectionStart(RichStringSubsection object) {
+	}
+
+	@Override
+	public void acceptSubsectionEnd() {
 	}
 
 	@Override

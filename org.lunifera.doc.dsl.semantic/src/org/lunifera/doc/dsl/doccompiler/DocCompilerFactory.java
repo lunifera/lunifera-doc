@@ -373,6 +373,54 @@ public interface DocCompilerFactory extends EFactory {
 	TableDataEnd createTableDataEnd();
 
 	/**
+	 * Returns a new object of class '<em>Chapter Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Chapter Start</em>'.
+	 * @generated
+	 */
+	ChapterStart createChapterStart();
+
+	/**
+	 * Returns a new object of class '<em>Chapter End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Chapter End</em>'.
+	 * @generated
+	 */
+	ChapterEnd createChapterEnd();
+
+	/**
+	 * Returns a new object of class '<em>Section Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Section Start</em>'.
+	 * @generated
+	 */
+	SectionStart createSectionStart();
+
+	/**
+	 * Returns a new object of class '<em>Section End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Section End</em>'.
+	 * @generated
+	 */
+	SectionEnd createSectionEnd();
+
+	/**
+	 * Returns a new object of class '<em>Subsection Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Subsection Start</em>'.
+	 * @generated
+	 */
+	SubsectionStart createSubsectionStart();
+
+	/**
+	 * Returns a new object of class '<em>Subsection End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Subsection End</em>'.
+	 * @generated
+	 */
+	SubsectionEnd createSubsectionEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

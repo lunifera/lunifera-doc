@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
@@ -22,7 +23,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -90,6 +93,12 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringH1();
 		case RichstringPackage.RICH_STRING_H2:
 			return createRichStringH2();
+		case RichstringPackage.RICH_STRING_CHAPTER:
+			return createRichStringChapter();
+		case RichstringPackage.RICH_STRING_SECTION:
+			return createRichStringSection();
+		case RichstringPackage.RICH_STRING_SUBSECTION:
+			return createRichStringSubsection();
 		case RichstringPackage.RICH_STRING_URL:
 			return createRichStringURL();
 		case RichstringPackage.RICH_STRING_BOLD:
@@ -208,6 +217,36 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringH2 createRichStringH2() {
 		RichStringH2Impl richStringH2 = new RichStringH2Impl();
 		return richStringH2;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringChapter createRichStringChapter() {
+		RichStringChapterImpl richStringChapter = new RichStringChapterImpl();
+		return richStringChapter;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringSection createRichStringSection() {
+		RichStringSectionImpl richStringSection = new RichStringSectionImpl();
+		return richStringSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringSubsection createRichStringSubsection() {
+		RichStringSubsectionImpl richStringSubsection = new RichStringSubsectionImpl();
+		return richStringSubsection;
 	}
 
 	/**

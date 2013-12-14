@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
+import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
@@ -41,8 +43,12 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
 import org.lunifera.doc.dsl.doccompiler.TableDataStart;
 import org.lunifera.doc.dsl.doccompiler.TableEnd;
@@ -183,6 +189,18 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createTableDataStart();
 		case DocCompilerPackage.TABLE_DATA_END:
 			return createTableDataEnd();
+		case DocCompilerPackage.CHAPTER_START:
+			return createChapterStart();
+		case DocCompilerPackage.CHAPTER_END:
+			return createChapterEnd();
+		case DocCompilerPackage.SECTION_START:
+			return createSectionStart();
+		case DocCompilerPackage.SECTION_END:
+			return createSectionEnd();
+		case DocCompilerPackage.SUBSECTION_START:
+			return createSubsectionStart();
+		case DocCompilerPackage.SUBSECTION_END:
+			return createSubsectionEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -627,6 +645,66 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public TableDataEnd createTableDataEnd() {
 		TableDataEndImpl tableDataEnd = new TableDataEndImpl();
 		return tableDataEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ChapterStart createChapterStart() {
+		ChapterStartImpl chapterStart = new ChapterStartImpl();
+		return chapterStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ChapterEnd createChapterEnd() {
+		ChapterEndImpl chapterEnd = new ChapterEndImpl();
+		return chapterEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SectionStart createSectionStart() {
+		SectionStartImpl sectionStart = new SectionStartImpl();
+		return sectionStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SectionEnd createSectionEnd() {
+		SectionEndImpl sectionEnd = new SectionEndImpl();
+		return sectionEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SubsectionStart createSubsectionStart() {
+		SubsectionStartImpl subsectionStart = new SubsectionStartImpl();
+		return subsectionStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SubsectionEnd createSubsectionEnd() {
+		SubsectionEndImpl subsectionEnd = new SubsectionEndImpl();
+		return subsectionEnd;
 	}
 
 	/**

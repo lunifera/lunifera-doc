@@ -15,6 +15,8 @@ import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
+import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
@@ -46,8 +48,12 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
 import org.lunifera.doc.dsl.doccompiler.TableDataStart;
 import org.lunifera.doc.dsl.doccompiler.TableEnd;
@@ -63,6 +69,7 @@ import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
@@ -76,7 +83,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -270,6 +279,48 @@ public class RichStringProcessor {
 			doSwitch(object.getExpression());
 
 			H1End end = factory.createH1End();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringChapter(RichStringChapter object) {
+			ChapterStart start = factory.createChapterStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ChapterEnd end = factory.createChapterEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringSection(RichStringSection object) {
+			SectionStart start = factory.createSectionStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			SectionEnd end = factory.createSectionEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringSubsection(RichStringSubsection object) {
+			SubsectionStart start = factory.createSubsectionStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			SubsectionEnd end = factory.createSubsectionEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -618,6 +669,48 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseH1End(H1End object) {
 			acceptor.acceptH1End();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseChapterStart(ChapterStart object) {
+			acceptor.acceptChapterStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseChapterEnd(ChapterEnd object) {
+			acceptor.acceptChapterEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseSectionStart(SectionStart object) {
+			acceptor.acceptSectionStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseSectionEnd(SectionEnd object) {
+			acceptor.acceptSectionEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseSubsectionStart(SubsectionStart object) {
+			acceptor.acceptSubsectionStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseSubsectionEnd(SubsectionEnd object) {
+			acceptor.acceptSubsectionEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
+import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
@@ -38,8 +40,12 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
 import org.lunifera.doc.dsl.doccompiler.TableDataStart;
 import org.lunifera.doc.dsl.doccompiler.TableEnd;
@@ -489,6 +495,60 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseTableDataEnd(tableDataEnd);
 			if (result == null)
 				result = caseLinePart(tableDataEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.CHAPTER_START: {
+			ChapterStart chapterStart = (ChapterStart) theEObject;
+			T result = caseChapterStart(chapterStart);
+			if (result == null)
+				result = caseLinePart(chapterStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.CHAPTER_END: {
+			ChapterEnd chapterEnd = (ChapterEnd) theEObject;
+			T result = caseChapterEnd(chapterEnd);
+			if (result == null)
+				result = caseLinePart(chapterEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.SECTION_START: {
+			SectionStart sectionStart = (SectionStart) theEObject;
+			T result = caseSectionStart(sectionStart);
+			if (result == null)
+				result = caseLinePart(sectionStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.SECTION_END: {
+			SectionEnd sectionEnd = (SectionEnd) theEObject;
+			T result = caseSectionEnd(sectionEnd);
+			if (result == null)
+				result = caseLinePart(sectionEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.SUBSECTION_START: {
+			SubsectionStart subsectionStart = (SubsectionStart) theEObject;
+			T result = caseSubsectionStart(subsectionStart);
+			if (result == null)
+				result = caseLinePart(subsectionStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.SUBSECTION_END: {
+			SubsectionEnd subsectionEnd = (SubsectionEnd) theEObject;
+			T result = caseSubsectionEnd(subsectionEnd);
+			if (result == null)
+				result = caseLinePart(subsectionEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1121,6 +1181,92 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTableDataEnd(TableDataEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Chapter Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Chapter Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChapterStart(ChapterStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Chapter End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Chapter End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChapterEnd(ChapterEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Section Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Section Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSectionStart(SectionStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Section End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Section End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSectionEnd(SectionEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Subsection Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Subsection Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSubsectionStart(SubsectionStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Subsection End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Subsection End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSubsectionEnd(SubsectionEnd object) {
 		return null;
 	}
 

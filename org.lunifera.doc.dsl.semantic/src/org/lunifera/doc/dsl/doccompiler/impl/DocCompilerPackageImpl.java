@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
+import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
@@ -42,8 +44,12 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
 import org.lunifera.doc.dsl.doccompiler.TableDataStart;
 import org.lunifera.doc.dsl.doccompiler.TableEnd;
@@ -370,6 +376,48 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass tableDataEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass chapterStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass chapterEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass sectionStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass sectionEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass subsectionStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass subsectionEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1468,6 +1516,141 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getChapterStart() {
+		return chapterStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getChapterStart_Content() {
+		return (EReference) chapterStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getChapterStart_End() {
+		return (EReference) chapterStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getChapterEnd() {
+		return chapterEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getChapterEnd_Start() {
+		return (EReference) chapterEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getSectionStart() {
+		return sectionStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSectionStart_Content() {
+		return (EReference) sectionStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSectionStart_End() {
+		return (EReference) sectionStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getSectionEnd() {
+		return sectionEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSectionEnd_Start() {
+		return (EReference) sectionEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getSubsectionStart() {
+		return subsectionStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSubsectionStart_Content() {
+		return (EReference) subsectionStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSubsectionStart_End() {
+		return (EReference) subsectionStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getSubsectionEnd() {
+		return subsectionEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSubsectionEnd_Start() {
+		return (EReference) subsectionEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -1648,6 +1831,27 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		tableDataEndEClass = createEClass(TABLE_DATA_END);
 		createEReference(tableDataEndEClass, TABLE_DATA_END__START);
+
+		chapterStartEClass = createEClass(CHAPTER_START);
+		createEReference(chapterStartEClass, CHAPTER_START__CONTENT);
+		createEReference(chapterStartEClass, CHAPTER_START__END);
+
+		chapterEndEClass = createEClass(CHAPTER_END);
+		createEReference(chapterEndEClass, CHAPTER_END__START);
+
+		sectionStartEClass = createEClass(SECTION_START);
+		createEReference(sectionStartEClass, SECTION_START__CONTENT);
+		createEReference(sectionStartEClass, SECTION_START__END);
+
+		sectionEndEClass = createEClass(SECTION_END);
+		createEReference(sectionEndEClass, SECTION_END__START);
+
+		subsectionStartEClass = createEClass(SUBSECTION_START);
+		createEReference(subsectionStartEClass, SUBSECTION_START__CONTENT);
+		createEReference(subsectionStartEClass, SUBSECTION_START__END);
+
+		subsectionEndEClass = createEClass(SUBSECTION_END);
+		createEReference(subsectionEndEClass, SUBSECTION_END__START);
 	}
 
 	/**
@@ -1727,6 +1931,12 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		tableRowEndEClass.getESuperTypes().add(this.getLinePart());
 		tableDataStartEClass.getESuperTypes().add(this.getLinePart());
 		tableDataEndEClass.getESuperTypes().add(this.getLinePart());
+		chapterStartEClass.getESuperTypes().add(this.getLinePart());
+		chapterEndEClass.getESuperTypes().add(this.getLinePart());
+		sectionStartEClass.getESuperTypes().add(this.getLinePart());
+		sectionEndEClass.getESuperTypes().add(this.getLinePart());
+		subsectionStartEClass.getESuperTypes().add(this.getLinePart());
+		subsectionEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -2117,6 +2327,60 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		initEReference(getTableDataEnd_Start(), this.getTableDataStart(), null, "start", null, 0,
 				1, TableDataEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(chapterStartEClass, ChapterStart.class, "ChapterStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChapterStart_Content(), theRichstringPackage.getRichStringChapter(),
+				null, "content", null, 0, 1, ChapterStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getChapterStart_End(), this.getChapterEnd(), this.getChapterEnd_Start(),
+				"end", null, 0, 1, ChapterStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(chapterEndEClass, ChapterEnd.class, "ChapterEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChapterEnd_Start(), this.getChapterStart(), this.getChapterStart_End(),
+				"start", null, 0, 1, ChapterEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(sectionStartEClass, SectionStart.class, "SectionStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSectionStart_Content(), theRichstringPackage.getRichStringSection(),
+				null, "content", null, 0, 1, SectionStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getSectionStart_End(), this.getSectionEnd(), this.getSectionEnd_Start(),
+				"end", null, 0, 1, SectionStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(sectionEndEClass, SectionEnd.class, "SectionEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSectionEnd_Start(), this.getSectionStart(), this.getSectionStart_End(),
+				"start", null, 0, 1, SectionEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(subsectionStartEClass, SubsectionStart.class, "SubsectionStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSubsectionStart_Content(),
+				theRichstringPackage.getRichStringSubsection(), null, "content", null, 0, 1,
+				SubsectionStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubsectionStart_End(), this.getSubsectionEnd(),
+				this.getSubsectionEnd_Start(), "end", null, 0, 1, SubsectionStart.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(subsectionEndEClass, SubsectionEnd.class, "SubsectionEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSubsectionEnd_Start(), this.getSubsectionStart(),
+				this.getSubsectionStart_End(), "start", null, 0, 1, SubsectionEnd.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

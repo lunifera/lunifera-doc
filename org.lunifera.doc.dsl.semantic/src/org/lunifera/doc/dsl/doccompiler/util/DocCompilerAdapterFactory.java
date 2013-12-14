@@ -8,6 +8,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.lunifera.doc.dsl.doccompiler.BoldEnd;
 import org.lunifera.doc.dsl.doccompiler.BoldStart;
+import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
+import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
@@ -39,8 +41,12 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.SectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
+import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
 import org.lunifera.doc.dsl.doccompiler.TableDataStart;
 import org.lunifera.doc.dsl.doccompiler.TableEnd;
@@ -321,6 +327,36 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseTableDataEnd(TableDataEnd object) {
 			return createTableDataEndAdapter();
+		}
+
+		@Override
+		public Adapter caseChapterStart(ChapterStart object) {
+			return createChapterStartAdapter();
+		}
+
+		@Override
+		public Adapter caseChapterEnd(ChapterEnd object) {
+			return createChapterEndAdapter();
+		}
+
+		@Override
+		public Adapter caseSectionStart(SectionStart object) {
+			return createSectionStartAdapter();
+		}
+
+		@Override
+		public Adapter caseSectionEnd(SectionEnd object) {
+			return createSectionEndAdapter();
+		}
+
+		@Override
+		public Adapter caseSubsectionStart(SubsectionStart object) {
+			return createSubsectionStartAdapter();
+		}
+
+		@Override
+		public Adapter caseSubsectionEnd(SubsectionEnd object) {
+			return createSubsectionEndAdapter();
 		}
 
 		@Override
@@ -944,6 +980,90 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTableDataEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ChapterStart
+	 * <em>Chapter Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ChapterStart
+	 * @generated
+	 */
+	public Adapter createChapterStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ChapterEnd
+	 * <em>Chapter End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ChapterEnd
+	 * @generated
+	 */
+	public Adapter createChapterEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SectionStart
+	 * <em>Section Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SectionStart
+	 * @generated
+	 */
+	public Adapter createSectionStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SectionEnd
+	 * <em>Section End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SectionEnd
+	 * @generated
+	 */
+	public Adapter createSectionEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SubsectionStart
+	 * <em>Subsection Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SubsectionStart
+	 * @generated
+	 */
+	public Adapter createSubsectionStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SubsectionEnd
+	 * <em>Subsection End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SubsectionEnd
+	 * @generated
+	 */
+	public Adapter createSubsectionEndAdapter() {
 		return null;
 	}
 

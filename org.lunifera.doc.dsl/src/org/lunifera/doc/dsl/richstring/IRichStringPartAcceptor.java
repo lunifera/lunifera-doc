@@ -14,6 +14,7 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -23,7 +24,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -205,6 +208,18 @@ public interface IRichStringPartAcceptor {
 	void acceptH2Start(RichStringH2 object);
 
 	void acceptH2End();
+
+	void acceptChapterStart(RichStringChapter object);
+
+	void acceptChapterEnd();
+
+	void acceptSectionStart(RichStringSection object);
+
+	void acceptSectionEnd();
+
+	void acceptSubsectionStart(RichStringSubsection object);
+
+	void acceptSubsectionEnd();
 
 	void acceptURLStart(RichStringURL object);
 

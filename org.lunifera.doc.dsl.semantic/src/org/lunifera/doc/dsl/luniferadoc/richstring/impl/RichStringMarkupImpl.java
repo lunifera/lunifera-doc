@@ -18,6 +18,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl#getId <em>Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl#getClass_ <em>Class</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMarkupImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
@@ -25,6 +27,44 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * @generated
  */
 public class RichStringMarkupImpl extends XExpressionImpl implements RichStringMarkup {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getClass_()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getClass_()
+	 * @generated
+	 * @ordered
+	 */
+	protected String class_ = CLASS_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
@@ -52,6 +92,50 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	@Override
 	protected EClass eStaticClass() {
 		return RichstringPackage.Literals.RICH_STRING_MARKUP;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					RichstringPackage.RICH_STRING_MARKUP__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getClass_() {
+		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setClass(String newClass) {
+		String oldClass = class_;
+		class_ = newClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					RichstringPackage.RICH_STRING_MARKUP__CLASS, oldClass, class_));
 	}
 
 	/**
@@ -127,6 +211,10 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case RichstringPackage.RICH_STRING_MARKUP__ID:
+			return getId();
+		case RichstringPackage.RICH_STRING_MARKUP__CLASS:
+			return getClass_();
 		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
 			return getExpression();
 		}
@@ -141,6 +229,12 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case RichstringPackage.RICH_STRING_MARKUP__ID:
+			setId((String) newValue);
+			return;
+		case RichstringPackage.RICH_STRING_MARKUP__CLASS:
+			setClass((String) newValue);
+			return;
 		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
 			setExpression((XExpression) newValue);
 			return;
@@ -156,6 +250,12 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case RichstringPackage.RICH_STRING_MARKUP__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case RichstringPackage.RICH_STRING_MARKUP__CLASS:
+			setClass(CLASS_EDEFAULT);
+			return;
 		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
 			setExpression((XExpression) null);
 			return;
@@ -171,10 +271,33 @@ public class RichStringMarkupImpl extends XExpressionImpl implements RichStringM
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case RichstringPackage.RICH_STRING_MARKUP__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case RichstringPackage.RICH_STRING_MARKUP__CLASS:
+			return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 		case RichstringPackage.RICH_STRING_MARKUP__EXPRESSION:
 			return expression != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", class: ");
+		result.append(class_);
+		result.append(')');
+		return result.toString();
 	}
 
 } // RichStringMarkupImpl

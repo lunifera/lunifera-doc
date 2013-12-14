@@ -18,6 +18,7 @@ import org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage;
 import org.lunifera.doc.dsl.luniferadoc.layout.impl.LayoutPackageImpl;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
@@ -31,7 +32,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
@@ -108,6 +111,27 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringH2EClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringChapterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringSubsectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -418,8 +442,26 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EAttribute getRichStringMarkup_Id() {
+		return (EAttribute) richStringMarkupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringMarkup_Class() {
+		return (EAttribute) richStringMarkupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EReference getRichStringMarkup_Expression() {
-		return (EReference) richStringMarkupEClass.getEStructuralFeatures().get(0);
+		return (EReference) richStringMarkupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -447,6 +489,33 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 */
 	public EClass getRichStringH2() {
 		return richStringH2EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringChapter() {
+		return richStringChapterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringSection() {
+		return richStringSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringSubsection() {
+		return richStringSubsectionEClass;
 	}
 
 	/**
@@ -776,6 +845,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		createEReference(richStringIfEClass, RICH_STRING_IF__ELSE);
 
 		richStringMarkupEClass = createEClass(RICH_STRING_MARKUP);
+		createEAttribute(richStringMarkupEClass, RICH_STRING_MARKUP__ID);
+		createEAttribute(richStringMarkupEClass, RICH_STRING_MARKUP__CLASS);
 		createEReference(richStringMarkupEClass, RICH_STRING_MARKUP__EXPRESSION);
 
 		richStringExampleEClass = createEClass(RICH_STRING_EXAMPLE);
@@ -783,6 +854,12 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringH1EClass = createEClass(RICH_STRING_H1);
 
 		richStringH2EClass = createEClass(RICH_STRING_H2);
+
+		richStringChapterEClass = createEClass(RICH_STRING_CHAPTER);
+
+		richStringSectionEClass = createEClass(RICH_STRING_SECTION);
+
+		richStringSubsectionEClass = createEClass(RICH_STRING_SUBSECTION);
 
 		richStringURLEClass = createEClass(RICH_STRING_URL);
 		createEAttribute(richStringURLEClass, RICH_STRING_URL__LOCATION);
@@ -868,6 +945,9 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringExampleEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringH1EClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringH2EClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringChapterEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringSectionEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringSubsectionEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringURLEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringBoldEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringUnderlineEClass.getESuperTypes().add(this.getRichStringMarkup());
@@ -934,6 +1014,12 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		initEClass(richStringMarkupEClass, RichStringMarkup.class, "RichStringMarkup",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringMarkup_Id(), ecorePackage.getEString(), "id", null, 0, 1,
+				RichStringMarkup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRichStringMarkup_Class(), ecorePackage.getEString(), "class", null, 0, 1,
+				RichStringMarkup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRichStringMarkup_Expression(), theXbasePackage.getXExpression(), null,
 				"expression", null, 0, 1, RichStringMarkup.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
@@ -947,6 +1033,15 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		initEClass(richStringH2EClass, RichStringH2.class, "RichStringH2", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringChapterEClass, RichStringChapter.class, "RichStringChapter",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringSectionEClass, RichStringSection.class, "RichStringSection",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringSubsectionEClass, RichStringSubsection.class, "RichStringSubsection",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(richStringURLEClass, RichStringURL.class, "RichStringURL", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

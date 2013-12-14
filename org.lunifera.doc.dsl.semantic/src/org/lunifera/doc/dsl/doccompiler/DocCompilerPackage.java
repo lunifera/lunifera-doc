@@ -2153,6 +2153,288 @@ public interface DocCompilerPackage extends EPackage {
 	int TABLE_DATA_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ChapterStartImpl <em>Chapter Start</em>}
+	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.ChapterStartImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getChapterStart()
+	 * @generated
+	 */
+	int CHAPTER_START = 44;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_START__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_START__END = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Chapter Start</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Chapter Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ChapterEndImpl <em>Chapter End</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.ChapterEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getChapterEnd()
+	 * @generated
+	 */
+	int CHAPTER_END = 45;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Chapter End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Chapter End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CHAPTER_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SectionStartImpl <em>Section Start</em>}
+	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SectionStartImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSectionStart()
+	 * @generated
+	 */
+	int SECTION_START = 46;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_START__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_START__END = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Section Start</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Section Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SectionEndImpl <em>Section End</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SectionEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSectionEnd()
+	 * @generated
+	 */
+	int SECTION_END = 47;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Section End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Section End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SubsectionStartImpl
+	 * <em>Subsection Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SubsectionStartImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSubsectionStart()
+	 * @generated
+	 */
+	int SUBSECTION_START = 48;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_START__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_START__END = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Subsection Start</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Subsection Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SubsectionEndImpl
+	 * <em>Subsection End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SubsectionEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSubsectionEnd()
+	 * @generated
+	 */
+	int SUBSECTION_END = 49;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Subsection End</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Subsection End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSECTION_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.DocumentStart <em>Document Start</em>}
 	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -3372,6 +3654,165 @@ public interface DocCompilerPackage extends EPackage {
 	EReference getTableDataEnd_Start();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.ChapterStart <em>Chapter Start</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Chapter Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.ChapterStart
+	 * @generated
+	 */
+	EClass getChapterStart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.ChapterStart#getContent
+	 * <em>Content</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.ChapterStart#getContent()
+	 * @see #getChapterStart()
+	 * @generated
+	 */
+	EReference getChapterStart_Content();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.ChapterStart#getEnd
+	 * <em>End</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.ChapterStart#getEnd()
+	 * @see #getChapterStart()
+	 * @generated
+	 */
+	EReference getChapterStart_End();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.ChapterEnd <em>Chapter End</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Chapter End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.ChapterEnd
+	 * @generated
+	 */
+	EClass getChapterEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.ChapterEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.ChapterEnd#getStart()
+	 * @see #getChapterEnd()
+	 * @generated
+	 */
+	EReference getChapterEnd_Start();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SectionStart <em>Section Start</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Section Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SectionStart
+	 * @generated
+	 */
+	EClass getSectionStart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SectionStart#getContent
+	 * <em>Content</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SectionStart#getContent()
+	 * @see #getSectionStart()
+	 * @generated
+	 */
+	EReference getSectionStart_Content();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SectionStart#getEnd
+	 * <em>End</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SectionStart#getEnd()
+	 * @see #getSectionStart()
+	 * @generated
+	 */
+	EReference getSectionStart_End();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SectionEnd <em>Section End</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Section End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SectionEnd
+	 * @generated
+	 */
+	EClass getSectionEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SectionEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SectionEnd#getStart()
+	 * @see #getSectionEnd()
+	 * @generated
+	 */
+	EReference getSectionEnd_Start();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SubsectionStart
+	 * <em>Subsection Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Subsection Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SubsectionStart
+	 * @generated
+	 */
+	EClass getSubsectionStart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SubsectionStart#getContent
+	 * <em>Content</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SubsectionStart#getContent()
+	 * @see #getSubsectionStart()
+	 * @generated
+	 */
+	EReference getSubsectionStart_Content();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SubsectionStart#getEnd
+	 * <em>End</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SubsectionStart#getEnd()
+	 * @see #getSubsectionStart()
+	 * @generated
+	 */
+	EReference getSubsectionStart_End();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SubsectionEnd <em>Subsection End</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Subsection End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SubsectionEnd
+	 * @generated
+	 */
+	EClass getSubsectionEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SubsectionEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SubsectionEnd#getStart()
+	 * @see #getSubsectionEnd()
+	 * @generated
+	 */
+	EReference getSubsectionEnd_Start();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -4397,6 +4838,138 @@ public interface DocCompilerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TABLE_DATA_END__START = eINSTANCE.getTableDataEnd_Start();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ChapterStartImpl
+		 * <em>Chapter Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.ChapterStartImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getChapterStart()
+		 * @generated
+		 */
+		EClass CHAPTER_START = eINSTANCE.getChapterStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CHAPTER_START__CONTENT = eINSTANCE.getChapterStart_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CHAPTER_START__END = eINSTANCE.getChapterStart_End();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ChapterEndImpl
+		 * <em>Chapter End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.ChapterEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getChapterEnd()
+		 * @generated
+		 */
+		EClass CHAPTER_END = eINSTANCE.getChapterEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CHAPTER_END__START = eINSTANCE.getChapterEnd_Start();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SectionStartImpl
+		 * <em>Section Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SectionStartImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSectionStart()
+		 * @generated
+		 */
+		EClass SECTION_START = eINSTANCE.getSectionStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SECTION_START__CONTENT = eINSTANCE.getSectionStart_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SECTION_START__END = eINSTANCE.getSectionStart_End();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SectionEndImpl
+		 * <em>Section End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SectionEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSectionEnd()
+		 * @generated
+		 */
+		EClass SECTION_END = eINSTANCE.getSectionEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SECTION_END__START = eINSTANCE.getSectionEnd_Start();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SubsectionStartImpl
+		 * <em>Subsection Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SubsectionStartImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSubsectionStart()
+		 * @generated
+		 */
+		EClass SUBSECTION_START = eINSTANCE.getSubsectionStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SUBSECTION_START__CONTENT = eINSTANCE.getSubsectionStart_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SUBSECTION_START__END = eINSTANCE.getSubsectionStart_End();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SubsectionEndImpl
+		 * <em>Subsection End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SubsectionEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSubsectionEnd()
+		 * @generated
+		 */
+		EClass SUBSECTION_END = eINSTANCE.getSubsectionEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SUBSECTION_END__START = eINSTANCE.getSubsectionEnd_Start();
 
 	}
 

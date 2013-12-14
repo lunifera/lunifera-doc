@@ -175,7 +175,8 @@ RichStringPart returns xbase::XExpression:
 	XExpressionInsideBlock |
 	RichStringForLoop |
 	RichStringIf |
-	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL | RichStringMailto | 
+	RichStringH1 | RichStringH2 | RichStringChapter | RichStringSection | RichStringSubsection | 
+	RichStringExample | RichStringURL | RichStringMailto | 
 	RichStringSkype | RichStringMovie | RichStringImg |	RichStringBold | RichStringUnderline | 
 	RichStringItalic | RichStringCode | RichStringTable;
 
@@ -191,6 +192,18 @@ RichStringH1 returns xbase::XExpression:
 RichStringH2 returns xbase::XExpression:
 	{richstring::RichStringH2}
 	"h2" expression=InternalRichString "/h2";
+
+RichStringChapter returns xbase::XExpression:
+	{richstring::RichStringChapter}
+	"chapter" "id="id=STRING expression=InternalRichString "/chapter";
+	
+RichStringSection returns xbase::XExpression:
+	{richstring::RichStringSection}
+	"section" "id="id=STRING expression=InternalRichString "/section";
+	
+RichStringSubsection returns xbase::XExpression:
+	{richstring::RichStringSubsection}
+	"subsection" "id="id=STRING expression=InternalRichString "/subsection";
 
 RichStringURL returns xbase::XExpression:
 	{richstring::RichStringURL}

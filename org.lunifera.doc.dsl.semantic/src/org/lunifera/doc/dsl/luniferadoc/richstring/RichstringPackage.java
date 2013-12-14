@@ -281,13 +281,29 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_MARKUP = 5;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MARKUP__ID = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MARKUP__CLASS = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MARKUP__EXPRESSION = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+	int RICH_STRING_MARKUP__EXPRESSION = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Rich String Markup</em>' class. <!-- begin-user-doc --> <!--
@@ -296,7 +312,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MARKUP_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_MARKUP_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringExampleImpl
@@ -307,6 +323,22 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 */
 	int RICH_STRING_EXAMPLE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_EXAMPLE__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_EXAMPLE__CLASS = RICH_STRING_MARKUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -337,6 +369,22 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H1 = 7;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_H1__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_H1__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -365,6 +413,22 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H2 = 8;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_H2__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_H2__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -383,6 +447,138 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H2_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringChapterImpl
+	 * <em>Rich String Chapter</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringChapterImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringChapter()
+	 * @generated
+	 */
+	int RICH_STRING_CHAPTER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CHAPTER__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CHAPTER__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CHAPTER__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Chapter</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CHAPTER_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSectionImpl
+	 * <em>Rich String Section</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSectionImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSection()
+	 * @generated
+	 */
+	int RICH_STRING_SECTION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SECTION__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SECTION__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SECTION__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Section</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SECTION_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSubsectionImpl
+	 * <em>Rich String Subsection</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSubsectionImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSubsection()
+	 * @generated
+	 */
+	int RICH_STRING_SUBSECTION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SUBSECTION__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SUBSECTION__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SUBSECTION__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Subsection</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SUBSECTION_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringURLImpl
 	 * <em>Rich String URL</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -390,7 +586,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringURL()
 	 * @generated
 	 */
-	int RICH_STRING_URL = 9;
+	int RICH_STRING_URL = 12;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -426,7 +622,23 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringBold()
 	 * @generated
 	 */
-	int RICH_STRING_BOLD = 10;
+	int RICH_STRING_BOLD = 13;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_BOLD__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_BOLD__CLASS = RICH_STRING_MARKUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -454,7 +666,23 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringUnderline()
 	 * @generated
 	 */
-	int RICH_STRING_UNDERLINE = 11;
+	int RICH_STRING_UNDERLINE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UNDERLINE__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UNDERLINE__CLASS = RICH_STRING_MARKUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -482,7 +710,23 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringItalic()
 	 * @generated
 	 */
-	int RICH_STRING_ITALIC = 12;
+	int RICH_STRING_ITALIC = 15;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ITALIC__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ITALIC__CLASS = RICH_STRING_MARKUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -510,7 +754,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringImg()
 	 * @generated
 	 */
-	int RICH_STRING_IMG = 13;
+	int RICH_STRING_IMG = 16;
 
 	/**
 	 * The feature id for the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -561,7 +805,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMailto()
 	 * @generated
 	 */
-	int RICH_STRING_MAILTO = 14;
+	int RICH_STRING_MAILTO = 17;
 
 	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -597,7 +841,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSkype()
 	 * @generated
 	 */
-	int RICH_STRING_SKYPE = 15;
+	int RICH_STRING_SKYPE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -633,7 +877,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringMovie()
 	 * @generated
 	 */
-	int RICH_STRING_MOVIE = 16;
+	int RICH_STRING_MOVIE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -693,7 +937,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringCode()
 	 * @generated
 	 */
-	int RICH_STRING_CODE = 17;
+	int RICH_STRING_CODE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Lang</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -729,7 +973,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTable()
 	 * @generated
 	 */
-	int RICH_STRING_TABLE = 18;
+	int RICH_STRING_TABLE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' containment reference list. <!-- begin-user-doc --> <!--
@@ -757,7 +1001,7 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableRow()
 	 * @generated
 	 */
-	int RICH_STRING_TABLE_ROW = 19;
+	int RICH_STRING_TABLE_ROW = 22;
 
 	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list. <!-- begin-user-doc --> <!--
@@ -785,7 +1029,23 @@ public interface RichstringPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableData()
 	 * @generated
 	 */
-	int RICH_STRING_TABLE_DATA = 20;
+	int RICH_STRING_TABLE_DATA = 23;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE_DATA__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE_DATA__CLASS = RICH_STRING_MARKUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -974,6 +1234,30 @@ public interface RichstringPackage extends EPackage {
 	EClass getRichStringMarkup();
 
 	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getId <em>Id</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getId()
+	 * @see #getRichStringMarkup()
+	 * @generated
+	 */
+	EAttribute getRichStringMarkup_Id();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getClass_ <em>Class</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Class</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getClass_()
+	 * @see #getRichStringMarkup()
+	 * @generated
+	 */
+	EAttribute getRichStringMarkup_Class();
+
+	/**
 	 * Returns the meta object for the containment reference '
 	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getExpression <em>Expression</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -1014,6 +1298,36 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRichStringH2();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter
+	 * <em>Rich String Chapter</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Chapter</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter
+	 * @generated
+	 */
+	EClass getRichStringChapter();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection
+	 * <em>Rich String Section</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Section</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection
+	 * @generated
+	 */
+	EClass getRichStringSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection
+	 * <em>Rich String Subsection</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Subsection</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection
+	 * @generated
+	 */
+	EClass getRichStringSubsection();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL
@@ -1521,6 +1835,22 @@ public interface RichstringPackage extends EPackage {
 		EClass RICH_STRING_MARKUP = eINSTANCE.getRichStringMarkup();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_MARKUP__ID = eINSTANCE.getRichStringMarkup_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_MARKUP__CLASS = eINSTANCE.getRichStringMarkup_Class();
+
+		/**
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -1558,6 +1888,39 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RICH_STRING_H2 = eINSTANCE.getRichStringH2();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringChapterImpl <em>Rich String Chapter</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringChapterImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringChapter()
+		 * @generated
+		 */
+		EClass RICH_STRING_CHAPTER = eINSTANCE.getRichStringChapter();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSectionImpl <em>Rich String Section</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSectionImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSection()
+		 * @generated
+		 */
+		EClass RICH_STRING_SECTION = eINSTANCE.getRichStringSection();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSubsectionImpl
+		 * <em>Rich String Subsection</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSubsectionImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSubsection()
+		 * @generated
+		 */
+		EClass RICH_STRING_SUBSECTION = eINSTANCE.getRichStringSubsection();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringURLImpl
