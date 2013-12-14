@@ -191,5 +191,14 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
           containment="true"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringTable" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rows" upperBound="-1"
+          eType="#//richstring/RichStringTableRow" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringTableRow" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
+          eType="#//richstring/RichStringTableData" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringTableData" eSuperTypes="#//richstring/RichStringMarkup"/>
   </eSubpackages>
 </ecore:EPackage>

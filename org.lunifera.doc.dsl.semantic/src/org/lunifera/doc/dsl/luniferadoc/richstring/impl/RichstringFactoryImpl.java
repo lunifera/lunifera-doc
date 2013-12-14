@@ -22,6 +22,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringFactory;
@@ -102,6 +105,12 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringSkype();
 		case RichstringPackage.RICH_STRING_CODE:
 			return createRichStringCode();
+		case RichstringPackage.RICH_STRING_TABLE:
+			return createRichStringTable();
+		case RichstringPackage.RICH_STRING_TABLE_ROW:
+			return createRichStringTableRow();
+		case RichstringPackage.RICH_STRING_TABLE_DATA:
+			return createRichStringTableData();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -276,6 +285,36 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringCode createRichStringCode() {
 		RichStringCodeImpl richStringCode = new RichStringCodeImpl();
 		return richStringCode;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTable createRichStringTable() {
+		RichStringTableImpl richStringTable = new RichStringTableImpl();
+		return richStringTable;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTableRow createRichStringTableRow() {
+		RichStringTableRowImpl richStringTableRow = new RichStringTableRowImpl();
+		return richStringTableRow;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTableData createRichStringTableData() {
+		RichStringTableDataImpl richStringTableData = new RichStringTableDataImpl();
+		return richStringTableData;
 	}
 
 	/**

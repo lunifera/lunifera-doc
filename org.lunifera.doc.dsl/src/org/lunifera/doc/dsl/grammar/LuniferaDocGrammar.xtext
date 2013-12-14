@@ -176,7 +176,7 @@ RichStringPart returns xbase::XExpression:
 	RichStringForLoop |
 	RichStringIf |
 	RichStringH1 | RichStringH2 | RichStringExample | RichStringURL | RichStringMailto | RichStringSkype | 
-	RichStringImg |	RichStringBold | RichStringUnderline | RichStringItalic | RichStringCode;
+	RichStringImg |	RichStringBold | RichStringUnderline | RichStringItalic | RichStringCode | RichStringTable;
 
 RichStringExample returns xbase::XExpression:
 	{richstring::RichStringExample}
@@ -230,6 +230,24 @@ RichStringCode returns xbase::XExpression:
 	"code" ("lang="lang=STRING)? 
 	content=InternalRichString
 	"/code";
+	
+RichStringTable returns xbase::XExpression:
+	{richstring::RichStringTable}
+	"table" 
+	rows+=RichStringTableRow*
+	"/table";
+	
+RichStringTableRow returns richstring::RichStringTableRow:
+	{richstring::RichStringTableRow}
+	"row" 
+	columns+=RichStringTableData*
+	"/row";
+	
+RichStringTableData returns richstring::RichStringTableData:
+	{richstring::RichStringTableData}
+	"column" 
+	expression=InternalRichString
+	"/column";
 
 RichStringForLoop returns xbase::XExpression:
 	{richstring::RichStringForLoop}

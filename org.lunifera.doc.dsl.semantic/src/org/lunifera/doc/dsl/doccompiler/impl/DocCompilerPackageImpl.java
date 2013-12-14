@@ -42,6 +42,12 @@ import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
+import org.lunifera.doc.dsl.doccompiler.TableDataStart;
+import org.lunifera.doc.dsl.doccompiler.TableEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowStart;
+import org.lunifera.doc.dsl.doccompiler.TableStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -306,6 +312,48 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass codeEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass tableStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass tableEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass tableRowStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass tableRowEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass tableDataStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass tableDataEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1206,6 +1254,159 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getTableStart() {
+		return tableStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableStart_Rows() {
+		return (EReference) tableStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableStart_End() {
+		return (EReference) tableStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getTableEnd() {
+		return tableEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableEnd_Start() {
+		return (EReference) tableEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getTableRowStart() {
+		return tableRowStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableRowStart_Columns() {
+		return (EReference) tableRowStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableRowStart_End() {
+		return (EReference) tableRowStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableRowStart_TableStart() {
+		return (EReference) tableRowStartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getTableRowEnd() {
+		return tableRowEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableRowEnd_Start() {
+		return (EReference) tableRowEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getTableDataStart() {
+		return tableDataStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableDataStart_Content() {
+		return (EReference) tableDataStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableDataStart_End() {
+		return (EReference) tableDataStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableDataStart_TableRowStart() {
+		return (EReference) tableDataStartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getTableDataEnd() {
+		return tableDataEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableDataEnd_Start() {
+		return (EReference) tableDataEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -1356,6 +1557,29 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		codeEndEClass = createEClass(CODE_END);
 		createEReference(codeEndEClass, CODE_END__START);
+
+		tableStartEClass = createEClass(TABLE_START);
+		createEReference(tableStartEClass, TABLE_START__ROWS);
+		createEReference(tableStartEClass, TABLE_START__END);
+
+		tableEndEClass = createEClass(TABLE_END);
+		createEReference(tableEndEClass, TABLE_END__START);
+
+		tableRowStartEClass = createEClass(TABLE_ROW_START);
+		createEReference(tableRowStartEClass, TABLE_ROW_START__COLUMNS);
+		createEReference(tableRowStartEClass, TABLE_ROW_START__END);
+		createEReference(tableRowStartEClass, TABLE_ROW_START__TABLE_START);
+
+		tableRowEndEClass = createEClass(TABLE_ROW_END);
+		createEReference(tableRowEndEClass, TABLE_ROW_END__START);
+
+		tableDataStartEClass = createEClass(TABLE_DATA_START);
+		createEReference(tableDataStartEClass, TABLE_DATA_START__CONTENT);
+		createEReference(tableDataStartEClass, TABLE_DATA_START__END);
+		createEReference(tableDataStartEClass, TABLE_DATA_START__TABLE_ROW_START);
+
+		tableDataEndEClass = createEClass(TABLE_DATA_END);
+		createEReference(tableDataEndEClass, TABLE_DATA_END__START);
 	}
 
 	/**
@@ -1427,6 +1651,12 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		skypeEndEClass.getESuperTypes().add(this.getLinePart());
 		codeStartEClass.getESuperTypes().add(this.getLinePart());
 		codeEndEClass.getESuperTypes().add(this.getLinePart());
+		tableStartEClass.getESuperTypes().add(this.getLinePart());
+		tableEndEClass.getESuperTypes().add(this.getLinePart());
+		tableRowStartEClass.getESuperTypes().add(this.getLinePart());
+		tableRowEndEClass.getESuperTypes().add(this.getLinePart());
+		tableDataStartEClass.getESuperTypes().add(this.getLinePart());
+		tableDataEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -1743,6 +1973,62 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				null, 0, 1, CodeEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(tableStartEClass, TableStart.class, "TableStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableStart_Rows(), theRichstringPackage.getRichStringTableRow(), null,
+				"rows", null, 0, -1, TableStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getTableStart_End(), this.getTableEnd(), null, "end", null, 0, 1,
+				TableStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tableEndEClass, TableEnd.class, "TableEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableEnd_Start(), this.getTableStart(), null, "start", null, 0, 1,
+				TableEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tableRowStartEClass, TableRowStart.class, "TableRowStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableRowStart_Columns(), theRichstringPackage.getRichStringTableData(),
+				null, "columns", null, 0, -1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getTableRowStart_End(), this.getTableRowEnd(), null, "end", null, 0, 1,
+				TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableRowStart_TableStart(), this.getTableStart(), null, "tableStart",
+				null, 0, 1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(tableRowEndEClass, TableRowEnd.class, "TableRowEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableRowEnd_Start(), this.getTableRowStart(), null, "start", null, 0, 1,
+				TableRowEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tableDataStartEClass, TableDataStart.class, "TableDataStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableDataStart_Content(), theRichstringPackage.getRichStringTableData(),
+				null, "content", null, 0, 1, TableDataStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getTableDataStart_End(), this.getTableDataEnd(), null, "end", null, 0, 1,
+				TableDataStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableDataStart_TableRowStart(), this.getTableRowStart(), null,
+				"tableRowStart", null, 0, 1, TableDataStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(tableDataEndEClass, TableDataEnd.class, "TableDataEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableDataEnd_Start(), this.getTableDataStart(), null, "start", null, 0,
+				1, TableDataEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

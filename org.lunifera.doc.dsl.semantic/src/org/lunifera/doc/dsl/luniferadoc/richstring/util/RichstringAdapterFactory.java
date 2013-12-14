@@ -25,6 +25,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
@@ -163,6 +166,21 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseRichStringCode(RichStringCode object) {
 			return createRichStringCodeAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringTable(RichStringTable object) {
+			return createRichStringTableAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringTableRow(RichStringTableRow object) {
+			return createRichStringTableRowAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringTableData(RichStringTableData object) {
+			return createRichStringTableDataAdapter();
 		}
 
 		@Override
@@ -439,6 +457,48 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringCodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable
+	 * <em>Rich String Table</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable
+	 * @generated
+	 */
+	public Adapter createRichStringTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow <em>Rich String Table Row</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow
+	 * @generated
+	 */
+	public Adapter createRichStringTableRowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData <em>Rich String Table Data</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData
+	 * @generated
+	 */
+	public Adapter createRichStringTableDataAdapter() {
 		return null;
 	}
 

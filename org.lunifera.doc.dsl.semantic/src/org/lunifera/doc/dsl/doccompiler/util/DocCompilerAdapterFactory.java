@@ -39,6 +39,12 @@ import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
+import org.lunifera.doc.dsl.doccompiler.TableDataStart;
+import org.lunifera.doc.dsl.doccompiler.TableEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowStart;
+import org.lunifera.doc.dsl.doccompiler.TableStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -273,6 +279,36 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseCodeEnd(CodeEnd object) {
 			return createCodeEndAdapter();
+		}
+
+		@Override
+		public Adapter caseTableStart(TableStart object) {
+			return createTableStartAdapter();
+		}
+
+		@Override
+		public Adapter caseTableEnd(TableEnd object) {
+			return createTableEndAdapter();
+		}
+
+		@Override
+		public Adapter caseTableRowStart(TableRowStart object) {
+			return createTableRowStartAdapter();
+		}
+
+		@Override
+		public Adapter caseTableRowEnd(TableRowEnd object) {
+			return createTableRowEndAdapter();
+		}
+
+		@Override
+		public Adapter caseTableDataStart(TableDataStart object) {
+			return createTableDataStartAdapter();
+		}
+
+		@Override
+		public Adapter caseTableDataEnd(TableDataEnd object) {
+			return createTableDataEndAdapter();
 		}
 
 		@Override
@@ -784,6 +820,90 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCodeEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TableStart
+	 * <em>Table Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TableStart
+	 * @generated
+	 */
+	public Adapter createTableStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TableEnd
+	 * <em>Table End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TableEnd
+	 * @generated
+	 */
+	public Adapter createTableEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TableRowStart
+	 * <em>Table Row Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TableRowStart
+	 * @generated
+	 */
+	public Adapter createTableRowStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TableRowEnd
+	 * <em>Table Row End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TableRowEnd
+	 * @generated
+	 */
+	public Adapter createTableRowEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TableDataStart
+	 * <em>Table Data Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TableDataStart
+	 * @generated
+	 */
+	public Adapter createTableDataStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TableDataEnd
+	 * <em>Table Data End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TableDataEnd
+	 * @generated
+	 */
+	public Adapter createTableDataEndAdapter() {
 		return null;
 	}
 

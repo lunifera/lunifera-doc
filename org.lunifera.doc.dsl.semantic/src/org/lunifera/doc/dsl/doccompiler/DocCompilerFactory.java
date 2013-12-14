@@ -309,6 +309,54 @@ public interface DocCompilerFactory extends EFactory {
 	CodeEnd createCodeEnd();
 
 	/**
+	 * Returns a new object of class '<em>Table Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Table Start</em>'.
+	 * @generated
+	 */
+	TableStart createTableStart();
+
+	/**
+	 * Returns a new object of class '<em>Table End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Table End</em>'.
+	 * @generated
+	 */
+	TableEnd createTableEnd();
+
+	/**
+	 * Returns a new object of class '<em>Table Row Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Table Row Start</em>'.
+	 * @generated
+	 */
+	TableRowStart createTableRowStart();
+
+	/**
+	 * Returns a new object of class '<em>Table Row End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Table Row End</em>'.
+	 * @generated
+	 */
+	TableRowEnd createTableRowEnd();
+
+	/**
+	 * Returns a new object of class '<em>Table Data Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Table Data Start</em>'.
+	 * @generated
+	 */
+	TableDataStart createTableDataStart();
+
+	/**
+	 * Returns a new object of class '<em>Table Data End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Table Data End</em>'.
+	 * @generated
+	 */
+	TableDataEnd createTableDataEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

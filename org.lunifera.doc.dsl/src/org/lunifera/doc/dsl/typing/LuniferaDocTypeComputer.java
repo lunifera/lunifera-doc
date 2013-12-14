@@ -32,6 +32,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 
 /**
@@ -57,6 +60,12 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 			_computeTypes((RichStringSkype) expression, state);
 		} else if (expression instanceof RichStringCode) {
 			_computeTypes((RichStringCode) expression, state);
+		} else if (expression instanceof RichStringTable) {
+			_computeTypes((RichStringTable) expression, state);
+		} else if (expression instanceof RichStringTableRow) {
+			_computeTypes((RichStringTableRow) expression, state);
+		} else if (expression instanceof RichStringTableData) {
+			_computeTypes((RichStringTableData) expression, state);
 		} else if (expression instanceof RichStringImg) {
 			_computeTypes((RichStringImg) expression, state);
 		} else if (expression instanceof RichString) {
@@ -180,6 +189,31 @@ public class LuniferaDocTypeComputer extends XbaseWithAnnotationsTypeComputer {
 		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
 
 		state.withExpectation(charSequence).computeTypes(object.getContent());
+		state.acceptActualType(charSequence);
+	}
+
+	protected void _computeTypes(RichStringTable object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
+
+		for (RichStringTableRow row : object.getRows()) {
+			state.withExpectation(charSequence).computeTypes(row);
+		}
+		state.acceptActualType(charSequence);
+	}
+
+	protected void _computeTypes(RichStringTableRow object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
+
+		for (RichStringTableData td : object.getColumns()) {
+			state.withExpectation(charSequence).computeTypes(td);
+		}
+		state.acceptActualType(charSequence);
+	}
+
+	protected void _computeTypes(RichStringTableData object, ITypeComputationState state) {
+		LightweightTypeReference charSequence = getTypeForName(CharSequence.class, state);
+
+		state.withExpectation(charSequence).computeTypes(object.getExpression());
 		state.acceptActualType(charSequence);
 	}
 

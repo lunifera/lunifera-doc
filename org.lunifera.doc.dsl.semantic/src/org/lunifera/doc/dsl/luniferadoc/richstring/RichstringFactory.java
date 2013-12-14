@@ -157,6 +157,30 @@ public interface RichstringFactory extends EFactory {
 	RichStringCode createRichStringCode();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Table</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Table</em>'.
+	 * @generated
+	 */
+	RichStringTable createRichStringTable();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Table Row</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Table Row</em>'.
+	 * @generated
+	 */
+	RichStringTableRow createRichStringTableRow();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Table Data</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Table Data</em>'.
+	 * @generated
+	 */
+	RichStringTableData createRichStringTableData();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

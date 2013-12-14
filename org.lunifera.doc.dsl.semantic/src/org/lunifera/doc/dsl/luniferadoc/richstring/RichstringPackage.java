@@ -662,6 +662,90 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_CODE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableImpl
+	 * <em>Rich String Table</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTable()
+	 * @generated
+	 */
+	int RICH_STRING_TABLE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Rows</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE__ROWS = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Table</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableRowImpl
+	 * <em>Rich String Table Row</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableRowImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableRow()
+	 * @generated
+	 */
+	int RICH_STRING_TABLE_ROW = 18;
+
+	/**
+	 * The feature id for the '<em><b>Columns</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE_ROW__COLUMNS = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Table Row</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE_ROW_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl
+	 * <em>Rich String Table Data</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableData()
+	 * @generated
+	 */
+	int RICH_STRING_TABLE_DATA = 19;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE_DATA__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Table Data</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TABLE_DATA_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 	 * <em>Rich String Else If</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1096,6 +1180,60 @@ public interface RichstringPackage extends EPackage {
 	EReference getRichStringCode_Content();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable
+	 * <em>Rich String Table</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Table</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable
+	 * @generated
+	 */
+	EClass getRichStringTable();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getRows <em>Rows</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Rows</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getRows()
+	 * @see #getRichStringTable()
+	 * @generated
+	 */
+	EReference getRichStringTable_Rows();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow
+	 * <em>Rich String Table Row</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Table Row</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow
+	 * @generated
+	 */
+	EClass getRichStringTableRow();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow#getColumns <em>Columns</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Columns</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow#getColumns()
+	 * @see #getRichStringTableRow()
+	 * @generated
+	 */
+	EReference getRichStringTableRow_Columns();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData
+	 * <em>Rich String Table Data</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Table Data</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData
+	 * @generated
+	 */
+	EClass getRichStringTableData();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -1469,6 +1607,54 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_CODE__CONTENT = eINSTANCE.getRichStringCode_Content();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableImpl
+		 * <em>Rich String Table</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTable()
+		 * @generated
+		 */
+		EClass RICH_STRING_TABLE = eINSTANCE.getRichStringTable();
+
+		/**
+		 * The meta object literal for the '<em><b>Rows</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_TABLE__ROWS = eINSTANCE.getRichStringTable_Rows();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableRowImpl
+		 * <em>Rich String Table Row</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableRowImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableRow()
+		 * @generated
+		 */
+		EClass RICH_STRING_TABLE_ROW = eINSTANCE.getRichStringTableRow();
+
+		/**
+		 * The meta object literal for the '<em><b>Columns</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_TABLE_ROW__COLUMNS = eINSTANCE.getRichStringTableRow_Columns();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl
+		 * <em>Rich String Table Data</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTableData()
+		 * @generated
+		 */
+		EClass RICH_STRING_TABLE_DATA = eINSTANCE.getRichStringTableData();
 
 	}
 

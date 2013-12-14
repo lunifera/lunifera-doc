@@ -41,6 +41,12 @@ import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
+import org.lunifera.doc.dsl.doccompiler.TableDataStart;
+import org.lunifera.doc.dsl.doccompiler.TableEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowStart;
+import org.lunifera.doc.dsl.doccompiler.TableStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -159,6 +165,18 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createCodeStart();
 		case DocCompilerPackage.CODE_END:
 			return createCodeEnd();
+		case DocCompilerPackage.TABLE_START:
+			return createTableStart();
+		case DocCompilerPackage.TABLE_END:
+			return createTableEnd();
+		case DocCompilerPackage.TABLE_ROW_START:
+			return createTableRowStart();
+		case DocCompilerPackage.TABLE_ROW_END:
+			return createTableRowEnd();
+		case DocCompilerPackage.TABLE_DATA_START:
+			return createTableDataStart();
+		case DocCompilerPackage.TABLE_DATA_END:
+			return createTableDataEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -523,6 +541,66 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public CodeEnd createCodeEnd() {
 		CodeEndImpl codeEnd = new CodeEndImpl();
 		return codeEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TableStart createTableStart() {
+		TableStartImpl tableStart = new TableStartImpl();
+		return tableStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TableEnd createTableEnd() {
+		TableEndImpl tableEnd = new TableEndImpl();
+		return tableEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TableRowStart createTableRowStart() {
+		TableRowStartImpl tableRowStart = new TableRowStartImpl();
+		return tableRowStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TableRowEnd createTableRowEnd() {
+		TableRowEndImpl tableRowEnd = new TableRowEndImpl();
+		return tableRowEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TableDataStart createTableDataStart() {
+		TableDataStartImpl tableDataStart = new TableDataStartImpl();
+		return tableDataStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TableDataEnd createTableDataEnd() {
+		TableDataEndImpl tableDataEnd = new TableDataEndImpl();
+		return tableDataEnd;
 	}
 
 	/**

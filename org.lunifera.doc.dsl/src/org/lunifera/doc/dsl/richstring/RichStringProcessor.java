@@ -46,6 +46,12 @@ import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
+import org.lunifera.doc.dsl.doccompiler.TableDataStart;
+import org.lunifera.doc.dsl.doccompiler.TableEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowStart;
+import org.lunifera.doc.dsl.doccompiler.TableStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -68,6 +74,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
@@ -342,6 +351,33 @@ public class RichStringProcessor {
 			doSwitch(object.getContent());
 
 			CodeEnd end = factory.createCodeEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringTable(RichStringTable object) {
+			TableStart start = factory.createTableStart();
+			addToCurrentLine(start);
+			for (RichStringTableRow row : object.getRows()) {
+				TableRowStart rowStart = factory.createTableRowStart();
+				rowStart.setTableStart(start);
+				addToCurrentLine(rowStart);
+				for (RichStringTableData td : row.getColumns()) {
+					TableDataStart dataStart = factory.createTableDataStart();
+					dataStart.setTableRowStart(rowStart);
+					addToCurrentLine(dataStart);
+					doSwitch(td.getExpression());
+					TableDataEnd dataEnd = factory.createTableDataEnd();
+					dataEnd.setStart(dataStart);
+					addToCurrentLine(dataEnd);
+				}
+				TableRowEnd rowEnd = factory.createTableRowEnd();
+				rowEnd.setStart(rowStart);
+				addToCurrentLine(rowEnd);
+			}
+			TableEnd end = factory.createTableEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -684,6 +720,52 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseCodeEnd(CodeEnd object) {
 			acceptor.acceptCodeEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTableStart(TableStart object) {
+			for (RichStringTableRow row : object.getRows()) {
+				acceptor.acceptTableRowStart(row);
+			}
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTableEnd(TableEnd object) {
+			acceptor.acceptTableEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTableRowStart(TableRowStart object) {
+			for (RichStringTableData td : object.getColumns()) {
+				acceptor.acceptTableDataStart(td);
+			}
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTableRowEnd(TableRowEnd object) {
+			acceptor.acceptTableRowEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTableDataStart(TableDataStart object) {
+			acceptor.acceptTableDataStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTableDataEnd(TableDataEnd object) {
+			acceptor.acceptTableDataEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

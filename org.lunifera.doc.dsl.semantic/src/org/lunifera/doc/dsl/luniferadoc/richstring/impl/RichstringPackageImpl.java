@@ -31,6 +31,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringFactory;
@@ -160,6 +163,27 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringCodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringTableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringTableRowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringTableDataEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -602,6 +626,51 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringTable() {
+		return richStringTableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringTable_Rows() {
+		return (EReference) richStringTableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringTableRow() {
+		return richStringTableRowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringTableRow_Columns() {
+		return (EReference) richStringTableRowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringTableData() {
+		return richStringTableDataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public RichstringFactory getRichstringFactory() {
 		return (RichstringFactory) getEFactoryInstance();
 	}
@@ -680,6 +749,14 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringCodeEClass = createEClass(RICH_STRING_CODE);
 		createEAttribute(richStringCodeEClass, RICH_STRING_CODE__LANG);
 		createEReference(richStringCodeEClass, RICH_STRING_CODE__CONTENT);
+
+		richStringTableEClass = createEClass(RICH_STRING_TABLE);
+		createEReference(richStringTableEClass, RICH_STRING_TABLE__ROWS);
+
+		richStringTableRowEClass = createEClass(RICH_STRING_TABLE_ROW);
+		createEReference(richStringTableRowEClass, RICH_STRING_TABLE_ROW__COLUMNS);
+
+		richStringTableDataEClass = createEClass(RICH_STRING_TABLE_DATA);
 	}
 
 	/**
@@ -730,6 +807,9 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringMailtoEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringSkypeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringCodeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringTableEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringTableRowEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringTableDataEClass.getESuperTypes().add(this.getRichStringMarkup());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf",
@@ -861,6 +941,23 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				"content", null, 0, 1, RichStringCode.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringTableEClass, RichStringTable.class, "RichStringTable", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRichStringTable_Rows(), this.getRichStringTableRow(), null, "rows", null,
+				0, -1, RichStringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(richStringTableRowEClass, RichStringTableRow.class, "RichStringTableRow",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRichStringTableRow_Columns(), this.getRichStringTableData(), null,
+				"columns", null, 0, -1, RichStringTableRow.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringTableDataEClass, RichStringTableData.class, "RichStringTableData",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } // RichstringPackageImpl

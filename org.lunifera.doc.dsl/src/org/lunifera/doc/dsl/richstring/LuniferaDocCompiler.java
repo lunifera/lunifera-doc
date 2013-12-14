@@ -40,6 +40,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 
@@ -274,6 +277,54 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</div>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptTableStart(RichStringTable object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<table>");
+		}
+
+		@Override
+		public void acceptTableEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</table>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptTableRowStart(RichStringTableRow object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<tr>");
+		}
+
+		@Override
+		public void acceptTableRowEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</tr>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptTableDataStart(RichStringTableData object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<td>");
+		}
+
+		@Override
+		public void acceptTableDataEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</td>");
 			popAppendable();
 		}
 

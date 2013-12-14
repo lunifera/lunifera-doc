@@ -38,6 +38,12 @@ import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
+import org.lunifera.doc.dsl.doccompiler.TableDataStart;
+import org.lunifera.doc.dsl.doccompiler.TableEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
+import org.lunifera.doc.dsl.doccompiler.TableRowStart;
+import org.lunifera.doc.dsl.doccompiler.TableStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
@@ -409,6 +415,60 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseCodeEnd(codeEnd);
 			if (result == null)
 				result = caseLinePart(codeEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TABLE_START: {
+			TableStart tableStart = (TableStart) theEObject;
+			T result = caseTableStart(tableStart);
+			if (result == null)
+				result = caseLinePart(tableStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TABLE_END: {
+			TableEnd tableEnd = (TableEnd) theEObject;
+			T result = caseTableEnd(tableEnd);
+			if (result == null)
+				result = caseLinePart(tableEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TABLE_ROW_START: {
+			TableRowStart tableRowStart = (TableRowStart) theEObject;
+			T result = caseTableRowStart(tableRowStart);
+			if (result == null)
+				result = caseLinePart(tableRowStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TABLE_ROW_END: {
+			TableRowEnd tableRowEnd = (TableRowEnd) theEObject;
+			T result = caseTableRowEnd(tableRowEnd);
+			if (result == null)
+				result = caseLinePart(tableRowEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TABLE_DATA_START: {
+			TableDataStart tableDataStart = (TableDataStart) theEObject;
+			T result = caseTableDataStart(tableDataStart);
+			if (result == null)
+				result = caseLinePart(tableDataStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TABLE_DATA_END: {
+			TableDataEnd tableDataEnd = (TableDataEnd) theEObject;
+			T result = caseTableDataEnd(tableDataEnd);
+			if (result == null)
+				result = caseLinePart(tableDataEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -926,6 +986,93 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCodeEnd(CodeEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableStart(TableStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableEnd(TableEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Row Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Row Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableRowStart(TableRowStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Row End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Row End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableRowEnd(TableRowEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Data Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Data Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableDataStart(TableDataStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Data End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Data End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableDataEnd(TableDataEnd object) {
 		return null;
 	}
 

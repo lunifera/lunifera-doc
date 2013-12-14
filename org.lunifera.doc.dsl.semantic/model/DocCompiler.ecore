@@ -151,4 +151,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//CodeStart"
         eOpposite="#//CodeStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rows" upperBound="-1" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableRow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableStart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableRowStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
+        eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableData"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableRowEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableStart" eType="#//TableStart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableRowEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableRowStart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableDataStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableData"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableDataEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableRowStart" eType="#//TableRowStart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableDataEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableDataStart"/>
+  </eClassifiers>
 </ecore:EPackage>
