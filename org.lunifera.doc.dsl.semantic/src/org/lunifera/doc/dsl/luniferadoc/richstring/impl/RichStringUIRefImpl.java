@@ -4,7 +4,9 @@ package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -22,24 +24,14 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  */
 public class RichStringUIRefImpl extends RichStringMarkupImpl implements RichStringUIRef {
 	/**
-	 * The default value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getUiDoc() <em>Ui Doc</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see #getRefId()
+	 * @see #getUiDoc()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REF_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getRefId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refId = REF_ID_EDEFAULT;
+	protected UIDocument uiDoc;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,8 +57,17 @@ public class RichStringUIRefImpl extends RichStringMarkupImpl implements RichStr
 	 * 
 	 * @generated
 	 */
-	public String getRefId() {
-		return refId;
+	public UIDocument getUiDoc() {
+		if (uiDoc != null && uiDoc.eIsProxy()) {
+			InternalEObject oldUiDoc = (InternalEObject) uiDoc;
+			uiDoc = (UIDocument) eResolveProxy(oldUiDoc);
+			if (uiDoc != oldUiDoc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							RichstringPackage.RICH_STRING_UI_REF__UI_DOC, oldUiDoc, uiDoc));
+			}
+		}
+		return uiDoc;
 	}
 
 	/**
@@ -74,12 +75,21 @@ public class RichStringUIRefImpl extends RichStringMarkupImpl implements RichStr
 	 * 
 	 * @generated
 	 */
-	public void setRefId(String newRefId) {
-		String oldRefId = refId;
-		refId = newRefId;
+	public UIDocument basicGetUiDoc() {
+		return uiDoc;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setUiDoc(UIDocument newUiDoc) {
+		UIDocument oldUiDoc = uiDoc;
+		uiDoc = newUiDoc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_UI_REF__REF_ID, oldRefId, refId));
+					RichstringPackage.RICH_STRING_UI_REF__UI_DOC, oldUiDoc, uiDoc));
 	}
 
 	/**
@@ -90,8 +100,10 @@ public class RichStringUIRefImpl extends RichStringMarkupImpl implements RichStr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_UI_REF__REF_ID:
-			return getRefId();
+		case RichstringPackage.RICH_STRING_UI_REF__UI_DOC:
+			if (resolve)
+				return getUiDoc();
+			return basicGetUiDoc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,8 +116,8 @@ public class RichStringUIRefImpl extends RichStringMarkupImpl implements RichStr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_UI_REF__REF_ID:
-			setRefId((String) newValue);
+		case RichstringPackage.RICH_STRING_UI_REF__UI_DOC:
+			setUiDoc((UIDocument) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -119,8 +131,8 @@ public class RichStringUIRefImpl extends RichStringMarkupImpl implements RichStr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_UI_REF__REF_ID:
-			setRefId(REF_ID_EDEFAULT);
+		case RichstringPackage.RICH_STRING_UI_REF__UI_DOC:
+			setUiDoc((UIDocument) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -134,27 +146,10 @@ public class RichStringUIRefImpl extends RichStringMarkupImpl implements RichStr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_UI_REF__REF_ID:
-			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
+		case RichstringPackage.RICH_STRING_UI_REF__UI_DOC:
+			return uiDoc != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (refId: ");
-		result.append(refId);
-		result.append(')');
-		return result.toString();
 	}
 
 } // RichStringUIRefImpl

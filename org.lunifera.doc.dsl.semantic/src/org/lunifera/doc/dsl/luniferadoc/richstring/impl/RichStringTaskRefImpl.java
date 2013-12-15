@@ -4,7 +4,9 @@ package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -14,7 +16,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTaskRefImpl#getRefId <em>Ref Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTaskRefImpl#getTaskDoc <em>Task Doc</em>}</li>
  * </ul>
  * </p>
  * 
@@ -22,24 +24,14 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  */
 public class RichStringTaskRefImpl extends RichStringMarkupImpl implements RichStringTaskRef {
 	/**
-	 * The default value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getTaskDoc() <em>Task Doc</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see #getRefId()
+	 * @see #getTaskDoc()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REF_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getRefId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refId = REF_ID_EDEFAULT;
+	protected BPMHumanTaskDocument taskDoc;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,8 +57,17 @@ public class RichStringTaskRefImpl extends RichStringMarkupImpl implements RichS
 	 * 
 	 * @generated
 	 */
-	public String getRefId() {
-		return refId;
+	public BPMHumanTaskDocument getTaskDoc() {
+		if (taskDoc != null && taskDoc.eIsProxy()) {
+			InternalEObject oldTaskDoc = (InternalEObject) taskDoc;
+			taskDoc = (BPMHumanTaskDocument) eResolveProxy(oldTaskDoc);
+			if (taskDoc != oldTaskDoc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							RichstringPackage.RICH_STRING_TASK_REF__TASK_DOC, oldTaskDoc, taskDoc));
+			}
+		}
+		return taskDoc;
 	}
 
 	/**
@@ -74,12 +75,21 @@ public class RichStringTaskRefImpl extends RichStringMarkupImpl implements RichS
 	 * 
 	 * @generated
 	 */
-	public void setRefId(String newRefId) {
-		String oldRefId = refId;
-		refId = newRefId;
+	public BPMHumanTaskDocument basicGetTaskDoc() {
+		return taskDoc;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setTaskDoc(BPMHumanTaskDocument newTaskDoc) {
+		BPMHumanTaskDocument oldTaskDoc = taskDoc;
+		taskDoc = newTaskDoc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_TASK_REF__REF_ID, oldRefId, refId));
+					RichstringPackage.RICH_STRING_TASK_REF__TASK_DOC, oldTaskDoc, taskDoc));
 	}
 
 	/**
@@ -90,8 +100,10 @@ public class RichStringTaskRefImpl extends RichStringMarkupImpl implements RichS
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_TASK_REF__REF_ID:
-			return getRefId();
+		case RichstringPackage.RICH_STRING_TASK_REF__TASK_DOC:
+			if (resolve)
+				return getTaskDoc();
+			return basicGetTaskDoc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,8 +116,8 @@ public class RichStringTaskRefImpl extends RichStringMarkupImpl implements RichS
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_TASK_REF__REF_ID:
-			setRefId((String) newValue);
+		case RichstringPackage.RICH_STRING_TASK_REF__TASK_DOC:
+			setTaskDoc((BPMHumanTaskDocument) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -119,8 +131,8 @@ public class RichStringTaskRefImpl extends RichStringMarkupImpl implements RichS
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_TASK_REF__REF_ID:
-			setRefId(REF_ID_EDEFAULT);
+		case RichstringPackage.RICH_STRING_TASK_REF__TASK_DOC:
+			setTaskDoc((BPMHumanTaskDocument) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -134,27 +146,10 @@ public class RichStringTaskRefImpl extends RichStringMarkupImpl implements RichS
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_TASK_REF__REF_ID:
-			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
+		case RichstringPackage.RICH_STRING_TASK_REF__TASK_DOC:
+			return taskDoc != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (refId: ");
-		result.append(refId);
-		result.append(')');
-		return result.toString();
 	}
 
 } // RichStringTaskRefImpl

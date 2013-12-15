@@ -11,12 +11,16 @@ import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
 import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
+import org.lunifera.doc.dsl.doccompiler.DTORefEnd;
+import org.lunifera.doc.dsl.doccompiler.DTORefStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
 import org.lunifera.doc.dsl.doccompiler.DocumentStart;
 import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
 import org.lunifera.doc.dsl.doccompiler.ElseStart;
 import org.lunifera.doc.dsl.doccompiler.EndIf;
+import org.lunifera.doc.dsl.doccompiler.EntityRefEnd;
+import org.lunifera.doc.dsl.doccompiler.EntityRefStart;
 import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
 import org.lunifera.doc.dsl.doccompiler.ExampleStart;
 import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
@@ -41,6 +45,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
 import org.lunifera.doc.dsl.doccompiler.RefStart;
@@ -58,10 +64,16 @@ import org.lunifera.doc.dsl.doccompiler.TableEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowStart;
 import org.lunifera.doc.dsl.doccompiler.TableStart;
+import org.lunifera.doc.dsl.doccompiler.TaskRefEnd;
+import org.lunifera.doc.dsl.doccompiler.TaskRefStart;
+import org.lunifera.doc.dsl.doccompiler.UIRefEnd;
+import org.lunifera.doc.dsl.doccompiler.UIRefStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
 import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
+import org.lunifera.doc.dsl.doccompiler.ViewRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ViewRefStart;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance hierarchy. It supports the call
@@ -609,6 +621,114 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseStartProcessEnd(startProcessEnd);
 			if (result == null)
 				result = caseLinePart(startProcessEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ENTITY_REF_START: {
+			EntityRefStart entityRefStart = (EntityRefStart) theEObject;
+			T result = caseEntityRefStart(entityRefStart);
+			if (result == null)
+				result = caseLinePart(entityRefStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ENTITY_REF_END: {
+			EntityRefEnd entityRefEnd = (EntityRefEnd) theEObject;
+			T result = caseEntityRefEnd(entityRefEnd);
+			if (result == null)
+				result = caseLinePart(entityRefEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.DTO_REF_START: {
+			DTORefStart dtoRefStart = (DTORefStart) theEObject;
+			T result = caseDTORefStart(dtoRefStart);
+			if (result == null)
+				result = caseLinePart(dtoRefStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.DTO_REF_END: {
+			DTORefEnd dtoRefEnd = (DTORefEnd) theEObject;
+			T result = caseDTORefEnd(dtoRefEnd);
+			if (result == null)
+				result = caseLinePart(dtoRefEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.PROCESS_REF_START: {
+			ProcessRefStart processRefStart = (ProcessRefStart) theEObject;
+			T result = caseProcessRefStart(processRefStart);
+			if (result == null)
+				result = caseLinePart(processRefStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.PROCESS_REF_END: {
+			ProcessRefEnd processRefEnd = (ProcessRefEnd) theEObject;
+			T result = caseProcessRefEnd(processRefEnd);
+			if (result == null)
+				result = caseLinePart(processRefEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TASK_REF_START: {
+			TaskRefStart taskRefStart = (TaskRefStart) theEObject;
+			T result = caseTaskRefStart(taskRefStart);
+			if (result == null)
+				result = caseLinePart(taskRefStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.TASK_REF_END: {
+			TaskRefEnd taskRefEnd = (TaskRefEnd) theEObject;
+			T result = caseTaskRefEnd(taskRefEnd);
+			if (result == null)
+				result = caseLinePart(taskRefEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.VIEW_REF_START: {
+			ViewRefStart viewRefStart = (ViewRefStart) theEObject;
+			T result = caseViewRefStart(viewRefStart);
+			if (result == null)
+				result = caseLinePart(viewRefStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.VIEW_REF_END: {
+			ViewRefEnd viewRefEnd = (ViewRefEnd) theEObject;
+			T result = caseViewRefEnd(viewRefEnd);
+			if (result == null)
+				result = caseLinePart(viewRefEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.UI_REF_START: {
+			UIRefStart uiRefStart = (UIRefStart) theEObject;
+			T result = caseUIRefStart(uiRefStart);
+			if (result == null)
+				result = caseLinePart(uiRefStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.UI_REF_END: {
+			UIRefEnd uiRefEnd = (UIRefEnd) theEObject;
+			T result = caseUIRefEnd(uiRefEnd);
+			if (result == null)
+				result = caseLinePart(uiRefEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1414,6 +1534,180 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStartProcessEnd(StartProcessEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Ref Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Ref Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityRefStart(EntityRefStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Ref End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Ref End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityRefEnd(EntityRefEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Ref Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Ref Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDTORefStart(DTORefStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DTO Ref End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DTO Ref End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDTORefEnd(DTORefEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Process Ref Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Process Ref Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcessRefStart(ProcessRefStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Process Ref End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Process Ref End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcessRefEnd(ProcessRefEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Task Ref Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Task Ref Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTaskRefStart(TaskRefStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Task Ref End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Task Ref End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTaskRefEnd(TaskRefEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Ref Start</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Ref Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewRefStart(ViewRefStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Ref End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Ref End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewRefEnd(ViewRefEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UI Ref Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UI Ref Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUIRefStart(UIRefStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UI Ref End</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UI Ref End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUIRefEnd(UIRefEnd object) {
 		return null;
 	}
 

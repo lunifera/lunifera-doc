@@ -937,8 +937,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getRichStringEntityRef_RefId() {
-		return (EAttribute) richStringEntityRefEClass.getEStructuralFeatures().get(0);
+	public EReference getRichStringEntityRef_EntityDoc() {
+		return (EReference) richStringEntityRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -955,8 +955,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getRichStringDTORef_RefId() {
-		return (EAttribute) richStringDTORefEClass.getEStructuralFeatures().get(0);
+	public EReference getRichStringDTORef_DtoDoc() {
+		return (EReference) richStringDTORefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -973,8 +973,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getRichStringProcessRef_RefId() {
-		return (EAttribute) richStringProcessRefEClass.getEStructuralFeatures().get(0);
+	public EReference getRichStringProcessRef_ProcessDoc() {
+		return (EReference) richStringProcessRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -991,8 +991,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getRichStringTaskRef_RefId() {
-		return (EAttribute) richStringTaskRefEClass.getEStructuralFeatures().get(0);
+	public EReference getRichStringTaskRef_TaskDoc() {
+		return (EReference) richStringTaskRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1009,8 +1009,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getRichStringViewRef_RefId() {
-		return (EAttribute) richStringViewRefEClass.getEStructuralFeatures().get(0);
+	public EReference getRichStringViewRef_ViewDoc() {
+		return (EReference) richStringViewRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1027,8 +1027,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getRichStringUIRef_RefId() {
-		return (EAttribute) richStringUIRefEClass.getEStructuralFeatures().get(0);
+	public EReference getRichStringUIRef_UiDoc() {
+		return (EReference) richStringUIRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1148,22 +1148,22 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		createEAttribute(richStringStartProcessEClass, RICH_STRING_START_PROCESS__PROCESS_ID);
 
 		richStringEntityRefEClass = createEClass(RICH_STRING_ENTITY_REF);
-		createEAttribute(richStringEntityRefEClass, RICH_STRING_ENTITY_REF__REF_ID);
+		createEReference(richStringEntityRefEClass, RICH_STRING_ENTITY_REF__ENTITY_DOC);
 
 		richStringDTORefEClass = createEClass(RICH_STRING_DTO_REF);
-		createEAttribute(richStringDTORefEClass, RICH_STRING_DTO_REF__REF_ID);
+		createEReference(richStringDTORefEClass, RICH_STRING_DTO_REF__DTO_DOC);
 
 		richStringProcessRefEClass = createEClass(RICH_STRING_PROCESS_REF);
-		createEAttribute(richStringProcessRefEClass, RICH_STRING_PROCESS_REF__REF_ID);
+		createEReference(richStringProcessRefEClass, RICH_STRING_PROCESS_REF__PROCESS_DOC);
 
 		richStringTaskRefEClass = createEClass(RICH_STRING_TASK_REF);
-		createEAttribute(richStringTaskRefEClass, RICH_STRING_TASK_REF__REF_ID);
+		createEReference(richStringTaskRefEClass, RICH_STRING_TASK_REF__TASK_DOC);
 
 		richStringViewRefEClass = createEClass(RICH_STRING_VIEW_REF);
-		createEAttribute(richStringViewRefEClass, RICH_STRING_VIEW_REF__REF_ID);
+		createEReference(richStringViewRefEClass, RICH_STRING_VIEW_REF__VIEW_DOC);
 
 		richStringUIRefEClass = createEClass(RICH_STRING_UI_REF);
-		createEAttribute(richStringUIRefEClass, RICH_STRING_UI_REF__REF_ID);
+		createEReference(richStringUIRefEClass, RICH_STRING_UI_REF__UI_DOC);
 	}
 
 	/**
@@ -1192,6 +1192,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		// Obtain other dependent packages
 		XbasePackage theXbasePackage = (XbasePackage) EPackage.Registry.INSTANCE
 				.getEPackage(XbasePackage.eNS_URI);
+		DocumentPackage theDocumentPackage = (DocumentPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1433,39 +1435,46 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		initEClass(richStringEntityRefEClass, RichStringEntityRef.class, "RichStringEntityRef",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRichStringEntityRef_RefId(), ecorePackage.getEString(), "refId", null, 0,
-				1, RichStringEntityRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringEntityRef_EntityDoc(), theDocumentPackage.getEntityDocument(),
+				null, "entityDoc", null, 0, 1, RichStringEntityRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringDTORefEClass, RichStringDTORef.class, "RichStringDTORef",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRichStringDTORef_RefId(), ecorePackage.getEString(), "refId", null, 0, 1,
-				RichStringDTORef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringDTORef_DtoDoc(), theDocumentPackage.getDTODocument(), null,
+				"dtoDoc", null, 0, 1, RichStringDTORef.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringProcessRefEClass, RichStringProcessRef.class, "RichStringProcessRef",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRichStringProcessRef_RefId(), ecorePackage.getEString(), "refId", null,
-				0, 1, RichStringProcessRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringProcessRef_ProcessDoc(),
+				theDocumentPackage.getBPMProcessDocument(), null, "processDoc", null, 0, 1,
+				RichStringProcessRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(richStringTaskRefEClass, RichStringTaskRef.class, "RichStringTaskRef",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRichStringTaskRef_RefId(), ecorePackage.getEString(), "refId", null, 0,
-				1, RichStringTaskRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringTaskRef_TaskDoc(),
+				theDocumentPackage.getBPMHumanTaskDocument(), null, "taskDoc", null, 0, 1,
+				RichStringTaskRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringViewRefEClass, RichStringViewRef.class, "RichStringViewRef",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRichStringViewRef_RefId(), ecorePackage.getEString(), "refId", null, 0,
-				1, RichStringViewRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringViewRef_ViewDoc(),
+				theDocumentPackage.getVaaclipseViewDocument(), null, "viewDoc", null, 0, 1,
+				RichStringViewRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringUIRefEClass, RichStringUIRef.class, "RichStringUIRef", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRichStringUIRef_RefId(), ecorePackage.getEString(), "refId", null, 0, 1,
-				RichStringUIRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringUIRef_UiDoc(), theDocumentPackage.getUIDocument(), null,
+				"uiDoc", null, 0, 1, RichStringUIRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 	}
 
 } // RichstringPackageImpl

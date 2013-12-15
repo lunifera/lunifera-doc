@@ -238,4 +238,58 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartProcessStart"
         eOpposite="#//StartProcessStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRefStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringEntityRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//EntityRefEnd"
+        eOpposite="#//EntityRefEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRefEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//EntityRefStart"
+        eOpposite="#//EntityRefStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTORefStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringDTORef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//DTORefEnd"
+        eOpposite="#//DTORefEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTORefEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//DTORefStart"
+        eOpposite="#//DTORefStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessRefStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringProcessRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ProcessRefEnd"
+        eOpposite="#//ProcessRefEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessRefEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ProcessRefStart"
+        eOpposite="#//ProcessRefStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskRefStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTaskRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TaskRefEnd"
+        eOpposite="#//TaskRefEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskRefEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TaskRefStart"
+        eOpposite="#//TaskRefStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewRefStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringViewRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ViewRefEnd"
+        eOpposite="#//ViewRefEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewRefEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ViewRefStart"
+        eOpposite="#//ViewRefStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIRefStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringUIRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//UIRefEnd"
+        eOpposite="#//UIRefEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIRefEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//UIRefStart"
+        eOpposite="#//UIRefStart/end"/>
+  </eClassifiers>
 </ecore:EPackage>

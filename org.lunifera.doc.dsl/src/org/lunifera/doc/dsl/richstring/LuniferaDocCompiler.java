@@ -31,6 +31,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -42,6 +44,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
@@ -50,8 +53,11 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -542,6 +548,114 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 		@Override
 		public void acceptStartProcessEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptEntityRefStart(RichStringEntityRef object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"ref/to/");
+			append(object.getEntityDoc().getName());
+			append("\">");
+		}
+
+		@Override
+		public void acceptEntityRefEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptDTORefStart(RichStringDTORef object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"ref/to/");
+			append(object.getDtoDoc().getName());
+			append("\">");
+		}
+
+		@Override
+		public void acceptDTORefEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptProcessRefStart(RichStringProcessRef object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"ref/to/");
+			append(object.getProcessDoc().getName());
+			append("\">");
+		}
+
+		@Override
+		public void acceptProcessRefEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptTaskRefStart(RichStringTaskRef object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"ref/to/");
+			append(object.getTaskDoc().getName());
+			append("\">");
+		}
+
+		@Override
+		public void acceptTaskRefEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptViewRefStart(RichStringViewRef object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"ref/to/");
+			append(object.getViewDoc().getName());
+			append("\">");
+		}
+
+		@Override
+		public void acceptViewRefEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptUIRefStart(RichStringUIRef object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"ref/to/");
+			append(object.getUiDoc().getName());
+			append("\">");
+		}
+
+		@Override
+		public void acceptUIRefEnd() {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");

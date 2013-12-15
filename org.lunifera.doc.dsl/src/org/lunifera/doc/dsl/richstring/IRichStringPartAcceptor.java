@@ -16,6 +16,8 @@ import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
@@ -25,6 +27,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
@@ -33,8 +36,11 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 
 /**
  * The {@link IRichStringPartAcceptor} can be passed into a {@link RichStringProcessor} to handle the semantics of a
@@ -285,6 +291,30 @@ public interface IRichStringPartAcceptor {
 	void acceptStartProcessStart(RichStringStartProcess object);
 
 	void acceptStartProcessEnd();
+
+	void acceptEntityRefStart(RichStringEntityRef object);
+
+	void acceptEntityRefEnd();
+
+	void acceptDTORefStart(RichStringDTORef object);
+
+	void acceptDTORefEnd();
+
+	void acceptProcessRefStart(RichStringProcessRef object);
+
+	void acceptProcessRefEnd();
+
+	void acceptTaskRefStart(RichStringTaskRef object);
+
+	void acceptTaskRefEnd();
+
+	void acceptViewRefStart(RichStringViewRef object);
+
+	void acceptViewRefEnd();
+
+	void acceptUIRefStart(RichStringUIRef object);
+
+	void acceptUIRefEnd();
 
 	void acceptDocumentStart(NamedDocument object);
 

@@ -18,6 +18,8 @@ import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
@@ -27,6 +29,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
@@ -35,8 +38,11 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 
 /**
  * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should inherit from this class if they do not
@@ -244,6 +250,54 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 
 	@Override
 	public void acceptStartProcessEnd() {
+	}
+
+	@Override
+	public void acceptEntityRefStart(RichStringEntityRef object) {
+	}
+
+	@Override
+	public void acceptEntityRefEnd() {
+	}
+
+	@Override
+	public void acceptDTORefStart(RichStringDTORef object) {
+	}
+
+	@Override
+	public void acceptDTORefEnd() {
+	}
+
+	@Override
+	public void acceptProcessRefStart(RichStringProcessRef object) {
+	}
+
+	@Override
+	public void acceptProcessRefEnd() {
+	}
+
+	@Override
+	public void acceptTaskRefStart(RichStringTaskRef object) {
+	}
+
+	@Override
+	public void acceptTaskRefEnd() {
+	}
+
+	@Override
+	public void acceptViewRefStart(RichStringViewRef object) {
+	}
+
+	@Override
+	public void acceptViewRefEnd() {
+	}
+
+	@Override
+	public void acceptUIRefStart(RichStringUIRef object) {
+	}
+
+	@Override
+	public void acceptUIRefEnd() {
 	}
 
 	@Override

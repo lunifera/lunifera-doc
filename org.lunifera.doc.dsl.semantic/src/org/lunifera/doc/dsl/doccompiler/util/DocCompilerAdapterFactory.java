@@ -12,12 +12,16 @@ import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
 import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
+import org.lunifera.doc.dsl.doccompiler.DTORefEnd;
+import org.lunifera.doc.dsl.doccompiler.DTORefStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
 import org.lunifera.doc.dsl.doccompiler.DocumentStart;
 import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
 import org.lunifera.doc.dsl.doccompiler.ElseStart;
 import org.lunifera.doc.dsl.doccompiler.EndIf;
+import org.lunifera.doc.dsl.doccompiler.EntityRefEnd;
+import org.lunifera.doc.dsl.doccompiler.EntityRefStart;
 import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
 import org.lunifera.doc.dsl.doccompiler.ExampleStart;
 import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
@@ -42,6 +46,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
 import org.lunifera.doc.dsl.doccompiler.RefStart;
@@ -59,10 +65,16 @@ import org.lunifera.doc.dsl.doccompiler.TableEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowStart;
 import org.lunifera.doc.dsl.doccompiler.TableStart;
+import org.lunifera.doc.dsl.doccompiler.TaskRefEnd;
+import org.lunifera.doc.dsl.doccompiler.TaskRefStart;
+import org.lunifera.doc.dsl.doccompiler.UIRefEnd;
+import org.lunifera.doc.dsl.doccompiler.UIRefStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
 import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
+import org.lunifera.doc.dsl.doccompiler.ViewRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ViewRefStart;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code>
@@ -393,6 +405,66 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseStartProcessEnd(StartProcessEnd object) {
 			return createStartProcessEndAdapter();
+		}
+
+		@Override
+		public Adapter caseEntityRefStart(EntityRefStart object) {
+			return createEntityRefStartAdapter();
+		}
+
+		@Override
+		public Adapter caseEntityRefEnd(EntityRefEnd object) {
+			return createEntityRefEndAdapter();
+		}
+
+		@Override
+		public Adapter caseDTORefStart(DTORefStart object) {
+			return createDTORefStartAdapter();
+		}
+
+		@Override
+		public Adapter caseDTORefEnd(DTORefEnd object) {
+			return createDTORefEndAdapter();
+		}
+
+		@Override
+		public Adapter caseProcessRefStart(ProcessRefStart object) {
+			return createProcessRefStartAdapter();
+		}
+
+		@Override
+		public Adapter caseProcessRefEnd(ProcessRefEnd object) {
+			return createProcessRefEndAdapter();
+		}
+
+		@Override
+		public Adapter caseTaskRefStart(TaskRefStart object) {
+			return createTaskRefStartAdapter();
+		}
+
+		@Override
+		public Adapter caseTaskRefEnd(TaskRefEnd object) {
+			return createTaskRefEndAdapter();
+		}
+
+		@Override
+		public Adapter caseViewRefStart(ViewRefStart object) {
+			return createViewRefStartAdapter();
+		}
+
+		@Override
+		public Adapter caseViewRefEnd(ViewRefEnd object) {
+			return createViewRefEndAdapter();
+		}
+
+		@Override
+		public Adapter caseUIRefStart(UIRefStart object) {
+			return createUIRefStartAdapter();
+		}
+
+		@Override
+		public Adapter caseUIRefEnd(UIRefEnd object) {
+			return createUIRefEndAdapter();
 		}
 
 		@Override
@@ -1183,6 +1255,174 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStartProcessEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.EntityRefStart
+	 * <em>Entity Ref Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.EntityRefStart
+	 * @generated
+	 */
+	public Adapter createEntityRefStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.EntityRefEnd
+	 * <em>Entity Ref End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.EntityRefEnd
+	 * @generated
+	 */
+	public Adapter createEntityRefEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.DTORefStart
+	 * <em>DTO Ref Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.DTORefStart
+	 * @generated
+	 */
+	public Adapter createDTORefStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.DTORefEnd
+	 * <em>DTO Ref End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.DTORefEnd
+	 * @generated
+	 */
+	public Adapter createDTORefEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ProcessRefStart
+	 * <em>Process Ref Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ProcessRefStart
+	 * @generated
+	 */
+	public Adapter createProcessRefStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ProcessRefEnd
+	 * <em>Process Ref End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ProcessRefEnd
+	 * @generated
+	 */
+	public Adapter createProcessRefEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TaskRefStart
+	 * <em>Task Ref Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TaskRefStart
+	 * @generated
+	 */
+	public Adapter createTaskRefStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.TaskRefEnd
+	 * <em>Task Ref End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.TaskRefEnd
+	 * @generated
+	 */
+	public Adapter createTaskRefEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ViewRefStart
+	 * <em>View Ref Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ViewRefStart
+	 * @generated
+	 */
+	public Adapter createViewRefStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ViewRefEnd
+	 * <em>View Ref End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ViewRefEnd
+	 * @generated
+	 */
+	public Adapter createViewRefEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.UIRefStart
+	 * <em>UI Ref Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.UIRefStart
+	 * @generated
+	 */
+	public Adapter createUIRefStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.UIRefEnd
+	 * <em>UI Ref End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.UIRefEnd
+	 * @generated
+	 */
+	public Adapter createUIRefEndAdapter() {
 		return null;
 	}
 

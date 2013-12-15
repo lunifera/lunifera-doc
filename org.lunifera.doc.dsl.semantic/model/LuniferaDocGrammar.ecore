@@ -226,22 +226,22 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="processId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringEntityRef" eSuperTypes="#//richstring/RichStringMarkup">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entityDoc" eType="#//document/EntityDocument"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringDTORef" eSuperTypes="#//richstring/RichStringMarkup">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dtoDoc" eType="#//document/DTODocument"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringProcessRef" eSuperTypes="#//richstring/RichStringMarkup">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processDoc" eType="#//document/BPMProcessDocument"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringTaskRef" eSuperTypes="#//richstring/RichStringMarkup">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="taskDoc" eType="#//document/BPMHumanTaskDocument"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringViewRef" eSuperTypes="#//richstring/RichStringMarkup">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewDoc" eType="#//document/VaaclipseViewDocument"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringUIRef" eSuperTypes="#//richstring/RichStringMarkup">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="uiDoc" eType="#//document/UIDocument"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

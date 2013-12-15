@@ -14,6 +14,8 @@ import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
 import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
+import org.lunifera.doc.dsl.doccompiler.DTORefEnd;
+import org.lunifera.doc.dsl.doccompiler.DTORefStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
@@ -21,6 +23,8 @@ import org.lunifera.doc.dsl.doccompiler.DocumentStart;
 import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
 import org.lunifera.doc.dsl.doccompiler.ElseStart;
 import org.lunifera.doc.dsl.doccompiler.EndIf;
+import org.lunifera.doc.dsl.doccompiler.EntityRefEnd;
+import org.lunifera.doc.dsl.doccompiler.EntityRefStart;
 import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
 import org.lunifera.doc.dsl.doccompiler.ExampleStart;
 import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
@@ -45,6 +49,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
 import org.lunifera.doc.dsl.doccompiler.RefStart;
@@ -62,10 +68,16 @@ import org.lunifera.doc.dsl.doccompiler.TableEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowStart;
 import org.lunifera.doc.dsl.doccompiler.TableStart;
+import org.lunifera.doc.dsl.doccompiler.TaskRefEnd;
+import org.lunifera.doc.dsl.doccompiler.TaskRefStart;
+import org.lunifera.doc.dsl.doccompiler.UIRefEnd;
+import org.lunifera.doc.dsl.doccompiler.UIRefStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
 import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
+import org.lunifera.doc.dsl.doccompiler.ViewRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ViewRefStart;
 import org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -466,6 +478,90 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass startProcessEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass entityRefStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass entityRefEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass dtoRefStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass dtoRefEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass processRefStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass processRefEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass taskRefStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass taskRefEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass viewRefStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass viewRefEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass uiRefStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass uiRefEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1834,6 +1930,276 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getEntityRefStart() {
+		return entityRefStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getEntityRefStart_Content() {
+		return (EReference) entityRefStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getEntityRefStart_End() {
+		return (EReference) entityRefStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getEntityRefEnd() {
+		return entityRefEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getEntityRefEnd_Start() {
+		return (EReference) entityRefEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getDTORefStart() {
+		return dtoRefStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getDTORefStart_Content() {
+		return (EReference) dtoRefStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getDTORefStart_End() {
+		return (EReference) dtoRefStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getDTORefEnd() {
+		return dtoRefEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getDTORefEnd_Start() {
+		return (EReference) dtoRefEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getProcessRefStart() {
+		return processRefStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getProcessRefStart_Content() {
+		return (EReference) processRefStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getProcessRefStart_End() {
+		return (EReference) processRefStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getProcessRefEnd() {
+		return processRefEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getProcessRefEnd_Start() {
+		return (EReference) processRefEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getTaskRefStart() {
+		return taskRefStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTaskRefStart_Content() {
+		return (EReference) taskRefStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTaskRefStart_End() {
+		return (EReference) taskRefStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getTaskRefEnd() {
+		return taskRefEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTaskRefEnd_Start() {
+		return (EReference) taskRefEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getViewRefStart() {
+		return viewRefStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getViewRefStart_Content() {
+		return (EReference) viewRefStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getViewRefStart_End() {
+		return (EReference) viewRefStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getViewRefEnd() {
+		return viewRefEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getViewRefEnd_Start() {
+		return (EReference) viewRefEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getUIRefStart() {
+		return uiRefStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getUIRefStart_Content() {
+		return (EReference) uiRefStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getUIRefStart_End() {
+		return (EReference) uiRefStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getUIRefEnd() {
+		return uiRefEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getUIRefEnd_Start() {
+		return (EReference) uiRefEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -2056,6 +2422,48 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		startProcessEndEClass = createEClass(START_PROCESS_END);
 		createEReference(startProcessEndEClass, START_PROCESS_END__START);
+
+		entityRefStartEClass = createEClass(ENTITY_REF_START);
+		createEReference(entityRefStartEClass, ENTITY_REF_START__CONTENT);
+		createEReference(entityRefStartEClass, ENTITY_REF_START__END);
+
+		entityRefEndEClass = createEClass(ENTITY_REF_END);
+		createEReference(entityRefEndEClass, ENTITY_REF_END__START);
+
+		dtoRefStartEClass = createEClass(DTO_REF_START);
+		createEReference(dtoRefStartEClass, DTO_REF_START__CONTENT);
+		createEReference(dtoRefStartEClass, DTO_REF_START__END);
+
+		dtoRefEndEClass = createEClass(DTO_REF_END);
+		createEReference(dtoRefEndEClass, DTO_REF_END__START);
+
+		processRefStartEClass = createEClass(PROCESS_REF_START);
+		createEReference(processRefStartEClass, PROCESS_REF_START__CONTENT);
+		createEReference(processRefStartEClass, PROCESS_REF_START__END);
+
+		processRefEndEClass = createEClass(PROCESS_REF_END);
+		createEReference(processRefEndEClass, PROCESS_REF_END__START);
+
+		taskRefStartEClass = createEClass(TASK_REF_START);
+		createEReference(taskRefStartEClass, TASK_REF_START__CONTENT);
+		createEReference(taskRefStartEClass, TASK_REF_START__END);
+
+		taskRefEndEClass = createEClass(TASK_REF_END);
+		createEReference(taskRefEndEClass, TASK_REF_END__START);
+
+		viewRefStartEClass = createEClass(VIEW_REF_START);
+		createEReference(viewRefStartEClass, VIEW_REF_START__CONTENT);
+		createEReference(viewRefStartEClass, VIEW_REF_START__END);
+
+		viewRefEndEClass = createEClass(VIEW_REF_END);
+		createEReference(viewRefEndEClass, VIEW_REF_END__START);
+
+		uiRefStartEClass = createEClass(UI_REF_START);
+		createEReference(uiRefStartEClass, UI_REF_START__CONTENT);
+		createEReference(uiRefStartEClass, UI_REF_START__END);
+
+		uiRefEndEClass = createEClass(UI_REF_END);
+		createEReference(uiRefEndEClass, UI_REF_END__START);
 	}
 
 	/**
@@ -2147,6 +2555,18 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		openViewEndEClass.getESuperTypes().add(this.getLinePart());
 		startProcessStartEClass.getESuperTypes().add(this.getLinePart());
 		startProcessEndEClass.getESuperTypes().add(this.getLinePart());
+		entityRefStartEClass.getESuperTypes().add(this.getLinePart());
+		entityRefEndEClass.getESuperTypes().add(this.getLinePart());
+		dtoRefStartEClass.getESuperTypes().add(this.getLinePart());
+		dtoRefEndEClass.getESuperTypes().add(this.getLinePart());
+		processRefStartEClass.getESuperTypes().add(this.getLinePart());
+		processRefEndEClass.getESuperTypes().add(this.getLinePart());
+		taskRefStartEClass.getESuperTypes().add(this.getLinePart());
+		taskRefEndEClass.getESuperTypes().add(this.getLinePart());
+		viewRefStartEClass.getESuperTypes().add(this.getLinePart());
+		viewRefEndEClass.getESuperTypes().add(this.getLinePart());
+		uiRefStartEClass.getESuperTypes().add(this.getLinePart());
+		uiRefEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -2644,6 +3064,114 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				this.getStartProcessStart_End(), "start", null, 0, 1, StartProcessEnd.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityRefStartEClass, EntityRefStart.class, "EntityRefStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityRefStart_Content(), theRichstringPackage.getRichStringEntityRef(),
+				null, "content", null, 0, 1, EntityRefStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityRefStart_End(), this.getEntityRefEnd(),
+				this.getEntityRefEnd_Start(), "end", null, 0, 1, EntityRefStart.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityRefEndEClass, EntityRefEnd.class, "EntityRefEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityRefEnd_Start(), this.getEntityRefStart(),
+				this.getEntityRefStart_End(), "start", null, 0, 1, EntityRefEnd.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dtoRefStartEClass, DTORefStart.class, "DTORefStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDTORefStart_Content(), theRichstringPackage.getRichStringDTORef(), null,
+				"content", null, 0, 1, DTORefStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getDTORefStart_End(), this.getDTORefEnd(), this.getDTORefEnd_Start(), "end",
+				null, 0, 1, DTORefStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(dtoRefEndEClass, DTORefEnd.class, "DTORefEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDTORefEnd_Start(), this.getDTORefStart(), this.getDTORefStart_End(),
+				"start", null, 0, 1, DTORefEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(processRefStartEClass, ProcessRefStart.class, "ProcessRefStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProcessRefStart_Content(),
+				theRichstringPackage.getRichStringProcessRef(), null, "content", null, 0, 1,
+				ProcessRefStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcessRefStart_End(), this.getProcessRefEnd(),
+				this.getProcessRefEnd_Start(), "end", null, 0, 1, ProcessRefStart.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(processRefEndEClass, ProcessRefEnd.class, "ProcessRefEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProcessRefEnd_Start(), this.getProcessRefStart(),
+				this.getProcessRefStart_End(), "start", null, 0, 1, ProcessRefEnd.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(taskRefStartEClass, TaskRefStart.class, "TaskRefStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTaskRefStart_Content(), theRichstringPackage.getRichStringTaskRef(),
+				null, "content", null, 0, 1, TaskRefStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getTaskRefStart_End(), this.getTaskRefEnd(), this.getTaskRefEnd_Start(),
+				"end", null, 0, 1, TaskRefStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(taskRefEndEClass, TaskRefEnd.class, "TaskRefEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTaskRefEnd_Start(), this.getTaskRefStart(), this.getTaskRefStart_End(),
+				"start", null, 0, 1, TaskRefEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(viewRefStartEClass, ViewRefStart.class, "ViewRefStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getViewRefStart_Content(), theRichstringPackage.getRichStringViewRef(),
+				null, "content", null, 0, 1, ViewRefStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getViewRefStart_End(), this.getViewRefEnd(), this.getViewRefEnd_Start(),
+				"end", null, 0, 1, ViewRefStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(viewRefEndEClass, ViewRefEnd.class, "ViewRefEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getViewRefEnd_Start(), this.getViewRefStart(), this.getViewRefStart_End(),
+				"start", null, 0, 1, ViewRefEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(uiRefStartEClass, UIRefStart.class, "UIRefStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUIRefStart_Content(), theRichstringPackage.getRichStringUIRef(), null,
+				"content", null, 0, 1, UIRefStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getUIRefStart_End(), this.getUIRefEnd(), this.getUIRefEnd_Start(), "end",
+				null, 0, 1, UIRefStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(uiRefEndEClass, UIRefEnd.class, "UIRefEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUIRefEnd_Start(), this.getUIRefStart(), this.getUIRefStart_End(),
+				"start", null, 0, 1, UIRefEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

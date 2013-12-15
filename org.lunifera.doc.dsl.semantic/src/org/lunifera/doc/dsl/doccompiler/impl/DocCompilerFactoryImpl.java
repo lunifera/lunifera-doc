@@ -13,6 +13,8 @@ import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
 import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
+import org.lunifera.doc.dsl.doccompiler.DTORefEnd;
+import org.lunifera.doc.dsl.doccompiler.DTORefStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
@@ -20,6 +22,8 @@ import org.lunifera.doc.dsl.doccompiler.DocumentStart;
 import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
 import org.lunifera.doc.dsl.doccompiler.ElseStart;
 import org.lunifera.doc.dsl.doccompiler.EndIf;
+import org.lunifera.doc.dsl.doccompiler.EntityRefEnd;
+import org.lunifera.doc.dsl.doccompiler.EntityRefStart;
 import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
 import org.lunifera.doc.dsl.doccompiler.ExampleStart;
 import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
@@ -44,6 +48,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
 import org.lunifera.doc.dsl.doccompiler.RefStart;
@@ -61,10 +67,16 @@ import org.lunifera.doc.dsl.doccompiler.TableEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowStart;
 import org.lunifera.doc.dsl.doccompiler.TableStart;
+import org.lunifera.doc.dsl.doccompiler.TaskRefEnd;
+import org.lunifera.doc.dsl.doccompiler.TaskRefStart;
+import org.lunifera.doc.dsl.doccompiler.UIRefEnd;
+import org.lunifera.doc.dsl.doccompiler.UIRefStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
 import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
+import org.lunifera.doc.dsl.doccompiler.ViewRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ViewRefStart;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
@@ -219,6 +231,30 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createStartProcessStart();
 		case DocCompilerPackage.START_PROCESS_END:
 			return createStartProcessEnd();
+		case DocCompilerPackage.ENTITY_REF_START:
+			return createEntityRefStart();
+		case DocCompilerPackage.ENTITY_REF_END:
+			return createEntityRefEnd();
+		case DocCompilerPackage.DTO_REF_START:
+			return createDTORefStart();
+		case DocCompilerPackage.DTO_REF_END:
+			return createDTORefEnd();
+		case DocCompilerPackage.PROCESS_REF_START:
+			return createProcessRefStart();
+		case DocCompilerPackage.PROCESS_REF_END:
+			return createProcessRefEnd();
+		case DocCompilerPackage.TASK_REF_START:
+			return createTaskRefStart();
+		case DocCompilerPackage.TASK_REF_END:
+			return createTaskRefEnd();
+		case DocCompilerPackage.VIEW_REF_START:
+			return createViewRefStart();
+		case DocCompilerPackage.VIEW_REF_END:
+			return createViewRefEnd();
+		case DocCompilerPackage.UI_REF_START:
+			return createUIRefStart();
+		case DocCompilerPackage.UI_REF_END:
+			return createUIRefEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -783,6 +819,126 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public StartProcessEnd createStartProcessEnd() {
 		StartProcessEndImpl startProcessEnd = new StartProcessEndImpl();
 		return startProcessEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EntityRefStart createEntityRefStart() {
+		EntityRefStartImpl entityRefStart = new EntityRefStartImpl();
+		return entityRefStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EntityRefEnd createEntityRefEnd() {
+		EntityRefEndImpl entityRefEnd = new EntityRefEndImpl();
+		return entityRefEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public DTORefStart createDTORefStart() {
+		DTORefStartImpl dtoRefStart = new DTORefStartImpl();
+		return dtoRefStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public DTORefEnd createDTORefEnd() {
+		DTORefEndImpl dtoRefEnd = new DTORefEndImpl();
+		return dtoRefEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ProcessRefStart createProcessRefStart() {
+		ProcessRefStartImpl processRefStart = new ProcessRefStartImpl();
+		return processRefStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ProcessRefEnd createProcessRefEnd() {
+		ProcessRefEndImpl processRefEnd = new ProcessRefEndImpl();
+		return processRefEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TaskRefStart createTaskRefStart() {
+		TaskRefStartImpl taskRefStart = new TaskRefStartImpl();
+		return taskRefStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TaskRefEnd createTaskRefEnd() {
+		TaskRefEndImpl taskRefEnd = new TaskRefEndImpl();
+		return taskRefEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ViewRefStart createViewRefStart() {
+		ViewRefStartImpl viewRefStart = new ViewRefStartImpl();
+		return viewRefStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ViewRefEnd createViewRefEnd() {
+		ViewRefEndImpl viewRefEnd = new ViewRefEndImpl();
+		return viewRefEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public UIRefStart createUIRefStart() {
+		UIRefStartImpl uiRefStart = new UIRefStartImpl();
+		return uiRefStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public UIRefEnd createUIRefEnd() {
+		UIRefEndImpl uiRefEnd = new UIRefEndImpl();
+		return uiRefEnd;
 	}
 
 	/**

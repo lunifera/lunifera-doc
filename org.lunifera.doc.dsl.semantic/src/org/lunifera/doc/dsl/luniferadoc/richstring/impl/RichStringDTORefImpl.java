@@ -4,7 +4,9 @@ package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -14,7 +16,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringDTORefImpl#getRefId <em>Ref Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringDTORefImpl#getDtoDoc <em>Dto Doc</em>}</li>
  * </ul>
  * </p>
  * 
@@ -22,24 +24,14 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  */
 public class RichStringDTORefImpl extends RichStringMarkupImpl implements RichStringDTORef {
 	/**
-	 * The default value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getDtoDoc() <em>Dto Doc</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see #getRefId()
+	 * @see #getDtoDoc()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REF_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getRefId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refId = REF_ID_EDEFAULT;
+	protected DTODocument dtoDoc;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,8 +57,17 @@ public class RichStringDTORefImpl extends RichStringMarkupImpl implements RichSt
 	 * 
 	 * @generated
 	 */
-	public String getRefId() {
-		return refId;
+	public DTODocument getDtoDoc() {
+		if (dtoDoc != null && dtoDoc.eIsProxy()) {
+			InternalEObject oldDtoDoc = (InternalEObject) dtoDoc;
+			dtoDoc = (DTODocument) eResolveProxy(oldDtoDoc);
+			if (dtoDoc != oldDtoDoc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							RichstringPackage.RICH_STRING_DTO_REF__DTO_DOC, oldDtoDoc, dtoDoc));
+			}
+		}
+		return dtoDoc;
 	}
 
 	/**
@@ -74,12 +75,21 @@ public class RichStringDTORefImpl extends RichStringMarkupImpl implements RichSt
 	 * 
 	 * @generated
 	 */
-	public void setRefId(String newRefId) {
-		String oldRefId = refId;
-		refId = newRefId;
+	public DTODocument basicGetDtoDoc() {
+		return dtoDoc;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDtoDoc(DTODocument newDtoDoc) {
+		DTODocument oldDtoDoc = dtoDoc;
+		dtoDoc = newDtoDoc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_DTO_REF__REF_ID, oldRefId, refId));
+					RichstringPackage.RICH_STRING_DTO_REF__DTO_DOC, oldDtoDoc, dtoDoc));
 	}
 
 	/**
@@ -90,8 +100,10 @@ public class RichStringDTORefImpl extends RichStringMarkupImpl implements RichSt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_DTO_REF__REF_ID:
-			return getRefId();
+		case RichstringPackage.RICH_STRING_DTO_REF__DTO_DOC:
+			if (resolve)
+				return getDtoDoc();
+			return basicGetDtoDoc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,8 +116,8 @@ public class RichStringDTORefImpl extends RichStringMarkupImpl implements RichSt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_DTO_REF__REF_ID:
-			setRefId((String) newValue);
+		case RichstringPackage.RICH_STRING_DTO_REF__DTO_DOC:
+			setDtoDoc((DTODocument) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -119,8 +131,8 @@ public class RichStringDTORefImpl extends RichStringMarkupImpl implements RichSt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_DTO_REF__REF_ID:
-			setRefId(REF_ID_EDEFAULT);
+		case RichstringPackage.RICH_STRING_DTO_REF__DTO_DOC:
+			setDtoDoc((DTODocument) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -134,27 +146,10 @@ public class RichStringDTORefImpl extends RichStringMarkupImpl implements RichSt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_DTO_REF__REF_ID:
-			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
+		case RichstringPackage.RICH_STRING_DTO_REF__DTO_DOC:
+			return dtoDoc != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (refId: ");
-		result.append(refId);
-		result.append(')');
-		return result.toString();
 	}
 
 } // RichStringDTORefImpl

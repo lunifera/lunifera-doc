@@ -19,12 +19,16 @@ import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
 import org.lunifera.doc.dsl.doccompiler.ChapterStart;
 import org.lunifera.doc.dsl.doccompiler.CodeEnd;
 import org.lunifera.doc.dsl.doccompiler.CodeStart;
+import org.lunifera.doc.dsl.doccompiler.DTORefEnd;
+import org.lunifera.doc.dsl.doccompiler.DTORefStart;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
 import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
 import org.lunifera.doc.dsl.doccompiler.DocumentStart;
 import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
 import org.lunifera.doc.dsl.doccompiler.ElseStart;
 import org.lunifera.doc.dsl.doccompiler.EndIf;
+import org.lunifera.doc.dsl.doccompiler.EntityRefEnd;
+import org.lunifera.doc.dsl.doccompiler.EntityRefStart;
 import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
 import org.lunifera.doc.dsl.doccompiler.ExampleStart;
 import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
@@ -49,6 +53,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
 import org.lunifera.doc.dsl.doccompiler.RefStart;
@@ -66,10 +72,16 @@ import org.lunifera.doc.dsl.doccompiler.TableEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowStart;
 import org.lunifera.doc.dsl.doccompiler.TableStart;
+import org.lunifera.doc.dsl.doccompiler.TaskRefEnd;
+import org.lunifera.doc.dsl.doccompiler.TaskRefStart;
+import org.lunifera.doc.dsl.doccompiler.UIRefEnd;
+import org.lunifera.doc.dsl.doccompiler.UIRefStart;
 import org.lunifera.doc.dsl.doccompiler.URLEnd;
 import org.lunifera.doc.dsl.doccompiler.URLStart;
 import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
 import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
+import org.lunifera.doc.dsl.doccompiler.ViewRefEnd;
+import org.lunifera.doc.dsl.doccompiler.ViewRefStart;
 import org.lunifera.doc.dsl.doccompiler.util.DocCompilerSwitch;
 import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
@@ -77,7 +89,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -90,6 +104,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
@@ -98,8 +113,11 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
 
 import com.google.inject.Inject;
@@ -552,6 +570,90 @@ public class RichStringProcessor {
 			return Boolean.TRUE;
 		}
 
+		@Override
+		public Boolean caseRichStringEntityRef(RichStringEntityRef object) {
+			EntityRefStart start = factory.createEntityRefStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			EntityRefEnd end = factory.createEntityRefEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringDTORef(RichStringDTORef object) {
+			DTORefStart start = factory.createDTORefStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			DTORefEnd end = factory.createDTORefEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringProcessRef(RichStringProcessRef object) {
+			ProcessRefStart start = factory.createProcessRefStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ProcessRefEnd end = factory.createProcessRefEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringTaskRef(RichStringTaskRef object) {
+			TaskRefStart start = factory.createTaskRefStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			TaskRefEnd end = factory.createTaskRefEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringViewRef(RichStringViewRef object) {
+			ViewRefStart start = factory.createViewRefStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ViewRefEnd end = factory.createViewRefEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringUIRef(RichStringUIRef object) {
+			UIRefStart start = factory.createUIRefStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			UIRefEnd end = factory.createUIRefEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
 	}
 
 	public static class Implementation extends DocCompilerSwitch<Boolean> {
@@ -997,6 +1099,90 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseStartProcessEnd(StartProcessEnd object) {
 			acceptor.acceptStartProcessEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseEntityRefStart(EntityRefStart object) {
+			acceptor.acceptEntityRefStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseEntityRefEnd(EntityRefEnd object) {
+			acceptor.acceptEntityRefEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseDTORefStart(DTORefStart object) {
+			acceptor.acceptDTORefStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseDTORefEnd(DTORefEnd object) {
+			acceptor.acceptDTORefEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseProcessRefStart(ProcessRefStart object) {
+			acceptor.acceptProcessRefStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseProcessRefEnd(ProcessRefEnd object) {
+			acceptor.acceptProcessRefEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTaskRefStart(TaskRefStart object) {
+			acceptor.acceptTaskRefStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseTaskRefEnd(TaskRefEnd object) {
+			acceptor.acceptTaskRefEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseViewRefStart(ViewRefStart object) {
+			acceptor.acceptViewRefStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseViewRefEnd(ViewRefEnd object) {
+			acceptor.acceptViewRefEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseUIRefStart(UIRefStart object) {
+			acceptor.acceptUIRefStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseUIRefEnd(UIRefEnd object) {
+			acceptor.acceptUIRefEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

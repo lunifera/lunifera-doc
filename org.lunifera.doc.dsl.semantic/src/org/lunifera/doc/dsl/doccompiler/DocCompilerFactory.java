@@ -469,6 +469,102 @@ public interface DocCompilerFactory extends EFactory {
 	StartProcessEnd createStartProcessEnd();
 
 	/**
+	 * Returns a new object of class '<em>Entity Ref Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Entity Ref Start</em>'.
+	 * @generated
+	 */
+	EntityRefStart createEntityRefStart();
+
+	/**
+	 * Returns a new object of class '<em>Entity Ref End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Entity Ref End</em>'.
+	 * @generated
+	 */
+	EntityRefEnd createEntityRefEnd();
+
+	/**
+	 * Returns a new object of class '<em>DTO Ref Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>DTO Ref Start</em>'.
+	 * @generated
+	 */
+	DTORefStart createDTORefStart();
+
+	/**
+	 * Returns a new object of class '<em>DTO Ref End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>DTO Ref End</em>'.
+	 * @generated
+	 */
+	DTORefEnd createDTORefEnd();
+
+	/**
+	 * Returns a new object of class '<em>Process Ref Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Process Ref Start</em>'.
+	 * @generated
+	 */
+	ProcessRefStart createProcessRefStart();
+
+	/**
+	 * Returns a new object of class '<em>Process Ref End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Process Ref End</em>'.
+	 * @generated
+	 */
+	ProcessRefEnd createProcessRefEnd();
+
+	/**
+	 * Returns a new object of class '<em>Task Ref Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Task Ref Start</em>'.
+	 * @generated
+	 */
+	TaskRefStart createTaskRefStart();
+
+	/**
+	 * Returns a new object of class '<em>Task Ref End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Task Ref End</em>'.
+	 * @generated
+	 */
+	TaskRefEnd createTaskRefEnd();
+
+	/**
+	 * Returns a new object of class '<em>View Ref Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>View Ref Start</em>'.
+	 * @generated
+	 */
+	ViewRefStart createViewRefStart();
+
+	/**
+	 * Returns a new object of class '<em>View Ref End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>View Ref End</em>'.
+	 * @generated
+	 */
+	ViewRefEnd createViewRefEnd();
+
+	/**
+	 * Returns a new object of class '<em>UI Ref Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>UI Ref Start</em>'.
+	 * @generated
+	 */
+	UIRefStart createUIRefStart();
+
+	/**
+	 * Returns a new object of class '<em>UI Ref End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>UI Ref End</em>'.
+	 * @generated
+	 */
+	UIRefEnd createUIRefEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

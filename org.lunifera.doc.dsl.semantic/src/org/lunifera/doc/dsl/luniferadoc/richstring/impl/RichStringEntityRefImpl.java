@@ -4,7 +4,9 @@ package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -14,7 +16,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringEntityRefImpl#getRefId <em>Ref Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringEntityRefImpl#getEntityDoc <em>Entity Doc</em>}
+ * </li>
  * </ul>
  * </p>
  * 
@@ -22,24 +25,14 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  */
 public class RichStringEntityRefImpl extends RichStringMarkupImpl implements RichStringEntityRef {
 	/**
-	 * The default value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getEntityDoc() <em>Entity Doc</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see #getRefId()
+	 * @see #getEntityDoc()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REF_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getRefId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refId = REF_ID_EDEFAULT;
+	protected EntityDocument entityDoc;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,8 +58,18 @@ public class RichStringEntityRefImpl extends RichStringMarkupImpl implements Ric
 	 * 
 	 * @generated
 	 */
-	public String getRefId() {
-		return refId;
+	public EntityDocument getEntityDoc() {
+		if (entityDoc != null && entityDoc.eIsProxy()) {
+			InternalEObject oldEntityDoc = (InternalEObject) entityDoc;
+			entityDoc = (EntityDocument) eResolveProxy(oldEntityDoc);
+			if (entityDoc != oldEntityDoc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							RichstringPackage.RICH_STRING_ENTITY_REF__ENTITY_DOC, oldEntityDoc,
+							entityDoc));
+			}
+		}
+		return entityDoc;
 	}
 
 	/**
@@ -74,12 +77,21 @@ public class RichStringEntityRefImpl extends RichStringMarkupImpl implements Ric
 	 * 
 	 * @generated
 	 */
-	public void setRefId(String newRefId) {
-		String oldRefId = refId;
-		refId = newRefId;
+	public EntityDocument basicGetEntityDoc() {
+		return entityDoc;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setEntityDoc(EntityDocument newEntityDoc) {
+		EntityDocument oldEntityDoc = entityDoc;
+		entityDoc = newEntityDoc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_ENTITY_REF__REF_ID, oldRefId, refId));
+					RichstringPackage.RICH_STRING_ENTITY_REF__ENTITY_DOC, oldEntityDoc, entityDoc));
 	}
 
 	/**
@@ -90,8 +102,10 @@ public class RichStringEntityRefImpl extends RichStringMarkupImpl implements Ric
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_ENTITY_REF__REF_ID:
-			return getRefId();
+		case RichstringPackage.RICH_STRING_ENTITY_REF__ENTITY_DOC:
+			if (resolve)
+				return getEntityDoc();
+			return basicGetEntityDoc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,8 +118,8 @@ public class RichStringEntityRefImpl extends RichStringMarkupImpl implements Ric
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_ENTITY_REF__REF_ID:
-			setRefId((String) newValue);
+		case RichstringPackage.RICH_STRING_ENTITY_REF__ENTITY_DOC:
+			setEntityDoc((EntityDocument) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -119,8 +133,8 @@ public class RichStringEntityRefImpl extends RichStringMarkupImpl implements Ric
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_ENTITY_REF__REF_ID:
-			setRefId(REF_ID_EDEFAULT);
+		case RichstringPackage.RICH_STRING_ENTITY_REF__ENTITY_DOC:
+			setEntityDoc((EntityDocument) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -134,27 +148,10 @@ public class RichStringEntityRefImpl extends RichStringMarkupImpl implements Ric
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_ENTITY_REF__REF_ID:
-			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
+		case RichstringPackage.RICH_STRING_ENTITY_REF__ENTITY_DOC:
+			return entityDoc != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (refId: ");
-		result.append(refId);
-		result.append(')');
-		return result.toString();
 	}
 
 } // RichStringEntityRefImpl

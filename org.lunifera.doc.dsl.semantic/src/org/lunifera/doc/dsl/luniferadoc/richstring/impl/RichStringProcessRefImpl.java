@@ -4,7 +4,9 @@ package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -14,7 +16,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringProcessRefImpl#getRefId <em>Ref Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringProcessRefImpl#getProcessDoc <em>Process Doc
+ * </em>}</li>
  * </ul>
  * </p>
  * 
@@ -22,24 +25,14 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  */
 public class RichStringProcessRefImpl extends RichStringMarkupImpl implements RichStringProcessRef {
 	/**
-	 * The default value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getProcessDoc() <em>Process Doc</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see #getRefId()
+	 * @see #getProcessDoc()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REF_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRefId() <em>Ref Id</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getRefId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refId = REF_ID_EDEFAULT;
+	protected BPMProcessDocument processDoc;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,8 +58,18 @@ public class RichStringProcessRefImpl extends RichStringMarkupImpl implements Ri
 	 * 
 	 * @generated
 	 */
-	public String getRefId() {
-		return refId;
+	public BPMProcessDocument getProcessDoc() {
+		if (processDoc != null && processDoc.eIsProxy()) {
+			InternalEObject oldProcessDoc = (InternalEObject) processDoc;
+			processDoc = (BPMProcessDocument) eResolveProxy(oldProcessDoc);
+			if (processDoc != oldProcessDoc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							RichstringPackage.RICH_STRING_PROCESS_REF__PROCESS_DOC, oldProcessDoc,
+							processDoc));
+			}
+		}
+		return processDoc;
 	}
 
 	/**
@@ -74,12 +77,22 @@ public class RichStringProcessRefImpl extends RichStringMarkupImpl implements Ri
 	 * 
 	 * @generated
 	 */
-	public void setRefId(String newRefId) {
-		String oldRefId = refId;
-		refId = newRefId;
+	public BPMProcessDocument basicGetProcessDoc() {
+		return processDoc;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setProcessDoc(BPMProcessDocument newProcessDoc) {
+		BPMProcessDocument oldProcessDoc = processDoc;
+		processDoc = newProcessDoc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					RichstringPackage.RICH_STRING_PROCESS_REF__REF_ID, oldRefId, refId));
+					RichstringPackage.RICH_STRING_PROCESS_REF__PROCESS_DOC, oldProcessDoc,
+					processDoc));
 	}
 
 	/**
@@ -90,8 +103,10 @@ public class RichStringProcessRefImpl extends RichStringMarkupImpl implements Ri
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_PROCESS_REF__REF_ID:
-			return getRefId();
+		case RichstringPackage.RICH_STRING_PROCESS_REF__PROCESS_DOC:
+			if (resolve)
+				return getProcessDoc();
+			return basicGetProcessDoc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,8 +119,8 @@ public class RichStringProcessRefImpl extends RichStringMarkupImpl implements Ri
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_PROCESS_REF__REF_ID:
-			setRefId((String) newValue);
+		case RichstringPackage.RICH_STRING_PROCESS_REF__PROCESS_DOC:
+			setProcessDoc((BPMProcessDocument) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -119,8 +134,8 @@ public class RichStringProcessRefImpl extends RichStringMarkupImpl implements Ri
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_PROCESS_REF__REF_ID:
-			setRefId(REF_ID_EDEFAULT);
+		case RichstringPackage.RICH_STRING_PROCESS_REF__PROCESS_DOC:
+			setProcessDoc((BPMProcessDocument) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -134,27 +149,10 @@ public class RichStringProcessRefImpl extends RichStringMarkupImpl implements Ri
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RichstringPackage.RICH_STRING_PROCESS_REF__REF_ID:
-			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
+		case RichstringPackage.RICH_STRING_PROCESS_REF__PROCESS_DOC:
+			return processDoc != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (refId: ");
-		result.append(refId);
-		result.append(')');
-		return result.toString();
 	}
 
 } // RichStringProcessRefImpl
