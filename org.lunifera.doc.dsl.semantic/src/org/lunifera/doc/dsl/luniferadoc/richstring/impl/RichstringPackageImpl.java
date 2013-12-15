@@ -20,7 +20,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -32,15 +34,21 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringFactory;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -224,6 +232,62 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringTableDataEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringOpenViewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringStartProcessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringEntityRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringDTORefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringProcessRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringTaskRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringViewRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringUIRefEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -828,6 +892,150 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringOpenView() {
+		return richStringOpenViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringOpenView_ViewId() {
+		return (EAttribute) richStringOpenViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringStartProcess() {
+		return richStringStartProcessEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringStartProcess_ProcessId() {
+		return (EAttribute) richStringStartProcessEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringEntityRef() {
+		return richStringEntityRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringEntityRef_RefId() {
+		return (EAttribute) richStringEntityRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringDTORef() {
+		return richStringDTORefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringDTORef_RefId() {
+		return (EAttribute) richStringDTORefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringProcessRef() {
+		return richStringProcessRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringProcessRef_RefId() {
+		return (EAttribute) richStringProcessRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringTaskRef() {
+		return richStringTaskRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringTaskRef_RefId() {
+		return (EAttribute) richStringTaskRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringViewRef() {
+		return richStringViewRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringViewRef_RefId() {
+		return (EAttribute) richStringViewRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringUIRef() {
+		return richStringUIRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringUIRef_RefId() {
+		return (EAttribute) richStringUIRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public RichstringFactory getRichstringFactory() {
 		return (RichstringFactory) getEFactoryInstance();
 	}
@@ -932,6 +1140,30 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		createEReference(richStringTableRowEClass, RICH_STRING_TABLE_ROW__COLUMNS);
 
 		richStringTableDataEClass = createEClass(RICH_STRING_TABLE_DATA);
+
+		richStringOpenViewEClass = createEClass(RICH_STRING_OPEN_VIEW);
+		createEAttribute(richStringOpenViewEClass, RICH_STRING_OPEN_VIEW__VIEW_ID);
+
+		richStringStartProcessEClass = createEClass(RICH_STRING_START_PROCESS);
+		createEAttribute(richStringStartProcessEClass, RICH_STRING_START_PROCESS__PROCESS_ID);
+
+		richStringEntityRefEClass = createEClass(RICH_STRING_ENTITY_REF);
+		createEAttribute(richStringEntityRefEClass, RICH_STRING_ENTITY_REF__REF_ID);
+
+		richStringDTORefEClass = createEClass(RICH_STRING_DTO_REF);
+		createEAttribute(richStringDTORefEClass, RICH_STRING_DTO_REF__REF_ID);
+
+		richStringProcessRefEClass = createEClass(RICH_STRING_PROCESS_REF);
+		createEAttribute(richStringProcessRefEClass, RICH_STRING_PROCESS_REF__REF_ID);
+
+		richStringTaskRefEClass = createEClass(RICH_STRING_TASK_REF);
+		createEAttribute(richStringTaskRefEClass, RICH_STRING_TASK_REF__REF_ID);
+
+		richStringViewRefEClass = createEClass(RICH_STRING_VIEW_REF);
+		createEAttribute(richStringViewRefEClass, RICH_STRING_VIEW_REF__REF_ID);
+
+		richStringUIRefEClass = createEClass(RICH_STRING_UI_REF);
+		createEAttribute(richStringUIRefEClass, RICH_STRING_UI_REF__REF_ID);
 	}
 
 	/**
@@ -990,6 +1222,14 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringTableEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringTableRowEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringTableDataEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringOpenViewEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringStartProcessEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringEntityRefEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringDTORefEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringProcessRefEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringTaskRefEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringViewRefEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringUIRefEClass.getESuperTypes().add(this.getRichStringMarkup());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf",
@@ -1178,6 +1418,54 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		initEClass(richStringTableDataEClass, RichStringTableData.class, "RichStringTableData",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringOpenViewEClass, RichStringOpenView.class, "RichStringOpenView",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringOpenView_ViewId(), ecorePackage.getEString(), "viewId", null,
+				0, 1, RichStringOpenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringStartProcessEClass, RichStringStartProcess.class,
+				"RichStringStartProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringStartProcess_ProcessId(), ecorePackage.getEString(),
+				"processId", null, 0, 1, RichStringStartProcess.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringEntityRefEClass, RichStringEntityRef.class, "RichStringEntityRef",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringEntityRef_RefId(), ecorePackage.getEString(), "refId", null, 0,
+				1, RichStringEntityRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringDTORefEClass, RichStringDTORef.class, "RichStringDTORef",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringDTORef_RefId(), ecorePackage.getEString(), "refId", null, 0, 1,
+				RichStringDTORef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringProcessRefEClass, RichStringProcessRef.class, "RichStringProcessRef",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringProcessRef_RefId(), ecorePackage.getEString(), "refId", null,
+				0, 1, RichStringProcessRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringTaskRefEClass, RichStringTaskRef.class, "RichStringTaskRef",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringTaskRef_RefId(), ecorePackage.getEString(), "refId", null, 0,
+				1, RichStringTaskRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringViewRefEClass, RichStringViewRef.class, "RichStringViewRef",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringViewRef_RefId(), ecorePackage.getEString(), "refId", null, 0,
+				1, RichStringViewRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringUIRefEClass, RichStringUIRef.class, "RichStringUIRef", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringUIRef_RefId(), ecorePackage.getEString(), "refId", null, 0, 1,
+				RichStringUIRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } // RichstringPackageImpl

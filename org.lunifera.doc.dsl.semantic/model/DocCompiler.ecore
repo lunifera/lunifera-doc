@@ -220,4 +220,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SubsectionStart"
         eOpposite="#//SubsectionStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpenViewStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringOpenView"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//OpenViewEnd"
+        eOpposite="#//OpenViewEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpenViewEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//OpenViewStart"
+        eOpposite="#//OpenViewStart/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartProcessStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringStartProcess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//StartProcessEnd"
+        eOpposite="#//StartProcessEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartProcessEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartProcessStart"
+        eOpposite="#//StartProcessStart/end"/>
+  </eClassifiers>
 </ecore:EPackage>

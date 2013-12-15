@@ -14,7 +14,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -26,15 +28,21 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
@@ -211,6 +219,46 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseRichStringTableData(RichStringTableData object) {
 			return createRichStringTableDataAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringOpenView(RichStringOpenView object) {
+			return createRichStringOpenViewAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringStartProcess(RichStringStartProcess object) {
+			return createRichStringStartProcessAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringEntityRef(RichStringEntityRef object) {
+			return createRichStringEntityRefAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringDTORef(RichStringDTORef object) {
+			return createRichStringDTORefAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringProcessRef(RichStringProcessRef object) {
+			return createRichStringProcessRefAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringTaskRef(RichStringTaskRef object) {
+			return createRichStringTaskRefAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringViewRef(RichStringViewRef object) {
+			return createRichStringViewRefAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringUIRef(RichStringUIRef object) {
+			return createRichStringUIRefAdapter();
 		}
 
 		@Override
@@ -599,6 +647,118 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringTableDataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView <em>Rich String Open View</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView
+	 * @generated
+	 */
+	public Adapter createRichStringOpenViewAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess <em>Rich String Start Process</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess
+	 * @generated
+	 */
+	public Adapter createRichStringStartProcessAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef <em>Rich String Entity Ref</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef
+	 * @generated
+	 */
+	public Adapter createRichStringEntityRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef <em>Rich String DTO Ref</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef
+	 * @generated
+	 */
+	public Adapter createRichStringDTORefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef <em>Rich String Process Ref</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef
+	 * @generated
+	 */
+	public Adapter createRichStringProcessRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef <em>Rich String Task Ref</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef
+	 * @generated
+	 */
+	public Adapter createRichStringTaskRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef <em>Rich String View Ref</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef
+	 * @generated
+	 */
+	public Adapter createRichStringViewRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
+	 * <em>Rich String UI Ref</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
+	 * @generated
+	 */
+	public Adapter createRichStringUIRefAdapter() {
 		return null;
 	}
 

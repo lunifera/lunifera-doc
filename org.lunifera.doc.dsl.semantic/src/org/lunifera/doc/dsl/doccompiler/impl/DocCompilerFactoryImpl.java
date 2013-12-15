@@ -41,6 +41,8 @@ import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
+import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
+import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
@@ -49,6 +51,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
+import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
@@ -207,6 +211,14 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createSubsectionStart();
 		case DocCompilerPackage.SUBSECTION_END:
 			return createSubsectionEnd();
+		case DocCompilerPackage.OPEN_VIEW_START:
+			return createOpenViewStart();
+		case DocCompilerPackage.OPEN_VIEW_END:
+			return createOpenViewEnd();
+		case DocCompilerPackage.START_PROCESS_START:
+			return createStartProcessStart();
+		case DocCompilerPackage.START_PROCESS_END:
+			return createStartProcessEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -731,6 +743,46 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public SubsectionEnd createSubsectionEnd() {
 		SubsectionEndImpl subsectionEnd = new SubsectionEndImpl();
 		return subsectionEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public OpenViewStart createOpenViewStart() {
+		OpenViewStartImpl openViewStart = new OpenViewStartImpl();
+		return openViewStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public OpenViewEnd createOpenViewEnd() {
+		OpenViewEndImpl openViewEnd = new OpenViewEndImpl();
+		return openViewEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public StartProcessStart createStartProcessStart() {
+		StartProcessStartImpl startProcessStart = new StartProcessStartImpl();
+		return startProcessStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public StartProcessEnd createStartProcessEnd() {
+		StartProcessEndImpl startProcessEnd = new StartProcessEndImpl();
+		return startProcessEnd;
 	}
 
 	/**

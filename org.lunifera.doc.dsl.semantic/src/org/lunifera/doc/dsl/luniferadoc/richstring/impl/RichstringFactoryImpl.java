@@ -11,7 +11,9 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
@@ -23,15 +25,21 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringFactory;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -126,6 +134,22 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringTableRow();
 		case RichstringPackage.RICH_STRING_TABLE_DATA:
 			return createRichStringTableData();
+		case RichstringPackage.RICH_STRING_OPEN_VIEW:
+			return createRichStringOpenView();
+		case RichstringPackage.RICH_STRING_START_PROCESS:
+			return createRichStringStartProcess();
+		case RichstringPackage.RICH_STRING_ENTITY_REF:
+			return createRichStringEntityRef();
+		case RichstringPackage.RICH_STRING_DTO_REF:
+			return createRichStringDTORef();
+		case RichstringPackage.RICH_STRING_PROCESS_REF:
+			return createRichStringProcessRef();
+		case RichstringPackage.RICH_STRING_TASK_REF:
+			return createRichStringTaskRef();
+		case RichstringPackage.RICH_STRING_VIEW_REF:
+			return createRichStringViewRef();
+		case RichstringPackage.RICH_STRING_UI_REF:
+			return createRichStringUIRef();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -380,6 +404,86 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringTableData createRichStringTableData() {
 		RichStringTableDataImpl richStringTableData = new RichStringTableDataImpl();
 		return richStringTableData;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringOpenView createRichStringOpenView() {
+		RichStringOpenViewImpl richStringOpenView = new RichStringOpenViewImpl();
+		return richStringOpenView;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringStartProcess createRichStringStartProcess() {
+		RichStringStartProcessImpl richStringStartProcess = new RichStringStartProcessImpl();
+		return richStringStartProcess;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringEntityRef createRichStringEntityRef() {
+		RichStringEntityRefImpl richStringEntityRef = new RichStringEntityRefImpl();
+		return richStringEntityRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringDTORef createRichStringDTORef() {
+		RichStringDTORefImpl richStringDTORef = new RichStringDTORefImpl();
+		return richStringDTORef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringProcessRef createRichStringProcessRef() {
+		RichStringProcessRefImpl richStringProcessRef = new RichStringProcessRefImpl();
+		return richStringProcessRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTaskRef createRichStringTaskRef() {
+		RichStringTaskRefImpl richStringTaskRef = new RichStringTaskRefImpl();
+		return richStringTaskRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringViewRef createRichStringViewRef() {
+		RichStringViewRefImpl richStringViewRef = new RichStringViewRefImpl();
+		return richStringViewRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringUIRef createRichStringUIRef() {
+		RichStringUIRefImpl richStringUIRef = new RichStringUIRefImpl();
+		return richStringUIRef;
 	}
 
 	/**

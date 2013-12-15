@@ -437,6 +437,38 @@ public interface DocCompilerFactory extends EFactory {
 	SubsectionEnd createSubsectionEnd();
 
 	/**
+	 * Returns a new object of class '<em>Open View Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Open View Start</em>'.
+	 * @generated
+	 */
+	OpenViewStart createOpenViewStart();
+
+	/**
+	 * Returns a new object of class '<em>Open View End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Open View End</em>'.
+	 * @generated
+	 */
+	OpenViewEnd createOpenViewEnd();
+
+	/**
+	 * Returns a new object of class '<em>Start Process Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Start Process Start</em>'.
+	 * @generated
+	 */
+	StartProcessStart createStartProcessStart();
+
+	/**
+	 * Returns a new object of class '<em>Start Process End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Start Process End</em>'.
+	 * @generated
+	 */
+	StartProcessEnd createStartProcessEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

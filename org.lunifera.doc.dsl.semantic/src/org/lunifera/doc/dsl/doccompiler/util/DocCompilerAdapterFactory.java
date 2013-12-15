@@ -39,6 +39,8 @@ import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
+import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
+import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
@@ -47,6 +49,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
+import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
@@ -369,6 +373,26 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseSubsectionEnd(SubsectionEnd object) {
 			return createSubsectionEndAdapter();
+		}
+
+		@Override
+		public Adapter caseOpenViewStart(OpenViewStart object) {
+			return createOpenViewStartAdapter();
+		}
+
+		@Override
+		public Adapter caseOpenViewEnd(OpenViewEnd object) {
+			return createOpenViewEndAdapter();
+		}
+
+		@Override
+		public Adapter caseStartProcessStart(StartProcessStart object) {
+			return createStartProcessStartAdapter();
+		}
+
+		@Override
+		public Adapter caseStartProcessEnd(StartProcessEnd object) {
+			return createStartProcessEndAdapter();
 		}
 
 		@Override
@@ -1103,6 +1127,62 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSubsectionEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.OpenViewStart
+	 * <em>Open View Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.OpenViewStart
+	 * @generated
+	 */
+	public Adapter createOpenViewStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.OpenViewEnd
+	 * <em>Open View End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.OpenViewEnd
+	 * @generated
+	 */
+	public Adapter createOpenViewEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.StartProcessStart
+	 * <em>Start Process Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.StartProcessStart
+	 * @generated
+	 */
+	public Adapter createStartProcessStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.StartProcessEnd
+	 * <em>Start Process End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.StartProcessEnd
+	 * @generated
+	 */
+	public Adapter createStartProcessEndAdapter() {
 		return null;
 	}
 

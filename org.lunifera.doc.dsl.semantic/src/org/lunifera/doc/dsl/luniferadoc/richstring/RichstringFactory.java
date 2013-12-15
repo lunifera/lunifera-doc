@@ -221,6 +221,70 @@ public interface RichstringFactory extends EFactory {
 	RichStringTableData createRichStringTableData();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Open View</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Open View</em>'.
+	 * @generated
+	 */
+	RichStringOpenView createRichStringOpenView();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Start Process</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Start Process</em>'.
+	 * @generated
+	 */
+	RichStringStartProcess createRichStringStartProcess();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Entity Ref</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Entity Ref</em>'.
+	 * @generated
+	 */
+	RichStringEntityRef createRichStringEntityRef();
+
+	/**
+	 * Returns a new object of class '<em>Rich String DTO Ref</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String DTO Ref</em>'.
+	 * @generated
+	 */
+	RichStringDTORef createRichStringDTORef();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Process Ref</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Process Ref</em>'.
+	 * @generated
+	 */
+	RichStringProcessRef createRichStringProcessRef();
+
+	/**
+	 * Returns a new object of class '<em>Rich String Task Ref</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Task Ref</em>'.
+	 * @generated
+	 */
+	RichStringTaskRef createRichStringTaskRef();
+
+	/**
+	 * Returns a new object of class '<em>Rich String View Ref</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String View Ref</em>'.
+	 * @generated
+	 */
+	RichStringViewRef createRichStringViewRef();
+
+	/**
+	 * Returns a new object of class '<em>Rich String UI Ref</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String UI Ref</em>'.
+	 * @generated
+	 */
+	RichStringUIRef createRichStringUIRef();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

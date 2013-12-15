@@ -42,6 +42,8 @@ import org.lunifera.doc.dsl.doccompiler.MailtoStart;
 import org.lunifera.doc.dsl.doccompiler.Markup;
 import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
+import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
+import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
 import org.lunifera.doc.dsl.doccompiler.RefEnd;
@@ -50,6 +52,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
+import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
@@ -434,6 +438,34 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass subsectionEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass openViewStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass openViewEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass startProcessStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass startProcessEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1712,6 +1744,96 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getOpenViewStart() {
+		return openViewStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOpenViewStart_Content() {
+		return (EReference) openViewStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOpenViewStart_End() {
+		return (EReference) openViewStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getOpenViewEnd() {
+		return openViewEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOpenViewEnd_Start() {
+		return (EReference) openViewEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getStartProcessStart() {
+		return startProcessStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getStartProcessStart_Content() {
+		return (EReference) startProcessStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getStartProcessStart_End() {
+		return (EReference) startProcessStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getStartProcessEnd() {
+		return startProcessEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getStartProcessEnd_Start() {
+		return (EReference) startProcessEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -1920,6 +2042,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		subsectionEndEClass = createEClass(SUBSECTION_END);
 		createEReference(subsectionEndEClass, SUBSECTION_END__START);
+
+		openViewStartEClass = createEClass(OPEN_VIEW_START);
+		createEReference(openViewStartEClass, OPEN_VIEW_START__CONTENT);
+		createEReference(openViewStartEClass, OPEN_VIEW_START__END);
+
+		openViewEndEClass = createEClass(OPEN_VIEW_END);
+		createEReference(openViewEndEClass, OPEN_VIEW_END__START);
+
+		startProcessStartEClass = createEClass(START_PROCESS_START);
+		createEReference(startProcessStartEClass, START_PROCESS_START__CONTENT);
+		createEReference(startProcessStartEClass, START_PROCESS_START__END);
+
+		startProcessEndEClass = createEClass(START_PROCESS_END);
+		createEReference(startProcessEndEClass, START_PROCESS_END__START);
 	}
 
 	/**
@@ -2007,6 +2143,10 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		sectionEndEClass.getESuperTypes().add(this.getLinePart());
 		subsectionStartEClass.getESuperTypes().add(this.getLinePart());
 		subsectionEndEClass.getESuperTypes().add(this.getLinePart());
+		openViewStartEClass.getESuperTypes().add(this.getLinePart());
+		openViewEndEClass.getESuperTypes().add(this.getLinePart());
+		startProcessStartEClass.getESuperTypes().add(this.getLinePart());
+		startProcessEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -2466,6 +2606,42 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSubsectionEnd_Start(), this.getSubsectionStart(),
 				this.getSubsectionStart_End(), "start", null, 0, 1, SubsectionEnd.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(openViewStartEClass, OpenViewStart.class, "OpenViewStart", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOpenViewStart_Content(), theRichstringPackage.getRichStringOpenView(),
+				null, "content", null, 0, 1, OpenViewStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getOpenViewStart_End(), this.getOpenViewEnd(), this.getOpenViewEnd_Start(),
+				"end", null, 0, 1, OpenViewStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(openViewEndEClass, OpenViewEnd.class, "OpenViewEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOpenViewEnd_Start(), this.getOpenViewStart(),
+				this.getOpenViewStart_End(), "start", null, 0, 1, OpenViewEnd.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(startProcessStartEClass, StartProcessStart.class, "StartProcessStart",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStartProcessStart_Content(),
+				theRichstringPackage.getRichStringStartProcess(), null, "content", null, 0, 1,
+				StartProcessStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStartProcessStart_End(), this.getStartProcessEnd(),
+				this.getStartProcessEnd_Start(), "end", null, 0, 1, StartProcessStart.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(startProcessEndEClass, StartProcessEnd.class, "StartProcessEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStartProcessEnd_Start(), this.getStartProcessStart(),
+				this.getStartProcessStart_End(), "start", null, 0, 1, StartProcessEnd.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -219,5 +219,29 @@
           eType="#//richstring/RichStringTableData" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringTableData" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringOpenView" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="viewId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringStartProcess" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="processId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringEntityRef" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringDTORef" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringProcessRef" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringTaskRef" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringViewRef" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringUIRef" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

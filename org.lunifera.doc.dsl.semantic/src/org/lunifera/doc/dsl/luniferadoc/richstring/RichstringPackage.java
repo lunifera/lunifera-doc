@@ -1118,6 +1118,422 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_TABLE_DATA_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOpenViewImpl
+	 * <em>Rich String Open View</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOpenViewImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringOpenView()
+	 * @generated
+	 */
+	int RICH_STRING_OPEN_VIEW = 25;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_OPEN_VIEW__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_OPEN_VIEW__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_OPEN_VIEW__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>View Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_OPEN_VIEW__VIEW_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Open View</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_OPEN_VIEW_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringStartProcessImpl
+	 * <em>Rich String Start Process</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringStartProcessImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringStartProcess()
+	 * @generated
+	 */
+	int RICH_STRING_START_PROCESS = 26;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_START_PROCESS__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_START_PROCESS__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_START_PROCESS__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Process Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_START_PROCESS__PROCESS_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Start Process</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_START_PROCESS_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringEntityRefImpl
+	 * <em>Rich String Entity Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringEntityRefImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringEntityRef()
+	 * @generated
+	 */
+	int RICH_STRING_ENTITY_REF = 27;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ENTITY_REF__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ENTITY_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ENTITY_REF__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Ref Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ENTITY_REF__REF_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Entity Ref</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_ENTITY_REF_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringDTORefImpl
+	 * <em>Rich String DTO Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringDTORefImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringDTORef()
+	 * @generated
+	 */
+	int RICH_STRING_DTO_REF = 28;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_DTO_REF__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_DTO_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_DTO_REF__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Ref Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_DTO_REF__REF_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String DTO Ref</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_DTO_REF_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringProcessRefImpl
+	 * <em>Rich String Process Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringProcessRefImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringProcessRef()
+	 * @generated
+	 */
+	int RICH_STRING_PROCESS_REF = 29;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_PROCESS_REF__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_PROCESS_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_PROCESS_REF__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Ref Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_PROCESS_REF__REF_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Process Ref</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_PROCESS_REF_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTaskRefImpl
+	 * <em>Rich String Task Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTaskRefImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTaskRef()
+	 * @generated
+	 */
+	int RICH_STRING_TASK_REF = 30;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TASK_REF__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TASK_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TASK_REF__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Ref Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TASK_REF__REF_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Task Ref</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_TASK_REF_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringViewRefImpl
+	 * <em>Rich String View Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringViewRefImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringViewRef()
+	 * @generated
+	 */
+	int RICH_STRING_VIEW_REF = 31;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_VIEW_REF__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_VIEW_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_VIEW_REF__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Ref Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_VIEW_REF__REF_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String View Ref</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_VIEW_REF_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUIRefImpl
+	 * <em>Rich String UI Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUIRefImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringUIRef()
+	 * @generated
+	 */
+	int RICH_STRING_UI_REF = 32;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UI_REF__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UI_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UI_REF__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Ref Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UI_REF__REF_ID = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String UI Ref</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_UI_REF_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 	 * <em>Rich String Else If</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1752,6 +2168,182 @@ public interface RichstringPackage extends EPackage {
 	EClass getRichStringTableData();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView
+	 * <em>Rich String Open View</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Open View</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView
+	 * @generated
+	 */
+	EClass getRichStringOpenView();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView#getViewId <em>View Id</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>View Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView#getViewId()
+	 * @see #getRichStringOpenView()
+	 * @generated
+	 */
+	EAttribute getRichStringOpenView_ViewId();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess
+	 * <em>Rich String Start Process</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Start Process</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess
+	 * @generated
+	 */
+	EClass getRichStringStartProcess();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess#getProcessId <em>Process Id</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Process Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess#getProcessId()
+	 * @see #getRichStringStartProcess()
+	 * @generated
+	 */
+	EAttribute getRichStringStartProcess_ProcessId();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef
+	 * <em>Rich String Entity Ref</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Entity Ref</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef
+	 * @generated
+	 */
+	EClass getRichStringEntityRef();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef#getRefId <em>Ref Id</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Ref Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef#getRefId()
+	 * @see #getRichStringEntityRef()
+	 * @generated
+	 */
+	EAttribute getRichStringEntityRef_RefId();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef
+	 * <em>Rich String DTO Ref</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String DTO Ref</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef
+	 * @generated
+	 */
+	EClass getRichStringDTORef();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef#getRefId <em>Ref Id</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Ref Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef#getRefId()
+	 * @see #getRichStringDTORef()
+	 * @generated
+	 */
+	EAttribute getRichStringDTORef_RefId();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef
+	 * <em>Rich String Process Ref</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Process Ref</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef
+	 * @generated
+	 */
+	EClass getRichStringProcessRef();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef#getRefId <em>Ref Id</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Ref Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef#getRefId()
+	 * @see #getRichStringProcessRef()
+	 * @generated
+	 */
+	EAttribute getRichStringProcessRef_RefId();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef
+	 * <em>Rich String Task Ref</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Task Ref</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef
+	 * @generated
+	 */
+	EClass getRichStringTaskRef();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef#getRefId <em>Ref Id</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Ref Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef#getRefId()
+	 * @see #getRichStringTaskRef()
+	 * @generated
+	 */
+	EAttribute getRichStringTaskRef_RefId();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef
+	 * <em>Rich String View Ref</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String View Ref</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef
+	 * @generated
+	 */
+	EClass getRichStringViewRef();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef#getRefId <em>Ref Id</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Ref Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef#getRefId()
+	 * @see #getRichStringViewRef()
+	 * @generated
+	 */
+	EAttribute getRichStringViewRef_RefId();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
+	 * <em>Rich String UI Ref</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String UI Ref</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
+	 * @generated
+	 */
+	EClass getRichStringUIRef();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef#getRefId <em>Ref Id</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Ref Id</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef#getRefId()
+	 * @see #getRichStringUIRef()
+	 * @generated
+	 */
+	EAttribute getRichStringUIRef_RefId();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -2290,6 +2882,158 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RICH_STRING_TABLE_DATA = eINSTANCE.getRichStringTableData();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOpenViewImpl
+		 * <em>Rich String Open View</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOpenViewImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringOpenView()
+		 * @generated
+		 */
+		EClass RICH_STRING_OPEN_VIEW = eINSTANCE.getRichStringOpenView();
+
+		/**
+		 * The meta object literal for the '<em><b>View Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_OPEN_VIEW__VIEW_ID = eINSTANCE.getRichStringOpenView_ViewId();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringStartProcessImpl
+		 * <em>Rich String Start Process</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringStartProcessImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringStartProcess()
+		 * @generated
+		 */
+		EClass RICH_STRING_START_PROCESS = eINSTANCE.getRichStringStartProcess();
+
+		/**
+		 * The meta object literal for the '<em><b>Process Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_START_PROCESS__PROCESS_ID = eINSTANCE
+				.getRichStringStartProcess_ProcessId();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringEntityRefImpl
+		 * <em>Rich String Entity Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringEntityRefImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringEntityRef()
+		 * @generated
+		 */
+		EClass RICH_STRING_ENTITY_REF = eINSTANCE.getRichStringEntityRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_ENTITY_REF__REF_ID = eINSTANCE.getRichStringEntityRef_RefId();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringDTORefImpl <em>Rich String DTO Ref</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringDTORefImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringDTORef()
+		 * @generated
+		 */
+		EClass RICH_STRING_DTO_REF = eINSTANCE.getRichStringDTORef();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_DTO_REF__REF_ID = eINSTANCE.getRichStringDTORef_RefId();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringProcessRefImpl
+		 * <em>Rich String Process Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringProcessRefImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringProcessRef()
+		 * @generated
+		 */
+		EClass RICH_STRING_PROCESS_REF = eINSTANCE.getRichStringProcessRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_PROCESS_REF__REF_ID = eINSTANCE.getRichStringProcessRef_RefId();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTaskRefImpl <em>Rich String Task Ref</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTaskRefImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringTaskRef()
+		 * @generated
+		 */
+		EClass RICH_STRING_TASK_REF = eINSTANCE.getRichStringTaskRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_TASK_REF__REF_ID = eINSTANCE.getRichStringTaskRef_RefId();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringViewRefImpl <em>Rich String View Ref</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringViewRefImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringViewRef()
+		 * @generated
+		 */
+		EClass RICH_STRING_VIEW_REF = eINSTANCE.getRichStringViewRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_VIEW_REF__REF_ID = eINSTANCE.getRichStringViewRef_RefId();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUIRefImpl
+		 * <em>Rich String UI Ref</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUIRefImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringUIRef()
+		 * @generated
+		 */
+		EClass RICH_STRING_UI_REF = eINSTANCE.getRichStringUIRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_UI_REF__REF_ID = eINSTANCE.getRichStringUIRef_RefId();
 
 	}
 
