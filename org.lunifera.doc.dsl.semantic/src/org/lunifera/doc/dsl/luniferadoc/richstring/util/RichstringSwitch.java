@@ -23,6 +23,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
@@ -429,6 +431,28 @@ public class RichstringSwitch<T> extends Switch<T> {
 				result = caseRichStringMarkup(richStringUIRef);
 			if (result == null)
 				result = caseXExpression(richStringUIRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_LIST: {
+			RichStringList richStringList = (RichStringList) theEObject;
+			T result = caseRichStringList(richStringList);
+			if (result == null)
+				result = caseRichStringMarkup(richStringList);
+			if (result == null)
+				result = caseXExpression(richStringList);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_LIST_ELEMENT: {
+			RichStringListElement richStringListElement = (RichStringListElement) theEObject;
+			T result = caseRichStringListElement(richStringListElement);
+			if (result == null)
+				result = caseRichStringMarkup(richStringListElement);
+			if (result == null)
+				result = caseXExpression(richStringListElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -929,6 +953,36 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringUIRef(RichStringUIRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String List</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringList(RichStringList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String List Element</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String List Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringListElement(RichStringListElement object) {
 		return null;
 	}
 

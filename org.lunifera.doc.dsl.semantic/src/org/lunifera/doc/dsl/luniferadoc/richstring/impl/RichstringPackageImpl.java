@@ -30,6 +30,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
@@ -288,6 +290,20 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringUIRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringListEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringListElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1036,6 +1052,33 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringList() {
+		return richStringListEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringList_Elements() {
+		return (EReference) richStringListEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringListElement() {
+		return richStringListElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public RichstringFactory getRichstringFactory() {
 		return (RichstringFactory) getEFactoryInstance();
 	}
@@ -1164,6 +1207,11 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		richStringUIRefEClass = createEClass(RICH_STRING_UI_REF);
 		createEReference(richStringUIRefEClass, RICH_STRING_UI_REF__UI_DOC);
+
+		richStringListEClass = createEClass(RICH_STRING_LIST);
+		createEReference(richStringListEClass, RICH_STRING_LIST__ELEMENTS);
+
+		richStringListElementEClass = createEClass(RICH_STRING_LIST_ELEMENT);
 	}
 
 	/**
@@ -1232,6 +1280,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringTaskRefEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringViewRefEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringUIRefEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringListEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringListElementEClass.getESuperTypes().add(this.getRichStringMarkup());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(richStringElseIfEClass, RichStringElseIf.class, "RichStringElseIf",
@@ -1475,6 +1525,16 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				"uiDoc", null, 0, 1, RichStringUIRef.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringListEClass, RichStringList.class, "RichStringList", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRichStringList_Elements(), this.getRichStringListElement(), null,
+				"elements", null, 0, -1, RichStringList.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringListElementEClass, RichStringListElement.class,
+				"RichStringListElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } // RichstringPackageImpl

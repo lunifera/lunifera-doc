@@ -79,8 +79,8 @@ GeneralDocument returns document::GeneralDocument:
 	
 EntityDocument returns document::EntityDocument:
 	'EntityDocument' name=QualifiedName 'for' entityClass=QualifiedName '{'
-	'description' '{' description=EntityDescription	'}'
-	'fields' '{' fields=EntityFields '}'
+	('description' '{' description=EntityDescription '}')?
+	('fields' '{' fields=EntityFields '}')?
 	'}';
 	
 EntityDescription returns document::EntityDescription:
@@ -99,8 +99,8 @@ EntityField returns document::EntityField:
 	
 DTODocument returns document::DTODocument:
 	'DTODocument' name=QualifiedName 'for' dtoClass=QualifiedName '{'
-	'description' '{' description=DTODescription '}'
-	'properties' '{' properties=DTOProperties '}'
+	('description' '{' description=DTODescription '}')?
+	('properties' '{' properties=DTOProperties '}')?
 	'}';
 
 DTODescription returns document::DTODescription:
@@ -176,7 +176,7 @@ RichStringPart returns xbase::XExpression:
 	RichStringH1 | RichStringH2 | RichStringChapter | RichStringSection | RichStringSubsection | 
 	RichStringExample | RichStringURL | RichStringRef | RichStringMailto | 
 	RichStringSkype | RichStringMovie | RichStringImg |	RichStringBold | 
-	RichStringUnderline | RichStringItalic | RichStringCode | RichStringTable | 
+	RichStringUnderline | RichStringItalic | RichStringCode | RichStringTable | RichStringList |
 	RichStringOpenView | RichStringStartProcess | RichStringEntityRef | RichStringDTORef |
 	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef;
 
@@ -274,6 +274,13 @@ RichStringTableData returns richstring::RichStringTableData:
 	"column" 
 	expression=InternalRichString
 	"/column";
+	
+RichStringList returns xbase::XExpression:
+	{richstring::RichStringList}
+	"ul" elements+=RichStringListElement* "/ul";
+	
+RichStringListElement returns richstring::RichStringListElement:
+	"li" expression=InternalRichString "/li";
 	
 RichStringOpenView returns xbase::XExpression:
 	{richstring::RichStringOpenView}

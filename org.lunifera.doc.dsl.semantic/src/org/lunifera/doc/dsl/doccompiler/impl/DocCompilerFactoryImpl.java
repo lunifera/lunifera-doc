@@ -39,6 +39,10 @@ import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
+import org.lunifera.doc.dsl.doccompiler.ListElementEnd;
+import org.lunifera.doc.dsl.doccompiler.ListElementStart;
+import org.lunifera.doc.dsl.doccompiler.ListEnd;
+import org.lunifera.doc.dsl.doccompiler.ListStart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
@@ -255,6 +259,14 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createUIRefStart();
 		case DocCompilerPackage.UI_REF_END:
 			return createUIRefEnd();
+		case DocCompilerPackage.LIST_START:
+			return createListStart();
+		case DocCompilerPackage.LIST_END:
+			return createListEnd();
+		case DocCompilerPackage.LIST_ELEMENT_START:
+			return createListElementStart();
+		case DocCompilerPackage.LIST_ELEMENT_END:
+			return createListElementEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -939,6 +951,46 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public UIRefEnd createUIRefEnd() {
 		UIRefEndImpl uiRefEnd = new UIRefEndImpl();
 		return uiRefEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ListStart createListStart() {
+		ListStartImpl listStart = new ListStartImpl();
+		return listStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ListEnd createListEnd() {
+		ListEndImpl listEnd = new ListEndImpl();
+		return listEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ListElementStart createListElementStart() {
+		ListElementStartImpl listElementStart = new ListElementStartImpl();
+		return listElementStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ListElementEnd createListElementEnd() {
+		ListElementEndImpl listElementEnd = new ListElementEndImpl();
+		return listElementEnd;
 	}
 
 	/**

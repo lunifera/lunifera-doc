@@ -44,6 +44,10 @@ import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
+import org.lunifera.doc.dsl.doccompiler.ListElementEnd;
+import org.lunifera.doc.dsl.doccompiler.ListElementStart;
+import org.lunifera.doc.dsl.doccompiler.ListEnd;
+import org.lunifera.doc.dsl.doccompiler.ListStart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
@@ -99,6 +103,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
@@ -487,6 +493,24 @@ public class RichStringProcessor {
 				addToCurrentLine(rowEnd);
 			}
 			TableEnd end = factory.createTableEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringList(RichStringList object) {
+			ListStart start = factory.createListStart();
+			addToCurrentLine(start);
+			for (RichStringListElement elem : object.getElements()) {
+				ListElementStart elemStart = factory.createListElementStart();
+				addToCurrentLine(elemStart);
+				doSwitch(elem.getExpression());
+				ListElementEnd elemEnd = factory.createListElementEnd();
+				elemEnd.setStart(elemStart);
+				addToCurrentLine(elemEnd);
+			}
+			ListEnd end = factory.createListEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -1057,6 +1081,34 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseTableDataEnd(TableDataEnd object) {
 			acceptor.acceptTableDataEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseListStart(ListStart object) {
+			acceptor.acceptListStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseListEnd(ListEnd object) {
+			acceptor.acceptListEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseListElementStart(ListElementStart object) {
+			acceptor.acceptListElementStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseListElementEnd(ListElementEnd object) {
+			acceptor.acceptListElementEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

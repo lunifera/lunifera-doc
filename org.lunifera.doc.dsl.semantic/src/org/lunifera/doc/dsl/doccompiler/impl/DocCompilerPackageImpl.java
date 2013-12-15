@@ -40,6 +40,10 @@ import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
+import org.lunifera.doc.dsl.doccompiler.ListElementEnd;
+import org.lunifera.doc.dsl.doccompiler.ListElementStart;
+import org.lunifera.doc.dsl.doccompiler.ListEnd;
+import org.lunifera.doc.dsl.doccompiler.ListStart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
@@ -562,6 +566,34 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass uiRefEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass listStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass listEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass listElementStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass listElementEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -2200,6 +2232,105 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getListStart() {
+		return listStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListStart_Content() {
+		return (EReference) listStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListStart_Elements() {
+		return (EReference) listStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListStart_End() {
+		return (EReference) listStartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getListEnd() {
+		return listEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListEnd_Start() {
+		return (EReference) listEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getListElementStart() {
+		return listElementStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListElementStart_Content() {
+		return (EReference) listElementStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListElementStart_End() {
+		return (EReference) listElementStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getListElementEnd() {
+		return listElementEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListElementEnd_Start() {
+		return (EReference) listElementEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -2464,6 +2595,21 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		uiRefEndEClass = createEClass(UI_REF_END);
 		createEReference(uiRefEndEClass, UI_REF_END__START);
+
+		listStartEClass = createEClass(LIST_START);
+		createEReference(listStartEClass, LIST_START__CONTENT);
+		createEReference(listStartEClass, LIST_START__ELEMENTS);
+		createEReference(listStartEClass, LIST_START__END);
+
+		listEndEClass = createEClass(LIST_END);
+		createEReference(listEndEClass, LIST_END__START);
+
+		listElementStartEClass = createEClass(LIST_ELEMENT_START);
+		createEReference(listElementStartEClass, LIST_ELEMENT_START__CONTENT);
+		createEReference(listElementStartEClass, LIST_ELEMENT_START__END);
+
+		listElementEndEClass = createEClass(LIST_ELEMENT_END);
+		createEReference(listElementEndEClass, LIST_ELEMENT_END__START);
 	}
 
 	/**
@@ -2567,6 +2713,10 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		viewRefEndEClass.getESuperTypes().add(this.getLinePart());
 		uiRefStartEClass.getESuperTypes().add(this.getLinePart());
 		uiRefEndEClass.getESuperTypes().add(this.getLinePart());
+		listStartEClass.getESuperTypes().add(this.getLinePart());
+		listEndEClass.getESuperTypes().add(this.getLinePart());
+		listElementStartEClass.getESuperTypes().add(this.getLinePart());
+		listElementEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -3170,6 +3320,43 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUIRefEnd_Start(), this.getUIRefStart(), this.getUIRefStart_End(),
 				"start", null, 0, 1, UIRefEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(listStartEClass, ListStart.class, "ListStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListStart_Content(), theRichstringPackage.getRichStringList(), null,
+				"content", null, 0, 1, ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getListStart_Elements(), this.getListElementStart(), null, "elements", null,
+				0, -1, ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getListStart_End(), this.getListEnd(), null, "end", null, 0, 1,
+				ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(listEndEClass, ListEnd.class, "ListEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListEnd_Start(), this.getListStart(), null, "start", null, 0, 1,
+				ListEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(listElementStartEClass, ListElementStart.class, "ListElementStart",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListElementStart_Content(),
+				theRichstringPackage.getRichStringListElement(), null, "content", null, 0, 1,
+				ListElementStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getListElementStart_End(), this.getListElementEnd(), null, "end", null, 0,
+				1, ListElementStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(listElementEndEClass, ListElementEnd.class, "ListElementEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListElementEnd_Start(), this.getListElementStart(), null, "start", null,
+				0, 1, ListElementEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

@@ -1534,6 +1534,103 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_UI_REF_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListImpl
+	 * <em>Rich String List</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringList()
+	 * @generated
+	 */
+	int RICH_STRING_LIST = 33;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST__ELEMENTS = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Rich String List</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListElementImpl
+	 * <em>Rich String List Element</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListElementImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringListElement()
+	 * @generated
+	 */
+	int RICH_STRING_LIST_ELEMENT = 34;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST_ELEMENT__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST_ELEMENT__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST_ELEMENT__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String List Element</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST_ELEMENT_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 	 * <em>Rich String Else If</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2344,6 +2441,38 @@ public interface RichstringPackage extends EPackage {
 	EReference getRichStringUIRef_UiDoc();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList
+	 * <em>Rich String List</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String List</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList
+	 * @generated
+	 */
+	EClass getRichStringList();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getElements <em>Elements</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getElements()
+	 * @see #getRichStringList()
+	 * @generated
+	 */
+	EReference getRichStringList_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement
+	 * <em>Rich String List Element</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String List Element</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement
+	 * @generated
+	 */
+	EClass getRichStringListElement();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -3036,6 +3165,35 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_UI_REF__UI_DOC = eINSTANCE.getRichStringUIRef_UiDoc();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListImpl
+		 * <em>Rich String List</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringList()
+		 * @generated
+		 */
+		EClass RICH_STRING_LIST = eINSTANCE.getRichStringList();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_LIST__ELEMENTS = eINSTANCE.getRichStringList_Elements();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListElementImpl
+		 * <em>Rich String List Element</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListElementImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringListElement()
+		 * @generated
+		 */
+		EClass RICH_STRING_LIST_ELEMENT = eINSTANCE.getRichStringListElement();
 
 	}
 

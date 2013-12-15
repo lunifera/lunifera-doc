@@ -37,6 +37,10 @@ import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
+import org.lunifera.doc.dsl.doccompiler.ListElementEnd;
+import org.lunifera.doc.dsl.doccompiler.ListElementStart;
+import org.lunifera.doc.dsl.doccompiler.ListEnd;
+import org.lunifera.doc.dsl.doccompiler.ListStart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
@@ -465,6 +469,26 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseUIRefEnd(UIRefEnd object) {
 			return createUIRefEndAdapter();
+		}
+
+		@Override
+		public Adapter caseListStart(ListStart object) {
+			return createListStartAdapter();
+		}
+
+		@Override
+		public Adapter caseListEnd(ListEnd object) {
+			return createListEndAdapter();
+		}
+
+		@Override
+		public Adapter caseListElementStart(ListElementStart object) {
+			return createListElementStartAdapter();
+		}
+
+		@Override
+		public Adapter caseListElementEnd(ListElementEnd object) {
+			return createListElementEndAdapter();
 		}
 
 		@Override
@@ -1423,6 +1447,61 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUIRefEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ListStart
+	 * <em>List Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ListStart
+	 * @generated
+	 */
+	public Adapter createListStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ListEnd <em>List End</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ListEnd
+	 * @generated
+	 */
+	public Adapter createListEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ListElementStart
+	 * <em>List Element Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ListElementStart
+	 * @generated
+	 */
+	public Adapter createListElementStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.ListElementEnd
+	 * <em>List Element End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.ListElementEnd
+	 * @generated
+	 */
+	public Adapter createListElementEndAdapter() {
 		return null;
 	}
 

@@ -285,6 +285,22 @@ public interface RichstringFactory extends EFactory {
 	RichStringUIRef createRichStringUIRef();
 
 	/**
+	 * Returns a new object of class '<em>Rich String List</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String List</em>'.
+	 * @generated
+	 */
+	RichStringList createRichStringList();
+
+	/**
+	 * Returns a new object of class '<em>Rich String List Element</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String List Element</em>'.
+	 * @generated
+	 */
+	RichStringListElement createRichStringListElement();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

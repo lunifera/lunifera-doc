@@ -36,6 +36,10 @@ import org.lunifera.doc.dsl.doccompiler.ItalicStart;
 import org.lunifera.doc.dsl.doccompiler.Line;
 import org.lunifera.doc.dsl.doccompiler.LineBreak;
 import org.lunifera.doc.dsl.doccompiler.LinePart;
+import org.lunifera.doc.dsl.doccompiler.ListElementEnd;
+import org.lunifera.doc.dsl.doccompiler.ListElementStart;
+import org.lunifera.doc.dsl.doccompiler.ListEnd;
+import org.lunifera.doc.dsl.doccompiler.ListStart;
 import org.lunifera.doc.dsl.doccompiler.Literal;
 import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
 import org.lunifera.doc.dsl.doccompiler.MailtoStart;
@@ -729,6 +733,42 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseUIRefEnd(uiRefEnd);
 			if (result == null)
 				result = caseLinePart(uiRefEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LIST_START: {
+			ListStart listStart = (ListStart) theEObject;
+			T result = caseListStart(listStart);
+			if (result == null)
+				result = caseLinePart(listStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LIST_END: {
+			ListEnd listEnd = (ListEnd) theEObject;
+			T result = caseListEnd(listEnd);
+			if (result == null)
+				result = caseLinePart(listEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LIST_ELEMENT_START: {
+			ListElementStart listElementStart = (ListElementStart) theEObject;
+			T result = caseListElementStart(listElementStart);
+			if (result == null)
+				result = caseLinePart(listElementStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LIST_ELEMENT_END: {
+			ListElementEnd listElementEnd = (ListElementEnd) theEObject;
+			T result = caseListElementEnd(listElementEnd);
+			if (result == null)
+				result = caseLinePart(listElementEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1708,6 +1748,64 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUIRefEnd(UIRefEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListStart(ListStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListEnd(ListEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Element Start</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Element Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListElementStart(ListElementStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Element End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Element End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListElementEnd(ListElementEnd object) {
 		return null;
 	}
 

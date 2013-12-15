@@ -25,6 +25,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
@@ -198,6 +200,22 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 
 	@Override
 	public void acceptTableDataEnd() {
+	}
+
+	@Override
+	public void acceptListStart(RichStringList object) {
+	}
+
+	@Override
+	public void acceptListEnd() {
+	}
+
+	@Override
+	public void acceptListElementStart(RichStringListElement object) {
+	}
+
+	@Override
+	public void acceptListElementEnd() {
 	}
 
 	@Override

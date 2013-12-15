@@ -40,6 +40,8 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
@@ -436,6 +438,38 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			appendable.newLine();
 			append("</td>");
 			popAppendable();
+		}
+
+		@Override
+		public void acceptListStart(RichStringList object) {
+			currentAppendable = null;
+			// pushAppendable(object);
+			appendable.newLine();
+			append("<ul>");
+		}
+
+		@Override
+		public void acceptListEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</ul>");
+			// popAppendable();
+		}
+
+		@Override
+		public void acceptListElementStart(RichStringListElement object) {
+			currentAppendable = null;
+			// pushAppendable(object);
+			appendable.newLine();
+			append("<li>");
+		}
+
+		@Override
+		public void acceptListElementEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</li>");
+			// popAppendable();
 		}
 
 		@Override

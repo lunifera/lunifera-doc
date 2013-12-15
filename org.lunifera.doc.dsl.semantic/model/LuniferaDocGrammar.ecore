@@ -243,5 +243,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="RichStringUIRef" eSuperTypes="#//richstring/RichStringMarkup">
       <eStructuralFeatures xsi:type="ecore:EReference" name="uiDoc" eType="#//document/UIDocument"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringList" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+          eType="#//richstring/RichStringListElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringListElement" eSuperTypes="#//richstring/RichStringMarkup"/>
   </eSubpackages>
 </ecore:EPackage>

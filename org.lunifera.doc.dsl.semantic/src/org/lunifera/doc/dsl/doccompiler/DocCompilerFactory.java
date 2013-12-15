@@ -565,6 +565,38 @@ public interface DocCompilerFactory extends EFactory {
 	UIRefEnd createUIRefEnd();
 
 	/**
+	 * Returns a new object of class '<em>List Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>List Start</em>'.
+	 * @generated
+	 */
+	ListStart createListStart();
+
+	/**
+	 * Returns a new object of class '<em>List End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>List End</em>'.
+	 * @generated
+	 */
+	ListEnd createListEnd();
+
+	/**
+	 * Returns a new object of class '<em>List Element Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>List Element Start</em>'.
+	 * @generated
+	 */
+	ListElementStart createListElementStart();
+
+	/**
+	 * Returns a new object of class '<em>List Element End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>List Element End</em>'.
+	 * @generated
+	 */
+	ListElementEnd createListElementEnd();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.
