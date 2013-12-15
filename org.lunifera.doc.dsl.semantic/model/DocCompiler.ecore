@@ -100,6 +100,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//URLStart"
         eOpposite="#//URLStart/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RefStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//RefEnd"
+        eOpposite="#//RefEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RefEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//RefStart"
+        eOpposite="#//RefStart/end"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoldStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringBold"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//BoldEnd"/>

@@ -44,6 +44,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.RefEnd;
+import org.lunifera.doc.dsl.doccompiler.RefStart;
 import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -229,6 +231,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass urlEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass refStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass refEndEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1030,6 +1046,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getRefStart() {
+		return refStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRefStart_Content() {
+		return (EReference) refStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRefStart_End() {
+		return (EReference) refStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRefEnd() {
+		return refEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRefEnd_Start() {
+		return (EReference) refEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getBoldStart() {
 		return boldStartEClass;
 	}
@@ -1757,6 +1818,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		urlEndEClass = createEClass(URL_END);
 		createEReference(urlEndEClass, URL_END__START);
 
+		refStartEClass = createEClass(REF_START);
+		createEReference(refStartEClass, REF_START__CONTENT);
+		createEReference(refStartEClass, REF_START__END);
+
+		refEndEClass = createEClass(REF_END);
+		createEReference(refEndEClass, REF_END__START);
+
 		boldStartEClass = createEClass(BOLD_START);
 		createEReference(boldStartEClass, BOLD_START__CONTENT);
 		createEReference(boldStartEClass, BOLD_START__END);
@@ -1910,6 +1978,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		exampleEndEClass.getESuperTypes().add(this.getLinePart());
 		urlStartEClass.getESuperTypes().add(this.getLinePart());
 		urlEndEClass.getESuperTypes().add(this.getLinePart());
+		refStartEClass.getESuperTypes().add(this.getLinePart());
+		refEndEClass.getESuperTypes().add(this.getLinePart());
 		boldStartEClass.getESuperTypes().add(this.getLinePart());
 		boldEndEClass.getESuperTypes().add(this.getLinePart());
 		underlineStartEClass.getESuperTypes().add(this.getLinePart());
@@ -2143,6 +2213,23 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getURLEnd_Start(), this.getURLStart(), this.getURLStart_End(), "start",
 				null, 0, 1, URLEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(refStartEClass, RefStart.class, "RefStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRefStart_Content(), theRichstringPackage.getRichStringRef(), null,
+				"content", null, 0, 1, RefStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getRefStart_End(), this.getRefEnd(), this.getRefEnd_Start(), "end", null, 0,
+				1, RefStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(refEndEClass, RefEnd.class, "RefEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRefEnd_Start(), this.getRefStart(), this.getRefStart_End(), "start",
+				null, 0, 1, RefEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

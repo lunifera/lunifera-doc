@@ -176,7 +176,7 @@ RichStringPart returns xbase::XExpression:
 	RichStringForLoop |
 	RichStringIf |
 	RichStringH1 | RichStringH2 | RichStringChapter | RichStringSection | RichStringSubsection | 
-	RichStringExample | RichStringURL | RichStringMailto | 
+	RichStringExample | RichStringURL | RichStringRef | RichStringMailto | 
 	RichStringSkype | RichStringMovie | RichStringImg |	RichStringBold | RichStringUnderline | 
 	RichStringItalic | RichStringCode | RichStringTable;
 
@@ -210,6 +210,12 @@ RichStringURL returns xbase::XExpression:
 	"url" location=STRING 
 	text=InternalRichString
 	"/url";
+	
+RichStringRef returns xbase::XExpression:
+	{richstring::RichStringRef}
+	"ref" refId=STRING 
+	expression=InternalRichString
+	"/ref";
 	
 RichStringMailto returns xbase::XExpression:
 	{richstring::RichStringMailto}

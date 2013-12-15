@@ -125,6 +125,14 @@ public interface RichstringFactory extends EFactory {
 	RichStringURL createRichStringURL();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Ref</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Ref</em>'.
+	 * @generated
+	 */
+	RichStringRef createRichStringRef();
+
+	/**
 	 * Returns a new object of class '<em>Rich String Bold</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Rich String Bold</em>'.

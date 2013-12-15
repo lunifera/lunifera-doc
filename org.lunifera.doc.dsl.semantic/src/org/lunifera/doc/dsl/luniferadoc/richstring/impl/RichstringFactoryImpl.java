@@ -23,6 +23,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
@@ -101,6 +102,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringSubsection();
 		case RichstringPackage.RICH_STRING_URL:
 			return createRichStringURL();
+		case RichstringPackage.RICH_STRING_REF:
+			return createRichStringRef();
 		case RichstringPackage.RICH_STRING_BOLD:
 			return createRichStringBold();
 		case RichstringPackage.RICH_STRING_UNDERLINE:
@@ -257,6 +260,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringURL createRichStringURL() {
 		RichStringURLImpl richStringURL = new RichStringURLImpl();
 		return richStringURL;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringRef createRichStringRef() {
+		RichStringRefImpl richStringRef = new RichStringRefImpl();
+		return richStringRef;
 	}
 
 	/**

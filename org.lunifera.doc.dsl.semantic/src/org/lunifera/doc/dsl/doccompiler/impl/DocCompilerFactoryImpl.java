@@ -43,6 +43,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.RefEnd;
+import org.lunifera.doc.dsl.doccompiler.RefStart;
 import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -147,6 +149,10 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createURLStart();
 		case DocCompilerPackage.URL_END:
 			return createURLEnd();
+		case DocCompilerPackage.REF_START:
+			return createRefStart();
+		case DocCompilerPackage.REF_END:
+			return createRefEnd();
 		case DocCompilerPackage.BOLD_START:
 			return createBoldStart();
 		case DocCompilerPackage.BOLD_END:
@@ -435,6 +441,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public URLEnd createURLEnd() {
 		URLEndImpl urlEnd = new URLEndImpl();
 		return urlEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RefStart createRefStart() {
+		RefStartImpl refStart = new RefStartImpl();
+		return refStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RefEnd createRefEnd() {
+		RefEndImpl refEnd = new RefEndImpl();
+		return refEnd;
 	}
 
 	/**

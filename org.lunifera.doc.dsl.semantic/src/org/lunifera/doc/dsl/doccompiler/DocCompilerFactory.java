@@ -205,6 +205,22 @@ public interface DocCompilerFactory extends EFactory {
 	URLEnd createURLEnd();
 
 	/**
+	 * Returns a new object of class '<em>Ref Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Ref Start</em>'.
+	 * @generated
+	 */
+	RefStart createRefStart();
+
+	/**
+	 * Returns a new object of class '<em>Ref End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Ref End</em>'.
+	 * @generated
+	 */
+	RefEnd createRefEnd();
+
+	/**
 	 * Returns a new object of class '<em>Bold Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Bold Start</em>'.

@@ -32,6 +32,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
@@ -139,6 +140,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringURLEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringRefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -550,6 +558,24 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringRef() {
+		return richStringRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringRef_RefId() {
+		return (EAttribute) richStringRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getRichStringBold() {
 		return richStringBoldEClass;
 	}
@@ -865,6 +891,9 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		createEAttribute(richStringURLEClass, RICH_STRING_URL__LOCATION);
 		createEReference(richStringURLEClass, RICH_STRING_URL__TEXT);
 
+		richStringRefEClass = createEClass(RICH_STRING_REF);
+		createEAttribute(richStringRefEClass, RICH_STRING_REF__REF_ID);
+
 		richStringBoldEClass = createEClass(RICH_STRING_BOLD);
 
 		richStringUnderlineEClass = createEClass(RICH_STRING_UNDERLINE);
@@ -949,6 +978,7 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringSectionEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringSubsectionEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringURLEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringRefEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringBoldEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringUnderlineEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringItalicEClass.getESuperTypes().add(this.getRichStringMarkup());
@@ -1052,6 +1082,12 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				null, 0, 1, RichStringURL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(richStringRefEClass, RichStringRef.class, "RichStringRef", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringRef_RefId(), ecorePackage.getEString(), "refId", null, 0, 1,
+				RichStringRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringBoldEClass, RichStringBold.class, "RichStringBold", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

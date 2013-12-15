@@ -41,6 +41,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
@@ -280,6 +281,24 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 		@Override
 		public void acceptURLEnd() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptRefStart(RichStringRef object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<a href=\"#");
+			append(object.getRefId());
+			append("\">");
+		}
+
+		@Override
+		public void acceptRefEnd() {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");

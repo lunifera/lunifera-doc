@@ -48,6 +48,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.RefEnd;
+import org.lunifera.doc.dsl.doccompiler.RefStart;
 import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -83,6 +85,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
@@ -363,6 +366,20 @@ public class RichStringProcessor {
 			doSwitch(object.getText());
 
 			URLEnd end = factory.createURLEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringRef(RichStringRef object) {
+			RefStart start = factory.createRefStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			RefEnd end = factory.createRefEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -788,6 +805,20 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseURLEnd(URLEnd object) {
 			acceptor.acceptURLEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRefStart(RefStart object) {
+			acceptor.acceptRefStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRefEnd(RefEnd object) {
+			acceptor.acceptRefEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

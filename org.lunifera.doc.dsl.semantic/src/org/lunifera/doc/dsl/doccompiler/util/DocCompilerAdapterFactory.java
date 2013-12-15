@@ -41,6 +41,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
+import org.lunifera.doc.dsl.doccompiler.RefEnd;
+import org.lunifera.doc.dsl.doccompiler.RefStart;
 import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
@@ -222,6 +224,16 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseURLEnd(URLEnd object) {
 			return createURLEndAdapter();
+		}
+
+		@Override
+		public Adapter caseRefStart(RefStart object) {
+			return createRefStartAdapter();
+		}
+
+		@Override
+		public Adapter caseRefEnd(RefEnd object) {
+			return createRefEndAdapter();
 		}
 
 		@Override
@@ -688,6 +700,33 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createURLEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.RefStart
+	 * <em>Ref Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.RefStart
+	 * @generated
+	 */
+	public Adapter createRefStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.RefEnd <em>Ref End</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.RefEnd
+	 * @generated
+	 */
+	public Adapter createRefEndAdapter() {
 		return null;
 	}
 
