@@ -277,9 +277,12 @@ RichStringTableData returns richstring::RichStringTableData:
 	
 RichStringList returns xbase::XExpression:
 	{richstring::RichStringList}
-	"ul" elements+=RichStringListElement* "/ul";
-	
+	//"ul" elements+=RichStringListElement* "/ul";
+	"ul" (expressions+=RichStringLiteralInbetween (elements+=RichStringListElement
+	expressions+=RichStringLiteralInbetween)+) "/ul";
+		
 RichStringListElement returns richstring::RichStringListElement:
+	{richstring::RichStringListElement}
 	"li" expression=InternalRichString "/li";
 	
 RichStringOpenView returns xbase::XExpression:

@@ -14,7 +14,8 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 /**
  * Use this class to register components to be used within the IDE.
  */
-public class LuniferaDocGrammarUiModule extends org.lunifera.doc.dsl.ui.AbstractLuniferaDocGrammarUiModule {
+public class LuniferaDocGrammarUiModule extends
+		org.lunifera.doc.dsl.ui.AbstractLuniferaDocGrammarUiModule {
 	public LuniferaDocGrammarUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}

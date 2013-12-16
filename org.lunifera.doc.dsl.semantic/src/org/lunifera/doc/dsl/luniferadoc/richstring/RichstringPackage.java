@@ -1578,13 +1578,22 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_LIST__ELEMENTS = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_LIST__EXPRESSIONS = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Rich String List</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_LIST_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
+	int RICH_STRING_LIST_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListElementImpl
@@ -2463,6 +2472,18 @@ public interface RichstringPackage extends EPackage {
 	EReference getRichStringList_Elements();
 
 	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getExpressions <em>Expressions</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getExpressions()
+	 * @see #getRichStringList()
+	 * @generated
+	 */
+	EReference getRichStringList_Expressions();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement
 	 * <em>Rich String List Element</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -3183,6 +3204,14 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RICH_STRING_LIST__ELEMENTS = eINSTANCE.getRichStringList_Elements();
+
+		/**
+		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RICH_STRING_LIST__EXPRESSIONS = eINSTANCE.getRichStringList_Expressions();
 
 		/**
 		 * The meta object literal for the '

@@ -1070,6 +1070,15 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EReference getRichStringList_Expressions() {
+		return (EReference) richStringListEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getRichStringListElement() {
 		return richStringListElementEClass;
 	}
@@ -1210,6 +1219,7 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		richStringListEClass = createEClass(RICH_STRING_LIST);
 		createEReference(richStringListEClass, RICH_STRING_LIST__ELEMENTS);
+		createEReference(richStringListEClass, RICH_STRING_LIST__EXPRESSIONS);
 
 		richStringListElementEClass = createEClass(RICH_STRING_LIST_ELEMENT);
 	}
@@ -1530,6 +1540,10 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRichStringList_Elements(), this.getRichStringListElement(), null,
 				"elements", null, 0, -1, RichStringList.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringList_Expressions(), theXbasePackage.getXExpression(), null,
+				"expressions", null, 0, -1, RichStringList.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

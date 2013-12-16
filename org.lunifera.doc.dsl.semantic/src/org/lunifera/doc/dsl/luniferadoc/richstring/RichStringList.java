@@ -3,6 +3,7 @@
 package org.lunifera.doc.dsl.luniferadoc.richstring;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Rich String List</b></em>'. <!-- end-user-doc
@@ -35,5 +36,21 @@ public interface RichStringList extends RichStringMarkup {
 	 * @generated
 	 */
 	EList<RichStringListElement> getElements();
+
+	/**
+	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list. The list contents are of type
+	 * {@link org.eclipse.xtext.xbase.XExpression}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear, there really should be more
+	 * of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Expressions</em>' containment reference list.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringList_Expressions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<XExpression> getExpressions();
 
 } // RichStringList

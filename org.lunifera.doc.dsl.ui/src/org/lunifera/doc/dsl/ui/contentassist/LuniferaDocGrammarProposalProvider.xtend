@@ -85,4 +85,8 @@ class LuniferaDocGrammarProposalProvider extends AbstractLuniferaDocGrammarPropo
 			}
 		}
 	}
+	
+//	override isKeywordWorthyToPropose(Keyword keyword) {
+//		return true
+//	} 
 }

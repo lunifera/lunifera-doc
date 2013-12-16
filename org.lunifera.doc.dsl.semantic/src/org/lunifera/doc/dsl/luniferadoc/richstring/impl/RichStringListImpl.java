@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
@@ -36,6 +37,16 @@ public class RichStringListImpl extends RichStringMarkupImpl implements RichStri
 	 * @ordered
 	 */
 	protected EList<RichStringListElement> elements;
+
+	/**
+	 * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getExpressions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<XExpression> expressions;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -74,12 +85,27 @@ public class RichStringListImpl extends RichStringMarkupImpl implements RichStri
 	 * 
 	 * @generated
 	 */
+	public EList<XExpression> getExpressions() {
+		if (expressions == null) {
+			expressions = new EObjectContainmentEList<XExpression>(XExpression.class, this,
+					RichstringPackage.RICH_STRING_LIST__EXPRESSIONS);
+		}
+		return expressions;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
 			NotificationChain msgs) {
 		switch (featureID) {
 		case RichstringPackage.RICH_STRING_LIST__ELEMENTS:
 			return ((InternalEList<?>) getElements()).basicRemove(otherEnd, msgs);
+		case RichstringPackage.RICH_STRING_LIST__EXPRESSIONS:
+			return ((InternalEList<?>) getExpressions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -94,6 +120,8 @@ public class RichStringListImpl extends RichStringMarkupImpl implements RichStri
 		switch (featureID) {
 		case RichstringPackage.RICH_STRING_LIST__ELEMENTS:
 			return getElements();
+		case RichstringPackage.RICH_STRING_LIST__EXPRESSIONS:
+			return getExpressions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,6 +139,10 @@ public class RichStringListImpl extends RichStringMarkupImpl implements RichStri
 			getElements().clear();
 			getElements().addAll((Collection<? extends RichStringListElement>) newValue);
 			return;
+		case RichstringPackage.RICH_STRING_LIST__EXPRESSIONS:
+			getExpressions().clear();
+			getExpressions().addAll((Collection<? extends XExpression>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -126,6 +158,9 @@ public class RichStringListImpl extends RichStringMarkupImpl implements RichStri
 		case RichstringPackage.RICH_STRING_LIST__ELEMENTS:
 			getElements().clear();
 			return;
+		case RichstringPackage.RICH_STRING_LIST__EXPRESSIONS:
+			getExpressions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +175,8 @@ public class RichStringListImpl extends RichStringMarkupImpl implements RichStri
 		switch (featureID) {
 		case RichstringPackage.RICH_STRING_LIST__ELEMENTS:
 			return elements != null && !elements.isEmpty();
+		case RichstringPackage.RICH_STRING_LIST__EXPRESSIONS:
+			return expressions != null && !expressions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
