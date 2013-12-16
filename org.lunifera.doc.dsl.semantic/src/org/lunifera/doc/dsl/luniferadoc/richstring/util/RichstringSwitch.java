@@ -323,6 +323,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 			RichStringTable richStringTable = (RichStringTable) theEObject;
 			T result = caseRichStringTable(richStringTable);
 			if (result == null)
+				result = caseRichStringMarkup(richStringTable);
+			if (result == null)
 				result = caseXExpression(richStringTable);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -331,6 +333,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 		case RichstringPackage.RICH_STRING_TABLE_ROW: {
 			RichStringTableRow richStringTableRow = (RichStringTableRow) theEObject;
 			T result = caseRichStringTableRow(richStringTableRow);
+			if (result == null)
+				result = caseRichStringMarkup(richStringTableRow);
 			if (result == null)
 				result = caseXExpression(richStringTableRow);
 			if (result == null)

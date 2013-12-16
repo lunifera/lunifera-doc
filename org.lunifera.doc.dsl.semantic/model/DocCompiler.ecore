@@ -170,6 +170,7 @@
         eOpposite="#//CodeStart/end"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rows" upperBound="-1" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableRow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableEnd"/>
   </eClassifiers>
@@ -177,10 +178,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableRowStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableRow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
         eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableData"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableRowEnd"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tableStart" eType="#//TableStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableRowEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableRowStart"/>
@@ -188,10 +189,34 @@
   <eClassifiers xsi:type="ecore:EClass" name="TableDataStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableData"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableDataEnd"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tableRowStart" eType="#//TableRowStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableDataEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableDataStart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ListElementStart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ListEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ListStart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrderedListStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringOrderedList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ListElementStart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//OrderedListEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrderedListEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//OrderedListStart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListElementStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringListElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ListElementEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListElementEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ListElementStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChapterStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringChapter"/>
@@ -291,30 +316,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="UIRefEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//UIRefStart"
         eOpposite="#//UIRefStart/end"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListStart" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringList"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//ListElementStart"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ListEnd"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ListStart"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OrderedListStart" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringOrderedList"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//ListElementStart"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//OrderedListEnd"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OrderedListEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//OrderedListStart"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListElementStart" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringListElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ListElementEnd"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListElementEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ListElementStart"/>
   </eClassifiers>
 </ecore:EPackage>

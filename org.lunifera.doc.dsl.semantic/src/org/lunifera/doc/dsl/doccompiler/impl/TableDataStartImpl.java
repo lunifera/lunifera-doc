@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
 import org.lunifera.doc.dsl.doccompiler.TableDataStart;
-import org.lunifera.doc.dsl.doccompiler.TableRowStart;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 
 /**
@@ -20,7 +19,6 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableDataStartImpl#getContent <em>Content</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableDataStartImpl#getEnd <em>End</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableDataStartImpl#getTableRowStart <em>Table Row Start</em>}</li>
  * </ul>
  * </p>
  * 
@@ -45,16 +43,6 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * @ordered
 	 */
 	protected TableDataEnd end;
-
-	/**
-	 * The cached value of the '{@link #getTableRowStart() <em>Table Row Start</em>}' reference. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getTableRowStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected TableRowStart tableRowStart;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -160,48 +148,6 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * 
 	 * @generated
 	 */
-	public TableRowStart getTableRowStart() {
-		if (tableRowStart != null && tableRowStart.eIsProxy()) {
-			InternalEObject oldTableRowStart = (InternalEObject) tableRowStart;
-			tableRowStart = (TableRowStart) eResolveProxy(oldTableRowStart);
-			if (tableRowStart != oldTableRowStart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DocCompilerPackage.TABLE_DATA_START__TABLE_ROW_START, oldTableRowStart,
-							tableRowStart));
-			}
-		}
-		return tableRowStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public TableRowStart basicGetTableRowStart() {
-		return tableRowStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setTableRowStart(TableRowStart newTableRowStart) {
-		TableRowStart oldTableRowStart = tableRowStart;
-		tableRowStart = newTableRowStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DocCompilerPackage.TABLE_DATA_START__TABLE_ROW_START, oldTableRowStart,
-					tableRowStart));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -213,10 +159,6 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 			if (resolve)
 				return getEnd();
 			return basicGetEnd();
-		case DocCompilerPackage.TABLE_DATA_START__TABLE_ROW_START:
-			if (resolve)
-				return getTableRowStart();
-			return basicGetTableRowStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,9 +176,6 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 			return;
 		case DocCompilerPackage.TABLE_DATA_START__END:
 			setEnd((TableDataEnd) newValue);
-			return;
-		case DocCompilerPackage.TABLE_DATA_START__TABLE_ROW_START:
-			setTableRowStart((TableRowStart) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -256,9 +195,6 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 		case DocCompilerPackage.TABLE_DATA_START__END:
 			setEnd((TableDataEnd) null);
 			return;
-		case DocCompilerPackage.TABLE_DATA_START__TABLE_ROW_START:
-			setTableRowStart((TableRowStart) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -275,8 +211,6 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 			return content != null;
 		case DocCompilerPackage.TABLE_DATA_START__END:
 			return end != null;
-		case DocCompilerPackage.TABLE_DATA_START__TABLE_ROW_START:
-			return tableRowStart != null;
 		}
 		return super.eIsSet(featureID);
 	}

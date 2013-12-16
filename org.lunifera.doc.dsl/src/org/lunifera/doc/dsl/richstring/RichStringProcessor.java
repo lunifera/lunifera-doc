@@ -480,11 +480,9 @@ public class RichStringProcessor {
 			addToCurrentLine(start);
 			for (RichStringTableRow row : object.getRows()) {
 				TableRowStart rowStart = factory.createTableRowStart();
-				rowStart.setTableStart(start);
 				addToCurrentLine(rowStart);
 				for (RichStringTableData td : row.getColumns()) {
 					TableDataStart dataStart = factory.createTableDataStart();
-					dataStart.setTableRowStart(rowStart);
 					addToCurrentLine(dataStart);
 					doSwitch(td.getExpression());
 					TableDataEnd dataEnd = factory.createTableDataEnd();
@@ -1062,9 +1060,7 @@ public class RichStringProcessor {
 
 		@Override
 		public Boolean caseTableStart(TableStart object) {
-			for (RichStringTableRow row : object.getRows()) {
-				acceptor.acceptTableRowStart(row);
-			}
+			acceptor.acceptTableStart(object.getContent());
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}
@@ -1078,9 +1074,7 @@ public class RichStringProcessor {
 
 		@Override
 		public Boolean caseTableRowStart(TableRowStart object) {
-			for (RichStringTableData td : object.getColumns()) {
-				acceptor.acceptTableDataStart(td);
-			}
+			acceptor.acceptTableRowStart(object.getContent());
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

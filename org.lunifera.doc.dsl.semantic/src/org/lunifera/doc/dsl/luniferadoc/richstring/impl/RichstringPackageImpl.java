@@ -889,6 +889,15 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EReference getRichStringTable_Expressions() {
+		return (EReference) richStringTableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getRichStringTableRow() {
 		return richStringTableRowEClass;
 	}
@@ -900,6 +909,15 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 */
 	public EReference getRichStringTableRow_Columns() {
 		return (EReference) richStringTableRowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringTableRow_Expressions() {
+		return (EReference) richStringTableRowEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1222,9 +1240,11 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		richStringTableEClass = createEClass(RICH_STRING_TABLE);
 		createEReference(richStringTableEClass, RICH_STRING_TABLE__ROWS);
+		createEReference(richStringTableEClass, RICH_STRING_TABLE__EXPRESSIONS);
 
 		richStringTableRowEClass = createEClass(RICH_STRING_TABLE_ROW);
 		createEReference(richStringTableRowEClass, RICH_STRING_TABLE_ROW__COLUMNS);
+		createEReference(richStringTableRowEClass, RICH_STRING_TABLE_ROW__EXPRESSIONS);
 
 		richStringTableDataEClass = createEClass(RICH_STRING_TABLE_DATA);
 
@@ -1318,8 +1338,8 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringSkypeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringMovieEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		richStringCodeEClass.getESuperTypes().add(theXbasePackage.getXExpression());
-		richStringTableEClass.getESuperTypes().add(theXbasePackage.getXExpression());
-		richStringTableRowEClass.getESuperTypes().add(theXbasePackage.getXExpression());
+		richStringTableEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringTableRowEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringTableDataEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringOpenViewEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringStartProcessEClass.getESuperTypes().add(this.getRichStringMarkup());
@@ -1510,11 +1530,19 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				0, -1, RichStringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getRichStringTable_Expressions(), theXbasePackage.getXExpression(), null,
+				"expressions", null, 0, -1, RichStringTable.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringTableRowEClass, RichStringTableRow.class, "RichStringTableRow",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRichStringTableRow_Columns(), this.getRichStringTableData(), null,
 				"columns", null, 0, -1, RichStringTableRow.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringTableRow_Expressions(), theXbasePackage.getXExpression(), null,
+				"expressions", null, 0, -1, RichStringTableRow.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

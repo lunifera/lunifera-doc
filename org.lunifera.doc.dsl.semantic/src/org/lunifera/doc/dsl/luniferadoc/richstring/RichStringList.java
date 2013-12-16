@@ -13,6 +13,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getElements <em>Elements</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getExpressions <em>Expressions</em>}</li>
  * </ul>
  * </p>
  * 

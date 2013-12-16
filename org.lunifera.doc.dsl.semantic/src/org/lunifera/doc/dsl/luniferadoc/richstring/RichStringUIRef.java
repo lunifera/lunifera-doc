@@ -11,7 +11,7 @@ import org.lunifera.doc.dsl.luniferadoc.document.UIDocument;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef#getRefId <em>Ref Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef#getUiDoc <em>Ui Doc</em>}</li>
  * </ul>
  * </p>
  * 

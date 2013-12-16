@@ -11,7 +11,7 @@ import org.lunifera.doc.dsl.luniferadoc.document.DTODocument;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef#getRefId <em>Ref Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef#getDtoDoc <em>Dto Doc</em>}</li>
  * </ul>
  * </p>
  * 

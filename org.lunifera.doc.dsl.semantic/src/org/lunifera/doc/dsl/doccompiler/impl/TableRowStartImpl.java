@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
 import org.lunifera.doc.dsl.doccompiler.TableRowStart;
-import org.lunifera.doc.dsl.doccompiler.TableStart;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Table Row Start</b></em>'. <!-- end-user-doc
@@ -22,15 +22,25 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
  * <p>
  * The following features are implemented:
  * <ul>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableRowStartImpl#getContent <em>Content</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableRowStartImpl#getColumns <em>Columns</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableRowStartImpl#getEnd <em>End</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableRowStartImpl#getTableStart <em>Table Start</em>}</li>
  * </ul>
  * </p>
  * 
  * @generated
  */
 public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
+	/**
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected RichStringTableRow content;
+
 	/**
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -51,16 +61,6 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	protected TableRowEnd end;
 
 	/**
-	 * The cached value of the '{@link #getTableStart() <em>Table Start</em>}' reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getTableStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected TableStart tableStart;
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -77,6 +77,46 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	@Override
 	protected EClass eStaticClass() {
 		return DocCompilerPackage.Literals.TABLE_ROW_START;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTableRow getContent() {
+		if (content != null && content.eIsProxy()) {
+			InternalEObject oldContent = (InternalEObject) content;
+			content = (RichStringTableRow) eResolveProxy(oldContent);
+			if (content != oldContent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DocCompilerPackage.TABLE_ROW_START__CONTENT, oldContent, content));
+			}
+		}
+		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTableRow basicGetContent() {
+		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setContent(RichStringTableRow newContent) {
+		RichStringTableRow oldContent = content;
+		content = newContent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DocCompilerPackage.TABLE_ROW_START__CONTENT, oldContent, content));
 	}
 
 	/**
@@ -137,60 +177,19 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	 * 
 	 * @generated
 	 */
-	public TableStart getTableStart() {
-		if (tableStart != null && tableStart.eIsProxy()) {
-			InternalEObject oldTableStart = (InternalEObject) tableStart;
-			tableStart = (TableStart) eResolveProxy(oldTableStart);
-			if (tableStart != oldTableStart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DocCompilerPackage.TABLE_ROW_START__TABLE_START, oldTableStart,
-							tableStart));
-			}
-		}
-		return tableStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public TableStart basicGetTableStart() {
-		return tableStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setTableStart(TableStart newTableStart) {
-		TableStart oldTableStart = tableStart;
-		tableStart = newTableStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DocCompilerPackage.TABLE_ROW_START__TABLE_START, oldTableStart, tableStart));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_ROW_START__CONTENT:
+			if (resolve)
+				return getContent();
+			return basicGetContent();
 		case DocCompilerPackage.TABLE_ROW_START__COLUMNS:
 			return getColumns();
 		case DocCompilerPackage.TABLE_ROW_START__END:
 			if (resolve)
 				return getEnd();
 			return basicGetEnd();
-		case DocCompilerPackage.TABLE_ROW_START__TABLE_START:
-			if (resolve)
-				return getTableStart();
-			return basicGetTableStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,15 +203,15 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_ROW_START__CONTENT:
+			setContent((RichStringTableRow) newValue);
+			return;
 		case DocCompilerPackage.TABLE_ROW_START__COLUMNS:
 			getColumns().clear();
 			getColumns().addAll((Collection<? extends RichStringTableData>) newValue);
 			return;
 		case DocCompilerPackage.TABLE_ROW_START__END:
 			setEnd((TableRowEnd) newValue);
-			return;
-		case DocCompilerPackage.TABLE_ROW_START__TABLE_START:
-			setTableStart((TableStart) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +225,14 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_ROW_START__CONTENT:
+			setContent((RichStringTableRow) null);
+			return;
 		case DocCompilerPackage.TABLE_ROW_START__COLUMNS:
 			getColumns().clear();
 			return;
 		case DocCompilerPackage.TABLE_ROW_START__END:
 			setEnd((TableRowEnd) null);
-			return;
-		case DocCompilerPackage.TABLE_ROW_START__TABLE_START:
-			setTableStart((TableStart) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +246,12 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_ROW_START__CONTENT:
+			return content != null;
 		case DocCompilerPackage.TABLE_ROW_START__COLUMNS:
 			return columns != null && !columns.isEmpty();
 		case DocCompilerPackage.TABLE_ROW_START__END:
 			return end != null;
-		case DocCompilerPackage.TABLE_ROW_START__TABLE_START:
-			return tableStart != null;
 		}
 		return super.eIsSet(featureID);
 	}

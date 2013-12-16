@@ -396,7 +396,6 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		@Override
 		public void acceptTableStart(RichStringTable object) {
 			currentAppendable = null;
-			pushAppendable(object);
 			appendable.newLine();
 			append("<table>");
 		}
@@ -406,13 +405,11 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</table>");
-			popAppendable();
 		}
 
 		@Override
 		public void acceptTableRowStart(RichStringTableRow object) {
 			currentAppendable = null;
-			pushAppendable(object);
 			appendable.newLine();
 			append("<tr>");
 		}
@@ -422,13 +419,11 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</tr>");
-			popAppendable();
 		}
 
 		@Override
 		public void acceptTableDataStart(RichStringTableData object) {
 			currentAppendable = null;
-			pushAppendable(object);
 			appendable.newLine();
 			append("<td>");
 		}
@@ -438,7 +433,6 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</td>");
-			popAppendable();
 		}
 
 		@Override

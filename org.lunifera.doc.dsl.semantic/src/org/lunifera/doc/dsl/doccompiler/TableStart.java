@@ -3,6 +3,7 @@
 package org.lunifera.doc.dsl.doccompiler;
 
 import org.eclipse.emf.common.util.EList;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 
 /**
@@ -11,6 +12,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
  * <p>
  * The following features are supported:
  * <ul>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.TableStart#getContent <em>Content</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.TableStart#getRows <em>Rows</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.TableStart#getEnd <em>End</em>}</li>
  * </ul>
@@ -21,6 +23,33 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
  * @generated
  */
 public interface TableStart extends LinePart {
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' reference. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' reference isn't clear, there really should be more of a description
+	 * here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Content</em>' reference.
+	 * @see #setContent(RichStringTable)
+	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getTableStart_Content()
+	 * @model
+	 * @generated
+	 */
+	RichStringTable getContent();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.TableStart#getContent <em>Content</em>}'
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Content</em>' reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(RichStringTable value);
+
 	/**
 	 * Returns the value of the '<em><b>Rows</b></em>' reference list. The list contents are of type
 	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow}. <!-- begin-user-doc -->

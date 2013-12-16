@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.TableEnd;
 import org.lunifera.doc.dsl.doccompiler.TableStart;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 
 /**
@@ -20,6 +21,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
  * <p>
  * The following features are implemented:
  * <ul>
+ * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableStartImpl#getContent <em>Content</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableStartImpl#getRows <em>Rows</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableStartImpl#getEnd <em>End</em>}</li>
  * </ul>
@@ -28,6 +30,16 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
  * @generated
  */
 public class TableStartImpl extends LinePartImpl implements TableStart {
+	/**
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected RichStringTable content;
+
 	/**
 	 * The cached value of the '{@link #getRows() <em>Rows</em>}' reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -64,6 +76,46 @@ public class TableStartImpl extends LinePartImpl implements TableStart {
 	@Override
 	protected EClass eStaticClass() {
 		return DocCompilerPackage.Literals.TABLE_START;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTable getContent() {
+		if (content != null && content.eIsProxy()) {
+			InternalEObject oldContent = (InternalEObject) content;
+			content = (RichStringTable) eResolveProxy(oldContent);
+			if (content != oldContent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DocCompilerPackage.TABLE_START__CONTENT, oldContent, content));
+			}
+		}
+		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringTable basicGetContent() {
+		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setContent(RichStringTable newContent) {
+		RichStringTable oldContent = content;
+		content = newContent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DocCompilerPackage.TABLE_START__CONTENT, oldContent, content));
 	}
 
 	/**
@@ -127,6 +179,10 @@ public class TableStartImpl extends LinePartImpl implements TableStart {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_START__CONTENT:
+			if (resolve)
+				return getContent();
+			return basicGetContent();
 		case DocCompilerPackage.TABLE_START__ROWS:
 			return getRows();
 		case DocCompilerPackage.TABLE_START__END:
@@ -146,6 +202,9 @@ public class TableStartImpl extends LinePartImpl implements TableStart {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_START__CONTENT:
+			setContent((RichStringTable) newValue);
+			return;
 		case DocCompilerPackage.TABLE_START__ROWS:
 			getRows().clear();
 			getRows().addAll((Collection<? extends RichStringTableRow>) newValue);
@@ -165,6 +224,9 @@ public class TableStartImpl extends LinePartImpl implements TableStart {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_START__CONTENT:
+			setContent((RichStringTable) null);
+			return;
 		case DocCompilerPackage.TABLE_START__ROWS:
 			getRows().clear();
 			return;
@@ -183,6 +245,8 @@ public class TableStartImpl extends LinePartImpl implements TableStart {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DocCompilerPackage.TABLE_START__CONTENT:
+			return content != null;
 		case DocCompilerPackage.TABLE_START__ROWS:
 			return rows != null && !rows.isEmpty();
 		case DocCompilerPackage.TABLE_START__END:

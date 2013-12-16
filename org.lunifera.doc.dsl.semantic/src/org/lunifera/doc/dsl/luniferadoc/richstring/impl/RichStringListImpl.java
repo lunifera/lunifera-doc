@@ -22,6 +22,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListImpl#getElements <em>Elements</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  * </p>
  * 

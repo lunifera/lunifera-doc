@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.xtext.xbase.impl.XExpressionImpl;
+import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
@@ -22,12 +22,13 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableImpl#getRows <em>Rows</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  * </p>
  * 
  * @generated
  */
-public class RichStringTableImpl extends XExpressionImpl implements RichStringTable {
+public class RichStringTableImpl extends RichStringMarkupImpl implements RichStringTable {
 	/**
 	 * The cached value of the '{@link #getRows() <em>Rows</em>}' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -37,6 +38,16 @@ public class RichStringTableImpl extends XExpressionImpl implements RichStringTa
 	 * @ordered
 	 */
 	protected EList<RichStringTableRow> rows;
+
+	/**
+	 * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getExpressions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<XExpression> expressions;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -75,12 +86,27 @@ public class RichStringTableImpl extends XExpressionImpl implements RichStringTa
 	 * 
 	 * @generated
 	 */
+	public EList<XExpression> getExpressions() {
+		if (expressions == null) {
+			expressions = new EObjectContainmentEList<XExpression>(XExpression.class, this,
+					RichstringPackage.RICH_STRING_TABLE__EXPRESSIONS);
+		}
+		return expressions;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
 			NotificationChain msgs) {
 		switch (featureID) {
 		case RichstringPackage.RICH_STRING_TABLE__ROWS:
 			return ((InternalEList<?>) getRows()).basicRemove(otherEnd, msgs);
+		case RichstringPackage.RICH_STRING_TABLE__EXPRESSIONS:
+			return ((InternalEList<?>) getExpressions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,6 +121,8 @@ public class RichStringTableImpl extends XExpressionImpl implements RichStringTa
 		switch (featureID) {
 		case RichstringPackage.RICH_STRING_TABLE__ROWS:
 			return getRows();
+		case RichstringPackage.RICH_STRING_TABLE__EXPRESSIONS:
+			return getExpressions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,6 +140,10 @@ public class RichStringTableImpl extends XExpressionImpl implements RichStringTa
 			getRows().clear();
 			getRows().addAll((Collection<? extends RichStringTableRow>) newValue);
 			return;
+		case RichstringPackage.RICH_STRING_TABLE__EXPRESSIONS:
+			getExpressions().clear();
+			getExpressions().addAll((Collection<? extends XExpression>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -127,6 +159,9 @@ public class RichStringTableImpl extends XExpressionImpl implements RichStringTa
 		case RichstringPackage.RICH_STRING_TABLE__ROWS:
 			getRows().clear();
 			return;
+		case RichstringPackage.RICH_STRING_TABLE__EXPRESSIONS:
+			getExpressions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,6 +176,8 @@ public class RichStringTableImpl extends XExpressionImpl implements RichStringTa
 		switch (featureID) {
 		case RichstringPackage.RICH_STRING_TABLE__ROWS:
 			return rows != null && !rows.isEmpty();
+		case RichstringPackage.RICH_STRING_TABLE__EXPRESSIONS:
+			return expressions != null && !expressions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

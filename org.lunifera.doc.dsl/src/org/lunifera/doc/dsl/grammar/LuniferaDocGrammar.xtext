@@ -259,21 +259,17 @@ RichStringCode returns xbase::XExpression:
 	
 RichStringTable returns xbase::XExpression:
 	{richstring::RichStringTable}
-	"table" 
-	rows+=RichStringTableRow*
-	"/table";
+	"table" (expressions+=RichStringLiteralInbetween (rows+=RichStringTableRow
+	expressions+=RichStringLiteralInbetween)+) "/table";
 	
 RichStringTableRow returns richstring::RichStringTableRow:
 	{richstring::RichStringTableRow}
-	"row" 
-	columns+=RichStringTableData*
-	"/row";
+	"row" (expressions+=RichStringLiteralInbetween (columns+=RichStringTableData
+	expressions+=RichStringLiteralInbetween)+) "/row";
 	
 RichStringTableData returns richstring::RichStringTableData:
 	{richstring::RichStringTableData}
-	"column" 
-	expression=InternalRichString
-	"/column";
+	"column" expression=InternalRichString "/column";
 	
 RichStringList returns xbase::XExpression:
 	{richstring::RichStringList}

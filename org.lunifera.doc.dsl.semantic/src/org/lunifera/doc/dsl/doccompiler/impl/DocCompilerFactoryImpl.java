@@ -217,6 +217,18 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createTableDataStart();
 		case DocCompilerPackage.TABLE_DATA_END:
 			return createTableDataEnd();
+		case DocCompilerPackage.LIST_START:
+			return createListStart();
+		case DocCompilerPackage.LIST_END:
+			return createListEnd();
+		case DocCompilerPackage.ORDERED_LIST_START:
+			return createOrderedListStart();
+		case DocCompilerPackage.ORDERED_LIST_END:
+			return createOrderedListEnd();
+		case DocCompilerPackage.LIST_ELEMENT_START:
+			return createListElementStart();
+		case DocCompilerPackage.LIST_ELEMENT_END:
+			return createListElementEnd();
 		case DocCompilerPackage.CHAPTER_START:
 			return createChapterStart();
 		case DocCompilerPackage.CHAPTER_END:
@@ -261,18 +273,6 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createUIRefStart();
 		case DocCompilerPackage.UI_REF_END:
 			return createUIRefEnd();
-		case DocCompilerPackage.LIST_START:
-			return createListStart();
-		case DocCompilerPackage.LIST_END:
-			return createListEnd();
-		case DocCompilerPackage.ORDERED_LIST_START:
-			return createOrderedListStart();
-		case DocCompilerPackage.ORDERED_LIST_END:
-			return createOrderedListEnd();
-		case DocCompilerPackage.LIST_ELEMENT_START:
-			return createListElementStart();
-		case DocCompilerPackage.LIST_ELEMENT_END:
-			return createListElementEnd();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -744,6 +744,66 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	 * 
 	 * @generated
 	 */
+	public ListStart createListStart() {
+		ListStartImpl listStart = new ListStartImpl();
+		return listStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ListEnd createListEnd() {
+		ListEndImpl listEnd = new ListEndImpl();
+		return listEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public OrderedListStart createOrderedListStart() {
+		OrderedListStartImpl orderedListStart = new OrderedListStartImpl();
+		return orderedListStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public OrderedListEnd createOrderedListEnd() {
+		OrderedListEndImpl orderedListEnd = new OrderedListEndImpl();
+		return orderedListEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ListElementStart createListElementStart() {
+		ListElementStartImpl listElementStart = new ListElementStartImpl();
+		return listElementStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ListElementEnd createListElementEnd() {
+		ListElementEndImpl listElementEnd = new ListElementEndImpl();
+		return listElementEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public ChapterStart createChapterStart() {
 		ChapterStartImpl chapterStart = new ChapterStartImpl();
 		return chapterStart;
@@ -957,66 +1017,6 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public UIRefEnd createUIRefEnd() {
 		UIRefEndImpl uiRefEnd = new UIRefEndImpl();
 		return uiRefEnd;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ListStart createListStart() {
-		ListStartImpl listStart = new ListStartImpl();
-		return listStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ListEnd createListEnd() {
-		ListEndImpl listEnd = new ListEndImpl();
-		return listEnd;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public OrderedListStart createOrderedListStart() {
-		OrderedListStartImpl orderedListStart = new OrderedListStartImpl();
-		return orderedListStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public OrderedListEnd createOrderedListEnd() {
-		OrderedListEndImpl orderedListEnd = new OrderedListEndImpl();
-		return orderedListEnd;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ListElementStart createListElementStart() {
-		ListElementStartImpl listElementStart = new ListElementStartImpl();
-		return listElementStart;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ListElementEnd createListElementEnd() {
-		ListElementEndImpl listElementEnd = new ListElementEndImpl();
-		return listElementEnd;
 	}
 
 	/**

@@ -13,6 +13,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getRows <em>Rows</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getExpressions <em>Expressions</em>}</li>
  * </ul>
  * </p>
  * 
@@ -20,7 +21,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface RichStringTable extends XExpression {
+public interface RichStringTable extends RichStringMarkup {
 	/**
 	 * Returns the value of the '<em><b>Rows</b></em>' containment reference list. The list contents are of type
 	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow}. <!-- begin-user-doc -->
@@ -36,5 +37,21 @@ public interface RichStringTable extends XExpression {
 	 * @generated
 	 */
 	EList<RichStringTableRow> getRows();
+
+	/**
+	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list. The list contents are of type
+	 * {@link org.eclipse.xtext.xbase.XExpression}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear, there really should be more
+	 * of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Expressions</em>' containment reference list.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringTable_Expressions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<XExpression> getExpressions();
 
 } // RichStringTable

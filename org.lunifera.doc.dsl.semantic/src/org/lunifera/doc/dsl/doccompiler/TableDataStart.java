@@ -13,7 +13,6 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.TableDataStart#getContent <em>Content</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.doccompiler.TableDataStart#getEnd <em>End</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.TableDataStart#getTableRowStart <em>Table Row Start</em>}</li>
  * </ul>
  * </p>
  * 
@@ -74,32 +73,5 @@ public interface TableDataStart extends LinePart {
 	 * @generated
 	 */
 	void setEnd(TableDataEnd value);
-
-	/**
-	 * Returns the value of the '<em><b>Table Row Start</b></em>' reference. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table Row Start</em>' reference isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Table Row Start</em>' reference.
-	 * @see #setTableRowStart(TableRowStart)
-	 * @see org.lunifera.doc.dsl.doccompiler.DocCompilerPackage#getTableDataStart_TableRowStart()
-	 * @model
-	 * @generated
-	 */
-	TableRowStart getTableRowStart();
-
-	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.doccompiler.TableDataStart#getTableRowStart
-	 * <em>Table Row Start</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Table Row Start</em>' reference.
-	 * @see #getTableRowStart()
-	 * @generated
-	 */
-	void setTableRowStart(TableRowStart value);
 
 } // TableDataStart

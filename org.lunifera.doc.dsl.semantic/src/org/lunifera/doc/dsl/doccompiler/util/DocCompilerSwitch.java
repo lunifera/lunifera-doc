@@ -541,6 +541,60 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case DocCompilerPackage.LIST_START: {
+			ListStart listStart = (ListStart) theEObject;
+			T result = caseListStart(listStart);
+			if (result == null)
+				result = caseLinePart(listStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LIST_END: {
+			ListEnd listEnd = (ListEnd) theEObject;
+			T result = caseListEnd(listEnd);
+			if (result == null)
+				result = caseLinePart(listEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ORDERED_LIST_START: {
+			OrderedListStart orderedListStart = (OrderedListStart) theEObject;
+			T result = caseOrderedListStart(orderedListStart);
+			if (result == null)
+				result = caseLinePart(orderedListStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ORDERED_LIST_END: {
+			OrderedListEnd orderedListEnd = (OrderedListEnd) theEObject;
+			T result = caseOrderedListEnd(orderedListEnd);
+			if (result == null)
+				result = caseLinePart(orderedListEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LIST_ELEMENT_START: {
+			ListElementStart listElementStart = (ListElementStart) theEObject;
+			T result = caseListElementStart(listElementStart);
+			if (result == null)
+				result = caseLinePart(listElementStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.LIST_ELEMENT_END: {
+			ListElementEnd listElementEnd = (ListElementEnd) theEObject;
+			T result = caseListElementEnd(listElementEnd);
+			if (result == null)
+				result = caseLinePart(listElementEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case DocCompilerPackage.CHAPTER_START: {
 			ChapterStart chapterStart = (ChapterStart) theEObject;
 			T result = caseChapterStart(chapterStart);
@@ -735,60 +789,6 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseUIRefEnd(uiRefEnd);
 			if (result == null)
 				result = caseLinePart(uiRefEnd);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.LIST_START: {
-			ListStart listStart = (ListStart) theEObject;
-			T result = caseListStart(listStart);
-			if (result == null)
-				result = caseLinePart(listStart);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.LIST_END: {
-			ListEnd listEnd = (ListEnd) theEObject;
-			T result = caseListEnd(listEnd);
-			if (result == null)
-				result = caseLinePart(listEnd);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.ORDERED_LIST_START: {
-			OrderedListStart orderedListStart = (OrderedListStart) theEObject;
-			T result = caseOrderedListStart(orderedListStart);
-			if (result == null)
-				result = caseLinePart(orderedListStart);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.ORDERED_LIST_END: {
-			OrderedListEnd orderedListEnd = (OrderedListEnd) theEObject;
-			T result = caseOrderedListEnd(orderedListEnd);
-			if (result == null)
-				result = caseLinePart(orderedListEnd);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.LIST_ELEMENT_START: {
-			ListElementStart listElementStart = (ListElementStart) theEObject;
-			T result = caseListElementStart(listElementStart);
-			if (result == null)
-				result = caseLinePart(listElementStart);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DocCompilerPackage.LIST_ELEMENT_END: {
-			ListElementEnd listElementEnd = (ListElementEnd) theEObject;
-			T result = caseListElementEnd(listElementEnd);
-			if (result == null)
-				result = caseLinePart(listElementEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1453,6 +1453,94 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListStart(ListStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListEnd(ListEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ordered List Start</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ordered List Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrderedListStart(OrderedListStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ordered List End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ordered List End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrderedListEnd(OrderedListEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Element Start</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Element Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListElementStart(ListElementStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Element End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Element End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListElementEnd(ListElementEnd object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Chapter Start</em>'. <!-- begin-user-doc -->
 	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
 	 * 
@@ -1768,94 +1856,6 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUIRefEnd(UIRefEnd object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List Start</em>'. <!-- begin-user-doc -->
-	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List Start</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseListStart(ListStart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List End</em>'. <!-- begin-user-doc --> This
-	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List End</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseListEnd(ListEnd object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Ordered List Start</em>'. <!--
-	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Ordered List Start</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOrderedListStart(OrderedListStart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Ordered List End</em>'. <!-- begin-user-doc
-	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
-	 * -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Ordered List End</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOrderedListEnd(OrderedListEnd object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List Element Start</em>'. <!--
-	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List Element Start</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseListElementStart(ListElementStart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List Element End</em>'. <!-- begin-user-doc
-	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
-	 * -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List Element End</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseListElementEnd(ListElementEnd object) {
 		return null;
 	}
 

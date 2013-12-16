@@ -16,7 +16,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUIRefImpl#getRefId <em>Ref Id</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringUIRefImpl#getUiDoc <em>Ui Doc</em>}</li>
  * </ul>
  * </p>
  * 

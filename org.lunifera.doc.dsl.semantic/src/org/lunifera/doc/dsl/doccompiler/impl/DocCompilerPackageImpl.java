@@ -420,6 +420,48 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	private EClass listStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass listEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass orderedListStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass orderedListEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass listElementStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass listElementEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	private EClass chapterStartEClass = null;
 
 	/**
@@ -568,48 +610,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass uiRefEndEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass listStartEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass listEndEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass orderedListStartEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass orderedListEndEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass listElementStartEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass listElementEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -1609,7 +1609,7 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	public EReference getTableStart_Rows() {
+	public EReference getTableStart_Content() {
 		return (EReference) tableStartEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1618,8 +1618,17 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	public EReference getTableStart_End() {
+	public EReference getTableStart_Rows() {
 		return (EReference) tableStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getTableStart_End() {
+		return (EReference) tableStartEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1654,7 +1663,7 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	public EReference getTableRowStart_Columns() {
+	public EReference getTableRowStart_Content() {
 		return (EReference) tableRowStartEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1663,7 +1672,7 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	public EReference getTableRowStart_End() {
+	public EReference getTableRowStart_Columns() {
 		return (EReference) tableRowStartEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1672,7 +1681,7 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	public EReference getTableRowStart_TableStart() {
+	public EReference getTableRowStart_End() {
 		return (EReference) tableRowStartEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1726,15 +1735,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	public EReference getTableDataStart_TableRowStart() {
-		return (EReference) tableDataStartEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public EClass getTableDataEnd() {
 		return tableDataEndEClass;
 	}
@@ -1746,6 +1746,159 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 */
 	public EReference getTableDataEnd_Start() {
 		return (EReference) tableDataEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getListStart() {
+		return listStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListStart_Content() {
+		return (EReference) listStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListStart_Elements() {
+		return (EReference) listStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListStart_End() {
+		return (EReference) listStartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getListEnd() {
+		return listEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListEnd_Start() {
+		return (EReference) listEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getOrderedListStart() {
+		return orderedListStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListStart_Content() {
+		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListStart_Elements() {
+		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListStart_End() {
+		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getOrderedListEnd() {
+		return orderedListEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListEnd_Start() {
+		return (EReference) orderedListEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getListElementStart() {
+		return listElementStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListElementStart_Content() {
+		return (EReference) listElementStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListElementStart_End() {
+		return (EReference) listElementStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getListElementEnd() {
+		return listElementEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getListElementEnd_Start() {
+		return (EReference) listElementEndEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2248,159 +2401,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
-	public EClass getListStart() {
-		return listStartEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getListStart_Content() {
-		return (EReference) listStartEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getListStart_Elements() {
-		return (EReference) listStartEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getListStart_End() {
-		return (EReference) listStartEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getListEnd() {
-		return listEndEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getListEnd_Start() {
-		return (EReference) listEndEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getOrderedListStart() {
-		return orderedListStartEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getOrderedListStart_Content() {
-		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getOrderedListStart_Elements() {
-		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getOrderedListStart_End() {
-		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getOrderedListEnd() {
-		return orderedListEndEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getOrderedListEnd_Start() {
-		return (EReference) orderedListEndEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getListElementStart() {
-		return listElementStartEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getListElementStart_Content() {
-		return (EReference) listElementStartEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getListElementStart_End() {
-		return (EReference) listElementStartEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getListElementEnd() {
-		return listElementEndEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getListElementEnd_Start() {
-		return (EReference) listElementEndEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public DocCompilerFactory getDocCompilerFactory() {
 		return (DocCompilerFactory) getEFactoryInstance();
 	}
@@ -2567,6 +2567,7 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		createEReference(codeEndEClass, CODE_END__START);
 
 		tableStartEClass = createEClass(TABLE_START);
+		createEReference(tableStartEClass, TABLE_START__CONTENT);
 		createEReference(tableStartEClass, TABLE_START__ROWS);
 		createEReference(tableStartEClass, TABLE_START__END);
 
@@ -2574,9 +2575,9 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		createEReference(tableEndEClass, TABLE_END__START);
 
 		tableRowStartEClass = createEClass(TABLE_ROW_START);
+		createEReference(tableRowStartEClass, TABLE_ROW_START__CONTENT);
 		createEReference(tableRowStartEClass, TABLE_ROW_START__COLUMNS);
 		createEReference(tableRowStartEClass, TABLE_ROW_START__END);
-		createEReference(tableRowStartEClass, TABLE_ROW_START__TABLE_START);
 
 		tableRowEndEClass = createEClass(TABLE_ROW_END);
 		createEReference(tableRowEndEClass, TABLE_ROW_END__START);
@@ -2584,10 +2585,32 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		tableDataStartEClass = createEClass(TABLE_DATA_START);
 		createEReference(tableDataStartEClass, TABLE_DATA_START__CONTENT);
 		createEReference(tableDataStartEClass, TABLE_DATA_START__END);
-		createEReference(tableDataStartEClass, TABLE_DATA_START__TABLE_ROW_START);
 
 		tableDataEndEClass = createEClass(TABLE_DATA_END);
 		createEReference(tableDataEndEClass, TABLE_DATA_END__START);
+
+		listStartEClass = createEClass(LIST_START);
+		createEReference(listStartEClass, LIST_START__CONTENT);
+		createEReference(listStartEClass, LIST_START__ELEMENTS);
+		createEReference(listStartEClass, LIST_START__END);
+
+		listEndEClass = createEClass(LIST_END);
+		createEReference(listEndEClass, LIST_END__START);
+
+		orderedListStartEClass = createEClass(ORDERED_LIST_START);
+		createEReference(orderedListStartEClass, ORDERED_LIST_START__CONTENT);
+		createEReference(orderedListStartEClass, ORDERED_LIST_START__ELEMENTS);
+		createEReference(orderedListStartEClass, ORDERED_LIST_START__END);
+
+		orderedListEndEClass = createEClass(ORDERED_LIST_END);
+		createEReference(orderedListEndEClass, ORDERED_LIST_END__START);
+
+		listElementStartEClass = createEClass(LIST_ELEMENT_START);
+		createEReference(listElementStartEClass, LIST_ELEMENT_START__CONTENT);
+		createEReference(listElementStartEClass, LIST_ELEMENT_START__END);
+
+		listElementEndEClass = createEClass(LIST_ELEMENT_END);
+		createEReference(listElementEndEClass, LIST_ELEMENT_END__START);
 
 		chapterStartEClass = createEClass(CHAPTER_START);
 		createEReference(chapterStartEClass, CHAPTER_START__CONTENT);
@@ -2665,29 +2688,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		uiRefEndEClass = createEClass(UI_REF_END);
 		createEReference(uiRefEndEClass, UI_REF_END__START);
-
-		listStartEClass = createEClass(LIST_START);
-		createEReference(listStartEClass, LIST_START__CONTENT);
-		createEReference(listStartEClass, LIST_START__ELEMENTS);
-		createEReference(listStartEClass, LIST_START__END);
-
-		listEndEClass = createEClass(LIST_END);
-		createEReference(listEndEClass, LIST_END__START);
-
-		orderedListStartEClass = createEClass(ORDERED_LIST_START);
-		createEReference(orderedListStartEClass, ORDERED_LIST_START__CONTENT);
-		createEReference(orderedListStartEClass, ORDERED_LIST_START__ELEMENTS);
-		createEReference(orderedListStartEClass, ORDERED_LIST_START__END);
-
-		orderedListEndEClass = createEClass(ORDERED_LIST_END);
-		createEReference(orderedListEndEClass, ORDERED_LIST_END__START);
-
-		listElementStartEClass = createEClass(LIST_ELEMENT_START);
-		createEReference(listElementStartEClass, LIST_ELEMENT_START__CONTENT);
-		createEReference(listElementStartEClass, LIST_ELEMENT_START__END);
-
-		listElementEndEClass = createEClass(LIST_ELEMENT_END);
-		createEReference(listElementEndEClass, LIST_ELEMENT_END__START);
 	}
 
 	/**
@@ -2769,6 +2769,12 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		tableRowEndEClass.getESuperTypes().add(this.getLinePart());
 		tableDataStartEClass.getESuperTypes().add(this.getLinePart());
 		tableDataEndEClass.getESuperTypes().add(this.getLinePart());
+		listStartEClass.getESuperTypes().add(this.getLinePart());
+		listEndEClass.getESuperTypes().add(this.getLinePart());
+		orderedListStartEClass.getESuperTypes().add(this.getLinePart());
+		orderedListEndEClass.getESuperTypes().add(this.getLinePart());
+		listElementStartEClass.getESuperTypes().add(this.getLinePart());
+		listElementEndEClass.getESuperTypes().add(this.getLinePart());
 		chapterStartEClass.getESuperTypes().add(this.getLinePart());
 		chapterEndEClass.getESuperTypes().add(this.getLinePart());
 		sectionStartEClass.getESuperTypes().add(this.getLinePart());
@@ -2791,12 +2797,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		viewRefEndEClass.getESuperTypes().add(this.getLinePart());
 		uiRefStartEClass.getESuperTypes().add(this.getLinePart());
 		uiRefEndEClass.getESuperTypes().add(this.getLinePart());
-		listStartEClass.getESuperTypes().add(this.getLinePart());
-		listEndEClass.getESuperTypes().add(this.getLinePart());
-		orderedListStartEClass.getESuperTypes().add(this.getLinePart());
-		orderedListEndEClass.getESuperTypes().add(this.getLinePart());
-		listElementStartEClass.getESuperTypes().add(this.getLinePart());
-		listElementEndEClass.getESuperTypes().add(this.getLinePart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentStartEClass, DocumentStart.class, "DocumentStart", !IS_ABSTRACT,
@@ -3151,6 +3151,10 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		initEClass(tableStartEClass, TableStart.class, "TableStart", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableStart_Content(), theRichstringPackage.getRichStringTable(), null,
+				"content", null, 0, 1, TableStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEReference(getTableStart_Rows(), theRichstringPackage.getRichStringTableRow(), null,
 				"rows", null, 0, -1, TableStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -3167,6 +3171,10 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 
 		initEClass(tableRowStartEClass, TableRowStart.class, "TableRowStart", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableRowStart_Content(), theRichstringPackage.getRichStringTableRow(),
+				null, "content", null, 0, 1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEReference(getTableRowStart_Columns(), theRichstringPackage.getRichStringTableData(),
 				null, "columns", null, 0, -1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
@@ -3174,10 +3182,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		initEReference(getTableRowStart_End(), this.getTableRowEnd(), null, "end", null, 0, 1,
 				TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTableRowStart_TableStart(), this.getTableStart(), null, "tableStart",
-				null, 0, 1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(tableRowEndEClass, TableRowEnd.class, "TableRowEnd", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3194,16 +3198,71 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		initEReference(getTableDataStart_End(), this.getTableDataEnd(), null, "end", null, 0, 1,
 				TableDataStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTableDataStart_TableRowStart(), this.getTableRowStart(), null,
-				"tableRowStart", null, 0, 1, TableDataStart.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableDataEndEClass, TableDataEnd.class, "TableDataEnd", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTableDataEnd_Start(), this.getTableDataStart(), null, "start", null, 0,
 				1, TableDataEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(listStartEClass, ListStart.class, "ListStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListStart_Content(), theRichstringPackage.getRichStringList(), null,
+				"content", null, 0, 1, ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getListStart_Elements(), this.getListElementStart(), null, "elements", null,
+				0, -1, ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getListStart_End(), this.getListEnd(), null, "end", null, 0, 1,
+				ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(listEndEClass, ListEnd.class, "ListEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListEnd_Start(), this.getListStart(), null, "start", null, 0, 1,
+				ListEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(orderedListStartEClass, OrderedListStart.class, "OrderedListStart",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrderedListStart_Content(),
+				theRichstringPackage.getRichStringOrderedList(), null, "content", null, 0, 1,
+				OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrderedListStart_Elements(), this.getListElementStart(), null,
+				"elements", null, 0, -1, OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getOrderedListStart_End(), this.getOrderedListEnd(), null, "end", null, 0,
+				1, OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(orderedListEndEClass, OrderedListEnd.class, "OrderedListEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrderedListEnd_Start(), this.getOrderedListStart(), null, "start", null,
+				0, 1, OrderedListEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(listElementStartEClass, ListElementStart.class, "ListElementStart",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListElementStart_Content(),
+				theRichstringPackage.getRichStringListElement(), null, "content", null, 0, 1,
+				ListElementStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getListElementStart_End(), this.getListElementEnd(), null, "end", null, 0,
+				1, ListElementStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(listElementEndEClass, ListElementEnd.class, "ListElementEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getListElementEnd_Start(), this.getListElementStart(), null, "start", null,
+				0, 1, ListElementEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(chapterStartEClass, ChapterStart.class, "ChapterStart", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3400,65 +3459,6 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUIRefEnd_Start(), this.getUIRefStart(), this.getUIRefStart_End(),
 				"start", null, 0, 1, UIRefEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(listStartEClass, ListStart.class, "ListStart", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getListStart_Content(), theRichstringPackage.getRichStringList(), null,
-				"content", null, 0, 1, ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getListStart_Elements(), this.getListElementStart(), null, "elements", null,
-				0, -1, ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getListStart_End(), this.getListEnd(), null, "end", null, 0, 1,
-				ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(listEndEClass, ListEnd.class, "ListEnd", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getListEnd_Start(), this.getListStart(), null, "start", null, 0, 1,
-				ListEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(orderedListStartEClass, OrderedListStart.class, "OrderedListStart",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOrderedListStart_Content(),
-				theRichstringPackage.getRichStringOrderedList(), null, "content", null, 0, 1,
-				OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOrderedListStart_Elements(), this.getListElementStart(), null,
-				"elements", null, 0, -1, OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getOrderedListStart_End(), this.getOrderedListEnd(), null, "end", null, 0,
-				1, OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(orderedListEndEClass, OrderedListEnd.class, "OrderedListEnd", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOrderedListEnd_Start(), this.getOrderedListStart(), null, "start", null,
-				0, 1, OrderedListEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(listElementStartEClass, ListElementStart.class, "ListElementStart",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getListElementStart_Content(),
-				theRichstringPackage.getRichStringListElement(), null, "content", null, 0, 1,
-				ListElementStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getListElementStart_End(), this.getListElementEnd(), null, "end", null, 0,
-				1, ListElementStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(listElementEndEClass, ListElementEnd.class, "ListElementEnd", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getListElementEnd_Start(), this.getListElementStart(), null, "start", null,
-				0, 1, ListElementEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
