@@ -177,8 +177,8 @@ RichStringPart returns xbase::XExpression:
 	RichStringExample | RichStringURL | RichStringRef | RichStringMailto | 
 	RichStringSkype | RichStringMovie | RichStringImg |	RichStringBold | 
 	RichStringUnderline | RichStringItalic | RichStringCode | RichStringTable | RichStringList |
-	RichStringOpenView | RichStringStartProcess | RichStringEntityRef | RichStringDTORef |
-	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef;
+	RichStringOrderedList | RichStringOpenView | RichStringStartProcess | RichStringEntityRef | 
+	RichStringDTORef | RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef;
 
 RichStringExample returns xbase::XExpression:
 	{richstring::RichStringExample}
@@ -277,9 +277,13 @@ RichStringTableData returns richstring::RichStringTableData:
 	
 RichStringList returns xbase::XExpression:
 	{richstring::RichStringList}
-	//"ul" elements+=RichStringListElement* "/ul";
 	"ul" (expressions+=RichStringLiteralInbetween (elements+=RichStringListElement
 	expressions+=RichStringLiteralInbetween)+) "/ul";
+	
+RichStringOrderedList returns xbase::XExpression:
+	{richstring::RichStringOrderedList}
+	"ol" (expressions+=RichStringLiteralInbetween (elements+=RichStringListElement
+	expressions+=RichStringLiteralInbetween)+) "/ol";
 		
 RichStringListElement returns richstring::RichStringListElement:
 	{richstring::RichStringListElement}

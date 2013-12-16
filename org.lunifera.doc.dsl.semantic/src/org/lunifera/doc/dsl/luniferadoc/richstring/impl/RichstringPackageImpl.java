@@ -37,6 +37,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
@@ -297,6 +298,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringListEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringOrderedListEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1079,6 +1087,33 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EClass getRichStringOrderedList() {
+		return richStringOrderedListEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringOrderedList_Elements() {
+		return (EReference) richStringOrderedListEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRichStringOrderedList_Expressions() {
+		return (EReference) richStringOrderedListEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getRichStringListElement() {
 		return richStringListElementEClass;
 	}
@@ -1221,6 +1256,10 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		createEReference(richStringListEClass, RICH_STRING_LIST__ELEMENTS);
 		createEReference(richStringListEClass, RICH_STRING_LIST__EXPRESSIONS);
 
+		richStringOrderedListEClass = createEClass(RICH_STRING_ORDERED_LIST);
+		createEReference(richStringOrderedListEClass, RICH_STRING_ORDERED_LIST__ELEMENTS);
+		createEReference(richStringOrderedListEClass, RICH_STRING_ORDERED_LIST__EXPRESSIONS);
+
 		richStringListElementEClass = createEClass(RICH_STRING_LIST_ELEMENT);
 	}
 
@@ -1291,6 +1330,7 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringViewRefEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringUIRefEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringListEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringOrderedListEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringListElementEClass.getESuperTypes().add(this.getRichStringMarkup());
 
 		// Initialize classes and features; add operations and parameters
@@ -1546,6 +1586,17 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				"expressions", null, 0, -1, RichStringList.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(richStringOrderedListEClass, RichStringOrderedList.class,
+				"RichStringOrderedList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRichStringOrderedList_Elements(), this.getRichStringListElement(), null,
+				"elements", null, 0, -1, RichStringOrderedList.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getRichStringOrderedList_Expressions(), theXbasePackage.getXExpression(),
+				null, "expressions", null, 0, -1, RichStringOrderedList.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringListElementEClass, RichStringListElement.class,
 				"RichStringListElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

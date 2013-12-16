@@ -28,6 +28,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
@@ -154,6 +155,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringUIRef();
 		case RichstringPackage.RICH_STRING_LIST:
 			return createRichStringList();
+		case RichstringPackage.RICH_STRING_ORDERED_LIST:
+			return createRichStringOrderedList();
 		case RichstringPackage.RICH_STRING_LIST_ELEMENT:
 			return createRichStringListElement();
 		default:
@@ -500,6 +503,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringList createRichStringList() {
 		RichStringListImpl richStringList = new RichStringListImpl();
 		return richStringList;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringOrderedList createRichStringOrderedList() {
+		RichStringOrderedListImpl richStringOrderedList = new RichStringOrderedListImpl();
+		return richStringOrderedList;
 	}
 
 	/**

@@ -301,6 +301,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ListEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ListStart"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrderedListStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringOrderedList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ListElementStart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//OrderedListEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrderedListEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//OrderedListStart"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListElementStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringListElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ListElementEnd"/>

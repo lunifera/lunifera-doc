@@ -3382,6 +3382,109 @@ public interface DocCompilerPackage extends EPackage {
 	int LIST_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.OrderedListStartImpl
+	 * <em>Ordered List Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.OrderedListStartImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOrderedListStart()
+	 * @generated
+	 */
+	int ORDERED_LIST_START = 70;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_START__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_START__ELEMENTS = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_START__END = LINE_PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Ordered List Start</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Ordered List Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.OrderedListEndImpl
+	 * <em>Ordered List End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.OrderedListEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOrderedListEnd()
+	 * @generated
+	 */
+	int ORDERED_LIST_END = 71;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ordered List End</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ordered List End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_LIST_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ListElementStartImpl
 	 * <em>List Element Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -3389,7 +3492,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getListElementStart()
 	 * @generated
 	 */
-	int LIST_ELEMENT_START = 70;
+	int LIST_ELEMENT_START = 72;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3441,7 +3544,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getListElementEnd()
 	 * @generated
 	 */
-	int LIST_ELEMENT_END = 71;
+	int LIST_ELEMENT_END = 73;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -5396,6 +5499,71 @@ public interface DocCompilerPackage extends EPackage {
 	EReference getListEnd_Start();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.OrderedListStart
+	 * <em>Ordered List Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Ordered List Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListStart
+	 * @generated
+	 */
+	EClass getOrderedListStart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.OrderedListStart#getContent
+	 * <em>Content</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListStart#getContent()
+	 * @see #getOrderedListStart()
+	 * @generated
+	 */
+	EReference getOrderedListStart_Content();
+
+	/**
+	 * Returns the meta object for the reference list '
+	 * {@link org.lunifera.doc.dsl.doccompiler.OrderedListStart#getElements <em>Elements</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference list '<em>Elements</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListStart#getElements()
+	 * @see #getOrderedListStart()
+	 * @generated
+	 */
+	EReference getOrderedListStart_Elements();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.OrderedListStart#getEnd
+	 * <em>End</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListStart#getEnd()
+	 * @see #getOrderedListStart()
+	 * @generated
+	 */
+	EReference getOrderedListStart_End();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.OrderedListEnd
+	 * <em>Ordered List End</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Ordered List End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListEnd
+	 * @generated
+	 */
+	EClass getOrderedListEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.OrderedListEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListEnd#getStart()
+	 * @see #getOrderedListEnd()
+	 * @generated
+	 */
+	EReference getOrderedListEnd_Start();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.ListElementStart
 	 * <em>List Element Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -7054,6 +7222,58 @@ public interface DocCompilerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LIST_END__START = eINSTANCE.getListEnd_Start();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.OrderedListStartImpl
+		 * <em>Ordered List Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.OrderedListStartImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOrderedListStart()
+		 * @generated
+		 */
+		EClass ORDERED_LIST_START = eINSTANCE.getOrderedListStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ORDERED_LIST_START__CONTENT = eINSTANCE.getOrderedListStart_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' reference list feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ORDERED_LIST_START__ELEMENTS = eINSTANCE.getOrderedListStart_Elements();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ORDERED_LIST_START__END = eINSTANCE.getOrderedListStart_End();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.OrderedListEndImpl
+		 * <em>Ordered List End</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.OrderedListEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOrderedListEnd()
+		 * @generated
+		 */
+		EClass ORDERED_LIST_END = eINSTANCE.getOrderedListEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ORDERED_LIST_END__START = eINSTANCE.getOrderedListEnd_Start();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ListElementStartImpl

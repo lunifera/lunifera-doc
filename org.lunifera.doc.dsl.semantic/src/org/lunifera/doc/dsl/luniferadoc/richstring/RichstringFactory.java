@@ -293,6 +293,14 @@ public interface RichstringFactory extends EFactory {
 	RichStringList createRichStringList();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Ordered List</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Ordered List</em>'.
+	 * @generated
+	 */
+	RichStringOrderedList createRichStringOrderedList();
+
+	/**
 	 * Returns a new object of class '<em>Rich String List Element</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Rich String List Element</em>'.

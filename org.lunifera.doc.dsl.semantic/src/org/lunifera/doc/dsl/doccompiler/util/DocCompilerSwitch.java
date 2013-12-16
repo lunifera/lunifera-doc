@@ -48,6 +48,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
+import org.lunifera.doc.dsl.doccompiler.OrderedListEnd;
+import org.lunifera.doc.dsl.doccompiler.OrderedListStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
@@ -751,6 +753,24 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseListEnd(listEnd);
 			if (result == null)
 				result = caseLinePart(listEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ORDERED_LIST_START: {
+			OrderedListStart orderedListStart = (OrderedListStart) theEObject;
+			T result = caseOrderedListStart(orderedListStart);
+			if (result == null)
+				result = caseLinePart(orderedListStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.ORDERED_LIST_END: {
+			OrderedListEnd orderedListEnd = (OrderedListEnd) theEObject;
+			T result = caseOrderedListEnd(orderedListEnd);
+			if (result == null)
+				result = caseLinePart(orderedListEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1776,6 +1796,36 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseListEnd(ListEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ordered List Start</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ordered List Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrderedListStart(OrderedListStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ordered List End</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ordered List End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrderedListEnd(OrderedListEnd object) {
 		return null;
 	}
 

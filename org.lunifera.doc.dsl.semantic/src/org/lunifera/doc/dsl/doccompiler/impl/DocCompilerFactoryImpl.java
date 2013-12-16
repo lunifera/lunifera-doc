@@ -51,6 +51,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
+import org.lunifera.doc.dsl.doccompiler.OrderedListEnd;
+import org.lunifera.doc.dsl.doccompiler.OrderedListStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
@@ -263,6 +265,10 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createListStart();
 		case DocCompilerPackage.LIST_END:
 			return createListEnd();
+		case DocCompilerPackage.ORDERED_LIST_START:
+			return createOrderedListStart();
+		case DocCompilerPackage.ORDERED_LIST_END:
+			return createOrderedListEnd();
 		case DocCompilerPackage.LIST_ELEMENT_START:
 			return createListElementStart();
 		case DocCompilerPackage.LIST_ELEMENT_END:
@@ -971,6 +977,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public ListEnd createListEnd() {
 		ListEndImpl listEnd = new ListEndImpl();
 		return listEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public OrderedListStart createOrderedListStart() {
+		OrderedListStartImpl orderedListStart = new OrderedListStartImpl();
+		return orderedListStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public OrderedListEnd createOrderedListEnd() {
+		OrderedListEndImpl orderedListEnd = new OrderedListEndImpl();
+		return orderedListEnd;
 	}
 
 	/**

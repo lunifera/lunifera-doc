@@ -581,6 +581,22 @@ public interface DocCompilerFactory extends EFactory {
 	ListEnd createListEnd();
 
 	/**
+	 * Returns a new object of class '<em>Ordered List Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Ordered List Start</em>'.
+	 * @generated
+	 */
+	OrderedListStart createOrderedListStart();
+
+	/**
+	 * Returns a new object of class '<em>Ordered List End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Ordered List End</em>'.
+	 * @generated
+	 */
+	OrderedListEnd createOrderedListEnd();
+
+	/**
 	 * Returns a new object of class '<em>List Element Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>List Element Start</em>'.

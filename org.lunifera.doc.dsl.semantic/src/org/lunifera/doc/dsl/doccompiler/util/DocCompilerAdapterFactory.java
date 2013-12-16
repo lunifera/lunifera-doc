@@ -49,6 +49,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
+import org.lunifera.doc.dsl.doccompiler.OrderedListEnd;
+import org.lunifera.doc.dsl.doccompiler.OrderedListStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
@@ -479,6 +481,16 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseListEnd(ListEnd object) {
 			return createListEndAdapter();
+		}
+
+		@Override
+		public Adapter caseOrderedListStart(OrderedListStart object) {
+			return createOrderedListStartAdapter();
+		}
+
+		@Override
+		public Adapter caseOrderedListEnd(OrderedListEnd object) {
+			return createOrderedListEndAdapter();
 		}
 
 		@Override
@@ -1474,6 +1486,34 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createListEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.OrderedListStart
+	 * <em>Ordered List Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListStart
+	 * @generated
+	 */
+	public Adapter createOrderedListStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.OrderedListEnd
+	 * <em>Ordered List End</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.OrderedListEnd
+	 * @generated
+	 */
+	public Adapter createOrderedListEndAdapter() {
 		return null;
 	}
 

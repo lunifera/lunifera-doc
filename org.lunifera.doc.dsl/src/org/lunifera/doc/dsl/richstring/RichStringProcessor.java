@@ -56,6 +56,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
+import org.lunifera.doc.dsl.doccompiler.OrderedListEnd;
+import org.lunifera.doc.dsl.doccompiler.OrderedListStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
@@ -110,6 +112,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
@@ -511,6 +514,24 @@ public class RichStringProcessor {
 				addToCurrentLine(elemEnd);
 			}
 			ListEnd end = factory.createListEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringOrderedList(RichStringOrderedList object) {
+			OrderedListStart start = factory.createOrderedListStart();
+			addToCurrentLine(start);
+			for (RichStringListElement elem : object.getElements()) {
+				ListElementStart elemStart = factory.createListElementStart();
+				addToCurrentLine(elemStart);
+				doSwitch(elem.getExpression());
+				ListElementEnd elemEnd = factory.createListElementEnd();
+				elemEnd.setStart(elemStart);
+				addToCurrentLine(elemEnd);
+			}
+			OrderedListEnd end = factory.createOrderedListEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -1095,6 +1116,20 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseListEnd(ListEnd object) {
 			acceptor.acceptListEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseOrderedListStart(OrderedListStart object) {
+			acceptor.acceptOrderedListStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseOrderedListEnd(OrderedListEnd object) {
+			acceptor.acceptOrderedListEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

@@ -52,6 +52,8 @@ import org.lunifera.doc.dsl.doccompiler.MovieEnd;
 import org.lunifera.doc.dsl.doccompiler.MovieStart;
 import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
 import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
+import org.lunifera.doc.dsl.doccompiler.OrderedListEnd;
+import org.lunifera.doc.dsl.doccompiler.OrderedListStart;
 import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
 import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
@@ -580,6 +582,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass listEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass orderedListStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass orderedListEndEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2286,6 +2302,60 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getOrderedListStart() {
+		return orderedListStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListStart_Content() {
+		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListStart_Elements() {
+		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListStart_End() {
+		return (EReference) orderedListStartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getOrderedListEnd() {
+		return orderedListEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getOrderedListEnd_Start() {
+		return (EReference) orderedListEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getListElementStart() {
 		return listElementStartEClass;
 	}
@@ -2604,6 +2674,14 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		listEndEClass = createEClass(LIST_END);
 		createEReference(listEndEClass, LIST_END__START);
 
+		orderedListStartEClass = createEClass(ORDERED_LIST_START);
+		createEReference(orderedListStartEClass, ORDERED_LIST_START__CONTENT);
+		createEReference(orderedListStartEClass, ORDERED_LIST_START__ELEMENTS);
+		createEReference(orderedListStartEClass, ORDERED_LIST_START__END);
+
+		orderedListEndEClass = createEClass(ORDERED_LIST_END);
+		createEReference(orderedListEndEClass, ORDERED_LIST_END__START);
+
 		listElementStartEClass = createEClass(LIST_ELEMENT_START);
 		createEReference(listElementStartEClass, LIST_ELEMENT_START__CONTENT);
 		createEReference(listElementStartEClass, LIST_ELEMENT_START__END);
@@ -2715,6 +2793,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		uiRefEndEClass.getESuperTypes().add(this.getLinePart());
 		listStartEClass.getESuperTypes().add(this.getLinePart());
 		listEndEClass.getESuperTypes().add(this.getLinePart());
+		orderedListStartEClass.getESuperTypes().add(this.getLinePart());
+		orderedListEndEClass.getESuperTypes().add(this.getLinePart());
 		listElementStartEClass.getESuperTypes().add(this.getLinePart());
 		listElementEndEClass.getESuperTypes().add(this.getLinePart());
 
@@ -3341,6 +3421,28 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		initEReference(getListEnd_Start(), this.getListStart(), null, "start", null, 0, 1,
 				ListEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(orderedListStartEClass, OrderedListStart.class, "OrderedListStart",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrderedListStart_Content(),
+				theRichstringPackage.getRichStringOrderedList(), null, "content", null, 0, 1,
+				OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrderedListStart_Elements(), this.getListElementStart(), null,
+				"elements", null, 0, -1, OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getOrderedListStart_End(), this.getOrderedListEnd(), null, "end", null, 0,
+				1, OrderedListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(orderedListEndEClass, OrderedListEnd.class, "OrderedListEnd", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrderedListEnd_Start(), this.getOrderedListStart(), null, "start", null,
+				0, 1, OrderedListEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(listElementStartEClass, ListElementStart.class, "ListElementStart",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

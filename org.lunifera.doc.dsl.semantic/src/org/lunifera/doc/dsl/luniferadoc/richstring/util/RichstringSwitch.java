@@ -30,6 +30,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
@@ -442,6 +443,17 @@ public class RichstringSwitch<T> extends Switch<T> {
 				result = caseRichStringMarkup(richStringList);
 			if (result == null)
 				result = caseXExpression(richStringList);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_ORDERED_LIST: {
+			RichStringOrderedList richStringOrderedList = (RichStringOrderedList) theEObject;
+			T result = caseRichStringOrderedList(richStringOrderedList);
+			if (result == null)
+				result = caseRichStringMarkup(richStringOrderedList);
+			if (result == null)
+				result = caseXExpression(richStringOrderedList);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -968,6 +980,21 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringList(RichStringList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Ordered List</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Ordered List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringOrderedList(RichStringOrderedList object) {
 		return null;
 	}
 
