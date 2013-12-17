@@ -27,6 +27,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
@@ -123,6 +127,34 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * @generated
 	 */
 	private EClass richStringH2EClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringH3EClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringH4EClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringH5EClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass richStringH6EClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -585,6 +617,42 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 */
 	public EClass getRichStringH2() {
 		return richStringH2EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringH3() {
+		return richStringH3EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringH4() {
+		return richStringH4EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringH5() {
+		return richStringH5EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRichStringH6() {
+		return richStringH6EClass;
 	}
 
 	/**
@@ -1194,6 +1262,14 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		richStringH2EClass = createEClass(RICH_STRING_H2);
 
+		richStringH3EClass = createEClass(RICH_STRING_H3);
+
+		richStringH4EClass = createEClass(RICH_STRING_H4);
+
+		richStringH5EClass = createEClass(RICH_STRING_H5);
+
+		richStringH6EClass = createEClass(RICH_STRING_H6);
+
 		richStringChapterEClass = createEClass(RICH_STRING_CHAPTER);
 
 		richStringSectionEClass = createEClass(RICH_STRING_SECTION);
@@ -1325,6 +1401,10 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringExampleEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringH1EClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringH2EClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringH3EClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringH4EClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringH5EClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringH6EClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringChapterEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringSectionEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringSubsectionEClass.getESuperTypes().add(this.getRichStringMarkup());
@@ -1424,6 +1504,18 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(richStringH2EClass, RichStringH2.class, "RichStringH2", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringH3EClass, RichStringH3.class, "RichStringH3", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringH4EClass, RichStringH4.class, "RichStringH4", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringH5EClass, RichStringH5.class, "RichStringH5", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(richStringH6EClass, RichStringH6.class, "RichStringH6", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(richStringChapterEClass, RichStringChapter.class, "RichStringChapter",

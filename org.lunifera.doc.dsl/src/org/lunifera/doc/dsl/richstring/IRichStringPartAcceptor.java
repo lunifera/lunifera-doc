@@ -21,6 +21,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
@@ -220,6 +224,22 @@ public interface IRichStringPartAcceptor {
 	void acceptH2Start(RichStringH2 object);
 
 	void acceptH2End();
+
+	void acceptH3Start(RichStringH3 object);
+
+	void acceptH3End();
+
+	void acceptH4Start(RichStringH4 object);
+
+	void acceptH4End();
+
+	void acceptH5Start(RichStringH5 object);
+
+	void acceptH5End();
+
+	void acceptH6Start(RichStringH6 object);
+
+	void acceptH6End();
 
 	void acceptChapterStart(RichStringChapter object);
 

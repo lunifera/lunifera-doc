@@ -159,6 +159,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="RichStringExample" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringH1" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringH2" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringH3" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringH4" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringH5" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringH6" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringChapter" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringSection" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringSubsection" eSuperTypes="#//richstring/RichStringMarkup"/>

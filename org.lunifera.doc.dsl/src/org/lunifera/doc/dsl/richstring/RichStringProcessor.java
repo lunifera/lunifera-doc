@@ -37,6 +37,14 @@ import org.lunifera.doc.dsl.doccompiler.H1End;
 import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
+import org.lunifera.doc.dsl.doccompiler.H3End;
+import org.lunifera.doc.dsl.doccompiler.H3Start;
+import org.lunifera.doc.dsl.doccompiler.H4End;
+import org.lunifera.doc.dsl.doccompiler.H4Start;
+import org.lunifera.doc.dsl.doccompiler.H5End;
+import org.lunifera.doc.dsl.doccompiler.H5Start;
+import org.lunifera.doc.dsl.doccompiler.H6End;
+import org.lunifera.doc.dsl.doccompiler.H6Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
@@ -102,6 +110,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
@@ -321,6 +333,76 @@ public class RichStringProcessor {
 		}
 
 		@Override
+		public Boolean caseRichStringH2(RichStringH2 object) {
+			H2Start start = factory.createH2Start();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			H2End end = factory.createH2End();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringH3(RichStringH3 object) {
+			H3Start start = factory.createH3Start();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			H3End end = factory.createH3End();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringH4(RichStringH4 object) {
+			H4Start start = factory.createH4Start();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			H4End end = factory.createH4End();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringH5(RichStringH5 object) {
+			H5Start start = factory.createH5Start();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			H5End end = factory.createH5End();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringH6(RichStringH6 object) {
+			H6Start start = factory.createH6Start();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			H6End end = factory.createH6End();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
 		public Boolean caseRichStringChapter(RichStringChapter object) {
 			ChapterStart start = factory.createChapterStart();
 			start.setContent(object);
@@ -371,20 +453,6 @@ public class RichStringProcessor {
 			doSwitch(object.getExpression());
 
 			ExampleEnd end = factory.createExampleEnd();
-			end.setStart(start);
-			addToCurrentLine(end);
-			return Boolean.TRUE;
-		}
-
-		@Override
-		public Boolean caseRichStringH2(RichStringH2 object) {
-			H2Start start = factory.createH2Start();
-			start.setContent(object);
-			addToCurrentLine(start);
-
-			doSwitch(object.getExpression());
-
-			H2End end = factory.createH2End();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -870,6 +938,76 @@ public class RichStringProcessor {
 		}
 
 		@Override
+		public Boolean caseH2Start(H2Start object) {
+			acceptor.acceptH2Start(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH2End(H2End object) {
+			acceptor.acceptH2End();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH3Start(H3Start object) {
+			acceptor.acceptH3Start(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH3End(H3End object) {
+			acceptor.acceptH3End();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH4Start(H4Start object) {
+			acceptor.acceptH4Start(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH4End(H4End object) {
+			acceptor.acceptH4End();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH5Start(H5Start object) {
+			acceptor.acceptH5Start(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH5End(H5End object) {
+			acceptor.acceptH5End();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH6Start(H6Start object) {
+			acceptor.acceptH6Start(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseH6End(H6End object) {
+			acceptor.acceptH6End();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
 		public Boolean caseChapterStart(ChapterStart object) {
 			acceptor.acceptChapterStart(object.getContent());
 			computeNextPart(object);
@@ -907,20 +1045,6 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseSubsectionEnd(SubsectionEnd object) {
 			acceptor.acceptSubsectionEnd();
-			computeNextPart(object);
-			return Boolean.TRUE;
-		}
-
-		@Override
-		public Boolean caseH2Start(H2Start object) {
-			acceptor.acceptH2Start(object.getContent());
-			computeNextPart(object);
-			return Boolean.TRUE;
-		}
-
-		@Override
-		public Boolean caseH2End(H2End object) {
-			acceptor.acceptH2End();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

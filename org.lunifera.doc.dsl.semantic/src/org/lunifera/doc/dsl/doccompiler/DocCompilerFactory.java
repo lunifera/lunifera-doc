@@ -173,6 +173,70 @@ public interface DocCompilerFactory extends EFactory {
 	H2End createH2End();
 
 	/**
+	 * Returns a new object of class '<em>H3 Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H3 Start</em>'.
+	 * @generated
+	 */
+	H3Start createH3Start();
+
+	/**
+	 * Returns a new object of class '<em>H3 End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H3 End</em>'.
+	 * @generated
+	 */
+	H3End createH3End();
+
+	/**
+	 * Returns a new object of class '<em>H4 Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H4 Start</em>'.
+	 * @generated
+	 */
+	H4Start createH4Start();
+
+	/**
+	 * Returns a new object of class '<em>H4 End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H4 End</em>'.
+	 * @generated
+	 */
+	H4End createH4End();
+
+	/**
+	 * Returns a new object of class '<em>H5 Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H5 Start</em>'.
+	 * @generated
+	 */
+	H5Start createH5Start();
+
+	/**
+	 * Returns a new object of class '<em>H5 End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H5 End</em>'.
+	 * @generated
+	 */
+	H5End createH5End();
+
+	/**
+	 * Returns a new object of class '<em>H6 Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H6 Start</em>'.
+	 * @generated
+	 */
+	H6Start createH6Start();
+
+	/**
+	 * Returns a new object of class '<em>H6 End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>H6 End</em>'.
+	 * @generated
+	 */
+	H6End createH6End();
+
+	/**
 	 * Returns a new object of class '<em>Example Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Example Start</em>'.

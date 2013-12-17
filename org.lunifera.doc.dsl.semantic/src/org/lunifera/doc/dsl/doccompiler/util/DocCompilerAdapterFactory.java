@@ -30,6 +30,14 @@ import org.lunifera.doc.dsl.doccompiler.H1End;
 import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
+import org.lunifera.doc.dsl.doccompiler.H3End;
+import org.lunifera.doc.dsl.doccompiler.H3Start;
+import org.lunifera.doc.dsl.doccompiler.H4End;
+import org.lunifera.doc.dsl.doccompiler.H4Start;
+import org.lunifera.doc.dsl.doccompiler.H5End;
+import org.lunifera.doc.dsl.doccompiler.H5Start;
+import org.lunifera.doc.dsl.doccompiler.H6End;
+import org.lunifera.doc.dsl.doccompiler.H6Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
@@ -226,6 +234,46 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseH2End(H2End object) {
 			return createH2EndAdapter();
+		}
+
+		@Override
+		public Adapter caseH3Start(H3Start object) {
+			return createH3StartAdapter();
+		}
+
+		@Override
+		public Adapter caseH3End(H3End object) {
+			return createH3EndAdapter();
+		}
+
+		@Override
+		public Adapter caseH4Start(H4Start object) {
+			return createH4StartAdapter();
+		}
+
+		@Override
+		public Adapter caseH4End(H4End object) {
+			return createH4EndAdapter();
+		}
+
+		@Override
+		public Adapter caseH5Start(H5Start object) {
+			return createH5StartAdapter();
+		}
+
+		@Override
+		public Adapter caseH5End(H5End object) {
+			return createH5EndAdapter();
+		}
+
+		@Override
+		public Adapter caseH6Start(H6Start object) {
+			return createH6StartAdapter();
+		}
+
+		@Override
+		public Adapter caseH6End(H6End object) {
+			return createH6EndAdapter();
 		}
 
 		@Override
@@ -777,6 +825,110 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createH2EndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H3Start <em>H3 Start</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H3Start
+	 * @generated
+	 */
+	public Adapter createH3StartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H3End <em>H3 End</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H3End
+	 * @generated
+	 */
+	public Adapter createH3EndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H4Start <em>H4 Start</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H4Start
+	 * @generated
+	 */
+	public Adapter createH4StartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H4End <em>H4 End</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H4End
+	 * @generated
+	 */
+	public Adapter createH4EndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H5Start <em>H5 Start</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H5Start
+	 * @generated
+	 */
+	public Adapter createH5StartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H5End <em>H5 End</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H5End
+	 * @generated
+	 */
+	public Adapter createH5EndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H6Start <em>H6 Start</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H6Start
+	 * @generated
+	 */
+	public Adapter createH6StartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.H6End <em>H6 End</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.H6End
+	 * @generated
+	 */
+	public Adapter createH6EndAdapter() {
 		return null;
 	}
 

@@ -173,7 +173,8 @@ InternalRichString returns xbase::XExpression:
 
 RichStringPart returns xbase::XExpression:
 	XExpressionInsideBlock | RichStringForLoop | RichStringIf |
-	RichStringH1 | RichStringH2 | RichStringChapter | RichStringSection | RichStringSubsection | 
+	RichStringH1 | RichStringH2 | RichStringH3 | RichStringH4 | RichStringH5 | RichStringH6 | 
+	RichStringChapter | RichStringSection | RichStringSubsection | 
 	RichStringExample | RichStringURL | RichStringRef | RichStringMailto | 
 	RichStringSkype | RichStringMovie | RichStringImg |	RichStringBold | 
 	RichStringUnderline | RichStringItalic | RichStringCode | RichStringTable | RichStringList |
@@ -192,6 +193,22 @@ RichStringH1 returns xbase::XExpression:
 RichStringH2 returns xbase::XExpression:
 	{richstring::RichStringH2}
 	"h2" expression=InternalRichString "/h2";
+	
+RichStringH3 returns xbase::XExpression:
+	{richstring::RichStringH3}
+	"h3" expression=InternalRichString "/h3";
+
+RichStringH4 returns xbase::XExpression:
+	{richstring::RichStringH4}
+	"h4" expression=InternalRichString "/h4";
+	
+RichStringH5 returns xbase::XExpression:
+	{richstring::RichStringH5}
+	"h5" expression=InternalRichString "/h5";
+
+RichStringH6 returns xbase::XExpression:
+	{richstring::RichStringH6}
+	"h6" expression=InternalRichString "/h6";
 
 RichStringChapter returns xbase::XExpression:
 	{richstring::RichStringChapter}

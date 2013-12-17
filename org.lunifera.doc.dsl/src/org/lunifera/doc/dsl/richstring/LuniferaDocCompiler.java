@@ -37,6 +37,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
@@ -223,6 +227,70 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</h2>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptH3Start(RichStringH3 object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<h3>");
+		}
+
+		@Override
+		public void acceptH3End() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</h3>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptH4Start(RichStringH4 object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<h4>");
+		}
+
+		@Override
+		public void acceptH4End() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</h4>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptH5Start(RichStringH5 object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<h5>");
+		}
+
+		@Override
+		public void acceptH5End() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</h5>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptH6Start(RichStringH6 object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			append("<h6>");
+		}
+
+		@Override
+		public void acceptH6End() {
+			currentAppendable = null;
+			appendable.newLine();
+			append("</h6>");
 			popAppendable();
 		}
 

@@ -21,6 +21,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
@@ -142,6 +146,26 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseRichStringH2(RichStringH2 object) {
 			return createRichStringH2Adapter();
+		}
+
+		@Override
+		public Adapter caseRichStringH3(RichStringH3 object) {
+			return createRichStringH3Adapter();
+		}
+
+		@Override
+		public Adapter caseRichStringH4(RichStringH4 object) {
+			return createRichStringH4Adapter();
+		}
+
+		@Override
+		public Adapter caseRichStringH5(RichStringH5 object) {
+			return createRichStringH5Adapter();
+		}
+
+		@Override
+		public Adapter caseRichStringH6(RichStringH6 object) {
+			return createRichStringH6Adapter();
 		}
 
 		@Override
@@ -441,6 +465,62 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringH2Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3
+	 * <em>Rich String H3</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3
+	 * @generated
+	 */
+	public Adapter createRichStringH3Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4
+	 * <em>Rich String H4</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4
+	 * @generated
+	 */
+	public Adapter createRichStringH4Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5
+	 * <em>Rich String H5</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5
+	 * @generated
+	 */
+	public Adapter createRichStringH5Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6
+	 * <em>Rich String H6</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6
+	 * @generated
+	 */
+	public Adapter createRichStringH6Adapter() {
 		return null;
 	}
 

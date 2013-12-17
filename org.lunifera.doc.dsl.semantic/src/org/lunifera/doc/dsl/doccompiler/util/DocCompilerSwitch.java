@@ -29,6 +29,14 @@ import org.lunifera.doc.dsl.doccompiler.H1End;
 import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
+import org.lunifera.doc.dsl.doccompiler.H3End;
+import org.lunifera.doc.dsl.doccompiler.H3Start;
+import org.lunifera.doc.dsl.doccompiler.H4End;
+import org.lunifera.doc.dsl.doccompiler.H4Start;
+import org.lunifera.doc.dsl.doccompiler.H5End;
+import org.lunifera.doc.dsl.doccompiler.H5Start;
+import org.lunifera.doc.dsl.doccompiler.H6End;
+import org.lunifera.doc.dsl.doccompiler.H6Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
@@ -294,6 +302,78 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseH2End(h2End);
 			if (result == null)
 				result = caseLinePart(h2End);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H3_START: {
+			H3Start h3Start = (H3Start) theEObject;
+			T result = caseH3Start(h3Start);
+			if (result == null)
+				result = caseLinePart(h3Start);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H3_END: {
+			H3End h3End = (H3End) theEObject;
+			T result = caseH3End(h3End);
+			if (result == null)
+				result = caseLinePart(h3End);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H4_START: {
+			H4Start h4Start = (H4Start) theEObject;
+			T result = caseH4Start(h4Start);
+			if (result == null)
+				result = caseLinePart(h4Start);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H4_END: {
+			H4End h4End = (H4End) theEObject;
+			T result = caseH4End(h4End);
+			if (result == null)
+				result = caseLinePart(h4End);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H5_START: {
+			H5Start h5Start = (H5Start) theEObject;
+			T result = caseH5Start(h5Start);
+			if (result == null)
+				result = caseLinePart(h5Start);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H5_END: {
+			H5End h5End = (H5End) theEObject;
+			T result = caseH5End(h5End);
+			if (result == null)
+				result = caseLinePart(h5End);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H6_START: {
+			H6Start h6Start = (H6Start) theEObject;
+			T result = caseH6Start(h6Start);
+			if (result == null)
+				result = caseLinePart(h6Start);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.H6_END: {
+			H6End h6End = (H6End) theEObject;
+			T result = caseH6End(h6End);
+			if (result == null)
+				result = caseLinePart(h6End);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1067,6 +1147,118 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseH2End(H2End object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H3 Start</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H3 Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH3Start(H3Start object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H3 End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H3 End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH3End(H3End object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H4 Start</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H4 Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH4Start(H4Start object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H4 End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H4 End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH4End(H4End object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H5 Start</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H5 Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH5Start(H5Start object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H5 End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H5 End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH5End(H5End object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H6 Start</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H6 Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH6Start(H6Start object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>H6 End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>H6 End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseH6End(H6End object) {
 		return null;
 	}
 

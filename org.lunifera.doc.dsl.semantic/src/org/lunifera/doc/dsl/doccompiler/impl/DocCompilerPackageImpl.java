@@ -33,6 +33,14 @@ import org.lunifera.doc.dsl.doccompiler.H1End;
 import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
+import org.lunifera.doc.dsl.doccompiler.H3End;
+import org.lunifera.doc.dsl.doccompiler.H3Start;
+import org.lunifera.doc.dsl.doccompiler.H4End;
+import org.lunifera.doc.dsl.doccompiler.H4Start;
+import org.lunifera.doc.dsl.doccompiler.H5End;
+import org.lunifera.doc.dsl.doccompiler.H5Start;
+import org.lunifera.doc.dsl.doccompiler.H6End;
+import org.lunifera.doc.dsl.doccompiler.H6Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
@@ -225,6 +233,62 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass h2EndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h3StartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h3EndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h4StartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h4EndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h5StartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h5EndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h6StartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass h6EndEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1125,6 +1189,186 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 */
 	public EReference getH2End_Start() {
 		return (EReference) h2EndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH3Start() {
+		return h3StartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH3Start_Content() {
+		return (EReference) h3StartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH3Start_End() {
+		return (EReference) h3StartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH3End() {
+		return h3EndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH3End_Start() {
+		return (EReference) h3EndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH4Start() {
+		return h4StartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH4Start_Content() {
+		return (EReference) h4StartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH4Start_End() {
+		return (EReference) h4StartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH4End() {
+		return h4EndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH4End_Start() {
+		return (EReference) h4EndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH5Start() {
+		return h5StartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH5Start_Content() {
+		return (EReference) h5StartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH5Start_End() {
+		return (EReference) h5StartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH5End() {
+		return h5EndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH5End_Start() {
+		return (EReference) h5EndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH6Start() {
+		return h6StartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH6Start_Content() {
+		return (EReference) h6StartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH6Start_End() {
+		return (EReference) h6StartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getH6End() {
+		return h6EndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getH6End_Start() {
+		return (EReference) h6EndEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2493,6 +2737,34 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		h2EndEClass = createEClass(H2_END);
 		createEReference(h2EndEClass, H2_END__START);
 
+		h3StartEClass = createEClass(H3_START);
+		createEReference(h3StartEClass, H3_START__CONTENT);
+		createEReference(h3StartEClass, H3_START__END);
+
+		h3EndEClass = createEClass(H3_END);
+		createEReference(h3EndEClass, H3_END__START);
+
+		h4StartEClass = createEClass(H4_START);
+		createEReference(h4StartEClass, H4_START__CONTENT);
+		createEReference(h4StartEClass, H4_START__END);
+
+		h4EndEClass = createEClass(H4_END);
+		createEReference(h4EndEClass, H4_END__START);
+
+		h5StartEClass = createEClass(H5_START);
+		createEReference(h5StartEClass, H5_START__CONTENT);
+		createEReference(h5StartEClass, H5_START__END);
+
+		h5EndEClass = createEClass(H5_END);
+		createEReference(h5EndEClass, H5_END__START);
+
+		h6StartEClass = createEClass(H6_START);
+		createEReference(h6StartEClass, H6_START__CONTENT);
+		createEReference(h6StartEClass, H6_START__END);
+
+		h6EndEClass = createEClass(H6_END);
+		createEReference(h6EndEClass, H6_END__START);
+
 		exampleStartEClass = createEClass(EXAMPLE_START);
 		createEReference(exampleStartEClass, EXAMPLE_START__CONTENT);
 		createEReference(exampleStartEClass, EXAMPLE_START__END);
@@ -2742,6 +3014,14 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		h1EndEClass.getESuperTypes().add(this.getLinePart());
 		h2StartEClass.getESuperTypes().add(this.getLinePart());
 		h2EndEClass.getESuperTypes().add(this.getLinePart());
+		h3StartEClass.getESuperTypes().add(this.getLinePart());
+		h3EndEClass.getESuperTypes().add(this.getLinePart());
+		h4StartEClass.getESuperTypes().add(this.getLinePart());
+		h4EndEClass.getESuperTypes().add(this.getLinePart());
+		h5StartEClass.getESuperTypes().add(this.getLinePart());
+		h5EndEClass.getESuperTypes().add(this.getLinePart());
+		h6StartEClass.getESuperTypes().add(this.getLinePart());
+		h6EndEClass.getESuperTypes().add(this.getLinePart());
 		exampleStartEClass.getESuperTypes().add(this.getLinePart());
 		exampleEndEClass.getESuperTypes().add(this.getLinePart());
 		urlStartEClass.getESuperTypes().add(this.getLinePart());
@@ -2969,6 +3249,70 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getH2End_Start(), this.getH2Start(), this.getH2Start_End(), "start", null,
 				0, 1, H2End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h3StartEClass, H3Start.class, "H3Start", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH3Start_Content(), theRichstringPackage.getRichStringH3(), null,
+				"content", null, 0, 1, H3Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getH3Start_End(), this.getH3End(), this.getH3End_Start(), "end", null, 0, 1,
+				H3Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h3EndEClass, H3End.class, "H3End", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH3End_Start(), this.getH3Start(), this.getH3Start_End(), "start", null,
+				0, 1, H3End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h4StartEClass, H4Start.class, "H4Start", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH4Start_Content(), theRichstringPackage.getRichStringH4(), null,
+				"content", null, 0, 1, H4Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getH4Start_End(), this.getH4End(), this.getH4End_Start(), "end", null, 0, 1,
+				H4Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h4EndEClass, H4End.class, "H4End", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH4End_Start(), this.getH4Start(), this.getH4Start_End(), "start", null,
+				0, 1, H4End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h5StartEClass, H5Start.class, "H5Start", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH5Start_Content(), theRichstringPackage.getRichStringH5(), null,
+				"content", null, 0, 1, H5Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getH5Start_End(), this.getH5End(), this.getH5End_Start(), "end", null, 0, 1,
+				H5Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h5EndEClass, H5End.class, "H5End", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH5End_Start(), this.getH5Start(), this.getH5Start_End(), "start", null,
+				0, 1, H5End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h6StartEClass, H6Start.class, "H6Start", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH6Start_Content(), theRichstringPackage.getRichStringH6(), null,
+				"content", null, 0, 1, H6Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getH6Start_End(), this.getH6End(), this.getH6End_Start(), "end", null, 0, 1,
+				H6Start.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(h6EndEClass, H6End.class, "H6End", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getH6End_Start(), this.getH6Start(), this.getH6Start_End(), "start", null,
+				0, 1, H6End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exampleStartEClass, ExampleStart.class, "ExampleStart", !IS_ABSTRACT,

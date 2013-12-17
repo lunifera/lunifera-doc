@@ -23,6 +23,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
@@ -105,6 +109,38 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 
 	@Override
 	public void acceptH2End() {
+	}
+
+	@Override
+	public void acceptH3Start(RichStringH3 object) {
+	}
+
+	@Override
+	public void acceptH3End() {
+	}
+
+	@Override
+	public void acceptH4Start(RichStringH4 object) {
+	}
+
+	@Override
+	public void acceptH4End() {
+	}
+
+	@Override
+	public void acceptH5Start(RichStringH5 object) {
+	}
+
+	@Override
+	public void acceptH5End() {
+	}
+
+	@Override
+	public void acceptH6Start(RichStringH6 object) {
+	}
+
+	@Override
+	public void acceptH6End() {
 	}
 
 	@Override

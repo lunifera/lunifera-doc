@@ -32,6 +32,14 @@ import org.lunifera.doc.dsl.doccompiler.H1End;
 import org.lunifera.doc.dsl.doccompiler.H1Start;
 import org.lunifera.doc.dsl.doccompiler.H2End;
 import org.lunifera.doc.dsl.doccompiler.H2Start;
+import org.lunifera.doc.dsl.doccompiler.H3End;
+import org.lunifera.doc.dsl.doccompiler.H3Start;
+import org.lunifera.doc.dsl.doccompiler.H4End;
+import org.lunifera.doc.dsl.doccompiler.H4Start;
+import org.lunifera.doc.dsl.doccompiler.H5End;
+import org.lunifera.doc.dsl.doccompiler.H5Start;
+import org.lunifera.doc.dsl.doccompiler.H6End;
+import org.lunifera.doc.dsl.doccompiler.H6Start;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
 import org.lunifera.doc.dsl.doccompiler.ImgStart;
 import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
@@ -163,6 +171,22 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createH2Start();
 		case DocCompilerPackage.H2_END:
 			return createH2End();
+		case DocCompilerPackage.H3_START:
+			return createH3Start();
+		case DocCompilerPackage.H3_END:
+			return createH3End();
+		case DocCompilerPackage.H4_START:
+			return createH4Start();
+		case DocCompilerPackage.H4_END:
+			return createH4End();
+		case DocCompilerPackage.H5_START:
+			return createH5Start();
+		case DocCompilerPackage.H5_END:
+			return createH5End();
+		case DocCompilerPackage.H6_START:
+			return createH6Start();
+		case DocCompilerPackage.H6_END:
+			return createH6End();
 		case DocCompilerPackage.EXAMPLE_START:
 			return createExampleStart();
 		case DocCompilerPackage.EXAMPLE_END:
@@ -467,6 +491,86 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public H2End createH2End() {
 		H2EndImpl h2End = new H2EndImpl();
 		return h2End;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H3Start createH3Start() {
+		H3StartImpl h3Start = new H3StartImpl();
+		return h3Start;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H3End createH3End() {
+		H3EndImpl h3End = new H3EndImpl();
+		return h3End;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H4Start createH4Start() {
+		H4StartImpl h4Start = new H4StartImpl();
+		return h4Start;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H4End createH4End() {
+		H4EndImpl h4End = new H4EndImpl();
+		return h4End;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H5Start createH5Start() {
+		H5StartImpl h5Start = new H5StartImpl();
+		return h5Start;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H5End createH5End() {
+		H5EndImpl h5End = new H5EndImpl();
+		return h5End;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H6Start createH6Start() {
+		H6StartImpl h6Start = new H6StartImpl();
+		return h6Start;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public H6End createH6End() {
+		H6EndImpl h6End = new H6EndImpl();
+		return h6End;
 	}
 
 	/**

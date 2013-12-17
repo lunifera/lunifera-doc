@@ -18,6 +18,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
@@ -105,6 +109,14 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringH1();
 		case RichstringPackage.RICH_STRING_H2:
 			return createRichStringH2();
+		case RichstringPackage.RICH_STRING_H3:
+			return createRichStringH3();
+		case RichstringPackage.RICH_STRING_H4:
+			return createRichStringH4();
+		case RichstringPackage.RICH_STRING_H5:
+			return createRichStringH5();
+		case RichstringPackage.RICH_STRING_H6:
+			return createRichStringH6();
 		case RichstringPackage.RICH_STRING_CHAPTER:
 			return createRichStringChapter();
 		case RichstringPackage.RICH_STRING_SECTION:
@@ -253,6 +265,46 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringH2 createRichStringH2() {
 		RichStringH2Impl richStringH2 = new RichStringH2Impl();
 		return richStringH2;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringH3 createRichStringH3() {
+		RichStringH3Impl richStringH3 = new RichStringH3Impl();
+		return richStringH3;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringH4 createRichStringH4() {
+		RichStringH4Impl richStringH4 = new RichStringH4Impl();
+		return richStringH4;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringH5 createRichStringH5() {
+		RichStringH5Impl richStringH5 = new RichStringH5Impl();
+		return richStringH5;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringH6 createRichStringH6() {
+		RichStringH6Impl richStringH6 = new RichStringH6Impl();
+		return richStringH6;
 	}
 
 	/**

@@ -82,6 +82,38 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H2Start"
         eOpposite="#//H2Start/end"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H3Start" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringH3"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H3End" eOpposite="#//H3End/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H3End" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H3Start"
+        eOpposite="#//H3Start/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H4Start" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringH4"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H4End" eOpposite="#//H4End/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H4End" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H4Start"
+        eOpposite="#//H4Start/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H5Start" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringH5"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H5End" eOpposite="#//H5End/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H5End" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H5Start"
+        eOpposite="#//H5Start/end"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H6Start" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringH6"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H6End" eOpposite="#//H6End/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H6End" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H6Start"
+        eOpposite="#//H6Start/end"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExampleStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringExample"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ExampleEnd"
