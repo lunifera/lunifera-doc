@@ -23,7 +23,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface RichStringMovie extends XExpression {
+public interface RichStringMovie extends RichStringMarkup {
 	/**
 	 * Returns the value of the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>

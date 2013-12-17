@@ -2,8 +2,6 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.richstring;
 
-import org.eclipse.xtext.xbase.XExpression;
-
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Rich String Img</b></em>'. <!-- end-user-doc -->
  * 
@@ -21,7 +19,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface RichStringImg extends XExpression {
+public interface RichStringImg extends RichStringMarkup {
 	/**
 	 * Returns the value of the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>

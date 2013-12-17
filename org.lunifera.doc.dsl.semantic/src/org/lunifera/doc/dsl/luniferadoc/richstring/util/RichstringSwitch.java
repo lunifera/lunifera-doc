@@ -225,6 +225,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 			RichStringURL richStringURL = (RichStringURL) theEObject;
 			T result = caseRichStringURL(richStringURL);
 			if (result == null)
+				result = caseRichStringMarkup(richStringURL);
+			if (result == null)
 				result = caseXExpression(richStringURL);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -278,6 +280,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 			RichStringImg richStringImg = (RichStringImg) theEObject;
 			T result = caseRichStringImg(richStringImg);
 			if (result == null)
+				result = caseRichStringMarkup(richStringImg);
+			if (result == null)
 				result = caseXExpression(richStringImg);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -286,6 +290,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 		case RichstringPackage.RICH_STRING_MAILTO: {
 			RichStringMailto richStringMailto = (RichStringMailto) theEObject;
 			T result = caseRichStringMailto(richStringMailto);
+			if (result == null)
+				result = caseRichStringMarkup(richStringMailto);
 			if (result == null)
 				result = caseXExpression(richStringMailto);
 			if (result == null)
@@ -296,6 +302,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 			RichStringSkype richStringSkype = (RichStringSkype) theEObject;
 			T result = caseRichStringSkype(richStringSkype);
 			if (result == null)
+				result = caseRichStringMarkup(richStringSkype);
+			if (result == null)
 				result = caseXExpression(richStringSkype);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -305,6 +313,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 			RichStringMovie richStringMovie = (RichStringMovie) theEObject;
 			T result = caseRichStringMovie(richStringMovie);
 			if (result == null)
+				result = caseRichStringMarkup(richStringMovie);
+			if (result == null)
 				result = caseXExpression(richStringMovie);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -313,6 +323,8 @@ public class RichstringSwitch<T> extends Switch<T> {
 		case RichstringPackage.RICH_STRING_CODE: {
 			RichStringCode richStringCode = (RichStringCode) theEObject;
 			T result = caseRichStringCode(richStringCode);
+			if (result == null)
+				result = caseRichStringMarkup(richStringCode);
 			if (result == null)
 				result = caseXExpression(richStringCode);
 			if (result == null)

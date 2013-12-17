@@ -5,7 +5,6 @@ package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.xtext.xbase.impl.XExpressionImpl;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -24,7 +23,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * 
  * @generated
  */
-public class RichStringImgImpl extends XExpressionImpl implements RichStringImg {
+public class RichStringImgImpl extends RichStringMarkupImpl implements RichStringImg {
 	/**
 	 * The default value of the '{@link #getSrc() <em>Src</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->

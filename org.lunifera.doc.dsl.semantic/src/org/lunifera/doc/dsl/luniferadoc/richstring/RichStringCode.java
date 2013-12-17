@@ -20,7 +20,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface RichStringCode extends XExpression {
+public interface RichStringCode extends RichStringMarkup {
 	/**
 	 * Returns the value of the '<em><b>Lang</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>

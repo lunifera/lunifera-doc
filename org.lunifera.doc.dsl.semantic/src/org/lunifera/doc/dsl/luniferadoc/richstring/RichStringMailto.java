@@ -20,7 +20,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface RichStringMailto extends XExpression {
+public interface RichStringMailto extends RichStringMarkup {
 	/**
 	 * Returns the value of the '<em><b>Email</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>

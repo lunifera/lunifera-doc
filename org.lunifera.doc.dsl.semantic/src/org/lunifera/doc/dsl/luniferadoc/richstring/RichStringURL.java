@@ -19,7 +19,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface RichStringURL extends XExpression {
+public interface RichStringURL extends RichStringMarkup {
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>

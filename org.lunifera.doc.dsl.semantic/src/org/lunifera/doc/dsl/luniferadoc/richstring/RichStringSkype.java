@@ -20,7 +20,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface RichStringSkype extends XExpression {
+public interface RichStringSkype extends RichStringMarkup {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>

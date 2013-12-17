@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.xtext.xbase.XExpression;
-import org.eclipse.xtext.xbase.impl.XExpressionImpl;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -28,7 +27,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * 
  * @generated
  */
-public class RichStringMovieImpl extends XExpressionImpl implements RichStringMovie {
+public class RichStringMovieImpl extends RichStringMarkupImpl implements RichStringMovie {
 	/**
 	 * The default value of the '{@link #getSrc() <em>Src</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->

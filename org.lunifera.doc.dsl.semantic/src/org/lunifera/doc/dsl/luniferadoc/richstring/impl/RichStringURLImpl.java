@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.xtext.xbase.XExpression;
-import org.eclipse.xtext.xbase.impl.XExpressionImpl;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
@@ -25,7 +24,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
  * 
  * @generated
  */
-public class RichStringURLImpl extends XExpressionImpl implements RichStringURL {
+public class RichStringURLImpl extends RichStringMarkupImpl implements RichStringURL {
 	/**
 	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->

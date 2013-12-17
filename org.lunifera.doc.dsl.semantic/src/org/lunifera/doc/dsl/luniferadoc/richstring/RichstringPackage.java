@@ -589,12 +589,37 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_URL = 12;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_URL__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_URL__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_URL__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_URL__LOCATION = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+	int RICH_STRING_URL__LOCATION = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -603,7 +628,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_URL__TEXT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_URL__TEXT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Rich String URL</em>' class. <!-- begin-user-doc --> <!--
@@ -612,7 +637,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_URL_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+	int RICH_STRING_URL_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringRefImpl
@@ -809,12 +834,37 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_IMG = 17;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_IMG__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_IMG__SRC = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+	int RICH_STRING_IMG__SRC = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Alt</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -822,7 +872,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_IMG__ALT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_IMG__ALT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -830,7 +880,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_IMG__WIDTH = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+	int RICH_STRING_IMG__WIDTH = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -838,7 +888,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_IMG__HEIGHT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 3;
+	int RICH_STRING_IMG__HEIGHT = RICH_STRING_MARKUP_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Rich String Img</em>' class. <!-- begin-user-doc --> <!--
@@ -847,7 +897,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_IMG_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 4;
+	int RICH_STRING_IMG_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMailtoImpl
@@ -860,12 +910,37 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_MAILTO = 18;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MAILTO__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MAILTO__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MAILTO__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MAILTO__EMAIL = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+	int RICH_STRING_MAILTO__EMAIL = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -874,7 +949,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MAILTO__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_MAILTO__CONTENT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Rich String Mailto</em>' class. <!-- begin-user-doc --> <!--
@@ -883,7 +958,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MAILTO_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+	int RICH_STRING_MAILTO_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSkypeImpl
@@ -896,12 +971,37 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SKYPE = 19;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SKYPE__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SKYPE__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SKYPE__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SKYPE__TARGET = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+	int RICH_STRING_SKYPE__TARGET = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -910,7 +1010,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SKYPE__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_SKYPE__CONTENT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Rich String Skype</em>' class. <!-- begin-user-doc --> <!--
@@ -919,7 +1019,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SKYPE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+	int RICH_STRING_SKYPE_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringMovieImpl
@@ -932,12 +1032,37 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_MOVIE = 20;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_MOVIE__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Src</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MOVIE__SRC = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+	int RICH_STRING_MOVIE__SRC = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -945,7 +1070,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MOVIE__WIDTH = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_MOVIE__WIDTH = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -953,7 +1078,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MOVIE__HEIGHT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+	int RICH_STRING_MOVIE__HEIGHT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -961,7 +1086,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MOVIE__TYPE = XbasePackage.XEXPRESSION_FEATURE_COUNT + 3;
+	int RICH_STRING_MOVIE__TYPE = RICH_STRING_MARKUP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -970,7 +1095,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MOVIE__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 4;
+	int RICH_STRING_MOVIE__CONTENT = RICH_STRING_MARKUP_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Rich String Movie</em>' class. <!-- begin-user-doc --> <!--
@@ -979,7 +1104,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MOVIE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 5;
+	int RICH_STRING_MOVIE_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringCodeImpl
@@ -992,12 +1117,37 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_CODE = 21;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CODE__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CODE__CLASS = RICH_STRING_MARKUP__CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CODE__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Lang</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_CODE__LANG = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+	int RICH_STRING_CODE__LANG = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1006,7 +1156,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_CODE__CONTENT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_CODE__CONTENT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Rich String Code</em>' class. <!-- begin-user-doc --> <!--
@@ -1015,7 +1165,7 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_CODE_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
+	int RICH_STRING_CODE_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableImpl
