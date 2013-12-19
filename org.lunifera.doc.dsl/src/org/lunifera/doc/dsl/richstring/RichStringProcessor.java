@@ -76,6 +76,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SpanEnd;
+import org.lunifera.doc.dsl.doccompiler.SpanStart;
 import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
 import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
@@ -129,6 +131,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
@@ -654,6 +657,20 @@ public class RichStringProcessor {
 		}
 
 		@Override
+		public Boolean caseRichStringSpan(RichStringSpan object) {
+			SpanStart start = factory.createSpanStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			SpanEnd end = factory.createSpanEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
 		public Boolean caseRichStringOpenView(RichStringOpenView object) {
 			OpenViewStart start = factory.createOpenViewStart();
 			start.setContent(object);
@@ -1087,6 +1104,20 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseItalicEnd(ItalicEnd object) {
 			acceptor.acceptItalicEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseSpanStart(SpanStart object) {
+			acceptor.acceptSpanStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseSpanEnd(SpanEnd object) {
+			acceptor.acceptSpanEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

@@ -71,6 +71,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SpanEnd;
+import org.lunifera.doc.dsl.doccompiler.SpanStart;
 import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
 import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
@@ -211,6 +213,10 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 			return createItalicStart();
 		case DocCompilerPackage.ITALIC_END:
 			return createItalicEnd();
+		case DocCompilerPackage.SPAN_START:
+			return createSpanStart();
+		case DocCompilerPackage.SPAN_END:
+			return createSpanEnd();
 		case DocCompilerPackage.IMG_START:
 			return createImgStart();
 		case DocCompilerPackage.MAILTO_START:
@@ -691,6 +697,26 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	public ItalicEnd createItalicEnd() {
 		ItalicEndImpl italicEnd = new ItalicEndImpl();
 		return italicEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SpanStart createSpanStart() {
+		SpanStartImpl spanStart = new SpanStartImpl();
+		return spanStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public SpanEnd createSpanEnd() {
+		SpanEndImpl spanEnd = new SpanEndImpl();
+		return spanEnd;
 	}
 
 	/**

@@ -1898,6 +1898,99 @@ public interface DocCompilerPackage extends EPackage {
 	int ITALIC_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SpanStartImpl <em>Span Start</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SpanStartImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSpanStart()
+	 * @generated
+	 */
+	int SPAN_START = 39;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_START__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_START__END = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Span Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Span Start</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SpanEndImpl <em>Span End</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.SpanEndImpl
+	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSpanEnd()
+	 * @generated
+	 */
+	int SPAN_END = 40;
+
+	/**
+	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_END__LINE = LINE_PART__LINE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_END__START = LINE_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Span End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Span End</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SPAN_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ImgStartImpl <em>Img Start</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1905,7 +1998,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getImgStart()
 	 * @generated
 	 */
-	int IMG_START = 39;
+	int IMG_START = 41;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1948,7 +2041,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getMailtoStart()
 	 * @generated
 	 */
-	int MAILTO_START = 40;
+	int MAILTO_START = 42;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1999,7 +2092,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getMailtoEnd()
 	 * @generated
 	 */
-	int MAILTO_END = 41;
+	int MAILTO_END = 43;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2042,7 +2135,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSkypeStart()
 	 * @generated
 	 */
-	int SKYPE_START = 42;
+	int SKYPE_START = 44;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2093,7 +2186,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSkypeEnd()
 	 * @generated
 	 */
-	int SKYPE_END = 43;
+	int SKYPE_END = 45;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2136,7 +2229,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getMovieStart()
 	 * @generated
 	 */
-	int MOVIE_START = 44;
+	int MOVIE_START = 46;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2187,7 +2280,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getMovieEnd()
 	 * @generated
 	 */
-	int MOVIE_END = 45;
+	int MOVIE_END = 47;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2230,7 +2323,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getCodeStart()
 	 * @generated
 	 */
-	int CODE_START = 46;
+	int CODE_START = 48;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2281,7 +2374,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getCodeEnd()
 	 * @generated
 	 */
-	int CODE_END = 47;
+	int CODE_END = 49;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2323,7 +2416,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTableStart()
 	 * @generated
 	 */
-	int TABLE_START = 48;
+	int TABLE_START = 50;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2382,7 +2475,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTableEnd()
 	 * @generated
 	 */
-	int TABLE_END = 49;
+	int TABLE_END = 51;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2425,7 +2518,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTableRowStart()
 	 * @generated
 	 */
-	int TABLE_ROW_START = 50;
+	int TABLE_ROW_START = 52;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2484,7 +2577,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTableRowEnd()
 	 * @generated
 	 */
-	int TABLE_ROW_END = 51;
+	int TABLE_ROW_END = 53;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2527,7 +2620,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTableDataStart()
 	 * @generated
 	 */
-	int TABLE_DATA_START = 52;
+	int TABLE_DATA_START = 54;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2578,7 +2671,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTableDataEnd()
 	 * @generated
 	 */
-	int TABLE_DATA_END = 53;
+	int TABLE_DATA_END = 55;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2621,7 +2714,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getListStart()
 	 * @generated
 	 */
-	int LIST_START = 54;
+	int LIST_START = 56;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2680,7 +2773,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getListEnd()
 	 * @generated
 	 */
-	int LIST_END = 55;
+	int LIST_END = 57;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2722,7 +2815,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOrderedListStart()
 	 * @generated
 	 */
-	int ORDERED_LIST_START = 56;
+	int ORDERED_LIST_START = 58;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2782,7 +2875,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOrderedListEnd()
 	 * @generated
 	 */
-	int ORDERED_LIST_END = 57;
+	int ORDERED_LIST_END = 59;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2825,7 +2918,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getListElementStart()
 	 * @generated
 	 */
-	int LIST_ELEMENT_START = 58;
+	int LIST_ELEMENT_START = 60;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2877,7 +2970,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getListElementEnd()
 	 * @generated
 	 */
-	int LIST_ELEMENT_END = 59;
+	int LIST_ELEMENT_END = 61;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2920,7 +3013,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getChapterStart()
 	 * @generated
 	 */
-	int CHAPTER_START = 60;
+	int CHAPTER_START = 62;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2971,7 +3064,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getChapterEnd()
 	 * @generated
 	 */
-	int CHAPTER_END = 61;
+	int CHAPTER_END = 63;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3014,7 +3107,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSectionStart()
 	 * @generated
 	 */
-	int SECTION_START = 62;
+	int SECTION_START = 64;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3065,7 +3158,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSectionEnd()
 	 * @generated
 	 */
-	int SECTION_END = 63;
+	int SECTION_END = 65;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3108,7 +3201,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSubsectionStart()
 	 * @generated
 	 */
-	int SUBSECTION_START = 64;
+	int SUBSECTION_START = 66;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3159,7 +3252,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSubsectionEnd()
 	 * @generated
 	 */
-	int SUBSECTION_END = 65;
+	int SUBSECTION_END = 67;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3202,7 +3295,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOpenViewStart()
 	 * @generated
 	 */
-	int OPEN_VIEW_START = 66;
+	int OPEN_VIEW_START = 68;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3253,7 +3346,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getOpenViewEnd()
 	 * @generated
 	 */
-	int OPEN_VIEW_END = 67;
+	int OPEN_VIEW_END = 69;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3296,7 +3389,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getStartProcessStart()
 	 * @generated
 	 */
-	int START_PROCESS_START = 68;
+	int START_PROCESS_START = 70;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3348,7 +3441,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getStartProcessEnd()
 	 * @generated
 	 */
-	int START_PROCESS_END = 69;
+	int START_PROCESS_END = 71;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3391,7 +3484,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getEntityRefStart()
 	 * @generated
 	 */
-	int ENTITY_REF_START = 70;
+	int ENTITY_REF_START = 72;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3442,7 +3535,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getEntityRefEnd()
 	 * @generated
 	 */
-	int ENTITY_REF_END = 71;
+	int ENTITY_REF_END = 73;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3485,7 +3578,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getDTORefStart()
 	 * @generated
 	 */
-	int DTO_REF_START = 72;
+	int DTO_REF_START = 74;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3536,7 +3629,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getDTORefEnd()
 	 * @generated
 	 */
-	int DTO_REF_END = 73;
+	int DTO_REF_END = 75;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3579,7 +3672,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getProcessRefStart()
 	 * @generated
 	 */
-	int PROCESS_REF_START = 74;
+	int PROCESS_REF_START = 76;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3630,7 +3723,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getProcessRefEnd()
 	 * @generated
 	 */
-	int PROCESS_REF_END = 75;
+	int PROCESS_REF_END = 77;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3673,7 +3766,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTaskRefStart()
 	 * @generated
 	 */
-	int TASK_REF_START = 76;
+	int TASK_REF_START = 78;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3724,7 +3817,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getTaskRefEnd()
 	 * @generated
 	 */
-	int TASK_REF_END = 77;
+	int TASK_REF_END = 79;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3767,7 +3860,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getViewRefStart()
 	 * @generated
 	 */
-	int VIEW_REF_START = 78;
+	int VIEW_REF_START = 80;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3818,7 +3911,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getViewRefEnd()
 	 * @generated
 	 */
-	int VIEW_REF_END = 79;
+	int VIEW_REF_END = 81;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3861,7 +3954,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getUIRefStart()
 	 * @generated
 	 */
-	int UI_REF_START = 80;
+	int UI_REF_START = 82;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3912,7 +4005,7 @@ public interface DocCompilerPackage extends EPackage {
 	 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getUIRefEnd()
 	 * @generated
 	 */
-	int UI_REF_END = 81;
+	int UI_REF_END = 83;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -5015,6 +5108,59 @@ public interface DocCompilerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getItalicEnd_Start();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SpanStart <em>Span Start</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Span Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SpanStart
+	 * @generated
+	 */
+	EClass getSpanStart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SpanStart#getContent
+	 * <em>Content</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SpanStart#getContent()
+	 * @see #getSpanStart()
+	 * @generated
+	 */
+	EReference getSpanStart_Content();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SpanStart#getEnd <em>End</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SpanStart#getEnd()
+	 * @see #getSpanStart()
+	 * @generated
+	 */
+	EReference getSpanStart_End();
+
+	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.SpanEnd <em>Span End</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Span End</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SpanEnd
+	 * @generated
+	 */
+	EClass getSpanEnd();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.doccompiler.SpanEnd#getStart
+	 * <em>Start</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Start</em>'.
+	 * @see org.lunifera.doc.dsl.doccompiler.SpanEnd#getStart()
+	 * @see #getSpanEnd()
+	 * @generated
+	 */
+	EReference getSpanEnd_Start();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.doccompiler.ImgStart <em>Img Start</em>}'. <!--
@@ -7099,6 +7245,50 @@ public interface DocCompilerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ITALIC_END__START = eINSTANCE.getItalicEnd_Start();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SpanStartImpl
+		 * <em>Span Start</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SpanStartImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSpanStart()
+		 * @generated
+		 */
+		EClass SPAN_START = eINSTANCE.getSpanStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SPAN_START__CONTENT = eINSTANCE.getSpanStart_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SPAN_START__END = eINSTANCE.getSpanStart_End();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.SpanEndImpl <em>Span End</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.SpanEndImpl
+		 * @see org.lunifera.doc.dsl.doccompiler.impl.DocCompilerPackageImpl#getSpanEnd()
+		 * @generated
+		 */
+		EClass SPAN_END = eINSTANCE.getSpanEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference SPAN_END__START = eINSTANCE.getSpanEnd_Start();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.doccompiler.impl.ImgStartImpl

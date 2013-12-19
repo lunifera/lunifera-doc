@@ -12,7 +12,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getId <em>Id</em>}</li>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getClass_ <em>Class</em>}</li>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getStyleClass <em>Style Class</em>}</li>
  * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
@@ -49,31 +49,31 @@ public interface RichStringMarkup extends XExpression {
 	void setId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Class</em>' attribute isn't clear, there really should be more of a description
+	 * If the meaning of the '<em>Style Class</em>' attribute isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return the value of the '<em>Class</em>' attribute.
-	 * @see #setClass(String)
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringMarkup_Class()
+	 * @return the value of the '<em>Style Class</em>' attribute.
+	 * @see #setStyleClass(String)
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringMarkup_StyleClass()
 	 * @model
 	 * @generated
 	 */
-	String getClass_();
+	String getStyleClass();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getClass_
-	 * <em>Class</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getStyleClass
+	 * <em>Style Class</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Class</em>' attribute.
-	 * @see #getClass_()
+	 *            the new value of the '<em>Style Class</em>' attribute.
+	 * @see #getStyleClass()
 	 * @generated
 	 */
-	void setClass(String value);
+	void setStyleClass(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc -->

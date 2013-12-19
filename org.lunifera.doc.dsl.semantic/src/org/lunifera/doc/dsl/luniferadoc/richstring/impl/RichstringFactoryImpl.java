@@ -37,6 +37,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
@@ -171,6 +172,8 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 			return createRichStringOrderedList();
 		case RichstringPackage.RICH_STRING_LIST_ELEMENT:
 			return createRichStringListElement();
+		case RichstringPackage.RICH_STRING_SPAN:
+			return createRichStringSpan();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -575,6 +578,16 @@ public class RichstringFactoryImpl extends EFactoryImpl implements RichstringFac
 	public RichStringListElement createRichStringListElement() {
 		RichStringListElementImpl richStringListElement = new RichStringListElementImpl();
 		return richStringListElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public RichStringSpan createRichStringSpan() {
+		RichStringSpanImpl richStringSpan = new RichStringSpanImpl();
+		return richStringSpan;
 	}
 
 	/**

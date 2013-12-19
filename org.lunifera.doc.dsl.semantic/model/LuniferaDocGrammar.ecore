@@ -152,7 +152,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringMarkup" eSuperTypes="../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
           containment="true"/>
     </eClassifiers>
@@ -268,5 +268,6 @@
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringListElement" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringSpan" eSuperTypes="#//richstring/RichStringMarkup"/>
   </eSubpackages>
 </ecore:EPackage>

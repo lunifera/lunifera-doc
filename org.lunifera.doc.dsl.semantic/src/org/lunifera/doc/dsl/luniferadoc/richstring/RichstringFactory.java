@@ -341,6 +341,14 @@ public interface RichstringFactory extends EFactory {
 	RichStringListElement createRichStringListElement();
 
 	/**
+	 * Returns a new object of class '<em>Rich String Span</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Rich String Span</em>'.
+	 * @generated
+	 */
+	RichStringSpan createRichStringSpan();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the package supported by this factory.

@@ -289,12 +289,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_MARKUP__ID = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MARKUP__CLASS = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
+	int RICH_STRING_MARKUP__STYLE_CLASS = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -333,12 +333,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_EXAMPLE__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_EXAMPLE__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_EXAMPLE__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -377,12 +377,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H1__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_H1__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_H1__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -421,12 +421,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H2__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_H2__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_H2__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -465,12 +465,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H3__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_H3__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_H3__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -509,12 +509,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H4__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_H4__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_H4__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -553,12 +553,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H5__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_H5__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_H5__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -597,12 +597,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_H6__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_H6__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_H6__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -641,12 +641,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_CHAPTER__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_CHAPTER__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_CHAPTER__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -685,12 +685,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SECTION__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SECTION__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_SECTION__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -729,12 +729,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SUBSECTION__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SUBSECTION__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_SUBSECTION__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -773,12 +773,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_URL__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_URL__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_URL__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -834,12 +834,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_REF__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_REF__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -886,12 +886,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_BOLD__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_BOLD__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_BOLD__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -930,12 +930,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_UNDERLINE__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_UNDERLINE__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_UNDERLINE__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -974,12 +974,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_ITALIC__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_ITALIC__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_ITALIC__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1018,12 +1018,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_IMG__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_IMG__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_IMG__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1094,12 +1094,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_MAILTO__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MAILTO__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_MAILTO__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1155,12 +1155,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SKYPE__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SKYPE__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_SKYPE__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1216,12 +1216,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_MOVIE__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_MOVIE__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_MOVIE__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1301,12 +1301,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_CODE__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_CODE__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_CODE__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1362,12 +1362,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_TABLE__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_TABLE__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1424,12 +1424,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_TABLE_ROW__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_ROW__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_TABLE_ROW__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1486,12 +1486,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_TABLE_DATA__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_DATA__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_TABLE_DATA__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1530,12 +1530,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_OPEN_VIEW__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_OPEN_VIEW__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_OPEN_VIEW__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1582,12 +1582,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_START_PROCESS__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_START_PROCESS__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_START_PROCESS__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1634,12 +1634,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_ENTITY_REF__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_ENTITY_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_ENTITY_REF__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1686,12 +1686,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_DTO_REF__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_DTO_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_DTO_REF__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1738,12 +1738,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_PROCESS_REF__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_PROCESS_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_PROCESS_REF__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1790,12 +1790,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_TASK_REF__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TASK_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_TASK_REF__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1842,12 +1842,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_VIEW_REF__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_VIEW_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_VIEW_REF__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1894,12 +1894,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_UI_REF__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_UI_REF__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_UI_REF__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -1946,12 +1946,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_LIST__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_LIST__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_LIST__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -2008,12 +2008,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_ORDERED_LIST__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_ORDERED_LIST__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_ORDERED_LIST__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -2070,12 +2070,12 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_LIST_ELEMENT__ID = RICH_STRING_MARKUP__ID;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_LIST_ELEMENT__CLASS = RICH_STRING_MARKUP__CLASS;
+	int RICH_STRING_LIST_ELEMENT__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -2094,6 +2094,50 @@ public interface RichstringPackage extends EPackage {
 	 * @ordered
 	 */
 	int RICH_STRING_LIST_ELEMENT_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSpanImpl
+	 * <em>Rich String Span</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSpanImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSpan()
+	 * @generated
+	 */
+	int RICH_STRING_SPAN = 40;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SPAN__ID = RICH_STRING_MARKUP__ID;
+
+	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SPAN__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SPAN__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Rich String Span</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SPAN_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
@@ -2277,15 +2321,15 @@ public interface RichstringPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getClass_ <em>Class</em>}'. <!--
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getStyleClass <em>Style Class</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getClass_()
+	 * @return the meta object for the attribute '<em>Style Class</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup#getStyleClass()
 	 * @see #getRichStringMarkup()
 	 * @generated
 	 */
-	EAttribute getRichStringMarkup_Class();
+	EAttribute getRichStringMarkup_StyleClass();
 
 	/**
 	 * Returns the meta object for the containment reference '
@@ -3048,6 +3092,16 @@ public interface RichstringPackage extends EPackage {
 	EClass getRichStringListElement();
 
 	/**
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan
+	 * <em>Rich String Span</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Rich String Span</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan
+	 * @generated
+	 */
+	EClass getRichStringSpan();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the factory that creates the instances of the model.
@@ -3213,12 +3267,12 @@ public interface RichstringPackage extends EPackage {
 		EAttribute RICH_STRING_MARKUP__ID = eINSTANCE.getRichStringMarkup_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Style Class</b></em>' attribute feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute RICH_STRING_MARKUP__CLASS = eINSTANCE.getRichStringMarkup_Class();
+		EAttribute RICH_STRING_MARKUP__STYLE_CLASS = eINSTANCE.getRichStringMarkup_StyleClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature. <!--
@@ -3863,6 +3917,16 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RICH_STRING_LIST_ELEMENT = eINSTANCE.getRichStringListElement();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSpanImpl
+		 * <em>Rich String Span</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSpanImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichstringPackageImpl#getRichStringSpan()
+		 * @generated
+		 */
+		EClass RICH_STRING_SPAN = eINSTANCE.getRichStringSpan();
 
 	}
 

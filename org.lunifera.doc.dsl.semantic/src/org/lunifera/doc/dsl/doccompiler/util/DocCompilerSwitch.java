@@ -68,6 +68,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SpanEnd;
+import org.lunifera.doc.dsl.doccompiler.SpanStart;
 import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
 import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
@@ -482,6 +484,24 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 			T result = caseItalicEnd(italicEnd);
 			if (result == null)
 				result = caseLinePart(italicEnd);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.SPAN_START: {
+			SpanStart spanStart = (SpanStart) theEObject;
+			T result = caseSpanStart(spanStart);
+			if (result == null)
+				result = caseLinePart(spanStart);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DocCompilerPackage.SPAN_END: {
+			SpanEnd spanEnd = (SpanEnd) theEObject;
+			T result = caseSpanEnd(spanEnd);
+			if (result == null)
+				result = caseLinePart(spanEnd);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1428,6 +1448,34 @@ public class DocCompilerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseItalicEnd(ItalicEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Span Start</em>'. <!-- begin-user-doc -->
+	 * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Span Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpanStart(SpanStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Span End</em>'. <!-- begin-user-doc --> This
+	 * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Span End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpanEnd(SpanEnd object) {
 		return null;
 	}
 

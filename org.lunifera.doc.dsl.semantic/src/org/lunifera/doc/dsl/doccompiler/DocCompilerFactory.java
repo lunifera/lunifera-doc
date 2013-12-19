@@ -333,6 +333,22 @@ public interface DocCompilerFactory extends EFactory {
 	ItalicEnd createItalicEnd();
 
 	/**
+	 * Returns a new object of class '<em>Span Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Span Start</em>'.
+	 * @generated
+	 */
+	SpanStart createSpanStart();
+
+	/**
+	 * Returns a new object of class '<em>Span End</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Span End</em>'.
+	 * @generated
+	 */
+	SpanEnd createSpanEnd();
+
+	/**
 	 * Returns a new object of class '<em>Img Start</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Img Start</em>'.

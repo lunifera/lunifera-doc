@@ -38,6 +38,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
@@ -314,6 +315,10 @@ public interface IRichStringPartAcceptor {
 	void acceptItalicStart(RichStringItalic object);
 
 	void acceptItalicEnd();
+
+	void acceptSpanStart(RichStringSpan object);
+
+	void acceptSpanEnd();
 
 	void acceptExampleStart(RichStringExample object);
 

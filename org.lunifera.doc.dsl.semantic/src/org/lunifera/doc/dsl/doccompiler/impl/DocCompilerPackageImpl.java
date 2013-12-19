@@ -72,6 +72,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SpanEnd;
+import org.lunifera.doc.dsl.doccompiler.SpanStart;
 import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
 import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
@@ -373,6 +375,20 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * @generated
 	 */
 	private EClass italicEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass spanStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass spanEndEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1646,6 +1662,51 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 	 * 
 	 * @generated
 	 */
+	public EClass getSpanStart() {
+		return spanStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSpanStart_Content() {
+		return (EReference) spanStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSpanStart_End() {
+		return (EReference) spanStartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getSpanEnd() {
+		return spanEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getSpanEnd_Start() {
+		return (EReference) spanEndEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getImgStart() {
 		return imgStartEClass;
 	}
@@ -2807,6 +2868,13 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		italicEndEClass = createEClass(ITALIC_END);
 		createEReference(italicEndEClass, ITALIC_END__START);
 
+		spanStartEClass = createEClass(SPAN_START);
+		createEReference(spanStartEClass, SPAN_START__CONTENT);
+		createEReference(spanStartEClass, SPAN_START__END);
+
+		spanEndEClass = createEClass(SPAN_END);
+		createEReference(spanEndEClass, SPAN_END__START);
+
 		imgStartEClass = createEClass(IMG_START);
 		createEReference(imgStartEClass, IMG_START__CONTENT);
 
@@ -3034,6 +3102,8 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		underlineEndEClass.getESuperTypes().add(this.getLinePart());
 		italicStartEClass.getESuperTypes().add(this.getLinePart());
 		italicEndEClass.getESuperTypes().add(this.getLinePart());
+		spanStartEClass.getESuperTypes().add(this.getLinePart());
+		spanEndEClass.getESuperTypes().add(this.getLinePart());
 		imgStartEClass.getESuperTypes().add(this.getLinePart());
 		mailtoStartEClass.getESuperTypes().add(this.getLinePart());
 		mailtoEndEClass.getESuperTypes().add(this.getLinePart());
@@ -3414,6 +3484,23 @@ public class DocCompilerPackageImpl extends EPackageImpl implements DocCompilerP
 		initEReference(getItalicEnd_Start(), this.getItalicStart(), null, "start", null, 0, 1,
 				ItalicEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(spanStartEClass, SpanStart.class, "SpanStart", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSpanStart_Content(), theRichstringPackage.getRichStringSpan(), null,
+				"content", null, 0, 1, SpanStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getSpanStart_End(), this.getSpanEnd(), this.getSpanEnd_Start(), "end", null,
+				0, 1, SpanStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(spanEndEClass, SpanEnd.class, "SpanEnd", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSpanEnd_Start(), this.getSpanStart(), this.getSpanStart_End(), "start",
+				null, 0, 1, SpanEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(imgStartEClass, ImgStart.class, "ImgStart", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

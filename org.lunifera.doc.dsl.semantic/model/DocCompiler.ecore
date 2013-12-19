@@ -162,6 +162,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ItalicEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ItalicStart"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpanStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringSpan"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SpanEnd"
+        eOpposite="#//SpanEnd/start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpanEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SpanStart"
+        eOpposite="#//SpanStart/end"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImgStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringImg"/>
   </eClassifiers>

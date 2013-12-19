@@ -69,6 +69,8 @@ import org.lunifera.doc.dsl.doccompiler.SectionEnd;
 import org.lunifera.doc.dsl.doccompiler.SectionStart;
 import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
 import org.lunifera.doc.dsl.doccompiler.SkypeStart;
+import org.lunifera.doc.dsl.doccompiler.SpanEnd;
+import org.lunifera.doc.dsl.doccompiler.SpanStart;
 import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
 import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
 import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
@@ -334,6 +336,16 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseItalicEnd(ItalicEnd object) {
 			return createItalicEndAdapter();
+		}
+
+		@Override
+		public Adapter caseSpanStart(SpanStart object) {
+			return createSpanStartAdapter();
+		}
+
+		@Override
+		public Adapter caseSpanEnd(SpanEnd object) {
+			return createSpanEndAdapter();
 		}
 
 		@Override
@@ -1094,6 +1106,33 @@ public class DocCompilerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createItalicEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SpanStart
+	 * <em>Span Start</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SpanStart
+	 * @generated
+	 */
+	public Adapter createSpanStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.doccompiler.SpanEnd <em>Span End</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.doccompiler.SpanEnd
+	 * @generated
+	 */
+	public Adapter createSpanEndAdapter() {
 		return null;
 	}
 

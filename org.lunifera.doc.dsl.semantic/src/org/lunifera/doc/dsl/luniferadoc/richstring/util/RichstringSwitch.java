@@ -39,6 +39,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
@@ -529,6 +530,17 @@ public class RichstringSwitch<T> extends Switch<T> {
 				result = caseRichStringMarkup(richStringListElement);
 			if (result == null)
 				result = caseXExpression(richStringListElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RichstringPackage.RICH_STRING_SPAN: {
+			RichStringSpan richStringSpan = (RichStringSpan) theEObject;
+			T result = caseRichStringSpan(richStringSpan);
+			if (result == null)
+				result = caseRichStringMarkup(richStringSpan);
+			if (result == null)
+				result = caseXExpression(richStringSpan);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1134,6 +1146,21 @@ public class RichstringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRichStringListElement(RichStringListElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Span</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Span</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRichStringSpan(RichStringSpan object) {
 		return null;
 	}
 

@@ -177,9 +177,10 @@ RichStringPart returns xbase::XExpression:
 	RichStringChapter | RichStringSection | RichStringSubsection | 
 	RichStringExample | RichStringURL | RichStringRef | RichStringMailto | 
 	RichStringSkype | RichStringMovie | RichStringImg |	RichStringBold | 
-	RichStringUnderline | RichStringItalic | RichStringCode | RichStringTable | RichStringList |
-	RichStringOrderedList | RichStringOpenView | RichStringStartProcess | RichStringEntityRef | 
-	RichStringDTORef | RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef;
+	RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode | 
+	RichStringTable | RichStringList | 	RichStringOrderedList | RichStringOpenView | 
+	RichStringStartProcess | RichStringEntityRef | RichStringDTORef | 
+	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef;
 
 RichStringExample returns xbase::XExpression:
 	{richstring::RichStringExample}
@@ -267,6 +268,12 @@ RichStringUnderline returns xbase::XExpression:
 RichStringItalic returns xbase::XExpression:
 	{richstring::RichStringItalic}
 	"italic" expression=InternalRichString "/italic";
+	
+RichStringSpan returns xbase::XExpression:
+	{richstring::RichStringSpan}
+	"style" styleClass=STRING 
+	expression=InternalRichString
+	"/style";
 	
 RichStringCode returns xbase::XExpression:
 	{richstring::RichStringCode}

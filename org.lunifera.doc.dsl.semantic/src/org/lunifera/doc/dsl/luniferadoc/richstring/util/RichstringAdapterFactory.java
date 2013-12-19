@@ -40,6 +40,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
@@ -301,6 +302,11 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseRichStringListElement(RichStringListElement object) {
 			return createRichStringListElementAdapter();
+		}
+
+		@Override
+		public Adapter caseRichStringSpan(RichStringSpan object) {
+			return createRichStringSpanAdapter();
 		}
 
 		@Override
@@ -899,6 +905,20 @@ public class RichstringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRichStringListElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan
+	 * <em>Rich String Span</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan
+	 * @generated
+	 */
+	public Adapter createRichStringSpanAdapter() {
 		return null;
 	}
 
