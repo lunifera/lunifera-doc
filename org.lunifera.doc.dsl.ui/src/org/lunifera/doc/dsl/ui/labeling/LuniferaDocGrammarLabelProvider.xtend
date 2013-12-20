@@ -15,13 +15,68 @@ import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider
+import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription
+import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument
+import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDescription
+import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument
+import org.lunifera.doc.dsl.luniferadoc.document.DTODescription
+import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties
+import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription
+import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
+import org.lunifera.doc.dsl.luniferadoc.document.EntityField
+import org.lunifera.doc.dsl.luniferadoc.document.EntityFields
+import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
+import org.lunifera.doc.dsl.luniferadoc.document.UIDescription
+import org.lunifera.doc.dsl.luniferadoc.document.UIDocument
+import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription
+import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout
+import org.lunifera.doc.dsl.luniferadoc.layout.UILayout
+import org.lunifera.doc.dsl.luniferadoc.layout.VaaclipseViewLayout
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef
 
 /**
  * Provides labels for a EObjects.
@@ -35,6 +90,98 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 		super(delegate);
 	}
 
+	def text(EntityDocument ele) {
+		'Entity Document'
+	}
+	
+	def text(EntityDescription ele) {
+		'Entity Description'
+	}
+	
+	def text(EntityFields ele) {
+		'Entity Fields'
+	}
+	
+	def text(EntityField ele) {
+		'Entity Field'
+	}
+	
+	def text(DTODocument ele) {
+		'DTO Document'
+	}
+	
+	def text(DTODescription ele) {
+		'DTO Description'
+	}
+	
+	def text(DTOProperties ele) {
+		'DTO Properties'
+	}
+	
+	def text(DTOProperty ele) {
+		'DTO Property'
+	}
+	
+	def text(BPMProcessDocument ele) {
+		'BPM Process Document'
+	}
+	
+	def text(BPMProcessDescription ele) {
+		'BPM Process Description'
+	}
+	
+	def text(BPMHumanTaskDocument ele) {
+		'BPM Human Task Document'
+	}
+	
+	def text(BPMHumanTaskDescription ele) {
+		'BPM Human Task Description'
+	}
+	
+	def text(VaaclipseViewDocument ele) {
+		'Vaaclipse View Document'
+	}
+	
+	def text(VaaclipseViewDescription ele) {
+		'Vaaclipse View Description'
+	}
+	
+	def text(UIDocument ele) {
+		'UI Document'
+	}
+
+	def text(UIDescription ele) {
+		'UI Description'
+	}
+	
+	def text(GeneralDocument ele) {
+		'General Document'
+	}
+	
+	def text(EntityLayout ele) {
+		'Entity Layout'
+	}
+	
+	def text(DTOLayout ele) {
+		'DTO Layout'
+	}
+	
+	def text(BPMProcessLayout ele) {
+		'BPM Process Layout'
+	}
+	
+	def text(BPMHumanTaskLayout ele) {
+		'BPM Human Task Layout'
+	}
+	
+	def text(VaaclipseViewLayout ele) {
+		'Vaaclipse View Layout'
+	}
+	
+	def text(UILayout ele) {
+		'UI Layout'
+	}
+	
 	def text(RichString ele) {
 		'RichString'
 	}
@@ -44,15 +191,143 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 
 	def text(RichStringIf ele) {
-		'If statement'
+		'If Statement'
 	}
 
 	def text(RichStringH1 ele) {
-		'H1 tag'
+		'H1 Tag'
 	}
 
 	def text(RichStringH2 ele) {
-		'H2 tag'
+		'H2 Tag'
+	}
+	
+	def text(RichStringH3 ele) {
+		'H3 Tag'
+	}
+	
+	def text(RichStringH4 ele) {
+		'H4 Tag'
+	}
+	
+	def text(RichStringH5 ele) {
+		'H5 Tag'
+	}
+	
+	def text(RichStringH6 ele) {
+		'H6 Tag'
+	}
+	
+	def text(RichStringChapter ele) {
+		'Chapter'
+	}
+	
+	def text(RichStringSection ele) {
+		'Section'
+	}
+	
+	def text(RichStringSubsection ele) {
+		'Subsection'
+	}
+	
+	def text(RichStringURL ele) {
+		'URL'
+	}
+	
+	def text(RichStringRef ele) {
+		'Reference'
+	}
+	
+	def text(RichStringBold ele) {
+		'Format Bold'
+	}
+	
+	def text(RichStringUnderline ele) {
+		'Format Underline'
+	}
+	
+	def text(RichStringItalic ele) {
+		'Format Italic'
+	}
+	
+	def text(RichStringImg ele) {
+		'Image'
+	}
+	
+	def text(RichStringMailto ele) {
+		'Mailto'
+	}
+	
+	def text(RichStringSkype ele) {
+		'Skype'
+	}
+	
+	def text(RichStringMovie ele) {
+		'Movie'
+	}
+	
+	def text(RichStringCode ele) {
+		'Table'
+	}
+	
+	def text(RichStringTable ele) {
+		'Table'
+	}
+	
+	def text(RichStringTableRow ele) {
+		'Table Row'
+	}
+	
+	def text(RichStringTableData ele) {
+		'Table Data'
+	}
+	
+	def text(RichStringOpenView ele) {
+		'Open View'
+	}
+	
+	def text(RichStringStartProcess ele) {
+		'Start Process'
+	}
+	
+	def text(RichStringEntityRef ele) {
+		'Entity Reference'
+	}
+	
+	def text(RichStringDTORef ele) {
+		'DTO Reference'
+	}
+	
+	def text(RichStringProcessRef ele) {
+		'Process Reference'
+	}
+	
+	def text(RichStringTaskRef ele) {
+		'Task Reference'
+	}
+	
+	def text(RichStringViewRef ele) {
+		'View Reference'
+	}
+	
+	def text(RichStringUIRef ele) {
+		'UI Reference'
+	}
+	
+	def text(RichStringList ele) {
+		'Unordered List'
+	}
+	
+	def text(RichStringOrderedList ele) {
+		'Ordered List'
+	}
+	
+	def text(RichStringListElement ele) {
+		'List Element'
+	}
+	
+	def text(RichStringSpan ele) {
+		'Span Style'
 	}
 
 	def text(RichStringExample ele) {
@@ -64,6 +339,6 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 
 	def text(XExpression ele) {
-		'Anweisung'
+		'Expression'
 	}
 }
