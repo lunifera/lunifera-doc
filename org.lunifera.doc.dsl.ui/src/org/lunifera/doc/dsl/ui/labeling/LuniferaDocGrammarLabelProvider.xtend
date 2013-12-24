@@ -90,255 +90,512 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 		super(delegate);
 	}
 
-	def text(EntityDocument ele) {
+	def text(EntityDocument elem) {
 		'Entity Document'
 	}
 	
-	def text(EntityDescription ele) {
+	def image(EntityDocument elem) {
+		'placeholder.png'
+	}
+	
+	def text(EntityDescription elem) {
 		'Entity Description'
 	}
 	
-	def text(EntityFields ele) {
+	def image(EntityDescription elem) {
+		'placeholder.png'
+	}
+	
+	def text(EntityFields elem) {
 		'Entity Fields'
 	}
 	
-	def text(EntityField ele) {
+	def image(EntityFields elem) {
+		'placeholder.png'
+	}
+	
+	def text(EntityField elem) {
 		'Entity Field'
 	}
 	
-	def text(DTODocument ele) {
+	def image(EntityField elem) {
+		'placeholder.png'
+	}
+	
+	def text(DTODocument elem) {
 		'DTO Document'
 	}
 	
-	def text(DTODescription ele) {
+	def image(DTODocument elem) {
+		'placeholder.png'
+	}
+	
+	def text(DTODescription elem) {
 		'DTO Description'
 	}
 	
-	def text(DTOProperties ele) {
+	def image(DTODescription elem) {
+		'placeholder.png'
+	}
+	
+	def text(DTOProperties elem) {
 		'DTO Properties'
 	}
 	
-	def text(DTOProperty ele) {
+	def image(DTOProperties elem) {
+		'placeholder.png'
+	}
+	
+	def text(DTOProperty elem) {
 		'DTO Property'
 	}
 	
-	def text(BPMProcessDocument ele) {
+	def image(DTOProperty elem) {
+		'placeholder.png'
+	}
+	
+	def text(BPMProcessDocument elem) {
 		'BPM Process Document'
 	}
 	
-	def text(BPMProcessDescription ele) {
+	def image(BPMProcessDocument elem) {
+		'placeholder.png'
+	}
+	
+	def text(BPMProcessDescription elem) {
 		'BPM Process Description'
 	}
 	
-	def text(BPMHumanTaskDocument ele) {
+	def image(BPMProcessDescription elem) {
+		'placeholder.png'
+	}
+	
+	def text(BPMHumanTaskDocument elem) {
 		'BPM Human Task Document'
 	}
 	
-	def text(BPMHumanTaskDescription ele) {
+	def image(BPMHumanTaskDocument elem) {
+		'placeholder.png'
+	}
+	
+	def text(BPMHumanTaskDescription elem) {
 		'BPM Human Task Description'
 	}
 	
-	def text(VaaclipseViewDocument ele) {
+	def image(BPMHumanTaskDescription elem) {
+		'placeholder.png'
+	}
+	
+	def text(VaaclipseViewDocument elem) {
 		'Vaaclipse View Document'
 	}
 	
-	def text(VaaclipseViewDescription ele) {
+	def image(VaaclipseViewDocument elem) {
+		'placeholder.png'
+	}
+	
+	def text(VaaclipseViewDescription elem) {
 		'Vaaclipse View Description'
 	}
 	
-	def text(UIDocument ele) {
+	def image(VaaclipseViewDescription elem) {
+		'placeholder.png'
+	}
+	
+	def text(UIDocument elem) {
 		'UI Document'
 	}
+	
+	def image(UIDocument elem) {
+		'placeholder.png'
+	}
 
-	def text(UIDescription ele) {
+	def text(UIDescription elem) {
 		'UI Description'
 	}
 	
-	def text(GeneralDocument ele) {
+	def image(UIDescription elem) {
+		'placeholder.png'
+	}
+	
+	def text(GeneralDocument elem) {
 		'General Document'
 	}
 	
-	def text(EntityLayout ele) {
+	def image(GeneralDocument elem) {
+		'placeholder.png'
+	}
+	
+	def text(EntityLayout elem) {
 		'Entity Layout'
 	}
 	
-	def text(DTOLayout ele) {
+	def image(EntityLayout elem) {
+		'placeholder.png'
+	}
+	
+	def text(DTOLayout elem) {
 		'DTO Layout'
 	}
 	
-	def text(BPMProcessLayout ele) {
+	def image(DTOLayout elem) {
+		'placeholder.png'
+	}
+	
+	def text(BPMProcessLayout elem) {
 		'BPM Process Layout'
 	}
 	
-	def text(BPMHumanTaskLayout ele) {
+	def image(BPMProcessLayout elem) {
+		'placeholder.png'
+	}
+	
+	def text(BPMHumanTaskLayout elem) {
 		'BPM Human Task Layout'
 	}
 	
-	def text(VaaclipseViewLayout ele) {
+	def image(BPMHumanTaskLayout elem) {
+		'placeholder.png'
+	}
+	
+	def text(VaaclipseViewLayout elem) {
 		'Vaaclipse View Layout'
 	}
 	
-	def text(UILayout ele) {
+	def image(VaaclipseViewLayout elem) {
+		'placeholder.png'
+	}
+	
+	def text(UILayout elem) {
 		'UI Layout'
 	}
 	
-	def text(RichString ele) {
+	def image(UILayout elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichString elem) {
 		'RichString'
 	}
+	
+	def image(RichString elem) {
+		'placeholder.png'
+	}
 
-	def text(RichStringForLoop ele) {
+	def text(RichStringForLoop elem) {
 		'For Loop'
 	}
+	
+	def image(RichStringForLoop elem) {
+		'placeholder.png'
+	}
 
-	def text(RichStringIf ele) {
+	def text(RichStringIf elem) {
 		'If Statement'
 	}
+	
+	def image(RichStringIf elem) {
+		'placeholder.png'
+	}
 
-	def text(RichStringH1 ele) {
-		'H1 Tag'
+	def text(RichStringH1 elem) {
+		'H1'
+	}
+	
+	def image(RichStringH1 elem) {
+		'placeholder.png'
 	}
 
-	def text(RichStringH2 ele) {
-		'H2 Tag'
+	def text(RichStringH2 elem) {
+		'H2'
 	}
 	
-	def text(RichStringH3 ele) {
-		'H3 Tag'
+	def image(RichStringH2 elem) {
+		'placeholder.png'
 	}
 	
-	def text(RichStringH4 ele) {
-		'H4 Tag'
+	def text(RichStringH3 elem) {
+		'H3'
 	}
 	
-	def text(RichStringH5 ele) {
-		'H5 Tag'
+	def image(RichStringH3 elem) {
+		'placeholder.png'
 	}
 	
-	def text(RichStringH6 ele) {
-		'H6 Tag'
+	def text(RichStringH4 elem) {
+		'H4'
 	}
 	
-	def text(RichStringChapter ele) {
+	def image(RichStringH4 elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringH5 elem) {
+		'H5'
+	}
+	
+	def image(RichStringH5 elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringH6 elem) {
+		'H6'
+	}
+	
+	def image(RichStringH6 elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringChapter elem) {
 		'Chapter'
 	}
 	
-	def text(RichStringSection ele) {
+	def image(RichStringChapter elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringSection elem) {
 		'Section'
 	}
 	
-	def text(RichStringSubsection ele) {
+	def image(RichStringSection elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringSubsection elem) {
 		'Subsection'
 	}
 	
-	def text(RichStringURL ele) {
+	def image(RichStringSubsection elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringURL elem) {
 		'URL'
 	}
 	
-	def text(RichStringRef ele) {
+	def image(RichStringURL elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringRef elem) {
 		'Reference'
 	}
 	
-	def text(RichStringBold ele) {
+	def image(RichStringRef elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringBold elem) {
 		'Format Bold'
 	}
 	
-	def text(RichStringUnderline ele) {
+	def image(RichStringBold elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringUnderline elem) {
 		'Format Underline'
 	}
 	
-	def text(RichStringItalic ele) {
+	def image(RichStringUnderline elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringItalic elem) {
 		'Format Italic'
 	}
 	
-	def text(RichStringImg ele) {
+	def image(RichStringItalic elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringImg elem) {
 		'Image'
 	}
 	
-	def text(RichStringMailto ele) {
+	def image(RichStringImg elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringMailto elem) {
 		'Mailto'
 	}
 	
-	def text(RichStringSkype ele) {
+	def image(RichStringMailto elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringSkype elem) {
 		'Skype'
 	}
 	
-	def text(RichStringMovie ele) {
+	def image(RichStringSkype elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringMovie elem) {
 		'Movie'
 	}
 	
-	def text(RichStringCode ele) {
+	def image(RichStringMovie elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringCode elem) {
 		'Table'
 	}
 	
-	def text(RichStringTable ele) {
+	def image(RichStringCode elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringTable elem) {
 		'Table'
 	}
 	
-	def text(RichStringTableRow ele) {
+	def image(RichStringTable elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringTableRow elem) {
 		'Table Row'
 	}
 	
-	def text(RichStringTableData ele) {
+	def image(RichStringTableRow elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringTableData elem) {
 		'Table Data'
 	}
 	
-	def text(RichStringOpenView ele) {
+	def image(RichStringTableData elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringOpenView elem) {
 		'Open View'
 	}
 	
-	def text(RichStringStartProcess ele) {
+	def image(RichStringOpenView elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringStartProcess elem) {
 		'Start Process'
 	}
 	
-	def text(RichStringEntityRef ele) {
+	def image(RichStringStartProcess elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringEntityRef elem) {
 		'Entity Reference'
 	}
 	
-	def text(RichStringDTORef ele) {
+	def image(RichStringEntityRef elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringDTORef elem) {
 		'DTO Reference'
 	}
 	
-	def text(RichStringProcessRef ele) {
+	def image(RichStringDTORef elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringProcessRef elem) {
 		'Process Reference'
 	}
 	
-	def text(RichStringTaskRef ele) {
+	def image(RichStringProcessRef elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringTaskRef elem) {
 		'Task Reference'
 	}
 	
-	def text(RichStringViewRef ele) {
+	def image(RichStringTaskRef elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringViewRef elem) {
 		'View Reference'
 	}
 	
-	def text(RichStringUIRef ele) {
+	def image(RichStringViewRef elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringUIRef elem) {
 		'UI Reference'
 	}
 	
-	def text(RichStringList ele) {
+	def image(RichStringUIRef elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringList elem) {
 		'Unordered List'
 	}
 	
-	def text(RichStringOrderedList ele) {
+	def image(RichStringList elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringOrderedList elem) {
 		'Ordered List'
 	}
 	
-	def text(RichStringListElement ele) {
+	def image(RichStringOrderedList elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringListElement elem) {
 		'List Element'
 	}
 	
-	def text(RichStringSpan ele) {
+	def image(RichStringListElement elem) {
+		'placeholder.png'
+	}
+	
+	def text(RichStringSpan elem) {
 		'Span Style'
 	}
+	
+	def image(RichStringSpan elem) {
+		'placeholder.png'
+	}
 
-	def text(RichStringExample ele) {
+	def text(RichStringExample elem) {
 		'Example'
 	}
-
-	def text(RichStringLiteral ele) {
-		'Literal'
+	
+	def image(RichStringExample elem) {
+		'placeholder.png'
 	}
 
-	def text(XExpression ele) {
+	def text(RichStringLiteral elem) {
+		'Literal'
+//		if(elem.value == null || elem.value.empty) {
+//			null
+//		} else {
+//			'Literal' 
+//		}
+	}
+	
+	def image(RichStringLiteral elem) {
+		'placeholder.png'
+	}
+
+	def text(XExpression elem) {
 		'Expression'
+	}
+	
+	def image(XExpression elem) {
+		'placeholder.png'
 	}
 }
