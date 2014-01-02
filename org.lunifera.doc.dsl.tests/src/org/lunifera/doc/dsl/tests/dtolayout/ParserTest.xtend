@@ -23,6 +23,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringLiteralImpl
 
 import static org.junit.Assert.*
 import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
+import org.lunifera.doc.dsl.luniferadoc.document.DTODescription
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))
@@ -36,7 +37,7 @@ class ParserTest {
 	def void testParsing() {
 		val dtoLayout = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/DTOLayout.luniferadoc").parse
 		
-		assertEquals("DefaultDTOLayout", dtoLayout.name)
+		assertEquals("doc.dto.DefaultDTOLayout", dtoLayout.name)
 		
 		val content = dtoLayout.content
 		assertEquals(typeof(RichStringLiteralImpl), dtoLayout.content.expressions.get(0).class)

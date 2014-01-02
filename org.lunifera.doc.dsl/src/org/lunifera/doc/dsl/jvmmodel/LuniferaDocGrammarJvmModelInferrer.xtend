@@ -252,9 +252,8 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
 					typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += toField("properties",
-					dtoDocument.newTypeRef(typeof(List),
-						typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)))
+				members += dtoDocument.properties.toField("properties",
+					newTypeRef('java.util.List', newTypeRef('org.lunifera.doc.dsl.api.document.IDTOProperty')))
 				// constructor
 				members += dtoDocument.toConstructor [
 					body = [
@@ -283,28 +282,14 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					// TODO return empty CharSequence
 				}
 				members += serializeDescriptionOperation
-				// getter/setter
+				// getter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += toSetter("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += toGetter("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += toSetter("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				val descriptionGetter = dtoDocument.description.toGetter("description",
-					typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				descriptionGetter.setBody[
-					it.append('''return «serializeDescriptionOperation.simpleName»().toString();''')]
-				members += descriptionGetter
-				members += dtoDocument.description.toSetter("description",
-					typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += toGetter("properties",
-					dtoDocument.newTypeRef(
-						typeof(List),
-						typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
-					))
-				members += toSetter("properties",
-					dtoDocument.newTypeRef(
-						typeof(List),
-						typeReference.getTypeForName(typeof(IDTOProperty), dtoDocument, null)
-					))
+				members += toMethod("getDescription", typeReference.getTypeForName(typeof(String), dtoDocument, null)) [
+					body = '''return «serializeDescriptionOperation.simpleName»().toString();'''
+				]
+				members += toGetter("properties", "properties",
+					newTypeRef('java.util.List', newTypeRef('org.lunifera.doc.dsl.api.document.IDTOProperty')))
 			])
 	}
 
@@ -357,11 +342,9 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					// TODO return emtpy CharSequence
 				}
 				members += serializeDescriptionOperation
-				// getter/setter
+				// getter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += toSetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += toSetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += entityDocument.description.toGetter(
 					"description",
 					typeReference.getTypeForName(typeof(String), entityDocument, null)
@@ -410,7 +393,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					// TODO return emtpy CharSequence
 				}
 				members += serializeDescriptionOperation
-				// getter/setter
+				// getter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), processDocument, null))
 				members += toGetter("process", typeReference.getTypeForName(typeof(String), processDocument, null))
 				members += processDocument.description.toGetter(
@@ -456,7 +439,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					// TODO return emtpy CharSequence
 				}
 				members += serializeDescriptionOperation
-				// getter/setter
+				// getter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), taskDocument, null))
 				members += toGetter("task", typeReference.getTypeForName(typeof(String), taskDocument, null))
 				members += taskDocument.description.toGetter(
@@ -502,7 +485,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					// TODO return emtpy CharSequence
 				}
 				members += serializeDescriptionOperation
-				// getter/setter
+				// getter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), viewDocument, null))
 				members += toGetter("view", typeReference.getTypeForName(typeof(String), viewDocument, null))
 				members += viewDocument.description.toGetter(
@@ -548,7 +531,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					// TODO return emtpy CharSequence
 				}
 				members += serializeDescriptionOperation
-				// getter/setter
+				// getter
 				members += toGetter("name", typeReference.getTypeForName(typeof(String), uiDocument, null))
 				members += toGetter("ui", typeReference.getTypeForName(typeof(String), uiDocument, null))
 				members += uiDocument.description.toGetter(

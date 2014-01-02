@@ -1,4 +1,4 @@
-EntityDocument MyEntity for org.lunifera.sample.MyEntity {
+EntityDocument doc.entity.MyEntityDoc for org.lunifera.sample.MyEntity {
 	description {
 		'''This is MyEntity'''
 	}
@@ -19,7 +19,7 @@ EntityDocument MyEntity for org.lunifera.sample.MyEntity {
 		nullable true
 		description {
 			'''
-				This is the «h2»description«/h2» of property B. This field is nullable.
+				This is the «h2»description«/h2» of property B. This field is nullable. 
 			'''
 		}
 	}

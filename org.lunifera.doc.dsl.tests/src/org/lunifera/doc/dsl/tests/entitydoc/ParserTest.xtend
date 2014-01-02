@@ -35,7 +35,12 @@ class ParserTest {
 	
 	@Test
 	def void testParsing() {
-		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/EntityDocument.luniferadoc").parse
+		val entityDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/EntityDocument.luniferadoc").parse
+		
+		assertEquals("doc.entity.MyEntityDoc", entityDoc.name)
+		assertEquals("org.lunifera.sample.MyEntity", entityDoc.entityClass)
+		assertEquals(2, entityDoc.fields.fields.size
+		)
 		
 	}
 	

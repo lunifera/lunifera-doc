@@ -1,10 +1,10 @@
-GeneralDocument Introduction {
-	include samples.doc.dto.MyDTO as myDTODoc
-		
-	'''
-	«h1»Once there was a Pojo named «myDTODoc.^description».«/h1»
+GeneralDocument doc.general.SampleGeneralDoc {
+	include doc.dto.MyDTO as myDTO
 	
-	And some normal text.
+	'''
+	«h1»Example of a general document«/h1»
+	
+	«myDTO.^description»
 	
 	'''
 }

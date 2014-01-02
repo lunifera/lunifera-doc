@@ -33,47 +33,90 @@ class CompilerTest {
 		testDoc.compile[assertEquals('''
 			package doc.dto;
 			
+			import java.util.List;
 			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.document.IMetaDTO;
+			import org.lunifera.doc.dsl.api.document.IDTODocument;
+			import org.lunifera.doc.dsl.api.document.IDTOProperty;
+			import org.lunifera.doc.dsl.api.layout.IDTOLayout;
 			
 			@SuppressWarnings("all")
-			public class MyDTO implements IMetaDTO {
-			  private String name;
+			public class DefaultDTOLayout implements IDTOLayout {
+			  private IDTODocument doc;
 			  
-			  private String dtoClass;
+			  public void setDoc(final IDTODocument doc) {
+			    this.doc = doc;
+			  }
 			  
-			  private String description;
-			  
-			  public CharSequence serializeDescription() {
+			  public String serialize() {
 			    StringConcatenation _builder = new StringConcatenation();
-			    _builder.append("<h1>");
-			    _builder.append("This is MyDTO .");
-			    _builder.append("</h1>");
-			    return _builder;
-			  }
-			  
-			  public String getName() {
-			    return this.name;
-			  }
-			  
-			  public void setName(final String name) {
-			    this.name = name;
-			  }
-			  
-			  public String getDtoClass() {
-			    return this.dtoClass;
-			  }
-			  
-			  public void setDtoClass(final String dtoClass) {
-			    this.dtoClass = dtoClass;
-			  }
-			  
-			  public String getDescription() {
-			    return serializeDescription().toString();
-			  }
-			  
-			  public void setDescription(final String description) {
-			    this.description = description;
+			    _builder.append("<html>");
+			    _builder.append("<body>");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.append("Some text before the first headline.");
+			      _builder.newLine();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.newLine();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.append("<h1>");
+			      _builder.append("This is a headline");
+			      _builder.append("</h1>");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.newLine();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.append("<h2>");
+			      _builder.append("Description");
+			      _builder.append("</h2>");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.newLine();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      String _description = this.doc.getDescription();
+			      _builder.append(_description, "	");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.newLine();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.append("<h2>");
+			      _builder.append("Properties");
+			      _builder.append("</h2>");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.newLine();
+			      _builder.newLine();
+			      {
+			        List<IDTOProperty> _properties = this.doc.getProperties();
+			        for(final IDTOProperty prop : _properties) {
+			          _builder.newLine();
+			          _builder.append("\t");
+			          _builder.append("Name: ");
+			          String _name = prop.getName();
+			          _builder.append(_name, "	");
+			          _builder.newLineIfNotEmpty();
+			          _builder.newLine();
+			          _builder.append("\t");
+			          _builder.append("Description: ");
+			          String _description_1 = prop.getDescription();
+			          _builder.append(_description_1, "	");
+			          _builder.newLineIfNotEmpty();
+			          _builder.newLine();
+			        }
+			      }
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.append("</body>");_builder.append("</html>");
+			    return _builder.toString();
 			  }
 			}
 		'''.toString, getSingleGeneratedCode)

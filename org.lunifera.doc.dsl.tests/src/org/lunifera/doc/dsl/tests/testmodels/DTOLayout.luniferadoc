@@ -1,21 +1,18 @@
-DTOLayout DefaultDTOLayout {
-	
+DTOLayout doc.dto.DefaultDTOLayout {
 	'''
 	Some text before the first headline.
 	
 	«h1»This is a headline«/h1»
 	
-	«val i = 2»
+	«h2»Description«/h2»
 	
-	«val a = doc.properties»
-	«val b = doc.description»
-	«val c = doc.name»
+	«doc.^description»
 	
-	«IF i < 10»
-		«i» is smaller than 10
-	«ENDIF»
+	«h2»Properties«/h2»
 	
-	test
+	«FOR prop: doc.^properties»
+		Name: «prop.^name»
+		Description: «prop.^description»
+	«ENDFOR»
 	'''
-	
 }

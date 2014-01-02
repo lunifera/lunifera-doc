@@ -32,7 +32,37 @@ class CompilerTest {
 	def void compareGeneratedJava() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/GeneralDocument.luniferadoc")
 		testDoc.compile[assertEquals('''
-
+			package doc.general;
+			
+			import org.eclipse.xtend2.lib.StringConcatenation;
+			import org.lunifera.doc.dsl.api.layout.IGenericLayout;
+			
+			@SuppressWarnings("all")
+			public class SampleGeneralDoc implements IGenericLayout {
+			  public SampleGeneralDoc() {
+			    
+			  }
+			  
+			  public String serialize() {
+			    StringConcatenation _builder = new StringConcatenation();
+			    _builder.append("<html>");
+			    _builder.append("<body>");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.append("<h1>");
+			      _builder.append("Example of a general document");
+			      _builder.append("</h1>");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.newLine();
+			      _builder.newLine();
+			      _builder.append("\t");
+			      _builder.append("</body>");_builder.append("</html>");
+			    return _builder.toString();
+			  }
+			}
 		'''.toString, getSingleGeneratedCode)
 		]
 	}	

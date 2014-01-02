@@ -32,51 +32,175 @@ class CompilerTest {
 	def void compareGeneratedJava() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/EntityDocument.luniferadoc")
 		testDoc.compile[assertEquals('''
+			package doc.entity;
+			
+			import java.util.List;
 			import org.eclipse.xtend2.lib.StringConcatenation;
-			import org.lunifera.doc.dsl.api.document.IMetaEntity;
+			import org.lunifera.doc.dsl.api.document.IEntityDocument;
+			import org.lunifera.doc.dsl.api.document.IEntityField;
 			
 			@SuppressWarnings("all")
-			public class MyEntity implements IMetaEntity {
+			public class MyEntityDoc implements IEntityDocument {
+			  @SuppressWarnings("all")
+			  public class FieldA implements IEntityField {
+			    private String name;
+			    
+			    private String type;
+			    
+			    private Integer length;
+			    
+			    private Boolean pk;
+			    
+			    private Boolean nullable;
+			    
+			    private String description;
+			    
+			    public FieldA() {
+			      this.name = "fieldA";
+			      this.type = "int";
+			      this.length = 11;
+			      this.pk = true;
+			      this.nullable = false;
+			      this.description = serializeDescription().toString();
+			      
+			    }
+			    
+			    public CharSequence serializeDescription() {
+			      StringConcatenation _builder = new StringConcatenation();
+			      _builder.newLine();
+			      _builder.append("This is the description of fieldA. FieldA is of type int(11), a primary key and hence not nullable.");
+			      _builder.newLine();
+			      _builder.newLine();
+			      return _builder;
+			    }
+			    
+			    public String getName() {
+			      return this.name;
+			    }
+			    
+			    public String getType() {
+			      return this.type;
+			    }
+			    
+			    public Integer getLength() {
+			      return this.length;
+			    }
+			    
+			    public Boolean getPk() {
+			      return this.pk;
+			    }
+			    
+			    public Boolean getNullable() {
+			      return this.nullable;
+			    }
+			    
+			    public String getDescription() {
+			      return this.description;
+			    }
+			  }
+			  
+			  
+			  @SuppressWarnings("all")
+			  public class FieldB implements IEntityField {
+			    private String name;
+			    
+			    private String type;
+			    
+			    private Integer length;
+			    
+			    private Boolean pk;
+			    
+			    private Boolean nullable;
+			    
+			    private String description;
+			    
+			    public FieldB() {
+			      this.name = "fieldB";
+			      this.type = "varchar";
+			      this.length = 255;
+			      this.pk = false;
+			      this.nullable = true;
+			      this.description = serializeDescription().toString();
+			      
+			    }
+			    
+			    public CharSequence serializeDescription() {
+			      StringConcatenation _builder = new StringConcatenation();
+			      _builder.newLine();
+			      _builder.append("This is the ");
+			      _builder.append("<h2>");
+			      _builder.append("description");
+			      _builder.append("</h2>");
+			      _builder.append(" of property B. This field is nullable. ");
+			      _builder.newLineIfNotEmpty();
+			      _builder.newLine();
+			      return _builder;
+			    }
+			    
+			    public String getName() {
+			      return this.name;
+			    }
+			    
+			    public String getType() {
+			      return this.type;
+			    }
+			    
+			    public Integer getLength() {
+			      return this.length;
+			    }
+			    
+			    public Boolean getPk() {
+			      return this.pk;
+			    }
+			    
+			    public Boolean getNullable() {
+			      return this.nullable;
+			    }
+			    
+			    public String getDescription() {
+			      return this.description;
+			    }
+			  }
+			  
+			  
 			  private String name;
 			  
 			  private String entityClass;
 			  
 			  private String description;
 			  
-			  public MyEntity() {
-			    this.name = "MyEntity";
+			  private List<IEntityField> fields;
+			  
+			  public MyEntityDoc() {
+			    this.name = "doc.entity.MyEntityDoc";
 			    this.entityClass = "org.lunifera.sample.MyEntity";
+			    this.description = serializeDescription().toString();
+			    this.fields = new java.util.ArrayList<IEntityField>();
+			    this.fields.add(new FieldA());
+			    this.fields.add(new FieldB());
 			    
-			  }
-			  
-			  public String getName() {
-			    return this.name;
-			  }
-			  
-			  public void setName(final String name) {
-			    this.name = name;
-			  }
-			  
-			  public String getEntityClass() {
-			    return this.entityClass;
-			  }
-			  
-			  public void setEntityClass(final String entityClass) {
-			    this.entityClass = entityClass;
-			  }
-			  
-			  public String getDescription() {
-			    return serializeDescription();
-			  }
-			  
-			  public void setDescription(final String description) {
-			    this.description = description;
 			  }
 			  
 			  public CharSequence serializeDescription() {
 			    StringConcatenation _builder = new StringConcatenation();
 			    _builder.append("This is MyEntity");
 			    return _builder;
+			  }
+			  
+			  public String getName() {
+			    return this.name;
+			  }
+			  
+			  public String getEntityClass() {
+			    return this.entityClass;
+			  }
+			  
+			  public String getDescription() {
+			    return this.description;
+			  }
+			  
+			  public List<IEntityField> getFields() {
+			    return this.fields;
 			  }
 			}
 		'''.toString, getSingleGeneratedCode)

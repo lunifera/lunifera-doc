@@ -36,10 +36,10 @@ class ParserTest {
 	def void testParsing() {
 		val testDoc = loadTestModel("/org/lunifera/doc/dsl/tests/testmodels/GeneralDocument.luniferadoc").parse
 		
-		assertEquals("Introduction", testDoc.name)
+		assertEquals("doc.general.SampleGeneralDoc", testDoc.name)
 		assertEquals(1, testDoc.includes.size)
 		assertEquals("doc.dto.MyDTO", testDoc.includes.get(0).include)
-		assertEquals("myDTODoc", testDoc.includes.get(0).varName)
+		assertEquals("myDTO", testDoc.includes.get(0).varName)
 		assertEquals(typeof(RichStringImpl), testDoc.content.class)
 		
 	}

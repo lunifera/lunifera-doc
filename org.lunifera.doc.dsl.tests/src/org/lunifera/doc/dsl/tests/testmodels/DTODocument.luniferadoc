@@ -1,15 +1,66 @@
 DTODocument doc.dto.MyDTO for org.lunifera.sample.MyDTO {
 	description {
 		'''
+		«chapter id="intro"»Introduction«/chapter»
+		«section id="overview"»General Overview«/section»
+		«subsection id="further_info"»Further information«/subsection»
 		«h1»This is MyDTO.«/h1»
-		This is an «url "http://www.example.org"»example url«/url»
+		«h2»h2 headline«/h2»
+		«h3»h3 headline«/h3»
+		«h4»h4 headline«/h4»
+		«h5»h5 headline«/h5»
+		«h6»h6 headline«/h6»
+		This «u»is«/u» an «url "http://www.example.org"»example url«/url»
+		It can span «italic»multiple«/italic» lines.
+		You «style "my-custom-css"»can«/style» also include images: «img src="http://www.example.org/image.png" alt="example image" width="150px" height="50px" /»
+		Embed email addresses like «mailto "somebody@example.org"»this«/mailto»
+		Embed skype links: «skype "echo123"»call echo123«/skype»
+		«code lang="java"»
+			public static void main(String[] args) {
+				System.out.println("Hello World!");
+			}
+		«/code»
+		«movie src="myMovie.mp4" type="video/mp4" width="400px" height="300px"»
+			Your browser does not support HTML5 video.
+		«/movie»
+		«ref "intro"»Link ref to intro chapter«/ref»
+		«openview "some.view.id"»open view xyz«/openview»
+		«startprocess "some.process.id"»start process xyz«/startprocess»
+		«table»
+			«row»
+				«column»a«/column»
+				«column»b«/column»
+				«column»c«/column»
+				«column»d«/column»
+			«/row»
+			«row»
+				«column»d«/column»
+				«column»e«/column»
+				«column»f«/column»
+			«/row»
+		«/table»
+		«ul»
+			«li»a«/li»
+			«li»b«/li»
+			«li»c«/li»
+		«/ul»
+		«ol»
+			«li»a«/li»
+			«li»b«/li»
+			«li»c«/li»
+		«/ol»
+		«IF 2<5»
+			abc
+		«ELSEIF 2==5»
+			xyz
+		«ENDIF»
 		'''
 	}
 	properties {
 		name propA
 		description {
 			'''
-				This is the description of property A.
+				This is the «bold»description«/bold» of property A...
 			'''
 		}
 		
