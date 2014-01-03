@@ -658,13 +658,21 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_CHAPTER__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_CHAPTER__NAME = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Rich String Chapter</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_CHAPTER_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+	int RICH_STRING_CHAPTER_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSectionImpl
@@ -702,13 +710,21 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SECTION__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SECTION__NAME = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Rich String Section</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SECTION_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+	int RICH_STRING_SECTION_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSubsectionImpl
@@ -746,13 +762,21 @@ public interface RichstringPackage extends EPackage {
 	int RICH_STRING_SUBSECTION__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RICH_STRING_SUBSECTION__NAME = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Rich String Subsection</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_SUBSECTION_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+	int RICH_STRING_SUBSECTION_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringURLImpl
@@ -2424,6 +2448,18 @@ public interface RichstringPackage extends EPackage {
 	EClass getRichStringChapter();
 
 	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter#getName <em>Name</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter#getName()
+	 * @see #getRichStringChapter()
+	 * @generated
+	 */
+	EAttribute getRichStringChapter_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection
 	 * <em>Rich String Section</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2434,6 +2470,18 @@ public interface RichstringPackage extends EPackage {
 	EClass getRichStringSection();
 
 	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection#getName <em>Name</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection#getName()
+	 * @see #getRichStringSection()
+	 * @generated
+	 */
+	EAttribute getRichStringSection_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection
 	 * <em>Rich String Subsection</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2442,6 +2490,18 @@ public interface RichstringPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRichStringSubsection();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection#getName <em>Name</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection#getName()
+	 * @see #getRichStringSubsection()
+	 * @generated
+	 */
+	EAttribute getRichStringSubsection_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL
@@ -3365,6 +3425,14 @@ public interface RichstringPackage extends EPackage {
 		EClass RICH_STRING_CHAPTER = eINSTANCE.getRichStringChapter();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_CHAPTER__NAME = eINSTANCE.getRichStringChapter_Name();
+
+		/**
 		 * The meta object literal for the '
 		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSectionImpl <em>Rich String Section</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3376,6 +3444,14 @@ public interface RichstringPackage extends EPackage {
 		EClass RICH_STRING_SECTION = eINSTANCE.getRichStringSection();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_SECTION__NAME = eINSTANCE.getRichStringSection_Name();
+
+		/**
 		 * The meta object literal for the '
 		 * {@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringSubsectionImpl
 		 * <em>Rich String Subsection</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3385,6 +3461,14 @@ public interface RichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RICH_STRING_SUBSECTION = eINSTANCE.getRichStringSubsection();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RICH_STRING_SUBSECTION__NAME = eINSTANCE.getRichStringSubsection_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringURLImpl

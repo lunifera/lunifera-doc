@@ -213,15 +213,15 @@ RichStringH6 returns xbase::XExpression:
 
 RichStringChapter returns xbase::XExpression:
 	{richstring::RichStringChapter}
-	"chapter" "id="id=STRING expression=InternalRichString "/chapter";
+	"chapter" name=ValidID expression=InternalRichString "/chapter";
 	
 RichStringSection returns xbase::XExpression:
 	{richstring::RichStringSection}
-	"section" "id="id=STRING expression=InternalRichString "/section";
+	"section" name=ValidID expression=InternalRichString "/section";
 	
 RichStringSubsection returns xbase::XExpression:
 	{richstring::RichStringSubsection}
-	"subsection" "id="id=STRING expression=InternalRichString "/subsection";
+	"subsection" name=ValidID expression=InternalRichString "/subsection";
 
 RichStringURL returns xbase::XExpression:
 	{richstring::RichStringURL}

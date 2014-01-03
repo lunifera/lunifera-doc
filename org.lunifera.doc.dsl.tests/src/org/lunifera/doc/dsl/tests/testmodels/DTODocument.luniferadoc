@@ -1,9 +1,9 @@
 DTODocument doc.dto.MyDTO for org.lunifera.sample.MyDTO {
 	description {
 		'''
-		«chapter id="intro"»Introduction«/chapter»
-		«section id="overview"»General Overview«/section»
-		«subsection id="further_info"»Further information«/subsection»
+		«chapter intro»Introduction«/chapter»
+		«section overview»General Overview«/section»
+		«subsection further_info»Further information«/subsection»
 		«h1»This is MyDTO.«/h1»
 		«h2»h2 headline«/h2»
 		«h3»h3 headline«/h3»

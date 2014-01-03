@@ -114,17 +114,20 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += operation
 			])
 	}
-	
+
 	/**
 	 * Infer method for BPMProcess elements
 	 */
-	def dispatch void infer(BPMProcessLayout bpmProcessLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(BPMProcessLayout bpmProcessLayout, IJvmDeclaredTypeAcceptor acceptor,
+		boolean isPreIndexingPhase) {
 		acceptor.accept(bpmProcessLayout.toClass(bpmProcessLayout.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IBPMProcessLayout), bpmProcessLayout, null)
 				documentation = bpmProcessLayout.documentation
-				members += toField("doc", typeReference.getTypeForName(typeof(IBPMProcessDocument), bpmProcessLayout, null))
-				members += toSetter("doc", typeReference.getTypeForName(typeof(IBPMProcessDocument), bpmProcessLayout, null))
+				members +=
+					toField("doc", typeReference.getTypeForName(typeof(IBPMProcessDocument), bpmProcessLayout, null))
+				members +=
+					toSetter("doc", typeReference.getTypeForName(typeof(IBPMProcessDocument), bpmProcessLayout, null))
 				val richString = bpmProcessLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -136,17 +139,20 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += operation
 			])
 	}
-	
+
 	/**
 	 * Infer method for BPMHumanTask elements
 	 */
-	def dispatch void infer(BPMHumanTaskLayout bpmHumanTaskLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(BPMHumanTaskLayout bpmHumanTaskLayout, IJvmDeclaredTypeAcceptor acceptor,
+		boolean isPreIndexingPhase) {
 		acceptor.accept(bpmHumanTaskLayout.toClass(bpmHumanTaskLayout.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IBPMHumanTaskLayout), bpmHumanTaskLayout, null)
 				documentation = bpmHumanTaskLayout.documentation
-				members += toField("doc", typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), bpmHumanTaskLayout, null))
-				members += toSetter("doc", typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), bpmHumanTaskLayout, null))
+				members +=
+					toField("doc", typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), bpmHumanTaskLayout, null))
+				members += toSetter("doc",
+					typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), bpmHumanTaskLayout, null))
 				val richString = bpmHumanTaskLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -158,17 +164,20 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += operation
 			])
 	}
-	
+
 	/**
 	 * Infer method for VaaclipseViewLayout elements
 	 */
-	def dispatch void infer(VaaclipseViewLayout vaaclipseViewLayout, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(VaaclipseViewLayout vaaclipseViewLayout, IJvmDeclaredTypeAcceptor acceptor,
+		boolean isPreIndexingPhase) {
 		acceptor.accept(vaaclipseViewLayout.toClass(vaaclipseViewLayout.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IVaaclipseViewLayout), vaaclipseViewLayout, null)
 				documentation = vaaclipseViewLayout.documentation
-				members += toField("doc", typeReference.getTypeForName(typeof(IVaaclipseViewDocument), vaaclipseViewLayout, null))
-				members += toSetter("doc", typeReference.getTypeForName(typeof(IVaaclipseViewDocument), vaaclipseViewLayout, null))
+				members += toField("doc",
+					typeReference.getTypeForName(typeof(IVaaclipseViewDocument), vaaclipseViewLayout, null))
+				members += toSetter("doc",
+					typeReference.getTypeForName(typeof(IVaaclipseViewDocument), vaaclipseViewLayout, null))
 				val richString = vaaclipseViewLayout.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
 				associator.associatePrimary(richString, operation)
@@ -180,7 +189,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += operation
 			])
 	}
-	
+
 	/**
 	 * Infer method for UILayout elements
 	 */
@@ -215,13 +224,11 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					members += inc.include.toIncField(inc.varName, generalDoc)
 				}
 				members += generalDoc.toConstructor [
-					body = [
-						it.append(
-							'''
-								«FOR inc : generalDoc.includes»
-									this.«inc.varName» = new «inc.include.name»();
-								«ENDFOR»
-							''')]
+					body = '''
+						«FOR inc : generalDoc.includes»
+							this.«inc.varName» = new «inc.include.name»();
+						«ENDFOR»
+					'''
 				]
 				val richString = generalDoc.content
 				val JvmOperation operation = typesFactory.createJvmOperation()
@@ -244,8 +251,10 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				superTypes += typeReference.getTypeForName(typeof(IDTODocument), dtoDocument, null)
 				documentation = dtoDocument.documentation
 				// gen inner classes for properties
-				for (prop : dtoDocument.properties.properties) {
-					members += toInnerClass(prop, dtoDocument)
+				if (dtoDocument.properties != null) {
+					for (prop : dtoDocument.properties.properties) {
+						members += toInnerClass(prop, dtoDocument)
+					}
 				}
 				// fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
@@ -256,17 +265,17 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					newTypeRef('java.util.List', newTypeRef('org.lunifera.doc.dsl.api.document.IDTOProperty')))
 				// constructor
 				members += dtoDocument.toConstructor [
-					body = [
-						it.append(
-							'''
-								this.name = "«dtoDocument.name»";
-								this.dtoClass = "«dtoDocument.dtoClass»";
-								this.description = serializeDescription().toString();
-								this.properties = new java.util.ArrayList<IDTOProperty>();
-								«FOR prop : dtoDocument.properties.properties»
-									this.properties.add(new «prop.name.toFirstUpper»());
-								«ENDFOR»
-							''')]
+					body = '''
+						this.name = "«dtoDocument.name»";
+						this.dtoClass = "«dtoDocument.dtoClass»";
+						this.description = serializeDescription().toString();
+						this.properties = new java.util.ArrayList<IDTOProperty>();
+						«IF dtoDocument.properties != null»
+							«FOR prop : dtoDocument.properties.properties»
+								this.properties.add(new «prop.name.toFirstUpper»());
+							«ENDFOR»
+						«ENDIF»
+					'''
 				]
 				// serialization		
 				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
@@ -302,8 +311,10 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				superTypes += typeReference.getTypeForName(typeof(IEntityDocument), entityDocument, null)
 				documentation = entityDocument.documentation
 				// gen inner classes for fields
-				for (field : entityDocument.fields.fields) {
-					members += toInnerClass(field, entityDocument)
+				if (entityDocument.fields != null) {
+					for (field : entityDocument.fields.fields) {
+						members += toInnerClass(field, entityDocument)
+					}
 				}
 				// class fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
@@ -317,17 +328,17 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)))
 				// constructor
 				members += entityDocument.toConstructor [
-					body = [
-						it.append(
-							'''
-								this.name = "«entityDocument.name»";
-								this.entityClass = "«entityDocument.entityClass»";
-								this.description = serializeDescription().toString();
-								this.fields = new java.util.ArrayList<IEntityField>();
-								«FOR field : entityDocument.fields.fields»
-									this.fields.add(new «field.name.toFirstUpper»());
-								«ENDFOR»
-							''')]
+					body = '''
+						this.name = "«entityDocument.name»";
+						this.entityClass = "«entityDocument.entityClass»";
+						this.description = serializeDescription().toString();
+						this.fields = new java.util.ArrayList<IEntityField>();
+						«IF entityDocument.fields != null»
+							«FOR field : entityDocument.fields.fields»
+								this.fields.add(new «field.name.toFirstUpper»());
+							«ENDFOR»
+						«ENDIF»
+					'''
 				]
 				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
 				if (entityDocument.description != null) {
@@ -356,11 +367,12 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					))
 			])
 	}
-	
+
 	/**
 	 * Infer method for BPMProcessDocument elements
 	 */
-	def dispatch void infer(BPMProcessDocument processDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(BPMProcessDocument processDocument, IJvmDeclaredTypeAcceptor acceptor,
+		boolean isPreIndexingPhase) {
 		acceptor.accept(processDocument.toClass(processDocument.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IBPMProcessDocument), processDocument, null)
@@ -402,11 +414,12 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				)
 			])
 	}
-	
+
 	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */
-	def dispatch void infer(BPMHumanTaskDocument taskDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(BPMHumanTaskDocument taskDocument, IJvmDeclaredTypeAcceptor acceptor,
+		boolean isPreIndexingPhase) {
 		acceptor.accept(taskDocument.toClass(taskDocument.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IBPMHumanTaskDocument), taskDocument, null)
@@ -448,11 +461,12 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				)
 			])
 	}
-	
+
 	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */
-	def dispatch void infer(VaaclipseViewDocument viewDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(VaaclipseViewDocument viewDocument, IJvmDeclaredTypeAcceptor acceptor,
+		boolean isPreIndexingPhase) {
 		acceptor.accept(viewDocument.toClass(viewDocument.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IVaaclipseViewDocument), viewDocument, null)
@@ -494,7 +508,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				)
 			])
 	}
-	
+
 	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */

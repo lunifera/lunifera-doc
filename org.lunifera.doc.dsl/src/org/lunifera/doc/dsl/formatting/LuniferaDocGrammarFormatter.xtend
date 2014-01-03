@@ -93,18 +93,15 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		
 		// chapter
 		c.setNoSpace().before(richStringChapterAccess.chapterKeyword_1)
-		c.setNoSpace().before(richStringChapterAccess.idAssignment_3)
-		c.setNoSpace().around(richStringChapterAccess.chapterKeyword_5)
+		c.setNoSpace().around(richStringChapterAccess.chapterKeyword_4)
 		
 		// section
 		c.setNoSpace().before(richStringSectionAccess.sectionKeyword_1)
-		c.setNoSpace().before(richStringSectionAccess.idAssignment_3)
-		c.setNoSpace().around(richStringSectionAccess.sectionKeyword_5)
+		c.setNoSpace().around(richStringSectionAccess.sectionKeyword_4)
 		
 		// subsection
 		c.setNoSpace().before(richStringSubsectionAccess.subsectionKeyword_1)
-		c.setNoSpace().before(richStringSubsectionAccess.idAssignment_3)
-		c.setNoSpace().around(richStringSubsectionAccess.subsectionKeyword_5)
+		c.setNoSpace().around(richStringSubsectionAccess.subsectionKeyword_4)
 		
 		// URL
 		c.setNoSpace().before(richStringURLAccess.urlKeyword_1)
