@@ -163,9 +163,18 @@
     <eClassifiers xsi:type="ecore:EClass" name="RichStringH4" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringH5" eSuperTypes="#//richstring/RichStringMarkup"/>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringH6" eSuperTypes="#//richstring/RichStringMarkup"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RichStringChapter" eSuperTypes="#//richstring/RichStringMarkup"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RichStringSection" eSuperTypes="#//richstring/RichStringMarkup"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RichStringSubsection" eSuperTypes="#//richstring/RichStringMarkup"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringChapter" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringSection" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RichStringSubsection" eSuperTypes="#//richstring/RichStringMarkup">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringURL" eSuperTypes="#//richstring/RichStringMarkup">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

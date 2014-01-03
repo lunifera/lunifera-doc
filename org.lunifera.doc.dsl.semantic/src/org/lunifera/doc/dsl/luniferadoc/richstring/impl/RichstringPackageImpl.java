@@ -677,6 +677,15 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EAttribute getRichStringChapter_Name() {
+		return (EAttribute) richStringChapterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getRichStringSection() {
 		return richStringSectionEClass;
 	}
@@ -686,8 +695,26 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 	 * 
 	 * @generated
 	 */
+	public EAttribute getRichStringSection_Name() {
+		return (EAttribute) richStringSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getRichStringSubsection() {
 		return richStringSubsectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRichStringSubsection_Name() {
+		return (EAttribute) richStringSubsectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1288,10 +1315,13 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 		richStringH6EClass = createEClass(RICH_STRING_H6);
 
 		richStringChapterEClass = createEClass(RICH_STRING_CHAPTER);
+		createEAttribute(richStringChapterEClass, RICH_STRING_CHAPTER__NAME);
 
 		richStringSectionEClass = createEClass(RICH_STRING_SECTION);
+		createEAttribute(richStringSectionEClass, RICH_STRING_SECTION__NAME);
 
 		richStringSubsectionEClass = createEClass(RICH_STRING_SUBSECTION);
+		createEAttribute(richStringSubsectionEClass, RICH_STRING_SUBSECTION__NAME);
 
 		richStringURLEClass = createEClass(RICH_STRING_URL);
 		createEAttribute(richStringURLEClass, RICH_STRING_URL__LOCATION);
@@ -1540,12 +1570,21 @@ public class RichstringPackageImpl extends EPackageImpl implements RichstringPac
 
 		initEClass(richStringChapterEClass, RichStringChapter.class, "RichStringChapter",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringChapter_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				RichStringChapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringSectionEClass, RichStringSection.class, "RichStringSection",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringSection_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				RichStringSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringSubsectionEClass, RichStringSubsection.class, "RichStringSubsection",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRichStringSubsection_Name(), ecorePackage.getEString(), "name", null, 1,
+				1, RichStringSubsection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringURLEClass, RichStringURL.class, "RichStringURL", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

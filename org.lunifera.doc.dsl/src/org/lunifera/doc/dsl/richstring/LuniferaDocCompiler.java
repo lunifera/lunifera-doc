@@ -301,7 +301,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			pushAppendable(object);
 			appendable.newLine();
 			append("<a id=\">");
-			append(object.getId());
+			append(object.getName());
 			append("\" class=\"lundoc-chapter\">");
 		}
 
@@ -319,7 +319,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			pushAppendable(object);
 			appendable.newLine();
 			append("<a id=\">");
-			append(object.getId());
+			append(object.getName());
 			append("\" class=\"lundoc-section\">");
 		}
 
@@ -337,7 +337,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			pushAppendable(object);
 			appendable.newLine();
 			append("<a id=\">");
-			append(object.getId());
+			append(object.getName());
 			append("\" class=\"lundoc-subsection\">");
 		}
 
