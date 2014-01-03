@@ -95,7 +95,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(EntityDocument elem) {
-		'placeholder.png'
+		'document.gif'
 	}
 	
 	def text(EntityDescription elem) {
@@ -103,7 +103,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(EntityDescription elem) {
-		'placeholder.png'
+		'description.gif'
 	}
 	
 	def text(EntityFields elem) {
@@ -111,7 +111,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(EntityFields elem) {
-		'placeholder.png'
+		'fields.gif'
 	}
 	
 	def text(EntityField elem) {
@@ -119,7 +119,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(EntityField elem) {
-		'placeholder.png'
+		'field.gif'
 	}
 	
 	def text(DTODocument elem) {
@@ -127,7 +127,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(DTODocument elem) {
-		'placeholder.png'
+		'document.gif'
 	}
 	
 	def text(DTODescription elem) {
@@ -135,7 +135,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(DTODescription elem) {
-		'placeholder.png'
+		'description.gif'
 	}
 	
 	def text(DTOProperties elem) {
@@ -143,7 +143,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(DTOProperties elem) {
-		'placeholder.png'
+		'properties.gif'
 	}
 	
 	def text(DTOProperty elem) {
@@ -151,7 +151,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(DTOProperty elem) {
-		'placeholder.png'
+		'property.gif'
 	}
 	
 	def text(BPMProcessDocument elem) {
@@ -159,7 +159,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(BPMProcessDocument elem) {
-		'placeholder.png'
+		'document.gif'
 	}
 	
 	def text(BPMProcessDescription elem) {
@@ -167,7 +167,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(BPMProcessDescription elem) {
-		'placeholder.png'
+		'description.gif'
 	}
 	
 	def text(BPMHumanTaskDocument elem) {
@@ -175,7 +175,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(BPMHumanTaskDocument elem) {
-		'placeholder.png'
+		'document.gif'
 	}
 	
 	def text(BPMHumanTaskDescription elem) {
@@ -183,7 +183,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(BPMHumanTaskDescription elem) {
-		'placeholder.png'
+		'description.gif'
 	}
 	
 	def text(VaaclipseViewDocument elem) {
@@ -191,7 +191,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(VaaclipseViewDocument elem) {
-		'placeholder.png'
+		'document.gif'
 	}
 	
 	def text(VaaclipseViewDescription elem) {
@@ -199,7 +199,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(VaaclipseViewDescription elem) {
-		'placeholder.png'
+		'description.gif'
 	}
 	
 	def text(UIDocument elem) {
@@ -207,7 +207,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(UIDocument elem) {
-		'placeholder.png'
+		'document.gif'
 	}
 
 	def text(UIDescription elem) {
@@ -215,7 +215,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(UIDescription elem) {
-		'placeholder.png'
+		'description.gif'
 	}
 	
 	def text(GeneralDocument elem) {
@@ -223,7 +223,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(GeneralDocument elem) {
-		'placeholder.png'
+		'document.gif'
 	}
 	
 	def text(EntityLayout elem) {
@@ -231,7 +231,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(EntityLayout elem) {
-		'placeholder.png'
+		'layout.gif'
 	}
 	
 	def text(DTOLayout elem) {
@@ -239,7 +239,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(DTOLayout elem) {
-		'placeholder.png'
+		'layout.gif'
 	}
 	
 	def text(BPMProcessLayout elem) {
@@ -247,7 +247,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(BPMProcessLayout elem) {
-		'placeholder.png'
+		'layout.gif'
 	}
 	
 	def text(BPMHumanTaskLayout elem) {
@@ -255,7 +255,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(BPMHumanTaskLayout elem) {
-		'placeholder.png'
+		'layout.gif'
 	}
 	
 	def text(VaaclipseViewLayout elem) {
@@ -263,7 +263,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(VaaclipseViewLayout elem) {
-		'placeholder.png'
+		'layout.gif'
 	}
 	
 	def text(UILayout elem) {
@@ -271,7 +271,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(UILayout elem) {
-		'placeholder.png'
+		'layout.gif'
 	}
 	
 	def text(RichString elem) {
@@ -279,7 +279,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichString elem) {
-		'placeholder.png'
+		'richstring.gif'
 	}
 
 	def text(RichStringForLoop elem) {
@@ -287,7 +287,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringForLoop elem) {
-		'placeholder.png'
+		'richstringfor.gif'
 	}
 
 	def text(RichStringIf elem) {
@@ -295,7 +295,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringIf elem) {
-		'placeholder.png'
+		'richstringif.gif'
 	}
 
 	def text(RichStringH1 elem) {
@@ -303,7 +303,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringH1 elem) {
-		'placeholder.png'
+		'richstringh1.gif'
 	}
 
 	def text(RichStringH2 elem) {
@@ -311,7 +311,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringH2 elem) {
-		'placeholder.png'
+		'richstringh2.gif'
 	}
 	
 	def text(RichStringH3 elem) {
@@ -319,7 +319,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringH3 elem) {
-		'placeholder.png'
+		'richstringh3.gif'
 	}
 	
 	def text(RichStringH4 elem) {
@@ -327,7 +327,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringH4 elem) {
-		'placeholder.png'
+		'richstringh4.gif'
 	}
 	
 	def text(RichStringH5 elem) {
@@ -335,7 +335,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringH5 elem) {
-		'placeholder.png'
+		'richstringh5.gif'
 	}
 	
 	def text(RichStringH6 elem) {
@@ -343,7 +343,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringH6 elem) {
-		'placeholder.png'
+		'richstringh6.gif'
 	}
 	
 	def text(RichStringChapter elem) {
@@ -351,7 +351,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringChapter elem) {
-		'placeholder.png'
+		'richstringchapter.gif'
 	}
 	
 	def text(RichStringSection elem) {
@@ -359,7 +359,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringSection elem) {
-		'placeholder.png'
+		'richstringsection.gif'
 	}
 	
 	def text(RichStringSubsection elem) {
@@ -367,7 +367,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringSubsection elem) {
-		'placeholder.png'
+		'richstringsubsection.gif'
 	}
 	
 	def text(RichStringURL elem) {
@@ -375,7 +375,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringURL elem) {
-		'placeholder.png'
+		'richstringurl.gif'
 	}
 	
 	def text(RichStringRef elem) {
@@ -383,7 +383,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringRef elem) {
-		'placeholder.png'
+		'richstringref.gif'
 	}
 	
 	def text(RichStringBold elem) {
@@ -391,7 +391,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringBold elem) {
-		'placeholder.png'
+		'richstringbold.gif'
 	}
 	
 	def text(RichStringUnderline elem) {
@@ -399,7 +399,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringUnderline elem) {
-		'placeholder.png'
+		'richstringunderline.gif'
 	}
 	
 	def text(RichStringItalic elem) {
@@ -407,7 +407,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringItalic elem) {
-		'placeholder.png'
+		'richstringitalic.gif'
 	}
 	
 	def text(RichStringImg elem) {
@@ -415,7 +415,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringImg elem) {
-		'placeholder.png'
+		'richstringimage.gif'
 	}
 	
 	def text(RichStringMailto elem) {
@@ -423,7 +423,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringMailto elem) {
-		'placeholder.png'
+		'richstringmailto.gif'
 	}
 	
 	def text(RichStringSkype elem) {
@@ -431,7 +431,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringSkype elem) {
-		'placeholder.png'
+		'richstringskype.gif'
 	}
 	
 	def text(RichStringMovie elem) {
@@ -439,15 +439,15 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringMovie elem) {
-		'placeholder.png'
+		'richstringmovie.gif'
 	}
 	
 	def text(RichStringCode elem) {
-		'Table'
+		'Code'
 	}
 	
 	def image(RichStringCode elem) {
-		'placeholder.png'
+		'richstringcode.gif'
 	}
 	
 	def text(RichStringTable elem) {
@@ -455,7 +455,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringTable elem) {
-		'placeholder.png'
+		'richstringtable.gif'
 	}
 	
 	def text(RichStringTableRow elem) {
@@ -463,7 +463,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringTableRow elem) {
-		'placeholder.png'
+		'richstringtablerow.gif'
 	}
 	
 	def text(RichStringTableData elem) {
@@ -471,7 +471,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringTableData elem) {
-		'placeholder.png'
+		'richstringtabledata.gif'
 	}
 	
 	def text(RichStringOpenView elem) {
@@ -479,7 +479,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringOpenView elem) {
-		'placeholder.png'
+		'richstringopenview.gif'
 	}
 	
 	def text(RichStringStartProcess elem) {
@@ -487,7 +487,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringStartProcess elem) {
-		'placeholder.png'
+		'richstringstartprocess.gif'
 	}
 	
 	def text(RichStringEntityRef elem) {
@@ -495,7 +495,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringEntityRef elem) {
-		'placeholder.png'
+		'richstringentityref.gif'
 	}
 	
 	def text(RichStringDTORef elem) {
@@ -503,7 +503,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringDTORef elem) {
-		'placeholder.png'
+		'richstringdtoref.gif'
 	}
 	
 	def text(RichStringProcessRef elem) {
@@ -511,7 +511,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringProcessRef elem) {
-		'placeholder.png'
+		'richstringprocessref.gif'
 	}
 	
 	def text(RichStringTaskRef elem) {
@@ -519,7 +519,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringTaskRef elem) {
-		'placeholder.png'
+		'richstringtaskref.gif'
 	}
 	
 	def text(RichStringViewRef elem) {
@@ -527,7 +527,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringViewRef elem) {
-		'placeholder.png'
+		'richstringviewref.gif'
 	}
 	
 	def text(RichStringUIRef elem) {
@@ -535,7 +535,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringUIRef elem) {
-		'placeholder.png'
+		'richstringuiref.gif'
 	}
 	
 	def text(RichStringList elem) {
@@ -543,7 +543,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringList elem) {
-		'placeholder.png'
+		'richstringlist.gif'
 	}
 	
 	def text(RichStringOrderedList elem) {
@@ -551,7 +551,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringOrderedList elem) {
-		'placeholder.png'
+		'richstringorderedlist.gif'
 	}
 	
 	def text(RichStringListElement elem) {
@@ -559,7 +559,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringListElement elem) {
-		'placeholder.png'
+		'richstringlistelement.gif'
 	}
 	
 	def text(RichStringSpan elem) {
@@ -567,7 +567,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringSpan elem) {
-		'placeholder.png'
+		'richstringspan.gif'
 	}
 
 	def text(RichStringExample elem) {
@@ -575,7 +575,7 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringExample elem) {
-		'placeholder.png'
+		'richstringexample.gif'
 	}
 
 	def text(RichStringLiteral elem) {
@@ -588,7 +588,12 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(RichStringLiteral elem) {
-		'placeholder.png'
+		'richstringliteral.gif'
+//		if(elem.value == null || elem.value.empty) {
+//			null
+//		} else {
+//			'richstringliteral.gif' 
+//		}
 	}
 
 	def text(XExpression elem) {
@@ -596,6 +601,6 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def image(XExpression elem) {
-		'placeholder.png'
+		'xexpression.gif'
 	}
 }
