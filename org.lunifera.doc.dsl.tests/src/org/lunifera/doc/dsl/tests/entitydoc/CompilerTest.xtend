@@ -178,7 +178,6 @@ class CompilerTest {
 			    this.fields = new java.util.ArrayList<IEntityField>();
 			    this.fields.add(new FieldA());
 			    this.fields.add(new FieldB());
-			    
 			  }
 			  
 			  public CharSequence serializeDescription() {

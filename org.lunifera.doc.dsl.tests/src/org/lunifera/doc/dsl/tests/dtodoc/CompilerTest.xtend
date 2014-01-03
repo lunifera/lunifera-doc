@@ -137,7 +137,6 @@ class CompilerTest {
 			    this.properties = new java.util.ArrayList<IDTOProperty>();
 			    this.properties.add(new PropA());
 			    this.properties.add(new PropB());
-			    
 			  }
 			  
 			  public CharSequence serializeDescription() {
@@ -344,32 +343,16 @@ class CompilerTest {
 			    return this.name;
 			  }
 			  
-			  public void setName(final String name) {
-			    this.name = name;
-			  }
-			  
 			  public String getDtoClass() {
 			    return this.dtoClass;
-			  }
-			  
-			  public void setDtoClass(final String dtoClass) {
-			    this.dtoClass = dtoClass;
 			  }
 			  
 			  public String getDescription() {
 			    return serializeDescription().toString();
 			  }
 			  
-			  public void setDescription(final String description) {
-			    this.description = description;
-			  }
-			  
 			  public List<IDTOProperty> getProperties() {
 			    return this.properties;
-			  }
-			  
-			  public void setProperties(final List<IDTOProperty> properties) {
-			    this.properties = properties;
 			  }
 			}
 		'''.toString, getSingleGeneratedCode)
