@@ -43,7 +43,7 @@ DTOLayout returns layout::DTOLayout:
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
-	
+	 
 BPMProcessLayout returns layout::BPMProcessLayout:
 	'BPMProcessLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
