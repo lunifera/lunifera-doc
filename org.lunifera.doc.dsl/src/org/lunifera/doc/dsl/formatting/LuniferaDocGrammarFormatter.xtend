@@ -54,19 +54,37 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 			c.setLinewrap(1).around(pair.second)
 		}
 		
-		for (Pair<Keyword, Keyword> pair : findKeywordPairs("'''", "'''")) {
-			c.setIndentationIncrement().after(pair.first)
-			c.setLinewrap(1).after(pair.first)
-			c.setIndentationDecrement().before(pair.second)
-			c.setLinewrap(1).around(pair.second)
+//		for (Pair<Keyword, Keyword> pair : findKeywordPairs("'''", "'''")) {
+////			c.setIndentationIncrement().before(pair.first)
+//			c.setLinewrap(1).after(pair.first)
+////			c.setIndentationDecrement().before(pair.second)
+//			c.setLinewrap(1).around(pair.second)
+//		}
+		
+		for(Keyword keyword: namedDocumentAccess.findKeywords("'''")) {
+			c.setLinewrap(1).around(keyword)
+		}
+		
+		for(Keyword keyword: namedDocumentAccess.findKeywords("«")) {
+			c.setNoSpace.before(keyword)
 		}
 		
 		// LAYOUTS
 		
 		// DOCUMENTS
 		
-		// FORMATTING/RICHSTRINGS
+		// entity doc
+		c.setLinewrap(1).after(entityFieldAccess.nameAssignment_2)
+		c.setLinewrap(1).after(entityFieldAccess.pkAssignment_5_1)
+		c.setLinewrap(1).after(entityFieldAccess.typeAssignment_3_1)
+		c.setLinewrap(1).after(entityFieldAccess.lengthAssignment_4_1)
+		c.setLinewrap(1).after(entityFieldAccess.nullableAssignment_6_1)
 		
+		// dto doc
+		c.setLinewrap(1).after(DTOPropertyAccess.nameAssignment_2)
+		
+		// FORMATTING/RICHSTRINGS
+
 		// h1
 		c.setNoSpace().around(richStringH1Access.h1Keyword_1)
 		c.setNoSpace().around(richStringH1Access.h1Keyword_3)
@@ -105,12 +123,12 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		
 		// URL
 		c.setNoSpace().before(richStringURLAccess.urlKeyword_1)
-		c.setNoSpace().before(richStringURLAccess.locationAssignment_2)
+		c.setNoSpace().after(richStringURLAccess.locationAssignment_2)
 		c.setNoSpace().around(richStringURLAccess.urlKeyword_4)
 		
 		// Ref
 		c.setNoSpace().before(richStringRefAccess.refKeyword_1)
-		c.setNoSpace().before(richStringRefAccess.refIdAssignment_2)
+		c.setNoSpace().after(richStringRefAccess.refIdAssignment_2)
 		c.setNoSpace().around(richStringRefAccess.refKeyword_4)
 		
 		// bold
@@ -127,14 +145,21 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		
 		// img
 		c.setNoSpace().before(richStringImgAccess.imgKeyword_1)
+		c.setNoSpace().after(richStringImgAccess.solidusKeyword_10)
+		c.setNoSpace().before(richStringImgAccess.srcAssignment_3)
+		c.setNoSpace().before(richStringImgAccess.altAssignment_5)
+		c.setNoSpace().before(richStringImgAccess.heightAssignment_9)
+		c.setNoSpace().before(richStringImgAccess.widthAssignment_7)
 		
 		// mailto
 		c.setNoSpace().before(richStringMailtoAccess.mailtoKeyword_1)
 		c.setNoSpace().around(richStringMailtoAccess.mailtoKeyword_4)
+		c.setNoSpace().after(richStringMailtoAccess.emailAssignment_2)
 		
 		// skype
 		c.setNoSpace().before(richStringSkypeAccess.skypeKeyword_1)
 		c.setNoSpace().around(richStringSkypeAccess.skypeKeyword_4)
+		c.setNoSpace().after(richStringSkypeAccess.targetAssignment_2)
 		
 		// movie
 		c.setNoSpace().before(richStringMovieAccess.movieKeyword_1)
@@ -147,6 +172,7 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		// code
 		c.setNoSpace().before(richStringCodeAccess.codeKeyword_1)
 		c.setNoSpace().around(richStringCodeAccess.codeKeyword_4)
+		c.setNoSpace().around(richStringCodeAccess.langAssignment_2_1)
 		
 		// example
 		c.setNoSpace().around(richStringExampleAccess.exampleKeyword_1)
@@ -165,36 +191,44 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		c.setNoSpace().around(richStringTableDataAccess.columnKeyword_3)
 		
 		// open view
-		c.setNoSpace().around(richStringOpenViewAccess.openviewKeyword_1)
+		c.setNoSpace().before(richStringOpenViewAccess.openviewKeyword_1)
 		c.setNoSpace().around(richStringOpenViewAccess.openviewKeyword_4)
+		c.setNoSpace().after(richStringOpenViewAccess.viewIdAssignment_2)
 		
 		// start process
-		c.setNoSpace().around(richStringStartProcessAccess.startprocessKeyword_1)
+		c.setNoSpace().before(richStringStartProcessAccess.startprocessKeyword_1)
 		c.setNoSpace().around(richStringStartProcessAccess.startprocessKeyword_4)
+		c.setNoSpace().after(richStringStartProcessAccess.processIdAssignment_2)
 		
 		// entity ref
-		c.setNoSpace().around(richStringEntityRefAccess.entityRefKeyword_1)
+		c.setNoSpace().before(richStringEntityRefAccess.entityRefKeyword_1)
 		c.setNoSpace().around(richStringEntityRefAccess.entityRefKeyword_4)
+		c.setNoSpace().after(richStringEntityRefAccess.entityDocAssignment_2)
 		
 		// dto ref
 		c.setNoSpace().before(richStringDTORefAccess.dtoRefKeyword_1)
 		c.setNoSpace().around(richStringDTORefAccess.dtoRefKeyword_4)
+		c.setNoSpace().after(richStringDTORefAccess.dtoDocAssignment_2)
 		
 		// process ref
 		c.setNoSpace().before(richStringProcessRefAccess.processRefKeyword_1)
 		c.setNoSpace().around(richStringProcessRefAccess.processRefKeyword_4)
+		c.setNoSpace().after(richStringProcessRefAccess.processDocAssignment_2)
 		
 		// task ref
 		c.setNoSpace().before(richStringTaskRefAccess.taskRefKeyword_1)
 		c.setNoSpace().around(richStringTaskRefAccess.taskRefKeyword_4)
+		c.setNoSpace().after(richStringTaskRefAccess.taskDocAssignment_2)
 		
 		// view ref
 		c.setNoSpace().before(richStringViewRefAccess.viewRefKeyword_1)
 		c.setNoSpace().around(richStringViewRefAccess.viewRefKeyword_4)
+		c.setNoSpace().after(richStringViewRefAccess.viewDocAssignment_2)
 		
 		// ui ref
 		c.setNoSpace().before(richStringUIRefAccess.uiRefKeyword_1)
 		c.setNoSpace().around(richStringUIRefAccess.uiRefKeyword_4)
+		c.setNoSpace().around(richStringUIRefAccess.uiDocAssignment_2)
 		
 		// unordered list
 		c.setNoSpace().around(richStringListAccess.ulKeyword_1)
@@ -211,7 +245,7 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		// span/style
 		c.setNoSpace().before(richStringSpanAccess.styleKeyword_1)
 		c.setNoSpace().around(richStringSpanAccess.styleKeyword_4)
-		
+		c.setNoSpace().after(richStringSpanAccess.styleClassAssignment_2)
 		
 	}
 }

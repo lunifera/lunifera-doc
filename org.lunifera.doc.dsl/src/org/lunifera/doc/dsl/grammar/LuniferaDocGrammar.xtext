@@ -91,7 +91,7 @@ EntityFields returns document::EntityFields:
 	
 EntityField returns document::EntityField:
 	{document::EntityField} 'name' name=ID
-	('type' type=ID)?
+	('type' type=STRING)?
 	('length' length=INT)?
 	('pk' pk?="true")?
 	('nullable' nullable?="true")?

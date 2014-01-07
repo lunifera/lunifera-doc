@@ -30,6 +30,7 @@ public class RichStringSectionImpl extends RichStringMarkupImpl implements RichS
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->

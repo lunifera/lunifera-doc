@@ -18,7 +18,6 @@ package org.lunifera.doc.dsl.luniferadoc.richstring;
  * @generated
  */
 public interface RichStringSubsection extends RichStringMarkup {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>
@@ -44,4 +43,5 @@ public interface RichStringSubsection extends RichStringMarkup {
 	 * @generated
 	 */
 	void setName(String value);
+
 } // RichStringSubsection

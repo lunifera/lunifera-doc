@@ -6,13 +6,18 @@ package org.lunifera.doc.dsl.luniferadoc.richstring;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Rich String Section</b></em>'. <!-- end-user-doc
  * -->
  * 
+ * <p>
+ * The following features are supported:
+ * <ul>
+ * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection#getName <em>Name</em>}</li>
+ * </ul>
+ * </p>
  * 
  * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringSection()
  * @model
  * @generated
  */
 public interface RichStringSection extends RichStringMarkup {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>
@@ -38,4 +43,5 @@ public interface RichStringSection extends RichStringMarkup {
 	 * @generated
 	 */
 	void setName(String value);
+
 } // RichStringSection
