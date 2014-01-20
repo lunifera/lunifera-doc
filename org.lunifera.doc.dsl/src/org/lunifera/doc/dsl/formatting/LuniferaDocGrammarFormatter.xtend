@@ -74,6 +74,7 @@ public static val blankLinesAfterPackageDecl = new BlankLineKey("blank.lines.aft
 			else
 				format += imp.nodeForEObject.append[cfg(blankLinesAfterImports)]
 		}
+<<<<<<< HEAD
 	}
 
 	def protected dispatch void format(DocumentInclude imp, FormattableDocument document) {
@@ -267,5 +268,201 @@ public static val blankLinesAfterPackageDecl = new BlankLineKey("blank.lines.aft
 		document += member.nodeForKeyword("var").append[oneSpace]
 		document += member.nodeForKeyword("def").append[oneSpace]
 		document += member.nodeForKeyword("override").append[oneSpace]
+=======
+		
+//		for (Pair<Keyword, Keyword> pair : findKeywordPairs("'''", "'''")) {
+////			c.setIndentationIncrement().before(pair.first)
+//			c.setLinewrap(1).after(pair.first)
+////			c.setIndentationDecrement().before(pair.second)
+//			c.setLinewrap(1).around(pair.second)
+//		}
+		
+		for(Keyword keyword: namedDocumentAccess.findKeywords("'''")) {
+			c.setLinewrap(1).around(keyword)
+		}
+		
+		for(Keyword keyword: namedDocumentAccess.findKeywords("«")) {
+			c.setNoSpace.before(keyword)
+		}
+		
+		// LAYOUTS
+		
+		// DOCUMENTS
+		
+		// entity doc
+		c.setLinewrap(1).after(entityFieldAccess.nameAssignment_2)
+		c.setLinewrap(1).after(entityFieldAccess.pkAssignment_5_1)
+		c.setLinewrap(1).after(entityFieldAccess.typeAssignment_3_1)
+		c.setLinewrap(1).after(entityFieldAccess.lengthAssignment_4_1)
+		c.setLinewrap(1).after(entityFieldAccess.nullableAssignment_6_1)
+		
+		// dto doc
+		c.setLinewrap(1).after(DTOPropertyAccess.nameAssignment_2)
+		
+		// FORMATTING/RICHSTRINGS
+
+		// h1
+		c.setNoSpace().around(richStringH1Access.h1Keyword_1)
+		c.setNoSpace().around(richStringH1Access.h1Keyword_3)
+		
+		// h2
+		c.setNoSpace().around(richStringH2Access.h2Keyword_1)
+		c.setNoSpace().around(richStringH2Access.h2Keyword_3)
+		
+		// h3
+		c.setNoSpace().around(richStringH3Access.h3Keyword_1)
+		c.setNoSpace().around(richStringH3Access.h3Keyword_3)
+		
+		// h4
+		c.setNoSpace().around(richStringH4Access.h4Keyword_1)
+		c.setNoSpace().around(richStringH4Access.h4Keyword_3)
+		
+		// h5
+		c.setNoSpace().around(richStringH5Access.h5Keyword_1)
+		c.setNoSpace().around(richStringH5Access.h5Keyword_3)
+		
+		// h6
+		c.setNoSpace().around(richStringH6Access.h6Keyword_1)
+		c.setNoSpace().around(richStringH6Access.h6Keyword_3)
+		
+		// chapter
+		c.setNoSpace().before(richStringChapterAccess.chapterKeyword_1)
+		c.setNoSpace().around(richStringChapterAccess.chapterKeyword_4)
+		
+		// section
+		c.setNoSpace().before(richStringSectionAccess.sectionKeyword_1)
+		c.setNoSpace().around(richStringSectionAccess.sectionKeyword_4)
+		
+		// subsection
+		c.setNoSpace().before(richStringSubsectionAccess.subsectionKeyword_1)
+		c.setNoSpace().around(richStringSubsectionAccess.subsectionKeyword_4)
+		
+		// URL
+		c.setNoSpace().before(richStringURLAccess.urlKeyword_1)
+		c.setNoSpace().after(richStringURLAccess.locationAssignment_2)
+		c.setNoSpace().around(richStringURLAccess.urlKeyword_4)
+		
+		// Ref
+		c.setNoSpace().before(richStringRefAccess.refKeyword_1)
+		c.setNoSpace().after(richStringRefAccess.refIdAssignment_2)
+		c.setNoSpace().around(richStringRefAccess.refKeyword_4)
+		
+		// bold
+		c.setNoSpace().around(richStringBoldAccess.boldKeyword_1)
+		c.setNoSpace().around(richStringBoldAccess.boldKeyword_3)
+		
+		// italic
+		c.setNoSpace().around(richStringItalicAccess.italicKeyword_1)
+		c.setNoSpace().around(richStringItalicAccess.italicKeyword_3)
+		
+		// underline
+		c.setNoSpace().around(richStringUnderlineAccess.UKeyword_1)
+		c.setNoSpace().around(richStringUnderlineAccess.UKeyword_3)
+		
+		// img
+		c.setNoSpace().before(richStringImgAccess.imgKeyword_1)
+		c.setNoSpace().after(richStringImgAccess.solidusKeyword_10)
+		c.setNoSpace().before(richStringImgAccess.srcAssignment_3)
+		c.setNoSpace().before(richStringImgAccess.altAssignment_5)
+		c.setNoSpace().before(richStringImgAccess.heightAssignment_9)
+		c.setNoSpace().before(richStringImgAccess.widthAssignment_7)
+		
+		// mailto
+		c.setNoSpace().before(richStringMailtoAccess.mailtoKeyword_1)
+		c.setNoSpace().around(richStringMailtoAccess.mailtoKeyword_4)
+		c.setNoSpace().after(richStringMailtoAccess.emailAssignment_2)
+		
+		// skype
+		c.setNoSpace().before(richStringSkypeAccess.skypeKeyword_1)
+		c.setNoSpace().around(richStringSkypeAccess.skypeKeyword_4)
+		c.setNoSpace().after(richStringSkypeAccess.targetAssignment_2)
+		
+		// movie
+		c.setNoSpace().before(richStringMovieAccess.movieKeyword_1)
+		c.setNoSpace().before(richStringMovieAccess.srcAssignment_3)
+		c.setNoSpace().before(richStringMovieAccess.typeAssignment_5)
+		c.setNoSpace().before(richStringMovieAccess.widthAssignment_7)
+		c.setNoSpace().before(richStringMovieAccess.heightAssignment_9)
+		c.setNoSpace().around(richStringMovieAccess.movieKeyword_11)
+		
+		// code
+		c.setNoSpace().before(richStringCodeAccess.codeKeyword_1)
+		c.setNoSpace().around(richStringCodeAccess.codeKeyword_4)
+		c.setNoSpace().around(richStringCodeAccess.langAssignment_2_1)
+		
+		// example
+		c.setNoSpace().around(richStringExampleAccess.exampleKeyword_1)
+		c.setNoSpace().around(richStringExampleAccess.exampleKeyword_3)
+		
+		// table
+		c.setNoSpace().around(richStringTableAccess.tableKeyword_1)
+		c.setNoSpace().around(richStringTableAccess.tableKeyword_3)
+		
+		// table row
+		c.setNoSpace().around(richStringTableRowAccess.rowKeyword_1)
+		c.setNoSpace().around(richStringTableRowAccess.rowKeyword_3)
+		
+		// table date (column)
+		c.setNoSpace().around(richStringTableDataAccess.columnKeyword_1)
+		c.setNoSpace().around(richStringTableDataAccess.columnKeyword_3)
+		
+		// open view
+		c.setNoSpace().before(richStringOpenViewAccess.openviewKeyword_1)
+		c.setNoSpace().around(richStringOpenViewAccess.openviewKeyword_4)
+		c.setNoSpace().after(richStringOpenViewAccess.viewIdAssignment_2)
+		
+		// start process
+		c.setNoSpace().before(richStringStartProcessAccess.startprocessKeyword_1)
+		c.setNoSpace().around(richStringStartProcessAccess.startprocessKeyword_4)
+		c.setNoSpace().after(richStringStartProcessAccess.processIdAssignment_2)
+		
+		// entity ref
+		c.setNoSpace().before(richStringEntityRefAccess.entityRefKeyword_1)
+		c.setNoSpace().around(richStringEntityRefAccess.entityRefKeyword_4)
+		c.setNoSpace().after(richStringEntityRefAccess.entityDocAssignment_2)
+		
+		// dto ref
+		c.setNoSpace().before(richStringDTORefAccess.dtoRefKeyword_1)
+		c.setNoSpace().around(richStringDTORefAccess.dtoRefKeyword_4)
+		c.setNoSpace().after(richStringDTORefAccess.dtoDocAssignment_2)
+		
+		// process ref
+		c.setNoSpace().before(richStringProcessRefAccess.processRefKeyword_1)
+		c.setNoSpace().around(richStringProcessRefAccess.processRefKeyword_4)
+		c.setNoSpace().after(richStringProcessRefAccess.processDocAssignment_2)
+		
+		// task ref
+		c.setNoSpace().before(richStringTaskRefAccess.taskRefKeyword_1)
+		c.setNoSpace().around(richStringTaskRefAccess.taskRefKeyword_4)
+		c.setNoSpace().after(richStringTaskRefAccess.taskDocAssignment_2)
+		
+		// view ref
+		c.setNoSpace().before(richStringViewRefAccess.viewRefKeyword_1)
+		c.setNoSpace().around(richStringViewRefAccess.viewRefKeyword_4)
+		c.setNoSpace().after(richStringViewRefAccess.viewDocAssignment_2)
+		
+		// ui ref
+		c.setNoSpace().before(richStringUIRefAccess.uiRefKeyword_1)
+		c.setNoSpace().around(richStringUIRefAccess.uiRefKeyword_4)
+		c.setNoSpace().around(richStringUIRefAccess.uiDocAssignment_2)
+		
+		// unordered list
+		c.setNoSpace().around(richStringListAccess.ulKeyword_1)
+		c.setNoSpace().around(richStringListAccess.ulKeyword_3)
+		
+		// ordered list
+		c.setNoSpace().around(richStringOrderedListAccess.olKeyword_1)
+		c.setNoSpace().around(richStringOrderedListAccess.olKeyword_3)
+		
+		// list element
+		c.setNoSpace().around(richStringListElementAccess.liKeyword_1)
+		c.setNoSpace().around(richStringListElementAccess.liKeyword_3)
+		
+		// span/style
+		c.setNoSpace().before(richStringSpanAccess.styleKeyword_1)
+		c.setNoSpace().around(richStringSpanAccess.styleKeyword_4)
+		c.setNoSpace().after(richStringSpanAccess.styleClassAssignment_2)
+		
+>>>>>>> 570d186102865a73a644ec168ebe386c797b3b4a
 	}
 }

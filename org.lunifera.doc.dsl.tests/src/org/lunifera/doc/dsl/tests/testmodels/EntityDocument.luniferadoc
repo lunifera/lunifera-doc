@@ -4,7 +4,7 @@ EntityDocument doc.entity.MyEntityDoc for org.lunifera.sample.MyEntity {
 	}
 	fields {
 		name fieldA
-		type int
+		type "int"
 		length 11
 		pk true
 		description {
@@ -14,7 +14,7 @@ EntityDocument doc.entity.MyEntityDoc for org.lunifera.sample.MyEntity {
 		}
 		
 		name fieldB
-		type varchar
+		type "varchar"
 		length 255
 		nullable true
 		description {
