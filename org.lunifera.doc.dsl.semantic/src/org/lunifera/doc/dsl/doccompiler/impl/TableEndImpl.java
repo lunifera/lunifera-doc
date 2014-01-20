@@ -3,29 +3,34 @@
 package org.lunifera.doc.dsl.doccompiler.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.TableEnd;
 import org.lunifera.doc.dsl.doccompiler.TableStart;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Table End</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Table End</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableEndImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.doccompiler.impl.TableEndImpl#getStart <em>Start</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class TableEndImpl extends LinePartImpl implements TableEnd {
 	/**
-	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -33,8 +38,8 @@ public class TableEndImpl extends LinePartImpl implements TableEnd {
 	protected TableStart start;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TableEndImpl() {
@@ -42,8 +47,8 @@ public class TableEndImpl extends LinePartImpl implements TableEnd {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,26 +57,25 @@ public class TableEndImpl extends LinePartImpl implements TableEnd {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableStart getStart() {
 		if (start != null && start.eIsProxy()) {
-			InternalEObject oldStart = (InternalEObject) start;
-			start = (TableStart) eResolveProxy(oldStart);
+			InternalEObject oldStart = (InternalEObject)start;
+			start = (TableStart)eResolveProxy(oldStart);
 			if (start != oldStart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DocCompilerPackage.TABLE_END__START, oldStart, start));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocCompilerPackage.TABLE_END__START, oldStart, start));
 			}
 		}
 		return start;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableStart basicGetStart() {
@@ -79,76 +83,74 @@ public class TableEndImpl extends LinePartImpl implements TableEnd {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setStart(TableStart newStart) {
 		TableStart oldStart = start;
 		start = newStart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DocCompilerPackage.TABLE_END__START, oldStart, start));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.TABLE_END__START, oldStart, start));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocCompilerPackage.TABLE_END__START:
-			if (resolve)
-				return getStart();
-			return basicGetStart();
+			case DocCompilerPackage.TABLE_END__START:
+				if (resolve) return getStart();
+				return basicGetStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocCompilerPackage.TABLE_END__START:
-			setStart((TableStart) newValue);
-			return;
+			case DocCompilerPackage.TABLE_END__START:
+				setStart((TableStart)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocCompilerPackage.TABLE_END__START:
-			setStart((TableStart) null);
-			return;
+			case DocCompilerPackage.TABLE_END__START:
+				setStart((TableStart)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocCompilerPackage.TABLE_END__START:
-			return start != null;
+			case DocCompilerPackage.TABLE_END__START:
+				return start != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} // TableEndImpl
+} //TableEndImpl

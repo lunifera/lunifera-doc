@@ -303,6 +303,8 @@ public interface IRichStringPartAcceptor {
 	void acceptListElementEnd();
 
 	void acceptImgStart(RichStringImg object);
+	
+	void acceptImgEnd();
 
 	void acceptBoldStart(RichStringBold object);
 

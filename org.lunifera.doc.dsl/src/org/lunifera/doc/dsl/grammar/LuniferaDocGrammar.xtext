@@ -9,7 +9,6 @@
 grammar org.lunifera.doc.dsl.LuniferaDocGrammar with org.eclipse.xtext.xbase.Xbase
 
 import "http://www.lunifera.org/luniferadoc" as luniferadoc
-import "http://www.lunifera.org/luniferadoc/layout" as layout
 import "http://www.lunifera.org/luniferadoc/document" as document
 import "http://www.lunifera.org/luniferadoc/richstring" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
@@ -20,7 +19,7 @@ NamedDocument returns luniferadoc::NamedDocument:
 LuniferaDocDocument returns document::LuniferaDocDocument:
 	EntityDocument | DTODocument | BPMProcessDocument | BPMHumanTaskDocument | VaaclipseViewDocument | UIDocument;
 	
-LuniferaDocLayout returns layout::LuniferaDocLayout:
+LuniferaDocLayout returns document::LuniferaDocLayout:
 	GeneralDocument | EntityLayout | DTOLayout | BPMProcessLayout | BPMHumanTaskLayout | VaaclipseViewLayout | UILayout;
 
 DocumentInclude returns luniferadoc::DocumentInclude:
@@ -32,37 +31,37 @@ enum IncludeType returns luniferadoc::DocType:
 
 // LAYOUTS
 
-EntityLayout returns layout::EntityLayout:
+EntityLayout returns document::EntityLayout:
 	'EntityLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
-DTOLayout returns layout::DTOLayout:
+DTOLayout returns document::DTOLayout:
 	'DTOLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	 
-BPMProcessLayout returns layout::BPMProcessLayout:
+BPMProcessLayout returns document::BPMProcessLayout:
 	'BPMProcessLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
-BPMHumanTaskLayout returns layout::BPMHumanTaskLayout:
+BPMHumanTaskLayout returns document::BPMHumanTaskLayout:
 	'BPMHumanTaskLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
-VaaclipseViewLayout returns layout::VaaclipseViewLayout:
+VaaclipseViewLayout returns document::VaaclipseViewLayout:
 	'VaaclipseViewLayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
 	'}';
 	
-UILayout returns layout::UILayout:
+UILayout returns document::UILayout:
 	'UILayout' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	content=RichString
@@ -250,16 +249,26 @@ RichStringSkype returns xbase::XExpression:
 RichStringMovie returns xbase::XExpression:
 	{richstring::RichStringMovie}
 	"movie" "src="src=STRING "type="type=STRING "width="width=STRING "height="height=STRING 
-	content=InternalRichString
-	"/movie";
+	(
+		"/" 
+		| 
+		(content=InternalRichString "/movie")
+	)
+	;
 	
 RichStringImg returns xbase::XExpression:
 	{richstring::RichStringImg}
-	"img" "src="src=STRING "alt="alt=STRING "width="width=STRING "height="height=STRING "/";
+	"img" "src="src=STRING "alt="alt=STRING "width="width=STRING "height="height=STRING 
+	(
+		"/" 
+		| 
+		(content=InternalRichString "/img")
+	)
+	;
 	
 RichStringBold returns xbase::XExpression:
 	{richstring::RichStringBold}
-	"bold" expression=InternalRichString "/bold";
+	"b" expression=InternalRichString "/b";
 
 RichStringUnderline returns xbase::XExpression:
 	{richstring::RichStringUnderline}
@@ -267,7 +276,7 @@ RichStringUnderline returns xbase::XExpression:
 	
 RichStringItalic returns xbase::XExpression:
 	{richstring::RichStringItalic}
-	"italic" expression=InternalRichString "/italic";
+	"i" expression=InternalRichString "/i";
 	
 RichStringSpan returns xbase::XExpression:
 	{richstring::RichStringSpan}

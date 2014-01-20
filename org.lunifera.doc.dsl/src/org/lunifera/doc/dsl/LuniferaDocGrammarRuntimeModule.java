@@ -11,14 +11,19 @@ package org.lunifera.doc.dsl;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
+import org.eclipse.xtext.xbase.formatting.IBasicFormatter;
+import org.eclipse.xtext.xbase.formatting.IFormattingPreferenceValuesProvider;
 import org.eclipse.xtext.xbase.util.XExpressionHelper;
 import org.lunifera.doc.dsl.conversion.LuniferaDocValueConverterService;
+import org.lunifera.doc.dsl.formatting.FormatterPreferenceValuesProvider;
+import org.lunifera.doc.dsl.formatting.LuniferaDocGrammarFormatter;
 import org.lunifera.doc.dsl.richstring.LuniferaDocCompiler;
 import org.lunifera.doc.dsl.typing.LuniferaDocExpressionHelper;
 import org.lunifera.doc.dsl.typing.LuniferaDocTypeComputer;
 
 /**
- * Use this class to register components to be used at runtime / without the Equinox extension registry.
+ * Use this class to register components to be used at runtime / without the
+ * Equinox extension registry.
  */
 public class LuniferaDocGrammarRuntimeModule extends
 		org.lunifera.doc.dsl.AbstractLuniferaDocGrammarRuntimeModule {
@@ -39,6 +44,15 @@ public class LuniferaDocGrammarRuntimeModule extends
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return LuniferaDocValueConverterService.class;
+	}
+
+	@SuppressWarnings("restriction")
+	public Class<? extends IBasicFormatter> bindIBasicFormatter() {
+		return LuniferaDocGrammarFormatter.class;
+	}
+	
+	public Class<? extends IFormattingPreferenceValuesProvider> bindIFormattingPreferenceValuesProvider() {
+		return FormatterPreferenceValuesProvider.class;
 	}
 
 }

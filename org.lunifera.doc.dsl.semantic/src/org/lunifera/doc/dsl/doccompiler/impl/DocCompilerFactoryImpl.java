@@ -5,122 +5,43 @@ package org.lunifera.doc.dsl.doccompiler.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.lunifera.doc.dsl.doccompiler.BoldEnd;
-import org.lunifera.doc.dsl.doccompiler.BoldStart;
-import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
-import org.lunifera.doc.dsl.doccompiler.ChapterStart;
-import org.lunifera.doc.dsl.doccompiler.CodeEnd;
-import org.lunifera.doc.dsl.doccompiler.CodeStart;
-import org.lunifera.doc.dsl.doccompiler.DTORefEnd;
-import org.lunifera.doc.dsl.doccompiler.DTORefStart;
-import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
-import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
-import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
-import org.lunifera.doc.dsl.doccompiler.DocumentStart;
-import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
-import org.lunifera.doc.dsl.doccompiler.ElseStart;
-import org.lunifera.doc.dsl.doccompiler.EndIf;
-import org.lunifera.doc.dsl.doccompiler.EntityRefEnd;
-import org.lunifera.doc.dsl.doccompiler.EntityRefStart;
-import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
-import org.lunifera.doc.dsl.doccompiler.ExampleStart;
-import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
-import org.lunifera.doc.dsl.doccompiler.ForLoopStart;
-import org.lunifera.doc.dsl.doccompiler.H1End;
-import org.lunifera.doc.dsl.doccompiler.H1Start;
-import org.lunifera.doc.dsl.doccompiler.H2End;
-import org.lunifera.doc.dsl.doccompiler.H2Start;
-import org.lunifera.doc.dsl.doccompiler.H3End;
-import org.lunifera.doc.dsl.doccompiler.H3Start;
-import org.lunifera.doc.dsl.doccompiler.H4End;
-import org.lunifera.doc.dsl.doccompiler.H4Start;
-import org.lunifera.doc.dsl.doccompiler.H5End;
-import org.lunifera.doc.dsl.doccompiler.H5Start;
-import org.lunifera.doc.dsl.doccompiler.H6End;
-import org.lunifera.doc.dsl.doccompiler.H6Start;
-import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.doccompiler.ImgStart;
-import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
-import org.lunifera.doc.dsl.doccompiler.ItalicStart;
-import org.lunifera.doc.dsl.doccompiler.Line;
-import org.lunifera.doc.dsl.doccompiler.LineBreak;
-import org.lunifera.doc.dsl.doccompiler.LinePart;
-import org.lunifera.doc.dsl.doccompiler.ListElementEnd;
-import org.lunifera.doc.dsl.doccompiler.ListElementStart;
-import org.lunifera.doc.dsl.doccompiler.ListEnd;
-import org.lunifera.doc.dsl.doccompiler.ListStart;
-import org.lunifera.doc.dsl.doccompiler.Literal;
-import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
-import org.lunifera.doc.dsl.doccompiler.MailtoStart;
-import org.lunifera.doc.dsl.doccompiler.Markup;
-import org.lunifera.doc.dsl.doccompiler.MovieEnd;
-import org.lunifera.doc.dsl.doccompiler.MovieStart;
-import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
-import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
-import org.lunifera.doc.dsl.doccompiler.OrderedListEnd;
-import org.lunifera.doc.dsl.doccompiler.OrderedListStart;
-import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
-import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
-import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
-import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
-import org.lunifera.doc.dsl.doccompiler.RefEnd;
-import org.lunifera.doc.dsl.doccompiler.RefStart;
-import org.lunifera.doc.dsl.doccompiler.SectionEnd;
-import org.lunifera.doc.dsl.doccompiler.SectionStart;
-import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
-import org.lunifera.doc.dsl.doccompiler.SkypeStart;
-import org.lunifera.doc.dsl.doccompiler.SpanEnd;
-import org.lunifera.doc.dsl.doccompiler.SpanStart;
-import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
-import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
-import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
-import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
-import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
-import org.lunifera.doc.dsl.doccompiler.TableDataStart;
-import org.lunifera.doc.dsl.doccompiler.TableEnd;
-import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
-import org.lunifera.doc.dsl.doccompiler.TableRowStart;
-import org.lunifera.doc.dsl.doccompiler.TableStart;
-import org.lunifera.doc.dsl.doccompiler.TaskRefEnd;
-import org.lunifera.doc.dsl.doccompiler.TaskRefStart;
-import org.lunifera.doc.dsl.doccompiler.UIRefEnd;
-import org.lunifera.doc.dsl.doccompiler.UIRefStart;
-import org.lunifera.doc.dsl.doccompiler.URLEnd;
-import org.lunifera.doc.dsl.doccompiler.URLStart;
-import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
-import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
-import org.lunifera.doc.dsl.doccompiler.ViewRefEnd;
-import org.lunifera.doc.dsl.doccompiler.ViewRefStart;
+
+import org.lunifera.doc.dsl.doccompiler.*;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
  * @generated
  */
 public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerFactory {
 	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static DocCompilerFactory init() {
 		try {
-			DocCompilerFactory theDocCompilerFactory = (DocCompilerFactory) EPackage.Registry.INSTANCE
-					.getEFactory(DocCompilerPackage.eNS_URI);
+			DocCompilerFactory theDocCompilerFactory = (DocCompilerFactory)EPackage.Registry.INSTANCE.getEFactory(DocCompilerPackage.eNS_URI);
 			if (theDocCompilerFactory != null) {
 				return theDocCompilerFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DocCompilerFactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DocCompilerFactoryImpl() {
@@ -128,190 +49,106 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case DocCompilerPackage.DOCUMENT_START:
-			return createDocumentStart();
-		case DocCompilerPackage.DOCUMENT_END:
-			return createDocumentEnd();
-		case DocCompilerPackage.PROCESSED_RICH_STRING:
-			return createProcessedRichString();
-		case DocCompilerPackage.LINE:
-			return createLine();
-		case DocCompilerPackage.LINE_PART:
-			return createLinePart();
-		case DocCompilerPackage.LITERAL:
-			return createLiteral();
-		case DocCompilerPackage.LINE_BREAK:
-			return createLineBreak();
-		case DocCompilerPackage.FOR_LOOP_START:
-			return createForLoopStart();
-		case DocCompilerPackage.FOR_LOOP_END:
-			return createForLoopEnd();
-		case DocCompilerPackage.PRINTED_EXPRESSION:
-			return createPrintedExpression();
-		case DocCompilerPackage.IF_CONDITION_START:
-			return createIfConditionStart();
-		case DocCompilerPackage.ELSE_IF_CONDITION:
-			return createElseIfCondition();
-		case DocCompilerPackage.ELSE_START:
-			return createElseStart();
-		case DocCompilerPackage.END_IF:
-			return createEndIf();
-		case DocCompilerPackage.MARKUP:
-			return createMarkup();
-		case DocCompilerPackage.H1_START:
-			return createH1Start();
-		case DocCompilerPackage.H1_END:
-			return createH1End();
-		case DocCompilerPackage.H2_START:
-			return createH2Start();
-		case DocCompilerPackage.H2_END:
-			return createH2End();
-		case DocCompilerPackage.H3_START:
-			return createH3Start();
-		case DocCompilerPackage.H3_END:
-			return createH3End();
-		case DocCompilerPackage.H4_START:
-			return createH4Start();
-		case DocCompilerPackage.H4_END:
-			return createH4End();
-		case DocCompilerPackage.H5_START:
-			return createH5Start();
-		case DocCompilerPackage.H5_END:
-			return createH5End();
-		case DocCompilerPackage.H6_START:
-			return createH6Start();
-		case DocCompilerPackage.H6_END:
-			return createH6End();
-		case DocCompilerPackage.EXAMPLE_START:
-			return createExampleStart();
-		case DocCompilerPackage.EXAMPLE_END:
-			return createExampleEnd();
-		case DocCompilerPackage.URL_START:
-			return createURLStart();
-		case DocCompilerPackage.URL_END:
-			return createURLEnd();
-		case DocCompilerPackage.REF_START:
-			return createRefStart();
-		case DocCompilerPackage.REF_END:
-			return createRefEnd();
-		case DocCompilerPackage.BOLD_START:
-			return createBoldStart();
-		case DocCompilerPackage.BOLD_END:
-			return createBoldEnd();
-		case DocCompilerPackage.UNDERLINE_START:
-			return createUnderlineStart();
-		case DocCompilerPackage.UNDERLINE_END:
-			return createUnderlineEnd();
-		case DocCompilerPackage.ITALIC_START:
-			return createItalicStart();
-		case DocCompilerPackage.ITALIC_END:
-			return createItalicEnd();
-		case DocCompilerPackage.SPAN_START:
-			return createSpanStart();
-		case DocCompilerPackage.SPAN_END:
-			return createSpanEnd();
-		case DocCompilerPackage.IMG_START:
-			return createImgStart();
-		case DocCompilerPackage.MAILTO_START:
-			return createMailtoStart();
-		case DocCompilerPackage.MAILTO_END:
-			return createMailtoEnd();
-		case DocCompilerPackage.SKYPE_START:
-			return createSkypeStart();
-		case DocCompilerPackage.SKYPE_END:
-			return createSkypeEnd();
-		case DocCompilerPackage.MOVIE_START:
-			return createMovieStart();
-		case DocCompilerPackage.MOVIE_END:
-			return createMovieEnd();
-		case DocCompilerPackage.CODE_START:
-			return createCodeStart();
-		case DocCompilerPackage.CODE_END:
-			return createCodeEnd();
-		case DocCompilerPackage.TABLE_START:
-			return createTableStart();
-		case DocCompilerPackage.TABLE_END:
-			return createTableEnd();
-		case DocCompilerPackage.TABLE_ROW_START:
-			return createTableRowStart();
-		case DocCompilerPackage.TABLE_ROW_END:
-			return createTableRowEnd();
-		case DocCompilerPackage.TABLE_DATA_START:
-			return createTableDataStart();
-		case DocCompilerPackage.TABLE_DATA_END:
-			return createTableDataEnd();
-		case DocCompilerPackage.LIST_START:
-			return createListStart();
-		case DocCompilerPackage.LIST_END:
-			return createListEnd();
-		case DocCompilerPackage.ORDERED_LIST_START:
-			return createOrderedListStart();
-		case DocCompilerPackage.ORDERED_LIST_END:
-			return createOrderedListEnd();
-		case DocCompilerPackage.LIST_ELEMENT_START:
-			return createListElementStart();
-		case DocCompilerPackage.LIST_ELEMENT_END:
-			return createListElementEnd();
-		case DocCompilerPackage.CHAPTER_START:
-			return createChapterStart();
-		case DocCompilerPackage.CHAPTER_END:
-			return createChapterEnd();
-		case DocCompilerPackage.SECTION_START:
-			return createSectionStart();
-		case DocCompilerPackage.SECTION_END:
-			return createSectionEnd();
-		case DocCompilerPackage.SUBSECTION_START:
-			return createSubsectionStart();
-		case DocCompilerPackage.SUBSECTION_END:
-			return createSubsectionEnd();
-		case DocCompilerPackage.OPEN_VIEW_START:
-			return createOpenViewStart();
-		case DocCompilerPackage.OPEN_VIEW_END:
-			return createOpenViewEnd();
-		case DocCompilerPackage.START_PROCESS_START:
-			return createStartProcessStart();
-		case DocCompilerPackage.START_PROCESS_END:
-			return createStartProcessEnd();
-		case DocCompilerPackage.ENTITY_REF_START:
-			return createEntityRefStart();
-		case DocCompilerPackage.ENTITY_REF_END:
-			return createEntityRefEnd();
-		case DocCompilerPackage.DTO_REF_START:
-			return createDTORefStart();
-		case DocCompilerPackage.DTO_REF_END:
-			return createDTORefEnd();
-		case DocCompilerPackage.PROCESS_REF_START:
-			return createProcessRefStart();
-		case DocCompilerPackage.PROCESS_REF_END:
-			return createProcessRefEnd();
-		case DocCompilerPackage.TASK_REF_START:
-			return createTaskRefStart();
-		case DocCompilerPackage.TASK_REF_END:
-			return createTaskRefEnd();
-		case DocCompilerPackage.VIEW_REF_START:
-			return createViewRefStart();
-		case DocCompilerPackage.VIEW_REF_END:
-			return createViewRefEnd();
-		case DocCompilerPackage.UI_REF_START:
-			return createUIRefStart();
-		case DocCompilerPackage.UI_REF_END:
-			return createUIRefEnd();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case DocCompilerPackage.DOCUMENT_START: return createDocumentStart();
+			case DocCompilerPackage.DOCUMENT_END: return createDocumentEnd();
+			case DocCompilerPackage.PROCESSED_RICH_STRING: return createProcessedRichString();
+			case DocCompilerPackage.LINE: return createLine();
+			case DocCompilerPackage.LINE_PART: return createLinePart();
+			case DocCompilerPackage.LITERAL: return createLiteral();
+			case DocCompilerPackage.LINE_BREAK: return createLineBreak();
+			case DocCompilerPackage.FOR_LOOP_START: return createForLoopStart();
+			case DocCompilerPackage.FOR_LOOP_END: return createForLoopEnd();
+			case DocCompilerPackage.PRINTED_EXPRESSION: return createPrintedExpression();
+			case DocCompilerPackage.IF_CONDITION_START: return createIfConditionStart();
+			case DocCompilerPackage.ELSE_IF_CONDITION: return createElseIfCondition();
+			case DocCompilerPackage.ELSE_START: return createElseStart();
+			case DocCompilerPackage.END_IF: return createEndIf();
+			case DocCompilerPackage.MARKUP: return createMarkup();
+			case DocCompilerPackage.H1_START: return createH1Start();
+			case DocCompilerPackage.H1_END: return createH1End();
+			case DocCompilerPackage.H2_START: return createH2Start();
+			case DocCompilerPackage.H2_END: return createH2End();
+			case DocCompilerPackage.H3_START: return createH3Start();
+			case DocCompilerPackage.H3_END: return createH3End();
+			case DocCompilerPackage.H4_START: return createH4Start();
+			case DocCompilerPackage.H4_END: return createH4End();
+			case DocCompilerPackage.H5_START: return createH5Start();
+			case DocCompilerPackage.H5_END: return createH5End();
+			case DocCompilerPackage.H6_START: return createH6Start();
+			case DocCompilerPackage.H6_END: return createH6End();
+			case DocCompilerPackage.EXAMPLE_START: return createExampleStart();
+			case DocCompilerPackage.EXAMPLE_END: return createExampleEnd();
+			case DocCompilerPackage.URL_START: return createURLStart();
+			case DocCompilerPackage.URL_END: return createURLEnd();
+			case DocCompilerPackage.REF_START: return createRefStart();
+			case DocCompilerPackage.REF_END: return createRefEnd();
+			case DocCompilerPackage.BOLD_START: return createBoldStart();
+			case DocCompilerPackage.BOLD_END: return createBoldEnd();
+			case DocCompilerPackage.UNDERLINE_START: return createUnderlineStart();
+			case DocCompilerPackage.UNDERLINE_END: return createUnderlineEnd();
+			case DocCompilerPackage.ITALIC_START: return createItalicStart();
+			case DocCompilerPackage.ITALIC_END: return createItalicEnd();
+			case DocCompilerPackage.SPAN_START: return createSpanStart();
+			case DocCompilerPackage.SPAN_END: return createSpanEnd();
+			case DocCompilerPackage.IMG_START: return createImgStart();
+			case DocCompilerPackage.IMG_END: return createImgEnd();
+			case DocCompilerPackage.MAILTO_START: return createMailtoStart();
+			case DocCompilerPackage.MAILTO_END: return createMailtoEnd();
+			case DocCompilerPackage.SKYPE_START: return createSkypeStart();
+			case DocCompilerPackage.SKYPE_END: return createSkypeEnd();
+			case DocCompilerPackage.MOVIE_START: return createMovieStart();
+			case DocCompilerPackage.MOVIE_END: return createMovieEnd();
+			case DocCompilerPackage.CODE_START: return createCodeStart();
+			case DocCompilerPackage.CODE_END: return createCodeEnd();
+			case DocCompilerPackage.TABLE_START: return createTableStart();
+			case DocCompilerPackage.TABLE_END: return createTableEnd();
+			case DocCompilerPackage.TABLE_ROW_START: return createTableRowStart();
+			case DocCompilerPackage.TABLE_ROW_END: return createTableRowEnd();
+			case DocCompilerPackage.TABLE_DATA_START: return createTableDataStart();
+			case DocCompilerPackage.TABLE_DATA_END: return createTableDataEnd();
+			case DocCompilerPackage.LIST_START: return createListStart();
+			case DocCompilerPackage.LIST_END: return createListEnd();
+			case DocCompilerPackage.ORDERED_LIST_START: return createOrderedListStart();
+			case DocCompilerPackage.ORDERED_LIST_END: return createOrderedListEnd();
+			case DocCompilerPackage.LIST_ELEMENT_START: return createListElementStart();
+			case DocCompilerPackage.LIST_ELEMENT_END: return createListElementEnd();
+			case DocCompilerPackage.CHAPTER_START: return createChapterStart();
+			case DocCompilerPackage.CHAPTER_END: return createChapterEnd();
+			case DocCompilerPackage.SECTION_START: return createSectionStart();
+			case DocCompilerPackage.SECTION_END: return createSectionEnd();
+			case DocCompilerPackage.SUBSECTION_START: return createSubsectionStart();
+			case DocCompilerPackage.SUBSECTION_END: return createSubsectionEnd();
+			case DocCompilerPackage.OPEN_VIEW_START: return createOpenViewStart();
+			case DocCompilerPackage.OPEN_VIEW_END: return createOpenViewEnd();
+			case DocCompilerPackage.START_PROCESS_START: return createStartProcessStart();
+			case DocCompilerPackage.START_PROCESS_END: return createStartProcessEnd();
+			case DocCompilerPackage.ENTITY_REF_START: return createEntityRefStart();
+			case DocCompilerPackage.ENTITY_REF_END: return createEntityRefEnd();
+			case DocCompilerPackage.DTO_REF_START: return createDTORefStart();
+			case DocCompilerPackage.DTO_REF_END: return createDTORefEnd();
+			case DocCompilerPackage.PROCESS_REF_START: return createProcessRefStart();
+			case DocCompilerPackage.PROCESS_REF_END: return createProcessRefEnd();
+			case DocCompilerPackage.TASK_REF_START: return createTaskRefStart();
+			case DocCompilerPackage.TASK_REF_END: return createTaskRefEnd();
+			case DocCompilerPackage.VIEW_REF_START: return createViewRefStart();
+			case DocCompilerPackage.VIEW_REF_END: return createViewRefEnd();
+			case DocCompilerPackage.UI_REF_START: return createUIRefStart();
+			case DocCompilerPackage.UI_REF_END: return createUIRefEnd();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DocumentStart createDocumentStart() {
@@ -320,8 +157,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DocumentEnd createDocumentEnd() {
@@ -330,8 +167,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ProcessedRichString createProcessedRichString() {
@@ -340,8 +177,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Line createLine() {
@@ -350,8 +187,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public LinePart createLinePart() {
@@ -360,8 +197,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Literal createLiteral() {
@@ -370,8 +207,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public LineBreak createLineBreak() {
@@ -380,8 +217,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ForLoopStart createForLoopStart() {
@@ -390,8 +227,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ForLoopEnd createForLoopEnd() {
@@ -400,8 +237,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public PrintedExpression createPrintedExpression() {
@@ -410,8 +247,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public IfConditionStart createIfConditionStart() {
@@ -420,8 +257,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ElseIfCondition createElseIfCondition() {
@@ -430,8 +267,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ElseStart createElseStart() {
@@ -440,8 +277,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EndIf createEndIf() {
@@ -450,8 +287,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Markup createMarkup() {
@@ -460,8 +297,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H1Start createH1Start() {
@@ -470,8 +307,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H1End createH1End() {
@@ -480,8 +317,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H2Start createH2Start() {
@@ -490,8 +327,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H2End createH2End() {
@@ -500,8 +337,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H3Start createH3Start() {
@@ -510,8 +347,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H3End createH3End() {
@@ -520,8 +357,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H4Start createH4Start() {
@@ -530,8 +367,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H4End createH4End() {
@@ -540,8 +377,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H5Start createH5Start() {
@@ -550,8 +387,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H5End createH5End() {
@@ -560,8 +397,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H6Start createH6Start() {
@@ -570,8 +407,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public H6End createH6End() {
@@ -580,8 +417,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ExampleStart createExampleStart() {
@@ -590,8 +427,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ExampleEnd createExampleEnd() {
@@ -600,8 +437,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public URLStart createURLStart() {
@@ -610,8 +447,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public URLEnd createURLEnd() {
@@ -620,8 +457,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RefStart createRefStart() {
@@ -630,8 +467,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RefEnd createRefEnd() {
@@ -640,8 +477,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public BoldStart createBoldStart() {
@@ -650,8 +487,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public BoldEnd createBoldEnd() {
@@ -660,8 +497,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public UnderlineStart createUnderlineStart() {
@@ -670,8 +507,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public UnderlineEnd createUnderlineEnd() {
@@ -680,8 +517,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ItalicStart createItalicStart() {
@@ -690,8 +527,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ItalicEnd createItalicEnd() {
@@ -700,8 +537,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SpanStart createSpanStart() {
@@ -710,8 +547,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SpanEnd createSpanEnd() {
@@ -720,8 +557,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ImgStart createImgStart() {
@@ -730,8 +567,18 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImgEnd createImgEnd() {
+		ImgEndImpl imgEnd = new ImgEndImpl();
+		return imgEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public MailtoStart createMailtoStart() {
@@ -740,8 +587,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public MailtoEnd createMailtoEnd() {
@@ -750,8 +597,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SkypeStart createSkypeStart() {
@@ -760,8 +607,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SkypeEnd createSkypeEnd() {
@@ -770,8 +617,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public MovieStart createMovieStart() {
@@ -780,8 +627,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public MovieEnd createMovieEnd() {
@@ -790,8 +637,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public CodeStart createCodeStart() {
@@ -800,8 +647,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public CodeEnd createCodeEnd() {
@@ -810,8 +657,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableStart createTableStart() {
@@ -820,8 +667,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableEnd createTableEnd() {
@@ -830,8 +677,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableRowStart createTableRowStart() {
@@ -840,8 +687,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableRowEnd createTableRowEnd() {
@@ -850,8 +697,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableDataStart createTableDataStart() {
@@ -860,8 +707,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TableDataEnd createTableDataEnd() {
@@ -870,8 +717,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ListStart createListStart() {
@@ -880,8 +727,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ListEnd createListEnd() {
@@ -890,8 +737,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public OrderedListStart createOrderedListStart() {
@@ -900,8 +747,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public OrderedListEnd createOrderedListEnd() {
@@ -910,8 +757,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ListElementStart createListElementStart() {
@@ -920,8 +767,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ListElementEnd createListElementEnd() {
@@ -930,8 +777,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ChapterStart createChapterStart() {
@@ -940,8 +787,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ChapterEnd createChapterEnd() {
@@ -950,8 +797,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SectionStart createSectionStart() {
@@ -960,8 +807,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SectionEnd createSectionEnd() {
@@ -970,8 +817,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SubsectionStart createSubsectionStart() {
@@ -980,8 +827,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SubsectionEnd createSubsectionEnd() {
@@ -990,8 +837,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public OpenViewStart createOpenViewStart() {
@@ -1000,8 +847,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public OpenViewEnd createOpenViewEnd() {
@@ -1010,8 +857,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StartProcessStart createStartProcessStart() {
@@ -1020,8 +867,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StartProcessEnd createStartProcessEnd() {
@@ -1030,8 +877,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EntityRefStart createEntityRefStart() {
@@ -1040,8 +887,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EntityRefEnd createEntityRefEnd() {
@@ -1050,8 +897,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DTORefStart createDTORefStart() {
@@ -1060,8 +907,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DTORefEnd createDTORefEnd() {
@@ -1070,8 +917,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ProcessRefStart createProcessRefStart() {
@@ -1080,8 +927,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ProcessRefEnd createProcessRefEnd() {
@@ -1090,8 +937,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TaskRefStart createTaskRefStart() {
@@ -1100,8 +947,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TaskRefEnd createTaskRefEnd() {
@@ -1110,8 +957,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ViewRefStart createViewRefStart() {
@@ -1120,8 +967,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ViewRefEnd createViewRefEnd() {
@@ -1130,8 +977,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public UIRefStart createUIRefStart() {
@@ -1140,8 +987,8 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public UIRefEnd createUIRefEnd() {
@@ -1150,17 +997,17 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DocCompilerPackage getDocCompilerPackage() {
-		return (DocCompilerPackage) getEPackage();
+		return (DocCompilerPackage)getEPackage();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -1169,4 +1016,4 @@ public class DocCompilerFactoryImpl extends EFactoryImpl implements DocCompilerF
 		return DocCompilerPackage.eINSTANCE;
 	}
 
-} // DocCompilerFactoryImpl
+} //DocCompilerFactoryImpl

@@ -101,26 +101,24 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GeneralDocument" eSuperTypes="#//layout/LuniferaDocLayout">
+    <eClassifiers xsi:type="ecore:EClass" name="GeneralDocument" eSuperTypes="#//document/LuniferaDocLayout">
       <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
           eType="#//DocumentInclude" containment="true"/>
     </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="layout" nsURI="http://www.lunifera.org/luniferadoc/layout" nsPrefix="layout">
     <eClassifiers xsi:type="ecore:EClass" name="LuniferaDocLayout" abstract="true"
         interface="true" eSuperTypes="#//NamedDocument">
       <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"
+          eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
-    <eClassifiers xsi:type="ecore:EClass" name="DTOLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
-    <eClassifiers xsi:type="ecore:EClass" name="BPMProcessLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
-    <eClassifiers xsi:type="ecore:EClass" name="BPMHumanTaskLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
-    <eClassifiers xsi:type="ecore:EClass" name="VaaclipseViewLayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
-    <eClassifiers xsi:type="ecore:EClass" name="UILayout" eSuperTypes="#//layout/LuniferaDocLayout"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityLayout" eSuperTypes="#//document/LuniferaDocLayout"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DTOLayout" eSuperTypes="#//document/LuniferaDocLayout"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMProcessLayout" eSuperTypes="#//document/LuniferaDocLayout"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMHumanTaskLayout" eSuperTypes="#//document/LuniferaDocLayout"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VaaclipseViewLayout" eSuperTypes="#//document/LuniferaDocLayout"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UILayout" eSuperTypes="#//document/LuniferaDocLayout"/>
   </eSubpackages>
   <eSubpackages name="richstring" nsURI="http://www.lunifera.org/luniferadoc/richstring"
       nsPrefix="richstring">
@@ -194,6 +192,8 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+          containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RichStringMailto" eSuperTypes="#//richstring/RichStringMarkup">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" lowerBound="1"

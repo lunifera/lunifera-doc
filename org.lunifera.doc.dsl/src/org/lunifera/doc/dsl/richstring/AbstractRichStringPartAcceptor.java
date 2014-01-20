@@ -267,6 +267,11 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 	@Override
 	public void acceptImgStart(RichStringImg object) {
 	}
+	
+	@Override
+	public void acceptImgEnd() {
+		
+	}
 
 	@Override
 	public void acceptBoldStart(RichStringBold object) {

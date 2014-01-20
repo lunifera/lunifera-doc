@@ -1,0 +1,50 @@
+GeneralDocument my.Test {
+'''
+	«chapter Huhu » 
+		«h1» The Lunifera Entity DSL «/h1»
+		
+		«section Purpose »
+		«h2» Purpose «/h2»
+		The "Lunifera Entity DSL" facilitates the handling of persistence entities. Defining entities using the Lunifera Entity DSL efficiently creates a clean entity model that contains all relevant semantic elements of the model text file. This semantic model is used to automatically transform the semantic information into proper Java code with the respective annotations for a persistence provider.
+		«/section»
+		 
+		«section Overview »
+			«h2» Overview «/h2»
+			The main semantic elements of the Lunifera Entity DSL are:
+			«ul»
+				«li» "Package" – the root element that contains all the other elements. A model can contain multiple packages. «/li»
+				«li» "Import" declarations – used to import external models or even Java classes. «/li»
+				«li» "Datatype" declarations – a way to define datatypes that can be used in entities and beans. «/li»
+				«li» "Entity" – the abstraction of a business model entity. It contains further elements such as properties and references. «/li»
+				«li» "Bean" – does not compile to a JPA Entity but to a Java Bean (POJO with getter and setter and PropertyChange-Support). Beans may be used as temporary containers in entity operations or can be embedded into JPA Entities.«/li»
+				«li» "Enum" – the abstraction for Java enums.«/li»
+				«li» "Property" – a reference to an embedded Bean, an Enum, a Java class or a “simple datatype” (as defined in the datatype declaration). Offers multiplicity.«/li»
+				«li» "Reference – a reference to another Entity (or to another Bean in the case of a Bean). Offers multiplicity.«/li»
+				«li» "Operations" – similar to Java methods. The Xbase expression language can be used to write high-level code.«/li»
+				«li» "Annotations" can be placed on Entity, Property and Reference.«/li»
+				«li» "Comments can be added to all elements.«/li»
+			«/ul»
+		«/section»
+		
+		«movie src="" type="" width="" height=""»
+			Test
+		 «/movie»
+		 
+		 «img src="" alt="" width="" height=""» asdf «/img»
+		
+		«section Package »
+			«h2» Packages «/h2»
+			Packages are the root element of the Lunifera Entity DSL grammar. Everything is contained in a package: Imports, Entities, Beans and Enums have to be defined inside the Package definition. One document can contain multiple packages with unique names. 
+			The elements a package can contain are Entities, Beans and Enums.
+			Additionally, a package allows Import statements and the declaration of datatypes. 	
+			«img src= "images/package.png" alt= "A package is the topmost element and contains other items." width= "100%" height="100%" /»
+		
+			«h3» Imports «/h3»
+			The "Entity DSL" allows to reference entities defined in different packages. The import statement is a way to address these elements by their fully qualified name. 
+			Import statements allow the use of the *-wildcard.	
+			«img src= "images/import.png" alt= "Items contained in another package can be addressed if the package is imported."
+			width= "100%" height= "100%" / »
+		«/section»
+	«/chapter»
+	'''
+}

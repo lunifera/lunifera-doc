@@ -3,29 +3,34 @@
 package org.lunifera.doc.dsl.doccompiler.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.lunifera.doc.dsl.doccompiler.DocCompilerPackage;
 import org.lunifera.doc.dsl.doccompiler.EndIf;
 import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>End If</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>End If</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.doccompiler.impl.EndIfImpl#getIfConditionStart <em>If Condition Start</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.doccompiler.impl.EndIfImpl#getIfConditionStart <em>If Condition Start</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class EndIfImpl extends LinePartImpl implements EndIf {
 	/**
-	 * The cached value of the '{@link #getIfConditionStart() <em>If Condition Start</em>}' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getIfConditionStart() <em>If Condition Start</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getIfConditionStart()
 	 * @generated
 	 * @ordered
@@ -33,8 +38,8 @@ public class EndIfImpl extends LinePartImpl implements EndIf {
 	protected IfConditionStart ifConditionStart;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected EndIfImpl() {
@@ -42,8 +47,8 @@ public class EndIfImpl extends LinePartImpl implements EndIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,27 +57,25 @@ public class EndIfImpl extends LinePartImpl implements EndIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public IfConditionStart getIfConditionStart() {
 		if (ifConditionStart != null && ifConditionStart.eIsProxy()) {
-			InternalEObject oldIfConditionStart = (InternalEObject) ifConditionStart;
-			ifConditionStart = (IfConditionStart) eResolveProxy(oldIfConditionStart);
+			InternalEObject oldIfConditionStart = (InternalEObject)ifConditionStart;
+			ifConditionStart = (IfConditionStart)eResolveProxy(oldIfConditionStart);
 			if (ifConditionStart != oldIfConditionStart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DocCompilerPackage.END_IF__IF_CONDITION_START, oldIfConditionStart,
-							ifConditionStart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocCompilerPackage.END_IF__IF_CONDITION_START, oldIfConditionStart, ifConditionStart));
 			}
 		}
 		return ifConditionStart;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public IfConditionStart basicGetIfConditionStart() {
@@ -80,77 +83,74 @@ public class EndIfImpl extends LinePartImpl implements EndIf {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setIfConditionStart(IfConditionStart newIfConditionStart) {
 		IfConditionStart oldIfConditionStart = ifConditionStart;
 		ifConditionStart = newIfConditionStart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DocCompilerPackage.END_IF__IF_CONDITION_START, oldIfConditionStart,
-					ifConditionStart));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocCompilerPackage.END_IF__IF_CONDITION_START, oldIfConditionStart, ifConditionStart));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocCompilerPackage.END_IF__IF_CONDITION_START:
-			if (resolve)
-				return getIfConditionStart();
-			return basicGetIfConditionStart();
+			case DocCompilerPackage.END_IF__IF_CONDITION_START:
+				if (resolve) return getIfConditionStart();
+				return basicGetIfConditionStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocCompilerPackage.END_IF__IF_CONDITION_START:
-			setIfConditionStart((IfConditionStart) newValue);
-			return;
+			case DocCompilerPackage.END_IF__IF_CONDITION_START:
+				setIfConditionStart((IfConditionStart)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocCompilerPackage.END_IF__IF_CONDITION_START:
-			setIfConditionStart((IfConditionStart) null);
-			return;
+			case DocCompilerPackage.END_IF__IF_CONDITION_START:
+				setIfConditionStart((IfConditionStart)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocCompilerPackage.END_IF__IF_CONDITION_START:
-			return ifConditionStart != null;
+			case DocCompilerPackage.END_IF__IF_CONDITION_START:
+				return ifConditionStart != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} // EndIfImpl
+} //EndIfImpl

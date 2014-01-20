@@ -10,6 +10,10 @@
 package org.lunifera.doc.dsl.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.XtextSourceViewer;
+import org.eclipse.xtext.ui.editor.formatting.IContentFormatterFactory;
+import org.lunifera.doc.dsl.ui.formatting.FormatterFactory;
+import org.lunifera.doc.dsl.ui.ide.editor.RichStringAwareSourceViewer;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -19,4 +23,14 @@ public class LuniferaDocGrammarUiModule extends
 	public LuniferaDocGrammarUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+	public Class<? extends XtextSourceViewer.Factory> bindSourceViewerFactory() {
+		return RichStringAwareSourceViewer.Factory.class;
+	}
+	
+	@Override
+	public Class<? extends IContentFormatterFactory> bindIContentFormatterFactory() {
+		return FormatterFactory.class;
+	}
+
 }
