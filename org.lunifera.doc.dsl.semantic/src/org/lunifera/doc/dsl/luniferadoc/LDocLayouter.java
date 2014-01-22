@@ -23,7 +23,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * </p>
  *
  * @see org.lunifera.doc.dsl.luniferadoc.LDocPackage#getLDocLayouter()
- * @model interface="true" abstract="true"
+ * @model
  * @generated
  */
 public interface LDocLayouter extends LDocNamedDocument {

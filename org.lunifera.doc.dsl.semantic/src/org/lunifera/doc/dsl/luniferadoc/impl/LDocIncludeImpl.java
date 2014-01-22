@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.lunifera.doc.dsl.luniferadoc.LDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LDocInclude;
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
+import org.lunifera.doc.dsl.luniferadoc.LDocType;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,8 @@ import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#getDocument <em>Document</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#getVarName <em>Var Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#isProvided <em>Provided</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#getProvidedType <em>Provided Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +61,46 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 	 * @ordered
 	 */
 	protected String varName = VAR_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isProvided() <em>Provided</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isProvided()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PROVIDED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isProvided() <em>Provided</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isProvided()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean provided = PROVIDED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProvidedType() <em>Provided Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidedType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final LDocType PROVIDED_TYPE_EDEFAULT = LDocType.DTO;
+
+	/**
+	 * The cached value of the '{@link #getProvidedType() <em>Provided Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidedType()
+	 * @generated
+	 * @ordered
+	 */
+	protected LDocType providedType = PROVIDED_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,6 +185,48 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isProvided() {
+		return provided;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProvided(boolean newProvided) {
+		boolean oldProvided = provided;
+		provided = newProvided;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_INCLUDE__PROVIDED, oldProvided, provided));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LDocType getProvidedType() {
+		return providedType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProvidedType(LDocType newProvidedType) {
+		LDocType oldProvidedType = providedType;
+		providedType = newProvidedType == null ? PROVIDED_TYPE_EDEFAULT : newProvidedType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE, oldProvidedType, providedType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -150,6 +235,10 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 				return basicGetDocument();
 			case LDocPackage.LDOC_INCLUDE__VAR_NAME:
 				return getVarName();
+			case LDocPackage.LDOC_INCLUDE__PROVIDED:
+				return isProvided();
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
+				return getProvidedType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +256,12 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 				return;
 			case LDocPackage.LDOC_INCLUDE__VAR_NAME:
 				setVarName((String)newValue);
+				return;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED:
+				setProvided((Boolean)newValue);
+				return;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
+				setProvidedType((LDocType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +281,12 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 			case LDocPackage.LDOC_INCLUDE__VAR_NAME:
 				setVarName(VAR_NAME_EDEFAULT);
 				return;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED:
+				setProvided(PROVIDED_EDEFAULT);
+				return;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
+				setProvidedType(PROVIDED_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +303,10 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 				return document != null;
 			case LDocPackage.LDOC_INCLUDE__VAR_NAME:
 				return VAR_NAME_EDEFAULT == null ? varName != null : !VAR_NAME_EDEFAULT.equals(varName);
+			case LDocPackage.LDOC_INCLUDE__PROVIDED:
+				return provided != PROVIDED_EDEFAULT;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
+				return providedType != PROVIDED_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,6 +323,10 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (varName: ");
 		result.append(varName);
+		result.append(", provided: ");
+		result.append(provided);
+		result.append(", providedType: ");
+		result.append(providedType);
 		result.append(')');
 		return result.toString();
 	}

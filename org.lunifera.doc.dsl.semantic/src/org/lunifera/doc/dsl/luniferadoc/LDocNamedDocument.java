@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLanguage <em>Language</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,5 +47,31 @@ public interface LDocNamedDocument extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Language</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Language</em>' attribute.
+	 * @see #setLanguage(String)
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocPackage#getLDocNamedDocument_Language()
+	 * @model
+	 * @generated
+	 */
+	String getLanguage();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLanguage <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Language</em>' attribute.
+	 * @see #getLanguage()
+	 * @generated
+	 */
+	void setLanguage(String value);
 
 } // LDocNamedDocument

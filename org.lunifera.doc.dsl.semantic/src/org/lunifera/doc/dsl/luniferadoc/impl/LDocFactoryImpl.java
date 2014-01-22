@@ -3,6 +3,7 @@
 package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -65,8 +66,39 @@ public class LDocFactoryImpl extends EFactoryImpl implements LDocFactory {
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT: return createLDocHumanTaskDocument();
 			case LDocPackage.LDOC_VIEW_DOCUMENT: return createLDocViewDocument();
 			case LDocPackage.LDOC_UI_DOCUMENT: return createLDocUiDocument();
+			case LDocPackage.LDOC_LAYOUTER: return createLDocLayouter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case LDocPackage.LDOC_TYPE:
+				return createLDocTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case LDocPackage.LDOC_TYPE:
+				return convertLDocTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -158,6 +190,36 @@ public class LDocFactoryImpl extends EFactoryImpl implements LDocFactory {
 	public LDocUiDocument createLDocUiDocument() {
 		LDocUiDocumentImpl lDocUiDocument = new LDocUiDocumentImpl();
 		return lDocUiDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LDocLayouter createLDocLayouter() {
+		LDocLayouterImpl lDocLayouter = new LDocLayouterImpl();
+		return lDocLayouter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LDocType createLDocTypeFromString(EDataType eDataType, String initialValue) {
+		LDocType result = LDocType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLDocTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

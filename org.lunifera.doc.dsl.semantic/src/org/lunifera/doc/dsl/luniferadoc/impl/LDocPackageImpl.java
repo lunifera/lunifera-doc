@@ -4,6 +4,7 @@ package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -27,6 +28,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocInclude;
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
+import org.lunifera.doc.dsl.luniferadoc.LDocType;
 import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument;
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument;
 
@@ -126,6 +128,13 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 	private EClass lDocLayouterEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum lDocTypeEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -172,7 +181,6 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		XAnnotationsPackage.eINSTANCE.eClass();
 		XbasePackage.eINSTANCE.eClass();
 		XtypePackage.eINSTANCE.eClass();
 
@@ -219,6 +227,15 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLDocNamedDocument_Language() {
+		return (EAttribute)lDocNamedDocumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLDocInclude() {
 		return lDocIncludeEClass;
 	}
@@ -239,6 +256,24 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 	 */
 	public EAttribute getLDocInclude_VarName() {
 		return (EAttribute)lDocIncludeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLDocInclude_Provided() {
+		return (EAttribute)lDocIncludeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLDocInclude_ProvidedType() {
+		return (EAttribute)lDocIncludeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -516,6 +551,15 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getLDocType() {
+		return lDocTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LDocFactory getLDocFactory() {
 		return (LDocFactory)getEFactoryInstance();
 	}
@@ -541,10 +585,13 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 		// Create classes and their features
 		lDocNamedDocumentEClass = createEClass(LDOC_NAMED_DOCUMENT);
 		createEAttribute(lDocNamedDocumentEClass, LDOC_NAMED_DOCUMENT__NAME);
+		createEAttribute(lDocNamedDocumentEClass, LDOC_NAMED_DOCUMENT__LANGUAGE);
 
 		lDocIncludeEClass = createEClass(LDOC_INCLUDE);
 		createEReference(lDocIncludeEClass, LDOC_INCLUDE__DOCUMENT);
 		createEAttribute(lDocIncludeEClass, LDOC_INCLUDE__VAR_NAME);
+		createEAttribute(lDocIncludeEClass, LDOC_INCLUDE__PROVIDED);
+		createEAttribute(lDocIncludeEClass, LDOC_INCLUDE__PROVIDED_TYPE);
 
 		lDocDocumentEClass = createEClass(LDOC_DOCUMENT);
 		createEReference(lDocDocumentEClass, LDOC_DOCUMENT__DESCRIPTION);
@@ -585,6 +632,9 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 		createEReference(lDocLayouterEClass, LDOC_LAYOUTER__CONTENT);
 		createEReference(lDocLayouterEClass, LDOC_LAYOUTER__IMPORTS);
 		createEReference(lDocLayouterEClass, LDOC_LAYOUTER__INCLUDES);
+
+		// Create enums
+		lDocTypeEEnum = createEEnum(LDOC_TYPE);
 	}
 
 	/**
@@ -634,10 +684,13 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(lDocNamedDocumentEClass, LDocNamedDocument.class, "LDocNamedDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLDocNamedDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, LDocNamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLDocNamedDocument_Language(), ecorePackage.getEString(), "language", null, 0, 1, LDocNamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lDocIncludeEClass, LDocInclude.class, "LDocInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLDocInclude_Document(), this.getLDocDocument(), null, "document", null, 0, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLDocInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLDocInclude_Provided(), ecorePackage.getEBoolean(), "provided", null, 0, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLDocInclude_ProvidedType(), this.getLDocType(), "providedType", null, 0, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lDocDocumentEClass, LDocDocument.class, "LDocDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLDocDocument_Description(), theLDocRichstringPackage.getRichString(), null, "description", null, 0, 1, LDocDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -674,10 +727,15 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 		initEClass(lDocUiDocumentEClass, LDocUiDocument.class, "LDocUiDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLDocUiDocument_Ui(), ecorePackage.getEString(), "ui", null, 0, 1, LDocUiDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(lDocLayouterEClass, LDocLayouter.class, "LDocLayouter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(lDocLayouterEClass, LDocLayouter.class, "LDocLayouter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLDocLayouter_Content(), theLDocRichstringPackage.getRichString(), null, "content", null, 0, 1, LDocLayouter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLDocLayouter_Imports(), theXtypePackage.getXImportDeclaration(), null, "imports", null, 0, -1, LDocLayouter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLDocLayouter_Includes(), this.getLDocInclude(), null, "includes", null, 0, -1, LDocLayouter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(lDocTypeEEnum, LDocType.class, "LDocType");
+		addEEnumLiteral(lDocTypeEEnum, LDocType.DTO);
+		addEEnumLiteral(lDocTypeEEnum, LDocType.ENTITY);
 
 		// Create resource
 		createResource(eNS_URI);

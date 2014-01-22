@@ -12,6 +12,6 @@ public interface ILayouter {
 
 	String serialize();
 	
-	void putDocument(String alias, IDocument document);
+//	void putDocument(String alias, IDocument document);
 
 }

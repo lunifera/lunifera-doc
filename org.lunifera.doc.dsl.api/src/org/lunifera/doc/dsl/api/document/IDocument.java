@@ -8,6 +8,4 @@ public interface IDocument {
 
 	String getDescription();
 
-	URI getURI();
-
 }

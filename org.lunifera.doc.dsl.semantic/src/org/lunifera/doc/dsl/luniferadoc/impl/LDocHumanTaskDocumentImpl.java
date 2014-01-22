@@ -24,6 +24,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocHumanTaskDocumentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocHumanTaskDocumentImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocHumanTaskDocumentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocHumanTaskDocumentImpl#getTask <em>Task</em>}</li>
  * </ul>
@@ -51,6 +52,26 @@ public class LDocHumanTaskDocumentImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LANGUAGE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String language = LANGUAGE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -120,6 +141,27 @@ public class LDocHumanTaskDocumentImpl extends MinimalEObjectImpl.Container impl
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLanguage() {
+		return language;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLanguage(String newLanguage) {
+		String oldLanguage = language;
+		language = newLanguage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__LANGUAGE, oldLanguage, language));
 	}
 
 	/**
@@ -210,6 +252,8 @@ public class LDocHumanTaskDocumentImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__NAME:
 				return getName();
+			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__LANGUAGE:
+				return getLanguage();
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				return getDescription();
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__TASK:
@@ -228,6 +272,9 @@ public class LDocHumanTaskDocumentImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__NAME:
 				setName((String)newValue);
+				return;
+			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__LANGUAGE:
+				setLanguage((String)newValue);
 				return;
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				setDescription((RichString)newValue);
@@ -250,6 +297,9 @@ public class LDocHumanTaskDocumentImpl extends MinimalEObjectImpl.Container impl
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__LANGUAGE:
+				setLanguage(LANGUAGE_EDEFAULT);
+				return;
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				setDescription((RichString)null);
 				return;
@@ -270,6 +320,8 @@ public class LDocHumanTaskDocumentImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__LANGUAGE:
+				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__DESCRIPTION:
 				return description != null;
 			case LDocPackage.LDOC_HUMAN_TASK_DOCUMENT__TASK:
@@ -290,6 +342,8 @@ public class LDocHumanTaskDocumentImpl extends MinimalEObjectImpl.Container impl
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", language: ");
+		result.append(language);
 		result.append(", task: ");
 		result.append(task);
 		result.append(')');

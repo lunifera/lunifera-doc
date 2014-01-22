@@ -24,8 +24,8 @@ import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
+import org.eclipse.xtext.xbase.typesystem.IBatchTypeResolver;
 import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
-import org.eclipse.xtext.xbase.typing.ITypeProvider;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
@@ -81,7 +81,8 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 	@Inject
 	private Provider<DefaultIndentationHandler> indentationHandler;
 
-	private ITypeProvider typeProvider;
+	@Inject
+	private IBatchTypeResolver batchTypeResolver;
 
 	@Override
 	protected String getFavoriteVariableName(EObject ex) {
@@ -1017,8 +1018,9 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 	public void _toJavaExpression(RichString richString, ITreeAppendable b) {
 		b.append(getVarName(richString, b));
-		if (getTypeReferences().is(typeProvider.getType(richString),
-				String.class))
+		LightweightTypeReference literalType = batchTypeResolver.resolveTypes(
+				richString).getActualType(richString);
+		if (literalType != null && literalType.isType(String.class))
 			b.append(".toString()");
 	}
 

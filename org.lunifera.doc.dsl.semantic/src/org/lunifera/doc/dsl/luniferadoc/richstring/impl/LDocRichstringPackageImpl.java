@@ -404,7 +404,6 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 		isInited = true;
 
 		// Initialize simple dependencies
-		XAnnotationsPackage.eINSTANCE.eClass();
 		XbasePackage.eINSTANCE.eClass();
 		XtypePackage.eINSTANCE.eClass();
 

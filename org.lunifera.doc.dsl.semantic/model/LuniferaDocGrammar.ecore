@@ -4,11 +4,14 @@
     nsPrefix="luniferadoc">
   <eClassifiers xsi:type="ecore:EClass" name="LDocNamedDocument" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocInclude">
     <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="#//LDocDocument"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="provided" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="providedType" eType="#//LDocType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocDocument" abstract="true" interface="true"
       eSuperTypes="#//LDocNamedDocument">
@@ -51,15 +54,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="LDocUiDocument" eSuperTypes="#//LDocDocument">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ui" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LDocLayouter" abstract="true" interface="true"
-      eSuperTypes="#//LDocNamedDocument">
+  <eClassifiers xsi:type="ecore:EClass" name="LDocLayouter" eSuperTypes="#//LDocNamedDocument">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//richstring/RichString"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"
+        eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
         eType="#//LDocInclude" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LDocType">
+    <eLiterals name="Dto" literal="DTO"/>
+    <eLiterals name="Entity" value="1" literal="ENTITY"/>
   </eClassifiers>
   <eSubpackages name="richstring" nsURI="http://www.lunifera.org/documentation/richstring/v1"
       nsPrefix="richstring">

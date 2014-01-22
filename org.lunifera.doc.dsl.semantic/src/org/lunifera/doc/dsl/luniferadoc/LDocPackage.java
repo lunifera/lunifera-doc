@@ -4,6 +4,7 @@ package org.lunifera.doc.dsl.luniferadoc;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -75,13 +76,22 @@ public interface LDocPackage extends EPackage {
 	int LDOC_NAMED_DOCUMENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_NAMED_DOCUMENT__LANGUAGE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Named Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_NAMED_DOCUMENT_FEATURE_COUNT = 1;
+	int LDOC_NAMED_DOCUMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl <em>Include</em>}' class.
@@ -112,13 +122,31 @@ public interface LDocPackage extends EPackage {
 	int LDOC_INCLUDE__VAR_NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Provided</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_INCLUDE__PROVIDED = 2;
+
+	/**
+	 * The feature id for the '<em><b>Provided Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_INCLUDE__PROVIDED_TYPE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Include</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_INCLUDE_FEATURE_COUNT = 2;
+	int LDOC_INCLUDE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocDocument <em>Document</em>}' class.
@@ -138,6 +166,15 @@ public interface LDocPackage extends EPackage {
 	 * @ordered
 	 */
 	int LDOC_DOCUMENT__NAME = LDOC_NAMED_DOCUMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_DOCUMENT__LANGUAGE = LDOC_NAMED_DOCUMENT__LANGUAGE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -175,6 +212,15 @@ public interface LDocPackage extends EPackage {
 	 * @ordered
 	 */
 	int LDOC_ENTITY_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_ENTITY_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -305,6 +351,15 @@ public interface LDocPackage extends EPackage {
 	int LDOC_DTO_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_DTO_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,6 +452,15 @@ public interface LDocPackage extends EPackage {
 	int LDOC_BPM_PROCESS_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_BPM_PROCESS_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,6 +505,15 @@ public interface LDocPackage extends EPackage {
 	 * @ordered
 	 */
 	int LDOC_HUMAN_TASK_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_HUMAN_TASK_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -489,6 +562,15 @@ public interface LDocPackage extends EPackage {
 	int LDOC_VIEW_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_VIEW_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -535,6 +617,15 @@ public interface LDocPackage extends EPackage {
 	int LDOC_UI_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_UI_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -562,10 +653,10 @@ public interface LDocPackage extends EPackage {
 	int LDOC_UI_DOCUMENT_FEATURE_COUNT = LDOC_DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocLayouter <em>Layouter</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl <em>Layouter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.LDocLayouter
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl
 	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LDocPackageImpl#getLDocLayouter()
 	 * @generated
 	 */
@@ -579,6 +670,15 @@ public interface LDocPackage extends EPackage {
 	 * @ordered
 	 */
 	int LDOC_LAYOUTER__NAME = LDOC_NAMED_DOCUMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_LAYOUTER__LANGUAGE = LDOC_NAMED_DOCUMENT__LANGUAGE;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -618,6 +718,17 @@ public interface LDocPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocType <em>Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocType
+	 * @see org.lunifera.doc.dsl.luniferadoc.impl.LDocPackageImpl#getLDocType()
+	 * @generated
+	 */
+	int LDOC_TYPE = 12;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument <em>Named Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -637,6 +748,17 @@ public interface LDocPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLDocNamedDocument_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLanguage <em>Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Language</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLanguage()
+	 * @see #getLDocNamedDocument()
+	 * @generated
+	 */
+	EAttribute getLDocNamedDocument_Language();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude <em>Include</em>}'.
@@ -669,6 +791,28 @@ public interface LDocPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLDocInclude_VarName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#isProvided <em>Provided</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Provided</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocInclude#isProvided()
+	 * @see #getLDocInclude()
+	 * @generated
+	 */
+	EAttribute getLDocInclude_Provided();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedType <em>Provided Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Provided Type</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedType()
+	 * @see #getLDocInclude()
+	 * @generated
+	 */
+	EAttribute getLDocInclude_ProvidedType();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.LDocDocument <em>Document</em>}'.
@@ -991,6 +1135,16 @@ public interface LDocPackage extends EPackage {
 	EReference getLDocLayouter_Includes();
 
 	/**
+	 * Returns the meta object for enum '{@link org.lunifera.doc.dsl.luniferadoc.LDocType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Type</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocType
+	 * @generated
+	 */
+	EEnum getLDocType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1031,6 +1185,14 @@ public interface LDocPackage extends EPackage {
 		EAttribute LDOC_NAMED_DOCUMENT__NAME = eINSTANCE.getLDocNamedDocument_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LDOC_NAMED_DOCUMENT__LANGUAGE = eINSTANCE.getLDocNamedDocument_Language();
+
+		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl <em>Include</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1055,6 +1217,22 @@ public interface LDocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LDOC_INCLUDE__VAR_NAME = eINSTANCE.getLDocInclude_VarName();
+
+		/**
+		 * The meta object literal for the '<em><b>Provided</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LDOC_INCLUDE__PROVIDED = eINSTANCE.getLDocInclude_Provided();
+
+		/**
+		 * The meta object literal for the '<em><b>Provided Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LDOC_INCLUDE__PROVIDED_TYPE = eINSTANCE.getLDocInclude_ProvidedType();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocDocument <em>Document</em>}' class.
@@ -1283,10 +1461,10 @@ public interface LDocPackage extends EPackage {
 		EAttribute LDOC_UI_DOCUMENT__UI = eINSTANCE.getLDocUiDocument_Ui();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocLayouter <em>Layouter</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl <em>Layouter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.LDocLayouter
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl
 		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LDocPackageImpl#getLDocLayouter()
 		 * @generated
 		 */
@@ -1315,6 +1493,16 @@ public interface LDocPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LDOC_LAYOUTER__INCLUDES = eINSTANCE.getLDocLayouter_Includes();
+
+		/**
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocType <em>Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.LDocType
+		 * @see org.lunifera.doc.dsl.luniferadoc.impl.LDocPackageImpl#getLDocType()
+		 * @generated
+		 */
+		EEnum LDOC_TYPE = eINSTANCE.getLDocType();
 
 	}
 

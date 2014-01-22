@@ -1,25 +1,18 @@
 package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
+import org.eclipse.emf.mwe2.language.scoping.QualifiedNameProvider
+import org.eclipse.jdt.annotation.Nullable
 import org.eclipse.xtext.common.types.JvmField
+import org.eclipse.xtext.common.types.JvmGenericType
+import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.common.types.util.TypeReferences
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.lunifera.doc.dsl.api.document.IBPMProcessDocument
-import org.lunifera.doc.dsl.api.document.IDtoDocument
-import org.lunifera.doc.dsl.api.document.IEntityDocument
-import org.lunifera.doc.dsl.api.document.IHumanTaskDocument
-import org.lunifera.doc.dsl.api.document.IUiDocument
-import org.lunifera.doc.dsl.api.document.IViewDocument
 import org.lunifera.doc.dsl.api.document.helper.IDocumentAccess
 import org.lunifera.doc.dsl.extensions.ModelExtensions
-import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
-import org.lunifera.doc.dsl.luniferadoc.LDocDtoDocument
-import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
-import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocInclude
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument
-import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument
-import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 
 class LDocTypesBuilder extends JvmTypesBuilder {
 
@@ -28,51 +21,49 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 
 	@Inject extension ModelExtensions
 
+	@Inject extension QualifiedNameProvider
+
 	/**
 	 * Create field for an included EntityDocument
 	 */
-	def dispatch JvmField toIncField(LDocEntityDocument entityDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IEntityDocument), layouter, null))
+	def toIncField(LDocInclude include, String name, LDocLayouter layouter) {
+		toField(layouter, name, include.toIncTypeReference)
 	}
 
 	/**
-	 * Create field for an included DTODocument
+	 * Create type for an included EntityDocument
 	 */
-	def dispatch JvmField toIncField(LDocDtoDocument dtoDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IDtoDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included BPMDocument
-	 */
-	def dispatch JvmField toIncField(LDocBPMProcessDocument bpmProcessDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IBPMProcessDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included BPMTaskDocument
-	 */
-	def dispatch JvmField toIncField(LDocHumanTaskDocument bpmTaskDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IHumanTaskDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included VaaclipseViewDocument
-	 */
-	def dispatch JvmField toIncField(LDocViewDocument vaaclipseViewDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IViewDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included UIDocument
-	 */
-	def dispatch JvmField toIncField(LDocUiDocument uiDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IUiDocument), layouter, null))
+	def toIncTypeReference(LDocInclude include) {
+		if (!include.provided) {
+			include.document.toTypeReference
+		} else {
+			include.providedType.toTypeReference(include)
+		}
 	}
 
 	def JvmField toAccessField(LDocNamedDocument doc) {
 		val field = toField(doc, "docAccess", typeReference.getTypeForName(typeof(IDocumentAccess), doc, null))
-		addAnno(doc, field, doc.toAnnotation(typeof(Inject)))
+
+		//		addAnno(doc, field, doc.toAnnotation(typeof(Inject)))
 		field
+	}
+
+	def JvmOperation toIncludeSetter(LDocInclude include) {
+		if (!include.provided) {
+			return null
+		}
+		include.toSetter(include.varName, include.providedType.toTypeReference(include))
+	}
+
+	def JvmGenericType toDocumentClass(@Nullable LDocNamedDocument sourceElement) {
+		val fqn = sourceElement.fullyQualifiedName
+		val resultName = fqn.skipLast(1).append(sourceElement.toLanguage).append(fqn.lastSegment)
+
+		val JvmGenericType result = createJvmGenericType(sourceElement, resultName.toString);
+		if (result == null)
+			return null;
+		associate(sourceElement, result);
+
+		result
 	}
 }

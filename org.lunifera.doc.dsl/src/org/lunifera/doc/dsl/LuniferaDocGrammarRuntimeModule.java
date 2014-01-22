@@ -16,9 +16,11 @@ import org.lunifera.doc.dsl.conversion.LuniferaDocValueConverterService;
 import org.lunifera.doc.dsl.richstring.LuniferaDocCompiler;
 import org.lunifera.doc.dsl.typing.LuniferaDocExpressionHelper;
 import org.lunifera.doc.dsl.typing.LuniferaDocTypeComputer;
+import org.lunifera.doc.dsl.valueconverter.LDocQualifiedNameProvider;
 
 /**
- * Use this class to register components to be used at runtime / without the Equinox extension registry.
+ * Use this class to register components to be used at runtime / without the
+ * Equinox extension registry.
  */
 public class LuniferaDocGrammarRuntimeModule extends
 		org.lunifera.doc.dsl.AbstractLuniferaDocGrammarRuntimeModule {
@@ -39,6 +41,10 @@ public class LuniferaDocGrammarRuntimeModule extends
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return LuniferaDocValueConverterService.class;
+	}
+
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return LDocQualifiedNameProvider.class;
 	}
 
 }

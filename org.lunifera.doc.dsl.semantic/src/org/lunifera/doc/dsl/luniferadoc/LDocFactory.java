@@ -103,6 +103,15 @@ public interface LDocFactory extends EFactory {
 	LDocUiDocument createLDocUiDocument();
 
 	/**
+	 * Returns a new object of class '<em>Layouter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Layouter</em>'.
+	 * @generated
+	 */
+	LDocLayouter createLDocLayouter();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

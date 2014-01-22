@@ -12,7 +12,7 @@ public interface IEntityField  extends IDocument {
 	
 	int getLength();
 	
-	boolean isPk();
+	boolean isPrimaryKey();
 	
 	boolean isNullable();
 	

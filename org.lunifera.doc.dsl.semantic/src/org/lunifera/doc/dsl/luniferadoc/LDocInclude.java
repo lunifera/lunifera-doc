@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getDocument <em>Document</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getVarName <em>Var Name</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#isProvided <em>Provided</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedType <em>Provided Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +75,60 @@ public interface LDocInclude extends EObject {
 	 * @generated
 	 */
 	void setVarName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Provided</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Provided</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provided</em>' attribute.
+	 * @see #setProvided(boolean)
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocPackage#getLDocInclude_Provided()
+	 * @model
+	 * @generated
+	 */
+	boolean isProvided();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#isProvided <em>Provided</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Provided</em>' attribute.
+	 * @see #isProvided()
+	 * @generated
+	 */
+	void setProvided(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Provided Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.lunifera.doc.dsl.luniferadoc.LDocType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Provided Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provided Type</em>' attribute.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocType
+	 * @see #setProvidedType(LDocType)
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocPackage#getLDocInclude_ProvidedType()
+	 * @model
+	 * @generated
+	 */
+	LDocType getProvidedType();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedType <em>Provided Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Provided Type</em>' attribute.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocType
+	 * @see #getProvidedType()
+	 * @generated
+	 */
+	void setProvidedType(LDocType value);
 
 } // LDocInclude
