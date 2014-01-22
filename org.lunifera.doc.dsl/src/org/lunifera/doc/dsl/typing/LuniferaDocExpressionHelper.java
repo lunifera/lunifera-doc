@@ -12,6 +12,7 @@ import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.util.XExpressionHelper;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 
+@SuppressWarnings("restriction")
 public class LuniferaDocExpressionHelper extends XExpressionHelper {
 
 	@Override

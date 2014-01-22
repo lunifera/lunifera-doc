@@ -3,13 +3,13 @@ package samples.doc.dto;
 import java.util.List;
 
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.lunifera.doc.dsl.api.document.IDTODocument;
-import org.lunifera.doc.dsl.api.document.IDTOProperty;
+import org.lunifera.doc.dsl.api.document.IDtoDocument;
+import org.lunifera.doc.dsl.api.document.IDtoField;
 
 @SuppressWarnings("all")
-public class MyDTO implements IDTODocument {
+public class MyDTO implements IDtoDocument {
 	@SuppressWarnings("all")
-	public class PropA implements IDTOProperty {
+	public class PropA implements IDtoField {
 		private String name;
 
 		private String description;
@@ -47,7 +47,7 @@ public class MyDTO implements IDTODocument {
 	}
 
 	@SuppressWarnings("all")
-	public class PropB implements IDTOProperty {
+	public class PropB implements IDtoField {
 		private String name;
 
 		private String description;
@@ -90,13 +90,13 @@ public class MyDTO implements IDTODocument {
 
 	private String description;
 
-	private List<IDTOProperty> properties;
+	private List<IDtoField> properties;
 
 	public MyDTO() {
 		this.name = "doc.dto.MyDTO";
 		this.dtoClass = "org.lunifera.sample.MyDTO";
 		this.description = serializeDescription().toString();
-		this.properties = new java.util.ArrayList<IDTOProperty>();
+		this.properties = new java.util.ArrayList<IDtoField>();
 		this.properties.add(new PropA());
 		this.properties.add(new PropB());
 
@@ -145,11 +145,11 @@ public class MyDTO implements IDTODocument {
 		this.description = description;
 	}
 
-	public List<IDTOProperty> getProperties() {
+	public List<IDtoField> getProperties() {
 		return this.properties;
 	}
 
-	public void setProperties(final List<IDTOProperty> properties) {
+	public void setProperties(final List<IDtoField> properties) {
 		this.properties = properties;
 	}
 }

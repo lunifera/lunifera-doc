@@ -9,40 +9,23 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated LuniferaDocGrammar -->
       <package
-            uri="http://www.lunifera.org/luniferadoc"
-            class="org.lunifera.doc.dsl.luniferadoc.LuniferaDocPackage"
+            uri="http://www.lunifera.org/documentation/v1"
+            class="org.lunifera.doc.dsl.luniferadoc.LDocPackage"
             genModel="model/LuniferaDocGrammar.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated LuniferaDocGrammar -->
       <package
-            uri="http://www.lunifera.org/luniferadoc/document"
-            class="org.lunifera.doc.dsl.luniferadoc.document.DocumentPackage"
+            uri="http://www.lunifera.org/documentation/richstring/v1"
+            class="org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage"
             genModel="model/LuniferaDocGrammar.genmodel"/>
    </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated LuniferaDocGrammar -->
-      <package
-            uri="http://www.lunifera.org/luniferadoc/layout"
-            class="org.lunifera.doc.dsl.luniferadoc.layout.LayoutPackage"
-            genModel="model/LuniferaDocGrammar.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated LuniferaDocGrammar -->
-      <package
-            uri="http://www.lunifera.org/luniferadoc/richstring"
-            class="org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage"
-            genModel="model/LuniferaDocGrammar.genmodel"/>
-   </extension>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated DocCompiler -->
       <package
-            uri="http://www.lunifera.org/doccompiler"
-            class="org.lunifera.doc.dsl.doccompiler.DocCompilerPackage"
+            uri="http://www.lunifera.org/luniferadoc/compiler/v1"
+            class="org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage"
             genModel="model/DocCompiler.genmodel"/>
    </extension>
 

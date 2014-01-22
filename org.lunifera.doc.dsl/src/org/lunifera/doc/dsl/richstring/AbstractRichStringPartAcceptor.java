@@ -14,7 +14,7 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
-import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
+import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
@@ -57,6 +57,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
  * want to implement all methods. It is mandatory to implement {@link #forLoopHasNext()}.
  */
 @NonNullByDefault
+@SuppressWarnings("restriction")
 public abstract class AbstractRichStringPartAcceptor implements IRichStringPartAcceptor {
 
 	public void acceptSemanticText(CharSequence text, @Nullable RichStringLiteral origin) {
@@ -373,7 +374,7 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 	}
 
 	@Override
-	public void acceptDocumentStart(NamedDocument object) {
+	public void acceptDocumentStart(LDocNamedDocument object) {
 	}
 
 	@Override

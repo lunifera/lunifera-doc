@@ -3,21 +3,25 @@
 package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.xtext.xbase.impl.XBlockExpressionImpl;
+
+import org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Rich String</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Rich String</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class RichStringImpl extends XBlockExpressionImpl implements RichString {
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected RichStringImpl() {
@@ -25,13 +29,13 @@ public class RichStringImpl extends XBlockExpressionImpl implements RichString {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RichstringPackage.Literals.RICH_STRING;
+		return LDocRichstringPackage.Literals.RICH_STRING;
 	}
 
-} // RichStringImpl
+} //RichStringImpl

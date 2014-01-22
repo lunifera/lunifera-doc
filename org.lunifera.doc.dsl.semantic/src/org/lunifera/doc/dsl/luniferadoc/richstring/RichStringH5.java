@@ -2,11 +2,14 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.richstring;
 
+
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Rich String H5</b></em>'. <!-- end-user-doc -->
- * 
- * 
- * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringH5()
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Rich String H5</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage#getRichStringH5()
  * @model
  * @generated
  */

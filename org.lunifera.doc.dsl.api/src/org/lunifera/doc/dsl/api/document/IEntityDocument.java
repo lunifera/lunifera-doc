@@ -8,14 +8,10 @@ package org.lunifera.doc.dsl.api.document;
 
 import java.util.List;
 
-public interface IEntityDocument {
+public interface IEntityDocument extends IDocument {
 
-	String getName();
-	
 	String getEntityClass();
 
-	String getDescription();
-
-	List<IEntityField> getEntityFields();
+	List<IEntityField> getFields();
 
 }

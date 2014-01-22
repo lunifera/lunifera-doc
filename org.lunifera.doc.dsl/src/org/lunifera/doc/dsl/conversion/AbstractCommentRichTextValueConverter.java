@@ -15,7 +15,6 @@ public abstract class AbstractCommentRichTextValueConverter extends AbstractRich
 
 	@Override
 	protected String toEscapedString(String value) {
-		// TODO: Is this the correct line separator?
 		return super.toEscapedString("\n" + value);
 	}
 

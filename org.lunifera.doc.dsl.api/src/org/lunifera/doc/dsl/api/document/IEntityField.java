@@ -6,10 +6,8 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-public interface IEntityField {
+public interface IEntityField  extends IDocument {
 
-	String getName();
-	
 	String getType();
 	
 	int getLength();
@@ -17,7 +15,5 @@ public interface IEntityField {
 	boolean isPk();
 	
 	boolean isNullable();
-	
-	String description();
 	
 }

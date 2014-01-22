@@ -6,12 +6,8 @@
 
 package org.lunifera.doc.dsl.api.document;
 
-public interface IBPMProcessDocument {
+public interface IBPMProcessDocument extends IDocument {
 
-	String getName();
-	
-	String getProcess();
-
-	String getDescription();
+	String getProcessId();
 
 }

@@ -6,18 +6,15 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: Lunifera
 Bundle-Localization: plugin
-Export-Package: model,
- org.lunifera.doc.dsl.doccompiler;uses:="org.eclipse.xtext.xbase,  org.eclipse.emf.ecore,  org.lunifera.doc.dsl.luniferadoc,  org.eclipse.emf.common.util",
- org.lunifera.doc.dsl.doccompiler.impl;uses:="org.eclipse.xtext.xbase,  org.eclipse.emf.ecore,  org.lunifera.doc.dsl.luniferadoc,  org.eclipse.emf.common.util,  org.eclipse.emf.ecore.impl,  org.eclipse.emf.common.notify,  org.lunifera.doc.dsl.doccompiler",
- org.lunifera.doc.dsl.doccompiler.util;uses:="org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.eclipse.emf.common.notify.impl,  org.eclipse.emf.common.notify,  org.lunifera.doc.dsl.doccompiler",
- org.lunifera.doc.dsl.luniferadoc;uses:="org.eclipse.xtext.xbase,org.eclipse.emf.ecore,org.eclipse.emf.common.util",
- org.lunifera.doc.dsl.luniferadoc.document,
- org.lunifera.doc.dsl.luniferadoc.impl;uses:="org.eclipse.xtext.xbase,  org.eclipse.emf.ecore,  org.lunifera.doc.dsl.luniferadoc,  org.eclipse.emf.common.util,  org.eclipse.xtext.xbase.impl,  org.eclipse.emf.common.notify,  org.eclipse.emf.ecore.impl",
- org.lunifera.doc.dsl.luniferadoc.layout,
+Export-Package: org.lunifera.doc.dsl.luniferadoc,
+ org.lunifera.doc.dsl.luniferadoc.compiler,
+ org.lunifera.doc.dsl.luniferadoc.compiler.impl,
+ org.lunifera.doc.dsl.luniferadoc.compiler.util,
+ org.lunifera.doc.dsl.luniferadoc.impl,
  org.lunifera.doc.dsl.luniferadoc.richstring,
  org.lunifera.doc.dsl.luniferadoc.richstring.impl,
  org.lunifera.doc.dsl.luniferadoc.richstring.util,
- org.lunifera.doc.dsl.luniferadoc.util;uses:="org.eclipse.xtext.xbase,  org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.lunifera.doc.dsl.luniferadoc,  org.eclipse.emf.common.notify.impl,  org.eclipse.emf.common.notify"
+ org.lunifera.doc.dsl.luniferadoc.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.lunifera.doc.dsl.semantic;visibility:=reexport,

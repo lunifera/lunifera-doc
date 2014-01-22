@@ -16,13 +16,11 @@ import org.eclipse.xtext.xbase.XExpression
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop
 
-//import org.eclipse.xtext.validation.Check
 /**
- * Custom validation rules. 
- *
- * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
+ @SuppressWarnings("restriction")
 class LuniferaDocGrammarValidator extends AbstractLuniferaDocGrammarValidator { //  public static val INVALID_NAME = 'invalidName'
+
 	override boolean isValueExpectedRecursive(XExpression expr) {
 		val EObject container = expr.eContainer();
 		if (container instanceof RichString || container instanceof RichStringForLoop) {

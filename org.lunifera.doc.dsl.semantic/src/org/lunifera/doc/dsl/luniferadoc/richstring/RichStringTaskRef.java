@@ -2,49 +2,49 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.richstring;
 
-import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument;
+import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Rich String Task Ref</b></em>'. <!--
- * end-user-doc -->
- * 
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Rich String Task Ref</b></em>'.
+ * <!-- end-user-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef#getTaskDoc <em>Task Doc</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef#getTaskDoc <em>Task Doc</em>}</li>
  * </ul>
  * </p>
- * 
- * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringTaskRef()
+ *
+ * @see org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage#getRichStringTaskRef()
  * @model
  * @generated
  */
 public interface RichStringTaskRef extends RichStringMarkup {
 	/**
-	 * Returns the value of the '<em><b>Task Doc</b></em>' reference. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Task Doc</b></em>' reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Task Doc</em>' reference isn't clear, there really should be more of a description
-	 * here...
+	 * If the meaning of the '<em>Task Doc</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Task Doc</em>' reference.
-	 * @see #setTaskDoc(BPMHumanTaskDocument)
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichstringPackage#getRichStringTaskRef_TaskDoc()
+	 * @see #setTaskDoc(LDocHumanTaskDocument)
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage#getRichStringTaskRef_TaskDoc()
 	 * @model
 	 * @generated
 	 */
-	BPMHumanTaskDocument getTaskDoc();
+	LDocHumanTaskDocument getTaskDoc();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef#getTaskDoc
-	 * <em>Task Doc</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Task Doc</em>' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef#getTaskDoc <em>Task Doc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Task Doc</em>' reference.
 	 * @see #getTaskDoc()
 	 * @generated
 	 */
-	void setTaskDoc(BPMHumanTaskDocument value);
+	void setTaskDoc(LDocHumanTaskDocument value);
 
 } // RichStringTaskRef

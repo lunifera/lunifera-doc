@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="doccompiler" nsURI="http://www.lunifera.org/doccompiler" nsPrefix="doccompiler">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="compiler" nsURI="http://www.lunifera.org/luniferadoc/compiler/v1"
+    nsPrefix="compiler">
   <eClassifiers xsi:type="ecore:EClass" name="DocumentStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//ProcessedRichString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//DocumentEnd"
         eOpposite="#//DocumentEnd/start"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass LuniferaDocGrammar.ecore#//NamedDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass LuniferaDocGrammar.ecore#//LDocNamedDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//DocumentStart"

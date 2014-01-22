@@ -13,94 +13,94 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
-import org.lunifera.doc.dsl.doccompiler.BoldEnd;
-import org.lunifera.doc.dsl.doccompiler.BoldStart;
-import org.lunifera.doc.dsl.doccompiler.ChapterEnd;
-import org.lunifera.doc.dsl.doccompiler.ChapterStart;
-import org.lunifera.doc.dsl.doccompiler.CodeEnd;
-import org.lunifera.doc.dsl.doccompiler.CodeStart;
-import org.lunifera.doc.dsl.doccompiler.DTORefEnd;
-import org.lunifera.doc.dsl.doccompiler.DTORefStart;
-import org.lunifera.doc.dsl.doccompiler.DocCompilerFactory;
-import org.lunifera.doc.dsl.doccompiler.DocumentEnd;
-import org.lunifera.doc.dsl.doccompiler.DocumentStart;
-import org.lunifera.doc.dsl.doccompiler.ElseIfCondition;
-import org.lunifera.doc.dsl.doccompiler.ElseStart;
-import org.lunifera.doc.dsl.doccompiler.EndIf;
-import org.lunifera.doc.dsl.doccompiler.EntityRefEnd;
-import org.lunifera.doc.dsl.doccompiler.EntityRefStart;
-import org.lunifera.doc.dsl.doccompiler.ExampleEnd;
-import org.lunifera.doc.dsl.doccompiler.ExampleStart;
-import org.lunifera.doc.dsl.doccompiler.ForLoopEnd;
-import org.lunifera.doc.dsl.doccompiler.ForLoopStart;
-import org.lunifera.doc.dsl.doccompiler.H1End;
-import org.lunifera.doc.dsl.doccompiler.H1Start;
-import org.lunifera.doc.dsl.doccompiler.H2End;
-import org.lunifera.doc.dsl.doccompiler.H2Start;
-import org.lunifera.doc.dsl.doccompiler.H3End;
-import org.lunifera.doc.dsl.doccompiler.H3Start;
-import org.lunifera.doc.dsl.doccompiler.H4End;
-import org.lunifera.doc.dsl.doccompiler.H4Start;
-import org.lunifera.doc.dsl.doccompiler.H5End;
-import org.lunifera.doc.dsl.doccompiler.H5Start;
-import org.lunifera.doc.dsl.doccompiler.H6End;
-import org.lunifera.doc.dsl.doccompiler.H6Start;
-import org.lunifera.doc.dsl.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.doccompiler.ImgStart;
-import org.lunifera.doc.dsl.doccompiler.ItalicEnd;
-import org.lunifera.doc.dsl.doccompiler.ItalicStart;
-import org.lunifera.doc.dsl.doccompiler.Line;
-import org.lunifera.doc.dsl.doccompiler.LineBreak;
-import org.lunifera.doc.dsl.doccompiler.LinePart;
-import org.lunifera.doc.dsl.doccompiler.ListElementEnd;
-import org.lunifera.doc.dsl.doccompiler.ListElementStart;
-import org.lunifera.doc.dsl.doccompiler.ListEnd;
-import org.lunifera.doc.dsl.doccompiler.ListStart;
-import org.lunifera.doc.dsl.doccompiler.Literal;
-import org.lunifera.doc.dsl.doccompiler.MailtoEnd;
-import org.lunifera.doc.dsl.doccompiler.MailtoStart;
-import org.lunifera.doc.dsl.doccompiler.Markup;
-import org.lunifera.doc.dsl.doccompiler.MovieEnd;
-import org.lunifera.doc.dsl.doccompiler.MovieStart;
-import org.lunifera.doc.dsl.doccompiler.OpenViewEnd;
-import org.lunifera.doc.dsl.doccompiler.OpenViewStart;
-import org.lunifera.doc.dsl.doccompiler.OrderedListEnd;
-import org.lunifera.doc.dsl.doccompiler.OrderedListStart;
-import org.lunifera.doc.dsl.doccompiler.PrintedExpression;
-import org.lunifera.doc.dsl.doccompiler.ProcessRefEnd;
-import org.lunifera.doc.dsl.doccompiler.ProcessRefStart;
-import org.lunifera.doc.dsl.doccompiler.ProcessedRichString;
-import org.lunifera.doc.dsl.doccompiler.RefEnd;
-import org.lunifera.doc.dsl.doccompiler.RefStart;
-import org.lunifera.doc.dsl.doccompiler.SectionEnd;
-import org.lunifera.doc.dsl.doccompiler.SectionStart;
-import org.lunifera.doc.dsl.doccompiler.SkypeEnd;
-import org.lunifera.doc.dsl.doccompiler.SkypeStart;
-import org.lunifera.doc.dsl.doccompiler.SpanEnd;
-import org.lunifera.doc.dsl.doccompiler.SpanStart;
-import org.lunifera.doc.dsl.doccompiler.StartProcessEnd;
-import org.lunifera.doc.dsl.doccompiler.StartProcessStart;
-import org.lunifera.doc.dsl.doccompiler.SubsectionEnd;
-import org.lunifera.doc.dsl.doccompiler.SubsectionStart;
-import org.lunifera.doc.dsl.doccompiler.TableDataEnd;
-import org.lunifera.doc.dsl.doccompiler.TableDataStart;
-import org.lunifera.doc.dsl.doccompiler.TableEnd;
-import org.lunifera.doc.dsl.doccompiler.TableRowEnd;
-import org.lunifera.doc.dsl.doccompiler.TableRowStart;
-import org.lunifera.doc.dsl.doccompiler.TableStart;
-import org.lunifera.doc.dsl.doccompiler.TaskRefEnd;
-import org.lunifera.doc.dsl.doccompiler.TaskRefStart;
-import org.lunifera.doc.dsl.doccompiler.UIRefEnd;
-import org.lunifera.doc.dsl.doccompiler.UIRefStart;
-import org.lunifera.doc.dsl.doccompiler.URLEnd;
-import org.lunifera.doc.dsl.doccompiler.URLStart;
-import org.lunifera.doc.dsl.doccompiler.UnderlineEnd;
-import org.lunifera.doc.dsl.doccompiler.UnderlineStart;
-import org.lunifera.doc.dsl.doccompiler.ViewRefEnd;
-import org.lunifera.doc.dsl.doccompiler.ViewRefStart;
-import org.lunifera.doc.dsl.doccompiler.util.DocCompilerSwitch;
-import org.lunifera.doc.dsl.luniferadoc.NamedDocument;
-import org.lunifera.doc.dsl.luniferadoc.layout.LuniferaDocLayout;
+import org.lunifera.doc.dsl.luniferadoc.LDocLayouter;
+import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
+import org.lunifera.doc.dsl.luniferadoc.compiler.BoldEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.BoldStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ChapterEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ChapterStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.CodeEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.CodeStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.DTORefEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.DTORefStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.DocumentEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.DocumentStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ElseIfCondition;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ElseStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.EndIf;
+import org.lunifera.doc.dsl.luniferadoc.compiler.EntityRefEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.EntityRefStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ExampleEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ExampleStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ForLoopEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ForLoopStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H1End;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H1Start;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H2End;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H2Start;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H3End;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H3Start;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H4End;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H4Start;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H5End;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H5Start;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H6End;
+import org.lunifera.doc.dsl.luniferadoc.compiler.H6Start;
+import org.lunifera.doc.dsl.luniferadoc.compiler.IfConditionStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ImgStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ItalicEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ItalicStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerFactory;
+import org.lunifera.doc.dsl.luniferadoc.compiler.Line;
+import org.lunifera.doc.dsl.luniferadoc.compiler.LineBreak;
+import org.lunifera.doc.dsl.luniferadoc.compiler.LinePart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ListElementEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ListElementStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ListEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ListStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.Literal;
+import org.lunifera.doc.dsl.luniferadoc.compiler.MailtoEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.MailtoStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.Markup;
+import org.lunifera.doc.dsl.luniferadoc.compiler.MovieEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.MovieStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.OpenViewEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.OpenViewStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.OrderedListEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.OrderedListStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.PrintedExpression;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ProcessRefEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ProcessRefStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ProcessedRichString;
+import org.lunifera.doc.dsl.luniferadoc.compiler.RefEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.RefStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SectionEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SectionStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SkypeEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SkypeStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SpanEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SpanStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.StartProcessEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.StartProcessStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SubsectionEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.SubsectionStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TaskRefEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TaskRefStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.UIRefEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.UIRefStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.URLEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.URLStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.UnderlineEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.UnderlineStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ViewRefEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.ViewRefStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.util.LDocCompilerSwitch;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
@@ -142,10 +142,11 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
-import org.lunifera.doc.dsl.luniferadoc.richstring.util.RichstringSwitch;
+import org.lunifera.doc.dsl.luniferadoc.richstring.util.LDocRichstringSwitch;
 
 import com.google.inject.Inject;
 
+@SuppressWarnings("restriction")
 public class RichStringProcessor {
 
 	public void process(RichString richString, IRichStringPartAcceptor acceptor,
@@ -156,10 +157,10 @@ public class RichStringProcessor {
 		implementation.doSwitch(rootRichString);
 	}
 
-	public static class ProcessedRichStringBuilder extends RichstringSwitch<Boolean> {
+	public static class ProcessedRichStringBuilder extends LDocRichstringSwitch<Boolean> {
 
 		@Inject
-		private DocCompilerFactory factory = DocCompilerFactory.eINSTANCE;
+		private LDocCompilerFactory factory = LDocCompilerFactory.eINSTANCE;
 
 		private ProcessedRichString rootRichString = null;
 
@@ -202,7 +203,7 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichString(RichString object) {
 
-			boolean root = object.eContainer() instanceof LuniferaDocLayout;
+			boolean root = object.eContainer() instanceof LDocLayouter;
 
 			DocumentStart start = null;
 			if (rootRichString == null) {
@@ -212,7 +213,7 @@ public class RichStringProcessor {
 				if (root) {
 					start = factory.createDocumentStart();
 					start.setContent(rootRichString);
-					start.setDocument((NamedDocument) object.eContainer());
+					start.setDocument((LDocNamedDocument) object.eContainer());
 					addToCurrentLine(start);
 				}
 			}
@@ -784,7 +785,7 @@ public class RichStringProcessor {
 
 	}
 
-	public static class Implementation extends DocCompilerSwitch<Boolean> {
+	public static class Implementation extends LDocCompilerSwitch<Boolean> {
 
 		private final IRichStringPartAcceptor acceptor;
 
