@@ -21,7 +21,7 @@ DocLayouter returns doc::LDocLayouter:
 	GeneralDocument;
 
 DocumentInclude returns doc::LDocInclude:
-	'include' include=[doc::LDocDocument|QualifiedName] 'as' varName=ID;
+	'include' document=[doc::LDocDocument|QualifiedName] 'as' varName=ID; 
 
 GeneralDocument returns doc::LDocLayouter:
 	'Layouter' name=QualifiedName '{'

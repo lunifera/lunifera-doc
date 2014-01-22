@@ -9,7 +9,6 @@ package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
 import java.util.List
-import org.eclipse.xtext.common.types.JvmField
 import org.eclipse.xtext.common.types.JvmGenericType
 import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.common.types.JvmVisibility
@@ -18,7 +17,6 @@ import org.eclipse.xtext.common.types.util.TypeReferences
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
-import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.lunifera.doc.dsl.api.document.IBPMProcessDocument
 import org.lunifera.doc.dsl.api.document.IDtoDocument
 import org.lunifera.doc.dsl.api.document.IDtoField
@@ -50,7 +48,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	/**
      * convenience API to build and initialize JVM types and their members.
      */
-	@Inject extension JvmTypesBuilder
+	@Inject extension LDocTypesBuilder
 	@Inject TypeReferences typeReference
 
 	@Inject
@@ -67,13 +65,16 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(ILayouter), layouter, null)
 				documentation = layouter.documentation
+				
+				members += layouter.toAccessField()
+				
 				for (inc : layouter.includes) {
 					members += inc.document.toIncField(inc.varName, layouter)
 				}
 				members += layouter.toConstructor [
 					body = '''
 						«FOR inc : layouter.includes»
-							this.«inc.varName» = access.wrapDocument(«inc.document»);
+							this.«inc.varName» = docAccess.wrapDocument(«inc.document»);
 						«ENDFOR»
 					'''
 				]
@@ -520,45 +521,4 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 		return propClass
 	}
 
-	/**
-	 * Create field for an included EntityDocument
-	 */
-	def dispatch JvmField toIncField(LDocEntityDocument entityDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IEntityDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included DTODocument
-	 */
-	def dispatch JvmField toIncField(LDocDtoDocument dtoDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IDtoDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included BPMDocument
-	 */
-	def dispatch JvmField toIncField(LDocBPMProcessDocument bpmProcessDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IBPMProcessDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included BPMTaskDocument
-	 */
-	def dispatch JvmField toIncField(LDocHumanTaskDocument bpmTaskDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IHumanTaskDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included VaaclipseViewDocument
-	 */
-	def dispatch JvmField toIncField(LDocViewDocument vaaclipseViewDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IViewDocument), layouter, null))
-	}
-
-	/**
-	 * Create field for an included UIDocument
-	 */
-	def dispatch JvmField toIncField(LDocUiDocument uiDoc, String name, LDocLayouter layouter) {
-		toField(layouter, name, typeReference.getTypeForName(typeof(IUiDocument), layouter, null))
-	}
 }

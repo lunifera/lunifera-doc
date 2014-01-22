@@ -15,29 +15,15 @@ import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider
-import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDescription
-import org.lunifera.doc.dsl.luniferadoc.document.BPMHumanTaskDocument
-import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDescription
-import org.lunifera.doc.dsl.luniferadoc.document.BPMProcessDocument
-import org.lunifera.doc.dsl.luniferadoc.document.DTODescription
-import org.lunifera.doc.dsl.luniferadoc.document.DTODocument
-import org.lunifera.doc.dsl.luniferadoc.document.DTOProperties
-import org.lunifera.doc.dsl.luniferadoc.document.DTOProperty
-import org.lunifera.doc.dsl.luniferadoc.document.EntityDescription
-import org.lunifera.doc.dsl.luniferadoc.document.EntityDocument
-import org.lunifera.doc.dsl.luniferadoc.document.EntityField
-import org.lunifera.doc.dsl.luniferadoc.document.EntityFields
-import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
-import org.lunifera.doc.dsl.luniferadoc.document.UIDescription
-import org.lunifera.doc.dsl.luniferadoc.document.UIDocument
-import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDescription
-import org.lunifera.doc.dsl.luniferadoc.document.VaaclipseViewDocument
-import org.lunifera.doc.dsl.luniferadoc.layout.BPMHumanTaskLayout
-import org.lunifera.doc.dsl.luniferadoc.layout.BPMProcessLayout
-import org.lunifera.doc.dsl.luniferadoc.layout.DTOLayout
-import org.lunifera.doc.dsl.luniferadoc.layout.EntityLayout
-import org.lunifera.doc.dsl.luniferadoc.layout.UILayout
-import org.lunifera.doc.dsl.luniferadoc.layout.VaaclipseViewLayout
+import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoProperty
+import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocEntityField
+import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
+import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter
@@ -90,189 +76,142 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 		super(delegate);
 	}
 
-	def text(EntityDocument elem) {
+	def text(LDocEntityDocument elem) {
 		'Entity Document'
 	}
 	
-	def image(EntityDocument elem) {
+	def image(LDocEntityDocument elem) {
 		'document.gif'
 	}
 	
-	def text(EntityDescription elem) {
-		'Entity Description'
-	}
+//	def text(LDocEntityDescription elem) {
+//		'Entity Description'
+//	}
+//	
+//	def image(LDocEntityDescription elem) {
+//		'description.gif'
+//	}
+//	
+//	def text(LDocEntityFields elem) {
+//		'Entity Fields'
+//	}
+//	
+//	def image(LDocEntityFields elem) {
+//		'fields.gif'
+//	}
 	
-	def image(EntityDescription elem) {
-		'description.gif'
-	}
-	
-	def text(EntityFields elem) {
-		'Entity Fields'
-	}
-	
-	def image(EntityFields elem) {
-		'fields.gif'
-	}
-	
-	def text(EntityField elem) {
+	def text(LDocEntityField elem) {
 		'Entity Field'
 	}
 	
-	def image(EntityField elem) {
+	def image(LDocEntityField elem) {
 		'field.gif'
 	}
 	
-	def text(DTODocument elem) {
+	def text(LDocDtoDocument elem) {
 		'DTO Document'
 	}
 	
-	def image(DTODocument elem) {
+	def image(LDocDtoDocument elem) {
 		'document.gif'
 	}
 	
-	def text(DTODescription elem) {
-		'DTO Description'
-	}
+//	def text(LDocDtoDescription elem) {
+//		'DTO Description'
+//	}
+//	
+//	def image(LDocDtoDescription elem) {
+//		'description.gif'
+//	}
+//	
+//	def text(LDocDtoProperties elem) {
+//		'DTO Properties'
+//	}
+//	
+//	def image(LDocDtoProperties elem) {
+//		'properties.gif'
+//	}
 	
-	def image(DTODescription elem) {
-		'description.gif'
-	}
-	
-	def text(DTOProperties elem) {
-		'DTO Properties'
-	}
-	
-	def image(DTOProperties elem) {
-		'properties.gif'
-	}
-	
-	def text(DTOProperty elem) {
+	def text(LDocDtoProperty elem) {
 		'DTO Property'
 	}
 	
-	def image(DTOProperty elem) {
+	def image(LDocDtoProperty elem) {
 		'property.gif'
 	}
 	
-	def text(BPMProcessDocument elem) {
+	def text(LDocBPMProcessDocument elem) {
 		'BPM Process Document'
 	}
 	
-	def image(BPMProcessDocument elem) {
+	def image(LDocBPMProcessDocument elem) {
 		'document.gif'
 	}
 	
-	def text(BPMProcessDescription elem) {
-		'BPM Process Description'
-	}
+//	def text(LDocBPMProcessDescription elem) {
+//		'BPM Process Description'
+//	}
+//	
+//	def image(LDocBPMProcessDescription elem) {
+//		'description.gif'
+//	}
 	
-	def image(BPMProcessDescription elem) {
-		'description.gif'
-	}
-	
-	def text(BPMHumanTaskDocument elem) {
+	def text(LDocHumanTaskDocument elem) {
 		'BPM Human Task Document'
 	}
 	
-	def image(BPMHumanTaskDocument elem) {
+	def image(LDocHumanTaskDocument elem) {
 		'document.gif'
 	}
 	
-	def text(BPMHumanTaskDescription elem) {
-		'BPM Human Task Description'
-	}
+//	def text(LDocBPMHumanTaskDescription elem) {
+//		'BPM Human Task Description'
+//	}
+//	
+//	def image(LDocBPMHumanTaskDescription elem) {
+//		'description.gif'
+//	}
 	
-	def image(BPMHumanTaskDescription elem) {
-		'description.gif'
-	}
-	
-	def text(VaaclipseViewDocument elem) {
+	def text(LDocViewDocument elem) {
 		'Vaaclipse View Document'
 	}
 	
-	def image(VaaclipseViewDocument elem) {
+	def image(LDocViewDocument elem) {
 		'document.gif'
 	}
 	
-	def text(VaaclipseViewDescription elem) {
-		'Vaaclipse View Description'
-	}
+//	def text(VaaclipseViewDescription elem) {
+//		'Vaaclipse View Description'
+//	}
+//	
+//	def image(VaaclipseViewDescription elem) {
+//		'description.gif'
+//	}
 	
-	def image(VaaclipseViewDescription elem) {
-		'description.gif'
-	}
-	
-	def text(UIDocument elem) {
+	def text(LDocUiDocument elem) {
 		'UI Document'
 	}
 	
-	def image(UIDocument elem) {
+	def image(LDocUiDocument elem) {
 		'document.gif'
 	}
 
-	def text(UIDescription elem) {
-		'UI Description'
-	}
+//	def text(UIDescription elem) {
+//		'UI Description'
+//	}
+//	
+//	def image(UIDescription elem) {
+//		'description.gif'
+//	}
 	
-	def image(UIDescription elem) {
-		'description.gif'
-	}
-	
-	def text(GeneralDocument elem) {
+	def text(LDocLayouter elem) {
 		'General Document'
 	}
 	
-	def image(GeneralDocument elem) {
+	def image(LDocLayouter elem) {
 		'document.gif'
 	}
 	
-	def text(EntityLayout elem) {
-		'Entity Layout'
-	}
-	
-	def image(EntityLayout elem) {
-		'layout.gif'
-	}
-	
-	def text(DTOLayout elem) {
-		'DTO Layout'
-	}
-	
-	def image(DTOLayout elem) {
-		'layout.gif'
-	}
-	
-	def text(BPMProcessLayout elem) {
-		'BPM Process Layout'
-	}
-	
-	def image(BPMProcessLayout elem) {
-		'layout.gif'
-	}
-	
-	def text(BPMHumanTaskLayout elem) {
-		'BPM Human Task Layout'
-	}
-	
-	def image(BPMHumanTaskLayout elem) {
-		'layout.gif'
-	}
-	
-	def text(VaaclipseViewLayout elem) {
-		'Vaaclipse View Layout'
-	}
-	
-	def image(VaaclipseViewLayout elem) {
-		'layout.gif'
-	}
-	
-	def text(UILayout elem) {
-		'UI Layout'
-	}
-	
-	def image(UILayout elem) {
-		'layout.gif'
-	}
 	
 	def text(RichString elem) {
 		'RichString'
