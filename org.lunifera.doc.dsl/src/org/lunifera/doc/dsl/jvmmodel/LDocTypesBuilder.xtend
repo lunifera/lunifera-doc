@@ -1,13 +1,20 @@
 package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.mwe2.language.scoping.QualifiedNameProvider
 import org.eclipse.jdt.annotation.Nullable
 import org.eclipse.xtext.common.types.JvmField
 import org.eclipse.xtext.common.types.JvmGenericType
 import org.eclipse.xtext.common.types.JvmOperation
+import org.eclipse.xtext.common.types.JvmTypeReference
+import org.eclipse.xtext.common.types.JvmVisibility
+import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.util.Strings
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1
+import org.eclipse.xtext.xbase.typesystem.InferredTypeIndicator
 import org.lunifera.doc.dsl.api.document.helper.IDocumentAccess
 import org.lunifera.doc.dsl.extensions.ModelExtensions
 import org.lunifera.doc.dsl.luniferadoc.LDocInclude
@@ -18,6 +25,9 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 
 	@Inject
 	TypeReferences typeReference
+
+	@Inject
+	private TypesFactory typesFactory;
 
 	@Inject extension ModelExtensions
 
@@ -54,16 +64,34 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 		}
 		include.toSetter(include.varName, include.providedType.toTypeReference(include))
 	}
+	
+	def JvmGenericType toDocumentClass(@Nullable LDocNamedDocument doc) {
+		val JvmGenericType result = createJvmGenericType(doc, doc.toFqnDocumentClassName);
+		associate(doc, result);
+	}
 
-	def JvmGenericType toDocumentClass(@Nullable LDocNamedDocument sourceElement) {
-		val fqn = sourceElement.fullyQualifiedName
-		val resultName = fqn.skipLast(1).append(sourceElement.toLanguage).append(fqn.lastSegment)
-
-		val JvmGenericType result = createJvmGenericType(sourceElement, resultName.toString);
-		if (result == null)
+	@Nullable
+	def JvmOperation toGetter(@Nullable EObject sourceElement, @Nullable String fieldName,
+		@Nullable JvmTypeReference typeRef, @Nullable Procedure1<? super JvmOperation> initializer) {
+		if (sourceElement == null || fieldName == null)
 			return null;
+		val JvmOperation result = typesFactory.createJvmOperation();
+		result.visibility = JvmVisibility.PUBLIC
+		var String prefix = "get";
+		if (typeRef != null && !typeRef.eIsProxy() && !InferredTypeIndicator.isInferred(typeRef) &&
+			typeRef.getType() != null && !typeRef.getType().eIsProxy() &&
+			"boolean".equals(typeRef.getType().getIdentifier())) {
+			prefix = "is";
+		}
+		result.simpleName = prefix + Strings.toFirstUpper(fieldName)
+		result.returnType = cloneWithProxies(typeRef)
+
 		associate(sourceElement, result);
 
-		result
+		// sets the body. It may be changed by initializer
+		result.body = '''return this.«fieldName»;'''
+		initializeSafely(result, initializer)
+		return result
 	}
+
 }

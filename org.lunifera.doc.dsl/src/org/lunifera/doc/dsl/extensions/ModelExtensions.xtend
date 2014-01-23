@@ -119,7 +119,19 @@ class ModelExtensions {
 	 * Create type for an included EntityDocument
 	 */
 	def toURIString(LDocNamedDocument entityDoc) {
-		'''"doc://«entityDoc.fullyQualifiedName.toString»?lang=«entityDoc.toLanguage»"'''.toString
+		'''"lundoc://«entityDoc.fullyQualifiedName.toString»?lang=«entityDoc.toLanguage»"'''.toString
+	}
+
+	def String toFqnDocumentClassName(LDocNamedDocument sourceElement) {
+		val fqn = sourceElement.fullyQualifiedName
+		val resultName = fqn.skipLast(1).append(fqn.lastSegment + "_" + sourceElement.toLanguage).toString
+		return resultName
+	}
+
+	def String toFqnDocumentIndexName(LDocNamedDocument sourceElement) {
+
+		//		return sourceElement.fullyQualifiedName.append(sourceElement.toLanguage).toString
+		return sourceElement.toFqnDocumentClassName
 	}
 
 	def JvmTypeReference toTypeReference(LDocType type, EObject context) {

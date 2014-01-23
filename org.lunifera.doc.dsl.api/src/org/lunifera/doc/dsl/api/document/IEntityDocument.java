@@ -12,6 +12,6 @@ public interface IEntityDocument extends IDocument {
 
 	String getEntityClass();
 
-	List<IEntityField> getFields();
+	List<IEntityField> getProperties();
 
 }

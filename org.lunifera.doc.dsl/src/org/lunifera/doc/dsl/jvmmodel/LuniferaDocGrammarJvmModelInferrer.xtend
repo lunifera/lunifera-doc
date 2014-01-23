@@ -8,12 +8,16 @@
 package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
+import java.net.URI
+import java.util.ArrayList
+import java.util.Collections
 import java.util.List
 import org.eclipse.xtext.common.types.JvmGenericType
 import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.xbase.compiler.ImportManager
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
@@ -52,6 +56,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	@Inject extension LDocTypesBuilder
 	@Inject extension ModelExtensions
 	@Inject TypeReferences typeReference
+	@Inject ImportManager importManager
 
 	@Inject
 	private TypesFactory typesFactory;
@@ -69,29 +74,28 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				documentation = layouter.documentation
 				members += layouter.toAccessField()
 				for (inc : layouter.includes) {
-					members += inc.document.toIncField(inc.varName, layouter)
+					members += inc.toIncField(inc.varName, layouter)
 				}
 				members += layouter.toConstructor [
 					body = '''
 						«FOR inc : layouter.includes.filter[!provided]»
-							this.«inc.varName» = («inc.document.toIncType.simpleName») docAccess.wrapDocument(«inc.document.toURIString»);
+							this.«inc.varName» = («inc.toIncTypeReference.simpleName») docAccess.wrapDocument(«inc.document.toURIString»);
 						«ENDFOR»
 					'''
 				]
-				
-				for(inc : layouter.includes.filter[provided]){
+				for (inc : layouter.includes.filter[provided]) {
 					members += inc.toIncludeSetter()
 				}
-				
 				val richString = layouter.content
-				val JvmOperation operation = typesFactory.createJvmOperation()
-				associator.associatePrimary(richString, operation)
-				operation.setSimpleName("serialize")
-				operation.setVisibility(JvmVisibility::PUBLIC)
-				operation.setReturnType(inferredType())
-				operation.setBody(richString)
-				associator.associateLogicalContainer(richString, operation)
-				members += operation
+				members += layouter.toMethod("serialize", inferredType()) [
+					associator.associatePrimary(richString, it)
+					associator.associateLogicalContainer(richString, it)
+					visibility = JvmVisibility::PUBLIC
+					body = richString
+					documentation = '''
+						Serializes layout using the contained documents as input.
+					'''
+				]
 			])
 	}
 
@@ -117,15 +121,15 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				// constructor
 				members += dtoDocument.toConstructor [
 					body = '''
-	this.name = "«dtoDocument.name»";
-	this.dtoClass = "«dtoDocument.dtoClass»";
-	this.description = serializeDescription().toString();
-	this.properties = new java.util.ArrayList<IDTOProperty>();
-«IF dtoDocument.fields != null»
+						this.name = "«dtoDocument.name»";
+						this.dtoClass = "«dtoDocument.dtoClass»";
+						this.description = serializeDescription().toString();
+						this.properties = new java.util.ArrayList<IDTOProperty>();
+						«IF dtoDocument.fields != null»
 							«FOR prop : dtoDocument.fields»
 								this.properties.add(new «prop.name.toFirstUpper»());
 							«ENDFOR»
-						«ENDIF»
+											«ENDIF»
 					'''
 				]
 				// serialization		
@@ -156,9 +160,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	/**
 	 * Infer method for EntityDocument elements
 	 */
-	def
-
-dispatch void infer(LDocEntityDocument entityDocument, IJvmDeclaredTypeAcceptor acceptor,
+	def dispatch void infer(LDocEntityDocument entityDocument, IJvmDeclaredTypeAcceptor acceptor,
 		boolean isPreIndexingPhase) {
 		acceptor.accept(entityDocument.toDocumentClass()).initializeLater(
 			[
@@ -170,64 +172,119 @@ dispatch void infer(LDocEntityDocument entityDocument, IJvmDeclaredTypeAcceptor 
 						members += toInnerClass(field, entityDocument)
 					}
 				}
-				// class fields
-				members += toField("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				val entityClassField = toField("entityClass",
-					typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += entityClassField
-				members += entityDocument.description.toField("description",
-					typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += toField("fields",
-					entityDocument.newTypeRef(typeof(List),
-						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)))
-				// constructor
-				members += entityDocument.toConstructor [
-					body = '''
-						this.name = "«entityDocument.name»";
-						this.entityClass = "«entityDocument.entityClass»";
-						this.description = serializeDescription().toString();
-						this.fields = new java.util.ArrayList<IEntityField>();
-						«IF entityDocument.fields != null»
-							«FOR field : entityDocument.fields»
-								this.fields.add(new «field.name.toFirstUpper»());
-							«ENDFOR»
-						«ENDIF»
-					'''
+				//
+				// final class fields
+				//
+				members += toField("name", typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					final = true
+					initializer = '''"«entityDocument.name»"'''
 				]
-				val JvmOperation serializeDescriptionOperation = typesFactory.createJvmOperation()
-				if (entityDocument.description != null) {
-					val descriptionRichString = entityDocument.description
-					associator.associatePrimary(descriptionRichString, serializeDescriptionOperation)
-					serializeDescriptionOperation.setSimpleName("serializeDescription")
-					serializeDescriptionOperation.setVisibility(JvmVisibility::PUBLIC)
-					serializeDescriptionOperation.setReturnType(inferredType())
-					serializeDescriptionOperation.setBody(descriptionRichString)
-					associator.associateLogicalContainer(descriptionRichString, serializeDescriptionOperation)
-				} else {
-					// TODO return emtpy CharSequence
-				}
-				members += serializeDescriptionOperation
-				// getter
-				members += toGetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null))
+				members += toField("uri", typeReference.getTypeForName(typeof(URI), entityDocument, null)) [
+					final = true
+					initializer = '''URI.create(«entityDocument.toURIString»)'''
+				]
+				members += toField("entityClass",
+					typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					final = true
+					initializer = '''"«entityDocument.entityClass»"'''
+				]
+				members += entityDocument.description.toField("description",
+					typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					final = true
+					initializer = '''serializeDescription().toString()'''
+				]
+				members += toField("properties",
+					entityDocument.newTypeRef(typeof(List),
+						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)))[]
+				members += entityDocument.toMethod("ensureProperties",
+					typeReference.getTypeForName(Void::TYPE, entityDocument, null)) [
+					body = '''
+						if (this.properties != null) {
+							return;
+						}
+						
+						synchronized (this) {
+							if (this.properties != null) {
+								return;
+							}
+						
+							this.properties = new java.util.ArrayList<IEntityField>();
+							«FOR field : entityDocument.fields»
+								this.properties.add(new «field.name.toFirstUpper»());
+							«ENDFOR»
+						}
+					'''
+					documentation = '''
+					This method is used for lazy loading of properties.'''
+				]
+				//
+				// serializes the description richstring
+				//
+				members += entityDocument.toMethod("serializeDescription", inferredType()) [
+					if (entityDocument.description != null) {
+						val descriptionRichString = entityDocument.description
+						associator.associatePrimary(descriptionRichString, it)
+						associator.associateLogicalContainer(descriptionRichString, it)
+						visibility = JvmVisibility::PROTECTED
+						body = descriptionRichString
+					} else {
+						body = '''return "";'''
+					}
+					documentation = '''
+					Serializes the description of the document. The description is prepared as a RichString, so serialization is required.
+					
+					@return the serialized description'''
+				]
+				//
+				// getters for fields
+				//
+				members += toGetter("name", typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					documentation = '''
+					Returns the name of the document.
+					@return name'''
+				]
+				members += toGetter("uri", typeReference.getTypeForName(typeof(URI), entityDocument, null)) [
+					documentation = '''
+					Returns the URI of the document. Each document is defined by a unique URI. So URI's are used to load documents.<p>
+					
+					URI's follow the pattern:<br>
+					lundoc://{documentType}/{name of document}?language={language}<p>
+					
+					For instance:<br>
+					lundoc://entity/org.lunifera.carstore.Item/language=en
+					
+					@return The unique URI of the document'''
+				]
 				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += entityDocument.description.toGetter(
-					"description",
-					typeReference.getTypeForName(typeof(String), entityDocument, null)
-				)
-				members += toGetter("fields",
+				members += entityDocument.description.toGetter("description",
+					typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					documentation = '''
+					Returns the serialized description of the document.
+					
+					@return The serialized description'''
+				]
+				members += toGetter("properties",
 					entityDocument.newTypeRef(
 						typeof(List),
 						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)
-					))
+					)) [
+					body = '''
+					// ensure that properties are initialized
+					ensureProperties();
+					
+					return java.util.Collections.unmodifiableList(properties);'''
+					documentation = '''
+					Returns the properties for the document.
+					
+					@return an unmodifieable list of properties'''
+				]
 			])
 	}
 
 	/**
 	 * Infer method for BPMProcessDocument elements
 	 */
-	def
-
-dispatch void infer(LDocBPMProcessDocument processDocument, IJvmDeclaredTypeAcceptor acceptor,
+	def dispatch void infer(LDocBPMProcessDocument processDocument, IJvmDeclaredTypeAcceptor acceptor,
 		boolean isPreIndexingPhase) {
 		acceptor.accept(processDocument.toClass(processDocument.name)).initializeLater(
 			[
@@ -272,9 +329,7 @@ dispatch void infer(LDocBPMProcessDocument processDocument, IJvmDeclaredTypeAcce
 	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */
-	def
-
-dispatch void infer(LDocHumanTaskDocument taskDocument, IJvmDeclaredTypeAcceptor acceptor,
+	def dispatch void infer(LDocHumanTaskDocument taskDocument, IJvmDeclaredTypeAcceptor acceptor,
 		boolean isPreIndexingPhase) {
 		acceptor.accept(taskDocument.toClass(taskDocument.name)).initializeLater(
 			[
@@ -319,9 +374,7 @@ dispatch void infer(LDocHumanTaskDocument taskDocument, IJvmDeclaredTypeAcceptor
 	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */
-	def
-
-dispatch void infer(LDocViewDocument viewDocument, IJvmDeclaredTypeAcceptor acceptor,
+	def dispatch void infer(LDocViewDocument viewDocument, IJvmDeclaredTypeAcceptor acceptor,
 		boolean isPreIndexingPhase) {
 		acceptor.accept(viewDocument.toClass(viewDocument.name)).initializeLater(
 			[
@@ -366,9 +419,7 @@ dispatch void infer(LDocViewDocument viewDocument, IJvmDeclaredTypeAcceptor acce
 	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */
-	def
-
-dispatch void infer(LDocUiDocument uiDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(LDocUiDocument uiDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(uiDocument.toClass(uiDocument.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IUiDocument), uiDocument, null)
@@ -415,9 +466,7 @@ dispatch void infer(LDocUiDocument uiDocument, IJvmDeclaredTypeAcceptor acceptor
 	/**
 	* Generate inner class for DTOProperty 
 	*/
-	def
-
-dispatch JvmGenericType toInnerClass(LDocDtoProperty dtoProperty, LDocDtoDocument parentDoc) {
+	def dispatch JvmGenericType toInnerClass(LDocDtoProperty dtoProperty, LDocDtoDocument parentDoc) {
 		val propClass = dtoProperty.toClass(dtoProperty.name.toFirstUpper)
 		propClass.superTypes += typeReference.getTypeForName(typeof(IDtoField), parentDoc, null)
 
@@ -466,9 +515,7 @@ dispatch JvmGenericType toInnerClass(LDocDtoProperty dtoProperty, LDocDtoDocumen
 	/**
 	* Generate inner class for EntityField 
 	*/
-	def
-
-dispatch JvmGenericType toInnerClass(LDocEntityField entityField, LDocEntityDocument parentDoc) {
+	def dispatch JvmGenericType toInnerClass(LDocEntityField entityField, LDocEntityDocument parentDoc) {
 		val propClass = entityField.toClass(entityField.name.toFirstUpper)
 		propClass.superTypes += typeReference.getTypeForName(typeof(IEntityField), parentDoc, null)
 
