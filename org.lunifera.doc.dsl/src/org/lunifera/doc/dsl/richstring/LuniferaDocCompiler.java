@@ -59,7 +59,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
@@ -496,14 +496,14 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		@Override
-		public void acceptTableDataStart(RichStringTableData object) {
+		public void acceptTableCellStart(RichStringTableCell object) {
 			currentAppendable = null;
 			appendable.newLine();
 			append("<td>");
 		}
 
 		@Override
-		public void acceptTableDataEnd() {
+		public void acceptTableCellEnd() {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</td>");

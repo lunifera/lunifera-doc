@@ -508,22 +508,22 @@ public interface LDocCompilerFactory extends EFactory {
 	TableRowEnd createTableRowEnd();
 
 	/**
-	 * Returns a new object of class '<em>Table Data Start</em>'.
+	 * Returns a new object of class '<em>Table Cell Start</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Table Data Start</em>'.
+	 * @return a new object of class '<em>Table Cell Start</em>'.
 	 * @generated
 	 */
-	TableDataStart createTableDataStart();
+	TableCellStart createTableCellStart();
 
 	/**
-	 * Returns a new object of class '<em>Table Data End</em>'.
+	 * Returns a new object of class '<em>Table Cell End</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Table Data End</em>'.
+	 * @return a new object of class '<em>Table Cell End</em>'.
 	 * @generated
 	 */
-	TableDataEnd createTableDataEnd();
+	TableCellEnd createTableCellEnd();
 
 	/**
 	 * Returns a new object of class '<em>List Start</em>'.

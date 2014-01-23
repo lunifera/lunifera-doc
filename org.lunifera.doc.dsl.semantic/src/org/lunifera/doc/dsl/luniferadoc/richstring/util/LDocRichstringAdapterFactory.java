@@ -185,8 +185,8 @@ public class LDocRichstringAdapterFactory extends AdapterFactoryImpl {
 				return createRichStringTableRowAdapter();
 			}
 			@Override
-			public Adapter caseRichStringTableData(RichStringTableData object) {
-				return createRichStringTableDataAdapter();
+			public Adapter caseRichStringTableCell(RichStringTableCell object) {
+				return createRichStringTableCellAdapter();
 			}
 			@Override
 			public Adapter caseRichStringOpenView(RichStringOpenView object) {
@@ -665,16 +665,16 @@ public class LDocRichstringAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData <em>Rich String Table Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell <em>Rich String Table Cell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell
 	 * @generated
 	 */
-	public Adapter createRichStringTableDataAdapter() {
+	public Adapter createRichStringTableCellAdapter() {
 		return null;
 	}
 

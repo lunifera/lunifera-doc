@@ -84,8 +84,8 @@ import org.lunifera.doc.dsl.luniferadoc.compiler.StartProcessEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.StartProcessStart;
 import org.lunifera.doc.dsl.luniferadoc.compiler.SubsectionEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.SubsectionStart;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowStart;
@@ -135,7 +135,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
@@ -149,15 +149,18 @@ import com.google.inject.Inject;
 @SuppressWarnings("restriction")
 public class RichStringProcessor {
 
-	public void process(RichString richString, IRichStringPartAcceptor acceptor,
+	public void process(RichString richString,
+			IRichStringPartAcceptor acceptor,
 			IRichStringIndentationHandler indentationHandler) {
 		ProcessedRichString rootRichString = new ProcessedRichStringBuilder()
 				.processRichString(richString);
-		Implementation implementation = new Implementation(acceptor, indentationHandler);
+		Implementation implementation = new Implementation(acceptor,
+				indentationHandler);
 		implementation.doSwitch(rootRichString);
 	}
 
-	public static class ProcessedRichStringBuilder extends LDocRichstringSwitch<Boolean> {
+	public static class ProcessedRichStringBuilder extends
+			LDocRichstringSwitch<Boolean> {
 
 		@Inject
 		private LDocCompilerFactory factory = LDocCompilerFactory.eINSTANCE;
@@ -183,14 +186,16 @@ public class RichStringProcessor {
 		protected void addToCurrentLine(LinePart part) {
 			if (currentLine == null) {
 				currentLine = factory.createLine();
-				if (!(part instanceof Literal) && !rootRichString.getLines().isEmpty()) {
+				if (!(part instanceof Literal)
+						&& !rootRichString.getLines().isEmpty()) {
 					Line prevLine = rootRichString.getLines().get(
 							rootRichString.getLines().size() - 1);
 					LineBreak lineBreak = (LineBreak) prevLine.getParts().get(
 							prevLine.getParts().size() - 1);
 					Literal literal = factory.createLiteral();
 					literal.setLength(0);
-					literal.setOffset(lineBreak.getLiteral().getValue().length());
+					literal.setOffset(lineBreak.getLiteral().getValue()
+							.length());
 					literal.setLiteral(lineBreak.getLiteral());
 					currentLine.getParts().add(literal);
 				}
@@ -285,7 +290,8 @@ public class RichStringProcessor {
 		@Override
 		public Boolean defaultCase(EObject object) {
 			if (object instanceof XExpression) {
-				PrintedExpression printedExpression = factory.createPrintedExpression();
+				PrintedExpression printedExpression = factory
+						.createPrintedExpression();
 				printedExpression.setExpression((XExpression) object);
 				addToCurrentLine(printedExpression);
 			}
@@ -312,7 +318,8 @@ public class RichStringProcessor {
 					if (textLine.hasTrailingLineBreak()) {
 						LineBreak lineBreak = factory.createLineBreak();
 						lineBreak.setLength(textLine.getDelimiterLength());
-						lineBreak.setOffset(textLine.getRelativeOffset() + textLine.length());
+						lineBreak.setOffset(textLine.getRelativeOffset()
+								+ textLine.length());
 						lineBreak.setLiteral(object);
 						addToCurrentLine(lineBreak);
 						currentLine = null;
@@ -550,22 +557,50 @@ public class RichStringProcessor {
 		public Boolean caseRichStringTable(RichStringTable object) {
 			TableStart start = factory.createTableStart();
 			addToCurrentLine(start);
-			for (RichStringTableRow row : object.getRows()) {
-				TableRowStart rowStart = factory.createTableRowStart();
-				addToCurrentLine(rowStart);
-				for (RichStringTableData td : row.getColumns()) {
-					TableDataStart dataStart = factory.createTableDataStart();
-					addToCurrentLine(dataStart);
-					doSwitch(td.getExpression());
-					TableDataEnd dataEnd = factory.createTableDataEnd();
-					dataEnd.setStart(dataStart);
-					addToCurrentLine(dataEnd);
-				}
-				TableRowEnd rowEnd = factory.createTableRowEnd();
-				rowEnd.setStart(rowStart);
-				addToCurrentLine(rowEnd);
-			}
+			// for (RichStringTableRow row : object.getRows()) {
+			// TableRowStart rowStart = factory.createTableRowStart();
+			// addToCurrentLine(rowStart);
+			// for (RichStringTableData td : row.getColumns()) {
+			// TableDataStart dataStart = factory.createTableDataStart();
+			// addToCurrentLine(dataStart);
+			// doSwitch(td.getExpression());
+			// TableDataEnd dataEnd = factory.createTableDataEnd();
+			// dataEnd.setStart(dataStart);
+			// addToCurrentLine(dataEnd);
+			// }
+			// TableRowEnd rowEnd = factory.createTableRowEnd();
+			// rowEnd.setStart(rowStart);
+			// addToCurrentLine(rowEnd);
+			// }
+			doSwitch(object.getExpression());
+
 			TableEnd end = factory.createTableEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringTableRow(RichStringTableRow object) {
+			TableRowStart start = factory.createTableRowStart();
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			TableRowEnd end = factory.createTableRowEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringTableCell(RichStringTableCell object) {
+			TableCellStart start = factory.createTableCellStart();
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			TableCellEnd end = factory.createTableCellEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -575,14 +610,9 @@ public class RichStringProcessor {
 		public Boolean caseRichStringList(RichStringList object) {
 			ListStart start = factory.createListStart();
 			addToCurrentLine(start);
-			for (RichStringListElement elem : object.getElements()) {
-				ListElementStart elemStart = factory.createListElementStart();
-				addToCurrentLine(elemStart);
-				doSwitch(elem.getExpression());
-				ListElementEnd elemEnd = factory.createListElementEnd();
-				elemEnd.setStart(elemStart);
-				addToCurrentLine(elemEnd);
-			}
+
+			doSwitch(object.getExpression());
+
 			ListEnd end = factory.createListEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
@@ -593,15 +623,23 @@ public class RichStringProcessor {
 		public Boolean caseRichStringOrderedList(RichStringOrderedList object) {
 			OrderedListStart start = factory.createOrderedListStart();
 			addToCurrentLine(start);
-			for (RichStringListElement elem : object.getElements()) {
-				ListElementStart elemStart = factory.createListElementStart();
-				addToCurrentLine(elemStart);
-				doSwitch(elem.getExpression());
-				ListElementEnd elemEnd = factory.createListElementEnd();
-				elemEnd.setStart(elemStart);
-				addToCurrentLine(elemEnd);
-			}
+
+			doSwitch(object.getExpression());
+
 			OrderedListEnd end = factory.createOrderedListEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringListElement(RichStringListElement object) {
+			ListElementStart start = factory.createListElementStart();
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ListElementEnd end = factory.createListElementEnd();
 			end.setStart(start);
 			addToCurrentLine(end);
 			return Boolean.TRUE;
@@ -812,7 +850,8 @@ public class RichStringProcessor {
 
 		@Override
 		public Boolean caseProcessedRichString(ProcessedRichString object) {
-			String indentation = computeInitialIndentation(object.getRichString());
+			String indentation = computeInitialIndentation(object
+					.getRichString());
 			pushTemplateIndentation(indentation);
 			List<Line> lines = object.getLines();
 			if (!lines.isEmpty()) {
@@ -845,7 +884,8 @@ public class RichStringProcessor {
 					int i = index + 1;
 					nextPart = null;
 					line = richString.getLines().get(i);
-					while (line.getParts().isEmpty() && i < richString.getLines().size()) {
+					while (line.getParts().isEmpty()
+							&& i < richString.getLines().size()) {
 						line = richString.getLines().get(i);
 					}
 					if (!line.getParts().isEmpty()) {
@@ -860,10 +900,12 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseForLoopStart(ForLoopStart object) {
 			RichStringForLoop loop = object.getLoop();
-			acceptor.acceptForLoop(loop.getDeclaredParam(), loop.getForExpression());
+			acceptor.acceptForLoop(loop.getDeclaredParam(),
+					loop.getForExpression());
 			pushTemplateIndentationTwice(computeInitialIndentation((RichString) loop
 					.getEachExpression()));
-			boolean hasNext = acceptor.forLoopHasNext(loop.getBefore(), loop.getSeparator(),
+			boolean hasNext = acceptor.forLoopHasNext(loop.getBefore(),
+					loop.getSeparator(),
 					indentationHandler.getTotalSemanticIndentation());
 			if (hasNext) {
 				while (hasNext) {
@@ -871,7 +913,8 @@ public class RichStringProcessor {
 					while (nextPart != object.getEnd()) {
 						doSwitch(nextPart);
 					}
-					hasNext = acceptor.forLoopHasNext(loop.getBefore(), loop.getSeparator(),
+					hasNext = acceptor.forLoopHasNext(loop.getBefore(),
+							loop.getSeparator(),
 							indentationHandler.getTotalSemanticIndentation());
 				}
 			} else {
@@ -905,7 +948,8 @@ public class RichStringProcessor {
 			RichStringElseIf elseIf = object.getRichStringElseIf();
 			acceptor.acceptElseIfCondition(elseIf.getIf());
 			computeNextPart(object);
-			pushTemplateIndentationTwice(computeInitialIndentation((RichString) elseIf.getThen()));
+			pushTemplateIndentationTwice(computeInitialIndentation((RichString) elseIf
+					.getThen()));
 			return Boolean.TRUE;
 		}
 
@@ -1243,15 +1287,15 @@ public class RichStringProcessor {
 		}
 
 		@Override
-		public Boolean caseTableDataStart(TableDataStart object) {
-			acceptor.acceptTableDataStart(object.getContent());
+		public Boolean caseTableCellStart(TableCellStart object) {
+			acceptor.acceptTableCellStart(object.getContent());
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}
 
 		@Override
-		public Boolean caseTableDataEnd(TableDataEnd object) {
-			acceptor.acceptTableDataEnd();
+		public Boolean caseTableCellEnd(TableCellEnd object) {
+			acceptor.acceptTableCellEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}
@@ -1457,8 +1501,9 @@ public class RichStringProcessor {
 				announced = object.getLiteral();
 			}
 			Line line = object.getLine();
-			TextLine textLine = new TextLine(Strings.emptyIfNull(object.getLiteral().getValue()),
-					object.getOffset(), object.getLength(), 0);
+			TextLine textLine = new TextLine(Strings.emptyIfNull(object
+					.getLiteral().getValue()), object.getOffset(),
+					object.getLength(), 0);
 			CharSequence ws = textLine.getLeadingWhiteSpace();
 			ProcessedRichString string = line.getRichString();
 			boolean firstOrLast = string.getLines().get(0) == line
@@ -1469,12 +1514,14 @@ public class RichStringProcessor {
 						boolean followedByOpening = false;
 						if (line.getParts().size() >= 2) {
 							LinePart next = line.getParts().get(1);
-							if (next instanceof ForLoopStart || next instanceof IfConditionStart) {
+							if (next instanceof ForLoopStart
+									|| next instanceof IfConditionStart) {
 								followedByOpening = true;
 							}
 						}
 						if (!followedByOpening) {
-							pushSemanticIndentation(indentationHandler.getTotalIndentation());
+							pushSemanticIndentation(indentationHandler
+									.getTotalIndentation());
 						} else {
 							pushSemanticIndentation(ws);
 						}
@@ -1489,19 +1536,22 @@ public class RichStringProcessor {
 							for (int i = 1; i < line.getParts().size(); i++) {
 								if (line.getParts().get(i) instanceof Literal
 										&& !(line.getParts().get(i) instanceof LineBreak)) {
-									Literal nextLiteralInSameLine = (Literal) line.getParts()
-											.get(i);
-									TextLine nextLiteralLine = new TextLine(nextLiteralInSameLine
-											.getLiteral().getValue(),
+									Literal nextLiteralInSameLine = (Literal) line
+											.getParts().get(i);
+									TextLine nextLiteralLine = new TextLine(
+											nextLiteralInSameLine.getLiteral()
+													.getValue(),
 											nextLiteralInSameLine.getOffset(),
-											nextLiteralInSameLine.getLength(), 0);
+											nextLiteralInSameLine.getLength(),
+											0);
 									CharSequence nextLeading = nextLiteralLine
 											.getLeadingWhiteSpace();
 									if (nextLeading.length() > 0) {
 										ws = ws.toString() + nextLeading;
 									}
 									skipCount++;
-									if (nextLeading.length() != nextLiteralLine.length()) {
+									if (nextLeading.length() != nextLiteralLine
+											.length()) {
 										break;
 									}
 								} else {
@@ -1513,15 +1563,16 @@ public class RichStringProcessor {
 							} else {
 								pushSemanticIndentation(ws);
 								announceIndentation();
-								announceSemanticText(
-										textLine.subSequence(ws.length(), textLine.length()),
+								announceSemanticText(textLine.subSequence(
+										ws.length(), textLine.length()),
 										object.getLiteral());
 							}
 						} else {
 							pushSemanticIndentation(ws);
 							announceIndentation();
 							announceSemanticText(
-									textLine.subSequence(ws.length(), textLine.length()),
+									textLine.subSequence(ws.length(),
+											textLine.length()),
 									object.getLiteral());
 						}
 					} else {
@@ -1529,7 +1580,8 @@ public class RichStringProcessor {
 							skipCount--;
 							announceIndentation();
 							announceSemanticText(
-									textLine.subSequence(ws.length(), textLine.length()),
+									textLine.subSequence(ws.length(),
+											textLine.length()),
 									object.getLiteral());
 						} else {
 							announceSemanticText(textLine, object.getLiteral());
@@ -1539,7 +1591,8 @@ public class RichStringProcessor {
 					skipCount--;
 				}
 			}
-			if (!firstOrLast && line.getParts().get(line.getParts().size() - 1) == object) {
+			if (!firstOrLast
+					&& line.getParts().get(line.getParts().size() - 1) == object) {
 				popIndentation();
 			}
 			computeNextPart(object);
@@ -1578,8 +1631,9 @@ public class RichStringProcessor {
 							return onlyLiterals;
 						return !onlyLiterals;
 					}
-					if (!(new TextLine(literal.getLiteral().getValue(), literal.getOffset(),
-							literal.getLength(), 0).containsOnlyWhitespace()))
+					if (!(new TextLine(literal.getLiteral().getValue(),
+							literal.getOffset(), literal.getLength(), 0)
+							.containsOnlyWhitespace()))
 						return false;
 				} else if (firstOrLast) {
 					return false;
@@ -1614,11 +1668,13 @@ public class RichStringProcessor {
 			indentationHandler.pushTemplateIndentation(indentation);
 		}
 
-		protected void announceSemanticText(CharSequence text, RichStringLiteral origin) {
+		protected void announceSemanticText(CharSequence text,
+				RichStringLiteral origin) {
 			acceptor.acceptSemanticText(text, origin);
 		}
 
-		public void announceTemplateText(CharSequence text, RichStringLiteral origin) {
+		public void announceTemplateText(CharSequence text,
+				RichStringLiteral origin) {
 			acceptor.acceptTemplateText(text, origin);
 		}
 
@@ -1627,7 +1683,8 @@ public class RichStringProcessor {
 		}
 
 		protected void announceTemplateLinebreak(LineBreak lineBreak) {
-			acceptor.acceptTemplateLineBreak(lineBreak.getLength(), lineBreak.getLiteral());
+			acceptor.acceptTemplateLineBreak(lineBreak.getLength(),
+					lineBreak.getLiteral());
 		}
 
 		public void announceSemanticLinebreak(LineBreak lineBreak) {
@@ -1638,8 +1695,8 @@ public class RichStringProcessor {
 					break;
 				}
 			}
-			acceptor.acceptSemanticLineBreak(lineBreak.getLength(), lineBreak.getLiteral(),
-					controlStructureSeen);
+			acceptor.acceptSemanticLineBreak(lineBreak.getLength(),
+					lineBreak.getLiteral(), controlStructureSeen);
 		}
 
 		public String computeInitialIndentation(RichString object) {

@@ -10,26 +10,26 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart;
 
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Table Data Start</b></em>'.
+ * An implementation of the model object '<em><b>Table Cell Start</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataStartImpl#getContent <em>Content</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataStartImpl#getEnd <em>End</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellStartImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellStartImpl#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
+public class TableCellStartImpl extends LinePartImpl implements TableCellStart {
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * @generated
 	 * @ordered
 	 */
-	protected RichStringTableData content;
+	protected RichStringTableCell content;
 
 	/**
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
@@ -48,14 +48,14 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * @generated
 	 * @ordered
 	 */
-	protected TableDataEnd end;
+	protected TableCellEnd end;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TableDataStartImpl() {
+	protected TableCellStartImpl() {
 		super();
 	}
 
@@ -66,7 +66,7 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LDocCompilerPackage.Literals.TABLE_DATA_START;
+		return LDocCompilerPackage.Literals.TABLE_CELL_START;
 	}
 
 	/**
@@ -74,13 +74,13 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RichStringTableData getContent() {
+	public RichStringTableCell getContent() {
 		if (content != null && content.eIsProxy()) {
 			InternalEObject oldContent = (InternalEObject)content;
-			content = (RichStringTableData)eResolveProxy(oldContent);
+			content = (RichStringTableCell)eResolveProxy(oldContent);
 			if (content != oldContent) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDocCompilerPackage.TABLE_DATA_START__CONTENT, oldContent, content));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDocCompilerPackage.TABLE_CELL_START__CONTENT, oldContent, content));
 			}
 		}
 		return content;
@@ -91,7 +91,7 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RichStringTableData basicGetContent() {
+	public RichStringTableCell basicGetContent() {
 		return content;
 	}
 
@@ -100,11 +100,11 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContent(RichStringTableData newContent) {
-		RichStringTableData oldContent = content;
+	public void setContent(RichStringTableCell newContent) {
+		RichStringTableCell oldContent = content;
 		content = newContent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDocCompilerPackage.TABLE_DATA_START__CONTENT, oldContent, content));
+			eNotify(new ENotificationImpl(this, Notification.SET, LDocCompilerPackage.TABLE_CELL_START__CONTENT, oldContent, content));
 	}
 
 	/**
@@ -112,13 +112,13 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableDataEnd getEnd() {
+	public TableCellEnd getEnd() {
 		if (end != null && end.eIsProxy()) {
 			InternalEObject oldEnd = (InternalEObject)end;
-			end = (TableDataEnd)eResolveProxy(oldEnd);
+			end = (TableCellEnd)eResolveProxy(oldEnd);
 			if (end != oldEnd) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDocCompilerPackage.TABLE_DATA_START__END, oldEnd, end));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDocCompilerPackage.TABLE_CELL_START__END, oldEnd, end));
 			}
 		}
 		return end;
@@ -129,7 +129,7 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableDataEnd basicGetEnd() {
+	public TableCellEnd basicGetEnd() {
 		return end;
 	}
 
@@ -138,11 +138,11 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEnd(TableDataEnd newEnd) {
-		TableDataEnd oldEnd = end;
+	public void setEnd(TableCellEnd newEnd) {
+		TableCellEnd oldEnd = end;
 		end = newEnd;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDocCompilerPackage.TABLE_DATA_START__END, oldEnd, end));
+			eNotify(new ENotificationImpl(this, Notification.SET, LDocCompilerPackage.TABLE_CELL_START__END, oldEnd, end));
 	}
 
 	/**
@@ -153,10 +153,10 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_START__CONTENT:
+			case LDocCompilerPackage.TABLE_CELL_START__CONTENT:
 				if (resolve) return getContent();
 				return basicGetContent();
-			case LDocCompilerPackage.TABLE_DATA_START__END:
+			case LDocCompilerPackage.TABLE_CELL_START__END:
 				if (resolve) return getEnd();
 				return basicGetEnd();
 		}
@@ -171,11 +171,11 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_START__CONTENT:
-				setContent((RichStringTableData)newValue);
+			case LDocCompilerPackage.TABLE_CELL_START__CONTENT:
+				setContent((RichStringTableCell)newValue);
 				return;
-			case LDocCompilerPackage.TABLE_DATA_START__END:
-				setEnd((TableDataEnd)newValue);
+			case LDocCompilerPackage.TABLE_CELL_START__END:
+				setEnd((TableCellEnd)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,11 +189,11 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_START__CONTENT:
-				setContent((RichStringTableData)null);
+			case LDocCompilerPackage.TABLE_CELL_START__CONTENT:
+				setContent((RichStringTableCell)null);
 				return;
-			case LDocCompilerPackage.TABLE_DATA_START__END:
-				setEnd((TableDataEnd)null);
+			case LDocCompilerPackage.TABLE_CELL_START__END:
+				setEnd((TableCellEnd)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,12 +207,12 @@ public class TableDataStartImpl extends LinePartImpl implements TableDataStart {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_START__CONTENT:
+			case LDocCompilerPackage.TABLE_CELL_START__CONTENT:
 				return content != null;
-			case LDocCompilerPackage.TABLE_DATA_START__END:
+			case LDocCompilerPackage.TABLE_CELL_START__END:
 				return end != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TableDataStartImpl
+} //TableCellStartImpl

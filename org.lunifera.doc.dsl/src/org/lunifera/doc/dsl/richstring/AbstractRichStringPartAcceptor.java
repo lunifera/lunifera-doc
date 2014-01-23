@@ -44,7 +44,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
@@ -53,21 +53,25 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 
 /**
- * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should inherit from this class if they do not
- * want to implement all methods. It is mandatory to implement {@link #forLoopHasNext()}.
+ * No-op implementation of the {@link IRichStringPartAcceptor}. Clients should
+ * inherit from this class if they do not want to implement all methods. It is
+ * mandatory to implement {@link #forLoopHasNext()}.
  */
 @NonNullByDefault
 @SuppressWarnings("restriction")
-public abstract class AbstractRichStringPartAcceptor implements IRichStringPartAcceptor {
+public abstract class AbstractRichStringPartAcceptor implements
+		IRichStringPartAcceptor {
 
-	public void acceptSemanticText(CharSequence text, @Nullable RichStringLiteral origin) {
+	public void acceptSemanticText(CharSequence text,
+			@Nullable RichStringLiteral origin) {
 	}
 
-	public void acceptTemplateText(CharSequence text, @Nullable RichStringLiteral origin) {
+	public void acceptTemplateText(CharSequence text,
+			@Nullable RichStringLiteral origin) {
 	}
 
-	public void acceptSemanticLineBreak(int charCount, RichStringLiteral origin,
-			boolean controlStructureSeen) {
+	public void acceptSemanticLineBreak(int charCount,
+			RichStringLiteral origin, boolean controlStructureSeen) {
 	}
 
 	public void acceptTemplateLineBreak(int charCount, RichStringLiteral origin) {
@@ -85,13 +89,16 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 	public void acceptEndIf() {
 	}
 
-	public void acceptForLoop(JvmFormalParameter parameter, XExpression expression) {
+	public void acceptForLoop(JvmFormalParameter parameter,
+			XExpression expression) {
 	}
 
-	public void acceptEndFor(@Nullable XExpression after, CharSequence indentation) {
+	public void acceptEndFor(@Nullable XExpression after,
+			CharSequence indentation) {
 	}
 
-	public void acceptExpression(XExpression expression, CharSequence indentation) {
+	public void acceptExpression(XExpression expression,
+			CharSequence indentation) {
 	}
 
 	public void announceNextLiteral(RichStringLiteral object) {
@@ -234,11 +241,11 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 	}
 
 	@Override
-	public void acceptTableDataStart(RichStringTableData object) {
+	public void acceptTableCellStart(RichStringTableCell object) {
 	}
 
 	@Override
-	public void acceptTableDataEnd() {
+	public void acceptTableCellEnd() {
 	}
 
 	@Override
@@ -389,7 +396,8 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 		private int forLoopStackPointer = -1;
 
 		@Override
-		public void acceptForLoop(JvmFormalParameter parameter, @Nullable XExpression expression) {
+		public void acceptForLoop(JvmFormalParameter parameter,
+				@Nullable XExpression expression) {
 			forLoopStackPointer++;
 			forLoopStack.set(forLoopStackPointer);
 		}
@@ -404,7 +412,8 @@ public abstract class AbstractRichStringPartAcceptor implements IRichStringPartA
 		}
 
 		@Override
-		public void acceptEndFor(@Nullable XExpression after, CharSequence indentation) {
+		public void acceptEndFor(@Nullable XExpression after,
+				CharSequence indentation) {
 			forLoopStackPointer--;
 		}
 	}

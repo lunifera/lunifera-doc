@@ -83,8 +83,8 @@ import org.lunifera.doc.dsl.luniferadoc.compiler.StartProcessEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.StartProcessStart;
 import org.lunifera.doc.dsl.luniferadoc.compiler.SubsectionEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.SubsectionStart;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowStart;
@@ -492,14 +492,14 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tableDataStartEClass = null;
+	private EClass tableCellStartEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tableDataEndEClass = null;
+	private EClass tableCellEndEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2017,8 +2017,8 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTableDataStart() {
-		return tableDataStartEClass;
+	public EClass getTableCellStart() {
+		return tableCellStartEClass;
 	}
 
 	/**
@@ -2026,8 +2026,8 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTableDataStart_Content() {
-		return (EReference)tableDataStartEClass.getEStructuralFeatures().get(0);
+	public EReference getTableCellStart_Content() {
+		return (EReference)tableCellStartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2035,8 +2035,8 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTableDataStart_End() {
-		return (EReference)tableDataStartEClass.getEStructuralFeatures().get(1);
+	public EReference getTableCellStart_End() {
+		return (EReference)tableCellStartEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2044,8 +2044,8 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTableDataEnd() {
-		return tableDataEndEClass;
+	public EClass getTableCellEnd() {
+		return tableCellEndEClass;
 	}
 
 	/**
@@ -2053,8 +2053,8 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTableDataEnd_Start() {
-		return (EReference)tableDataEndEClass.getEStructuralFeatures().get(0);
+	public EReference getTableCellEnd_Start() {
+		return (EReference)tableCellEndEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2926,12 +2926,12 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 		tableRowEndEClass = createEClass(TABLE_ROW_END);
 		createEReference(tableRowEndEClass, TABLE_ROW_END__START);
 
-		tableDataStartEClass = createEClass(TABLE_DATA_START);
-		createEReference(tableDataStartEClass, TABLE_DATA_START__CONTENT);
-		createEReference(tableDataStartEClass, TABLE_DATA_START__END);
+		tableCellStartEClass = createEClass(TABLE_CELL_START);
+		createEReference(tableCellStartEClass, TABLE_CELL_START__CONTENT);
+		createEReference(tableCellStartEClass, TABLE_CELL_START__END);
 
-		tableDataEndEClass = createEClass(TABLE_DATA_END);
-		createEReference(tableDataEndEClass, TABLE_DATA_END__START);
+		tableCellEndEClass = createEClass(TABLE_CELL_END);
+		createEReference(tableCellEndEClass, TABLE_CELL_END__START);
 
 		listStartEClass = createEClass(LIST_START);
 		createEReference(listStartEClass, LIST_START__CONTENT);
@@ -3118,8 +3118,8 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 		tableEndEClass.getESuperTypes().add(this.getLinePart());
 		tableRowStartEClass.getESuperTypes().add(this.getLinePart());
 		tableRowEndEClass.getESuperTypes().add(this.getLinePart());
-		tableDataStartEClass.getESuperTypes().add(this.getLinePart());
-		tableDataEndEClass.getESuperTypes().add(this.getLinePart());
+		tableCellStartEClass.getESuperTypes().add(this.getLinePart());
+		tableCellEndEClass.getESuperTypes().add(this.getLinePart());
 		listStartEClass.getESuperTypes().add(this.getLinePart());
 		listEndEClass.getESuperTypes().add(this.getLinePart());
 		orderedListStartEClass.getESuperTypes().add(this.getLinePart());
@@ -3337,18 +3337,18 @@ public class LDocCompilerPackageImpl extends EPackageImpl implements LDocCompile
 
 		initEClass(tableRowStartEClass, TableRowStart.class, "TableRowStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTableRowStart_Content(), theLDocRichstringPackage.getRichStringTableRow(), null, "content", null, 0, 1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTableRowStart_Columns(), theLDocRichstringPackage.getRichStringTableData(), null, "columns", null, 0, -1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableRowStart_Columns(), theLDocRichstringPackage.getRichStringTableCell(), null, "columns", null, 0, -1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTableRowStart_End(), this.getTableRowEnd(), null, "end", null, 0, 1, TableRowStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableRowEndEClass, TableRowEnd.class, "TableRowEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTableRowEnd_Start(), this.getTableRowStart(), null, "start", null, 0, 1, TableRowEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(tableDataStartEClass, TableDataStart.class, "TableDataStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTableDataStart_Content(), theLDocRichstringPackage.getRichStringTableData(), null, "content", null, 0, 1, TableDataStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTableDataStart_End(), this.getTableDataEnd(), null, "end", null, 0, 1, TableDataStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(tableCellStartEClass, TableCellStart.class, "TableCellStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableCellStart_Content(), theLDocRichstringPackage.getRichStringTableCell(), null, "content", null, 0, 1, TableCellStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableCellStart_End(), this.getTableCellEnd(), null, "end", null, 0, 1, TableCellStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(tableDataEndEClass, TableDataEnd.class, "TableDataEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTableDataEnd_Start(), this.getTableDataStart(), null, "start", null, 0, 1, TableDataEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(tableCellEndEClass, TableCellEnd.class, "TableCellEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableCellEnd_Start(), this.getTableCellStart(), null, "start", null, 0, 1, TableCellEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(listStartEClass, ListStart.class, "ListStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getListStart_Content(), theLDocRichstringPackage.getRichStringList(), null, "content", null, 0, 1, ListStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -284,12 +284,12 @@ public class LDocCompilerAdapterFactory extends AdapterFactoryImpl {
 				return createTableRowEndAdapter();
 			}
 			@Override
-			public Adapter caseTableDataStart(TableDataStart object) {
-				return createTableDataStartAdapter();
+			public Adapter caseTableCellStart(TableCellStart object) {
+				return createTableCellStartAdapter();
 			}
 			@Override
-			public Adapter caseTableDataEnd(TableDataEnd object) {
-				return createTableDataEndAdapter();
+			public Adapter caseTableCellEnd(TableCellEnd object) {
+				return createTableCellEndAdapter();
 			}
 			@Override
 			public Adapter caseListStart(ListStart object) {
@@ -1180,30 +1180,30 @@ public class LDocCompilerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart <em>Table Data Start</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart <em>Table Cell Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart
 	 * @generated
 	 */
-	public Adapter createTableDataStartAdapter() {
+	public Adapter createTableCellStartAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd <em>Table Data End</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd <em>Table Cell End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd
 	 * @generated
 	 */
-	public Adapter createTableDataEndAdapter() {
+	public Adapter createTableCellEndAdapter() {
 		return null;
 	}
 

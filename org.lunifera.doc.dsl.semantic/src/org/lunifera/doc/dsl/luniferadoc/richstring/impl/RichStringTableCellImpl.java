@@ -5,24 +5,24 @@ package org.lunifera.doc.dsl.luniferadoc.richstring.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage;
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rich String Table Data</b></em>'.
+ * An implementation of the model object '<em><b>Rich String Table Cell</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class RichStringTableDataImpl extends RichStringMarkupImpl implements RichStringTableData {
+public class RichStringTableCellImpl extends RichStringMarkupImpl implements RichStringTableCell {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RichStringTableDataImpl() {
+	protected RichStringTableCellImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public class RichStringTableDataImpl extends RichStringMarkupImpl implements Ric
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LDocRichstringPackage.Literals.RICH_STRING_TABLE_DATA;
+		return LDocRichstringPackage.Literals.RICH_STRING_TABLE_CELL;
 	}
 
-} //RichStringTableDataImpl
+} //RichStringTableCellImpl

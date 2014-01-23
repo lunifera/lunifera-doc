@@ -5,21 +5,21 @@ package org.lunifera.doc.dsl.luniferadoc.compiler;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Table Data End</b></em>'.
+ * A representation of the model object '<em><b>Table Cell End</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd#getStart <em>Start</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd#getStart <em>Start</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage#getTableDataEnd()
+ * @see org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage#getTableCellEnd()
  * @model
  * @generated
  */
-public interface TableDataEnd extends LinePart {
+public interface TableCellEnd extends LinePart {
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -29,21 +29,21 @@ public interface TableDataEnd extends LinePart {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start</em>' reference.
-	 * @see #setStart(TableDataStart)
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage#getTableDataEnd_Start()
+	 * @see #setStart(TableCellStart)
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage#getTableCellEnd_Start()
 	 * @model
 	 * @generated
 	 */
-	TableDataStart getStart();
+	TableCellStart getStart();
 
 	/**
-	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd#getStart <em>Start</em>}' reference.
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd#getStart <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Start</em>' reference.
 	 * @see #getStart()
 	 * @generated
 	 */
-	void setStart(TableDataStart value);
+	void setStart(TableCellStart value);
 
-} // TableDataEnd
+} // TableCellEnd

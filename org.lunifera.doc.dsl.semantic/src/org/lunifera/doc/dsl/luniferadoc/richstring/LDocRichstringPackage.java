@@ -1471,31 +1471,13 @@ public interface LDocRichstringPackage extends EPackage {
 	int RICH_STRING_TABLE__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Rows</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_TABLE__ROWS = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_TABLE__EXPRESSIONS = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Rich String Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
+	int RICH_STRING_TABLE_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableRowImpl <em>Rich String Table Row</em>}' class.
@@ -1535,41 +1517,23 @@ public interface LDocRichstringPackage extends EPackage {
 	int RICH_STRING_TABLE_ROW__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_TABLE_ROW__COLUMNS = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_TABLE_ROW__EXPRESSIONS = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Rich String Table Row</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_ROW_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
+	int RICH_STRING_TABLE_ROW_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl <em>Rich String Table Data</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableCellImpl <em>Rich String Table Cell</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.LDocRichstringPackageImpl#getRichStringTableData()
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableCellImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.LDocRichstringPackageImpl#getRichStringTableCell()
 	 * @generated
 	 */
-	int RICH_STRING_TABLE_DATA = 28;
+	int RICH_STRING_TABLE_CELL = 28;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1578,7 +1542,7 @@ public interface LDocRichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_DATA__ID = RICH_STRING_MARKUP__ID;
+	int RICH_STRING_TABLE_CELL__ID = RICH_STRING_MARKUP__ID;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -1587,7 +1551,7 @@ public interface LDocRichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_DATA__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
+	int RICH_STRING_TABLE_CELL__STYLE_CLASS = RICH_STRING_MARKUP__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1596,16 +1560,16 @@ public interface LDocRichstringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_DATA__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
+	int RICH_STRING_TABLE_CELL__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
-	 * The number of structural features of the '<em>Rich String Table Data</em>' class.
+	 * The number of structural features of the '<em>Rich String Table Cell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_TABLE_DATA_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
+	int RICH_STRING_TABLE_CELL_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOpenViewImpl <em>Rich String Open View</em>}' class.
@@ -2085,31 +2049,13 @@ public interface LDocRichstringPackage extends EPackage {
 	int RICH_STRING_LIST__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_LIST__ELEMENTS = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_LIST__EXPRESSIONS = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Rich String List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_LIST_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
+	int RICH_STRING_LIST_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOrderedListImpl <em>Rich String Ordered List</em>}' class.
@@ -2149,31 +2095,13 @@ public interface LDocRichstringPackage extends EPackage {
 	int RICH_STRING_ORDERED_LIST__EXPRESSION = RICH_STRING_MARKUP__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_ORDERED_LIST__ELEMENTS = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RICH_STRING_ORDERED_LIST__EXPRESSIONS = RICH_STRING_MARKUP_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Rich String Ordered List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RICH_STRING_ORDERED_LIST_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 2;
+	int RICH_STRING_ORDERED_LIST_FEATURE_COUNT = RICH_STRING_MARKUP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListElementImpl <em>Rich String List Element</em>}' class.
@@ -2902,28 +2830,6 @@ public interface LDocRichstringPackage extends EPackage {
 	EClass getRichStringTable();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getRows <em>Rows</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Rows</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getRows()
-	 * @see #getRichStringTable()
-	 * @generated
-	 */
-	EReference getRichStringTable_Rows();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getExpressions <em>Expressions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable#getExpressions()
-	 * @see #getRichStringTable()
-	 * @generated
-	 */
-	EReference getRichStringTable_Expressions();
-
-	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow <em>Rich String Table Row</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2934,36 +2840,14 @@ public interface LDocRichstringPackage extends EPackage {
 	EClass getRichStringTableRow();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow#getColumns <em>Columns</em>}'.
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell <em>Rich String Table Cell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Columns</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow#getColumns()
-	 * @see #getRichStringTableRow()
+	 * @return the meta object for class '<em>Rich String Table Cell</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell
 	 * @generated
 	 */
-	EReference getRichStringTableRow_Columns();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow#getExpressions <em>Expressions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow#getExpressions()
-	 * @see #getRichStringTableRow()
-	 * @generated
-	 */
-	EReference getRichStringTableRow_Expressions();
-
-	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData <em>Rich String Table Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Rich String Table Data</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData
-	 * @generated
-	 */
-	EClass getRichStringTableData();
+	EClass getRichStringTableCell();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView <em>Rich String Open View</em>}'.
@@ -3144,28 +3028,6 @@ public interface LDocRichstringPackage extends EPackage {
 	EClass getRichStringList();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getElements <em>Elements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Elements</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getElements()
-	 * @see #getRichStringList()
-	 * @generated
-	 */
-	EReference getRichStringList_Elements();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getExpressions <em>Expressions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList#getExpressions()
-	 * @see #getRichStringList()
-	 * @generated
-	 */
-	EReference getRichStringList_Expressions();
-
-	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList <em>Rich String Ordered List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3174,28 +3036,6 @@ public interface LDocRichstringPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRichStringOrderedList();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList#getElements <em>Elements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Elements</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList#getElements()
-	 * @see #getRichStringOrderedList()
-	 * @generated
-	 */
-	EReference getRichStringOrderedList_Elements();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList#getExpressions <em>Expressions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList#getExpressions()
-	 * @see #getRichStringOrderedList()
-	 * @generated
-	 */
-	EReference getRichStringOrderedList_Expressions();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement <em>Rich String List Element</em>}'.
@@ -3774,22 +3614,6 @@ public interface LDocRichstringPackage extends EPackage {
 		EClass RICH_STRING_TABLE = eINSTANCE.getRichStringTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Rows</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RICH_STRING_TABLE__ROWS = eINSTANCE.getRichStringTable_Rows();
-
-		/**
-		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RICH_STRING_TABLE__EXPRESSIONS = eINSTANCE.getRichStringTable_Expressions();
-
-		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableRowImpl <em>Rich String Table Row</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3800,30 +3624,14 @@ public interface LDocRichstringPackage extends EPackage {
 		EClass RICH_STRING_TABLE_ROW = eINSTANCE.getRichStringTableRow();
 
 		/**
-		 * The meta object literal for the '<em><b>Columns</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableCellImpl <em>Rich String Table Cell</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableCellImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.LDocRichstringPackageImpl#getRichStringTableCell()
 		 * @generated
 		 */
-		EReference RICH_STRING_TABLE_ROW__COLUMNS = eINSTANCE.getRichStringTableRow_Columns();
-
-		/**
-		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RICH_STRING_TABLE_ROW__EXPRESSIONS = eINSTANCE.getRichStringTableRow_Expressions();
-
-		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl <em>Rich String Table Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringTableDataImpl
-		 * @see org.lunifera.doc.dsl.luniferadoc.richstring.impl.LDocRichstringPackageImpl#getRichStringTableData()
-		 * @generated
-		 */
-		EClass RICH_STRING_TABLE_DATA = eINSTANCE.getRichStringTableData();
+		EClass RICH_STRING_TABLE_CELL = eINSTANCE.getRichStringTableCell();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOpenViewImpl <em>Rich String Open View</em>}' class.
@@ -3980,22 +3788,6 @@ public interface LDocRichstringPackage extends EPackage {
 		EClass RICH_STRING_LIST = eINSTANCE.getRichStringList();
 
 		/**
-		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RICH_STRING_LIST__ELEMENTS = eINSTANCE.getRichStringList_Elements();
-
-		/**
-		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RICH_STRING_LIST__EXPRESSIONS = eINSTANCE.getRichStringList_Expressions();
-
-		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringOrderedListImpl <em>Rich String Ordered List</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4004,22 +3796,6 @@ public interface LDocRichstringPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RICH_STRING_ORDERED_LIST = eINSTANCE.getRichStringOrderedList();
-
-		/**
-		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RICH_STRING_ORDERED_LIST__ELEMENTS = eINSTANCE.getRichStringOrderedList_Elements();
-
-		/**
-		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RICH_STRING_ORDERED_LIST__EXPRESSIONS = eINSTANCE.getRichStringOrderedList_Expressions();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringListElementImpl <em>Rich String List Element</em>}' class.

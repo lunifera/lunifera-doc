@@ -110,8 +110,8 @@ public class LDocCompilerFactoryImpl extends EFactoryImpl implements LDocCompile
 			case LDocCompilerPackage.TABLE_END: return createTableEnd();
 			case LDocCompilerPackage.TABLE_ROW_START: return createTableRowStart();
 			case LDocCompilerPackage.TABLE_ROW_END: return createTableRowEnd();
-			case LDocCompilerPackage.TABLE_DATA_START: return createTableDataStart();
-			case LDocCompilerPackage.TABLE_DATA_END: return createTableDataEnd();
+			case LDocCompilerPackage.TABLE_CELL_START: return createTableCellStart();
+			case LDocCompilerPackage.TABLE_CELL_END: return createTableCellEnd();
 			case LDocCompilerPackage.LIST_START: return createListStart();
 			case LDocCompilerPackage.LIST_END: return createListEnd();
 			case LDocCompilerPackage.ORDERED_LIST_START: return createOrderedListStart();
@@ -690,9 +690,9 @@ public class LDocCompilerFactoryImpl extends EFactoryImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableDataStart createTableDataStart() {
-		TableDataStartImpl tableDataStart = new TableDataStartImpl();
-		return tableDataStart;
+	public TableCellStart createTableCellStart() {
+		TableCellStartImpl tableCellStart = new TableCellStartImpl();
+		return tableCellStart;
 	}
 
 	/**
@@ -700,9 +700,9 @@ public class LDocCompilerFactoryImpl extends EFactoryImpl implements LDocCompile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableDataEnd createTableDataEnd() {
-		TableDataEndImpl tableDataEnd = new TableDataEndImpl();
-		return tableDataEnd;
+	public TableCellEnd createTableCellEnd() {
+		TableCellEndImpl tableCellEnd = new TableCellEndImpl();
+		return tableCellEnd;
 	}
 
 	/**
