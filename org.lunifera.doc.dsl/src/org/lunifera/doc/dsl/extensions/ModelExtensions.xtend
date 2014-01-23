@@ -121,7 +121,7 @@ class ModelExtensions {
 	def toURIString(LDocNamedDocument entityDoc) {
 		'''"doc://«entityDoc.fullyQualifiedName.toString»?lang=«entityDoc.toLanguage»"'''.toString
 	}
-
+ 
 	def JvmTypeReference toTypeReference(LDocType type, EObject context) {
 		switch (type) {
 			case DTO:
