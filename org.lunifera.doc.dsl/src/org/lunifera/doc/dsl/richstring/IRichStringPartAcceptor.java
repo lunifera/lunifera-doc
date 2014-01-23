@@ -42,7 +42,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
@@ -286,9 +286,9 @@ public interface IRichStringPartAcceptor {
 
 	void acceptTableRowEnd();
 
-	void acceptTableDataStart(RichStringTableData object);
+	void acceptTableCellStart(RichStringTableCell object);
 
-	void acceptTableDataEnd();
+	void acceptTableCellEnd();
 
 	void acceptListStart(RichStringList object);
 

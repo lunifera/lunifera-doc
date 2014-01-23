@@ -84,7 +84,7 @@ public class LDocRichstringFactoryImpl extends EFactoryImpl implements LDocRichs
 			case LDocRichstringPackage.RICH_STRING_CODE: return createRichStringCode();
 			case LDocRichstringPackage.RICH_STRING_TABLE: return createRichStringTable();
 			case LDocRichstringPackage.RICH_STRING_TABLE_ROW: return createRichStringTableRow();
-			case LDocRichstringPackage.RICH_STRING_TABLE_DATA: return createRichStringTableData();
+			case LDocRichstringPackage.RICH_STRING_TABLE_CELL: return createRichStringTableCell();
 			case LDocRichstringPackage.RICH_STRING_OPEN_VIEW: return createRichStringOpenView();
 			case LDocRichstringPackage.RICH_STRING_START_PROCESS: return createRichStringStartProcess();
 			case LDocRichstringPackage.RICH_STRING_ENTITY_REF: return createRichStringEntityRef();
@@ -387,9 +387,9 @@ public class LDocRichstringFactoryImpl extends EFactoryImpl implements LDocRichs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RichStringTableData createRichStringTableData() {
-		RichStringTableDataImpl richStringTableData = new RichStringTableDataImpl();
-		return richStringTableData;
+	public RichStringTableCell createRichStringTableCell() {
+		RichStringTableCellImpl richStringTableCell = new RichStringTableCellImpl();
+		return richStringTableCell;
 	}
 
 	/**

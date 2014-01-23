@@ -2,7 +2,6 @@ package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.mwe2.language.scoping.QualifiedNameProvider
 import org.eclipse.jdt.annotation.Nullable
 import org.eclipse.xtext.common.types.JvmField
 import org.eclipse.xtext.common.types.JvmGenericType
@@ -11,6 +10,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.util.Strings
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1
@@ -31,15 +31,13 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 
 	@Inject extension ModelExtensions
 
-	@Inject extension QualifiedNameProvider
-
 	/**
 	 * Create field for an included EntityDocument
 	 */
 	def toIncField(LDocInclude include, String name, LDocLayouter layouter) {
 		toField(layouter, name, include.toIncTypeReference)
 	}
-
+ 
 	/**
 	 * Create type for an included EntityDocument
 	 */

@@ -2820,14 +2820,14 @@ public interface LDocCompilerPackage extends EPackage {
 	int TABLE_ROW_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataStartImpl <em>Table Data Start</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellStartImpl <em>Table Cell Start</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataStartImpl
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableDataStart()
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellStartImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableCellStart()
 	 * @generated
 	 */
-	int TABLE_DATA_START = 54;
+	int TABLE_CELL_START = 54;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference.
@@ -2836,7 +2836,7 @@ public interface LDocCompilerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_START__LINE = LINE_PART__LINE;
+	int TABLE_CELL_START__LINE = LINE_PART__LINE;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' reference.
@@ -2845,7 +2845,7 @@ public interface LDocCompilerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
+	int TABLE_CELL_START__CONTENT = LINE_PART_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>End</b></em>' reference.
@@ -2854,35 +2854,35 @@ public interface LDocCompilerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_START__END = LINE_PART_FEATURE_COUNT + 1;
+	int TABLE_CELL_START__END = LINE_PART_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Table Data Start</em>' class.
+	 * The number of structural features of the '<em>Table Cell Start</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
+	int TABLE_CELL_START_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Table Data Start</em>' class.
+	 * The number of operations of the '<em>Table Cell Start</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+	int TABLE_CELL_START_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataEndImpl <em>Table Data End</em>}' class.
+	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellEndImpl <em>Table Cell End</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataEndImpl
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableDataEnd()
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellEndImpl
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableCellEnd()
 	 * @generated
 	 */
-	int TABLE_DATA_END = 55;
+	int TABLE_CELL_END = 55;
 
 	/**
 	 * The feature id for the '<em><b>Line</b></em>' container reference.
@@ -2891,7 +2891,7 @@ public interface LDocCompilerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_END__LINE = LINE_PART__LINE;
+	int TABLE_CELL_END__LINE = LINE_PART__LINE;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' reference.
@@ -2900,25 +2900,25 @@ public interface LDocCompilerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_END__START = LINE_PART_FEATURE_COUNT + 0;
+	int TABLE_CELL_END__START = LINE_PART_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Table Data End</em>' class.
+	 * The number of structural features of the '<em>Table Cell End</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
+	int TABLE_CELL_END_FEATURE_COUNT = LINE_PART_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Table Data End</em>' class.
+	 * The number of operations of the '<em>Table Cell End</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_DATA_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
+	int TABLE_CELL_END_OPERATION_COUNT = LINE_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.ListStartImpl <em>List Start</em>}' class.
@@ -5829,57 +5829,57 @@ public interface LDocCompilerPackage extends EPackage {
 	EReference getTableRowEnd_Start();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart <em>Table Data Start</em>}'.
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart <em>Table Cell Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Table Data Start</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart
+	 * @return the meta object for class '<em>Table Cell Start</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart
 	 * @generated
 	 */
-	EClass getTableDataStart();
+	EClass getTableCellStart();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart#getContent <em>Content</em>}'.
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Content</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart#getContent()
-	 * @see #getTableDataStart()
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart#getContent()
+	 * @see #getTableCellStart()
 	 * @generated
 	 */
-	EReference getTableDataStart_Content();
+	EReference getTableCellStart_Content();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart#getEnd <em>End</em>}'.
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>End</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart#getEnd()
-	 * @see #getTableDataStart()
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart#getEnd()
+	 * @see #getTableCellStart()
 	 * @generated
 	 */
-	EReference getTableDataStart_End();
+	EReference getTableCellStart_End();
 
 	/**
-	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd <em>Table Data End</em>}'.
+	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd <em>Table Cell End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Table Data End</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd
+	 * @return the meta object for class '<em>Table Cell End</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd
 	 * @generated
 	 */
-	EClass getTableDataEnd();
+	EClass getTableCellEnd();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd#getStart <em>Start</em>}'.
+	 * Returns the meta object for the reference '{@link org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Start</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd#getStart()
-	 * @see #getTableDataEnd()
+	 * @see org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd#getStart()
+	 * @see #getTableCellEnd()
 	 * @generated
 	 */
-	EReference getTableDataEnd_Start();
+	EReference getTableCellEnd_Start();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.compiler.ListStart <em>List Start</em>}'.
@@ -7889,14 +7889,14 @@ public interface LDocCompilerPackage extends EPackage {
 		EReference TABLE_ROW_END__START = eINSTANCE.getTableRowEnd_Start();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataStartImpl <em>Table Data Start</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellStartImpl <em>Table Cell Start</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataStartImpl
-		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableDataStart()
+		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellStartImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableCellStart()
 		 * @generated
 		 */
-		EClass TABLE_DATA_START = eINSTANCE.getTableDataStart();
+		EClass TABLE_CELL_START = eINSTANCE.getTableCellStart();
 
 		/**
 		 * The meta object literal for the '<em><b>Content</b></em>' reference feature.
@@ -7904,7 +7904,7 @@ public interface LDocCompilerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TABLE_DATA_START__CONTENT = eINSTANCE.getTableDataStart_Content();
+		EReference TABLE_CELL_START__CONTENT = eINSTANCE.getTableCellStart_Content();
 
 		/**
 		 * The meta object literal for the '<em><b>End</b></em>' reference feature.
@@ -7912,17 +7912,17 @@ public interface LDocCompilerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TABLE_DATA_START__END = eINSTANCE.getTableDataStart_End();
+		EReference TABLE_CELL_START__END = eINSTANCE.getTableCellStart_End();
 
 		/**
-		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataEndImpl <em>Table Data End</em>}' class.
+		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellEndImpl <em>Table Cell End</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataEndImpl
-		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableDataEnd()
+		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellEndImpl
+		 * @see org.lunifera.doc.dsl.luniferadoc.compiler.impl.LDocCompilerPackageImpl#getTableCellEnd()
 		 * @generated
 		 */
-		EClass TABLE_DATA_END = eINSTANCE.getTableDataEnd();
+		EClass TABLE_CELL_END = eINSTANCE.getTableCellEnd();
 
 		/**
 		 * The meta object literal for the '<em><b>Start</b></em>' reference feature.
@@ -7930,7 +7930,7 @@ public interface LDocCompilerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TABLE_DATA_END__START = eINSTANCE.getTableDataEnd_Start();
+		EReference TABLE_CELL_END__START = eINSTANCE.getTableCellEnd_Start();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.ListStartImpl <em>List Start</em>}' class.

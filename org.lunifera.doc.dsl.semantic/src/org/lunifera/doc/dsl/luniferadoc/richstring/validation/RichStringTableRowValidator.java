@@ -4,11 +4,6 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.richstring.validation;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.xtext.xbase.XExpression;
-
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 
 /**
  * A sample validator interface for {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow}.
@@ -19,6 +14,4 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
 public interface RichStringTableRowValidator {
 	boolean validate();
 
-	boolean validateColumns(EList<RichStringTableData> value);
-	boolean validateExpressions(EList<XExpression> value);
 }

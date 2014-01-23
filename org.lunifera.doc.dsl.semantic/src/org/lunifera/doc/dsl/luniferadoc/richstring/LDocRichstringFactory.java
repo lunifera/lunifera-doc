@@ -274,13 +274,13 @@ public interface LDocRichstringFactory extends EFactory {
 	RichStringTableRow createRichStringTableRow();
 
 	/**
-	 * Returns a new object of class '<em>Rich String Table Data</em>'.
+	 * Returns a new object of class '<em>Rich String Table Cell</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rich String Table Data</em>'.
+	 * @return a new object of class '<em>Rich String Table Cell</em>'.
 	 * @generated
 	 */
-	RichStringTableData createRichStringTableData();
+	RichStringTableCell createRichStringTableCell();
 
 	/**
 	 * Returns a new object of class '<em>Rich String Open View</em>'.

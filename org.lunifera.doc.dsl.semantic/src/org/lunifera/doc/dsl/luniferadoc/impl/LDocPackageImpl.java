@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
-import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
-
 import org.eclipse.xtext.xtype.XtypePackage;
 
 import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument;

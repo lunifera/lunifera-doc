@@ -37,7 +37,7 @@ GeneralDocument returns doc::LDocLayouter:
 	'}';
 
 EntityDocument returns doc::LDocEntityDocument:
-	'EntityDocument' name=QualifiedName 'for' entityClass=QualifiedName '{'
+	'EntityDocument' name=QualifiedName 'covers' entityClass=QualifiedName '{'
 	('language=' language=ID)
 	('description' '{' description=RichString '}')?
 	('fields' '{' (fields+=EntityField)* '}')?
@@ -52,7 +52,7 @@ EntityField returns doc::LDocEntityField:
 	'description' '{' description=RichString '}';
 
 DTODocument returns doc::LDocDtoDocument:
-	'DTODocument' name=QualifiedName 'for' dtoClass=QualifiedName '{'
+	'DTODocument' name=QualifiedName 'covers' dtoClass=QualifiedName '{'
 	('description' '{' description=RichString '}')?
 	('properties' '{' (fields+=DTOProperty)* '}')?
 	'}';
@@ -62,22 +62,22 @@ DTOProperty returns doc::LDocDtoProperty:
 	'description' '{' description=RichString '}';
 
 BPMProcessDocument returns doc::LDocBPMProcessDocument:
-	'BPMProcessDocument' name=QualifiedName 'for' process=STRING '{'
+	'BPMProcessDocument' name=QualifiedName 'covers' process=STRING '{'
 	'description' '{' description=RichString '}'
 	'}';
 
 BPMHumanTaskDocument returns doc::LDocHumanTaskDocument:
-	'BPMHumanTaskDocument' name=QualifiedName 'for' task=STRING '{'
+	'BPMHumanTaskDocument' name=QualifiedName 'covers' task=STRING '{'
 	'description' '{' description=RichString '}'
 	'}';
 
 VaaclipseViewDocument returns doc::LDocViewDocument:
-	'VaaclipseViewDocument' name=QualifiedName 'for' view=STRING '{'
+	'VaaclipseViewDocument' name=QualifiedName 'covers' view=STRING '{'
 	'description' '{' description=RichString '}'
 	'}';
 
 UIDocument returns doc::LDocUiDocument:
-	'UIDocument' name=QualifiedName 'for' ui=STRING '{'
+	'UIDocument' name=QualifiedName 'covers' ui=STRING '{'
 	'description' '{' description=RichString '}'
 	'}';
 
@@ -113,7 +113,8 @@ RichStringPart returns xbase::XExpression:
 	RichStringExample | RichStringURL | RichStringRef | RichStringMailto |
 	RichStringSkype | RichStringMovie | RichStringImg | RichStringBold |
 	RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode |
-	RichStringTable | RichStringList | RichStringOrderedList | RichStringOpenView |
+	RichStringTable | RichStringTableRow | RichStringTableCell | RichStringList |
+	RichStringOrderedList | RichStringListElement | RichStringOpenView |
 	RichStringStartProcess | RichStringEntityRef | RichStringDTORef |
 	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef;
 
@@ -193,7 +194,7 @@ RichStringImg returns xbase::XExpression:
 
 RichStringBold returns xbase::XExpression:
 	{richstring::RichStringBold}
-	"bold" expression=InternalRichString "/bold";
+	"b" expression=InternalRichString "/b";
 
 RichStringUnderline returns xbase::XExpression:
 	{richstring::RichStringUnderline}
@@ -201,7 +202,7 @@ RichStringUnderline returns xbase::XExpression:
 
 RichStringItalic returns xbase::XExpression:
 	{richstring::RichStringItalic}
-	"italic" expression=InternalRichString "/italic";
+	"i" expression=InternalRichString "/i";
 
 RichStringSpan returns xbase::XExpression:
 	{richstring::RichStringSpan}
@@ -217,27 +218,23 @@ RichStringCode returns xbase::XExpression:
 
 RichStringTable returns xbase::XExpression:
 	{richstring::RichStringTable}
-	"table" (expressions+=RichStringLiteralInbetween (rows+=RichStringTableRow
-	expressions+=RichStringLiteralInbetween)+) "/table";
+	"table" expression=InternalRichString "/table";
 
 RichStringTableRow returns richstring::RichStringTableRow:
 	{richstring::RichStringTableRow}
-	"row" (expressions+=RichStringLiteralInbetween (columns+=RichStringTableData
-	expressions+=RichStringLiteralInbetween)+) "/row";
+	"row" expression=InternalRichString "/row";
 
-RichStringTableData returns richstring::RichStringTableData:
-	{richstring::RichStringTableData}
-	"column" expression=InternalRichString "/column";
+RichStringTableCell returns xbase::XExpression:
+	{richstring::RichStringTableCell}
+	"cell" expression=InternalRichString "/cell";
 
 RichStringList returns xbase::XExpression:
 	{richstring::RichStringList}
-	"ul" (expressions+=RichStringLiteralInbetween (elements+=RichStringListElement
-	expressions+=RichStringLiteralInbetween)+) "/ul";
+	"ul" expression=InternalRichString "/ul";
 
 RichStringOrderedList returns xbase::XExpression:
 	{richstring::RichStringOrderedList}
-	"ol" (expressions+=RichStringLiteralInbetween (elements+=RichStringListElement
-	expressions+=RichStringLiteralInbetween)+) "/ol";
+	"ol" expression=InternalRichString "/ol";
 
 RichStringListElement returns richstring::RichStringListElement:
 	{richstring::RichStringListElement}
@@ -293,24 +290,24 @@ RichStringUIRef returns xbase::XExpression:
 
 RichStringForLoop returns xbase::XExpression:
 	{richstring::RichStringForLoop}
-	"FOR" declaredParam=JvmFormalParameter ':' forExpression=XExpression
-	("BEFORE" before=XExpression)?
-	("SEPARATOR" separator=XExpression)?
-	("AFTER" after=XExpression)?
+	"For" declaredParam=JvmFormalParameter ':' forExpression=XExpression
+	("Before" before=XExpression)?
+	("Separator" separator=XExpression)?
+	("After" after=XExpression)?
 	eachExpression=InternalRichString
-	"ENDFOR";
+	"Endfor";
 
 RichStringIf returns xbase::XExpression:
 	{richstring::RichStringIf}
-	"IF" if=XExpression
+	"If" if=XExpression
 	then=InternalRichString
 	elseIfs+=RichStringElseIf*
-	("ELSE"
+	("Else"
 	else=InternalRichString)?
-	"ENDIF";
+	"EndIf";
 
 RichStringElseIf returns richstring::RichStringElseIf:
-	"ELSEIF" if=XExpression then=InternalRichString;
+	"ElseIf" if=XExpression then=InternalRichString;
 
 terminal RICH_TEXT:
 	"'''" IN_RICH_STRING* ("'''" | ("'" "'"?)? EOF);

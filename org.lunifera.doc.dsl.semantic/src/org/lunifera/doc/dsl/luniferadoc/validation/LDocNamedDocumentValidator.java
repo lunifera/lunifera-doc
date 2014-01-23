@@ -15,6 +15,5 @@ public interface LDocNamedDocumentValidator {
 	boolean validate();
 
 	boolean validateName(String value);
-
 	boolean validateLanguage(String value);
 }

@@ -24,7 +24,7 @@ public class LDocQualifiedNameProvider extends XbaseQualifiedNameProvider {
 
 		if (obj instanceof LDocNamedDocument) {
 			LDocNamedDocument doc = (LDocNamedDocument) obj;
-			return QualifiedName.create(extensions.toFqnDocumentIndexName(doc));
+			return qualifiedNameConverter.toQualifiedName(extensions.toFqnDocumentIndexName(doc));
 		}
 		return super.getFullyQualifiedName(obj);
 	}

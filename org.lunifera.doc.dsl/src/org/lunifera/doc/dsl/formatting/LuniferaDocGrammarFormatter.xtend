@@ -114,12 +114,12 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		c.setNoSpace().around(richStringRefAccess.refKeyword_4)
 		
 		// bold
-		c.setNoSpace().around(richStringBoldAccess.boldKeyword_1)
-		c.setNoSpace().around(richStringBoldAccess.boldKeyword_3)
+		c.setNoSpace().around(richStringBoldAccess.BKeyword_1)
+		c.setNoSpace().around(richStringBoldAccess.BKeyword_3)
 		
 		// italic
-		c.setNoSpace().around(richStringItalicAccess.italicKeyword_1)
-		c.setNoSpace().around(richStringItalicAccess.italicKeyword_3)
+		c.setNoSpace().around(richStringItalicAccess.IKeyword_1)
+		c.setNoSpace().around(richStringItalicAccess.IKeyword_3)
 		
 		// underline
 		c.setNoSpace().around(richStringUnderlineAccess.UKeyword_1)
@@ -161,8 +161,8 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		c.setNoSpace().around(richStringTableRowAccess.rowKeyword_3)
 		
 		// table date (column)
-		c.setNoSpace().around(richStringTableDataAccess.columnKeyword_1)
-		c.setNoSpace().around(richStringTableDataAccess.columnKeyword_3)
+		c.setNoSpace().around(richStringTableCellAccess.cellKeyword_1)
+		c.setNoSpace().around(richStringTableCellAccess.cellKeyword_3)
 		
 		// open view
 		c.setNoSpace().around(richStringOpenViewAccess.openviewKeyword_1)

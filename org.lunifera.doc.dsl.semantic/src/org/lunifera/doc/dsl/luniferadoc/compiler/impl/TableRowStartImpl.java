@@ -19,7 +19,7 @@ import org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowEnd;
 import org.lunifera.doc.dsl.luniferadoc.compiler.TableRowStart;
 
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 
 /**
@@ -56,7 +56,7 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RichStringTableData> columns;
+	protected EList<RichStringTableCell> columns;
 
 	/**
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
@@ -130,9 +130,9 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RichStringTableData> getColumns() {
+	public EList<RichStringTableCell> getColumns() {
 		if (columns == null) {
-			columns = new EObjectResolvingEList<RichStringTableData>(RichStringTableData.class, this, LDocCompilerPackage.TABLE_ROW_START__COLUMNS);
+			columns = new EObjectResolvingEList<RichStringTableCell>(RichStringTableCell.class, this, LDocCompilerPackage.TABLE_ROW_START__COLUMNS);
 		}
 		return columns;
 	}
@@ -209,7 +209,7 @@ public class TableRowStartImpl extends LinePartImpl implements TableRowStart {
 				return;
 			case LDocCompilerPackage.TABLE_ROW_START__COLUMNS:
 				getColumns().clear();
-				getColumns().addAll((Collection<? extends RichStringTableData>)newValue);
+				getColumns().addAll((Collection<? extends RichStringTableCell>)newValue);
 				return;
 			case LDocCompilerPackage.TABLE_ROW_START__END:
 				setEnd((TableRowEnd)newValue);

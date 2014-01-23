@@ -291,11 +291,11 @@ public class LDocRichstringSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case LDocRichstringPackage.RICH_STRING_TABLE_DATA: {
-				RichStringTableData richStringTableData = (RichStringTableData)theEObject;
-				T result = caseRichStringTableData(richStringTableData);
-				if (result == null) result = caseRichStringMarkup(richStringTableData);
-				if (result == null) result = caseXExpression(richStringTableData);
+			case LDocRichstringPackage.RICH_STRING_TABLE_CELL: {
+				RichStringTableCell richStringTableCell = (RichStringTableCell)theEObject;
+				T result = caseRichStringTableCell(richStringTableCell);
+				if (result == null) result = caseRichStringMarkup(richStringTableCell);
+				if (result == null) result = caseXExpression(richStringTableCell);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -820,17 +820,17 @@ public class LDocRichstringSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Rich String Table Data</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Rich String Table Cell</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Rich String Table Data</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Rich String Table Cell</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRichStringTableData(RichStringTableData object) {
+	public T caseRichStringTableCell(RichStringTableCell object) {
 		return null;
 	}
 

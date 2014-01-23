@@ -716,7 +716,6 @@ public interface LDocPackage extends EPackage {
 	 */
 	int LDOC_LAYOUTER_FEATURE_COUNT = LDOC_NAMED_DOCUMENT_FEATURE_COUNT + 3;
 
-
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocType <em>Type</em>}' enum.
 	 * <!-- begin-user-doc -->

@@ -52,7 +52,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 
 	/**
      * convenience API to build and initialize JVM types and their members.
-     */
+     */ 
 	@Inject extension LDocTypesBuilder
 	@Inject extension ModelExtensions
 	@Inject TypeReferences typeReference
@@ -188,7 +188,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					final = true
 					initializer = '''"«entityDocument.entityClass»"'''
 				]
-				members += entityDocument.description.toField("description",
+				members += toField("description",
 					typeReference.getTypeForName(typeof(String), entityDocument, null)) [
 					final = true
 					initializer = '''serializeDescription().toString()'''
@@ -254,6 +254,11 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					lundoc://entity/org.lunifera.carstore.Item/language=en
 					
 					@return The unique URI of the document'''
+				]
+				members += toGetter("description", typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					documentation = '''
+					Returns the description of the document.
+					@return description'''
 				]
 				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
 				members += entityDocument.description.toGetter("description",

@@ -24,6 +24,4 @@ public interface LDocLayouterValidator {
 	boolean validateContent(RichString value);
 	boolean validateImports(EList<XImportDeclaration> value);
 	boolean validateIncludes(EList<LDocInclude> value);
-
-	boolean validateProvided(EList<LDocInclude> value);
 }

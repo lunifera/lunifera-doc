@@ -222,18 +222,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="TableRowStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableRow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
-        eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableData"/>
+        eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableCell"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableRowEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableRowEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableRowStart"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableDataStart" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableData"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableDataEnd"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TableCellStart" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringTableCell"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableCellEnd"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableDataEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableDataStart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TableCellEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableCellStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass LuniferaDocGrammar.ecore#//richstring/RichStringList"/>

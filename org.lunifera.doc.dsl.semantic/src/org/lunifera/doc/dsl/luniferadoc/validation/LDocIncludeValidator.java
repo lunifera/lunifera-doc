@@ -18,8 +18,6 @@ public interface LDocIncludeValidator {
 
 	boolean validateDocument(LDocDocument value);
 	boolean validateVarName(String value);
-
 	boolean validateProvided(boolean value);
-
 	boolean validateProvidedType(LDocType value);
 }

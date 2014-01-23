@@ -2,7 +2,6 @@ package org.lunifera.doc.dsl.extensions
 
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.mwe2.language.scoping.QualifiedNameProvider
 import org.eclipse.xtext.common.types.JvmAnnotationReference
 import org.eclipse.xtext.common.types.JvmAnnotationTarget
 import org.eclipse.xtext.common.types.JvmDeclaredType
@@ -10,6 +9,8 @@ import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import org.eclipse.xtext.naming.QualifiedName
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
 import org.lunifera.doc.dsl.api.document.IBPMProcessDocument
 import org.lunifera.doc.dsl.api.document.IDtoDocument
@@ -31,7 +32,7 @@ import static org.lunifera.doc.dsl.luniferadoc.LDocType.*
 class ModelExtensions {
 
 	@Inject TypeReferences typeReferences
-	@Inject extension QualifiedNameProvider
+	@Inject extension IQualifiedNameProvider
 
 	@Inject
 	private TypesFactory typesFactory;
@@ -123,14 +124,14 @@ class ModelExtensions {
 	}
 
 	def String toFqnDocumentClassName(LDocNamedDocument sourceElement) {
-		val fqn = sourceElement.fullyQualifiedName
+		val fqn = QualifiedName::create(sourceElement.name)
 		val resultName = fqn.skipLast(1).append(fqn.lastSegment + "_" + sourceElement.toLanguage).toString
-		return resultName
+		return resultName.toString
 	}
 
 	def String toFqnDocumentIndexName(LDocNamedDocument sourceElement) {
-
-		//		return sourceElement.fullyQualifiedName.append(sourceElement.toLanguage).toString
+		//		val fqn = QualifiedName::create(sourceElement.name)
+		//		return fqn.skipLast(1).append(fqn.lastSegment + sourceElement.toLanguage).toString
 		return sourceElement.toFqnDocumentClassName
 	}
  

@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
-import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
-
 import org.eclipse.xtext.xtype.XtypePackage;
 
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
@@ -55,7 +53,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable;
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
@@ -271,7 +269,7 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass richStringTableDataEClass = null;
+	private EClass richStringTableCellEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -972,24 +970,6 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRichStringTable_Rows() {
-		return (EReference)richStringTableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRichStringTable_Expressions() {
-		return (EReference)richStringTableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRichStringTableRow() {
 		return richStringTableRowEClass;
 	}
@@ -999,26 +979,8 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRichStringTableRow_Columns() {
-		return (EReference)richStringTableRowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRichStringTableRow_Expressions() {
-		return (EReference)richStringTableRowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRichStringTableData() {
-		return richStringTableDataEClass;
+	public EClass getRichStringTableCell() {
+		return richStringTableCellEClass;
 	}
 
 	/**
@@ -1179,44 +1141,8 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRichStringList_Elements() {
-		return (EReference)richStringListEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRichStringList_Expressions() {
-		return (EReference)richStringListEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRichStringOrderedList() {
 		return richStringOrderedListEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRichStringOrderedList_Elements() {
-		return (EReference)richStringOrderedListEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRichStringOrderedList_Expressions() {
-		return (EReference)richStringOrderedListEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1351,14 +1277,10 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 		createEReference(richStringCodeEClass, RICH_STRING_CODE__CONTENT);
 
 		richStringTableEClass = createEClass(RICH_STRING_TABLE);
-		createEReference(richStringTableEClass, RICH_STRING_TABLE__ROWS);
-		createEReference(richStringTableEClass, RICH_STRING_TABLE__EXPRESSIONS);
 
 		richStringTableRowEClass = createEClass(RICH_STRING_TABLE_ROW);
-		createEReference(richStringTableRowEClass, RICH_STRING_TABLE_ROW__COLUMNS);
-		createEReference(richStringTableRowEClass, RICH_STRING_TABLE_ROW__EXPRESSIONS);
 
-		richStringTableDataEClass = createEClass(RICH_STRING_TABLE_DATA);
+		richStringTableCellEClass = createEClass(RICH_STRING_TABLE_CELL);
 
 		richStringOpenViewEClass = createEClass(RICH_STRING_OPEN_VIEW);
 		createEAttribute(richStringOpenViewEClass, RICH_STRING_OPEN_VIEW__VIEW_ID);
@@ -1385,12 +1307,8 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 		createEReference(richStringUIRefEClass, RICH_STRING_UI_REF__UI_DOC);
 
 		richStringListEClass = createEClass(RICH_STRING_LIST);
-		createEReference(richStringListEClass, RICH_STRING_LIST__ELEMENTS);
-		createEReference(richStringListEClass, RICH_STRING_LIST__EXPRESSIONS);
 
 		richStringOrderedListEClass = createEClass(RICH_STRING_ORDERED_LIST);
-		createEReference(richStringOrderedListEClass, RICH_STRING_ORDERED_LIST__ELEMENTS);
-		createEReference(richStringOrderedListEClass, RICH_STRING_ORDERED_LIST__EXPRESSIONS);
 
 		richStringListElementEClass = createEClass(RICH_STRING_LIST_ELEMENT);
 
@@ -1456,7 +1374,7 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 		richStringCodeEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringTableEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringTableRowEClass.getESuperTypes().add(this.getRichStringMarkup());
-		richStringTableDataEClass.getESuperTypes().add(this.getRichStringMarkup());
+		richStringTableCellEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringOpenViewEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringStartProcessEClass.getESuperTypes().add(this.getRichStringMarkup());
 		richStringEntityRefEClass.getESuperTypes().add(this.getRichStringMarkup());
@@ -1557,14 +1475,10 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 		initEReference(getRichStringCode_Content(), theXbasePackage.getXExpression(), null, "content", null, 0, 1, RichStringCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringTableEClass, RichStringTable.class, "RichStringTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRichStringTable_Rows(), this.getRichStringTableRow(), null, "rows", null, 0, -1, RichStringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRichStringTable_Expressions(), theXbasePackage.getXExpression(), null, "expressions", null, 0, -1, RichStringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringTableRowEClass, RichStringTableRow.class, "RichStringTableRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRichStringTableRow_Columns(), this.getRichStringTableData(), null, "columns", null, 0, -1, RichStringTableRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRichStringTableRow_Expressions(), theXbasePackage.getXExpression(), null, "expressions", null, 0, -1, RichStringTableRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(richStringTableDataEClass, RichStringTableData.class, "RichStringTableData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(richStringTableCellEClass, RichStringTableCell.class, "RichStringTableCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(richStringOpenViewEClass, RichStringOpenView.class, "RichStringOpenView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRichStringOpenView_ViewId(), ecorePackage.getEString(), "viewId", null, 0, 1, RichStringOpenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1591,12 +1505,8 @@ public class LDocRichstringPackageImpl extends EPackageImpl implements LDocRichs
 		initEReference(getRichStringUIRef_UiDoc(), theLDocPackage.getLDocUiDocument(), null, "uiDoc", null, 0, 1, RichStringUIRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringListEClass, RichStringList.class, "RichStringList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRichStringList_Elements(), this.getRichStringListElement(), null, "elements", null, 0, -1, RichStringList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRichStringList_Expressions(), theXbasePackage.getXExpression(), null, "expressions", null, 0, -1, RichStringList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringOrderedListEClass, RichStringOrderedList.class, "RichStringOrderedList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRichStringOrderedList_Elements(), this.getRichStringListElement(), null, "elements", null, 0, -1, RichStringOrderedList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRichStringOrderedList_Expressions(), theXbasePackage.getXExpression(), null, "expressions", null, 0, -1, RichStringOrderedList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(richStringListElementEClass, RichStringListElement.class, "RichStringListElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

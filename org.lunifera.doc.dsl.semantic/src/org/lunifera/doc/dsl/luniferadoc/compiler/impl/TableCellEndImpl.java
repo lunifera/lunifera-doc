@@ -10,23 +10,23 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataEnd;
-import org.lunifera.doc.dsl.luniferadoc.compiler.TableDataStart;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellEnd;
+import org.lunifera.doc.dsl.luniferadoc.compiler.TableCellStart;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Table Data End</b></em>'.
+ * An implementation of the model object '<em><b>Table Cell End</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableDataEndImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.compiler.impl.TableCellEndImpl#getStart <em>Start</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
+public class TableCellEndImpl extends LinePartImpl implements TableCellEnd {
 	/**
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -35,14 +35,14 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	 * @generated
 	 * @ordered
 	 */
-	protected TableDataStart start;
+	protected TableCellStart start;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TableDataEndImpl() {
+	protected TableCellEndImpl() {
 		super();
 	}
 
@@ -53,7 +53,7 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LDocCompilerPackage.Literals.TABLE_DATA_END;
+		return LDocCompilerPackage.Literals.TABLE_CELL_END;
 	}
 
 	/**
@@ -61,13 +61,13 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableDataStart getStart() {
+	public TableCellStart getStart() {
 		if (start != null && start.eIsProxy()) {
 			InternalEObject oldStart = (InternalEObject)start;
-			start = (TableDataStart)eResolveProxy(oldStart);
+			start = (TableCellStart)eResolveProxy(oldStart);
 			if (start != oldStart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDocCompilerPackage.TABLE_DATA_END__START, oldStart, start));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDocCompilerPackage.TABLE_CELL_END__START, oldStart, start));
 			}
 		}
 		return start;
@@ -78,7 +78,7 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableDataStart basicGetStart() {
+	public TableCellStart basicGetStart() {
 		return start;
 	}
 
@@ -87,11 +87,11 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStart(TableDataStart newStart) {
-		TableDataStart oldStart = start;
+	public void setStart(TableCellStart newStart) {
+		TableCellStart oldStart = start;
 		start = newStart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDocCompilerPackage.TABLE_DATA_END__START, oldStart, start));
+			eNotify(new ENotificationImpl(this, Notification.SET, LDocCompilerPackage.TABLE_CELL_END__START, oldStart, start));
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_END__START:
+			case LDocCompilerPackage.TABLE_CELL_END__START:
 				if (resolve) return getStart();
 				return basicGetStart();
 		}
@@ -117,8 +117,8 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_END__START:
-				setStart((TableDataStart)newValue);
+			case LDocCompilerPackage.TABLE_CELL_END__START:
+				setStart((TableCellStart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +132,8 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_END__START:
-				setStart((TableDataStart)null);
+			case LDocCompilerPackage.TABLE_CELL_END__START:
+				setStart((TableCellStart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,10 +147,10 @@ public class TableDataEndImpl extends LinePartImpl implements TableDataEnd {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LDocCompilerPackage.TABLE_DATA_END__START:
+			case LDocCompilerPackage.TABLE_CELL_END__START:
 				return start != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TableDataEndImpl
+} //TableCellEndImpl

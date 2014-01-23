@@ -4,7 +4,7 @@ package org.lunifera.doc.dsl.luniferadoc.compiler;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow;
 
 /**
@@ -54,7 +54,7 @@ public interface TableRowStart extends LinePart {
 
 	/**
 	 * Returns the value of the '<em><b>Columns</b></em>' reference list.
-	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableData}.
+	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Columns</em>' reference list isn't clear,
@@ -66,7 +66,7 @@ public interface TableRowStart extends LinePart {
 	 * @model
 	 * @generated
 	 */
-	EList<RichStringTableData> getColumns();
+	EList<RichStringTableCell> getColumns();
 
 	/**
 	 * Returns the value of the '<em><b>End</b></em>' reference.
