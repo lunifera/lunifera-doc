@@ -12,8 +12,12 @@ package org.lunifera.doc.dsl;
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
+import org.eclipse.xtext.xbase.formatting.IBasicFormatter;
+import org.eclipse.xtext.xbase.formatting.IFormattingPreferenceValuesProvider;
 import org.eclipse.xtext.xbase.util.XExpressionHelper;
 import org.lunifera.doc.dsl.conversion.LuniferaDocValueConverterService;
+import org.lunifera.doc.dsl.formatting.FormatterPreferenceValuesProvider;
+import org.lunifera.doc.dsl.formatting.LuniferaDocGrammarFormatter;
 import org.lunifera.doc.dsl.richstring.LuniferaDocCompiler;
 import org.lunifera.doc.dsl.scope.LDocImportedNamespaceAwareLocalScopeProvider;
 import org.lunifera.doc.dsl.scope.LDocScopeProvider;
@@ -35,7 +39,6 @@ public class LuniferaDocGrammarRuntimeModule extends
 		return LuniferaDocExpressionHelper.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public Class<? extends org.eclipse.xtext.xbase.typesystem.computation.ITypeComputer> bindITypeComputer() {
 		return LuniferaDocTypeComputer.class;
 	}
@@ -66,4 +69,12 @@ public class LuniferaDocGrammarRuntimeModule extends
 				.to(LDocImportedNamespaceAwareLocalScopeProvider.class);
 	}
 
+	@SuppressWarnings("restriction")
+	public Class<? extends IBasicFormatter> bindIBasicFormatter() {
+		return LuniferaDocGrammarFormatter.class;
+	}
+
+	public Class<? extends IFormattingPreferenceValuesProvider> bindIFormattingPreferenceValuesProvider() {
+		return FormatterPreferenceValuesProvider.class;
+	}
 }

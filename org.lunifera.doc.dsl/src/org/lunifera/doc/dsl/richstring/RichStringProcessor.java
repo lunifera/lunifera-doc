@@ -556,22 +556,9 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichStringTable(RichStringTable object) {
 			TableStart start = factory.createTableStart();
+			start.setContent(object);
 			addToCurrentLine(start);
-			// for (RichStringTableRow row : object.getRows()) {
-			// TableRowStart rowStart = factory.createTableRowStart();
-			// addToCurrentLine(rowStart);
-			// for (RichStringTableData td : row.getColumns()) {
-			// TableDataStart dataStart = factory.createTableDataStart();
-			// addToCurrentLine(dataStart);
-			// doSwitch(td.getExpression());
-			// TableDataEnd dataEnd = factory.createTableDataEnd();
-			// dataEnd.setStart(dataStart);
-			// addToCurrentLine(dataEnd);
-			// }
-			// TableRowEnd rowEnd = factory.createTableRowEnd();
-			// rowEnd.setStart(rowStart);
-			// addToCurrentLine(rowEnd);
-			// }
+
 			doSwitch(object.getExpression());
 
 			TableEnd end = factory.createTableEnd();
@@ -583,6 +570,7 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichStringTableRow(RichStringTableRow object) {
 			TableRowStart start = factory.createTableRowStart();
+			start.setContent(object);
 			addToCurrentLine(start);
 
 			doSwitch(object.getExpression());
@@ -596,6 +584,7 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichStringTableCell(RichStringTableCell object) {
 			TableCellStart start = factory.createTableCellStart();
+			start.setContent(object);
 			addToCurrentLine(start);
 
 			doSwitch(object.getExpression());
@@ -609,6 +598,7 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichStringList(RichStringList object) {
 			ListStart start = factory.createListStart();
+			start.setContent(object);
 			addToCurrentLine(start);
 
 			doSwitch(object.getExpression());
@@ -622,6 +612,7 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichStringOrderedList(RichStringOrderedList object) {
 			OrderedListStart start = factory.createOrderedListStart();
+			start.setContent(object);
 			addToCurrentLine(start);
 
 			doSwitch(object.getExpression());
@@ -635,6 +626,7 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseRichStringListElement(RichStringListElement object) {
 			ListElementStart start = factory.createListElementStart();
+			start.setContent(object);
 			addToCurrentLine(start);
 
 			doSwitch(object.getExpression());
@@ -1262,11 +1254,14 @@ public class RichStringProcessor {
 		public Boolean caseTableStart(TableStart object) {
 			acceptor.acceptTableStart(object.getContent());
 			computeNextPart(object);
+			pushTemplateIndentationTwice(computeInitialIndentation(object
+					.getContent().getExpression()));
 			return Boolean.TRUE;
 		}
 
 		@Override
 		public Boolean caseTableEnd(TableEnd object) {
+			popIndentationTwice();
 			acceptor.acceptTableEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
@@ -1276,11 +1271,14 @@ public class RichStringProcessor {
 		public Boolean caseTableRowStart(TableRowStart object) {
 			acceptor.acceptTableRowStart(object.getContent());
 			computeNextPart(object);
+			pushTemplateIndentationTwice(computeInitialIndentation(object
+					.getContent().getExpression()));
 			return Boolean.TRUE;
 		}
 
 		@Override
 		public Boolean caseTableRowEnd(TableRowEnd object) {
+			popIndentationTwice();
 			acceptor.acceptTableRowEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
@@ -1290,11 +1288,14 @@ public class RichStringProcessor {
 		public Boolean caseTableCellStart(TableCellStart object) {
 			acceptor.acceptTableCellStart(object.getContent());
 			computeNextPart(object);
+			pushTemplateIndentationTwice(computeInitialIndentation(object
+					.getContent().getExpression()));
 			return Boolean.TRUE;
 		}
 
 		@Override
 		public Boolean caseTableCellEnd(TableCellEnd object) {
+			popIndentationTwice();
 			acceptor.acceptTableCellEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
@@ -1318,11 +1319,14 @@ public class RichStringProcessor {
 		public Boolean caseOrderedListStart(OrderedListStart object) {
 			acceptor.acceptOrderedListStart(object.getContent());
 			computeNextPart(object);
+			pushTemplateIndentationTwice(computeInitialIndentation(object
+					.getContent().getExpression()));
 			return Boolean.TRUE;
 		}
 
 		@Override
 		public Boolean caseOrderedListEnd(OrderedListEnd object) {
+			popIndentationTwice();
 			acceptor.acceptOrderedListEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
@@ -1332,11 +1336,14 @@ public class RichStringProcessor {
 		public Boolean caseListElementStart(ListElementStart object) {
 			acceptor.acceptListElementStart(object.getContent());
 			computeNextPart(object);
+			pushTemplateIndentationTwice(computeInitialIndentation(object
+					.getContent().getExpression()));
 			return Boolean.TRUE;
 		}
 
 		@Override
 		public Boolean caseListElementEnd(ListElementEnd object) {
+			popIndentationTwice();
 			acceptor.acceptListElementEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
@@ -1699,7 +1706,7 @@ public class RichStringProcessor {
 					lineBreak.getLiteral(), controlStructureSeen);
 		}
 
-		public String computeInitialIndentation(RichString object) {
+		public String computeInitialIndentation(EObject object) {
 			if (object == null) {
 				return indentationHandler.getTotalIndentation().toString();
 			}
