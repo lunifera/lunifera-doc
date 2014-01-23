@@ -10,6 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="luniferadoc"
+            icon="icons/Luniferadoc_16.png"
             id="org.lunifera.doc.dsl.LuniferaDocGrammar"
             matchingStrategy="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
             name="LuniferaDocGrammar Editor">

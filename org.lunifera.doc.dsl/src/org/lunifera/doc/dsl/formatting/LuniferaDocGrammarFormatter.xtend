@@ -37,10 +37,10 @@ class LuniferaDocGrammarFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(0, 1, 2).before(ML_COMMENTRule)
 		c.setLinewrap(0, 1, 1).after(ML_COMMENTRule)
 
-//		for (Pair<Keyword, Keyword> pair : findKeywordPairs("«", "»")) {
-//			c.setNoSpace().after(pair.first);
-//			c.setNoSpace().before(pair.second);
-//		}
+		for (Pair<Keyword, Keyword> pair : findKeywordPairs("«", "»")) {
+			c.setNoSpace().after(pair.first);
+			c.setNoSpace().before(pair.second);
+		}
 		
 		for (Pair<Keyword, Keyword> pair : findKeywordPairs("(", ")")) {
 			c.setNoSpace().after(pair.first);
