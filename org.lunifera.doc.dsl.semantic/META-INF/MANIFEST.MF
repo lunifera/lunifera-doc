@@ -14,7 +14,9 @@ Export-Package: org.lunifera.doc.dsl.luniferadoc,
  org.lunifera.doc.dsl.luniferadoc.richstring,
  org.lunifera.doc.dsl.luniferadoc.richstring.impl,
  org.lunifera.doc.dsl.luniferadoc.richstring.util,
- org.lunifera.doc.dsl.luniferadoc.util
+ org.lunifera.doc.dsl.luniferadoc.richstring.validation,
+ org.lunifera.doc.dsl.luniferadoc.util,
+ org.lunifera.doc.dsl.luniferadoc.validation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.lunifera.doc.dsl.semantic;visibility:=reexport,

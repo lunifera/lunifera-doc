@@ -10,13 +10,19 @@
 package org.lunifera.doc.dsl;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.util.XExpressionHelper;
 import org.lunifera.doc.dsl.conversion.LuniferaDocValueConverterService;
 import org.lunifera.doc.dsl.richstring.LuniferaDocCompiler;
+import org.lunifera.doc.dsl.scope.LDocImportedNamespaceAwareLocalScopeProvider;
+import org.lunifera.doc.dsl.scope.LDocScopeProvider;
 import org.lunifera.doc.dsl.typing.LuniferaDocExpressionHelper;
 import org.lunifera.doc.dsl.typing.LuniferaDocTypeComputer;
 import org.lunifera.doc.dsl.valueconverter.LDocQualifiedNameProvider;
+
+import com.google.inject.Binder;
+import com.google.inject.name.Names;
 
 /**
  * Use this class to register components to be used at runtime / without the
@@ -45,6 +51,19 @@ public class LuniferaDocGrammarRuntimeModule extends
 
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
 		return LDocQualifiedNameProvider.class;
+	}
+
+	@Override
+	public Class<? extends IScopeProvider> bindIScopeProvider() {
+		return LDocScopeProvider.class;
+	}
+
+	@Override
+	public void configureIScopeProviderDelegate(Binder binder) {
+		binder.bind(IScopeProvider.class)
+				.annotatedWith(
+						Names.named("org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.delegate"))
+				.to(LDocImportedNamespaceAwareLocalScopeProvider.class);
 	}
 
 }
