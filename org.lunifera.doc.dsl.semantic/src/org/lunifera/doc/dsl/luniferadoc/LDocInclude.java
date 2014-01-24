@@ -3,6 +3,7 @@
 package org.lunifera.doc.dsl.luniferadoc;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getVarName <em>Var Name</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#isProvided <em>Provided</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedType <em>Provided Type</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedJVMType <em>Provided JVM Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,5 +132,31 @@ public interface LDocInclude extends EObject {
 	 * @generated
 	 */
 	void setProvidedType(LDocType value);
+
+	/**
+	 * Returns the value of the '<em><b>Provided JVM Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Provided JVM Type</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provided JVM Type</em>' containment reference.
+	 * @see #setProvidedJVMType(JvmTypeReference)
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocPackage#getLDocInclude_ProvidedJVMType()
+	 * @model containment="true"
+	 * @generated
+	 */
+	JvmTypeReference getProvidedJVMType();
+
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedJVMType <em>Provided JVM Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Provided JVM Type</em>' containment reference.
+	 * @see #getProvidedJVMType()
+	 * @generated
+	 */
+	void setProvidedJVMType(JvmTypeReference value);
 
 } // LDocInclude

@@ -4,6 +4,7 @@
  */
 package org.lunifera.doc.dsl.luniferadoc.validation;
 
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.lunifera.doc.dsl.luniferadoc.LDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LDocType;
 
@@ -20,4 +21,6 @@ public interface LDocIncludeValidator {
 	boolean validateVarName(String value);
 	boolean validateProvided(boolean value);
 	boolean validateProvidedType(LDocType value);
+
+	boolean validateProvidedJVMType(JvmTypeReference value);
 }

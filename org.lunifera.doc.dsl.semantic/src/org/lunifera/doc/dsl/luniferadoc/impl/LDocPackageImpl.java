@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.eclipse.xtext.xtype.XtypePackage;
@@ -272,6 +273,15 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 	 */
 	public EAttribute getLDocInclude_ProvidedType() {
 		return (EAttribute)lDocIncludeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLDocInclude_ProvidedJVMType() {
+		return (EReference)lDocIncludeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -590,6 +600,7 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 		createEAttribute(lDocIncludeEClass, LDOC_INCLUDE__VAR_NAME);
 		createEAttribute(lDocIncludeEClass, LDOC_INCLUDE__PROVIDED);
 		createEAttribute(lDocIncludeEClass, LDOC_INCLUDE__PROVIDED_TYPE);
+		createEReference(lDocIncludeEClass, LDOC_INCLUDE__PROVIDED_JVM_TYPE);
 
 		lDocDocumentEClass = createEClass(LDOC_DOCUMENT);
 		createEReference(lDocDocumentEClass, LDOC_DOCUMENT__DESCRIPTION);
@@ -660,6 +671,7 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 
 		// Obtain other dependent packages
 		LDocRichstringPackage theLDocRichstringPackage = (LDocRichstringPackage)EPackage.Registry.INSTANCE.getEPackage(LDocRichstringPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
 
 		// Add subpackages
@@ -689,6 +701,7 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 		initEAttribute(getLDocInclude_VarName(), ecorePackage.getEString(), "varName", null, 1, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLDocInclude_Provided(), ecorePackage.getEBoolean(), "provided", null, 0, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLDocInclude_ProvidedType(), this.getLDocType(), "providedType", null, 0, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLDocInclude_ProvidedJVMType(), theTypesPackage.getJvmTypeReference(), null, "providedJVMType", null, 0, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lDocDocumentEClass, LDocDocument.class, "LDocDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLDocDocument_Description(), theLDocRichstringPackage.getRichString(), null, "description", null, 0, 1, LDocDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

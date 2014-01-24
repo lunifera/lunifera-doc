@@ -21,12 +21,9 @@ DocLayouter returns doc::LDocLayouter:
 	GeneralDocument;
 
 DocumentInclude returns doc::LDocInclude:
-	(
-	('include' document=[doc::LDocDocument|QualifiedName] 'as' varName=ID)
+	(('include' document=[doc::LDocDocument|QualifiedName] 'as' varName=ID)
 	|
-	(provided?='provided' providedType=ProvidedType 'as' varName=ID)
-	)';'
-	;
+	(provided?='provided' (providedType=ProvidedType | providedJVMType=JvmTypeReference) 'as' varName=ID)) ';';
 
 enum ProvidedType returns doc::LDocType:
 	Entity | Dto;

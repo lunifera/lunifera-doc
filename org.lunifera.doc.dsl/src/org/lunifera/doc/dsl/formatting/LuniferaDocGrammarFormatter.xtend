@@ -57,7 +57,7 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += document.nodeForKeyword("language").append[oneSpace]
 		format += document.nodeForKeyword(";").prepend[noSpace]
 		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
-		
+
 		document.content.format(format)
 	}
 
@@ -79,10 +79,14 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += document.nodeForEObject.prepend[noSpace]
 
 		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForFeature(LDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE).append[
-			cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword(";").prepend[noSpace]
+		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+
+		format += document.nodeForKeyword("description").append[oneSpace]
+		format += document.nodeForKeyword("fields").append[oneSpace]
+
 	}
-	
+
 	def protected dispatch void format(RichString rs, FormattableDocument format) {
 		val (EObject, FormattableDocument)=>void callback = [EObject obj, FormattableDocument doc|obj.format(doc)]
 		richStringFormatter.format(callback, format, rs)

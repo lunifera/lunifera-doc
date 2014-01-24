@@ -4,12 +4,14 @@ package org.lunifera.doc.dsl.luniferadoc.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.lunifera.doc.dsl.luniferadoc.LDocDocument;
 import org.lunifera.doc.dsl.luniferadoc.LDocInclude;
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
@@ -26,6 +28,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocType;
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#getVarName <em>Var Name</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#isProvided <em>Provided</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#getProvidedType <em>Provided Type</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl#getProvidedJVMType <em>Provided JVM Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,6 +104,16 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 	 * @ordered
 	 */
 	protected LDocType providedType = PROVIDED_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProvidedJVMType() <em>Provided JVM Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidedJVMType()
+	 * @generated
+	 * @ordered
+	 */
+	protected JvmTypeReference providedJVMType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,6 +240,63 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public JvmTypeReference getProvidedJVMType() {
+		return providedJVMType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProvidedJVMType(JvmTypeReference newProvidedJVMType, NotificationChain msgs) {
+		JvmTypeReference oldProvidedJVMType = providedJVMType;
+		providedJVMType = newProvidedJVMType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE, oldProvidedJVMType, newProvidedJVMType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProvidedJVMType(JvmTypeReference newProvidedJVMType) {
+		if (newProvidedJVMType != providedJVMType) {
+			NotificationChain msgs = null;
+			if (providedJVMType != null)
+				msgs = ((InternalEObject)providedJVMType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE, null, msgs);
+			if (newProvidedJVMType != null)
+				msgs = ((InternalEObject)newProvidedJVMType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE, null, msgs);
+			msgs = basicSetProvidedJVMType(newProvidedJVMType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE, newProvidedJVMType, newProvidedJVMType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE:
+				return basicSetProvidedJVMType(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -239,6 +309,8 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 				return isProvided();
 			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
 				return getProvidedType();
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE:
+				return getProvidedJVMType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,6 +334,9 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 				return;
 			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
 				setProvidedType((LDocType)newValue);
+				return;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE:
+				setProvidedJVMType((JvmTypeReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,6 +362,9 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
 				setProvidedType(PROVIDED_TYPE_EDEFAULT);
 				return;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE:
+				setProvidedJVMType((JvmTypeReference)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -307,6 +385,8 @@ public class LDocIncludeImpl extends MinimalEObjectImpl.Container implements LDo
 				return provided != PROVIDED_EDEFAULT;
 			case LDocPackage.LDOC_INCLUDE__PROVIDED_TYPE:
 				return providedType != PROVIDED_TYPE_EDEFAULT;
+			case LDocPackage.LDOC_INCLUDE__PROVIDED_JVM_TYPE:
+				return providedJVMType != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -140,13 +140,22 @@ public interface LDocPackage extends EPackage {
 	int LDOC_INCLUDE__PROVIDED_TYPE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Provided JVM Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDOC_INCLUDE__PROVIDED_JVM_TYPE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Include</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_INCLUDE_FEATURE_COUNT = 4;
+	int LDOC_INCLUDE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocDocument <em>Document</em>}' class.
@@ -814,6 +823,17 @@ public interface LDocPackage extends EPackage {
 	EAttribute getLDocInclude_ProvidedType();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedJVMType <em>Provided JVM Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Provided JVM Type</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocInclude#getProvidedJVMType()
+	 * @see #getLDocInclude()
+	 * @generated
+	 */
+	EReference getLDocInclude_ProvidedJVMType();
+
+	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.LDocDocument <em>Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1232,6 +1252,14 @@ public interface LDocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LDOC_INCLUDE__PROVIDED_TYPE = eINSTANCE.getLDocInclude_ProvidedType();
+
+		/**
+		 * The meta object literal for the '<em><b>Provided JVM Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LDOC_INCLUDE__PROVIDED_JVM_TYPE = eINSTANCE.getLDocInclude_ProvidedJVMType();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.LDocDocument <em>Document</em>}' class.
