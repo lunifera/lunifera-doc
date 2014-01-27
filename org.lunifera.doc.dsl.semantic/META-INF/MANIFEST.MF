@@ -7,21 +7,21 @@ Bundle-ClassPath: .
 Bundle-Vendor: Lunifera
 Bundle-Localization: plugin
 Export-Package: org.lunifera.doc.dsl.luniferadoc,
- org.lunifera.doc.dsl.luniferadoc.compiler,
- org.lunifera.doc.dsl.luniferadoc.compiler.impl,
- org.lunifera.doc.dsl.luniferadoc.compiler.util,
  org.lunifera.doc.dsl.luniferadoc.impl,
  org.lunifera.doc.dsl.luniferadoc.richstring,
  org.lunifera.doc.dsl.luniferadoc.richstring.impl,
  org.lunifera.doc.dsl.luniferadoc.richstring.util,
- org.lunifera.doc.dsl.luniferadoc.richstring.validation,
- org.lunifera.doc.dsl.luniferadoc.util,
- org.lunifera.doc.dsl.luniferadoc.validation
+ org.lunifera.doc.dsl.luniferadoc.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.xtext.xbase.lib;visibility:=reexport,
  org.lunifera.doc.dsl.semantic;visibility:=reexport,
  org.eclipse.emf.common,
  org.eclipse.xtext.common.types;visibility:=reexport,
- org.eclipse.xtext.xbase;visibility:=reexport
+ org.eclipse.xtext.xbase;visibility:=reexport,
+ org.lunifera.dsl.semantic.common;bundle-version="0.0.1",
+ org.lunifera.dsl.semantic.entity;bundle-version="0.0.1",
+ org.eclipse.emf.ecore.xcore.lib;bundle-version="1.0.0",
+ org.eclipse.emf.ecore.xcore;bundle-version="1.1.2"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

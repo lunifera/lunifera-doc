@@ -26,7 +26,7 @@ DocumentInclude returns doc::LDocInclude:
 	(provided?='provided' (providedType=ProvidedType | providedJVMType=JvmTypeReference) 'as' varName=ID)) ';';
 
 enum ProvidedType returns doc::LDocType:
-	Entity | Dto;
+	ENTITY="entity" | DTO="dto";
 
 GeneralDocument returns doc::LDocLayouter:
 	'Layouter' name=QualifiedName '{'
@@ -37,7 +37,7 @@ GeneralDocument returns doc::LDocLayouter:
 	'}';
 
 EntityDocument returns doc::LDocEntityDocument:
-	'EntityDocument' name=QualifiedName 'covers' entityClass=QualifiedName '{'
+	'EntityDocument' name=QualifiedName 'covers'  '{'
 	('language' language=ID ';')
 	('description' '{' description=RichString '}')?
 	(fields+=EntityField)*
@@ -50,7 +50,7 @@ EntityField returns doc::LDocEntityField:
 	'}';
 
 DTODocument returns doc::LDocDtoDocument:
-	'DTODocument' name=QualifiedName 'covers' dtoClass=QualifiedName '{'
+	'DTODocument' name=QualifiedName 'covers' '{'
 	('language' language=ID ';')
 	('description' '{' description=RichString '}')?
 	('properties' '{' (fields+=DTOProperty)* '}')?
@@ -78,7 +78,7 @@ VaaclipseViewDocument returns doc::LDocViewDocument:
 	'description' '{' description=RichString '}'
 	'}';
 
-UIDocument returns doc::LDocUiDocument:
+UIDocument returns doc::LDocUIDocument:
 	'UIDocument' name=QualifiedName 'covers' ui=STRING '{'
 	('language' language=ID ';')
 	'description' '{' description=RichString '}'
@@ -266,10 +266,10 @@ RichStringDTORef returns xbase::XExpression:
 	"dto-ref" dtoDoc=[doc::LDocDtoDocument|QualifiedName]
 	expression=InternalRichString
 	"/dto-ref";
-
+ 
 RichStringProcessRef returns xbase::XExpression:
 	{richstring::RichStringProcessRef}
-	"process-ref" processDoc=[doc::LDocBPMProcessDocument|QualifiedName]
+	"process-ref" bpmDoc=[doc::LDocBPMProcessDocument|QualifiedName]
 	expression=InternalRichString
 	"/process-ref";
 
@@ -287,7 +287,7 @@ RichStringViewRef returns xbase::XExpression:
 
 RichStringUIRef returns xbase::XExpression:
 	{richstring::RichStringUIRef}
-	"ui-ref" uiDoc=[doc::LDocUiDocument|QualifiedName]
+	"ui-ref" uiDoc=[doc::LDocUIDocument|QualifiedName]
 	expression=InternalRichString
 	"/ui-ref";
 
@@ -309,7 +309,8 @@ RichStringIf returns xbase::XExpression:
 	else=InternalRichString)?
 	"EndIf";
 
-RichStringElseIf returns richstring::RichStringElseIf:
+RichStringElseIf returns xbase::XExpression:
+	{richstring::RichStringElseIf}
 	"ElseIf" if=XExpression then=InternalRichString;
 
 terminal RICH_TEXT:

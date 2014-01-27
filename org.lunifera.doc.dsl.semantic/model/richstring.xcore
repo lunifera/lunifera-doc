@@ -1,0 +1,201 @@
+@GenModel(fileExtensions="richstring")
+@GenModel(modelName="LDocRichstring")
+@GenModel(prefix="LDocRichstring")
+@GenModel(operationReflection="false")
+@Ecore(nsURI="http://www.lunifera.org/documentation/richstring/v1")
+@Ecore(nsPrefix="richstring")
+@Ecore(rootPackage="richstring")
+package org.lunifera.doc.dsl.luniferadoc.richstring
+
+import org.eclipse.xtext.xbase.XExpression
+import org.eclipse.xtext.xbase.XStringLiteral
+import org.eclipse.xtext.xbase.XBlockExpression
+import org.eclipse.xtext.xbase.XForLoopExpression
+import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
+ 
+class RichString extends XBlockExpression {
+}
+ 
+class RichStringElseIf extends XExpression {
+	contains XExpression ^if
+	contains XExpression then
+}
+
+class RichStringLiteral extends XStringLiteral {
+}
+
+class RichStringForLoop extends XForLoopExpression {
+	contains XExpression before
+	contains XExpression separator
+	contains XExpression after
+}
+
+class RichStringIf extends XExpression {
+	contains XExpression ^if
+	contains XExpression then
+	contains XExpression[*] elseIfs
+	contains XExpression ^else
+}
+ 
+class RichStringMarkup extends XExpression {
+	String ^id
+	String styleClass
+	contains XExpression expression
+}
+
+class RichStringExample extends RichStringMarkup {
+	
+}
+
+class RichStringH1 extends RichStringMarkup {
+	
+}
+
+class RichStringH2 extends RichStringMarkup {
+	
+}
+
+class RichStringH3 extends RichStringMarkup {
+	
+}
+
+class RichStringH4 extends RichStringMarkup {
+	
+}
+
+class RichStringH5 extends RichStringMarkup {
+	
+}
+
+class RichStringH6 extends RichStringMarkup {
+	
+}
+
+class RichStringChapter extends RichStringMarkup {
+	String[1] name
+}
+
+class RichStringSection extends RichStringMarkup {
+	String[1] name
+}
+
+class RichStringSubsection extends RichStringMarkup {
+	String[1] name
+}
+
+class RichStringURL extends RichStringMarkup {
+	String[1] location
+	contains XExpression text
+}
+
+class RichStringRef extends RichStringMarkup {
+	String refId
+}
+
+class RichStringBold extends RichStringMarkup {
+	
+}
+
+class RichStringUnderline extends RichStringMarkup {
+	
+}
+
+class RichStringItalic extends RichStringMarkup {
+	
+}
+
+class RichStringImg extends RichStringMarkup {
+	String[1] src
+	String[1] alt
+	String[1] width
+	String[1] height
+}
+
+class RichStringMailto extends RichStringMarkup {
+	String[1] email
+	contains XExpression content
+}
+
+class RichStringSkype extends RichStringMarkup {
+	String[1] target
+	contains XExpression content
+}
+
+class RichStringMovie extends RichStringMarkup {
+	String[1] src
+	String[1] width
+	String[1] height
+	String[1] ^type
+	contains XExpression content
+}
+
+class RichStringCode extends RichStringMarkup {
+	String lang
+	contains XExpression content
+}
+
+class RichStringTable extends RichStringMarkup {
+	
+}
+
+class RichStringTableRow extends RichStringMarkup {
+	
+}
+
+class RichStringTableCell extends RichStringMarkup {
+	
+}
+
+class RichStringOpenView extends RichStringMarkup {
+	String viewId
+}
+
+class RichStringStartProcess extends RichStringMarkup {
+	String processId
+}
+
+class RichStringEntityRef extends RichStringMarkup {
+	refers LDocEntityDocument entityDoc
+}
+
+class RichStringDTORef extends RichStringMarkup {
+	refers LDocDtoDocument dtoDoc
+}
+
+class RichStringTaskRef extends RichStringMarkup {
+	refers LDocHumanTaskDocument taskDoc
+}
+
+class RichStringProcessRef extends RichStringMarkup {
+	refers LDocBPMProcessDocument bpmDoc
+}
+
+class RichStringViewRef extends RichStringMarkup {
+	refers LDocViewDocument viewDoc
+}
+ 
+class RichStringUIRef extends RichStringMarkup {
+	refers LDocUIDocument uiDoc
+}
+
+class RichStringList extends RichStringMarkup {
+	
+}
+
+class RichStringOrderedList extends RichStringMarkup {
+	
+}
+
+class RichStringListElement extends RichStringMarkup {
+	
+}
+
+class RichStringSpan extends RichStringMarkup {
+	
+}
+

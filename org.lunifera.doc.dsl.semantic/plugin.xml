@@ -11,7 +11,7 @@
       <package
             uri="http://www.lunifera.org/documentation/v1"
             class="org.lunifera.doc.dsl.luniferadoc.LDocPackage"
-            genModel="model/LuniferaDocGrammar.genmodel"/>
+            genModel="model/LuniferaDocGrammar.xcore"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -19,14 +19,7 @@
       <package
             uri="http://www.lunifera.org/documentation/richstring/v1"
             class="org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage"
-            genModel="model/LuniferaDocGrammar.genmodel"/>
-   </extension>
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated DocCompiler -->
-      <package
-            uri="http://www.lunifera.org/luniferadoc/compiler/v1"
-            class="org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage"
-            genModel="model/DocCompiler.genmodel"/>
+            genModel="model/LuniferaDocGrammar.xcore"/>
    </extension>
 
 </plugin>

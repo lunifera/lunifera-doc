@@ -24,7 +24,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocType
-import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 
 import static org.lunifera.doc.dsl.luniferadoc.LDocType.*
@@ -130,11 +130,12 @@ class ModelExtensions {
 	}
 
 	def String toFqnDocumentIndexName(LDocNamedDocument sourceElement) {
+
 		//		val fqn = QualifiedName::create(sourceElement.name)
 		//		return fqn.skipLast(1).append(fqn.lastSegment + sourceElement.toLanguage).toString
 		return sourceElement.toFqnDocumentClassName
 	}
- 
+
 	def JvmTypeReference toTypeReference(LDocType type, EObject context) {
 		switch (type) {
 			case DTO:
@@ -189,7 +190,7 @@ class ModelExtensions {
 	/**
 	 * Create field for an included UIDocument
 	 */
-	def dispatch  toTypeReference(LDocUiDocument doc) {
+	def dispatch  toTypeReference(LDocUIDocument doc) {
 		typeReferences.getTypeForName(typeof(IUiDocument), doc, null)
 	}
 

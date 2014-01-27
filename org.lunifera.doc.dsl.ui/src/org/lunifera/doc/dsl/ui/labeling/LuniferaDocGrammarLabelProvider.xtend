@@ -21,7 +21,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityField
 import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
-import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold
@@ -182,11 +182,11 @@ class LuniferaDocGrammarLabelProvider extends XbaseLabelProvider {
 	//	def image(VaaclipseViewDescription elem) {
 	//		'description.gif'
 	//	}
-	def text(LDocUiDocument elem) {
+	def text(LDocUIDocument elem) {
 		'UI Document'
 	}
 
-	def image(LDocUiDocument elem) {
+	def image(LDocUIDocument elem) {
 		'document.gif'
 	}
 

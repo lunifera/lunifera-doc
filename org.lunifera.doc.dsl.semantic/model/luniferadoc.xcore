@@ -1,0 +1,74 @@
+@GenModel(fileExtensions="docu")
+@GenModel(modelName="LuniferaDoc")
+@GenModel(prefix="LDoc")
+@GenModel(operationReflection="false")
+@Ecore(nsURI="http://www.lunifera.org/documentation/v1")
+@Ecore(nsPrefix="luniferadoc")
+@Ecore(rootPackage="luniferadoc")
+package org.lunifera.doc.dsl.luniferadoc
+
+import org.eclipse.xtext.common.types.JvmTypeReference
+import org.eclipse.xtext.xtype.XImportDeclaration
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+  
+interface LDocNamedDocument {
+	String name
+	String language
+}
+ 
+class LDocInclude {
+	refers LDocDocument document
+	String[1] varName
+	Boolean provided
+	LDocType providedType	
+	contains JvmTypeReference providedJVMType
+} 
+ 
+interface LDocDocument extends LDocNamedDocument {
+	contains RichString description
+}
+
+class LDocEntityDocument extends LDocDocument {
+	contains LDocEntityField[*] fields
+}
+
+class LDocEntityField {
+	String name
+	contains RichString description
+}
+
+class LDocDtoDocument extends LDocDocument {
+	contains LDocDtoProperty[*] fields
+}
+
+class LDocDtoProperty {
+	String name
+	contains RichString description
+}
+
+class LDocBPMProcessDocument extends LDocDocument {
+	String process
+}
+
+class LDocHumanTaskDocument extends LDocDocument {
+	String task
+}
+
+class LDocViewDocument extends LDocDocument {
+	String view
+}
+
+class LDocUIDocument extends LDocDocument {
+	String ui
+}
+
+class LDocLayouter extends LDocNamedDocument {
+	contains RichString content
+	contains XImportDeclaration[*] imports
+	contains LDocInclude[*] includes
+}
+
+enum LDocType {
+	DTO = 0
+	ENTITY = 1
+}

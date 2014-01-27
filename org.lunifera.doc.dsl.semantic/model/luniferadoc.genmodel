@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.lunifera.doc.dsl.semantic/src" editDirectory="" editorDirectory=""
+    modelPluginID="org.lunifera.doc.dsl.semantic" forceOverwrite="true" modelName="LuniferaDoc"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.ecore.xcore.importer" complianceLevel="5.0" copyrightFields="false"
+    editPluginID="org.eclipse.xtext.xbase.edit" editorPluginID="org.eclipse.xtext.xbase.edit"
+    runtimeVersion="2.9" usedGenPackages="../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype richstring.xcore#/1/richstring ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter.xmi">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="EcoreXMI.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>luniferadoc.xcore</foreignModel>
+  <modelPluginVariables>org.eclipse.xtext.xbase.lib</modelPluginVariables>
+  <modelPluginVariables>org.eclipse.emf.ecore.xcore.lib</modelPluginVariables>
+  <genPackages prefix="LDoc" basePackage="org.lunifera.doc.dsl" disposableProviderFactory="true"
+      fileExtensions="docu" ecorePackage="luniferadoc.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="luniferadoc.ecore#//LDocType">
+      <genEnumLiterals ecoreEnumLiteral="luniferadoc.ecore#//LDocType/DTO"/>
+      <genEnumLiterals ecoreEnumLiteral="luniferadoc.ecore#//LDocType/ENTITY"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="luniferadoc.ecore#//LDocNamedDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocNamedDocument/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocNamedDocument/language"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocInclude">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocInclude/document"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocInclude/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocInclude/provided"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocInclude/providedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocInclude/providedJVMType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="luniferadoc.ecore#//LDocDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDocument/description"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocEntityDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocEntityDocument/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocEntityField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocEntityField/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocEntityField/description"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocDtoDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDtoDocument/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocDtoProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocDtoProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDtoProperty/description"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocBPMProcessDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocBPMProcessDocument/process"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocHumanTaskDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocHumanTaskDocument/task"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocViewDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocViewDocument/view"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocUIDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocUIDocument/ui"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocLayouter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocLayouter/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocLayouter/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocLayouter/includes"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
