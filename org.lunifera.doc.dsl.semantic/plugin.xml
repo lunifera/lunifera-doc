@@ -22,4 +22,12 @@
             genModel="model/LuniferaDocGrammar.xcore"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated doccompiler -->
+      <package
+            uri="org.lunifera.doc.dsl.luniferadoc.doccompiler"
+            class="org.lunifera.doc.dsl.luniferadoc.doccompiler.DoccompilerPackage"
+            genModel="model/doccompiler.xcore"/>
+   </extension>
+
 </plugin>

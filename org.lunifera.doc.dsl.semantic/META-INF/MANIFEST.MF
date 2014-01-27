@@ -11,7 +11,10 @@ Export-Package: org.lunifera.doc.dsl.luniferadoc,
  org.lunifera.doc.dsl.luniferadoc.richstring,
  org.lunifera.doc.dsl.luniferadoc.richstring.impl,
  org.lunifera.doc.dsl.luniferadoc.richstring.util,
- org.lunifera.doc.dsl.luniferadoc.util
+ org.lunifera.doc.dsl.luniferadoc.util,
+ org.lunifera.doc.dsl.luniferadoc.doccompiler,
+ org.lunifera.doc.dsl.luniferadoc.doccompiler.impl,
+ org.lunifera.doc.dsl.luniferadoc.doccompiler.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.xtext.xbase.lib;visibility:=reexport,

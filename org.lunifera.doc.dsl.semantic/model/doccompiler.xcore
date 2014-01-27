@@ -1,0 +1,420 @@
+package org.lunifera.doc.dsl.luniferadoc.doccompiler
+
+import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument
+import org.eclipse.xtext.xbase.XExpression
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSpan
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSkype
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableRow
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTable
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSubsection
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringStartProcess
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
+
+class DocumentStart extends LinePart {
+	refers ProcessedRichString content
+	refers DocumentEnd end
+	refers LDocNamedDocument document
+}
+
+class DocumentEnd extends LinePart {
+	refers DocumentStart start
+}
+
+class ProcessedRichString {
+	refers RichString richString
+	contains Line[*] lines
+}
+
+class Line {
+	contains LinePart[*] parts
+	refers ProcessedRichString richString
+}
+
+class LinePart {
+	refers Line line
+}
+
+class Literal extends LinePart {
+	refers RichStringLiteral literal
+	int Offset
+	int length
+}
+
+class LineBreak extends Literal {
+}
+
+class ForLoopStart extends LinePart {
+	refers RichStringForLoop loop
+	refers ForLoopEnd end
+}
+
+class ForLoopEnd extends LinePart {
+	refers ForLoopStart start
+}
+
+class PrintedExpression extends LinePart {
+	refers XExpression expression
+}
+
+class IfConditionStart extends LinePart {
+	refers RichStringIf richStringIf
+	refers ElseStart elseStart
+	refers ElseIfCondition[*] elseIfConditions
+	refers EndIf endIf
+}
+
+class ElseIfCondition extends LinePart {
+	refers RichStringElseIf richStringElseIf
+	refers IfConditionStart ifConditionStart
+}
+
+class ElseStart extends LinePart {
+	refers IfConditionStart ifConditionStart
+}
+
+class EndIf extends LinePart {
+	refers IfConditionStart ifConditionStart
+}
+
+class Markup extends LinePart {
+	refers RichStringMarkup markup
+}
+
+class H2Start extends LinePart {
+	refers RichStringH2 content
+	refers H2End end
+}
+
+class H2End extends LinePart {
+	refers H2Start start
+}
+
+class H3Start extends LinePart {
+	refers RichStringH3 content
+	refers H3End end
+}
+
+class H3End extends LinePart {
+	refers H3Start start
+}
+
+class H4Start extends LinePart {
+	refers RichStringH4 content
+	refers H4End end
+}
+
+class H4End extends LinePart {
+	refers H4Start start
+}
+
+class H5Start extends LinePart {
+	refers RichStringH5 content
+	refers H5End end
+}
+
+class H5End extends LinePart {
+	refers H5Start start
+}
+
+class H6Start extends LinePart {
+	refers RichStringH6 content
+	refers H6End end
+}
+
+class H6End extends LinePart {
+	refers H6Start start
+}
+
+class ExampleStart extends LinePart {
+	refers RichStringExample content
+	refers ExampleEnd end
+}
+
+class ExampleEnd extends LinePart {
+	refers ExampleStart start
+}
+
+class URLStart extends LinePart {
+	refers RichStringURL content
+	refers URLEnd end
+}
+
+class URLEnd extends LinePart {
+	refers URLStart start
+}
+
+class RefStart extends LinePart {
+	refers RichStringRef content
+	refers RefEnd end
+}
+
+class RefEnd extends LinePart {
+	refers RefStart start
+}
+
+class BoldStart extends LinePart {
+	refers RichStringBold content
+	refers BoldEnd end
+}
+
+class BoldEnd extends LinePart {
+	refers BoldStart start
+}
+
+class UnderlineStart extends LinePart {
+	refers RichStringUnderline content
+	refers UnderlineEnd end
+}
+
+class UnderlineEnd extends LinePart {
+	refers UnderlineStart start
+}
+
+class ItalicStart extends LinePart {
+	refers RichStringItalic content
+	refers ItalicEnd end
+}
+
+class ItalicEnd extends LinePart {
+	refers ItalicStart start
+}
+
+class SpanStart extends LinePart {
+	refers RichStringSpan content
+	refers SpanEnd end
+}
+
+class SpanEnd extends LinePart {
+	refers SpanStart start
+}
+
+class ImgStart extends LinePart {
+	refers RichStringImg content
+	refers ImgEnd end
+}
+
+class ImgEnd extends LinePart {
+	refers ImgStart start
+}
+
+class MailtoStart extends LinePart {
+	refers RichStringMailto content
+	refers MailtoEnd end
+}
+
+class MailtoEnd extends LinePart {
+	refers MailtoStart start
+}
+
+class SkypeStart extends LinePart {
+	refers RichStringSkype content
+	refers SkypeEnd end
+}
+
+class SkypeEnd extends LinePart {
+	refers SkypeStart start
+}
+
+class MovieStart extends LinePart {
+	refers RichStringMovie content
+	refers MovieEnd end
+}
+
+class MovieEnd extends LinePart {
+	refers MovieStart start
+}
+
+class CodeStart extends LinePart {
+	refers RichStringCode content
+	refers CodeEnd end
+}
+
+class CodeEnd extends LinePart {
+	refers CodeStart start
+}
+
+class TableStart extends LinePart {
+	refers RichStringTable content
+	refers TableEnd end
+}
+
+class TableEnd extends LinePart {
+	refers TableStart start
+}
+
+class TableRowStart extends LinePart {
+	refers RichStringTableRow content
+	refers TableRowEnd end
+}
+
+class TableRowEnd extends LinePart {
+	refers TableRowStart start
+}
+
+class TableCellStart extends LinePart {
+	refers RichStringTableCell content
+	refers TableCellEnd end
+}
+
+class TableCellEnd extends LinePart {
+	refers TableCellStart start
+}
+
+class ListStart extends LinePart {
+	refers RichStringList content
+	refers ListEnd end
+}
+
+class ListEnd extends LinePart {
+	refers ListStart start
+}
+
+class OrderedListStart extends LinePart {
+	refers RichStringOrderedList content
+	refers OrderedListEnd end
+}
+
+class OrderedListEnd extends LinePart {
+	refers OrderedListStart start
+}
+
+class ListElementStart extends LinePart {
+	refers RichStringListElement content
+	refers ListElementEnd end
+}
+
+class ListElementEnd extends LinePart {
+	refers ListElementStart start
+}
+
+class ChapterStart extends LinePart {
+	refers RichStringChapter content
+	refers ChapterEnd end
+}
+
+class ChapterEnd extends LinePart {
+	refers ChapterStart start
+}
+
+class SectionStart extends LinePart {
+	refers RichStringSection content
+	refers SectionEnd end
+}
+
+class SectionEnd extends LinePart {
+	refers SectionStart start
+}
+
+class SubSectionStart extends LinePart {
+	refers RichStringSubsection content
+	refers SubSectionEnd end
+}
+
+class SubSectionEnd extends LinePart {
+	refers SubSectionStart start
+}
+
+class OpenViewStart extends LinePart {
+	refers RichStringOpenView content
+	refers OpenViewEnd end
+}
+
+class OpenViewEnd extends LinePart {
+	refers OpenViewStart start
+}
+
+class StartProcessStart extends LinePart {
+	refers RichStringStartProcess content
+	refers StartProcessEnd end
+}
+
+class StartProcessEnd extends LinePart {
+	refers StartProcessStart start
+}
+
+class EntityRefStart extends LinePart {
+	refers RichStringEntityRef content
+	refers EntityRefEnd end
+}
+
+class EntityRefEnd extends LinePart {
+	refers EntityRefStart start
+}
+
+class DTORefStart extends LinePart {
+	refers RichStringDTORef content
+	refers DTORefEnd end
+}
+
+class DTORefEnd extends LinePart {
+	refers DTORefStart start
+}
+
+class ProcessRefStart extends LinePart {
+	refers RichStringProcessRef content
+	refers ProcessRefEnd end
+}
+
+class ProcessRefEnd extends LinePart {
+	refers ProcessRefStart start
+}
+
+class TaskRefStart extends LinePart {
+	refers RichStringTaskRef content
+	refers TaskRefEnd end
+}
+
+class TaskRefEnd extends LinePart {
+	refers TaskRefStart start
+}
+
+class ViewRefStart extends LinePart {
+	refers RichStringViewRef content
+	refers ViewRefEnd end
+}
+
+class ViewRefEnd extends LinePart {
+	refers ViewRefStart start
+}
+
+class UIRefStart extends LinePart {
+	refers RichStringUIRef content
+	refers UIRefEnd end
+}
+
+class UIRefEnd extends LinePart {
+	refers UIRefStart start
+}
