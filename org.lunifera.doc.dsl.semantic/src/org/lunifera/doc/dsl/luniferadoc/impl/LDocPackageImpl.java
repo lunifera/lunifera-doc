@@ -352,44 +352,8 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLDocEntityField_Type() {
-		return (EAttribute)lDocEntityFieldEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLDocEntityField_Length() {
-		return (EAttribute)lDocEntityFieldEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLDocEntityField_Pk() {
-		return (EAttribute)lDocEntityFieldEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLDocEntityField_Nullable() {
-		return (EAttribute)lDocEntityFieldEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getLDocEntityField_Description() {
-		return (EReference)lDocEntityFieldEClass.getEStructuralFeatures().get(5);
+		return (EReference)lDocEntityFieldEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -611,10 +575,6 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 
 		lDocEntityFieldEClass = createEClass(LDOC_ENTITY_FIELD);
 		createEAttribute(lDocEntityFieldEClass, LDOC_ENTITY_FIELD__NAME);
-		createEAttribute(lDocEntityFieldEClass, LDOC_ENTITY_FIELD__TYPE);
-		createEAttribute(lDocEntityFieldEClass, LDOC_ENTITY_FIELD__LENGTH);
-		createEAttribute(lDocEntityFieldEClass, LDOC_ENTITY_FIELD__PK);
-		createEAttribute(lDocEntityFieldEClass, LDOC_ENTITY_FIELD__NULLABLE);
 		createEReference(lDocEntityFieldEClass, LDOC_ENTITY_FIELD__DESCRIPTION);
 
 		lDocDtoDocumentEClass = createEClass(LDOC_DTO_DOCUMENT);
@@ -712,10 +672,6 @@ public class LDocPackageImpl extends EPackageImpl implements LDocPackage {
 
 		initEClass(lDocEntityFieldEClass, LDocEntityField.class, "LDocEntityField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLDocEntityField_Name(), ecorePackage.getEString(), "name", null, 0, 1, LDocEntityField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLDocEntityField_Type(), ecorePackage.getEString(), "type", null, 0, 1, LDocEntityField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLDocEntityField_Length(), ecorePackage.getEInt(), "length", null, 0, 1, LDocEntityField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLDocEntityField_Pk(), ecorePackage.getEBoolean(), "pk", null, 0, 1, LDocEntityField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLDocEntityField_Nullable(), ecorePackage.getEBoolean(), "nullable", null, 0, 1, LDocEntityField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLDocEntityField_Description(), theLDocRichstringPackage.getRichString(), null, "description", null, 0, 1, LDocEntityField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lDocDtoDocumentEClass, LDocDtoDocument.class, "LDocDtoDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

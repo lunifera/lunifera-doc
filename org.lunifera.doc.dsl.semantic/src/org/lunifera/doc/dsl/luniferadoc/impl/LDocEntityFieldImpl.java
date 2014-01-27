@@ -24,10 +24,6 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityFieldImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityFieldImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityFieldImpl#getLength <em>Length</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityFieldImpl#isPk <em>Pk</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityFieldImpl#isNullable <em>Nullable</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityFieldImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -54,86 +50,6 @@ public class LDocEntityFieldImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int LENGTH_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected int length = LENGTH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isPk() <em>Pk</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPk()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean PK_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isPk() <em>Pk</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPk()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean pk = PK_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isNullable() <em>Nullable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNullable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean NULLABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isNullable() <em>Nullable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNullable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean nullable = NULLABLE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -183,90 +99,6 @@ public class LDocEntityFieldImpl extends MinimalEObjectImpl.Container implements
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_ENTITY_FIELD__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_ENTITY_FIELD__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getLength() {
-		return length;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLength(int newLength) {
-		int oldLength = length;
-		length = newLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_ENTITY_FIELD__LENGTH, oldLength, length));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isPk() {
-		return pk;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPk(boolean newPk) {
-		boolean oldPk = pk;
-		pk = newPk;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_ENTITY_FIELD__PK, oldPk, pk));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isNullable() {
-		return nullable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNullable(boolean newNullable) {
-		boolean oldNullable = nullable;
-		nullable = newNullable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDocPackage.LDOC_ENTITY_FIELD__NULLABLE, oldNullable, nullable));
 	}
 
 	/**
@@ -336,14 +168,6 @@ public class LDocEntityFieldImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case LDocPackage.LDOC_ENTITY_FIELD__NAME:
 				return getName();
-			case LDocPackage.LDOC_ENTITY_FIELD__TYPE:
-				return getType();
-			case LDocPackage.LDOC_ENTITY_FIELD__LENGTH:
-				return getLength();
-			case LDocPackage.LDOC_ENTITY_FIELD__PK:
-				return isPk();
-			case LDocPackage.LDOC_ENTITY_FIELD__NULLABLE:
-				return isNullable();
 			case LDocPackage.LDOC_ENTITY_FIELD__DESCRIPTION:
 				return getDescription();
 		}
@@ -360,18 +184,6 @@ public class LDocEntityFieldImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case LDocPackage.LDOC_ENTITY_FIELD__NAME:
 				setName((String)newValue);
-				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__TYPE:
-				setType((String)newValue);
-				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__LENGTH:
-				setLength((Integer)newValue);
-				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__PK:
-				setPk((Boolean)newValue);
-				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__NULLABLE:
-				setNullable((Boolean)newValue);
 				return;
 			case LDocPackage.LDOC_ENTITY_FIELD__DESCRIPTION:
 				setDescription((RichString)newValue);
@@ -391,18 +203,6 @@ public class LDocEntityFieldImpl extends MinimalEObjectImpl.Container implements
 			case LDocPackage.LDOC_ENTITY_FIELD__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__LENGTH:
-				setLength(LENGTH_EDEFAULT);
-				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__PK:
-				setPk(PK_EDEFAULT);
-				return;
-			case LDocPackage.LDOC_ENTITY_FIELD__NULLABLE:
-				setNullable(NULLABLE_EDEFAULT);
-				return;
 			case LDocPackage.LDOC_ENTITY_FIELD__DESCRIPTION:
 				setDescription((RichString)null);
 				return;
@@ -420,14 +220,6 @@ public class LDocEntityFieldImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case LDocPackage.LDOC_ENTITY_FIELD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case LDocPackage.LDOC_ENTITY_FIELD__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case LDocPackage.LDOC_ENTITY_FIELD__LENGTH:
-				return length != LENGTH_EDEFAULT;
-			case LDocPackage.LDOC_ENTITY_FIELD__PK:
-				return pk != PK_EDEFAULT;
-			case LDocPackage.LDOC_ENTITY_FIELD__NULLABLE:
-				return nullable != NULLABLE_EDEFAULT;
 			case LDocPackage.LDOC_ENTITY_FIELD__DESCRIPTION:
 				return description != null;
 		}
@@ -446,14 +238,6 @@ public class LDocEntityFieldImpl extends MinimalEObjectImpl.Container implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", type: ");
-		result.append(type);
-		result.append(", length: ");
-		result.append(length);
-		result.append(", pk: ");
-		result.append(pk);
-		result.append(", nullable: ");
-		result.append(nullable);
 		result.append(')');
 		return result.toString();
 	}

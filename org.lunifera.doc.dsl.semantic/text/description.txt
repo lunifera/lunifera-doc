@@ -27,10 +27,6 @@ Package luniferadoc <http://www.lunifera.org/documentation/v1>
 
   Class LDocEntityField
     Attribute name : EString
-    Attribute type : EString
-    Attribute length : EInt
-    Attribute pk : EBoolean
-    Attribute nullable : EBoolean
     Reference description : RichString
 
   Class LDocDtoDocument -> LDocDocument

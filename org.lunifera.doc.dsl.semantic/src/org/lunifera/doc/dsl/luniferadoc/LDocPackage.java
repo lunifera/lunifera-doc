@@ -287,49 +287,13 @@ public interface LDocPackage extends EPackage {
 	int LDOC_ENTITY_FIELD__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LDOC_ENTITY_FIELD__TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LDOC_ENTITY_FIELD__LENGTH = 2;
-
-	/**
-	 * The feature id for the '<em><b>Pk</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LDOC_ENTITY_FIELD__PK = 3;
-
-	/**
-	 * The feature id for the '<em><b>Nullable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LDOC_ENTITY_FIELD__NULLABLE = 4;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_ENTITY_FIELD__DESCRIPTION = 5;
+	int LDOC_ENTITY_FIELD__DESCRIPTION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Entity Field</em>' class.
@@ -338,7 +302,7 @@ public interface LDocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_ENTITY_FIELD_FEATURE_COUNT = 6;
+	int LDOC_ENTITY_FIELD_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocDtoDocumentImpl <em>Dto Document</em>}' class.
@@ -908,50 +872,6 @@ public interface LDocPackage extends EPackage {
 	EAttribute getLDocEntityField_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocEntityField#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LDocEntityField#getType()
-	 * @see #getLDocEntityField()
-	 * @generated
-	 */
-	EAttribute getLDocEntityField_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocEntityField#getLength <em>Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Length</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LDocEntityField#getLength()
-	 * @see #getLDocEntityField()
-	 * @generated
-	 */
-	EAttribute getLDocEntityField_Length();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocEntityField#isPk <em>Pk</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pk</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LDocEntityField#isPk()
-	 * @see #getLDocEntityField()
-	 * @generated
-	 */
-	EAttribute getLDocEntityField_Pk();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocEntityField#isNullable <em>Nullable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nullable</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LDocEntityField#isNullable()
-	 * @see #getLDocEntityField()
-	 * @generated
-	 */
-	EAttribute getLDocEntityField_Nullable();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.lunifera.doc.dsl.luniferadoc.LDocEntityField#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1322,38 +1242,6 @@ public interface LDocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LDOC_ENTITY_FIELD__NAME = eINSTANCE.getLDocEntityField_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LDOC_ENTITY_FIELD__TYPE = eINSTANCE.getLDocEntityField_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LDOC_ENTITY_FIELD__LENGTH = eINSTANCE.getLDocEntityField_Length();
-
-		/**
-		 * The meta object literal for the '<em><b>Pk</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LDOC_ENTITY_FIELD__PK = eINSTANCE.getLDocEntityField_Pk();
-
-		/**
-		 * The meta object literal for the '<em><b>Nullable</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LDOC_ENTITY_FIELD__NULLABLE = eINSTANCE.getLDocEntityField_Nullable();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.

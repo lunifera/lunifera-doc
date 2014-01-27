@@ -32,52 +32,55 @@ GeneralDocument returns doc::LDocLayouter:
 	'Layouter' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	includes+=DocumentInclude*
-	('language=' language=ID ';')
+	('language' language=ID ';')
 	content=RichString
 	'}';
 
 EntityDocument returns doc::LDocEntityDocument:
 	'EntityDocument' name=QualifiedName 'covers' entityClass=QualifiedName '{'
-	('language=' language=ID ';')
+	('language' language=ID ';')
 	('description' '{' description=RichString '}')?
-	('fields' '{' (fields+=EntityField)* '}')?
+	(fields+=EntityField)*
 	'}';
 
 EntityField returns doc::LDocEntityField:
-	{doc::LDocEntityField} 'name' name=ID
-	('type' type=ID)?
-	('length' length=INT)?
-	('pk' pk?="true")?
-	('nullable' nullable?="true")?
-	'description' '{' description=RichString '}';
+	{doc::LDocEntityField} 
+	'field' name=ID '{'
+	('description' '{' description=RichString '}')?
+	'}';
 
 DTODocument returns doc::LDocDtoDocument:
 	'DTODocument' name=QualifiedName 'covers' dtoClass=QualifiedName '{'
+	('language' language=ID ';')
 	('description' '{' description=RichString '}')?
 	('properties' '{' (fields+=DTOProperty)* '}')?
 	'}';
 
 DTOProperty returns doc::LDocDtoProperty:
-	'name' name=ID
+	'name' name=ID ';'
 	'description' '{' description=RichString '}';
 
 BPMProcessDocument returns doc::LDocBPMProcessDocument:
 	'BPMProcessDocument' name=QualifiedName 'covers' process=STRING '{'
+	('language' language=ID ';')
 	'description' '{' description=RichString '}'
 	'}';
 
 BPMHumanTaskDocument returns doc::LDocHumanTaskDocument:
 	'BPMHumanTaskDocument' name=QualifiedName 'covers' task=STRING '{'
+	('language' language=ID ';')
 	'description' '{' description=RichString '}'
 	'}';
 
 VaaclipseViewDocument returns doc::LDocViewDocument:
 	'VaaclipseViewDocument' name=QualifiedName 'covers' view=STRING '{'
+	('language' language=ID ';')
 	'description' '{' description=RichString '}'
 	'}';
 
 UIDocument returns doc::LDocUiDocument:
 	'UIDocument' name=QualifiedName 'covers' ui=STRING '{'
+	('language' language=ID ';')
 	'description' '{' description=RichString '}'
 	'}';
 

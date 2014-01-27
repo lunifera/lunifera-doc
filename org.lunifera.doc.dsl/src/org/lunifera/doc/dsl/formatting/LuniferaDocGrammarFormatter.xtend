@@ -9,10 +9,17 @@ import org.eclipse.xtext.xbase.formatting.HiddenLeafAccess
 import org.eclipse.xtext.xbase.formatting.NodeModelAccess
 import org.eclipse.xtext.xbase.formatting.XbaseFormatter2
 import org.eclipse.xtext.xtype.XImportDeclaration
+import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoProperty
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocEntityField
+import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocInclude
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage
+import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 
 /**
@@ -42,6 +49,9 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 
 	@Inject RichStringFormatter richStringFormatter
 
+	/**
+	 * Layouter - "General Document"
+	 */
 	def protected dispatch void format(LDocLayouter document, FormattableDocument format) {
 		format += document.nodeForEObject.prepend[noSpace]
 		format += document.nodeForKeyword("Layouter").append[increaseIndentation]
@@ -61,22 +71,34 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		document.content.format(format)
 	}
 
+	/**
+	 * Import statements
+	 */
 	def protected dispatch void format(XImportDeclaration imp, FormattableDocument format) {
 		format += imp.nodeForKeyword("import").append[oneSpace]
 		format += imp.nodeForKeyword(";").prepend[noSpace]
 	}
 
-	def protected dispatch void format(LDocInclude imp, FormattableDocument format) {
-		format += imp.nodeForKeyword("include").append[oneSpace]
-		format += imp.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__DOCUMENT).append[oneSpace]
-		format += imp.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__PROVIDED).append[oneSpace]
-		format += imp.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__PROVIDED_TYPE).append[oneSpace]
-		format += imp.nodeForKeyword("as").append[oneSpace]
-		format += imp.nodeForKeyword(";").prepend[noSpace]
+	/**
+	 * Include Statements
+	 */
+	def protected dispatch void format(LDocInclude inc, FormattableDocument format) {
+		format += inc.nodeForKeyword("include").append[oneSpace]
+		format += inc.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__DOCUMENT).append[oneSpace]
+		format += inc.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__PROVIDED).append[oneSpace]
+		format += inc.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__PROVIDED_TYPE).append[oneSpace]
+		format += inc.nodeForKeyword("as").append[oneSpace]
+		format += inc.nodeForKeyword(";").prepend[noSpace]
 	}
 
+	/**
+	 * Entity Document
+	 */
 	def protected dispatch void format(LDocEntityDocument document, FormattableDocument format) {
+		format += document.nodeForKeyword("EntityDocument").append[increaseIndentation]
 		format += document.nodeForEObject.prepend[noSpace]
+		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
+		format += document.nodeForKeyword(";").prepend[noSpace]
 
 		format += document.nodeForKeyword("language").append[oneSpace]
 		format += document.nodeForKeyword(";").prepend[noSpace]
@@ -84,9 +106,124 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 
 		format += document.nodeForKeyword("description").append[oneSpace]
 		format += document.nodeForKeyword("fields").append[oneSpace]
-
+		document.description.format(format)
+		for (field : document.fields) {
+			field.format(format)
+		}
 	}
 
+	/**
+	 * Entity Fields
+	 */
+	def protected dispatch void format(LDocEntityField field, FormattableDocument format) {
+		format += field.nodeForKeyword("field").append[increaseIndentation]
+		field.description.format(format)
+	}
+
+	/**
+	 * DTO Document
+	 */
+	def protected dispatch void format(LDocDtoDocument document, FormattableDocument format) {
+		format += document.nodeForEObject.prepend[noSpace]
+		format += document.nodeForKeyword("DtoDocument").append[increaseIndentation]
+
+		format += document.nodeForKeyword("language").append[oneSpace]
+		format += document.nodeForKeyword(";").prepend[noSpace]
+		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+
+		format += document.nodeForKeyword("description").append[oneSpace]
+		format += document.nodeForKeyword("properties").append[oneSpace]
+		document.description.format(format)
+		for (property : document.fields) {
+			property.format(format)
+		}
+	}
+
+	/**
+	 * DTO Properties
+	 */
+	def protected dispatch void format(LDocDtoProperty prop, FormattableDocument format) {
+		format += prop.nodeForKeyword("property").append[increaseIndentation]
+		format += prop.nodeForKeyword("name").append[oneSpace]
+		format += prop.nodeForKeyword(";").prepend[noSpace]
+		prop.description.format(format)
+	}
+
+	/**
+	 * BPM Process Document
+	 */
+	def protected dispatch void format(LDocBPMProcessDocument document, FormattableDocument format) {
+		format += document.nodeForEObject.prepend[noSpace]
+		format += document.nodeForKeyword("BPMProcessDocument").append[increaseIndentation]
+		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
+		format += document.nodeForKeyword(";").prepend[noSpace]
+
+		format += document.nodeForKeyword("language").append[oneSpace]
+		format += document.nodeForKeyword(";").prepend[noSpace]
+		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+
+		format += document.nodeForKeyword("description").append[oneSpace]
+		format += document.nodeForKeyword("fields").append[oneSpace]
+		document.description.format(format)
+	}
+
+	/**
+	 * BPM Human Task Document
+	 */
+	def protected dispatch void format(LDocHumanTaskDocument document, FormattableDocument format) {
+		format += document.nodeForEObject.prepend[noSpace]
+		format += document.nodeForKeyword("BPMHumanTaskDocument").append[increaseIndentation]
+		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
+		format += document.nodeForKeyword(";").prepend[noSpace]
+
+		format += document.nodeForKeyword("language").append[oneSpace]
+		format += document.nodeForKeyword(";").prepend[noSpace]
+		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+
+		format += document.nodeForKeyword("description").append[oneSpace]
+		format += document.nodeForKeyword("fields").append[oneSpace]
+		document.description.format(format)
+	}
+
+	/**
+	 * Vaaclipse View Document
+	 */
+	def protected dispatch void format(LDocViewDocument document, FormattableDocument format) {
+		format += document.nodeForEObject.prepend[noSpace]
+		format += document.nodeForKeyword("VaaclipseViewDocument").append[increaseIndentation]
+		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
+		format += document.nodeForKeyword(";").prepend[noSpace]
+
+		format += document.nodeForKeyword("language").append[oneSpace]
+		format += document.nodeForKeyword(";").prepend[noSpace]
+		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+
+		format += document.nodeForKeyword("description").append[oneSpace]
+		format += document.nodeForKeyword("fields").append[oneSpace]
+		document.description.format(format)
+	}
+
+	/**
+	 * UI Document
+	 */
+	def protected dispatch void format(LDocUiDocument document, FormattableDocument format) {
+		format += document.nodeForEObject.prepend[noSpace]
+		format += document.nodeForKeyword("UIDocument").append[increaseIndentation]
+		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
+		format += document.nodeForKeyword(";").prepend[noSpace]
+
+		format += document.nodeForKeyword("language").append[oneSpace]
+		format += document.nodeForKeyword(";").prepend[noSpace]
+		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+
+		format += document.nodeForKeyword("description").append[oneSpace]
+		format += document.nodeForKeyword("fields").append[oneSpace]
+		document.description.format(format)
+	}
+
+	/**
+	 * Rich String
+	 */
 	def protected dispatch void format(RichString rs, FormattableDocument format) {
 		val (EObject, FormattableDocument)=>void callback = [EObject obj, FormattableDocument doc|obj.format(doc)]
 		richStringFormatter.format(callback, format, rs)
