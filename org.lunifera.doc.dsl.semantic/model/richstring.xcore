@@ -6,7 +6,7 @@
 @Ecore(nsPrefix="richstring")
 @Ecore(rootPackage="richstring")
 package org.lunifera.doc.dsl.luniferadoc.richstring
- 
+
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.XStringLiteral
 import org.eclipse.xtext.xbase.XBlockExpression
