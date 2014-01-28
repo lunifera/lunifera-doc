@@ -21,9 +21,12 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath = true
 		platformUri = "${runtimeProject}/.."
+		registerGenModelFile = "platform:/resource/org.lunifera.dsl.semantic.entity/model/entity.genmodel"
+		registerGeneratedEPackage = "org.lunifera.dsl.semantic.entity.EntityPackage"
+		registerGenModelFile = "platform:/resource/org.lunifera.dsl.semantic.common/model/types.genmodel"
+		registerGeneratedEPackage = "org.lunifera.dsl.semantic.common.types.LunTypesPackage"
 		registerGenModelFile = "platform:/resource/org.lunifera.doc.dsl.semantic/model/luniferadoc.genmodel"
 		registerGeneratedEPackage = "org.lunifera.doc.dsl.luniferadoc.LDocPackage"
-		registerGenModelFile = "platform:/resource/org.lunifera.doc.dsl.semantic/model/richstring.genmodel"
 		registerGeneratedEPackage = "org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage"
 		registerEcoreFile = "platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore"
 		registerEcoreFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xtype.ecore"
@@ -51,8 +54,11 @@ Workflow {
 		projectNameUi = "${projectName}.ui"
 		language = auto-inject {
 			uri = grammarURI
-			loadedResource = "platform:/resource/org.lunifera.doc.dsl.semantic/model/luniferadoc.xcore"// Java API to access grammar elements (required by several other fragments)
-			
+			//			loadedResource = "platform:/resource/org.eclipse.emf.ecore.xcore.lib/model/XcoreLang.xcore"
+			//			loadedResource = "platform:/resource/org.lunifera.dsl.semantic.entity/model/entity.xcore"
+			//			loadedResource = "platform:/resource/org.lunifera.dsl.semantic.common/model/types.xcore"
+			//			loadedResource = "platform:/resource/org.lunifera.doc.dsl.semantic/model/luniferadoc.xcore"
+			//			loadedResource = "platform:/resource/org.lunifera.doc.dsl.semantic/model/richstring.xcore"
 			fragment = grammarAccess.GrammarAccessFragment auto-inject {}
 
 			// generates Java API for the generated EPackages

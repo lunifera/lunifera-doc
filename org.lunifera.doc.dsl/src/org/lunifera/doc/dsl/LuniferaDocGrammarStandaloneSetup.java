@@ -11,7 +11,8 @@ package org.lunifera.doc.dsl;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
-import org.lunifera.doc.dsl.luniferadoc.compiler.LDocCompilerPackage;
+import org.lunifera.doc.dsl.luniferadoc.doccompiler.LDocCompilerPackage;
+import org.lunifera.dsl.semantic.entity.EntityPackage;
 
 import com.google.inject.Injector;
 
@@ -29,6 +30,10 @@ public class LuniferaDocGrammarStandaloneSetup extends
 
 	@Override
 	public void register(Injector injector) {
+		if (!EPackage.Registry.INSTANCE.containsKey(EntityPackage.eNS_URI)) {
+			EPackage.Registry.INSTANCE.put(EntityPackage.eNS_URI,
+					LDocPackage.eINSTANCE);
+		}
 		if (!EPackage.Registry.INSTANCE.containsKey(LDocPackage.eNS_URI)) {
 			EPackage.Registry.INSTANCE.put(LDocPackage.eNS_URI,
 					LDocPackage.eINSTANCE);

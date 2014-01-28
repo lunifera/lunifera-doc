@@ -35,9 +35,9 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 	 * Create field for an included EntityDocument
 	 */
 	def toIncField(LDocInclude include, String name, LDocLayouter layouter) {
-		toField(layouter, name, include.toIncTypeReference)
+			toField(layouter, name, include.toIncTypeReference)
 	}
- 
+
 	/**
 	 * Create type for an included EntityDocument
 	 */
@@ -62,7 +62,7 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 		}
 		include.toSetter(include.varName, include.providedType.toTypeReference(include))
 	}
-	
+
 	def JvmGenericType toDocumentClass(@Nullable LDocNamedDocument doc) {
 		val JvmGenericType result = createJvmGenericType(doc, doc.toFqnDocumentClassName);
 		associate(doc, result);

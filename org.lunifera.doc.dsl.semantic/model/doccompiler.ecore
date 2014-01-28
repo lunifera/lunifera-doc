@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="doccompiler" nsURI="http://www.lunifera.org/doccompiler" nsPrefix="doccompiler">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="doccompiler" nsURI="http://www.lunifera.org/documentation/compiler/v1"
+    nsPrefix="ldoccompiler">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="fileExtensions" value="doccompiler"/>
+    <details key="modelName" value="LuniferaDocCompiler"/>
+    <details key="prefix" value="LDocCompiler"/>
+    <details key="operationReflection" value="false"/>
+    <details key="basePackage" value="org.lunifera.doc.dsl.luniferadoc"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="rootPackage" value="ldoccompiler"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//ProcessedRichString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//DocumentEnd"
-        eOpposite="#//DocumentEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//DocumentEnd"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass luniferadoc.ecore#//LDocNamedDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//DocumentStart"
-        eOpposite="#//DocumentStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//DocumentStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessedRichString">
     <eStructuralFeatures xsi:type="ecore:EReference" name="richString" eType="ecore:EClass richstring.ecore#//RichString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
-        eType="#//Line" containment="true" eOpposite="#//Line/richString"/>
+        eType="#//Line" containment="true" resolveProxies="false" eOpposite="#//Line/richString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Line">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
-        eType="#//LinePart" containment="true" eOpposite="#//LinePart/line"/>
+        eType="#//LinePart" containment="true" resolveProxies="false" eOpposite="#//LinePart/line"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="richString" eType="#//ProcessedRichString"
         eOpposite="#//ProcessedRichString/lines"/>
   </eClassifiers>
@@ -27,8 +36,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="ecore:EClass richstring.ecore#//RichStringLiteral"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Offset" unique="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" unique="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LineBreak" eSuperTypes="#//Literal"/>
   <eClassifiers xsi:type="ecore:EClass" name="ForLoopStart" eSuperTypes="#//LinePart">
@@ -68,78 +79,66 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H1Start" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringH1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H1End" eOpposite="#//H1End/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H1End"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H1End" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H1Start"
-        eOpposite="#//H1Start/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H1Start"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H2Start" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringH2"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H2End" eOpposite="#//H2End/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H2End"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H2End" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H2Start"
-        eOpposite="#//H2Start/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H2Start"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H3Start" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringH3"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H3End" eOpposite="#//H3End/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H3End"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H3End" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H3Start"
-        eOpposite="#//H3Start/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H3Start"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H4Start" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringH4"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H4End" eOpposite="#//H4End/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H4End"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H4End" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H4Start"
-        eOpposite="#//H4Start/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H4Start"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H5Start" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringH5"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H5End" eOpposite="#//H5End/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H5End"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H5End" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H5Start"
-        eOpposite="#//H5Start/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H5Start"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H6Start" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringH6"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H6End" eOpposite="#//H6End/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//H6End"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="H6End" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H6Start"
-        eOpposite="#//H6Start/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//H6Start"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExampleStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringExample"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ExampleEnd"
-        eOpposite="#//ExampleEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ExampleEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExampleEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ExampleStart"
-        eOpposite="#//ExampleStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ExampleStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="URLStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringURL"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//URLEnd"
-        eOpposite="#//URLEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//URLEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="URLEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//URLStart"
-        eOpposite="#//URLStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//URLStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RefStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//RefEnd"
-        eOpposite="#//RefEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//RefEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RefEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//RefStart"
-        eOpposite="#//RefStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//RefStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoldStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringBold"/>
@@ -164,61 +163,48 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpanStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringSpan"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SpanEnd"
-        eOpposite="#//SpanEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SpanEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpanEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SpanStart"
-        eOpposite="#//SpanStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SpanStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImgStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringImg"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ImgEnd"
-        eOpposite="#//ImgEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ImgEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImgEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ImgStart"
-        eOpposite="#//ImgStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ImgStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MailtoStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringMailto"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//MailtoEnd"
-        eOpposite="#//MailtoEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//MailtoEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MailtoEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//MailtoStart"
-        eOpposite="#//MailtoStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//MailtoStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SkypeStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringSkype"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SkypeEnd"
-        eOpposite="#//SkypeEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SkypeEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SkypeEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SkypeStart"
-        eOpposite="#//SkypeStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SkypeStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MovieStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringMovie"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//MovieEnd"
-        eOpposite="#//MovieEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//MovieEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MovieEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//MovieStart"
-        eOpposite="#//MovieStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//MovieStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CodeStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringCode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//CodeEnd"
-        eOpposite="#//CodeEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//CodeEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CodeEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//CodeStart"
-        eOpposite="#//CodeStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//CodeStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringTable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rows" upperBound="-1" eType="ecore:EClass richstring.ecore#//RichStringTableRow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableEnd" eSuperTypes="#//LinePart">
@@ -226,24 +212,20 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableRowStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringTableRow"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
-        eType="ecore:EClass richstring.ecore#//RichStringTableCell"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableRowEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableRowEnd" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableRowStart"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableDataStart" eSuperTypes="#//LinePart">
+  <eClassifiers xsi:type="ecore:EClass" name="TableCellStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringTableCell"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableDataEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TableCellEnd"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableDataEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableDataStart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TableCellEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TableCellStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringList"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//ListElementStart"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ListEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListEnd" eSuperTypes="#//LinePart">
@@ -251,8 +233,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrderedListStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringOrderedList"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//ListElementStart"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//OrderedListEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrderedListEnd" eSuperTypes="#//LinePart">
@@ -267,101 +247,79 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChapterStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringChapter"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ChapterEnd"
-        eOpposite="#//ChapterEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ChapterEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChapterEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ChapterStart"
-        eOpposite="#//ChapterStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ChapterStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SectionStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringSection"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SectionEnd"
-        eOpposite="#//SectionEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SectionEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SectionEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SectionStart"
-        eOpposite="#//SectionStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SectionStart"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubsectionStart" eSuperTypes="#//LinePart">
+  <eClassifiers xsi:type="ecore:EClass" name="SubSectionStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringSubsection"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SubsectionEnd"
-        eOpposite="#//SubsectionEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//SubSectionEnd"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubsectionEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SubsectionStart"
-        eOpposite="#//SubsectionStart/end"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubSectionEnd" eSuperTypes="#//LinePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//SubSectionStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpenViewStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringOpenView"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//OpenViewEnd"
-        eOpposite="#//OpenViewEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//OpenViewEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpenViewEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//OpenViewStart"
-        eOpposite="#//OpenViewStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//OpenViewStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartProcessStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringStartProcess"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//StartProcessEnd"
-        eOpposite="#//StartProcessEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//StartProcessEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartProcessEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartProcessStart"
-        eOpposite="#//StartProcessStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartProcessStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityRefStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringEntityRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//EntityRefEnd"
-        eOpposite="#//EntityRefEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//EntityRefEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityRefEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//EntityRefStart"
-        eOpposite="#//EntityRefStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//EntityRefStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DTORefStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringDTORef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//DTORefEnd"
-        eOpposite="#//DTORefEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//DTORefEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DTORefEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//DTORefStart"
-        eOpposite="#//DTORefStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//DTORefStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessRefStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringProcessRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ProcessRefEnd"
-        eOpposite="#//ProcessRefEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ProcessRefEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessRefEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ProcessRefStart"
-        eOpposite="#//ProcessRefStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ProcessRefStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TaskRefStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringTaskRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TaskRefEnd"
-        eOpposite="#//TaskRefEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//TaskRefEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TaskRefEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TaskRefStart"
-        eOpposite="#//TaskRefStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//TaskRefStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewRefStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringViewRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ViewRefEnd"
-        eOpposite="#//ViewRefEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//ViewRefEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewRefEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ViewRefStart"
-        eOpposite="#//ViewRefStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//ViewRefStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UIRefStart" eSuperTypes="#//LinePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichStringUIRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//UIRefEnd"
-        eOpposite="#//UIRefEnd/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//UIRefEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UIRefEnd" eSuperTypes="#//LinePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//UIRefStart"
-        eOpposite="#//UIRefStart/end"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//UIRefStart"/>
   </eClassifiers>
 </ecore:EPackage>

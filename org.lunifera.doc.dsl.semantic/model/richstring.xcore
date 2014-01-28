@@ -6,7 +6,7 @@
 @Ecore(nsPrefix="richstring")
 @Ecore(rootPackage="richstring")
 package org.lunifera.doc.dsl.luniferadoc.richstring
-
+ 
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.XStringLiteral
 import org.eclipse.xtext.xbase.XBlockExpression
@@ -17,7 +17,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
- 
+   
 class RichString extends XBlockExpression {
 }
  
@@ -38,7 +38,7 @@ class RichStringForLoop extends XForLoopExpression {
 class RichStringIf extends XExpression {
 	contains XExpression ^if
 	contains XExpression then
-	contains XExpression[*] elseIfs
+	contains RichStringElseIf[*] elseIfs
 	contains XExpression ^else
 }
  
@@ -53,7 +53,7 @@ class RichStringExample extends RichStringMarkup {
 }
 
 class RichStringH1 extends RichStringMarkup {
-	
+	 
 }
 
 class RichStringH2 extends RichStringMarkup {

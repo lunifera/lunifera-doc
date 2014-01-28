@@ -725,7 +725,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			pushAppendable(object);
 			appendable.newLine();
 			append("<a href=\"ref/to/");
-			append(object.getProcessDoc().getName());
+			append(object.getBpmDoc().getName());
 			append("\">");
 		}
 

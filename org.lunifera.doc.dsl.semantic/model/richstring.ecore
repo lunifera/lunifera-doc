@@ -34,8 +34,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="then" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
         containment="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfs" upperBound="-1"
-        eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
-        containment="true" resolveProxies="false"/>
+        eType="#//RichStringElseIf" containment="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
         containment="true" resolveProxies="false"/>
   </eClassifiers>
@@ -128,22 +127,22 @@
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringEntityRef" eSuperTypes="#//RichStringMarkup">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entityDoc" eType="ecore:EClass luniferadoc.xcore#/EPackage/LDocEntityDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityDoc" eType="ecore:EClass luniferadoc.ecore#//LDocEntityDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringDTORef" eSuperTypes="#//RichStringMarkup">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dtoDoc" eType="ecore:EClass luniferadoc.xcore#/EPackage/LDocDtoDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dtoDoc" eType="ecore:EClass luniferadoc.ecore#//LDocDtoDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringTaskRef" eSuperTypes="#//RichStringMarkup">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="taskDoc" eType="ecore:EClass luniferadoc.xcore#/EPackage/LDocHumanTaskDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskDoc" eType="ecore:EClass luniferadoc.ecore#//LDocHumanTaskDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringProcessRef" eSuperTypes="#//RichStringMarkup">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bpmDoc" eType="ecore:EClass luniferadoc.xcore#/EPackage/LDocBPMProcessDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bpmDoc" eType="ecore:EClass luniferadoc.ecore#//LDocBPMProcessDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringViewRef" eSuperTypes="#//RichStringMarkup">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="viewDoc" eType="ecore:EClass luniferadoc.xcore#/EPackage/LDocViewDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewDoc" eType="ecore:EClass luniferadoc.ecore#//LDocViewDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringUIRef" eSuperTypes="#//RichStringMarkup">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uiDoc" eType="ecore:EClass luniferadoc.xcore#/EPackage/LDocUIDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uiDoc" eType="ecore:EClass luniferadoc.ecore#//LDocUIDocument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringList" eSuperTypes="#//RichStringMarkup"/>
   <eClassifiers xsi:type="ecore:EClass" name="RichStringOrderedList" eSuperTypes="#//RichStringMarkup"/>

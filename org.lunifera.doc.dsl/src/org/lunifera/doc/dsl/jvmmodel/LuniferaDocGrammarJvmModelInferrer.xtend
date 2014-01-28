@@ -9,8 +9,6 @@ package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
 import java.net.URI
-import java.util.ArrayList
-import java.util.Collections
 import java.util.List
 import org.eclipse.xtext.common.types.JvmGenericType
 import org.eclipse.xtext.common.types.JvmOperation
@@ -38,7 +36,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityField
 import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
-import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 
@@ -49,10 +47,10 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
  * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
 class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
-
+ 
 	/**
      * convenience API to build and initialize JVM types and their members.
-     */ 
+     */
 	@Inject extension LDocTypesBuilder
 	@Inject extension ModelExtensions
 	@Inject TypeReferences typeReference
@@ -113,7 +111,6 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				}
 				// fields
 				members += toField("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += toField("dtoClass", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
 					typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.toField("properties",
@@ -122,7 +119,6 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += dtoDocument.toConstructor [
 					body = '''
 						this.name = "«dtoDocument.name»";
-						this.dtoClass = "«dtoDocument.dtoClass»";
 						this.description = serializeDescription().toString();
 						this.properties = new java.util.ArrayList<IDTOProperty>();
 						«IF dtoDocument.fields != null»
@@ -169,7 +165,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				// gen inner classes for fields
 				if (entityDocument.fields != null) {
 					for (field : entityDocument.fields) {
-						members += toInnerClass(field, entityDocument)
+//						members += toInnerClass(field, entityDocument)
 					}
 				}
 				//
@@ -182,11 +178,6 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toField("uri", typeReference.getTypeForName(typeof(URI), entityDocument, null)) [
 					final = true
 					initializer = '''URI.create(«entityDocument.toURIString»)'''
-				]
-				members += toField("entityClass",
-					typeReference.getTypeForName(typeof(String), entityDocument, null)) [
-					final = true
-					initializer = '''"«entityDocument.entityClass»"'''
 				]
 				members += toField("description",
 					typeReference.getTypeForName(typeof(String), entityDocument, null)) [
@@ -210,7 +201,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 						
 							this.properties = new java.util.ArrayList<IEntityField>();
 							«FOR field : entityDocument.fields»
-								this.properties.add(new «field.name.toFirstUpper»());
+								this.properties.add(new «field.typeField.name.toFirstUpper»());
 							«ENDFOR»
 						}
 					'''
@@ -424,7 +415,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	/**
 	 * Infer method for BPMHumanTaskDocument elements
 	 */
-	def dispatch void infer(LDocUiDocument uiDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(LDocUIDocument uiDocument, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(uiDocument.toClass(uiDocument.name)).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IUiDocument), uiDocument, null)
@@ -521,7 +512,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 	* Generate inner class for EntityField 
 	*/
 	def dispatch JvmGenericType toInnerClass(LDocEntityField entityField, LDocEntityDocument parentDoc) {
-		val propClass = entityField.toClass(entityField.name.toFirstUpper)
+		val propClass = entityField.toClass(entityField.typeField.name.toFirstUpper)
 		propClass.superTypes += typeReference.getTypeForName(typeof(IEntityField), parentDoc, null)
 
 		// fields
@@ -540,11 +531,11 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 		propClass.members += toConstructor(parentDoc,
 			[
 				body = '''
-					this.name = "«entityField.name»";
-					this.type = "«entityField.type»";
-					this.length = «entityField.length»;
-					this.primaryKey = «entityField.pk»;
-					this.nullable = «entityField.nullable»;
+					this.name = "«entityField.typeField.name»";
+«««					this.type = "«entityField.type»";
+«««					this.length = «entityField.length»;
+«««					this.primaryKey = «entityField.pk»;
+«««					this.nullable = «entityField.nullable»;
 					this.description = serializeDescription().toString();
 				'''
 			])

@@ -5,13 +5,15 @@
 @Ecore(nsURI="http://www.lunifera.org/documentation/v1")
 @Ecore(nsPrefix="luniferadoc")
 @Ecore(rootPackage="luniferadoc")
-package org.lunifera.doc.dsl.luniferadoc
+package org.lunifera.doc.dsl.luniferadoc 
 
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xtype.XImportDeclaration
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.dsl.semantic.common.types.LType
+import org.lunifera.dsl.semantic.common.types.LFeature
   
-interface LDocNamedDocument {
+interface LDocNamedDocument { 
 	String name
 	String language
 }
@@ -30,10 +32,11 @@ interface LDocDocument extends LDocNamedDocument {
 
 class LDocEntityDocument extends LDocDocument {
 	contains LDocEntityField[*] fields
+	refers LType model 
 }
-
+ 
 class LDocEntityField {
-	String name
+	refers LFeature typeField
 	contains RichString description
 }
 
@@ -49,7 +52,7 @@ class LDocDtoProperty {
 class LDocBPMProcessDocument extends LDocDocument {
 	String process
 }
-
+ 
 class LDocHumanTaskDocument extends LDocDocument {
 	String task
 }

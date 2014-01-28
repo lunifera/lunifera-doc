@@ -18,7 +18,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocInclude
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage
-import org.lunifera.doc.dsl.luniferadoc.LDocUiDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 
@@ -206,7 +206,7 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 	/**
 	 * UI Document
 	 */
-	def protected dispatch void format(LDocUiDocument document, FormattableDocument format) {
+	def protected dispatch void format(LDocUIDocument document, FormattableDocument format) {
 		format += document.nodeForEObject.prepend[noSpace]
 		format += document.nodeForKeyword("UIDocument").append[increaseIndentation]
 		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])

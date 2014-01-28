@@ -38,7 +38,7 @@ import org.lunifera.doc.dsl.richstring.RichStringProcessor
  *  2. multi-line with text after opening ''': lines start with semantic whitespace
  *  3. multi-line with text before closing ''': no indentation
  *  4. multi-line with only whitespace after opening ''' and before closing ''': one level of extra indentation between ''' and '''
- */
+ */ 
 class RichStringFormatter {
 	@Inject RichStringProcessor richStringProcessor
 	@Inject extension NodeModelAccess

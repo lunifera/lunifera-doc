@@ -30,16 +30,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocDocument" abstract="true" interface="true"
       eSuperTypes="#//LDocNamedDocument">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass richstring.xcore#/EPackage/RichString"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass richstring.ecore#//RichString"
         containment="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocEntityDocument" eSuperTypes="#//LDocDocument">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//LDocEntityField" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="ecore:EClass ../../org.lunifera.dsl.semantic.common/model/types.xcore#/EPackage/LType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocEntityField">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass richstring.xcore#/EPackage/RichString"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeField" eType="ecore:EClass ../../org.lunifera.dsl.semantic.common/model/types.xcore#/EPackage/LFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass richstring.ecore#//RichString"
         containment="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocDtoDocument" eSuperTypes="#//LDocDocument">
@@ -48,7 +49,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocDtoProperty">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass richstring.xcore#/EPackage/RichString"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass richstring.ecore#//RichString"
         containment="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocBPMProcessDocument" eSuperTypes="#//LDocDocument">
@@ -65,7 +66,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ui" unique="false" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocLayouter" eSuperTypes="#//LDocNamedDocument">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.xcore#/EPackage/RichString"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass richstring.ecore#//RichString"
         containment="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"

@@ -1,5 +1,12 @@
+@GenModel(fileExtensions="doccompiler")
+@GenModel(modelName="LuniferaDocCompiler")
+@GenModel(prefix="LDocCompiler")
+@GenModel(operationReflection="false")
+@Ecore(nsURI="http://www.lunifera.org/documentation/compiler/v1")
+@Ecore(nsPrefix="ldoccompiler")
+@Ecore(rootPackage="ldoccompiler")
 package org.lunifera.doc.dsl.luniferadoc.doccompiler
-
+ 
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument
 import org.eclipse.xtext.xbase.XExpression
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf
@@ -42,6 +49,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1
 
 class DocumentStart extends LinePart {
 	refers ProcessedRichString content
@@ -54,17 +62,17 @@ class DocumentEnd extends LinePart {
 }
 
 class ProcessedRichString {
-	refers RichString richString
-	contains Line[*] lines
+	refers RichString richString 
+	contains Line[*] lines opposite richString
 }
 
 class Line {
-	contains LinePart[*] parts
-	refers ProcessedRichString richString
+	contains LinePart[*] parts opposite line
+	refers ProcessedRichString richString opposite lines
 }
 
 class LinePart {
-	refers Line line
+	refers Line line opposite parts
 }
 
 class Literal extends LinePart {
@@ -78,11 +86,11 @@ class LineBreak extends Literal {
 
 class ForLoopStart extends LinePart {
 	refers RichStringForLoop loop
-	refers ForLoopEnd end
+	refers ForLoopEnd end opposite start
 }
 
 class ForLoopEnd extends LinePart {
-	refers ForLoopStart start
+	refers ForLoopStart start opposite end
 }
 
 class PrintedExpression extends LinePart {
@@ -91,18 +99,18 @@ class PrintedExpression extends LinePart {
 
 class IfConditionStart extends LinePart {
 	refers RichStringIf richStringIf
-	refers ElseStart elseStart
-	refers ElseIfCondition[*] elseIfConditions
+	refers ElseStart elseStart opposite ifConditionStart
+	refers ElseIfCondition[*] elseIfConditions opposite ifConditionStart
 	refers EndIf endIf
 }
 
 class ElseIfCondition extends LinePart {
 	refers RichStringElseIf richStringElseIf
-	refers IfConditionStart ifConditionStart
+	refers IfConditionStart ifConditionStart opposite elseIfConditions
 }
 
 class ElseStart extends LinePart {
-	refers IfConditionStart ifConditionStart
+	refers IfConditionStart ifConditionStart opposite elseStart
 }
 
 class EndIf extends LinePart {
@@ -111,6 +119,15 @@ class EndIf extends LinePart {
 
 class Markup extends LinePart {
 	refers RichStringMarkup markup
+}
+
+class H1Start extends LinePart {
+	refers RichStringH1 content
+	refers H1End end
+}
+
+class H1End extends LinePart {
+	refers H1Start start
 }
 
 class H2Start extends LinePart {

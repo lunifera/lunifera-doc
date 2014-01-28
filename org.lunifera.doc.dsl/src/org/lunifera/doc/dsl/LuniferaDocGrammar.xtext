@@ -10,6 +10,9 @@ grammar org.lunifera.doc.dsl.LuniferaDocGrammar with org.eclipse.xtext.xbase.Xba
 import "http://www.lunifera.org/documentation/v1" as doc
 import "http://www.lunifera.org/documentation/richstring/v1" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+import "http://www.lunifera.org/dsl/entity/v1" as entity
+import "http://www.lunifera.org/dsl/common/types/v1" as types
+
 
 NamedDocument returns doc::LDocNamedDocument:
 	DocLayouter | Document;
@@ -32,12 +35,12 @@ GeneralDocument returns doc::LDocLayouter:
 	'Layouter' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	includes+=DocumentInclude*
-	('language' language=ID ';')
+	('language' language=ID ';') 
 	content=RichString
 	'}';
-
+  
 EntityDocument returns doc::LDocEntityDocument:
-	'EntityDocument' name=QualifiedName 'covers'  '{'
+	'EntityDocument' name=QualifiedName 'covers' model=[types::LType|QualifiedName] '{'
 	('language' language=ID ';')
 	('description' '{' description=RichString '}')?
 	(fields+=EntityField)*
@@ -45,8 +48,8 @@ EntityDocument returns doc::LDocEntityDocument:
 
 EntityField returns doc::LDocEntityField:
 	{doc::LDocEntityField} 
-	'field' name=ID '{'
-	('description' '{' description=RichString '}')?
+	'field' typeField=[types::LFeature] '{' 
+	(description=RichString)?
 	'}';
 
 DTODocument returns doc::LDocDtoDocument:
@@ -254,10 +257,10 @@ RichStringStartProcess returns xbase::XExpression:
 	"startprocess" processId=STRING
 	expression=InternalRichString
 	"/startprocess";
-
+   
 RichStringEntityRef returns xbase::XExpression:
 	{richstring::RichStringEntityRef}
-	"entity-ref" entityDoc=[doc::LDocEntityDocument|QualifiedName]
+	"entity-ref" entityDoc=[doc::LDocEntityDocument|QualifiedName] 
 	expression=InternalRichString
 	"/entity-ref";
 
@@ -309,7 +312,7 @@ RichStringIf returns xbase::XExpression:
 	else=InternalRichString)?
 	"EndIf";
 
-RichStringElseIf returns xbase::XExpression:
+RichStringElseIf returns richstring::RichStringElseIf:
 	{richstring::RichStringElseIf}
 	"ElseIf" if=XExpression then=InternalRichString;
 
