@@ -6,12 +6,15 @@
 
 package org.lunifera.doc.dsl.api.document;
 
+import java.net.URI;
 import java.util.List;
 
 public interface IEntityDocument extends IDocument {
 
-	String getEntityClass();
+	String getEntityName();
+ 
+	URI getEntityURI();
 
-	List<IEntityField> getProperties();
+	List<IEntityField> getFields();
 
 }

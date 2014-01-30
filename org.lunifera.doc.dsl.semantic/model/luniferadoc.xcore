@@ -21,7 +21,7 @@ interface LDocNamedDocument {
 class LDocInclude {
 	refers LDocDocument document
 	String[1] varName
-	Boolean provided
+	boolean provided
 	LDocType providedType	
 	contains JvmTypeReference providedJVMType
 } 

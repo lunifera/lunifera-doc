@@ -10,7 +10,6 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.common.types.util.TypeReferences
-import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.util.Strings
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1
@@ -35,7 +34,7 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 	 * Create field for an included EntityDocument
 	 */
 	def toIncField(LDocInclude include, String name, LDocLayouter layouter) {
-			toField(layouter, name, include.toIncTypeReference)
+		toField(layouter, name, include.toIncTypeReference)
 	}
 
 	/**
@@ -47,7 +46,7 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 		} else {
 			include.providedType.toTypeReference(include)
 		}
-	}
+	} 
 
 	def JvmField toAccessField(LDocNamedDocument doc) {
 		val field = toField(doc, "docAccess", typeReference.getTypeForName(typeof(IDocumentAccess), doc, null))

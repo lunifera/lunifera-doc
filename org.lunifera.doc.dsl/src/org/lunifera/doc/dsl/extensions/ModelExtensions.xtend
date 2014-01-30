@@ -21,11 +21,14 @@ import org.lunifera.doc.dsl.api.document.IViewDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocDtoDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument
+import org.lunifera.doc.dsl.luniferadoc.LDocEntityField
 import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocType
 import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
+import org.lunifera.dsl.semantic.entity.LBean
+import org.lunifera.dsl.semantic.entity.LEntity
 
 import static org.lunifera.doc.dsl.luniferadoc.LDocType.*
 
@@ -155,8 +158,8 @@ class ModelExtensions {
 	/**
 	 * Create field for an included EntityDocument
 	 */
-	def dispatch  toTypeReference(LDocEntityDocument doc) {
-		typeReferences.getTypeForName(typeof(IEntityDocument), doc, null)
+	def dispatch toTypeReference(LDocEntityDocument doc) {
+		typeReferences.getTypeForName(doc.toFqnDocumentClassName.toString, doc, null)
 	}
 
 	/**
@@ -194,4 +197,23 @@ class ModelExtensions {
 		typeReferences.getTypeForName(typeof(IUiDocument), doc, null)
 	}
 
+	def dispatch toFqnModelName(LEntity entity) {
+		entity.fullyQualifiedName.toString
+	}
+
+	def dispatch toFqnModelName(LBean bean) {
+		bean.fullyQualifiedName.toString
+	}
+
+	def toName(LDocEntityField field) {
+		field.typeField.name
+	}
+
+	def toFieldName(LDocEntityField field) {
+		"fieldFor" + field.typeField.name.toFirstUpper
+	}
+	
+	def toFieldGetterName(LDocEntityField field) {
+		"fieldFor" + field.typeField.name.toFirstUpper
+	}
 }

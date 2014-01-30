@@ -105,7 +105,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 			[
 				superTypes += typeReference.getTypeForName(typeof(IDtoDocument), dtoDocument, null)
 				documentation = dtoDocument.documentation
-				// gen inner classes for properties
+				// gen inner classes for fields
 				for (prop : dtoDocument.fields) {
 					members += toInnerClass(prop, dtoDocument)
 				}
@@ -113,17 +113,17 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toField("name", typeReference.getTypeForName(typeof(String), dtoDocument, null))
 				members += dtoDocument.description.toField("description",
 					typeReference.getTypeForName(typeof(String), dtoDocument, null))
-				members += dtoDocument.toField("properties",
+				members += dtoDocument.toField("fields",
 					newTypeRef('java.util.List', newTypeRef('org.lunifera.doc.dsl.api.document.IDTOProperty')))
 				// constructor
 				members += dtoDocument.toConstructor [
 					body = '''
 						this.name = "«dtoDocument.name»";
 						this.description = serializeDescription().toString();
-						this.properties = new java.util.ArrayList<IDTOProperty>();
+						this.fields = new java.util.ArrayList<IDTOProperty>();
 						«IF dtoDocument.fields != null»
 							«FOR prop : dtoDocument.fields»
-								this.properties.add(new «prop.name.toFirstUpper»());
+								this.fields.add(new «prop.name.toFirstUpper»());
 							«ENDFOR»
 											«ENDIF»
 					'''
@@ -148,7 +148,7 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 				members += toMethod("getDescription", typeReference.getTypeForName(typeof(String), dtoDocument, null)) [
 					body = '''return «serializeDescriptionOperation.simpleName»().toString();'''
 				]
-				members += toGetter("properties", "properties",
+				members += toGetter("fields", "fields",
 					newTypeRef('java.util.List', newTypeRef('org.lunifera.doc.dsl.api.document.IDTOProperty')))
 			])
 	}
@@ -161,19 +161,20 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 		acceptor.accept(entityDocument.toDocumentClass()).initializeLater(
 			[
 				superTypes += typeReference.getTypeForName(typeof(IEntityDocument), entityDocument, null)
+				
+				members += entityDocument.toConstructor[]
+				
 				documentation = entityDocument.documentation
-				// gen inner classes for fields
-				if (entityDocument.fields != null) {
-					for (field : entityDocument.fields) {
-//						members += toInnerClass(field, entityDocument)
-					}
-				}
 				//
 				// final class fields
 				//
 				members += toField("name", typeReference.getTypeForName(typeof(String), entityDocument, null)) [
 					final = true
 					initializer = '''"«entityDocument.name»"'''
+				]
+				members += toField("entityName", typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					final = true
+					initializer = '''"«entityDocument.model?.toFqnModelName»"'''
 				]
 				members += toField("uri", typeReference.getTypeForName(typeof(URI), entityDocument, null)) [
 					final = true
@@ -184,29 +185,40 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					final = true
 					initializer = '''serializeDescription().toString()'''
 				]
-				members += toField("properties",
+				members += toField("fields",
 					entityDocument.newTypeRef(typeof(List),
 						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)))[]
-				members += entityDocument.toMethod("ensureProperties",
+				
+				
+				for(field : entityDocument.fields) {
+					members += toField(field.toFieldName,
+						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null))[]
+				}
+				
+				members += entityDocument.toMethod("ensureFields",
 					typeReference.getTypeForName(Void::TYPE, entityDocument, null)) [
+						visibility =JvmVisibility::PROTECTED
+						
 					body = '''
-						if (this.properties != null) {
+						if (this.fields != null) {
 							return;
 						}
 						
 						synchronized (this) {
-							if (this.properties != null) {
+							if (this.fields != null) {
 								return;
 							}
 						
-							this.properties = new java.util.ArrayList<IEntityField>();
+							this.fields = new java.util.ArrayList<IEntityField>();
 							«FOR field : entityDocument.fields»
-								this.properties.add(new «field.typeField.name.toFirstUpper»());
+								this.«field.toFieldName» = new «field.typeField.name.toFirstUpper»();
+								this.fields.add(this.«field.toFieldName»);
+								
 							«ENDFOR»
 						}
-					'''
+					''' 
 					documentation = '''
-					This method is used for lazy loading of properties.'''
+					This method is used for lazy loading of fields.'''
 				]
 				//
 				// serializes the description richstring
@@ -246,34 +258,52 @@ class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
 					
 					@return The unique URI of the document'''
 				]
+				members += toGetter("entityName", typeReference.getTypeForName(typeof(String), entityDocument, null)) [
+					documentation = '''
+					Returns the name of the documented entity.
+					@return name of the entity'''
+				]
+				members += toGetter("entityURI",
+					typeReference.getTypeForName(typeof(URI), entityDocument, null)) [
+					body = '''
+					return URI.create("lunentity://«entityDocument.model.toFqnModelName»");'''
+					documentation = '''
+					Returns the URI of the entity that is documented by this document.
+					
+					@return the URI of the entity'''
+				]
 				members += toGetter("description", typeReference.getTypeForName(typeof(String), entityDocument, null)) [
 					documentation = '''
 					Returns the description of the document.
 					@return description'''
 				]
-				members += toGetter("entityClass", typeReference.getTypeForName(typeof(String), entityDocument, null))
-				members += entityDocument.description.toGetter("description",
-					typeReference.getTypeForName(typeof(String), entityDocument, null)) [
-					documentation = '''
-					Returns the serialized description of the document.
-					
-					@return The serialized description'''
-				]
-				members += toGetter("properties",
+				members += toGetter("fields",
 					entityDocument.newTypeRef(
 						typeof(List),
 						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null)
 					)) [
 					body = '''
-					// ensure that properties are initialized
-					ensureProperties();
+					// ensure that fields are initialized
+					ensureFields();
 					
-					return java.util.Collections.unmodifiableList(properties);'''
+					return java.util.Collections.unmodifiableList(fields);'''
 					documentation = '''
-					Returns the properties for the document.
+					Returns the fields for the document.
 					
-					@return an unmodifieable list of properties'''
+					@return an unmodifieable list of fields'''
 				]
+				
+				for(field : entityDocument.fields) {
+					members += toGetter(field.toFieldGetterName,
+						typeReference.getTypeForName(typeof(IEntityField), entityDocument, null))[]
+				}
+				
+				// gen inner classes for fields
+				if (entityDocument.fields != null) {
+					for (field : entityDocument.fields) {
+						members += toInnerClass(field, entityDocument)
+					}
+				}
 			])
 	}
 
