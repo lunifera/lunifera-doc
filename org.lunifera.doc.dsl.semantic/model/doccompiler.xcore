@@ -6,7 +6,7 @@
 @Ecore(nsPrefix="ldoccompiler")
 @Ecore(rootPackage="ldoccompiler")
 package org.lunifera.doc.dsl.luniferadoc.doccompiler
-
+ 
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument
 import org.eclipse.xtext.xbase.XExpression
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf

@@ -12,7 +12,6 @@ import "http://www.lunifera.org/documentation/richstring/v1" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 import "http://www.lunifera.org/dsl/entity/v1" as entity
 import "http://www.lunifera.org/dsl/common/types/v1" as types
- 
 
 NamedDocument returns doc::LDocNamedDocument:
 	DocLayouter | Document;
@@ -53,7 +52,7 @@ EntityField returns doc::LDocEntityField:
 	'}';
 
 DTODocument returns doc::LDocDtoDocument:
-	'DTODocument' name=QualifiedName 'covers' '{'
+	'DTODocument' name=QualifiedName 'covers' model=[types::LType|QualifiedName] '{'
 	('language' language=ID ';')
 	('description' '{' description=RichString '}')?
 	('properties' '{' (fields+=DTOProperty)* '}')?

@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractScope;
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoDocument;
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoProperty;
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityDocument;
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityField;
 import org.lunifera.dsl.semantic.common.types.LFeature;
@@ -20,6 +22,7 @@ public class TypeFeatureFilterScope extends AbstractScope {
 	private final IScope scope;
 	private LType type;
 	private LDocEntityField field;
+	private LDocDtoProperty dtoprop;
 
 	public TypeFeatureFilterScope(LDocEntityField field, IScope scope) {
 		super(IScope.NULLSCOPE, true);
