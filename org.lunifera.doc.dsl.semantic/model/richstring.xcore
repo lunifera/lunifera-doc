@@ -17,7 +17,6 @@ import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
-
 class RichString extends XBlockExpression {
 }
 

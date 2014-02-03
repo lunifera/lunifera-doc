@@ -52,7 +52,7 @@ EntityField returns doc::LDocEntityField:
 	'}';
 
 DTODocument returns doc::LDocDtoDocument:
-	'DTODocument' name=QualifiedName 'covers' '{'
+	'DTODocument' name=QualifiedName 'covers' model=[types::LType|QualifiedName] '{'
 	('language' language=ID ';')
 	('description' '{' description=RichString '}')?
 	('properties' '{' (fields+=DTOProperty)* '}')?

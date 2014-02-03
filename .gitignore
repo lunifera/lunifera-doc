@@ -1,22 +1,13 @@
-# Generated Files
-src-gen
-xtend-gen
-emf-gen
-
-# Compiled Files
-bin
-
-# Eclipse Files
-.externalToolBuilders
-.launch
-#.classpath
-#.project
-#.settings
-
-
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+bin/
+.*.jar
+**/xtend-gen
+**/src-gen
+.DS_Store
+target
+.classpath
+.settings
+src-gen/
+xtend-gen/
+plugin.xml_gen
+.project
+/build.dsl.kepler.latest.log.properties

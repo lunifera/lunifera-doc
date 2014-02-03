@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.xbase.annotations.scoping.XbaseWithAnnotationsScopeProvider;
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoProperty;
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityField;
 import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
 
@@ -39,7 +40,7 @@ public class LDocScopeProvider extends XbaseWithAnnotationsScopeProvider {
 		} else if (reference == LDocPackage.Literals.LDOC_ENTITY_FIELD__TYPE_FIELD) {
 			return new TypeFeatureFilterScope((LDocEntityField) context,
 					super.getScope(context, reference));
-		}
+		} 
 		return super.getScope(context, reference);
 	}
 }

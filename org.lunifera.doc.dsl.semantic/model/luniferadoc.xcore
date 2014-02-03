@@ -42,10 +42,12 @@ class LDocEntityField {
 
 class LDocDtoDocument extends LDocDocument {
 	contains LDocDtoProperty[*] fields
+	refers LType model 
 }
 
 class LDocDtoProperty {
 	String name
+	refers LFeature typeField
 	contains RichString description
 }
 
