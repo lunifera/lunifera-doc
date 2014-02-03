@@ -16,18 +16,26 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBox;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumn;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumnLayout;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringContainer;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringFooter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringHeader;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndex;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndexElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
@@ -386,6 +394,70 @@ public abstract class AbstractRichStringPartAcceptor implements
 
 	@Override
 	public void acceptDocumentEnd() {
+	}
+
+	@Override
+	public void acceptBoxStart(RichStringBox object) {
+	}
+
+	@Override
+	public void acceptBoxEnd() {
+	}
+
+	@Override
+	public void acceptContainerStart(RichStringContainer object) {
+	}
+
+	@Override
+	public void acceptContainerEnd() {
+	}
+
+	@Override
+	public void acceptColumnLayoutStart(RichStringColumnLayout object) {
+	}
+
+	@Override
+	public void acceptColumnLayoutEnd() {
+	}
+
+	@Override
+	public void acceptColumnStart(RichStringColumn object) {
+	}
+
+	@Override
+	public void acceptColumnEnd() {
+	}
+
+	@Override
+	public void acceptFooterStart(RichStringFooter object) {
+	}
+
+	@Override
+	public void acceptFooterEnd() {
+	}
+
+	@Override
+	public void acceptHeaderStart(RichStringHeader object) {
+	}
+
+	@Override
+	public void acceptHeaderEnd() {
+	}
+
+	@Override
+	public void acceptIndexStart(RichStringIndex object) {
+	}
+
+	@Override
+	public void acceptIndexEnd() {
+	}
+
+	@Override
+	public void acceptIndexElementStart(RichStringIndexElement object) {
+	}
+
+	@Override
+	public void acceptIndexElementEnd() {
 	}
 
 	@NonNullByDefault

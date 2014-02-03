@@ -18,6 +18,7 @@ import org.eclipse.xtext.xbase.util.XExpressionHelper;
 import org.lunifera.doc.dsl.conversion.LuniferaDocValueConverterService;
 import org.lunifera.doc.dsl.formatting.FormatterPreferenceValuesProvider;
 import org.lunifera.doc.dsl.formatting.LuniferaDocGrammarFormatter;
+import org.lunifera.doc.dsl.jvmmodel.LuniferaJvmModelGenerator;
 import org.lunifera.doc.dsl.richstring.LuniferaDocCompiler;
 import org.lunifera.doc.dsl.scope.LDocImportedNamespaceAwareLocalScopeProvider;
 import org.lunifera.doc.dsl.scope.LDocScopeProvider;
@@ -77,4 +78,9 @@ public class LuniferaDocGrammarRuntimeModule extends
 	public Class<? extends IFormattingPreferenceValuesProvider> bindIFormattingPreferenceValuesProvider() {
 		return FormatterPreferenceValuesProvider.class;
 	}
+
+	public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
+		return LuniferaJvmModelGenerator.class;
+	}
+
 }

@@ -12,7 +12,6 @@ import "http://www.lunifera.org/documentation/richstring/v1" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 import "http://www.lunifera.org/dsl/entity/v1" as entity
 import "http://www.lunifera.org/dsl/common/types/v1" as types
- 
 
 NamedDocument returns doc::LDocNamedDocument:
 	DocLayouter | Document;
@@ -35,10 +34,10 @@ GeneralDocument returns doc::LDocLayouter:
 	'Layouter' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	includes+=DocumentInclude*
-	('language' language=ID ';') 
+	('language' language=ID ';')
 	content=RichString
 	'}';
-   
+
 EntityDocument returns doc::LDocEntityDocument:
 	'EntityDocument' name=QualifiedName 'covers' model=[types::LType|QualifiedName] '{'
 	('language' language=ID ';')
@@ -47,8 +46,8 @@ EntityDocument returns doc::LDocEntityDocument:
 	'}';
 
 EntityField returns doc::LDocEntityField:
-	{doc::LDocEntityField} 
-	'field' typeField=[types::LFeature] '{' 
+	{doc::LDocEntityField}
+	'field' typeField=[types::LFeature] '{'
 	(description=RichString)?
 	'}';
 
@@ -122,7 +121,12 @@ RichStringPart returns xbase::XExpression:
 	RichStringTable | RichStringTableRow | RichStringTableCell | RichStringList |
 	RichStringOrderedList | RichStringListElement | RichStringOpenView |
 	RichStringStartProcess | RichStringEntityRef | RichStringDTORef |
-	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef;
+	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef |
+	RichStringInfoBox | RichStringErrorBox | RichStringWarningBox | RichStringAbstractsBox | RichStringChecklistBox |
+	RichStringBioBox
+	| RichStringSideNoteBox | RichStringContainer | RichStringFooter |
+	RichStringHeader
+	| RichStringIndex | RichStringIndexElement;
 
 RichStringExample returns xbase::XExpression:
 	{richstring::RichStringExample}
@@ -196,7 +200,7 @@ RichStringMovie returns xbase::XExpression:
 
 RichStringImg returns xbase::XExpression:
 	{richstring::RichStringImg}
-	"img" "src=" src=STRING "alt=" alt=STRING "width=" width=STRING "height=" height=STRING "/";
+	"img" "src=" src=STRING ("alt=" alt=STRING)? (small?='small')? ('orientation=' orientation=MarkupOrientation)? "/";
 
 RichStringBold returns xbase::XExpression:
 	{richstring::RichStringBold}
@@ -212,7 +216,7 @@ RichStringItalic returns xbase::XExpression:
 
 RichStringSpan returns xbase::XExpression:
 	{richstring::RichStringSpan}
-	"style" styleClass=STRING
+	"style" style=STRING
 	expression=InternalRichString
 	"/style";
 
@@ -257,10 +261,10 @@ RichStringStartProcess returns xbase::XExpression:
 	"startprocess" processId=STRING
 	expression=InternalRichString
 	"/startprocess";
-   
+
 RichStringEntityRef returns xbase::XExpression:
 	{richstring::RichStringEntityRef}
-	"entity-ref" entityDoc=[doc::LDocEntityDocument|QualifiedName] 
+	"entity-ref" entityDoc=[doc::LDocEntityDocument|QualifiedName]
 	expression=InternalRichString
 	"/entity-ref";
 
@@ -269,7 +273,7 @@ RichStringDTORef returns xbase::XExpression:
 	"dto-ref" dtoDoc=[doc::LDocDtoDocument|QualifiedName]
 	expression=InternalRichString
 	"/dto-ref";
- 
+
 RichStringProcessRef returns xbase::XExpression:
 	{richstring::RichStringProcessRef}
 	"process-ref" bpmDoc=[doc::LDocBPMProcessDocument|QualifiedName]
@@ -311,6 +315,73 @@ RichStringIf returns xbase::XExpression:
 	("Else"
 	else=InternalRichString)?
 	"EndIf";
+
+enum MarkupOrientation returns richstring::MarkupOrientation:
+	LEFT="left" | NONE="none" | RIGHT="right";
+
+RichStringInfoBox returns xbase::XExpression:
+	{richstring::RichStringBox}
+	info?="infobox" ('title=' title=STRING) (small?='small')? ('orientation=' orientation=MarkupOrientation)?
+	expression=InternalRichString "/infobox";
+
+RichStringErrorBox returns xbase::XExpression:
+	{richstring::RichStringBox}
+	error?="errorbox" ('title=' title=STRING) (small?='small')? ('orientation=' orientation=MarkupOrientation)?
+	expression=InternalRichString "/errorbox";
+
+RichStringWarningBox returns xbase::XExpression:
+	{richstring::RichStringBox}
+	warning?="warningbox" ('title=' title=STRING) (small?='small')? ('orientation=' orientation=MarkupOrientation)?
+	expression=InternalRichString "/warningbox";
+
+RichStringAbstractsBox returns xbase::XExpression:
+	{richstring::RichStringBox}
+	abstracts?="abstractsbox" ('title=' title=STRING) (small?='small')? ('orientation=' orientation=MarkupOrientation)?
+	expression=InternalRichString "/abstractsbox";
+
+RichStringChecklistBox returns xbase::XExpression:
+	{richstring::RichStringBox}
+	checklist?="checklistbox" ('title=' title=STRING) (small?='small')? ('orientation=' orientation=MarkupOrientation)?
+	expression=InternalRichString "/checklistbox";
+
+RichStringBioBox returns xbase::XExpression:
+	{richstring::RichStringBox}
+	bio?="biobox" ('title=' title=STRING) (small?='small')? ('orientation=' orientation=MarkupOrientation)?
+	expression=InternalRichString "/biobox";
+
+RichStringSideNoteBox returns xbase::XExpression:
+	{richstring::RichStringBox}
+	sidenote?="sidenotebox" ('title=' title=STRING) (small?='small')? ('orientation=' orientation=MarkupOrientation)?
+	expression=InternalRichString "/sidenotebox";
+
+RichStringContainer returns xbase::XExpression:
+	{richstring::RichStringContainer}
+	"container" (small?='small')? ('orientation=' orientation=MarkupOrientation)? expression=InternalRichString
+	"/container";
+
+RichStringColumnLayout returns xbase::XExpression:
+	{richstring::RichStringColumnLayout}
+	"collayout" expression=InternalRichString "/collayout";
+
+RichStringColumn returns xbase::XExpression:
+	{richstring::RichStringColumn}
+	"column" expression=InternalRichString "/column";
+
+RichStringFooter returns xbase::XExpression:
+	{richstring::RichStringFooter}
+	"footer" expression=InternalRichString "/footer";
+
+RichStringHeader returns xbase::XExpression:
+	{richstring::RichStringHeader}
+	"header" expression=InternalRichString "/header";
+
+RichStringIndex returns xbase::XExpression:
+	{richstring::RichStringIndex}
+	"index" expression=InternalRichString "/index";
+
+RichStringIndexElement returns xbase::XExpression:
+	{richstring::RichStringIndexElement}
+	"indexelement" "ref=" indexElement=[richstring::IndexElement] expression=InternalRichString "/indexelement";
 
 RichStringElseIf returns richstring::RichStringElseIf:
 	{richstring::RichStringElseIf}

@@ -50,6 +50,14 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTaskRef
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBox
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringContainer
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumnLayout
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumn
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringFooter
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringHeader
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndex
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndexElement
 
 class DocumentStart extends LinePart {
 	refers ProcessedRichString content
@@ -62,7 +70,7 @@ class DocumentEnd extends LinePart {
 }
 
 class ProcessedRichString {
-	refers RichString richString 
+	refers RichString richString
 	contains Line[*] lines opposite richString
 }
 
@@ -435,3 +443,79 @@ class UIRefStart extends LinePart {
 class UIRefEnd extends LinePart {
 	refers UIRefStart start
 }
+
+class BoxStart extends LinePart {
+	refers RichStringBox content
+	refers BoxEnd end
+}
+
+class BoxEnd extends LinePart {
+	refers BoxStart start
+}
+
+class ContainerStart extends LinePart {
+	refers RichStringContainer content
+	refers ContainerEnd end
+}
+
+class ContainerEnd extends LinePart {
+	refers ContainerStart start
+}
+
+class ColumnLayoutStart extends LinePart {
+	refers RichStringColumnLayout content
+	refers ColumnLayoutEnd end
+}
+
+class ColumnLayoutEnd extends LinePart {
+	refers ColumnLayoutStart start
+}
+
+class ColumnStart extends LinePart {
+	refers RichStringColumn content
+	refers ColumnEnd end
+}
+
+class ColumnEnd extends LinePart {
+	refers ColumnStart start
+}
+
+class FooterStart extends LinePart {
+	refers RichStringFooter content
+	refers FooterEnd end
+}
+
+class FooterEnd extends LinePart {
+	refers FooterStart start
+}
+
+class HeaderStart extends LinePart {
+	refers RichStringHeader content
+	refers HeaderEnd end
+}
+
+class HeaderEnd extends LinePart {
+	refers HeaderStart start
+}
+
+class IndexStart extends LinePart {
+	refers RichStringIndex content
+	refers IndexEnd end
+}
+
+class IndexEnd extends LinePart {
+	refers IndexStart start
+}
+
+class IndexElementStart extends LinePart {
+	refers RichStringIndexElement content
+	refers IndexElementEnd end
+}
+
+class IndexElementEnd extends LinePart {
+	refers IndexElementStart start
+}
+
+
+
+

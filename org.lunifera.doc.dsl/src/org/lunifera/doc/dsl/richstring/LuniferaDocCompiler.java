@@ -29,11 +29,16 @@ import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBox;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumn;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumnLayout;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringContainer;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringFooter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
@@ -41,13 +46,17 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringHeader;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndex;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndexElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMarkup;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOrderedList;
@@ -117,12 +126,17 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		@Override
 		public void acceptSemanticLineBreak(int charCount,
 				RichStringLiteral origin, boolean controlStructureSeen) {
+
 			setCurrentAppendable(origin);
 			currentAppendable.newLine();
-			currentAppendable.append(variableName);
 			if (!controlStructureSeen) {
-				currentAppendable.append(".newLine();");
+				currentAppendable.append(variableName);
+				currentAppendable.append(".append(\"<br>\\n\");");
+
+				// currentAppendable.append(variableName);
+				// currentAppendable.append(".newLine();");
 			} else {
+				currentAppendable.append(variableName);
 				currentAppendable.append(".newLineIfNotEmpty();");
 			}
 		}
@@ -188,20 +202,51 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<html>");
-			appendable.newLine();
+			append(newLineAfter("<html>"));
 			appendable.increaseIndentation();
-			append("<body>");
+			appendable.newLine();
+
+			String head = "<head>"
+					+ "<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /> \n"
+					+ "<title>O'No! Typography - Created Exclusively for Smashing Magazine</title>\n"
+					+ "<link rel=\"stylesheet\" href=\"css/stylesheet.css\" type=\"text/css\" media=\"screen\" />\n"
+					+ "<script type=\"text/javascript\" src=\"js/cufon-yui.js\"></script>\n"
+					+ "<script type=\"text/javascript\" src=\"js/CartoGothic_Std_400-CartoGothic_Std_700-CartoGothic_Std_italic_400-CartoGothic_Std_italic_700.font.js\"></script>\n"
+					+ "<script type=\"text/javascript\">\n"
+					+ "		Cufon.replace('h1')('h2')('h4')('p')('.lundoc-content');\n"
+					+ "</script>\n" + "</head>\n";
+			append(head);
+
+			pushAppendable(object);
+			append(newLineAfter("<body>"));
+			appendable.increaseIndentation();
+			appendable.newLine();
+
+			pushAppendable(object);
+			append(newLineAfter("<div id=\"lundoc-body\">"));
+			appendable.increaseIndentation();
+			appendable.newLine();
+
 		}
 
 		@Override
 		public void acceptDocumentEnd() {
 			currentAppendable = null;
 			appendable.newLine();
-			append("</body>");
-			appendable.decreaseIndentation();
-			append("</html>");
+			append(newLineAfter("</div>"));
 			popAppendable();
+
+			appendable.newLine();
+			append(newLineAfter("<script type=\"text/javascript\">Cufon.now();</script>"));
+			appendable.newLine();
+			append(newLineAfter("</body>"));
+			popAppendable();
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</html>"));
+			popAppendable();
+			appendable.decreaseIndentation();
+			appendable.newLine();
 		}
 
 		@Override
@@ -305,16 +350,27 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a id=\">");
-			append(object.getName());
-			append("\" class=\"lundoc-chapter\">");
+			appendable.newLine();
+			appendable.append("// chapter");
+			appendable.newLine();
+			append("<div class=\"lundoc-chapter\">");
+			appendable.newLine();
+			append("<a id=\">" + object.getName() + "\">" + object.getName()
+					+ newLineAfter("</a>"));
+			appendable.newLine();
+			append(newLineAfter("<div class=\"lundoc-content\">"));
+
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptChapterEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</a>");
+			append(newLineAfter("</div>"));
+			appendable.newLine();
+			append(newLineAfter("</div>"));
 			popAppendable();
 		}
 
@@ -323,16 +379,27 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a id=\">");
-			append(object.getName());
-			append("\" class=\"lundoc-section\">");
+			appendable.newLine();
+			appendable.append("// section");
+			appendable.newLine();
+			append("<div class=\"lundoc-section\">");
+			appendable.newLine();
+			append("<a id=\">" + object.getName() + "\">" + object.getName()
+					+ newLineAfter("</a>"));
+			appendable.newLine();
+			append(newLineAfter("<div class=\"lundoc-content\">"));
+
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptSectionEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</a>");
+			append(newLineAfter("</div>"));
+			appendable.newLine();
+			append(newLineAfter("</div>"));
 			popAppendable();
 		}
 
@@ -341,16 +408,27 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a id=\">");
-			append(object.getName());
-			append("\" class=\"lundoc-subsection\">");
+			appendable.newLine();
+			appendable.append("// subsection");
+			appendable.newLine();
+			append("<div class=\"lundoc-subsection\">");
+			appendable.newLine();
+			append("<a id=\">" + object.getName() + "\">" + object.getName()
+					+ newLineAfter("</a>"));
+			appendable.newLine();
+			append(newLineAfter("<div class=\"lundoc-content\">"));
+
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptSubsectionEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</a>");
+			append(newLineAfter("</div>"));
+			appendable.newLine();
+			append(newLineAfter("</div>"));
 			popAppendable();
 		}
 
@@ -359,7 +437,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"");
+			append("<a class=\"lundoc-url\" href=\"");
 			append(object.getLocation());
 			append("\">");
 		}
@@ -377,7 +455,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"#");
+			append("<a class=\"lundoc-ref\" href=\"#");
 			append(object.getRefId());
 			append("\">");
 		}
@@ -395,7 +473,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"mailto:");
+			append("<a class=\"lundoc-mailto\" href=\"mailto:");
 			append(object.getEmail());
 			append("\">");
 		}
@@ -413,7 +491,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"skype:");
+			append("<a class=\"lundoc-skype\" href=\"skype:");
 			append(object.getTarget());
 			append("?call\">");
 		}
@@ -431,7 +509,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<video width=\"");
+			append("<video class=\"lundoc-video\" width=\"");
 			append(object.getWidth());
 			append("\" height=\"");
 			append(object.getHeight());
@@ -456,7 +534,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<div class=\"lundoc-sourcecode\">");
+			append(newLineAfter("<div class=\"lundoc-code\">"));
 		}
 
 		@Override
@@ -470,85 +548,125 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		@Override
 		public void acceptTableStart(RichStringTable object) {
 			currentAppendable = null;
+			pushAppendable(object);
 			appendable.newLine();
-			append("<table>");
+			appendable.newLine();
+			appendable.append("//table");
+			appendable.newLine();
+			append(newLineAfter("<table>"));
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptTableEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</table>");
+			append(newLineAfter("</table>"));
+			popAppendable();
+			appendable.newLine();
 		}
 
 		@Override
 		public void acceptTableRowStart(RichStringTableRow object) {
 			currentAppendable = null;
+			pushAppendable(object);
 			appendable.newLine();
-			append("<tr>");
+			appendable.append("//table row");
+			appendable.newLine();
+			append(newLineAfter("<tr>"));
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptTableRowEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</tr>");
+			append(newLineAfter("</tr>"));
+			popAppendable();
 		}
 
 		@Override
 		public void acceptTableCellStart(RichStringTableCell object) {
 			currentAppendable = null;
+			pushAppendable(object);
 			appendable.newLine();
-			append("<td>");
+			appendable.append("//table cell");
+			appendable.newLine();
+			append(newLineAfter("<td>"));
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptTableCellEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</td>");
+			append(newLineAfter("</td>"));
+			popAppendable();
 		}
 
 		@Override
 		public void acceptListStart(RichStringList object) {
 			currentAppendable = null;
+			pushAppendable(object);
 			appendable.newLine();
-			append("<ul>");
+			appendable.newLine();
+			appendable.append("//unordered list");
+			appendable.newLine();
+			append(newLineAfter("<ul>"));
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptListEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</ul>");
+			append(newLineAfter("</ul>"));
+			popAppendable();
 		}
 
 		@Override
 		public void acceptOrderedListStart(RichStringOrderedList object) {
 			currentAppendable = null;
+			pushAppendable(object);
 			appendable.newLine();
-			append("<ol>");
+			appendable.newLine();
+			appendable.append("//ordered list");
+			appendable.newLine();
+			append(newLineAfter("<ol>"));
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptOrderedListEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</ol>");
+			append(newLineAfter("</ol>"));
+			popAppendable();
 		}
 
 		@Override
 		public void acceptListElementStart(RichStringListElement object) {
 			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.append("//element");
 			appendable.newLine();
 			append("<li>");
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptListElementEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</li>");
+			append(newLineAfter("</li>"));
+			popAppendable();
 		}
 
 		@Override
@@ -556,15 +674,17 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<img src=\"");
-			append(object.getSrc());
-			append("\" alt=\"");
-			append(object.getAlt());
-			append("\" width=\"");
-			append(object.getWidth());
-			append("\" height=\"");
-			append(object.getHeight());
-			append("\" />");
+			
+			StringBuilder b = new StringBuilder();
+			b.append("<img class=\"lundoc-image");
+			appendCssClasses(object, b);
+			b.append("\" src=\"");
+			b.append(object.getSrc());
+			b.append("\" alt=\"");
+			b.append(object.getAlt());
+			b.append("\">");
+			append(newLineAfter(b.toString()));
+			appendable.newLine();
 		}
 
 		@Override
@@ -572,14 +692,14 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<b>");
+			append("<strong>");
 		}
 
 		@Override
 		public void acceptBoldEnd() {
 			currentAppendable = null;
 			appendable.newLine();
-			append("</b>");
+			append("</strong>");
 			popAppendable();
 		}
 
@@ -588,14 +708,14 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<span style=\"text-decoration: underline;\">");
+			append(newLineAfter("<span style=\"text-decoration: underline;\">"));
 		}
 
 		@Override
 		public void acceptUnderlineEnd() {
 			currentAppendable = null;
 			appendable.newLine();
-			append("</span>");
+			append(newLineAfter("</span>"));
 			popAppendable();
 		}
 
@@ -620,14 +740,14 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<span style=\"" + object.getStyleClass() + "\">");
+			append(newLineAfter("<span class=\"" + object.getStyle() + "\">"));
 		}
 
 		@Override
 		public void acceptSpanEnd() {
 			currentAppendable = null;
 			appendable.newLine();
-			append("</span>");
+			append(newLineAfter("</span>"));
 			popAppendable();
 		}
 
@@ -636,14 +756,19 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<div class=\"lun_example\">");
+			appendable.newLine();
+			appendable.append("// example");
+			appendable.newLine();
+			append(newLineAfter("<div class=\"lundoc-example\">"));
+			appendable.increaseIndentation();
 		}
 
 		@Override
 		public void acceptExampleEnd() {
 			currentAppendable = null;
+			appendable.decreaseIndentation();
 			appendable.newLine();
-			append("</div>");
+			append(newLineAfter("</div>"));
 			popAppendable();
 		}
 
@@ -652,7 +777,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"link/to/");
+			append("<a class=\"lundoc-openview\" href=\"link/to/");
 			append(object.getViewId());
 			append("\">");
 		}
@@ -670,7 +795,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"link/to/");
+			append("<a class=\"lundoc-startprocess\" href=\"link/to/");
 			append(object.getProcessId());
 			append("\">");
 		}
@@ -688,7 +813,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"ref/to/");
+			append("<a class=\"lundoc-entityref\" href=\"ref/to/");
 			append(object.getEntityDoc().getName());
 			append("\">");
 		}
@@ -706,7 +831,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"ref/to/");
+			append("<a class=\"lundoc-dtoref\" href=\"ref/to/");
 			append(object.getDtoDoc().getName());
 			append("\">");
 		}
@@ -724,7 +849,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"ref/to/");
+			append("<a class=\"lundoc-processref\" href=\"ref/to/");
 			append(object.getBpmDoc().getName());
 			append("\">");
 		}
@@ -742,7 +867,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"ref/to/");
+			append("<a class=\"lundoc-taskref\" href=\"ref/to/");
 			append(object.getTaskDoc().getName());
 			append("\">");
 		}
@@ -760,7 +885,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"ref/to/");
+			append("<a class=\"lundoc-viewref\" href=\"ref/to/");
 			append(object.getViewDoc().getName());
 			append("\">");
 		}
@@ -778,7 +903,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			append("<a href=\"ref/to/");
+			append("<a class=\"lundoc-uiref\" href=\"ref/to/");
 			append(object.getUiDoc().getName());
 			append("\">");
 		}
@@ -788,6 +913,228 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			appendable.newLine();
 			append("</a>");
+			popAppendable();
+		}
+
+		@Override
+		public void acceptBoxStart(RichStringBox object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.newLine();
+
+			// div
+			appendable.append("// box");
+			appendable.newLine();
+
+			// create div for box
+			StringBuilder b = new StringBuilder();
+			b.append("<div class=\"lundoc-box");
+			appendCssClasses(object, b);
+			b.append("\">");
+			append(newLineAfter(b.toString()));
+			appendable.newLine();
+
+			// title h3
+			append("<h3>");
+			append(object.getTitle());
+			append("</h3>");
+			appendable.newLine();
+
+			append(newLineAfter("<div class=\"clearfix\"></div>"));
+			appendable.newLine();
+
+			// paragraph
+			append(newLineAfter("<p>"));
+			appendable.increaseIndentation();
+		}
+
+		private void appendCssClasses(RichStringMarkup object, StringBuilder b) {
+			if (object.isSmall()) {
+				b.append(" small");
+			}
+			switch (object.getOrientation()) {
+			case LEFT:
+				b.append(" left");
+				break;
+			case RIGHT:
+				b.append(" right");
+				break;
+			case NONE:
+				break;
+			default:
+				b.append(" left");
+				break;
+			}
+		}
+
+		private String newLineAfter(String value) {
+			return value + "\n";
+		}
+
+		@Override
+		public void acceptBoxEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			append(newLineAfter("</p>"));
+			appendable.newLine();
+			append(newLineAfter("</div>"));
+			popAppendable();
+		}
+
+		@Override
+		public void acceptContainerStart(RichStringContainer object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.newLine();
+			appendable.append("// container");
+			appendable.newLine();
+
+			StringBuilder b = new StringBuilder();
+			b.append("<div class=\"lundoc-container");
+			appendCssClasses(object, b);
+			b.append("\">");
+			append(newLineAfter(b.toString()));
+			appendable.newLine();
+
+			appendable.increaseIndentation();
+		}
+
+		@Override
+		public void acceptContainerEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</div>"));
+			popAppendable();
+		}
+
+		@Override
+		public void acceptColumnLayoutStart(RichStringColumnLayout object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.newLine();
+			appendable.append("// column layout");
+			appendable.newLine();
+			append(newLineAfter("<div class=\"lundoc-collayout\">"));
+			appendable.increaseIndentation();
+		}
+
+		@Override
+		public void acceptColumnLayoutEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</div>"));
+			popAppendable();
+		}
+
+		@Override
+		public void acceptColumnStart(RichStringColumn object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.append("// column");
+			appendable.newLine();
+			append("<div class=\"lundoc-column\">");
+			appendable.increaseIndentation();
+		}
+
+		@Override
+		public void acceptColumnEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</div>"));
+			popAppendable();
+		}
+
+		@Override
+		public void acceptFooterStart(RichStringFooter object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.newLine();
+			appendable.append("// footer");
+			appendable.newLine();
+			append(newLineAfter("<div class=\"lundoc-footer\" id=\"lundoc-footer\">"));
+			appendable.newLine();
+			append(newLineAfter("<div class=\"inner\">"));
+			appendable.increaseIndentation();
+		}
+
+		@Override
+		public void acceptFooterEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</div>"));
+			appendable.newLine();
+			append(newLineAfter("</div>"));
+			popAppendable();
+		}
+
+		@Override
+		public void acceptHeaderStart(RichStringHeader object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.newLine();
+			appendable.append("// header");
+			appendable.newLine();
+			append(newLineAfter("<div class=\"lundoc-header\" id=\"lundoc-header\">"));
+			appendable.increaseIndentation();
+		}
+
+		@Override
+		public void acceptHeaderEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</div>"));
+			popAppendable();
+		}
+
+		@Override
+		public void acceptIndexStart(RichStringIndex object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.newLine();
+			appendable.append("// index");
+			appendable.newLine();
+			append(newLineAfter("<ul id=\"lundoc-index\">"));
+			appendable.increaseIndentation();
+		}
+
+		@Override
+		public void acceptIndexEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</ul>"));
+			popAppendable();
+		}
+
+		@Override
+		public void acceptIndexElementStart(RichStringIndexElement object) {
+			currentAppendable = null;
+			pushAppendable(object);
+			appendable.newLine();
+			appendable.append("// index element");
+			appendable.newLine();
+			append(newLineAfter("<li>"));
+			appendable.increaseIndentation();
+		}
+
+		@Override
+		public void acceptIndexElementEnd() {
+			currentAppendable = null;
+			appendable.decreaseIndentation();
+			appendable.newLine();
+			append(newLineAfter("</li>"));
 			popAppendable();
 		}
 

@@ -17,10 +17,23 @@ import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
-   
+
 class RichString extends XBlockExpression {
 }
- 
+
+/**
+ * An If-expression
+ */
+class RichStringIf extends XExpression {
+	contains XExpression ^if
+	contains XExpression then
+	contains RichStringElseIf[*] elseIfs
+	contains XExpression ^else
+}
+
+/**
+ * The Else-If-Part of an If-Expression
+ */
 class RichStringElseIf extends XExpression {
 	contains XExpression ^if
 	contains XExpression then
@@ -35,97 +48,148 @@ class RichStringForLoop extends XForLoopExpression {
 	contains XExpression after
 }
 
-class RichStringIf extends XExpression {
-	contains XExpression ^if
-	contains XExpression then
-	contains RichStringElseIf[*] elseIfs
-	contains XExpression ^else
-}
- 
-class RichStringMarkup extends XExpression {
+/**
+ * The super class for all markup elements
+ */
+abstract class RichStringMarkup extends XExpression {
 	String ^id
-	String styleClass
+	String style
+	boolean small
+	MarkupOrientation orientation
 	contains XExpression expression
 }
 
+enum MarkupOrientation {
+	LEFT, NONE, RIGHT
+}
+
+/**
+ * A markup to define examples
+ */
 class RichStringExample extends RichStringMarkup {
-	
 }
 
+/**
+ * A Header 1 markup
+ */
 class RichStringH1 extends RichStringMarkup {
-	 
 }
 
+/**
+ * A Header 2 markup
+ */
 class RichStringH2 extends RichStringMarkup {
-	
 }
 
+/**
+ * A Header 3 markup
+ */
 class RichStringH3 extends RichStringMarkup {
-	
 }
 
+/**
+ * A Header 4 markup
+ */
 class RichStringH4 extends RichStringMarkup {
-	
 }
 
+/**
+ * A Header 5 markup
+ */
 class RichStringH5 extends RichStringMarkup {
-	
 }
 
+/**
+ * A Header 6 markup
+ */
 class RichStringH6 extends RichStringMarkup {
+}
+
+interface IndexElement {
 	
 }
 
-class RichStringChapter extends RichStringMarkup {
+/**
+ * Defines a chapter in the document
+ */
+class RichStringChapter extends RichStringMarkup, IndexElement {
 	String[1] name
 }
 
-class RichStringSection extends RichStringMarkup {
+/**
+ * Defines a section in the document
+ */
+class RichStringSection extends RichStringMarkup, IndexElement {
 	String[1] name
 }
 
-class RichStringSubsection extends RichStringMarkup {
+/**
+ * Defines a subsection in the document
+ */
+class RichStringSubsection extends RichStringMarkup, IndexElement {
 	String[1] name
 }
 
+/**
+ * Defines a URL
+ */
 class RichStringURL extends RichStringMarkup {
 	String[1] location
 	contains XExpression text
 }
 
+/**
+ * Defines a reference
+ */
 class RichStringRef extends RichStringMarkup {
 	String refId
 }
 
+/**
+ * A Bold markup
+ */
 class RichStringBold extends RichStringMarkup {
-	
 }
 
+/**
+ * An undlerine markup
+ */
 class RichStringUnderline extends RichStringMarkup {
-	
 }
 
+/**
+ * An italic markup
+ */
 class RichStringItalic extends RichStringMarkup {
-	
 }
 
+/**
+ * An image markup
+ */
 class RichStringImg extends RichStringMarkup {
 	String[1] src
-	String[1] alt
-	String[1] width
-	String[1] height
+	String alt
 }
 
+/**
+ * A mailTo markup
+ */
 class RichStringMailto extends RichStringMarkup {
 	String[1] email
 	contains XExpression content
 }
 
+/**
+ * A skype markup
+ */
 class RichStringSkype extends RichStringMarkup {
 	String[1] target
 	contains XExpression content
 }
 
+/**
+ * A movie markup
+ */
 class RichStringMovie extends RichStringMarkup {
 	String[1] src
 	String[1] width
@@ -134,68 +198,165 @@ class RichStringMovie extends RichStringMarkup {
 	contains XExpression content
 }
 
+/**
+ * A code markup
+ */
 class RichStringCode extends RichStringMarkup {
 	String lang
 	contains XExpression content
 }
 
+/**
+ * A table markup
+ */
 class RichStringTable extends RichStringMarkup {
-	
 }
 
+/**
+ * A table row markup
+ */
 class RichStringTableRow extends RichStringMarkup {
-	
 }
 
+/**
+ * A table cell markup
+ */
 class RichStringTableCell extends RichStringMarkup {
-	
 }
 
+/**
+ * A markup to open views
+ */
 class RichStringOpenView extends RichStringMarkup {
 	String viewId
 }
 
+/**
+ * A markup to start a process
+ */
 class RichStringStartProcess extends RichStringMarkup {
 	String processId
 }
 
+/**
+ * A markup to reference an entity document
+ */
 class RichStringEntityRef extends RichStringMarkup {
 	refers LDocEntityDocument entityDoc
 }
 
+/**
+ * A markup to reference a dto document
+ */
 class RichStringDTORef extends RichStringMarkup {
 	refers LDocDtoDocument dtoDoc
 }
 
+/**
+ * A markup to reference a user task document (bpm)
+ */
 class RichStringTaskRef extends RichStringMarkup {
 	refers LDocHumanTaskDocument taskDoc
 }
 
+/**
+ * A markup to reference a process document (bpm)
+ */
 class RichStringProcessRef extends RichStringMarkup {
 	refers LDocBPMProcessDocument bpmDoc
 }
 
+/**
+ * A markup to reference a view
+ */
 class RichStringViewRef extends RichStringMarkup {
 	refers LDocViewDocument viewDoc
 }
- 
+
+/**
+ * A markup to reference a UI element 
+ */
 class RichStringUIRef extends RichStringMarkup {
 	refers LDocUIDocument uiDoc
 }
 
+/**
+ * A markup for unordered lists
+ */
 class RichStringList extends RichStringMarkup {
-	
 }
 
+/**
+ * A markup for ordered lists
+ */
 class RichStringOrderedList extends RichStringMarkup {
-	
 }
 
+/**
+ * A markup for list elements
+ */
 class RichStringListElement extends RichStringMarkup {
-	
 }
 
+/**
+ * A markup for span elements
+ */
 class RichStringSpan extends RichStringMarkup {
-	
 }
 
+/**
+ * A markup for a box element
+ */
+class RichStringBox extends RichStringMarkup {
+	boolean error
+	boolean warning
+	boolean info
+	boolean abstracts
+	boolean checklist
+	boolean bio
+	boolean sidenote
+	String title
+}
+
+/**
+ * A markup for a container element
+ */
+class RichStringContainer extends RichStringMarkup {
+}
+
+/**
+ * A markup for a column layout
+ */
+class RichStringColumnLayout extends RichStringMarkup {
+}
+
+/**
+ * A markup for columns
+ */
+class RichStringColumn extends RichStringMarkup {
+}
+
+/**
+ * A markup for footer
+ */
+class RichStringFooter extends RichStringContainer {
+}
+
+/**
+ * A markup for header
+ */
+class RichStringHeader extends RichStringContainer {
+}
+
+/**
+ * A markup for index
+ */
+class RichStringIndex extends RichStringContainer {
+}
+
+/**
+ * A markup for index elements
+ */
+class RichStringIndexElement extends RichStringMarkup {
+	refers IndexElement indexElement
+}

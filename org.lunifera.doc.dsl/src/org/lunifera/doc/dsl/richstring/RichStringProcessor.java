@@ -15,100 +15,21 @@ import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.BoldEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.BoldStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ChapterEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ChapterStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.CodeEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.CodeStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.DTORefEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.DTORefStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.DocumentEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.DocumentStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ElseIfCondition;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ElseStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.EndIf;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.EntityRefEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.EntityRefStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ExampleEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ExampleStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ForLoopEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ForLoopStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H1End;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H1Start;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H2End;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H2Start;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H3End;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H3Start;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H4End;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H4Start;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H5End;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H5Start;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H6End;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.H6Start;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.IfConditionStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ImgStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ItalicEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ItalicStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.LDocCompilerFactory;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.Line;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.LineBreak;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.LinePart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ListElementEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ListElementStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ListEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ListStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.Literal;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.MailtoEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.MailtoStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.Markup;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.MovieEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.MovieStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.OpenViewEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.OpenViewStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.OrderedListEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.OrderedListStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.PrintedExpression;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ProcessRefEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ProcessRefStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ProcessedRichString;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.RefEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.RefStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SectionEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SectionStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SkypeEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SkypeStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SpanEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SpanStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.StartProcessEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.StartProcessStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SubSectionEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.SubSectionStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TableCellEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TableCellStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TableEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TableRowEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TableRowStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TableStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TaskRefEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.TaskRefStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.UIRefEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.UIRefStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.URLEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.URLStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.UnderlineEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.UnderlineStart;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ViewRefEnd;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.ViewRefStart;
+import org.lunifera.doc.dsl.luniferadoc.doccompiler.*;
 import org.lunifera.doc.dsl.luniferadoc.doccompiler.util.LDocCompilerSwitch;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBox;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumn;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumnLayout;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringContainer;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringFooter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
@@ -116,8 +37,11 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringHeader;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndex;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndexElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
@@ -813,6 +737,117 @@ public class RichStringProcessor {
 			return Boolean.TRUE;
 		}
 
+		@Override
+		public Boolean caseRichStringBox(RichStringBox object) {
+			BoxStart start = factory.createBoxStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			BoxEnd end = factory.createBoxEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringContainer(RichStringContainer object) {
+			ContainerStart start = factory.createContainerStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ContainerEnd end = factory.createContainerEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringColumnLayout(RichStringColumnLayout object) {
+			ColumnLayoutStart start = factory.createColumnLayoutStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ColumnLayoutEnd end = factory.createColumnLayoutEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringColumn(RichStringColumn object) {
+			ColumnStart start = factory.createColumnStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			ColumnEnd end = factory.createColumnEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringFooter(RichStringFooter object) {
+			FooterStart start = factory.createFooterStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			FooterEnd end = factory.createFooterEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringHeader(RichStringHeader object) {
+			HeaderStart start = factory.createHeaderStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			HeaderEnd end = factory.createHeaderEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringIndex(RichStringIndex object) {
+			IndexStart start = factory.createIndexStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			IndexEnd end = factory.createIndexEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseRichStringIndexElement(RichStringIndexElement object) {
+			IndexElementStart start = factory.createIndexElementStart();
+			start.setContent(object);
+			addToCurrentLine(start);
+
+			doSwitch(object.getExpression());
+
+			IndexElementEnd end = factory.createIndexElementEnd();
+			end.setStart(start);
+			addToCurrentLine(end);
+			return Boolean.TRUE;
+		}
 	}
 
 	public static class Implementation extends LDocCompilerSwitch<Boolean> {
@@ -1471,6 +1506,124 @@ public class RichStringProcessor {
 		@Override
 		public Boolean caseUIRefEnd(UIRefEnd object) {
 			acceptor.acceptUIRefEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseBoxStart(BoxStart object) {
+			acceptor.acceptBoxStart(object.getContent());
+			computeNextPart(object);
+			pushSemanticIndentation(indentationHandler.getTotalIndentation());
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseBoxEnd(BoxEnd object) {
+			acceptor.acceptBoxEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseContainerStart(ContainerStart object) {
+			acceptor.acceptContainerStart(object.getContent());
+			computeNextPart(object);
+			pushTemplateIndentationTwice(computeInitialIndentation(object
+					.getContent().getExpression()));
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseContainerEnd(ContainerEnd object) {
+			acceptor.acceptContainerEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseColumnLayoutStart(ColumnLayoutStart object) {
+			acceptor.acceptColumnLayoutStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseColumnLayoutEnd(ColumnLayoutEnd object) {
+			acceptor.acceptColumnLayoutEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseColumnStart(ColumnStart object) {
+			acceptor.acceptColumnStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseColumnEnd(ColumnEnd object) {
+			acceptor.acceptColumnEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseFooterStart(FooterStart object) {
+			acceptor.acceptFooterStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseFooterEnd(FooterEnd object) {
+			acceptor.acceptFooterEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseHeaderStart(HeaderStart object) {
+			acceptor.acceptHeaderStart(object.getContent());
+			computeNextPart(object);
+			pushTemplateIndentationTwice(computeInitialIndentation(object
+					.getContent().getExpression()));
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseHeaderEnd(HeaderEnd object) {
+			popIndentationTwice();
+			acceptor.acceptHeaderEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseIndexStart(IndexStart object) {
+			acceptor.acceptIndexStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseIndexEnd(IndexEnd object) {
+			acceptor.acceptIndexEnd();
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseIndexElementStart(IndexElementStart object) {
+			acceptor.acceptIndexElementStart(object.getContent());
+			computeNextPart(object);
+			return Boolean.TRUE;
+		}
+
+		@Override
+		public Boolean caseIndexElementEnd(IndexElementEnd object) {
+			acceptor.acceptIndexElementEnd();
 			computeNextPart(object);
 			return Boolean.TRUE;
 		}

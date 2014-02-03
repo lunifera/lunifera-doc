@@ -135,7 +135,7 @@ class RichStringFormatter {
 		doc += expr.nodeForFeature(LDocRichstringPackage.Literals.RICH_STRING_ELSE_IF__IF).append[noSpace]
 		formatter.apply(expr.^if, doc)
 	}
-
+ 
 	def protected dispatch void fmt((EObject, FormattableDocument)=>void formatter, FormattableDocument doc,
 		RichStringForLoop expr) {
 		doc += expr.nodeForKeyword("For").surround([noSpace], [oneSpace])

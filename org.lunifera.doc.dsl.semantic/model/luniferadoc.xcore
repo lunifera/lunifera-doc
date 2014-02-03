@@ -15,7 +15,7 @@ import org.lunifera.dsl.semantic.common.types.LFeature
  
 interface LDocNamedDocument { 
 	String name
-	String language
+	String language 
 }
  
 class LDocInclude {

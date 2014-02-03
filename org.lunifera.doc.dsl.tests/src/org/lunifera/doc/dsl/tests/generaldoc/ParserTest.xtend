@@ -17,18 +17,17 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider
-import org.lunifera.doc.dsl.luniferadoc.document.GeneralDocument
-import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
+import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImpl
 
 import static org.junit.Assert.*
 import static org.lunifera.doc.dsl.tests.util.LuniferaDocTestHelper.*
-import org.lunifera.doc.dsl.luniferadoc.richstring.impl.RichStringImpl
+import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(LuniferaDocGrammarInjectorProvider))
 class ParserTest {
 	
-	@Inject extension ParseHelper<GeneralDocument>
+	@Inject extension ParseHelper<LDocLayouter>
 	@Inject extension ValidationTestHelper
 	@Inject extension IJvmModelAssociations
 	
@@ -38,10 +37,9 @@ class ParserTest {
 		
 		assertEquals("doc.general.SampleGeneralDoc", testDoc.name)
 		assertEquals(1, testDoc.includes.size)
-		assertEquals("doc.dto.MyDTO", testDoc.includes.get(0).include)
+		assertEquals("doc.dto.MyDTO", testDoc.includes.get(0).document.name)
 		assertEquals("myDTO", testDoc.includes.get(0).varName)
 		assertEquals(typeof(RichStringImpl), testDoc.content.class)
-		
 	}
 	
 	/**

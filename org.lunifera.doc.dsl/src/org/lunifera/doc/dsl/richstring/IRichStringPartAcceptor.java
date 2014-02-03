@@ -14,18 +14,26 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBox;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringChapter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringCode;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumn;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumnLayout;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringContainer;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringDTORef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringExample;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringFooter;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH1;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH3;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH4;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH6;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringHeader;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringImg;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndex;
+import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIndexElement;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringList;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringListElement;
@@ -51,9 +59,11 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
 
 /**
- * The {@link IRichStringPartAcceptor} can be passed into a {@link RichStringProcessor} to handle the semantics of a
- * {@link org.eclipse.xtend.core.xtend.RichString} for a specific use case. It's mainly an event sink but may influence
- * the control flow of the {@link RichStringProcessor} by means of {@link #forLoopHasNext()}.
+ * The {@link IRichStringPartAcceptor} can be passed into a
+ * {@link RichStringProcessor} to handle the semantics of a
+ * {@link org.eclipse.xtend.core.xtend.RichString} for a specific use case. It's
+ * mainly an event sink but may influence the control flow of the
+ * {@link RichStringProcessor} by means of {@link #forLoopHasNext()}.
  */
 @NonNullByDefault
 public interface IRichStringPartAcceptor {
@@ -64,7 +74,8 @@ public interface IRichStringPartAcceptor {
 	 * @param origin
 	 *            the value holder for the full text or null, if unknown.
 	 */
-	void acceptSemanticText(CharSequence text, @Nullable RichStringLiteral origin);
+	void acceptSemanticText(CharSequence text,
+			@Nullable RichStringLiteral origin);
 
 	/**
 	 * @param text
@@ -72,17 +83,20 @@ public interface IRichStringPartAcceptor {
 	 * @param origin
 	 *            the value holder for the full text or null, if unknown.
 	 */
-	void acceptTemplateText(CharSequence text, @Nullable RichStringLiteral origin);
+	void acceptTemplateText(CharSequence text,
+			@Nullable RichStringLiteral origin);
 
 	/**
 	 * Indicates a semantic line break in a rich string literal.
 	 * 
 	 * @param origin
-	 *            the instance holding the complete text value that contains the line break.
+	 *            the instance holding the complete text value that contains the
+	 *            line break.
 	 * @param charCount
 	 *            the number of characters in the line break.
 	 * @param whether
-	 *            or not the line break occurs in a line that contains a control structure.
+	 *            or not the line break occurs in a line that contains a control
+	 *            structure.
 	 */
 	void acceptSemanticLineBreak(int charCount, RichStringLiteral origin,
 			boolean controlStructureSeen);
@@ -91,7 +105,8 @@ public interface IRichStringPartAcceptor {
 	 * Indicates a template line break in a rich string literal.
 	 * 
 	 * @param origin
-	 *            the instance holding the complete text value that contains the line break.
+	 *            the instance holding the complete text value that contains the
+	 *            line break.
 	 * @param charCount
 	 *            the number of characters in the line break.
 	 */
@@ -107,7 +122,8 @@ public interface IRichStringPartAcceptor {
 	 * has been consumed.
 	 * 
 	 * @param condition
-	 *            the condition of an {@link org.eclipse.xtend.core.xtend.RichStringIf}.
+	 *            the condition of an
+	 *            {@link org.eclipse.xtend.core.xtend.RichStringIf}.
 	 */
 	void acceptIfCondition(XExpression condition);
 
@@ -121,7 +137,8 @@ public interface IRichStringPartAcceptor {
 	 * has been consumed.
 	 * 
 	 * @param condition
-	 *            the condition of an {@link org.eclipse.xtend.core.xtend.RichStringElseIf}.
+	 *            the condition of an
+	 *            {@link org.eclipse.xtend.core.xtend.RichStringElseIf}.
 	 */
 	void acceptElseIfCondition(XExpression condition);
 
@@ -164,18 +181,21 @@ public interface IRichStringPartAcceptor {
 	void acceptForLoop(JvmFormalParameter parameter, XExpression expression);
 
 	/**
-	 * Queried to determine whether the body of the for-loop should be evaluated (again).
+	 * Queried to determine whether the body of the for-loop should be evaluated
+	 * (again).
 	 * 
 	 * @param before
-	 *            the expression that should be evaluated prior to the first item of the loop, if any.
+	 *            the expression that should be evaluated prior to the first
+	 *            item of the loop, if any.
 	 * @param separator
-	 *            the expression that should be evaluated prior to the second and all subsequent items of the loop.
+	 *            the expression that should be evaluated prior to the second
+	 *            and all subsequent items of the loop.
 	 * @param indentation
 	 *            the additional indentation for any line besides the first one.
 	 * @return <code>true</code> if the for-loop body should be evaluated.
 	 */
-	boolean forLoopHasNext(@Nullable XExpression before, @Nullable XExpression separator,
-			CharSequence indentation);
+	boolean forLoopHasNext(@Nullable XExpression before,
+			@Nullable XExpression separator, CharSequence indentation);
 
 	/**
 	 * Announces that an
@@ -187,7 +207,8 @@ public interface IRichStringPartAcceptor {
 	 * has been consumed.
 	 * 
 	 * @param after
-	 *            the expression that should be evaluated after the last item of the loop, if any.
+	 *            the expression that should be evaluated after the last item of
+	 *            the loop, if any.
 	 * @param indentation
 	 *            the additional indentation for any line besides the first one.
 	 */
@@ -200,8 +221,9 @@ public interface IRichStringPartAcceptor {
 	 * �expression�
 	 * </pre>
 	 * 
-	 * has been consumed. If the expression's evaluation result contains more than one line, any line besides the first
-	 * one may be prefixed with the given indentation.
+	 * has been consumed. If the expression's evaluation result contains more
+	 * than one line, any line besides the first one may be prefixed with the
+	 * given indentation.
 	 * 
 	 * @param expression
 	 *            the consumed expression. May not be <code>null</code>.
@@ -217,6 +239,10 @@ public interface IRichStringPartAcceptor {
 	 *            the literal.
 	 */
 	void announceNextLiteral(RichStringLiteral literal);
+	
+	void acceptDocumentStart(LDocNamedDocument object);
+
+	void acceptDocumentEnd();
 
 	void acceptH1Start(RichStringH1 object);
 
@@ -356,7 +382,36 @@ public interface IRichStringPartAcceptor {
 
 	void acceptUIRefEnd();
 
-	void acceptDocumentStart(LDocNamedDocument object);
+	void acceptBoxStart(RichStringBox object);
 
-	void acceptDocumentEnd();
+	void acceptBoxEnd();
+
+	void acceptContainerStart(RichStringContainer object);
+
+	void acceptContainerEnd();
+
+	void acceptColumnLayoutStart(RichStringColumnLayout object);
+
+	void acceptColumnLayoutEnd();
+
+	void acceptColumnStart(RichStringColumn object);
+
+	void acceptColumnEnd();
+
+	void acceptFooterStart(RichStringFooter object);
+
+	void acceptFooterEnd();
+
+	void acceptHeaderStart(RichStringHeader object);
+
+	void acceptHeaderEnd();
+
+	void acceptIndexStart(RichStringIndex object);
+
+	void acceptIndexEnd();
+
+	void acceptIndexElementStart(RichStringIndexElement object);
+
+	void acceptIndexElementEnd();
+
 }
