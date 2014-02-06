@@ -38,12 +38,13 @@
 				<module>org.lunifera.doc.dsl.api</module>
 				<module>org.lunifera.doc.dsl</module>
 				<module>org.lunifera.doc.dsl.ui</module>
-				
+				<module>org.lunifera.doc.compiler.web</module>
+
+				<module>org.lunifera.doc.feature</module>
 
 				<!-- P2 repository -->
 				<module>org.lunifera.doc.p2</module>
 			</modules>
 		</profile>
-
 	</profiles>
 </project>

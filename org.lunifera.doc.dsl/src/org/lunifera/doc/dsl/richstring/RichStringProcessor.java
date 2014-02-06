@@ -16,7 +16,7 @@ import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
 import org.lunifera.doc.dsl.luniferadoc.doccompiler.*;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.util.LDocCompilerSwitch;
+import org.lunifera.doc.dsl.luniferadoc.doccompiler.util.LunDocCompilerSwitch;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBold;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringBox;
@@ -66,7 +66,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUIRef;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringURL;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringUnderline;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
-import org.lunifera.doc.dsl.luniferadoc.richstring.util.LDocRichstringSwitch;
+import org.lunifera.doc.dsl.luniferadoc.richstring.util.LunDocRichstringSwitch;
 
 import com.google.inject.Inject;
 
@@ -84,10 +84,10 @@ public class RichStringProcessor {
 	}
 
 	public static class ProcessedRichStringBuilder extends
-			LDocRichstringSwitch<Boolean> {
+			LunDocRichstringSwitch<Boolean> {
 
 		@Inject
-		private LDocCompilerFactory factory = LDocCompilerFactory.eINSTANCE;
+		private LunDocCompilerFactory factory = LunDocCompilerFactory.eINSTANCE;
 
 		private ProcessedRichString rootRichString = null;
 
@@ -850,7 +850,7 @@ public class RichStringProcessor {
 		}
 	}
 
-	public static class Implementation extends LDocCompilerSwitch<Boolean> {
+	public static class Implementation extends LunDocCompilerSwitch<Boolean> {
 
 		private final IRichStringPartAcceptor acceptor;
 

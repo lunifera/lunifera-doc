@@ -10,12 +10,11 @@ grammar org.lunifera.doc.dsl.LuniferaDocGrammar with org.eclipse.xtext.xbase.Xba
 import "http://www.lunifera.org/documentation/v1" as doc
 import "http://www.lunifera.org/documentation/richstring/v1" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
-import "http://www.lunifera.org/dsl/entity/v1" as entity
 import "http://www.lunifera.org/dsl/common/types/v1" as types
-
+  
 NamedDocument returns doc::LDocNamedDocument:
 	DocLayouter | Document;
-
+ 
 Document returns doc::LDocDocument:
 	EntityDocument | DTODocument | BPMProcessDocument | BPMHumanTaskDocument | VaaclipseViewDocument | UIDocument;
 

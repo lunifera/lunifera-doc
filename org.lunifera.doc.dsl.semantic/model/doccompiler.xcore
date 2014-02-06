@@ -1,12 +1,12 @@
 @GenModel(fileExtensions="doccompiler")
 @GenModel(modelName="LuniferaDocCompiler")
-@GenModel(prefix="LDocCompiler")
+@GenModel(prefix="LunDocCompiler")
 @GenModel(operationReflection="false")
 @Ecore(nsURI="http://www.lunifera.org/documentation/compiler/v1")
 @Ecore(nsPrefix="ldoccompiler")
 @Ecore(rootPackage="ldoccompiler")
 package org.lunifera.doc.dsl.luniferadoc.doccompiler
- 
+   
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument
 import org.eclipse.xtext.xbase.XExpression
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringIf

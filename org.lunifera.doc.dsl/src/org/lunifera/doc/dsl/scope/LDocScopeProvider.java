@@ -15,9 +15,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.xbase.annotations.scoping.XbaseWithAnnotationsScopeProvider;
-import org.lunifera.doc.dsl.luniferadoc.LDocDtoProperty;
 import org.lunifera.doc.dsl.luniferadoc.LDocEntityField;
-import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
+import org.lunifera.doc.dsl.luniferadoc.LunDocPackage;
 
 import com.google.inject.Inject;
 
@@ -35,9 +34,9 @@ public class LDocScopeProvider extends XbaseWithAnnotationsScopeProvider {
 
 	@Override
 	public IScope getScope(final EObject context, EReference reference) {
-		if (reference == LDocPackage.Literals.LDOC_ENTITY_DOCUMENT__MODEL) {
+		if (reference == LunDocPackage.Literals.LDOC_ENTITY_DOCUMENT__MODEL) {
 			return new TypeFilterScope(super.getScope(context, reference));
-		} else if (reference == LDocPackage.Literals.LDOC_ENTITY_FIELD__TYPE_FIELD) {
+		} else if (reference == LunDocPackage.Literals.LDOC_ENTITY_FIELD__TYPE_FIELD) {
 			return new TypeFeatureFilterScope((LDocEntityField) context,
 					super.getScope(context, reference));
 		} 

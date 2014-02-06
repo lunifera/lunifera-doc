@@ -31,6 +31,7 @@ import org.lunifera.dsl.semantic.entity.LBean
 import org.lunifera.dsl.semantic.entity.LEntity
 
 import static org.lunifera.doc.dsl.luniferadoc.LDocType.*
+import org.lunifera.doc.dsl.luniferadoc.richstring.MarkupOrientation
 
 class ModelExtensions {
 

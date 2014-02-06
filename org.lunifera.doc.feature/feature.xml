@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.lunifera.doc.feature"
+      label="%featureName"
+      version="0.0.1.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <discovery label="Xtext 2.5.1" url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+      <discovery label="Kepler" url="http://download.eclipse.org/releases/kepler"/>
+   </url>
+
+   <requires>
+      <import feature="org.lunifera.dsl.feature.common.headless" version="0.0.0"/>
+      <import feature="org.eclipse.xtext.sdk" version="2.5.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.xtend.sdk" version="2.5.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.ecore.xcore.sdk" version="1.1.2"/>
+      <import feature="org.eclipse.xpand.sdk" version="1.4.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.xpand.support" version="1.4.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.mwe2.language.sdk" version="2.5.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.mwe2.launcher" version="2.5.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.mwe2.runtime.sdk" version="2.5.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.lunifera.doc.dsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.lunifera.doc.dsl.api"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.lunifera.doc.dsl.semantic"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.lunifera.doc.dsl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.lunifera.doc.compiler.web"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

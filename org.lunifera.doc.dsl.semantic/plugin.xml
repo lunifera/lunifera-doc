@@ -7,26 +7,26 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated LuniferaDocGrammar -->
+      <!-- @generated luniferadoc -->
       <package
             uri="http://www.lunifera.org/documentation/v1"
-            class="org.lunifera.doc.dsl.luniferadoc.LDocPackage"
-            genModel="model/LuniferaDocGrammar.xcore"/>
+            class="org.lunifera.doc.dsl.luniferadoc.LunDocPackage"
+            genModel="model/luniferadoc.xcore"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated LuniferaDocGrammar -->
+      <!-- @generated richstring -->
       <package
             uri="http://www.lunifera.org/documentation/richstring/v1"
-            class="org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage"
-            genModel="model/LuniferaDocGrammar.xcore"/>
+            class="org.lunifera.doc.dsl.luniferadoc.richstring.LunDocRichstringPackage"
+            genModel="model/richstring.xcore"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated doccompiler -->
       <package
             uri="http://www.lunifera.org/documentation/compiler/v1"
-            class="org.lunifera.doc.dsl.luniferadoc.doccompiler.LDocCompilerPackage"
+            class="org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage"
             genModel="model/doccompiler.xcore"/>
    </extension>
 

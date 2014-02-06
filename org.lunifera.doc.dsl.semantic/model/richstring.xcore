@@ -1,12 +1,12 @@
 @GenModel(fileExtensions="richstring")
 @GenModel(modelName="LDocRichstring")
-@GenModel(prefix="LDocRichstring")
+@GenModel(prefix="LunDocRichstring")
 @GenModel(operationReflection="false")
 @Ecore(nsURI="http://www.lunifera.org/documentation/richstring/v1")
 @Ecore(nsPrefix="richstring")
 @Ecore(rootPackage="richstring")
 package org.lunifera.doc.dsl.luniferadoc.richstring
-
+  
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.XStringLiteral
 import org.eclipse.xtext.xbase.XBlockExpression
@@ -18,7 +18,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
 class RichString extends XBlockExpression {
-}
+} 
 
 /**
  * An If-expression

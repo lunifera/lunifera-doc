@@ -11,6 +11,7 @@ package org.lunifera.doc.dsl.conversion;
 import org.eclipse.xtext.conversion.IValueConverter;
 import org.eclipse.xtext.conversion.ValueConverter;
 import org.eclipse.xtext.xbase.conversion.XbaseValueConverterService;
+import org.lunifera.doc.dsl.luniferadoc.richstring.MarkupOrientation;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;

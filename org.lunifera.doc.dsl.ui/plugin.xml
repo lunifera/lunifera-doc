@@ -9,7 +9,7 @@
             class="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="luniferadoc"
+            extensions="docu"
             icon="icons/Luniferadoc_16.png"
             id="org.lunifera.doc.dsl.LuniferaDocGrammar"
             matchingStrategy="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
@@ -215,13 +215,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="luniferadoc">
+			type="docu">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
             class="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="luniferadoc">
+            uriExtension="docu">
         </resourceServiceProvider>
     </extension>
 
@@ -506,19 +506,19 @@
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="org.lunifera.doc.dsl.LuniferaDocGrammar.compare.contentViewers"
             class="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="luniferadoc">
+            extensions="docu">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="org.lunifera.doc.dsl.LuniferaDocGrammar.compare.contentMergeViewers"
             class="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="luniferadoc" label="LuniferaDocGrammar Compare">
+            extensions="docu" label="LuniferaDocGrammar Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="org.lunifera.doc.dsl.LuniferaDocGrammar.editors.documentProviders"
             class="org.lunifera.doc.dsl.ui.LuniferaDocGrammarExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="luniferadoc">
+            extensions="docu">
     </provider>
   </extension>
 

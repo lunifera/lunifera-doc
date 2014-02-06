@@ -35,7 +35,7 @@
 		<repository>
 			<id>Xtext bleeding edge</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/</url>
 		</repository>
 
 		<repository>
@@ -156,29 +156,12 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.lunifera.doc</groupId>
+				<artifactId>org.lunifera.doc.feature</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>pom</type>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-<!-- 	<dependencies> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.lunifera.dsl</groupId> -->
-<!-- 			<artifactId>org.lunifera.dsl.feature.eclipse.ui</artifactId> -->
-<!-- 			<version>${project.version}</version> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.lunifera.dsl</groupId> -->
-<!-- 			<artifactId>org.lunifera.dsl.feature.common.headless</artifactId> -->
-<!-- 			<version>${project.version}</version> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.lunifera.dsl</groupId> -->
-<!-- 			<artifactId>org.lunifera.dsl.feature.entities</artifactId> -->
-<!-- 			<version>${project.version}</version> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.lunifera.dsl</groupId> -->
-<!-- 			<artifactId>org.lunifera.dsl.feature.entities.headless</artifactId> -->
-<!-- 			<version>${project.version}</version> -->
-<!-- 		</dependency> -->
-<!-- 	</dependencies> -->
 </project>

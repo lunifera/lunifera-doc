@@ -14,24 +14,28 @@ import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
-import org.lunifera.doc.dsl.luniferadoc.richstring.util.LDocRichstringSwitch;
+import org.lunifera.doc.dsl.luniferadoc.richstring.util.LunDocRichstringSwitch;
 
 /**
- * Computes the initial indentation of a rich string according to the semantics in the Xtend language specification.
- * That is, especially the first and the last line have to be ignored if they only consist whitespace.
+ * Computes the initial indentation of a rich string according to the semantics
+ * in the Xtend language specification. That is, especially the first and the
+ * last line have to be ignored if they only consist whitespace.
  */
 @SuppressWarnings("restriction")
-public class InitialTemplateIndentationComputer extends LDocRichstringSwitch<String> {
+public class InitialTemplateIndentationComputer extends
+		LunDocRichstringSwitch<String> {
 
 	private final String initial;
 
 	/**
 	 * @param initial
-	 *            the assumed indentation if the first line contains text. May not be <code>null</code>.
+	 *            the assumed indentation if the first line contains text. May
+	 *            not be <code>null</code>.
 	 */
 	public InitialTemplateIndentationComputer(CharSequence initial) {
 		if (initial == null)
-			throw new IllegalArgumentException("Initial indentation must not be null.");
+			throw new IllegalArgumentException(
+					"Initial indentation must not be null.");
 		this.initial = initial.toString();
 	}
 
@@ -46,11 +50,14 @@ public class InitialTemplateIndentationComputer extends LDocRichstringSwitch<Str
 			if (element instanceof RichStringLiteral) {
 				RichStringLiteral literal = (RichStringLiteral) element;
 				if (nextIndex == elements.size()) { // last one
-					elementResult = getLeadingWhitespace(literal.getValue(), literal);
+					elementResult = getLeadingWhitespace(literal.getValue(),
+							literal);
 				} else if (!(elements.get(nextIndex) instanceof RichStringLiteral)) {
-					elementResult = getLeadingWhitespace(literal.getValue(), literal);
+					elementResult = getLeadingWhitespace(literal.getValue(),
+							literal);
 				} else {
-					StringBuilder run = new StringBuilder(Strings.emptyIfNull(literal.getValue()));
+					StringBuilder run = new StringBuilder(
+							Strings.emptyIfNull(literal.getValue()));
 					RichStringLiteral next = null;
 					do {
 						next = (RichStringLiteral) elements.get(nextIndex);
@@ -81,9 +88,11 @@ public class InitialTemplateIndentationComputer extends LDocRichstringSwitch<Str
 		return current;
 	}
 
-	private String getLeadingWhitespace(String value, RichStringLiteral lastLiteral) {
+	private String getLeadingWhitespace(String value,
+			RichStringLiteral lastLiteral) {
 		List<TextLine> lines = TextLines.splitString(value);
-		// no line breaks or immediately closed string literal => no initial indentation
+		// no line breaks or immediately closed string literal => no initial
+		// indentation
 		if (lines.size() <= 1) {
 			return null;
 		}
@@ -103,9 +112,11 @@ public class InitialTemplateIndentationComputer extends LDocRichstringSwitch<Str
 					return "";
 				result = getBetterString(result, leadingWS.toString());
 			} else {
-				// some tools tend to right trim text files by default (e.g. git)
+				// some tools tend to right trim text files by default (e.g.
+				// git)
 				// that's why we ignore empty lines
-				RichString completeString = (RichString) lastLiteral.eContainer();
+				RichString completeString = (RichString) lastLiteral
+						.eContainer();
 				List<XExpression> siblings = completeString.getExpressions();
 				if (siblings.get(siblings.size() - 1) != lastLiteral) {
 					if (leadingWS.length() == 0) { // empty line

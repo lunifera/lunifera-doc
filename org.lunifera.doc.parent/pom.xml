@@ -47,12 +47,19 @@
 		<repository>
 			<id>Xtext bleeding edge</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/</url>
 		</repository>
-
 		<repository>
 			<id>central snapshots</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+		<repository>
+			<id>lunifera releases</id>
+			<url>http://maven.lunifera.org:8086/nexus/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>lunifera thirdparty</id>
+			<url>http://maven.lunifera.org:8086/nexus/content/repositories/thirdparty/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -63,6 +70,14 @@
 		<pluginRepository>
 			<id>lunifera snapshots</id>
 			<url>http://maven.lunifera.org:8086/nexus/content/repositories/snapshots/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>lunifera releases</id>
+			<url>http://maven.lunifera.org:8086/nexus/content/repositories/releases/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>lunifera thirdparty</id>
+			<url>http://maven.lunifera.org:8086/nexus/content/repositories/thirdparty/</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<build>
@@ -103,14 +118,12 @@
 				<plugin>
 					<groupId>org.eclipse.xtend</groupId>
 					<artifactId>xtend-maven-plugin</artifactId>
-					<version>${xtext.version}</version>
+					<!-- Attention - 2.5.1 has a bug -->
+					<version>2.5.0</version>
 					<executions>
 						<execution>
 							<goals>
 								<goal>compile</goal>
-								<goal>xtend-install-debug-info</goal>
-								<goal>testCompile</goal>
-								<goal>xtend-test-install-debug-info</goal>
 							</goals>
 						</execution>
 					</executions>
@@ -142,29 +155,29 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 			</plugin>
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.jacoco</groupId> -->
-<!-- 				<artifactId>jacoco-maven-plugin</artifactId> -->
-<!-- 				<configuration> -->
-<!-- 					<append>true</append> -->
-<!-- 				</configuration> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<id>prepare-unit-tests</id> -->
-<!-- 						<goals> -->
-<!-- 							<goal>prepare-agent</goal> -->
-<!-- 						</goals> -->
-<!-- 						<configuration> -->
-<!-- 							<output>file</output> -->
-<!-- 							<destFile>${sonar.jacoco.reportPath}</destFile> -->
-<!-- 							<propertyName>jacoco.agent-un.argLine</propertyName> -->
-<!-- 							<includes> -->
-<!-- 								<include>org.lunifera.dsl.*</include> -->
-<!-- 							</includes> -->
-<!-- 						</configuration> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.jacoco</groupId> -->
+			<!-- <artifactId>jacoco-maven-plugin</artifactId> -->
+			<!-- <configuration> -->
+			<!-- <append>true</append> -->
+			<!-- </configuration> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <id>prepare-unit-tests</id> -->
+			<!-- <goals> -->
+			<!-- <goal>prepare-agent</goal> -->
+			<!-- </goals> -->
+			<!-- <configuration> -->
+			<!-- <output>file</output> -->
+			<!-- <destFile>${sonar.jacoco.reportPath}</destFile> -->
+			<!-- <propertyName>jacoco.agent-un.argLine</propertyName> -->
+			<!-- <includes> -->
+			<!-- <include>org.lunifera.dsl.*</include> -->
+			<!-- </includes> -->
+			<!-- </configuration> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>

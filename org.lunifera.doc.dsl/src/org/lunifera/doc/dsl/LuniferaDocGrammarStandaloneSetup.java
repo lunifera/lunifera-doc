@@ -10,9 +10,9 @@
 package org.lunifera.doc.dsl;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.lunifera.doc.dsl.luniferadoc.LDocPackage;
-import org.lunifera.doc.dsl.luniferadoc.doccompiler.LDocCompilerPackage;
-import org.lunifera.dsl.semantic.entity.EntityPackage;
+import org.lunifera.doc.dsl.luniferadoc.LunDocPackage;
+import org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage;
+import org.lunifera.dsl.semantic.entity.LunEntityPackage;
 
 import com.google.inject.Injector;
 
@@ -30,18 +30,18 @@ public class LuniferaDocGrammarStandaloneSetup extends
 
 	@Override
 	public void register(Injector injector) {
-		if (!EPackage.Registry.INSTANCE.containsKey(EntityPackage.eNS_URI)) {
-			EPackage.Registry.INSTANCE.put(EntityPackage.eNS_URI,
-					LDocPackage.eINSTANCE);
+		if (!EPackage.Registry.INSTANCE.containsKey(LunEntityPackage.eNS_URI)) {
+			EPackage.Registry.INSTANCE.put(LunEntityPackage.eNS_URI,
+					LunDocPackage.eINSTANCE);
 		}
-		if (!EPackage.Registry.INSTANCE.containsKey(LDocPackage.eNS_URI)) {
-			EPackage.Registry.INSTANCE.put(LDocPackage.eNS_URI,
-					LDocPackage.eINSTANCE);
+		if (!EPackage.Registry.INSTANCE.containsKey(LunDocPackage.eNS_URI)) {
+			EPackage.Registry.INSTANCE.put(LunDocPackage.eNS_URI,
+					LunDocPackage.eINSTANCE);
 		}
 		if (!EPackage.Registry.INSTANCE
-				.containsKey(LDocCompilerPackage.eNS_URI)) {
-			EPackage.Registry.INSTANCE.put(LDocCompilerPackage.eNS_URI,
-					LDocCompilerPackage.eINSTANCE);
+				.containsKey(LunDocCompilerPackage.eNS_URI)) {
+			EPackage.Registry.INSTANCE.put(LunDocCompilerPackage.eNS_URI,
+					LunDocCompilerPackage.eINSTANCE);
 		}
 		super.register(injector);
 	}

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LuniferaDocAPI
+Bundle-SymbolicName: org.lunifera.doc.compiler.web
+Bundle-Version: 0.0.1.qualifier
+Bundle-Vendor: Lunifera
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -17,9 +17,9 @@ import org.lunifera.doc.dsl.luniferadoc.LDocEntityField
 import org.lunifera.doc.dsl.luniferadoc.LDocHumanTaskDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocInclude
 import org.lunifera.doc.dsl.luniferadoc.LDocLayouter
-import org.lunifera.doc.dsl.luniferadoc.LDocPackage
 import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocViewDocument
+import org.lunifera.doc.dsl.luniferadoc.LunDocPackage
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 
 /**
@@ -84,9 +84,9 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 	 */
 	def protected dispatch void format(LDocInclude inc, FormattableDocument format) {
 		format += inc.nodeForKeyword("include").append[oneSpace]
-		format += inc.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__DOCUMENT).append[oneSpace]
-		format += inc.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__PROVIDED).append[oneSpace]
-		format += inc.nodeForFeature(LDocPackage.Literals.LDOC_INCLUDE__PROVIDED_TYPE).append[oneSpace]
+		format += inc.nodeForFeature(LunDocPackage.Literals.LDOC_INCLUDE__DOCUMENT).append[oneSpace]
+		format += inc.nodeForFeature(LunDocPackage.Literals.LDOC_INCLUDE__PROVIDED).append[oneSpace]
+		format += inc.nodeForFeature(LunDocPackage.Literals.LDOC_INCLUDE__PROVIDED_TYPE).append[oneSpace]
 		format += inc.nodeForKeyword("as").append[oneSpace]
 		format += inc.nodeForKeyword(";").prepend[noSpace]
 	}

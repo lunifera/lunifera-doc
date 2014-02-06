@@ -17,7 +17,7 @@ import org.eclipse.xtext.xbase.formatting.FormattingDataFactory
 import org.eclipse.xtext.xbase.formatting.NewLineData
 import org.eclipse.xtext.xbase.formatting.NodeModelAccess
 import org.eclipse.xtext.xbase.formatting.WhitespaceData
-import org.lunifera.doc.dsl.luniferadoc.richstring.LDocRichstringPackage
+import org.lunifera.doc.dsl.luniferadoc.richstring.LunDocRichstringPackage
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichString
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringElseIf
 import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringForLoop
@@ -38,7 +38,7 @@ import org.lunifera.doc.dsl.richstring.RichStringProcessor
  *  2. multi-line with text after opening ''': lines start with semantic whitespace
  *  3. multi-line with text before closing ''': no indentation
  *  4. multi-line with only whitespace after opening ''' and before closing ''': one level of extra indentation between ''' and '''
- */ 
+ */
 class RichStringFormatter {
 	@Inject RichStringProcessor richStringProcessor
 	@Inject extension NodeModelAccess
@@ -119,7 +119,7 @@ class RichStringFormatter {
 	def protected dispatch void fmt((EObject, FormattableDocument)=>void formatter, FormattableDocument doc,
 		RichStringIf expr) {
 		doc += expr.nodeForKeyword("If").surround([noSpace], [oneSpace])
-		doc += expr.nodeForFeature(LDocRichstringPackage.Literals::RICH_STRING_ELSE_IF__IF).append[noSpace]
+		doc += expr.nodeForFeature(LunDocRichstringPackage.Literals::RICH_STRING_ELSE_IF__IF).append[noSpace]
 		formatter.apply(expr.^if, doc)
 		fmt(formatter, doc, expr.then)
 		for (elseif : expr.elseIfs)
@@ -132,10 +132,10 @@ class RichStringFormatter {
 	def protected dispatch void fmt((EObject, FormattableDocument)=>void formatter, FormattableDocument doc,
 		RichStringElseIf expr) {
 		doc += expr.nodeForKeyword("ElseIf").surround([noSpace], [oneSpace])
-		doc += expr.nodeForFeature(LDocRichstringPackage.Literals.RICH_STRING_ELSE_IF__IF).append[noSpace]
+		doc += expr.nodeForFeature(LunDocRichstringPackage.Literals.RICH_STRING_ELSE_IF__IF).append[noSpace]
 		formatter.apply(expr.^if, doc)
 	}
- 
+
 	def protected dispatch void fmt((EObject, FormattableDocument)=>void formatter, FormattableDocument doc,
 		RichStringForLoop expr) {
 		doc += expr.nodeForKeyword("For").surround([noSpace], [oneSpace])
