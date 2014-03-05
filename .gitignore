@@ -12,6 +12,10 @@ bin
 #.classpath
 #.project
 #.settings
+*docindexer/.classpath
+*docindexer/.project
+*docindexer/.settings
+*docindexer/build.properties
 
 
 *.class
