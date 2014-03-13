@@ -16,6 +16,7 @@ bin
 *docindexer/.project
 *docindexer/.settings
 *docindexer/build.properties
+*docindexer/launch/*
 
 
 *.class
