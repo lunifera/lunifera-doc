@@ -15,8 +15,10 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+import org.apache.solr.common.SolrInputDocument;
 import org.eclipse.core.runtime.FileLocator;
 import org.lunifera.doc.docindexer.IDocIndexerService;
+import org.lunifera.doc.docindexer.util.ParseHelper;
 import org.lunifera.runtime.solr.server.ISolrServerService;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
@@ -32,11 +34,21 @@ public class DocIndexerService implements IDocIndexerService {
 
 	private LogService logService;
 	private ISolrServerService solrServerService;
+	private ParseHelper parseHelper = new ParseHelper();
 
 	private void indexLuniferaDocs(Bundle bundle) {
 		try {
 			if (containsDocs(bundle)) {
 				List<File> docFiles = loadDocsFromBundle(bundle);
+				for(File docFile : docFiles) {
+					SolrInputDocument doc = parseHelper.parseLuniferaDoc(docFile);					
+					try {
+						solrServerService.addDocument(doc);
+					} catch (Exception e) {
+						logService.log(LogService.LOG_WARNING, 
+								"Error while indexing LuniferaDoc file: " + docFile, e);
+					}
+				}
 			}
 		} catch (Exception e) {
 			logService.log(LogService.LOG_WARNING, "Error while indexing LuniferaDoc files.", e);
@@ -57,7 +69,7 @@ public class DocIndexerService implements IDocIndexerService {
 			URL url = entries.nextElement();
 			docFiles.add(new File(FileLocator.resolve(url).toURI()));
 		}
-		return docFiles;
+		return docFiles;	
 	}
 
 	protected void activate(ComponentContext compontentContext) {
