@@ -185,8 +185,8 @@ public class LunDocPackageImpl extends EPackageImpl implements LunDocPackage
     isInited = true;
 
     // Initialize simple dependencies
-    LunTypesPackage.eINSTANCE.eClass();
     XtypePackage.eINSTANCE.eClass();
+    LunTypesPackage.eINSTANCE.eClass();
 
     // Obtain or create and register interdependencies
     LunDocRichstringPackageImpl theLunDocRichstringPackage = (LunDocRichstringPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LunDocRichstringPackage.eNS_URI) instanceof LunDocRichstringPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LunDocRichstringPackage.eNS_URI) : LunDocRichstringPackage.eINSTANCE);
