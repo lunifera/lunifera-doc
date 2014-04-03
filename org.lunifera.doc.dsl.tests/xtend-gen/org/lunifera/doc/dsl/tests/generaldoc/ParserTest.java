@@ -25,7 +25,7 @@ import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
 public class ParserTest {
   @Inject
   @Extension
-  private /* ParseHelper<GeneralDocument> */Object _parseHelper;
+  private /* ParseHelper<LDocLayouter> */Object _parseHelper;
   
   @Inject
   @Extension
@@ -38,12 +38,14 @@ public class ParserTest {
   @Test
   public void testParsing() {
     throw new Error("Unresolved compilation problems:"
+      + "\nRichStringImpl cannot be resolved to a type."
       + "\nname cannot be resolved"
       + "\nincludes cannot be resolved"
       + "\nsize cannot be resolved"
       + "\nincludes cannot be resolved"
       + "\nget cannot be resolved"
-      + "\ninclude cannot be resolved"
+      + "\ndocument cannot be resolved"
+      + "\nname cannot be resolved"
       + "\nincludes cannot be resolved"
       + "\nget cannot be resolved"
       + "\nvarName cannot be resolved"

@@ -24,7 +24,7 @@ import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
 public class ParserTest {
   @Inject
   @Extension
-  private /* ParseHelper<EntityDocument> */Object _parseHelper;
+  private /* ParseHelper<IEntityDocument> */Object _parseHelper;
   
   @Inject
   @Extension
@@ -38,9 +38,22 @@ public class ParserTest {
   public void testParsing() {
     throw new Error("Unresolved compilation problems:"
       + "\nname cannot be resolved"
-      + "\nentityClass cannot be resolved"
+      + "\nentityName cannot be resolved"
+      + "\nentityURI cannot be resolved"
+      + "\ntoString cannot be resolved"
       + "\nfields cannot be resolved"
-      + "\nfields cannot be resolved"
-      + "\nsize cannot be resolved");
+      + "\nsize cannot be resolved"
+      + "\naccessField cannot be resolved"
+      + "\nname cannot be resolved");
+  }
+  
+  public /* IEntityField */Object accessField(final /* IEntityDocument */Object doc, final String name) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nIEntityField cannot be resolved to a type."
+      + "\nThe method name is undefined for the type ParserTest"
+      + "\nThe method invoke is undefined for the type ParserTest"
+      + "\nclass cannot be resolved"
+      + "\nmethods cannot be resolved"
+      + "\nequals cannot be resolved");
   }
 }

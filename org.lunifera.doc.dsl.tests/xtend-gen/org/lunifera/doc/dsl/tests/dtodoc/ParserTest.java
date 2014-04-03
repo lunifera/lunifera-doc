@@ -14,7 +14,6 @@ import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
 
@@ -24,7 +23,7 @@ import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
 public class ParserTest {
   @Inject
   @Extension
-  private /* ParseHelper<DTODocument> */Object _parseHelper;
+  private /* ParseHelper<LDocDtoDocument> */Object _parseHelper;
   
   @Inject
   @Extension
@@ -33,37 +32,4 @@ public class ParserTest {
   @Inject
   @Extension
   private IJvmModelAssociations _iJvmModelAssociations;
-  
-  @Test
-  public void testParsing() {
-    throw new Error("Unresolved compilation problems:"
-      + "\nname cannot be resolved"
-      + "\ndtoClass cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nsize cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nget cannot be resolved"
-      + "\nname cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nget cannot be resolved"
-      + "\ndescription cannot be resolved"
-      + "\nclass cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nget cannot be resolved"
-      + "\nname cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nget cannot be resolved"
-      + "\ndescription cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nproperties cannot be resolved"
-      + "\nget cannot be resolved"
-      + "\ndescription cannot be resolved"
-      + "\nexpressions cannot be resolved"
-      + "\nget cannot be resolved");
-  }
 }
