@@ -19,7 +19,7 @@ import org.lunifera.doc.dsl.luniferadoc.LDocUIDocument
 import org.lunifera.doc.dsl.luniferadoc.LDocBPMProcessDocument
 class RichString extends XBlockExpression {
 } 
-
+ 
 /**
  * An If-expression
  */

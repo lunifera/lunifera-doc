@@ -17,7 +17,7 @@ NamedDocument returns doc::LDocNamedDocument:
  
 Document returns doc::LDocDocument:
 	EntityDocument | DTODocument | BPMProcessDocument | BPMHumanTaskDocument | VaaclipseViewDocument | UIDocument;
-
+ 
 DocLayouter returns doc::LDocLayouter:
 	GeneralDocument;
 

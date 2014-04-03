@@ -17,7 +17,7 @@ interface LDocNamedDocument {
 	String name
 	String language 
 }
- 
+  
 class LDocInclude {
 	refers LDocDocument document
 	String[1] varName
