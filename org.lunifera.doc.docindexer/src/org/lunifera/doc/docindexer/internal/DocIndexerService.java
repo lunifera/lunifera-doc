@@ -7,7 +7,6 @@
  ******************************************************************************/
 package org.lunifera.doc.docindexer.internal;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -16,7 +15,8 @@ import java.util.Enumeration;
 import java.util.List;
 
 import org.apache.solr.common.SolrInputDocument;
-import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.internal.adaptor.URLConverterImpl;
+import org.eclipse.emf.common.util.URI;
 import org.lunifera.doc.docindexer.IDocIndexerService;
 import org.lunifera.doc.docindexer.util.ParseHelper;
 import org.lunifera.runtime.solr.server.ISolrServerService;
@@ -30,7 +30,7 @@ import org.osgi.service.log.LogService;
 public class DocIndexerService implements IDocIndexerService {
 
 	private static final String LUNIFERA_DOC_HEADER = "LuniferaDoc-Entries";
-	private static final String LUNIFERA_DOC_EXTENSION = "luniferadoc";
+	private static final String LUNIFERA_DOC_EXTENSION = "docu";
 
 	private LogService logService;
 	private ISolrServerService solrServerService;
@@ -39,37 +39,43 @@ public class DocIndexerService implements IDocIndexerService {
 	private void indexLuniferaDocs(Bundle bundle) {
 		try {
 			if (containsDocs(bundle)) {
-				List<File> docFiles = loadDocsFromBundle(bundle);
-				for(File docFile : docFiles) {
-					SolrInputDocument doc = parseHelper.parseLuniferaDoc(docFile);					
+				List<URI> docUris = getDocUrisFromBundle(bundle);
+				for (URI docUri : docUris) {
+					SolrInputDocument doc = parseHelper.parseLuniferaDoc(docUri);
 					try {
 						solrServerService.addDocument(doc);
 					} catch (Exception e) {
-						logService.log(LogService.LOG_WARNING, 
-								"Error while indexing LuniferaDoc file: " + docFile, e);
+						logService.log(LogService.LOG_WARNING,
+								"Error while indexing LuniferaDoc file: " + docUri, e);
 					}
 				}
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			logService.log(LogService.LOG_WARNING, "Error while indexing LuniferaDoc files.", e);
 		}
 	}
-	
+
 	private boolean containsDocs(Bundle bundle) {
 		return bundle.getHeaders().get(LUNIFERA_DOC_HEADER) != null;
 	}
 
-	private List<File> loadDocsFromBundle(Bundle bundle) throws URISyntaxException, IOException {
-		List<File> docFiles = new ArrayList<>();
-		String docEntries = bundle.getHeaders().get(LUNIFERA_DOC_HEADER);
-		System.out.println(bundle.getBundleId() + " docEntries: " + docEntries);
-		Enumeration<URL> entries = bundle.findEntries(docEntries, "*." + LUNIFERA_DOC_EXTENSION,
-				true);
-		while (entries.hasMoreElements()) {
-			URL url = entries.nextElement();
-			docFiles.add(new File(FileLocator.resolve(url).toURI()));
+	private List<URI> getDocUrisFromBundle(Bundle bundle) throws URISyntaxException, IOException {
+		List<URI> docUris = new ArrayList<>();
+		String docEntriesString = bundle.getHeaders().get(LUNIFERA_DOC_HEADER);
+		String[] docEntries = docEntriesString.split(",");
+		for (String docEntry : docEntries) {
+			Enumeration<URL> entries = bundle.findEntries(docEntry.trim(), "*."
+					+ LUNIFERA_DOC_EXTENSION, true);
+			if (entries != null) {
+				while (entries.hasMoreElements()) {
+					URL url = entries.nextElement();
+					docUris.add(URI.createURI(new URLConverterImpl().toFileURL(url).toURI()
+							.toString()));
+				}
+			}
 		}
-		return docFiles;	
+		return docUris;
 	}
 
 	protected void activate(ComponentContext compontentContext) {
@@ -85,6 +91,8 @@ public class DocIndexerService implements IDocIndexerService {
 	}
 
 	protected void deactivate(ComponentContext componentContext) {
+		logService = null;
+		solrServerService = null;
 	}
 
 	protected synchronized void bindLogService(LogService logService) {
@@ -94,7 +102,7 @@ public class DocIndexerService implements IDocIndexerService {
 	protected synchronized void unbindLogService(LogService logService) {
 		this.logService = null;
 	}
-	
+
 	protected synchronized void bindSolrServerService(ISolrServerService solrServerService) {
 		this.solrServerService = solrServerService;
 	}
