@@ -16,27 +16,24 @@ import org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage;
  *
  * @generated
  */
-public class LineBreakImpl extends LiteralImpl implements LineBreak
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected LineBreakImpl()
-  {
-    super();
-  }
+public class LineBreakImpl extends LiteralImpl implements LineBreak {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LineBreakImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocCompilerPackage.Literals.LINE_BREAK;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocCompilerPackage.Literals.LINE_BREAK;
+	}
 
 } //LineBreakImpl

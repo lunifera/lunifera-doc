@@ -18,27 +18,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  *
  * @generated
  */
-public class RichStringImpl extends XBlockExpressionImpl implements RichString
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringImpl()
-  {
-    super();
-  }
+public class RichStringImpl extends XBlockExpressionImpl implements RichString {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING;
+	}
 
 } //RichStringImpl

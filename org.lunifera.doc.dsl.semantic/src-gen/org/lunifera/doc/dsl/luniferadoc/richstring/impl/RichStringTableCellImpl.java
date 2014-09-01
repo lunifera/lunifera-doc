@@ -16,27 +16,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringTableCell;
  *
  * @generated
  */
-public class RichStringTableCellImpl extends RichStringMarkupImpl implements RichStringTableCell
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringTableCellImpl()
-  {
-    super();
-  }
+public class RichStringTableCellImpl extends RichStringMarkupImpl implements RichStringTableCell {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringTableCellImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING_TABLE_CELL;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING_TABLE_CELL;
+	}
 
 } //RichStringTableCellImpl

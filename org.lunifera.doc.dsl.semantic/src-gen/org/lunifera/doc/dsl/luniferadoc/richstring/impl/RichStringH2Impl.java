@@ -16,27 +16,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH2;
  *
  * @generated
  */
-public class RichStringH2Impl extends RichStringMarkupImpl implements RichStringH2
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringH2Impl()
-  {
-    super();
-  }
+public class RichStringH2Impl extends RichStringMarkupImpl implements RichStringH2 {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringH2Impl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING_H2;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING_H2;
+	}
 
 } //RichStringH2Impl

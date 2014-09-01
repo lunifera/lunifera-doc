@@ -21,58 +21,57 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringProcessRef;
  * @model
  * @generated
  */
-public interface ProcessRefStart extends LinePart
-{
-  /**
-   * Returns the value of the '<em><b>Content</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' reference.
-   * @see #setContent(RichStringProcessRef)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getProcessRefStart_Content()
-   * @model
-   * @generated
-   */
-  RichStringProcessRef getContent();
+public interface ProcessRefStart extends LinePart {
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' reference.
+	 * @see #setContent(RichStringProcessRef)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getProcessRefStart_Content()
+	 * @model
+	 * @generated
+	 */
+	RichStringProcessRef getContent();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.ProcessRefStart#getContent <em>Content</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' reference.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(RichStringProcessRef value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.ProcessRefStart#getContent <em>Content</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(RichStringProcessRef value);
 
-  /**
-   * Returns the value of the '<em><b>End</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>End</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>End</em>' reference.
-   * @see #setEnd(ProcessRefEnd)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getProcessRefStart_End()
-   * @model
-   * @generated
-   */
-  ProcessRefEnd getEnd();
+	/**
+	 * Returns the value of the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>End</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>End</em>' reference.
+	 * @see #setEnd(ProcessRefEnd)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getProcessRefStart_End()
+	 * @model
+	 * @generated
+	 */
+	ProcessRefEnd getEnd();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.ProcessRefStart#getEnd <em>End</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>End</em>' reference.
-   * @see #getEnd()
-   * @generated
-   */
-  void setEnd(ProcessRefEnd value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.ProcessRefStart#getEnd <em>End</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>End</em>' reference.
+	 * @see #getEnd()
+	 * @generated
+	 */
+	void setEnd(ProcessRefEnd value);
 
 } // ProcessRefStart

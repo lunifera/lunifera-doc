@@ -16,27 +16,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringFooter;
  *
  * @generated
  */
-public class RichStringFooterImpl extends RichStringContainerImpl implements RichStringFooter
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringFooterImpl()
-  {
-    super();
-  }
+public class RichStringFooterImpl extends RichStringContainerImpl implements RichStringFooter {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringFooterImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING_FOOTER;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING_FOOTER;
+	}
 
 } //RichStringFooterImpl

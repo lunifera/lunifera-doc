@@ -122,7 +122,7 @@ public class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
               protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
                 {
                   EList<LDocInclude> _includes = layouter.getIncludes();
-                  final Function1<LDocInclude,Boolean> _function = new Function1<LDocInclude,Boolean>() {
+                  final Function1<LDocInclude, Boolean> _function = new Function1<LDocInclude, Boolean>() {
                     public Boolean apply(final LDocInclude it) {
                       boolean _isProvided = it.isProvided();
                       return Boolean.valueOf((!_isProvided));
@@ -153,7 +153,7 @@ public class LuniferaDocGrammarJvmModelInferrer extends AbstractModelInferrer {
         JvmConstructor _constructor = LuniferaDocGrammarJvmModelInferrer.this._lDocTypesBuilder.toConstructor(layouter, _function);
         LuniferaDocGrammarJvmModelInferrer.this._lDocTypesBuilder.<JvmConstructor>operator_add(_members_2, _constructor);
         EList<LDocInclude> _includes_1 = layouter.getIncludes();
-        final Function1<LDocInclude,Boolean> _function_1 = new Function1<LDocInclude,Boolean>() {
+        final Function1<LDocInclude, Boolean> _function_1 = new Function1<LDocInclude, Boolean>() {
           public Boolean apply(final LDocInclude it) {
             return Boolean.valueOf(it.isProvided());
           }

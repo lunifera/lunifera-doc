@@ -29,211 +29,190 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumnLayout;
  *
  * @generated
  */
-public class ColumnLayoutStartImpl extends LinePartImpl implements ColumnLayoutStart
-{
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected RichStringColumnLayout content;
+public class ColumnLayoutStartImpl extends LinePartImpl implements ColumnLayoutStart {
+	/**
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected RichStringColumnLayout content;
 
-  /**
-   * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEnd()
-   * @generated
-   * @ordered
-   */
-  protected ColumnLayoutEnd end;
+	/**
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected ColumnLayoutEnd end;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ColumnLayoutStartImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ColumnLayoutStartImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocCompilerPackage.Literals.COLUMN_LAYOUT_START;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocCompilerPackage.Literals.COLUMN_LAYOUT_START;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RichStringColumnLayout getContent()
-  {
-    if (content != null && content.eIsProxy())
-    {
-      InternalEObject oldContent = (InternalEObject)content;
-      content = (RichStringColumnLayout)eResolveProxy(oldContent);
-      if (content != oldContent)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT, oldContent, content));
-      }
-    }
-    return content;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RichStringColumnLayout getContent() {
+		if (content != null && content.eIsProxy()) {
+			InternalEObject oldContent = (InternalEObject)content;
+			content = (RichStringColumnLayout)eResolveProxy(oldContent);
+			if (content != oldContent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT, oldContent, content));
+			}
+		}
+		return content;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RichStringColumnLayout basicGetContent()
-  {
-    return content;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RichStringColumnLayout basicGetContent() {
+		return content;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setContent(RichStringColumnLayout newContent)
-  {
-    RichStringColumnLayout oldContent = content;
-    content = newContent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT, oldContent, content));
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContent(RichStringColumnLayout newContent) {
+		RichStringColumnLayout oldContent = content;
+		content = newContent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT, oldContent, content));
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ColumnLayoutEnd getEnd()
-  {
-    if (end != null && end.eIsProxy())
-    {
-      InternalEObject oldEnd = (InternalEObject)end;
-      end = (ColumnLayoutEnd)eResolveProxy(oldEnd);
-      if (end != oldEnd)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.COLUMN_LAYOUT_START__END, oldEnd, end));
-      }
-    }
-    return end;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ColumnLayoutEnd getEnd() {
+		if (end != null && end.eIsProxy()) {
+			InternalEObject oldEnd = (InternalEObject)end;
+			end = (ColumnLayoutEnd)eResolveProxy(oldEnd);
+			if (end != oldEnd) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.COLUMN_LAYOUT_START__END, oldEnd, end));
+			}
+		}
+		return end;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ColumnLayoutEnd basicGetEnd()
-  {
-    return end;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ColumnLayoutEnd basicGetEnd() {
+		return end;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEnd(ColumnLayoutEnd newEnd)
-  {
-    ColumnLayoutEnd oldEnd = end;
-    end = newEnd;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.COLUMN_LAYOUT_START__END, oldEnd, end));
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnd(ColumnLayoutEnd newEnd) {
+		ColumnLayoutEnd oldEnd = end;
+		end = newEnd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.COLUMN_LAYOUT_START__END, oldEnd, end));
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
-        if (resolve) return getContent();
-        return basicGetContent();
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
-        if (resolve) return getEnd();
-        return basicGetEnd();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
+				if (resolve) return getContent();
+				return basicGetContent();
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
+				if (resolve) return getEnd();
+				return basicGetEnd();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
-        setContent((RichStringColumnLayout)newValue);
-        return;
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
-        setEnd((ColumnLayoutEnd)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
+				setContent((RichStringColumnLayout)newValue);
+				return;
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
+				setEnd((ColumnLayoutEnd)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
-        setContent((RichStringColumnLayout)null);
-        return;
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
-        setEnd((ColumnLayoutEnd)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
+				setContent((RichStringColumnLayout)null);
+				return;
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
+				setEnd((ColumnLayoutEnd)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
-        return content != null;
-      case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
-        return end != null;
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__CONTENT:
+				return content != null;
+			case LunDocCompilerPackage.COLUMN_LAYOUT_START__END:
+				return end != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ColumnLayoutStartImpl

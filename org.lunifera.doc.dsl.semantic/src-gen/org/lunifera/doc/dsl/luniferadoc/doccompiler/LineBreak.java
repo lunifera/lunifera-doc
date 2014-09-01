@@ -13,6 +13,5 @@ package org.lunifera.doc.dsl.luniferadoc.doccompiler;
  * @model
  * @generated
  */
-public interface LineBreak extends Literal
-{
+public interface LineBreak extends Literal {
 } // LineBreak

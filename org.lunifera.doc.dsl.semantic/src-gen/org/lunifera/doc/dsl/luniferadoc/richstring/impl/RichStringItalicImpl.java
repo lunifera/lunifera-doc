@@ -16,27 +16,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringItalic;
  *
  * @generated
  */
-public class RichStringItalicImpl extends RichStringMarkupImpl implements RichStringItalic
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringItalicImpl()
-  {
-    super();
-  }
+public class RichStringItalicImpl extends RichStringMarkupImpl implements RichStringItalic {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringItalicImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING_ITALIC;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING_ITALIC;
+	}
 
 } //RichStringItalicImpl

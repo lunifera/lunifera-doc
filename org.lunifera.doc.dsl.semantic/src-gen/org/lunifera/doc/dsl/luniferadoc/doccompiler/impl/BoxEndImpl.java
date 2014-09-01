@@ -26,147 +26,131 @@ import org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage;
  *
  * @generated
  */
-public class BoxEndImpl extends LinePartImpl implements BoxEnd
-{
-  /**
-   * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStart()
-   * @generated
-   * @ordered
-   */
-  protected BoxStart start;
+public class BoxEndImpl extends LinePartImpl implements BoxEnd {
+	/**
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected BoxStart start;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected BoxEndImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BoxEndImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocCompilerPackage.Literals.BOX_END;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocCompilerPackage.Literals.BOX_END;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BoxStart getStart()
-  {
-    if (start != null && start.eIsProxy())
-    {
-      InternalEObject oldStart = (InternalEObject)start;
-      start = (BoxStart)eResolveProxy(oldStart);
-      if (start != oldStart)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.BOX_END__START, oldStart, start));
-      }
-    }
-    return start;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BoxStart getStart() {
+		if (start != null && start.eIsProxy()) {
+			InternalEObject oldStart = (InternalEObject)start;
+			start = (BoxStart)eResolveProxy(oldStart);
+			if (start != oldStart) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.BOX_END__START, oldStart, start));
+			}
+		}
+		return start;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BoxStart basicGetStart()
-  {
-    return start;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BoxStart basicGetStart() {
+		return start;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStart(BoxStart newStart)
-  {
-    BoxStart oldStart = start;
-    start = newStart;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.BOX_END__START, oldStart, start));
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStart(BoxStart newStart) {
+		BoxStart oldStart = start;
+		start = newStart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.BOX_END__START, oldStart, start));
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.BOX_END__START:
-        if (resolve) return getStart();
-        return basicGetStart();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case LunDocCompilerPackage.BOX_END__START:
+				if (resolve) return getStart();
+				return basicGetStart();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.BOX_END__START:
-        setStart((BoxStart)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case LunDocCompilerPackage.BOX_END__START:
+				setStart((BoxStart)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.BOX_END__START:
-        setStart((BoxStart)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case LunDocCompilerPackage.BOX_END__START:
+				setStart((BoxStart)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.BOX_END__START:
-        return start != null;
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case LunDocCompilerPackage.BOX_END__START:
+				return start != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //BoxEndImpl

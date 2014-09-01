@@ -24,32 +24,31 @@ package org.lunifera.doc.dsl.luniferadoc.richstring;
  * @model
  * @generated
  */
-public interface RichStringOpenView extends RichStringMarkup
-{
-  /**
-   * Returns the value of the '<em><b>View Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>View Id</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>View Id</em>' attribute.
-   * @see #setViewId(String)
-   * @see org.lunifera.doc.dsl.luniferadoc.richstring.LunDocRichstringPackage#getRichStringOpenView_ViewId()
-   * @model unique="false"
-   * @generated
-   */
-  String getViewId();
+public interface RichStringOpenView extends RichStringMarkup {
+	/**
+	 * Returns the value of the '<em><b>View Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>View Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>View Id</em>' attribute.
+	 * @see #setViewId(String)
+	 * @see org.lunifera.doc.dsl.luniferadoc.richstring.LunDocRichstringPackage#getRichStringOpenView_ViewId()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getViewId();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView#getViewId <em>View Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>View Id</em>' attribute.
-   * @see #getViewId()
-   * @generated
-   */
-  void setViewId(String value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.richstring.RichStringOpenView#getViewId <em>View Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>View Id</em>' attribute.
+	 * @see #getViewId()
+	 * @generated
+	 */
+	void setViewId(String value);
 
 } // RichStringOpenView

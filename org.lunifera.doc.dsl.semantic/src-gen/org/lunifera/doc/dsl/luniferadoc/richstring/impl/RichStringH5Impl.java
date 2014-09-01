@@ -16,27 +16,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringH5;
  *
  * @generated
  */
-public class RichStringH5Impl extends RichStringMarkupImpl implements RichStringH5
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringH5Impl()
-  {
-    super();
-  }
+public class RichStringH5Impl extends RichStringMarkupImpl implements RichStringH5 {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringH5Impl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING_H5;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING_H5;
+	}
 
 } //RichStringH5Impl

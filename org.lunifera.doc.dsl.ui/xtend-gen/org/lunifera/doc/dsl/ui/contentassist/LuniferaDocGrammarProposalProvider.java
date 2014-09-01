@@ -129,7 +129,7 @@ public class LuniferaDocGrammarProposalProvider extends AbstractLuniferaDocGramm
         }
         _xifexpression = _xifexpression_1;
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }

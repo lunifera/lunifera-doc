@@ -43,8 +43,8 @@ public class LuniferaDocGrammarFormatter_pb extends AbstractDeclarativeFormatter
     FormattingConfig.LinewrapLocator _setLinewrap_2 = c.setLinewrap(0, 1, 1);
     TerminalRule _mL_COMMENTRule_1 = this._luniferaDocGrammarGrammarAccess.getML_COMMENTRule();
     _setLinewrap_2.after(_mL_COMMENTRule_1);
-    List<Pair<Keyword,Keyword>> _findKeywordPairs = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("«", "»");
-    for (final Pair<Keyword,Keyword> pair : _findKeywordPairs) {
+    List<Pair<Keyword, Keyword>> _findKeywordPairs = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("«", "»");
+    for (final Pair<Keyword, Keyword> pair : _findKeywordPairs) {
       {
         FormattingConfig.NoSpaceLocator _setNoSpace = c.setNoSpace();
         Keyword _first = pair.getFirst();
@@ -54,8 +54,8 @@ public class LuniferaDocGrammarFormatter_pb extends AbstractDeclarativeFormatter
         _setNoSpace_1.before(_second);
       }
     }
-    List<Pair<Keyword,Keyword>> _findKeywordPairs_1 = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("(", ")");
-    for (final Pair<Keyword,Keyword> pair_1 : _findKeywordPairs_1) {
+    List<Pair<Keyword, Keyword>> _findKeywordPairs_1 = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("(", ")");
+    for (final Pair<Keyword, Keyword> pair_1 : _findKeywordPairs_1) {
       {
         FormattingConfig.NoSpaceLocator _setNoSpace = c.setNoSpace();
         Keyword _first = pair_1.getFirst();
@@ -65,8 +65,8 @@ public class LuniferaDocGrammarFormatter_pb extends AbstractDeclarativeFormatter
         _setNoSpace_1.before(_second);
       }
     }
-    List<Pair<Keyword,Keyword>> _findKeywordPairs_2 = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("{", "}");
-    for (final Pair<Keyword,Keyword> pair_2 : _findKeywordPairs_2) {
+    List<Pair<Keyword, Keyword>> _findKeywordPairs_2 = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("{", "}");
+    for (final Pair<Keyword, Keyword> pair_2 : _findKeywordPairs_2) {
       {
         FormattingConfig.IndentationLocatorStart _setIndentationIncrement = c.setIndentationIncrement();
         Keyword _first = pair_2.getFirst();
@@ -82,8 +82,8 @@ public class LuniferaDocGrammarFormatter_pb extends AbstractDeclarativeFormatter
         _setLinewrap_4.around(_second_1);
       }
     }
-    List<Pair<Keyword,Keyword>> _findKeywordPairs_3 = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("\'\'\'", "\'\'\'");
-    for (final Pair<Keyword,Keyword> pair_3 : _findKeywordPairs_3) {
+    List<Pair<Keyword, Keyword>> _findKeywordPairs_3 = this._luniferaDocGrammarGrammarAccess.findKeywordPairs("\'\'\'", "\'\'\'");
+    for (final Pair<Keyword, Keyword> pair_3 : _findKeywordPairs_3) {
       {
         FormattingConfig.IndentationLocatorStart _setIndentationIncrement = c.setIndentationIncrement();
         Keyword _first = pair_3.getFirst();

@@ -37,8 +37,6 @@ public class ParserTest {
   @Test
   public void testParsing() {
     throw new Error("Unresolved compilation problems:"
-      + "\nRichStringLiteralImpl cannot be resolved to a type."
-      + "\nRichStringH1Impl cannot be resolved to a type."
       + "\nname cannot be resolved"
       + "\ncontent cannot be resolved"
       + "\ncontent cannot be resolved"

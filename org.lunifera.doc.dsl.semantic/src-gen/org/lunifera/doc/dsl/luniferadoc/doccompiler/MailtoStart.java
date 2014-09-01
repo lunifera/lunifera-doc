@@ -21,58 +21,57 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMailto;
  * @model
  * @generated
  */
-public interface MailtoStart extends LinePart
-{
-  /**
-   * Returns the value of the '<em><b>Content</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' reference.
-   * @see #setContent(RichStringMailto)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMailtoStart_Content()
-   * @model
-   * @generated
-   */
-  RichStringMailto getContent();
+public interface MailtoStart extends LinePart {
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' reference.
+	 * @see #setContent(RichStringMailto)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMailtoStart_Content()
+	 * @model
+	 * @generated
+	 */
+	RichStringMailto getContent();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MailtoStart#getContent <em>Content</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' reference.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(RichStringMailto value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MailtoStart#getContent <em>Content</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(RichStringMailto value);
 
-  /**
-   * Returns the value of the '<em><b>End</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>End</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>End</em>' reference.
-   * @see #setEnd(MailtoEnd)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMailtoStart_End()
-   * @model
-   * @generated
-   */
-  MailtoEnd getEnd();
+	/**
+	 * Returns the value of the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>End</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>End</em>' reference.
+	 * @see #setEnd(MailtoEnd)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMailtoStart_End()
+	 * @model
+	 * @generated
+	 */
+	MailtoEnd getEnd();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MailtoStart#getEnd <em>End</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>End</em>' reference.
-   * @see #getEnd()
-   * @generated
-   */
-  void setEnd(MailtoEnd value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MailtoStart#getEnd <em>End</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>End</em>' reference.
+	 * @see #getEnd()
+	 * @generated
+	 */
+	void setEnd(MailtoEnd value);
 
 } // MailtoStart

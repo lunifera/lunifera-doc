@@ -14,12 +14,12 @@
 
 	<parent>
 		<groupId>org.lunifera.releng.maven</groupId>
-		<artifactId>org.lunifera.releng.maven.parent.tycho.aggregator</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<artifactId>lunifera-releng-maven-parent-tycho</artifactId>
+		<version>0.10.1-SNAPSHOT</version>
 	</parent>
 
 	<groupId>org.lunifera.doc</groupId>
-	<artifactId>org.lunifera.doc.aggregator</artifactId>
+	<artifactId>org.lunifera.doc</artifactId>
 	<packaging>pom</packaging>
 
 	<profiles>
@@ -32,7 +32,6 @@
 				<defaultGoal>clean verify</defaultGoal>
 			</build>
 			<modules>
-				<module>org.lunifera.doc.parent</module>
 				<!-- P2 bundles -->
 				<module>org.lunifera.doc.dsl.semantic</module>
 				<module>org.lunifera.doc.dsl.api</module>
@@ -47,4 +46,5 @@
 			</modules>
 		</profile>
 	</profiles>
+	<version>0.0.1-SNAPSHOT</version>
 </project>

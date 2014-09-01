@@ -26,64 +26,63 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * @model
  * @generated
  */
-public interface LDocLayouter extends LDocNamedDocument
-{
-  /**
-   * Returns the value of the '<em><b>Content</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' containment reference.
-   * @see #setContent(RichString)
-   * @see org.lunifera.doc.dsl.luniferadoc.LunDocPackage#getLDocLayouter_Content()
-   * @model containment="true"
-   * @generated
-   */
-  RichString getContent();
+public interface LDocLayouter extends LDocNamedDocument {
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' containment reference.
+	 * @see #setContent(RichString)
+	 * @see org.lunifera.doc.dsl.luniferadoc.LunDocPackage#getLDocLayouter_Content()
+	 * @model containment="true"
+	 * @generated
+	 */
+	RichString getContent();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LDocLayouter#getContent <em>Content</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' containment reference.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(RichString value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.LDocLayouter#getContent <em>Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' containment reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(RichString value);
 
-  /**
-   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.xtext.xtype.XImportDeclaration}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Imports</em>' containment reference list.
-   * @see org.lunifera.doc.dsl.luniferadoc.LunDocPackage#getLDocLayouter_Imports()
-   * @model containment="true"
-   * @generated
-   */
-  EList<XImportDeclaration> getImports();
+	/**
+	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.xtext.xtype.XImportDeclaration}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Imports</em>' containment reference list.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LunDocPackage#getLDocLayouter_Imports()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<XImportDeclaration> getImports();
 
-  /**
-   * Returns the value of the '<em><b>Includes</b></em>' containment reference list.
-   * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.LDocInclude}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Includes</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Includes</em>' containment reference list.
-   * @see org.lunifera.doc.dsl.luniferadoc.LunDocPackage#getLDocLayouter_Includes()
-   * @model containment="true"
-   * @generated
-   */
-  EList<LDocInclude> getIncludes();
+	/**
+	 * Returns the value of the '<em><b>Includes</b></em>' containment reference list.
+	 * The list contents are of type {@link org.lunifera.doc.dsl.luniferadoc.LDocInclude}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Includes</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Includes</em>' containment reference list.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LunDocPackage#getLDocLayouter_Includes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<LDocInclude> getIncludes();
 
 } // LDocLayouter

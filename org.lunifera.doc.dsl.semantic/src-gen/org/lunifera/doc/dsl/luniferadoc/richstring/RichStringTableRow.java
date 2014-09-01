@@ -18,6 +18,5 @@ package org.lunifera.doc.dsl.luniferadoc.richstring;
  * @model
  * @generated
  */
-public interface RichStringTableRow extends RichStringMarkup
-{
+public interface RichStringTableRow extends RichStringMarkup {
 } // RichStringTableRow

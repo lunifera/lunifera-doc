@@ -16,6 +16,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.junit.runner.RunWith;
 import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
+import org.lunifera.doc.dsl.luniferadoc.LDocDtoDocument;
 
 @RunWith(XtextRunner.class)
 @InjectWith(LuniferaDocGrammarInjectorProvider.class)
@@ -23,7 +24,7 @@ import org.lunifera.doc.dsl.LuniferaDocGrammarInjectorProvider;
 public class ParserTest {
   @Inject
   @Extension
-  private /* ParseHelper<LDocDtoDocument> */Object _parseHelper;
+  private ParseHelper<LDocDtoDocument> _parseHelper;
   
   @Inject
   @Extension

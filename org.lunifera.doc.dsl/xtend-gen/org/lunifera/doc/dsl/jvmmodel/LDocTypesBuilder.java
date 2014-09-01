@@ -3,7 +3,6 @@ package org.lunifera.doc.dsl.jvmmodel;
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtend2.lib.StringConcatenationClient;
 import org.eclipse.xtext.common.types.JvmField;
 import org.eclipse.xtext.common.types.JvmGenericType;
@@ -68,7 +67,7 @@ public class LDocTypesBuilder extends JvmTypesBuilder {
     {
       JvmTypeReference _typeForName = this.typeReference.getTypeForName(IDocumentAccess.class, doc, null);
       final JvmField field = this.toField(doc, "docAccess", _typeForName);
-      _xblockexpression = (field);
+      _xblockexpression = field;
     }
     return _xblockexpression;
   }
@@ -84,23 +83,23 @@ public class LDocTypesBuilder extends JvmTypesBuilder {
       String _varName = include.getVarName();
       LDocType _providedType = include.getProvidedType();
       JvmTypeReference _typeReference = this._modelExtensions.toTypeReference(_providedType, include);
-      _xblockexpression = (this.toSetter(include, _varName, _typeReference));
+      _xblockexpression = this.toSetter(include, _varName, _typeReference);
     }
     return _xblockexpression;
   }
   
-  public JvmGenericType toDocumentClass(@Nullable final LDocNamedDocument doc) {
+  public JvmGenericType toDocumentClass(/* @Nullable  */final LDocNamedDocument doc) {
     JvmGenericType _xblockexpression = null;
     {
       String _fqnDocumentClassName = this._modelExtensions.toFqnDocumentClassName(doc);
       final JvmGenericType result = this.createJvmGenericType(doc, _fqnDocumentClassName);
-      _xblockexpression = (this.<JvmGenericType>associate(doc, result));
+      _xblockexpression = this.<JvmGenericType>associate(doc, result);
     }
     return _xblockexpression;
   }
   
-  @Nullable
-  public JvmOperation toGetter(@Nullable final EObject sourceElement, @Nullable final String fieldName, @Nullable final JvmTypeReference typeRef, @Nullable final Procedure1<? super JvmOperation> initializer) {
+  /* @Nullable
+   */public JvmOperation toGetter(/* @Nullable  */final EObject sourceElement, /* @Nullable  */final String fieldName, /* @Nullable  */final JvmTypeReference typeRef, /* @Nullable  */final Procedure1<? super JvmOperation> initializer) {
     boolean _or = false;
     boolean _equals = Objects.equal(sourceElement, null);
     if (_equals) {

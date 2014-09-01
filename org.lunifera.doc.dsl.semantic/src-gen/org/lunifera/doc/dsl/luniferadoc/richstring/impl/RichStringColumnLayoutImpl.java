@@ -16,27 +16,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringColumnLayout;
  *
  * @generated
  */
-public class RichStringColumnLayoutImpl extends RichStringMarkupImpl implements RichStringColumnLayout
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringColumnLayoutImpl()
-  {
-    super();
-  }
+public class RichStringColumnLayoutImpl extends RichStringMarkupImpl implements RichStringColumnLayout {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringColumnLayoutImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING_COLUMN_LAYOUT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING_COLUMN_LAYOUT;
+	}
 
 } //RichStringColumnLayoutImpl

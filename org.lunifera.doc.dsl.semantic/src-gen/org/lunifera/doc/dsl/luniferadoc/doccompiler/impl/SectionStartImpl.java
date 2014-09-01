@@ -29,211 +29,190 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringSection;
  *
  * @generated
  */
-public class SectionStartImpl extends LinePartImpl implements SectionStart
-{
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected RichStringSection content;
+public class SectionStartImpl extends LinePartImpl implements SectionStart {
+	/**
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected RichStringSection content;
 
-  /**
-   * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEnd()
-   * @generated
-   * @ordered
-   */
-  protected SectionEnd end;
+	/**
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected SectionEnd end;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected SectionStartImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SectionStartImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocCompilerPackage.Literals.SECTION_START;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocCompilerPackage.Literals.SECTION_START;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RichStringSection getContent()
-  {
-    if (content != null && content.eIsProxy())
-    {
-      InternalEObject oldContent = (InternalEObject)content;
-      content = (RichStringSection)eResolveProxy(oldContent);
-      if (content != oldContent)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.SECTION_START__CONTENT, oldContent, content));
-      }
-    }
-    return content;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RichStringSection getContent() {
+		if (content != null && content.eIsProxy()) {
+			InternalEObject oldContent = (InternalEObject)content;
+			content = (RichStringSection)eResolveProxy(oldContent);
+			if (content != oldContent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.SECTION_START__CONTENT, oldContent, content));
+			}
+		}
+		return content;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RichStringSection basicGetContent()
-  {
-    return content;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RichStringSection basicGetContent() {
+		return content;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setContent(RichStringSection newContent)
-  {
-    RichStringSection oldContent = content;
-    content = newContent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.SECTION_START__CONTENT, oldContent, content));
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContent(RichStringSection newContent) {
+		RichStringSection oldContent = content;
+		content = newContent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.SECTION_START__CONTENT, oldContent, content));
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SectionEnd getEnd()
-  {
-    if (end != null && end.eIsProxy())
-    {
-      InternalEObject oldEnd = (InternalEObject)end;
-      end = (SectionEnd)eResolveProxy(oldEnd);
-      if (end != oldEnd)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.SECTION_START__END, oldEnd, end));
-      }
-    }
-    return end;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SectionEnd getEnd() {
+		if (end != null && end.eIsProxy()) {
+			InternalEObject oldEnd = (InternalEObject)end;
+			end = (SectionEnd)eResolveProxy(oldEnd);
+			if (end != oldEnd) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LunDocCompilerPackage.SECTION_START__END, oldEnd, end));
+			}
+		}
+		return end;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SectionEnd basicGetEnd()
-  {
-    return end;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SectionEnd basicGetEnd() {
+		return end;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEnd(SectionEnd newEnd)
-  {
-    SectionEnd oldEnd = end;
-    end = newEnd;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.SECTION_START__END, oldEnd, end));
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnd(SectionEnd newEnd) {
+		SectionEnd oldEnd = end;
+		end = newEnd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocCompilerPackage.SECTION_START__END, oldEnd, end));
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.SECTION_START__CONTENT:
-        if (resolve) return getContent();
-        return basicGetContent();
-      case LunDocCompilerPackage.SECTION_START__END:
-        if (resolve) return getEnd();
-        return basicGetEnd();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case LunDocCompilerPackage.SECTION_START__CONTENT:
+				if (resolve) return getContent();
+				return basicGetContent();
+			case LunDocCompilerPackage.SECTION_START__END:
+				if (resolve) return getEnd();
+				return basicGetEnd();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.SECTION_START__CONTENT:
-        setContent((RichStringSection)newValue);
-        return;
-      case LunDocCompilerPackage.SECTION_START__END:
-        setEnd((SectionEnd)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case LunDocCompilerPackage.SECTION_START__CONTENT:
+				setContent((RichStringSection)newValue);
+				return;
+			case LunDocCompilerPackage.SECTION_START__END:
+				setEnd((SectionEnd)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.SECTION_START__CONTENT:
-        setContent((RichStringSection)null);
-        return;
-      case LunDocCompilerPackage.SECTION_START__END:
-        setEnd((SectionEnd)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case LunDocCompilerPackage.SECTION_START__CONTENT:
+				setContent((RichStringSection)null);
+				return;
+			case LunDocCompilerPackage.SECTION_START__END:
+				setEnd((SectionEnd)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case LunDocCompilerPackage.SECTION_START__CONTENT:
-        return content != null;
-      case LunDocCompilerPackage.SECTION_START__END:
-        return end != null;
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case LunDocCompilerPackage.SECTION_START__CONTENT:
+				return content != null;
+			case LunDocCompilerPackage.SECTION_START__END:
+				return end != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //SectionStartImpl

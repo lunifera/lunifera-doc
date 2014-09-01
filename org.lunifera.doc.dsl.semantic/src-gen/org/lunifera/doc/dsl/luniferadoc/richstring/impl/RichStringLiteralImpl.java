@@ -18,27 +18,24 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringLiteral;
  *
  * @generated
  */
-public class RichStringLiteralImpl extends XStringLiteralImpl implements RichStringLiteral
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected RichStringLiteralImpl()
-  {
-    super();
-  }
+public class RichStringLiteralImpl extends XStringLiteralImpl implements RichStringLiteral {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RichStringLiteralImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return LunDocRichstringPackage.Literals.RICH_STRING_LITERAL;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LunDocRichstringPackage.Literals.RICH_STRING_LITERAL;
+	}
 
 } //RichStringLiteralImpl

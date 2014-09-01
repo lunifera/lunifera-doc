@@ -9,3 +9,12 @@
 /.SemanticWhitespace.java._trace
 /.TemplateWhitespace.java._trace
 /LuniferaDocGrammarFormatter_pb.java
+/Chunk.java
+/Line.java
+/LineModel.java
+/LuniferaDocGrammarFormatter.java
+/RichStringFormatter.java
+/RichStringToLineModel.java
+/SemanitcText.java
+/SemanticWhitespace.java
+/TemplateWhitespace.java

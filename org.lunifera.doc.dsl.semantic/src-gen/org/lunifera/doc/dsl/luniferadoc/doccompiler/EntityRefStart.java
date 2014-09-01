@@ -21,58 +21,57 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringEntityRef;
  * @model
  * @generated
  */
-public interface EntityRefStart extends LinePart
-{
-  /**
-   * Returns the value of the '<em><b>Content</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' reference.
-   * @see #setContent(RichStringEntityRef)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getEntityRefStart_Content()
-   * @model
-   * @generated
-   */
-  RichStringEntityRef getContent();
+public interface EntityRefStart extends LinePart {
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' reference.
+	 * @see #setContent(RichStringEntityRef)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getEntityRefStart_Content()
+	 * @model
+	 * @generated
+	 */
+	RichStringEntityRef getContent();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.EntityRefStart#getContent <em>Content</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' reference.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(RichStringEntityRef value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.EntityRefStart#getContent <em>Content</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(RichStringEntityRef value);
 
-  /**
-   * Returns the value of the '<em><b>End</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>End</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>End</em>' reference.
-   * @see #setEnd(EntityRefEnd)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getEntityRefStart_End()
-   * @model
-   * @generated
-   */
-  EntityRefEnd getEnd();
+	/**
+	 * Returns the value of the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>End</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>End</em>' reference.
+	 * @see #setEnd(EntityRefEnd)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getEntityRefStart_End()
+	 * @model
+	 * @generated
+	 */
+	EntityRefEnd getEnd();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.EntityRefStart#getEnd <em>End</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>End</em>' reference.
-   * @see #getEnd()
-   * @generated
-   */
-  void setEnd(EntityRefEnd value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.EntityRefStart#getEnd <em>End</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>End</em>' reference.
+	 * @see #getEnd()
+	 * @generated
+	 */
+	void setEnd(EntityRefEnd value);
 
 } // EntityRefStart

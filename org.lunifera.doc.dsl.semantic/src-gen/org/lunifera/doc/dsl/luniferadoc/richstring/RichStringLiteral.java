@@ -14,6 +14,5 @@ import org.eclipse.xtext.xbase.XStringLiteral;
  * @model
  * @generated
  */
-public interface RichStringLiteral extends XStringLiteral
-{
+public interface RichStringLiteral extends XStringLiteral {
 } // RichStringLiteral

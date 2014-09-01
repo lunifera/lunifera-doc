@@ -162,13 +162,15 @@ public class ModelExtensions {
   }
   
   public JvmTypeReference toTypeReference(final LDocType type, final EObject context) {
-    switch (type) {
-      case DTO:
-        return this.typeReferences.getTypeForName(IDtoDocument.class, context, null);
-      case ENTITY:
-        return this.typeReferences.getTypeForName(IEntityDocument.class, context, null);
-      default:
-        break;
+    if (type != null) {
+      switch (type) {
+        case DTO:
+          return this.typeReferences.getTypeForName(IDtoDocument.class, context, null);
+        case ENTITY:
+          return this.typeReferences.getTypeForName(IEntityDocument.class, context, null);
+        default:
+          break;
+      }
     }
     return null;
   }

@@ -16,9 +16,8 @@
 
 	<parent>
 		<groupId>org.lunifera.doc</groupId>
-		<artifactId>org.lunifera.doc.parent</artifactId>
+		<artifactId>org.lunifera.doc</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../org.lunifera.doc.parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>org.lunifera.doc.feature</artifactId>

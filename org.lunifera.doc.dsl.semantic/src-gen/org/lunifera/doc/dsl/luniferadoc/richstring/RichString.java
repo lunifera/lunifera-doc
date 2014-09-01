@@ -14,6 +14,5 @@ import org.eclipse.xtext.xbase.XBlockExpression;
  * @model
  * @generated
  */
-public interface RichString extends XBlockExpression
-{
+public interface RichString extends XBlockExpression {
 } // RichString

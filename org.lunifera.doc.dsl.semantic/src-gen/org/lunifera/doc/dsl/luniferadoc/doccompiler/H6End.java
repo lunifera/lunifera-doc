@@ -19,32 +19,31 @@ package org.lunifera.doc.dsl.luniferadoc.doccompiler;
  * @model
  * @generated
  */
-public interface H6End extends LinePart
-{
-  /**
-   * Returns the value of the '<em><b>Start</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Start</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Start</em>' reference.
-   * @see #setStart(H6Start)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getH6End_Start()
-   * @model
-   * @generated
-   */
-  H6Start getStart();
+public interface H6End extends LinePart {
+	/**
+	 * Returns the value of the '<em><b>Start</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Start</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start</em>' reference.
+	 * @see #setStart(H6Start)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getH6End_Start()
+	 * @model
+	 * @generated
+	 */
+	H6Start getStart();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.H6End#getStart <em>Start</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Start</em>' reference.
-   * @see #getStart()
-   * @generated
-   */
-  void setStart(H6Start value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.H6End#getStart <em>Start</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Start</em>' reference.
+	 * @see #getStart()
+	 * @generated
+	 */
+	void setStart(H6Start value);
 
 } // H6End

@@ -18,6 +18,5 @@ package org.lunifera.doc.dsl.luniferadoc.richstring;
  * @model
  * @generated
  */
-public interface RichStringUnderline extends RichStringMarkup
-{
+public interface RichStringUnderline extends RichStringMarkup {
 } // RichStringUnderline

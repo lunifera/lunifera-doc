@@ -21,58 +21,57 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringMovie;
  * @model
  * @generated
  */
-public interface MovieStart extends LinePart
-{
-  /**
-   * Returns the value of the '<em><b>Content</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' reference.
-   * @see #setContent(RichStringMovie)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMovieStart_Content()
-   * @model
-   * @generated
-   */
-  RichStringMovie getContent();
+public interface MovieStart extends LinePart {
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' reference.
+	 * @see #setContent(RichStringMovie)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMovieStart_Content()
+	 * @model
+	 * @generated
+	 */
+	RichStringMovie getContent();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MovieStart#getContent <em>Content</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' reference.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(RichStringMovie value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MovieStart#getContent <em>Content</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(RichStringMovie value);
 
-  /**
-   * Returns the value of the '<em><b>End</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>End</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>End</em>' reference.
-   * @see #setEnd(MovieEnd)
-   * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMovieStart_End()
-   * @model
-   * @generated
-   */
-  MovieEnd getEnd();
+	/**
+	 * Returns the value of the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>End</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>End</em>' reference.
+	 * @see #setEnd(MovieEnd)
+	 * @see org.lunifera.doc.dsl.luniferadoc.doccompiler.LunDocCompilerPackage#getMovieStart_End()
+	 * @model
+	 * @generated
+	 */
+	MovieEnd getEnd();
 
-  /**
-   * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MovieStart#getEnd <em>End</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>End</em>' reference.
-   * @see #getEnd()
-   * @generated
-   */
-  void setEnd(MovieEnd value);
+	/**
+	 * Sets the value of the '{@link org.lunifera.doc.dsl.luniferadoc.doccompiler.MovieStart#getEnd <em>End</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>End</em>' reference.
+	 * @see #getEnd()
+	 * @generated
+	 */
+	void setEnd(MovieEnd value);
 
 } // MovieStart

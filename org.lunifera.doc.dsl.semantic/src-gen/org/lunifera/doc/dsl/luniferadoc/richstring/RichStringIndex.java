@@ -18,6 +18,5 @@ package org.lunifera.doc.dsl.luniferadoc.richstring;
  * @model
  * @generated
  */
-public interface RichStringIndex extends RichStringContainer
-{
+public interface RichStringIndex extends RichStringContainer {
 } // RichStringIndex
