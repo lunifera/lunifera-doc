@@ -136,7 +136,7 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     for (final LDocInclude inc : _includes) {
       this.format(inc, format);
     }
-    ILeafNode _nodeForKeyword_1 = this._nodeModelAccess.nodeForKeyword(document, "language");
+    ILeafNode _nodeForKeyword_1 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_2 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
@@ -144,21 +144,13 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_1, _function_2);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, ";");
+    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_3 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_1 = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_3);
-    format.operator_add(_prepend_1);
-    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.cfg(LuniferaDocGrammarFormatter.blankLinesAfterImports);
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_4);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_2, _function_3);
     format.operator_add(_append_2);
     RichString _content = document.getContent();
     this.format(_content, format);
@@ -176,14 +168,6 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append = this._formattingDataFactory.append(_nodeForKeyword, _function);
     format.operator_add(_append);
-    ILeafNode _nodeForKeyword_1 = this._nodeModelAccess.nodeForKeyword(imp, ";");
-    final Procedure1<FormattingDataInit> _function_1 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend = this._formattingDataFactory.prepend(_nodeForKeyword_1, _function_1);
-    format.operator_add(_prepend);
   }
   
   /**
@@ -230,36 +214,28 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_1, _function_4);
     format.operator_add(_append_4);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(inc, ";");
-    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_5);
-    format.operator_add(_prepend);
   }
   
   /**
    * Entity Document
    */
   protected void _format(final LDocEntityDocument document, final FormattableDocument format) {
-    ILeafNode _nodeForKeyword = this._nodeModelAccess.nodeForKeyword(document, "EntityDocument");
-    final Procedure1<FormattingDataInit> _function = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.increaseIndentation();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append = this._formattingDataFactory.append(_nodeForKeyword, _function);
-    format.operator_add(_append);
     INode _nodeForEObject = this._nodeModelAccess.nodeForEObject(document);
-    final Procedure1<FormattingDataInit> _function_1 = new Procedure1<FormattingDataInit>() {
+    final Procedure1<FormattingDataInit> _function = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.noSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend = this._formattingDataFactory.prepend(_nodeForEObject, _function_1);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend = this._formattingDataFactory.prepend(_nodeForEObject, _function);
     format.operator_add(_prepend);
+    ILeafNode _nodeForKeyword = this._nodeModelAccess.nodeForKeyword(document, "EntityDocument");
+    final Procedure1<FormattingDataInit> _function_1 = new Procedure1<FormattingDataInit>() {
+      public void apply(final FormattingDataInit it) {
+        it.increaseIndentation();
+      }
+    };
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append = this._formattingDataFactory.append(_nodeForKeyword, _function_1);
+    format.operator_add(_append);
     ILeafNode _nodeForKeyword_1 = this._nodeModelAccess.nodeForKeyword(document, "covers");
     final Procedure1<FormattingDataInit> _function_2 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
@@ -273,53 +249,37 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _surround = this._formattingDataFactory.surround(_nodeForKeyword_1, _function_2, _function_3);
     format.operator_add(_surround);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, ";");
+    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, "language");
     final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_1 = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_4);
-    format.operator_add(_prepend_1);
-    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "language");
-    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_2, _function_4);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_2 = this._formattingDataFactory.prepend(_nodeForKeyword_4, _function_6);
-    format.operator_add(_prepend_2);
-    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "language");
+    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.cfg(LuniferaDocGrammarFormatter.blankLinesAfterImports);
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
     format.operator_add(_append_2);
-    ILeafNode _nodeForKeyword_6 = this._nodeModelAccess.nodeForKeyword(document, "description");
-    final Procedure1<FormattingDataInit> _function_8 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, "description");
+    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_6, _function_8);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_4, _function_6);
     format.operator_add(_append_3);
-    ILeafNode _nodeForKeyword_7 = this._nodeModelAccess.nodeForKeyword(document, "fields");
-    final Procedure1<FormattingDataInit> _function_9 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, "fields");
+    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_7, _function_9);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
     format.operator_add(_append_4);
     RichString _description = document.getDescription();
     this.format(_description, format);
@@ -365,7 +325,7 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append = this._formattingDataFactory.append(_nodeForKeyword, _function_1);
     format.operator_add(_append);
-    ILeafNode _nodeForKeyword_1 = this._nodeModelAccess.nodeForKeyword(document, "language");
+    ILeafNode _nodeForKeyword_1 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_2 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
@@ -373,37 +333,29 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_1, _function_2);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, ";");
+    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_3 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_1 = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_3);
-    format.operator_add(_prepend_1);
-    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.cfg(LuniferaDocGrammarFormatter.blankLinesAfterImports);
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_4);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_2, _function_3);
     format.operator_add(_append_2);
-    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, "description");
+    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "description");
+    final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
+      public void apply(final FormattingDataInit it) {
+        it.oneSpace();
+      }
+    };
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_4);
+    format.operator_add(_append_3);
+    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, "properties");
     final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_4, _function_5);
-    format.operator_add(_append_3);
-    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, "properties");
-    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.oneSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_6);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_4, _function_5);
     format.operator_add(_append_4);
     RichString _description = document.getDescription();
     this.format(_description, format);
@@ -433,14 +385,6 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_1, _function_1);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(prop, ";");
-    final Procedure1<FormattingDataInit> _function_2 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_2);
-    format.operator_add(_prepend);
     RichString _description = prop.getDescription();
     this.format(_description, format);
   }
@@ -478,53 +422,37 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _surround = this._formattingDataFactory.surround(_nodeForKeyword_1, _function_2, _function_3);
     format.operator_add(_surround);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, ";");
+    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_1 = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_4);
-    format.operator_add(_prepend_1);
-    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "language");
-    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_2, _function_4);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_2 = this._formattingDataFactory.prepend(_nodeForKeyword_4, _function_6);
-    format.operator_add(_prepend_2);
-    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "locale");
+    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.cfg(LuniferaDocGrammarFormatter.blankLinesAfterImports);
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
     format.operator_add(_append_2);
-    ILeafNode _nodeForKeyword_6 = this._nodeModelAccess.nodeForKeyword(document, "description");
-    final Procedure1<FormattingDataInit> _function_8 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, "description");
+    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_6, _function_8);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_4, _function_6);
     format.operator_add(_append_3);
-    ILeafNode _nodeForKeyword_7 = this._nodeModelAccess.nodeForKeyword(document, "fields");
-    final Procedure1<FormattingDataInit> _function_9 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, "fields");
+    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_7, _function_9);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
     format.operator_add(_append_4);
     RichString _description = document.getDescription();
     this.format(_description, format);
@@ -563,53 +491,37 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _surround = this._formattingDataFactory.surround(_nodeForKeyword_1, _function_2, _function_3);
     format.operator_add(_surround);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, ";");
+    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_1 = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_4);
-    format.operator_add(_prepend_1);
-    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "language");
-    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_2, _function_4);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_2 = this._formattingDataFactory.prepend(_nodeForKeyword_4, _function_6);
-    format.operator_add(_prepend_2);
-    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "locale");
+    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.cfg(LuniferaDocGrammarFormatter.blankLinesAfterImports);
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
     format.operator_add(_append_2);
-    ILeafNode _nodeForKeyword_6 = this._nodeModelAccess.nodeForKeyword(document, "description");
-    final Procedure1<FormattingDataInit> _function_8 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, "description");
+    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_6, _function_8);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_4, _function_6);
     format.operator_add(_append_3);
-    ILeafNode _nodeForKeyword_7 = this._nodeModelAccess.nodeForKeyword(document, "fields");
-    final Procedure1<FormattingDataInit> _function_9 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, "fields");
+    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_7, _function_9);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
     format.operator_add(_append_4);
     RichString _description = document.getDescription();
     this.format(_description, format);
@@ -648,53 +560,37 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _surround = this._formattingDataFactory.surround(_nodeForKeyword_1, _function_2, _function_3);
     format.operator_add(_surround);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, ";");
+    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_1 = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_4);
-    format.operator_add(_prepend_1);
-    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "language");
-    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_2, _function_4);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_2 = this._formattingDataFactory.prepend(_nodeForKeyword_4, _function_6);
-    format.operator_add(_prepend_2);
-    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "locale");
+    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.cfg(LuniferaDocGrammarFormatter.blankLinesAfterImports);
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
     format.operator_add(_append_2);
-    ILeafNode _nodeForKeyword_6 = this._nodeModelAccess.nodeForKeyword(document, "description");
-    final Procedure1<FormattingDataInit> _function_8 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, "description");
+    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_6, _function_8);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_4, _function_6);
     format.operator_add(_append_3);
-    ILeafNode _nodeForKeyword_7 = this._nodeModelAccess.nodeForKeyword(document, "fields");
-    final Procedure1<FormattingDataInit> _function_9 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, "fields");
+    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_7, _function_9);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
     format.operator_add(_append_4);
     RichString _description = document.getDescription();
     this.format(_description, format);
@@ -733,53 +629,37 @@ public class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
     };
     Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _surround = this._formattingDataFactory.surround(_nodeForKeyword_1, _function_2, _function_3);
     format.operator_add(_surround);
-    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, ";");
+    ILeafNode _nodeForKeyword_2 = this._nodeModelAccess.nodeForKeyword(document, "locale");
     final Procedure1<FormattingDataInit> _function_4 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_1 = this._formattingDataFactory.prepend(_nodeForKeyword_2, _function_4);
-    format.operator_add(_prepend_1);
-    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "language");
-    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_1 = this._formattingDataFactory.append(_nodeForKeyword_2, _function_4);
     format.operator_add(_append_1);
-    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
-      public void apply(final FormattingDataInit it) {
-        it.noSpace();
-      }
-    };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _prepend_2 = this._formattingDataFactory.prepend(_nodeForKeyword_4, _function_6);
-    format.operator_add(_prepend_2);
-    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, ";");
-    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_3 = this._nodeModelAccess.nodeForKeyword(document, "locale");
+    final Procedure1<FormattingDataInit> _function_5 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.cfg(LuniferaDocGrammarFormatter.blankLinesAfterImports);
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_2 = this._formattingDataFactory.append(_nodeForKeyword_3, _function_5);
     format.operator_add(_append_2);
-    ILeafNode _nodeForKeyword_6 = this._nodeModelAccess.nodeForKeyword(document, "description");
-    final Procedure1<FormattingDataInit> _function_8 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_4 = this._nodeModelAccess.nodeForKeyword(document, "description");
+    final Procedure1<FormattingDataInit> _function_6 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_6, _function_8);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_3 = this._formattingDataFactory.append(_nodeForKeyword_4, _function_6);
     format.operator_add(_append_3);
-    ILeafNode _nodeForKeyword_7 = this._nodeModelAccess.nodeForKeyword(document, "fields");
-    final Procedure1<FormattingDataInit> _function_9 = new Procedure1<FormattingDataInit>() {
+    ILeafNode _nodeForKeyword_5 = this._nodeModelAccess.nodeForKeyword(document, "fields");
+    final Procedure1<FormattingDataInit> _function_7 = new Procedure1<FormattingDataInit>() {
       public void apply(final FormattingDataInit it) {
         it.oneSpace();
       }
     };
-    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_7, _function_9);
+    Function1<? super FormattableDocument, ? extends Iterable<FormattingData>> _append_4 = this._formattingDataFactory.append(_nodeForKeyword_5, _function_7);
     format.operator_add(_append_4);
     RichString _description = document.getDescription();
     this.format(_description, format);

@@ -13,7 +13,7 @@ Package luniferadoc <http://www.lunifera.org/documentation/v1>
 
   Class LDocNamedDocument
     Attribute name : EString
-    Attribute language : EString
+    Attribute locale : EString
 
   Class LDocInclude
     Reference document : LDocDocument

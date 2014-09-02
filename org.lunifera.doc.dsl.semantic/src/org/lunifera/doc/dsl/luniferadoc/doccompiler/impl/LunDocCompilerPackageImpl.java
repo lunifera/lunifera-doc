@@ -881,8 +881,8 @@ public class LunDocCompilerPackageImpl extends EPackageImpl implements LunDocCom
 		isInited = true;
 
 		// Initialize simple dependencies
-		LunDocRichstringPackage.eINSTANCE.eClass();
 		LunDocPackage.eINSTANCE.eClass();
+		LunDocRichstringPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theLunDocCompilerPackage.createPackageContents();

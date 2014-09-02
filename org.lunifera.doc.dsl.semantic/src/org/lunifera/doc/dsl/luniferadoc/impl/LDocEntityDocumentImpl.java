@@ -34,7 +34,7 @@ import org.lunifera.dsl.semantic.common.types.LType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityDocumentImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityDocumentImpl#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityDocumentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityDocumentImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocEntityDocumentImpl#getModel <em>Model</em>}</li>
@@ -65,24 +65,24 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLocale()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LANGUAGE_EDEFAULT = null;
+	protected static final String LOCALE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLocale()
 	 * @generated
 	 * @ordered
 	 */
-	protected String language = LANGUAGE_EDEFAULT;
+	protected String locale = LOCALE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -159,8 +159,8 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLanguage() {
-		return language;
+	public String getLocale() {
+		return locale;
 	}
 
 	/**
@@ -168,11 +168,11 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLanguage(String newLanguage) {
-		String oldLanguage = language;
-		language = newLanguage;
+	public void setLocale(String newLocale) {
+		String oldLocale = locale;
+		locale = newLocale;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LunDocPackage.LDOC_ENTITY_DOCUMENT__LANGUAGE, oldLanguage, language));
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocPackage.LDOC_ENTITY_DOCUMENT__LOCALE, oldLocale, locale));
 	}
 
 	/**
@@ -294,8 +294,8 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__NAME:
 				return getName();
-			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LANGUAGE:
-				return getLanguage();
+			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LOCALE:
+				return getLocale();
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__DESCRIPTION:
 				return getDescription();
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__FIELDS:
@@ -319,8 +319,8 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__NAME:
 				setName((String)newValue);
 				return;
-			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LANGUAGE:
-				setLanguage((String)newValue);
+			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LOCALE:
+				setLocale((String)newValue);
 				return;
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__DESCRIPTION:
 				setDescription((RichString)newValue);
@@ -347,8 +347,8 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LANGUAGE:
-				setLanguage(LANGUAGE_EDEFAULT);
+			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LOCALE:
+				setLocale(LOCALE_EDEFAULT);
 				return;
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__DESCRIPTION:
 				setDescription((RichString)null);
@@ -373,8 +373,8 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+			case LunDocPackage.LDOC_ENTITY_DOCUMENT__LOCALE:
+				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__DESCRIPTION:
 				return description != null;
 			case LunDocPackage.LDOC_ENTITY_DOCUMENT__FIELDS:
@@ -397,8 +397,8 @@ public class LDocEntityDocumentImpl extends MinimalEObjectImpl.Container impleme
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", language: ");
-		result.append(language);
+		result.append(", locale: ");
+		result.append(locale);
 		result.append(')');
 		return result.toString();
 	}

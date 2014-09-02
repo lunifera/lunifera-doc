@@ -11,20 +11,20 @@ import "http://www.lunifera.org/documentation/v1" as doc
 import "http://www.lunifera.org/documentation/richstring/v1" as richstring
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 import "http://www.lunifera.org/dsl/common/types/v1" as types
-  
+
 NamedDocument returns doc::LDocNamedDocument:
 	DocLayouter | Document;
- 
+
 Document returns doc::LDocDocument:
 	EntityDocument | DTODocument | BPMProcessDocument | BPMHumanTaskDocument | VaaclipseViewDocument | UIDocument;
- 
+
 DocLayouter returns doc::LDocLayouter:
 	GeneralDocument;
 
 DocumentInclude returns doc::LDocInclude:
 	(('include' document=[doc::LDocDocument|QualifiedName] 'as' varName=ID)
 	|
-	(provided?='provided' (providedType=ProvidedType | providedJVMType=JvmTypeReference) 'as' varName=ID)) ';';
+	(provided?='provided' (providedType=ProvidedType | providedJVMType=JvmTypeReference) 'as' varName=ID));
 
 enum ProvidedType returns doc::LDocType:
 	ENTITY="entity" | DTO="dto";
@@ -33,13 +33,13 @@ GeneralDocument returns doc::LDocLayouter:
 	'Layouter' name=QualifiedName '{'
 	imports+=XImportDeclaration*
 	includes+=DocumentInclude*
-	('language' language=ID ';')
+	('locale' locale=ID)?
 	content=RichString
 	'}';
 
 EntityDocument returns doc::LDocEntityDocument:
 	'EntityDocument' name=QualifiedName 'covers' model=[types::LType|QualifiedName] '{'
-	('language' language=ID ';')
+	('locale' locale=ID)
 	('description' '{' description=RichString '}')?
 	(fields+=EntityField)*
 	'}';
@@ -52,36 +52,36 @@ EntityField returns doc::LDocEntityField:
 
 DTODocument returns doc::LDocDtoDocument:
 	'DTODocument' name=QualifiedName 'covers' model=[types::LType|QualifiedName] '{'
-	('language' language=ID ';')
+	('locale' locale=ID)?
 	('description' '{' description=RichString '}')?
 	('properties' '{' (fields+=DTOProperty)* '}')?
 	'}';
 
 DTOProperty returns doc::LDocDtoProperty:
-	'name' name=ID ';'
+	'name' name=ID
 	'description' '{' description=RichString '}';
 
 BPMProcessDocument returns doc::LDocBPMProcessDocument:
 	'BPMProcessDocument' name=QualifiedName 'covers' process=STRING '{'
-	('language' language=ID ';')
+	('locale' locale=ID)?
 	'description' '{' description=RichString '}'
 	'}';
 
 BPMHumanTaskDocument returns doc::LDocHumanTaskDocument:
 	'BPMHumanTaskDocument' name=QualifiedName 'covers' task=STRING '{'
-	('language' language=ID ';')
+	('locale' locale=ID)?
 	'description' '{' description=RichString '}'
 	'}';
 
 VaaclipseViewDocument returns doc::LDocViewDocument:
 	'VaaclipseViewDocument' name=QualifiedName 'covers' view=STRING '{'
-	('language' language=ID ';')
+	('locale' locale=ID)?
 	'description' '{' description=RichString '}'
 	'}';
 
 UIDocument returns doc::LDocUIDocument:
 	'UIDocument' name=QualifiedName 'covers' ui=STRING '{'
-	('language' language=ID ';')
+	('locale' locale=ID)?
 	'description' '{' description=RichString '}'
 	'}';
 

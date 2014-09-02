@@ -117,7 +117,7 @@ class ModelExtensions {
 	}
 
 	def toLanguage(LDocNamedDocument doc) {
-		if(doc.language != null) doc.language else "en"
+		if(doc.locale != null) doc.locale else "en_US"
 	}
 
 	/**

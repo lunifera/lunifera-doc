@@ -24,7 +24,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocViewDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocViewDocumentImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocViewDocumentImpl#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocViewDocumentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocViewDocumentImpl#getView <em>View</em>}</li>
  * </ul>
@@ -54,24 +54,24 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLocale()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LANGUAGE_EDEFAULT = null;
+	protected static final String LOCALE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLocale()
 	 * @generated
 	 * @ordered
 	 */
-	protected String language = LANGUAGE_EDEFAULT;
+	protected String locale = LOCALE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -148,8 +148,8 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLanguage() {
-		return language;
+	public String getLocale() {
+		return locale;
 	}
 
 	/**
@@ -157,11 +157,11 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLanguage(String newLanguage) {
-		String oldLanguage = language;
-		language = newLanguage;
+	public void setLocale(String newLocale) {
+		String oldLocale = locale;
+		locale = newLocale;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LunDocPackage.LDOC_VIEW_DOCUMENT__LANGUAGE, oldLanguage, language));
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocPackage.LDOC_VIEW_DOCUMENT__LOCALE, oldLocale, locale));
 	}
 
 	/**
@@ -252,8 +252,8 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__NAME:
 				return getName();
-			case LunDocPackage.LDOC_VIEW_DOCUMENT__LANGUAGE:
-				return getLanguage();
+			case LunDocPackage.LDOC_VIEW_DOCUMENT__LOCALE:
+				return getLocale();
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__DESCRIPTION:
 				return getDescription();
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__VIEW:
@@ -273,8 +273,8 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__NAME:
 				setName((String)newValue);
 				return;
-			case LunDocPackage.LDOC_VIEW_DOCUMENT__LANGUAGE:
-				setLanguage((String)newValue);
+			case LunDocPackage.LDOC_VIEW_DOCUMENT__LOCALE:
+				setLocale((String)newValue);
 				return;
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__DESCRIPTION:
 				setDescription((RichString)newValue);
@@ -297,8 +297,8 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case LunDocPackage.LDOC_VIEW_DOCUMENT__LANGUAGE:
-				setLanguage(LANGUAGE_EDEFAULT);
+			case LunDocPackage.LDOC_VIEW_DOCUMENT__LOCALE:
+				setLocale(LOCALE_EDEFAULT);
 				return;
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__DESCRIPTION:
 				setDescription((RichString)null);
@@ -320,8 +320,8 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case LunDocPackage.LDOC_VIEW_DOCUMENT__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+			case LunDocPackage.LDOC_VIEW_DOCUMENT__LOCALE:
+				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__DESCRIPTION:
 				return description != null;
 			case LunDocPackage.LDOC_VIEW_DOCUMENT__VIEW:
@@ -342,8 +342,8 @@ public class LDocViewDocumentImpl extends MinimalEObjectImpl.Container implement
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", language: ");
-		result.append(language);
+		result.append(", locale: ");
+		result.append(locale);
 		result.append(", view: ");
 		result.append(view);
 		result.append(')');

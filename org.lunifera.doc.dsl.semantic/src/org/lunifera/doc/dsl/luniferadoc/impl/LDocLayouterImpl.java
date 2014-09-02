@@ -34,7 +34,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichString;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocLayouterImpl#getIncludes <em>Includes</em>}</li>
@@ -65,24 +65,24 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLocale()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LANGUAGE_EDEFAULT = null;
+	protected static final String LOCALE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLocale()
 	 * @generated
 	 * @ordered
 	 */
-	protected String language = LANGUAGE_EDEFAULT;
+	protected String locale = LOCALE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
@@ -159,8 +159,8 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLanguage() {
-		return language;
+	public String getLocale() {
+		return locale;
 	}
 
 	/**
@@ -168,11 +168,11 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLanguage(String newLanguage) {
-		String oldLanguage = language;
-		language = newLanguage;
+	public void setLocale(String newLocale) {
+		String oldLocale = locale;
+		locale = newLocale;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LunDocPackage.LDOC_LAYOUTER__LANGUAGE, oldLanguage, language));
+			eNotify(new ENotificationImpl(this, Notification.SET, LunDocPackage.LDOC_LAYOUTER__LOCALE, oldLocale, locale));
 	}
 
 	/**
@@ -270,8 +270,8 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 		switch (featureID) {
 			case LunDocPackage.LDOC_LAYOUTER__NAME:
 				return getName();
-			case LunDocPackage.LDOC_LAYOUTER__LANGUAGE:
-				return getLanguage();
+			case LunDocPackage.LDOC_LAYOUTER__LOCALE:
+				return getLocale();
 			case LunDocPackage.LDOC_LAYOUTER__CONTENT:
 				return getContent();
 			case LunDocPackage.LDOC_LAYOUTER__IMPORTS:
@@ -294,8 +294,8 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 			case LunDocPackage.LDOC_LAYOUTER__NAME:
 				setName((String)newValue);
 				return;
-			case LunDocPackage.LDOC_LAYOUTER__LANGUAGE:
-				setLanguage((String)newValue);
+			case LunDocPackage.LDOC_LAYOUTER__LOCALE:
+				setLocale((String)newValue);
 				return;
 			case LunDocPackage.LDOC_LAYOUTER__CONTENT:
 				setContent((RichString)newValue);
@@ -323,8 +323,8 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 			case LunDocPackage.LDOC_LAYOUTER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case LunDocPackage.LDOC_LAYOUTER__LANGUAGE:
-				setLanguage(LANGUAGE_EDEFAULT);
+			case LunDocPackage.LDOC_LAYOUTER__LOCALE:
+				setLocale(LOCALE_EDEFAULT);
 				return;
 			case LunDocPackage.LDOC_LAYOUTER__CONTENT:
 				setContent((RichString)null);
@@ -349,8 +349,8 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 		switch (featureID) {
 			case LunDocPackage.LDOC_LAYOUTER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case LunDocPackage.LDOC_LAYOUTER__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+			case LunDocPackage.LDOC_LAYOUTER__LOCALE:
+				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
 			case LunDocPackage.LDOC_LAYOUTER__CONTENT:
 				return content != null;
 			case LunDocPackage.LDOC_LAYOUTER__IMPORTS:
@@ -373,8 +373,8 @@ public class LDocLayouterImpl extends MinimalEObjectImpl.Container implements LD
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", language: ");
-		result.append(language);
+		result.append(", locale: ");
+		result.append(locale);
 		result.append(')');
 		return result.toString();
 	}

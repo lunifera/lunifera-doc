@@ -182,6 +182,7 @@ public class LunDocPackageImpl extends EPackageImpl implements LunDocPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		LunTypesPackage.eINSTANCE.eClass();
 		XAnnotationsPackage.eINSTANCE.eClass();
 		XtypePackage.eINSTANCE.eClass();
@@ -230,7 +231,7 @@ public class LunDocPackageImpl extends EPackageImpl implements LunDocPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLDocNamedDocument_Language() {
+	public EAttribute getLDocNamedDocument_Locale() {
 		return (EAttribute)lDocNamedDocumentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -570,7 +571,7 @@ public class LunDocPackageImpl extends EPackageImpl implements LunDocPackage {
 		// Create classes and their features
 		lDocNamedDocumentEClass = createEClass(LDOC_NAMED_DOCUMENT);
 		createEAttribute(lDocNamedDocumentEClass, LDOC_NAMED_DOCUMENT__NAME);
-		createEAttribute(lDocNamedDocumentEClass, LDOC_NAMED_DOCUMENT__LANGUAGE);
+		createEAttribute(lDocNamedDocumentEClass, LDOC_NAMED_DOCUMENT__LOCALE);
 
 		lDocIncludeEClass = createEClass(LDOC_INCLUDE);
 		createEReference(lDocIncludeEClass, LDOC_INCLUDE__DOCUMENT);
@@ -667,7 +668,7 @@ public class LunDocPackageImpl extends EPackageImpl implements LunDocPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(lDocNamedDocumentEClass, LDocNamedDocument.class, "LDocNamedDocument", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLDocNamedDocument_Name(), theEcorePackage.getEString(), "name", null, 0, 1, LDocNamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLDocNamedDocument_Language(), theEcorePackage.getEString(), "language", null, 0, 1, LDocNamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLDocNamedDocument_Locale(), theEcorePackage.getEString(), "locale", null, 0, 1, LDocNamedDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lDocIncludeEClass, LDocInclude.class, "LDocInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLDocInclude_Document(), this.getLDocDocument(), null, "document", null, 0, 1, LDocInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

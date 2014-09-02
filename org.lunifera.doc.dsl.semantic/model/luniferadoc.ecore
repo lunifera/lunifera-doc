@@ -14,7 +14,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="LDocNamedDocument" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" unique="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" unique="false"
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDocInclude">

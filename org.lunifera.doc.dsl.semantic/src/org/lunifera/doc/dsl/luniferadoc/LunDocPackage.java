@@ -78,13 +78,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_NAMED_DOCUMENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_NAMED_DOCUMENT__LANGUAGE = 1;
+	int LDOC_NAMED_DOCUMENT__LOCALE = 1;
 
 	/**
 	 * The number of structural features of the '<em>LDoc Named Document</em>' class.
@@ -179,13 +179,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_DOCUMENT__NAME = LDOC_NAMED_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_DOCUMENT__LANGUAGE = LDOC_NAMED_DOCUMENT__LANGUAGE;
+	int LDOC_DOCUMENT__LOCALE = LDOC_NAMED_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -225,13 +225,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_ENTITY_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_ENTITY_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+	int LDOC_ENTITY_DOCUMENT__LOCALE = LDOC_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -326,13 +326,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_DTO_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_DTO_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+	int LDOC_DTO_DOCUMENT__LOCALE = LDOC_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -436,13 +436,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_BPM_PROCESS_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_BPM_PROCESS_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+	int LDOC_BPM_PROCESS_DOCUMENT__LOCALE = LDOC_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -491,13 +491,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_HUMAN_TASK_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_HUMAN_TASK_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+	int LDOC_HUMAN_TASK_DOCUMENT__LOCALE = LDOC_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -546,13 +546,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_VIEW_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_VIEW_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+	int LDOC_VIEW_DOCUMENT__LOCALE = LDOC_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -601,13 +601,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_UI_DOCUMENT__NAME = LDOC_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_UI_DOCUMENT__LANGUAGE = LDOC_DOCUMENT__LANGUAGE;
+	int LDOC_UI_DOCUMENT__LOCALE = LDOC_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -656,13 +656,13 @@ public interface LunDocPackage extends EPackage {
 	int LDOC_LAYOUTER__NAME = LDOC_NAMED_DOCUMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LDOC_LAYOUTER__LANGUAGE = LDOC_NAMED_DOCUMENT__LANGUAGE;
+	int LDOC_LAYOUTER__LOCALE = LDOC_NAMED_DOCUMENT__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -733,15 +733,15 @@ public interface LunDocPackage extends EPackage {
 	EAttribute getLDocNamedDocument_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLanguage <em>Language</em>}'.
+	 * Returns the meta object for the attribute '{@link org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLocale <em>Locale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Language</em>'.
-	 * @see org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLanguage()
+	 * @return the meta object for the attribute '<em>Locale</em>'.
+	 * @see org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument#getLocale()
 	 * @see #getLDocNamedDocument()
 	 * @generated
 	 */
-	EAttribute getLDocNamedDocument_Language();
+	EAttribute getLDocNamedDocument_Locale();
 
 	/**
 	 * Returns the meta object for class '{@link org.lunifera.doc.dsl.luniferadoc.LDocInclude <em>LDoc Include</em>}'.
@@ -1146,12 +1146,12 @@ public interface LunDocPackage extends EPackage {
 		EAttribute LDOC_NAMED_DOCUMENT__NAME = eINSTANCE.getLDocNamedDocument_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Locale</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LDOC_NAMED_DOCUMENT__LANGUAGE = eINSTANCE.getLDocNamedDocument_Language();
+		EAttribute LDOC_NAMED_DOCUMENT__LOCALE = eINSTANCE.getLDocNamedDocument_Locale();
 
 		/**
 		 * The meta object literal for the '{@link org.lunifera.doc.dsl.luniferadoc.impl.LDocIncludeImpl <em>LDoc Include</em>}' class.

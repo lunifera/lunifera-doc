@@ -484,6 +484,7 @@ public class LunDocRichstringPackageImpl extends EPackageImpl implements LunDocR
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		LunTypesPackage.eINSTANCE.eClass();
 		XAnnotationsPackage.eINSTANCE.eClass();
 		XtypePackage.eINSTANCE.eClass();

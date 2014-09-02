@@ -64,9 +64,8 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 			inc.format(format)
 		}
 
-		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForKeyword(";").prepend[noSpace]
-		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword("locale").append[oneSpace]
+		format += document.nodeForKeyword("locale").append[cfg(blankLinesAfterImports)]
 
 		document.content.format(format)
 	}
@@ -76,7 +75,6 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 	 */
 	def protected dispatch void format(XImportDeclaration imp, FormattableDocument format) {
 		format += imp.nodeForKeyword("import").append[oneSpace]
-		format += imp.nodeForKeyword(";").prepend[noSpace]
 	}
 
 	/**
@@ -88,21 +86,18 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += inc.nodeForFeature(LunDocPackage.Literals.LDOC_INCLUDE__PROVIDED).append[oneSpace]
 		format += inc.nodeForFeature(LunDocPackage.Literals.LDOC_INCLUDE__PROVIDED_TYPE).append[oneSpace]
 		format += inc.nodeForKeyword("as").append[oneSpace]
-		format += inc.nodeForKeyword(";").prepend[noSpace]
 	}
 
 	/**
 	 * Entity Document
 	 */
 	def protected dispatch void format(LDocEntityDocument document, FormattableDocument format) {
-		format += document.nodeForKeyword("EntityDocument").append[increaseIndentation]
 		format += document.nodeForEObject.prepend[noSpace]
+		format += document.nodeForKeyword("EntityDocument").append[increaseIndentation]
 		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
-		format += document.nodeForKeyword(";").prepend[noSpace]
 
 		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForKeyword(";").prepend[noSpace]
-		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword("language").append[cfg(blankLinesAfterImports)]
 
 		format += document.nodeForKeyword("description").append[oneSpace]
 		format += document.nodeForKeyword("fields").append[oneSpace]
@@ -127,9 +122,8 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += document.nodeForEObject.prepend[noSpace]
 		format += document.nodeForKeyword("DtoDocument").append[increaseIndentation]
 
-		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForKeyword(";").prepend[noSpace]
-		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword("locale").append[oneSpace]
+		format += document.nodeForKeyword("locale").append[cfg(blankLinesAfterImports)]
 
 		format += document.nodeForKeyword("description").append[oneSpace]
 		format += document.nodeForKeyword("properties").append[oneSpace]
@@ -145,7 +139,6 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 	def protected dispatch void format(LDocDtoProperty prop, FormattableDocument format) {
 		format += prop.nodeForKeyword("property").append[increaseIndentation]
 		format += prop.nodeForKeyword("name").append[oneSpace]
-		format += prop.nodeForKeyword(";").prepend[noSpace]
 		prop.description.format(format)
 	}
 
@@ -156,11 +149,9 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += document.nodeForEObject.prepend[noSpace]
 		format += document.nodeForKeyword("BPMProcessDocument").append[increaseIndentation]
 		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
-		format += document.nodeForKeyword(";").prepend[noSpace]
 
-		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForKeyword(";").prepend[noSpace]
-		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword("locale").append[oneSpace]
+		format += document.nodeForKeyword("locale").append[cfg(blankLinesAfterImports)]
 
 		format += document.nodeForKeyword("description").append[oneSpace]
 		format += document.nodeForKeyword("fields").append[oneSpace]
@@ -174,11 +165,9 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += document.nodeForEObject.prepend[noSpace]
 		format += document.nodeForKeyword("BPMHumanTaskDocument").append[increaseIndentation]
 		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
-		format += document.nodeForKeyword(";").prepend[noSpace]
 
-		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForKeyword(";").prepend[noSpace]
-		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword("locale").append[oneSpace]
+		format += document.nodeForKeyword("locale").append[cfg(blankLinesAfterImports)]
 
 		format += document.nodeForKeyword("description").append[oneSpace]
 		format += document.nodeForKeyword("fields").append[oneSpace]
@@ -192,11 +181,9 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += document.nodeForEObject.prepend[noSpace]
 		format += document.nodeForKeyword("VaaclipseViewDocument").append[increaseIndentation]
 		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
-		format += document.nodeForKeyword(";").prepend[noSpace]
 
-		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForKeyword(";").prepend[noSpace]
-		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword("locale").append[oneSpace]
+		format += document.nodeForKeyword("locale").append[cfg(blankLinesAfterImports)]
 
 		format += document.nodeForKeyword("description").append[oneSpace]
 		format += document.nodeForKeyword("fields").append[oneSpace]
@@ -210,11 +197,9 @@ class LuniferaDocGrammarFormatter extends XbaseFormatter2 {
 		format += document.nodeForEObject.prepend[noSpace]
 		format += document.nodeForKeyword("UIDocument").append[increaseIndentation]
 		format += document.nodeForKeyword("covers").surround([oneSpace], [oneSpace])
-		format += document.nodeForKeyword(";").prepend[noSpace]
 
-		format += document.nodeForKeyword("language").append[oneSpace]
-		format += document.nodeForKeyword(";").prepend[noSpace]
-		format += document.nodeForKeyword(";").append[cfg(blankLinesAfterImports)]
+		format += document.nodeForKeyword("locale").append[oneSpace]
+		format += document.nodeForKeyword("locale").append[cfg(blankLinesAfterImports)]
 
 		format += document.nodeForKeyword("description").append[oneSpace]
 		format += document.nodeForKeyword("fields").append[oneSpace]

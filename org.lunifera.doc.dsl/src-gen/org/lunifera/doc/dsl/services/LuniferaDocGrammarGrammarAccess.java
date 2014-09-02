@@ -89,101 +89,92 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 
 	public class DocumentIncludeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DocumentInclude");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
-		private final Keyword cIncludeKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
-		private final Assignment cDocumentAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
-		private final CrossReference cDocumentLDocDocumentCrossReference_0_0_1_0 = (CrossReference)cDocumentAssignment_0_0_1.eContents().get(0);
-		private final RuleCall cDocumentLDocDocumentQualifiedNameParserRuleCall_0_0_1_0_1 = (RuleCall)cDocumentLDocDocumentCrossReference_0_0_1_0.eContents().get(1);
-		private final Keyword cAsKeyword_0_0_2 = (Keyword)cGroup_0_0.eContents().get(2);
-		private final Assignment cVarNameAssignment_0_0_3 = (Assignment)cGroup_0_0.eContents().get(3);
-		private final RuleCall cVarNameIDTerminalRuleCall_0_0_3_0 = (RuleCall)cVarNameAssignment_0_0_3.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Assignment cProvidedAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final Keyword cProvidedProvidedKeyword_0_1_0_0 = (Keyword)cProvidedAssignment_0_1_0.eContents().get(0);
-		private final Alternatives cAlternatives_0_1_1 = (Alternatives)cGroup_0_1.eContents().get(1);
-		private final Assignment cProvidedTypeAssignment_0_1_1_0 = (Assignment)cAlternatives_0_1_1.eContents().get(0);
-		private final RuleCall cProvidedTypeProvidedTypeEnumRuleCall_0_1_1_0_0 = (RuleCall)cProvidedTypeAssignment_0_1_1_0.eContents().get(0);
-		private final Assignment cProvidedJVMTypeAssignment_0_1_1_1 = (Assignment)cAlternatives_0_1_1.eContents().get(1);
-		private final RuleCall cProvidedJVMTypeJvmTypeReferenceParserRuleCall_0_1_1_1_0 = (RuleCall)cProvidedJVMTypeAssignment_0_1_1_1.eContents().get(0);
-		private final Keyword cAsKeyword_0_1_2 = (Keyword)cGroup_0_1.eContents().get(2);
-		private final Assignment cVarNameAssignment_0_1_3 = (Assignment)cGroup_0_1.eContents().get(3);
-		private final RuleCall cVarNameIDTerminalRuleCall_0_1_3_0 = (RuleCall)cVarNameAssignment_0_1_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cIncludeKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cDocumentAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final CrossReference cDocumentLDocDocumentCrossReference_0_1_0 = (CrossReference)cDocumentAssignment_0_1.eContents().get(0);
+		private final RuleCall cDocumentLDocDocumentQualifiedNameParserRuleCall_0_1_0_1 = (RuleCall)cDocumentLDocDocumentCrossReference_0_1_0.eContents().get(1);
+		private final Keyword cAsKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cVarNameAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cVarNameIDTerminalRuleCall_0_3_0 = (RuleCall)cVarNameAssignment_0_3.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cProvidedAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cProvidedProvidedKeyword_1_0_0 = (Keyword)cProvidedAssignment_1_0.eContents().get(0);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Assignment cProvidedTypeAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
+		private final RuleCall cProvidedTypeProvidedTypeEnumRuleCall_1_1_0_0 = (RuleCall)cProvidedTypeAssignment_1_1_0.eContents().get(0);
+		private final Assignment cProvidedJVMTypeAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
+		private final RuleCall cProvidedJVMTypeJvmTypeReferenceParserRuleCall_1_1_1_0 = (RuleCall)cProvidedJVMTypeAssignment_1_1_1.eContents().get(0);
+		private final Keyword cAsKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cVarNameAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cVarNameIDTerminalRuleCall_1_3_0 = (RuleCall)cVarNameAssignment_1_3.eContents().get(0);
 		
 		//DocumentInclude returns doc::LDocInclude:
-		//	("include" document=[doc::LDocDocument|QualifiedName] "as" varName=ID | provided?="provided"
-		//	(providedType=ProvidedType | providedJVMType=JvmTypeReference) "as" varName=ID) ";";
+		//	"include" document=[doc::LDocDocument|QualifiedName] "as" varName=ID | provided?="provided" (providedType=ProvidedType
+		//	| providedJVMType=JvmTypeReference) "as" varName=ID;
 		public ParserRule getRule() { return rule; }
-
-		//("include" document=[doc::LDocDocument|QualifiedName] "as" varName=ID | provided?="provided" (providedType=ProvidedType
-		//| providedJVMType=JvmTypeReference) "as" varName=ID) ";"
-		public Group getGroup() { return cGroup; }
 
 		//"include" document=[doc::LDocDocument|QualifiedName] "as" varName=ID | provided?="provided" (providedType=ProvidedType |
 		//providedJVMType=JvmTypeReference) "as" varName=ID
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"include" document=[doc::LDocDocument|QualifiedName] "as" varName=ID
-		public Group getGroup_0_0() { return cGroup_0_0; }
+		public Group getGroup_0() { return cGroup_0; }
 
 		//"include"
-		public Keyword getIncludeKeyword_0_0_0() { return cIncludeKeyword_0_0_0; }
+		public Keyword getIncludeKeyword_0_0() { return cIncludeKeyword_0_0; }
 
 		//document=[doc::LDocDocument|QualifiedName]
-		public Assignment getDocumentAssignment_0_0_1() { return cDocumentAssignment_0_0_1; }
+		public Assignment getDocumentAssignment_0_1() { return cDocumentAssignment_0_1; }
 
 		//[doc::LDocDocument|QualifiedName]
-		public CrossReference getDocumentLDocDocumentCrossReference_0_0_1_0() { return cDocumentLDocDocumentCrossReference_0_0_1_0; }
+		public CrossReference getDocumentLDocDocumentCrossReference_0_1_0() { return cDocumentLDocDocumentCrossReference_0_1_0; }
 
 		//QualifiedName
-		public RuleCall getDocumentLDocDocumentQualifiedNameParserRuleCall_0_0_1_0_1() { return cDocumentLDocDocumentQualifiedNameParserRuleCall_0_0_1_0_1; }
+		public RuleCall getDocumentLDocDocumentQualifiedNameParserRuleCall_0_1_0_1() { return cDocumentLDocDocumentQualifiedNameParserRuleCall_0_1_0_1; }
 
 		//"as"
-		public Keyword getAsKeyword_0_0_2() { return cAsKeyword_0_0_2; }
+		public Keyword getAsKeyword_0_2() { return cAsKeyword_0_2; }
 
 		//varName=ID
-		public Assignment getVarNameAssignment_0_0_3() { return cVarNameAssignment_0_0_3; }
+		public Assignment getVarNameAssignment_0_3() { return cVarNameAssignment_0_3; }
 
 		//ID
-		public RuleCall getVarNameIDTerminalRuleCall_0_0_3_0() { return cVarNameIDTerminalRuleCall_0_0_3_0; }
+		public RuleCall getVarNameIDTerminalRuleCall_0_3_0() { return cVarNameIDTerminalRuleCall_0_3_0; }
 
 		//provided?="provided" (providedType=ProvidedType | providedJVMType=JvmTypeReference) "as" varName=ID
-		public Group getGroup_0_1() { return cGroup_0_1; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//provided?="provided"
-		public Assignment getProvidedAssignment_0_1_0() { return cProvidedAssignment_0_1_0; }
+		public Assignment getProvidedAssignment_1_0() { return cProvidedAssignment_1_0; }
 
 		//"provided"
-		public Keyword getProvidedProvidedKeyword_0_1_0_0() { return cProvidedProvidedKeyword_0_1_0_0; }
+		public Keyword getProvidedProvidedKeyword_1_0_0() { return cProvidedProvidedKeyword_1_0_0; }
 
 		//providedType=ProvidedType | providedJVMType=JvmTypeReference
-		public Alternatives getAlternatives_0_1_1() { return cAlternatives_0_1_1; }
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 
 		//providedType=ProvidedType
-		public Assignment getProvidedTypeAssignment_0_1_1_0() { return cProvidedTypeAssignment_0_1_1_0; }
+		public Assignment getProvidedTypeAssignment_1_1_0() { return cProvidedTypeAssignment_1_1_0; }
 
 		//ProvidedType
-		public RuleCall getProvidedTypeProvidedTypeEnumRuleCall_0_1_1_0_0() { return cProvidedTypeProvidedTypeEnumRuleCall_0_1_1_0_0; }
+		public RuleCall getProvidedTypeProvidedTypeEnumRuleCall_1_1_0_0() { return cProvidedTypeProvidedTypeEnumRuleCall_1_1_0_0; }
 
 		//providedJVMType=JvmTypeReference
-		public Assignment getProvidedJVMTypeAssignment_0_1_1_1() { return cProvidedJVMTypeAssignment_0_1_1_1; }
+		public Assignment getProvidedJVMTypeAssignment_1_1_1() { return cProvidedJVMTypeAssignment_1_1_1; }
 
 		//JvmTypeReference
-		public RuleCall getProvidedJVMTypeJvmTypeReferenceParserRuleCall_0_1_1_1_0() { return cProvidedJVMTypeJvmTypeReferenceParserRuleCall_0_1_1_1_0; }
+		public RuleCall getProvidedJVMTypeJvmTypeReferenceParserRuleCall_1_1_1_0() { return cProvidedJVMTypeJvmTypeReferenceParserRuleCall_1_1_1_0; }
 
 		//"as"
-		public Keyword getAsKeyword_0_1_2() { return cAsKeyword_0_1_2; }
+		public Keyword getAsKeyword_1_2() { return cAsKeyword_1_2; }
 
 		//varName=ID
-		public Assignment getVarNameAssignment_0_1_3() { return cVarNameAssignment_0_1_3; }
+		public Assignment getVarNameAssignment_1_3() { return cVarNameAssignment_1_3; }
 
 		//ID
-		public RuleCall getVarNameIDTerminalRuleCall_0_1_3_0() { return cVarNameIDTerminalRuleCall_0_1_3_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+		public RuleCall getVarNameIDTerminalRuleCall_1_3_0() { return cVarNameIDTerminalRuleCall_1_3_0; }
 	}
 
 	public class GeneralDocumentElements extends AbstractParserRuleElementFinder {
@@ -198,20 +189,19 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Assignment cIncludesAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cIncludesDocumentIncludeParserRuleCall_4_0 = (RuleCall)cIncludesAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLanguageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLanguageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLanguageIDTerminalRuleCall_5_1_0 = (RuleCall)cLanguageAssignment_5_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cLocaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocaleIDTerminalRuleCall_5_1_0 = (RuleCall)cLocaleAssignment_5_1.eContents().get(0);
 		private final Assignment cContentAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cContentRichStringParserRuleCall_6_0 = (RuleCall)cContentAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//GeneralDocument returns doc::LDocLayouter:
-		//	"Layouter" name=QualifiedName "{" imports+=XImportDeclaration* includes+=DocumentInclude* ("language" language=ID ";")
+		//	"Layouter" name=QualifiedName "{" imports+=XImportDeclaration* includes+=DocumentInclude* ("locale" locale=ID)?
 		//	content=RichString "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Layouter" name=QualifiedName "{" imports+=XImportDeclaration* includes+=DocumentInclude* ("language" language=ID ";")
+		//"Layouter" name=QualifiedName "{" imports+=XImportDeclaration* includes+=DocumentInclude* ("locale" locale=ID)?
 		//content=RichString "}"
 		public Group getGroup() { return cGroup; }
 
@@ -239,20 +229,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//DocumentInclude
 		public RuleCall getIncludesDocumentIncludeParserRuleCall_4_0() { return cIncludesDocumentIncludeParserRuleCall_4_0; }
 
-		//"language" language=ID ";"
+		//("locale" locale=ID)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"language"
-		public Keyword getLanguageKeyword_5_0() { return cLanguageKeyword_5_0; }
+		//"locale"
+		public Keyword getLocaleKeyword_5_0() { return cLocaleKeyword_5_0; }
 
-		//language=ID
-		public Assignment getLanguageAssignment_5_1() { return cLanguageAssignment_5_1; }
+		//locale=ID
+		public Assignment getLocaleAssignment_5_1() { return cLocaleAssignment_5_1; }
 
 		//ID
-		public RuleCall getLanguageIDTerminalRuleCall_5_1_0() { return cLanguageIDTerminalRuleCall_5_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
+		public RuleCall getLocaleIDTerminalRuleCall_5_1_0() { return cLocaleIDTerminalRuleCall_5_1_0; }
 
 		//content=RichString
 		public Assignment getContentAssignment_6() { return cContentAssignment_6; }
@@ -276,10 +263,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cModelLTypeQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cModelLTypeCrossReference_3_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLanguageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLanguageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLanguageIDTerminalRuleCall_5_1_0 = (RuleCall)cLanguageAssignment_5_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cLocaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocaleIDTerminalRuleCall_5_1_0 = (RuleCall)cLocaleAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -291,12 +277,12 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//EntityDocument returns doc::LDocEntityDocument:
-		//	"EntityDocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("language" language=ID ";")
+		//	"EntityDocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("locale" locale=ID)
 		//	("description" "{" description=RichString "}")? fields+=EntityField* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"EntityDocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("language" language=ID ";")
-		//("description" "{" description=RichString "}")? fields+=EntityField* "}"
+		//"EntityDocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("locale" locale=ID) ("description"
+		//"{" description=RichString "}")? fields+=EntityField* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"EntityDocument"
@@ -323,20 +309,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//"language" language=ID ";"
+		//"locale" locale=ID
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"language"
-		public Keyword getLanguageKeyword_5_0() { return cLanguageKeyword_5_0; }
+		//"locale"
+		public Keyword getLocaleKeyword_5_0() { return cLocaleKeyword_5_0; }
 
-		//language=ID
-		public Assignment getLanguageAssignment_5_1() { return cLanguageAssignment_5_1; }
+		//locale=ID
+		public Assignment getLocaleAssignment_5_1() { return cLocaleAssignment_5_1; }
 
 		//ID
-		public RuleCall getLanguageIDTerminalRuleCall_5_1_0() { return cLanguageIDTerminalRuleCall_5_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
+		public RuleCall getLocaleIDTerminalRuleCall_5_1_0() { return cLocaleIDTerminalRuleCall_5_1_0; }
 
 		//("description" "{" description=RichString "}")?
 		public Group getGroup_6() { return cGroup_6; }
@@ -426,10 +409,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cModelLTypeQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cModelLTypeCrossReference_3_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLanguageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLanguageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLanguageIDTerminalRuleCall_5_1_0 = (RuleCall)cLanguageAssignment_5_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cLocaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocaleIDTerminalRuleCall_5_1_0 = (RuleCall)cLocaleAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -445,12 +427,12 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//DTODocument returns doc::LDocDtoDocument:
-		//	"DTODocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("language" language=ID ";")
-		//	("description" "{" description=RichString "}")? ("properties" "{" fields+=DTOProperty* "}")? "}";
+		//	"DTODocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("locale" locale=ID)? ("description"
+		//	"{" description=RichString "}")? ("properties" "{" fields+=DTOProperty* "}")? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"DTODocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("language" language=ID ";")
-		//("description" "{" description=RichString "}")? ("properties" "{" fields+=DTOProperty* "}")? "}"
+		//"DTODocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("locale" locale=ID)? ("description"
+		//"{" description=RichString "}")? ("properties" "{" fields+=DTOProperty* "}")? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"DTODocument"
@@ -477,20 +459,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//"language" language=ID ";"
+		//("locale" locale=ID)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"language"
-		public Keyword getLanguageKeyword_5_0() { return cLanguageKeyword_5_0; }
+		//"locale"
+		public Keyword getLocaleKeyword_5_0() { return cLocaleKeyword_5_0; }
 
-		//language=ID
-		public Assignment getLanguageAssignment_5_1() { return cLanguageAssignment_5_1; }
+		//locale=ID
+		public Assignment getLocaleAssignment_5_1() { return cLocaleAssignment_5_1; }
 
 		//ID
-		public RuleCall getLanguageIDTerminalRuleCall_5_1_0() { return cLanguageIDTerminalRuleCall_5_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
+		public RuleCall getLocaleIDTerminalRuleCall_5_1_0() { return cLocaleIDTerminalRuleCall_5_1_0; }
 
 		//("description" "{" description=RichString "}")?
 		public Group getGroup_6() { return cGroup_6; }
@@ -538,18 +517,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cDescriptionKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cDescriptionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cDescriptionRichStringParserRuleCall_5_0 = (RuleCall)cDescriptionAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cDescriptionKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDescriptionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDescriptionRichStringParserRuleCall_4_0 = (RuleCall)cDescriptionAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//DTOProperty returns doc::LDocDtoProperty:
-		//	"name" name=ID ";" "description" "{" description=RichString "}";
+		//	"name" name=ID "description" "{" description=RichString "}";
 		public ParserRule getRule() { return rule; }
 
-		//"name" name=ID ";" "description" "{" description=RichString "}"
+		//"name" name=ID "description" "{" description=RichString "}"
 		public Group getGroup() { return cGroup; }
 
 		//"name"
@@ -561,23 +539,20 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
-
 		//"description"
-		public Keyword getDescriptionKeyword_3() { return cDescriptionKeyword_3; }
+		public Keyword getDescriptionKeyword_2() { return cDescriptionKeyword_2; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//description=RichString
-		public Assignment getDescriptionAssignment_5() { return cDescriptionAssignment_5; }
+		public Assignment getDescriptionAssignment_4() { return cDescriptionAssignment_4; }
 
 		//RichString
-		public RuleCall getDescriptionRichStringParserRuleCall_5_0() { return cDescriptionRichStringParserRuleCall_5_0; }
+		public RuleCall getDescriptionRichStringParserRuleCall_4_0() { return cDescriptionRichStringParserRuleCall_4_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class BPMProcessDocumentElements extends AbstractParserRuleElementFinder {
@@ -591,10 +566,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cProcessSTRINGTerminalRuleCall_3_0 = (RuleCall)cProcessAssignment_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLanguageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLanguageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLanguageIDTerminalRuleCall_5_1_0 = (RuleCall)cLanguageAssignment_5_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cLocaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocaleIDTerminalRuleCall_5_1_0 = (RuleCall)cLocaleAssignment_5_1.eContents().get(0);
 		private final Keyword cDescriptionKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cDescriptionAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -603,11 +577,11 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//BPMProcessDocument returns doc::LDocBPMProcessDocument:
-		//	"BPMProcessDocument" name=QualifiedName "covers" process=STRING "{" ("language" language=ID ";") "description" "{"
+		//	"BPMProcessDocument" name=QualifiedName "covers" process=STRING "{" ("locale" locale=ID)? "description" "{"
 		//	description=RichString "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"BPMProcessDocument" name=QualifiedName "covers" process=STRING "{" ("language" language=ID ";") "description" "{"
+		//"BPMProcessDocument" name=QualifiedName "covers" process=STRING "{" ("locale" locale=ID)? "description" "{"
 		//description=RichString "}" "}"
 		public Group getGroup() { return cGroup; }
 
@@ -632,20 +606,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//"language" language=ID ";"
+		//("locale" locale=ID)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"language"
-		public Keyword getLanguageKeyword_5_0() { return cLanguageKeyword_5_0; }
+		//"locale"
+		public Keyword getLocaleKeyword_5_0() { return cLocaleKeyword_5_0; }
 
-		//language=ID
-		public Assignment getLanguageAssignment_5_1() { return cLanguageAssignment_5_1; }
+		//locale=ID
+		public Assignment getLocaleAssignment_5_1() { return cLocaleAssignment_5_1; }
 
 		//ID
-		public RuleCall getLanguageIDTerminalRuleCall_5_1_0() { return cLanguageIDTerminalRuleCall_5_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
+		public RuleCall getLocaleIDTerminalRuleCall_5_1_0() { return cLocaleIDTerminalRuleCall_5_1_0; }
 
 		//"description"
 		public Keyword getDescriptionKeyword_6() { return cDescriptionKeyword_6; }
@@ -677,10 +648,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cTaskSTRINGTerminalRuleCall_3_0 = (RuleCall)cTaskAssignment_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLanguageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLanguageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLanguageIDTerminalRuleCall_5_1_0 = (RuleCall)cLanguageAssignment_5_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cLocaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocaleIDTerminalRuleCall_5_1_0 = (RuleCall)cLocaleAssignment_5_1.eContents().get(0);
 		private final Keyword cDescriptionKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cDescriptionAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -689,11 +659,11 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//BPMHumanTaskDocument returns doc::LDocHumanTaskDocument:
-		//	"BPMHumanTaskDocument" name=QualifiedName "covers" task=STRING "{" ("language" language=ID ";") "description" "{"
+		//	"BPMHumanTaskDocument" name=QualifiedName "covers" task=STRING "{" ("locale" locale=ID)? "description" "{"
 		//	description=RichString "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"BPMHumanTaskDocument" name=QualifiedName "covers" task=STRING "{" ("language" language=ID ";") "description" "{"
+		//"BPMHumanTaskDocument" name=QualifiedName "covers" task=STRING "{" ("locale" locale=ID)? "description" "{"
 		//description=RichString "}" "}"
 		public Group getGroup() { return cGroup; }
 
@@ -718,20 +688,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//"language" language=ID ";"
+		//("locale" locale=ID)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"language"
-		public Keyword getLanguageKeyword_5_0() { return cLanguageKeyword_5_0; }
+		//"locale"
+		public Keyword getLocaleKeyword_5_0() { return cLocaleKeyword_5_0; }
 
-		//language=ID
-		public Assignment getLanguageAssignment_5_1() { return cLanguageAssignment_5_1; }
+		//locale=ID
+		public Assignment getLocaleAssignment_5_1() { return cLocaleAssignment_5_1; }
 
 		//ID
-		public RuleCall getLanguageIDTerminalRuleCall_5_1_0() { return cLanguageIDTerminalRuleCall_5_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
+		public RuleCall getLocaleIDTerminalRuleCall_5_1_0() { return cLocaleIDTerminalRuleCall_5_1_0; }
 
 		//"description"
 		public Keyword getDescriptionKeyword_6() { return cDescriptionKeyword_6; }
@@ -763,10 +730,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cViewSTRINGTerminalRuleCall_3_0 = (RuleCall)cViewAssignment_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLanguageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLanguageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLanguageIDTerminalRuleCall_5_1_0 = (RuleCall)cLanguageAssignment_5_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cLocaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocaleIDTerminalRuleCall_5_1_0 = (RuleCall)cLocaleAssignment_5_1.eContents().get(0);
 		private final Keyword cDescriptionKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cDescriptionAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -775,11 +741,11 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//VaaclipseViewDocument returns doc::LDocViewDocument:
-		//	"VaaclipseViewDocument" name=QualifiedName "covers" view=STRING "{" ("language" language=ID ";") "description" "{"
+		//	"VaaclipseViewDocument" name=QualifiedName "covers" view=STRING "{" ("locale" locale=ID)? "description" "{"
 		//	description=RichString "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"VaaclipseViewDocument" name=QualifiedName "covers" view=STRING "{" ("language" language=ID ";") "description" "{"
+		//"VaaclipseViewDocument" name=QualifiedName "covers" view=STRING "{" ("locale" locale=ID)? "description" "{"
 		//description=RichString "}" "}"
 		public Group getGroup() { return cGroup; }
 
@@ -804,20 +770,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//"language" language=ID ";"
+		//("locale" locale=ID)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"language"
-		public Keyword getLanguageKeyword_5_0() { return cLanguageKeyword_5_0; }
+		//"locale"
+		public Keyword getLocaleKeyword_5_0() { return cLocaleKeyword_5_0; }
 
-		//language=ID
-		public Assignment getLanguageAssignment_5_1() { return cLanguageAssignment_5_1; }
+		//locale=ID
+		public Assignment getLocaleAssignment_5_1() { return cLocaleAssignment_5_1; }
 
 		//ID
-		public RuleCall getLanguageIDTerminalRuleCall_5_1_0() { return cLanguageIDTerminalRuleCall_5_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
+		public RuleCall getLocaleIDTerminalRuleCall_5_1_0() { return cLocaleIDTerminalRuleCall_5_1_0; }
 
 		//"description"
 		public Keyword getDescriptionKeyword_6() { return cDescriptionKeyword_6; }
@@ -849,10 +812,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cUiSTRINGTerminalRuleCall_3_0 = (RuleCall)cUiAssignment_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLanguageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLanguageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLanguageIDTerminalRuleCall_5_1_0 = (RuleCall)cLanguageAssignment_5_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cLocaleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocaleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocaleIDTerminalRuleCall_5_1_0 = (RuleCall)cLocaleAssignment_5_1.eContents().get(0);
 		private final Keyword cDescriptionKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cDescriptionAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -861,12 +823,12 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//UIDocument returns doc::LDocUIDocument:
-		//	"UIDocument" name=QualifiedName "covers" ui=STRING "{" ("language" language=ID ";") "description" "{"
-		//	description=RichString "}" "}";
+		//	"UIDocument" name=QualifiedName "covers" ui=STRING "{" ("locale" locale=ID)? "description" "{" description=RichString
+		//	"}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"UIDocument" name=QualifiedName "covers" ui=STRING "{" ("language" language=ID ";") "description" "{"
-		//description=RichString "}" "}"
+		//"UIDocument" name=QualifiedName "covers" ui=STRING "{" ("locale" locale=ID)? "description" "{" description=RichString
+		//"}" "}"
 		public Group getGroup() { return cGroup; }
 
 		//"UIDocument"
@@ -890,20 +852,17 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//"language" language=ID ";"
+		//("locale" locale=ID)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"language"
-		public Keyword getLanguageKeyword_5_0() { return cLanguageKeyword_5_0; }
+		//"locale"
+		public Keyword getLocaleKeyword_5_0() { return cLocaleKeyword_5_0; }
 
-		//language=ID
-		public Assignment getLanguageAssignment_5_1() { return cLanguageAssignment_5_1; }
+		//locale=ID
+		public Assignment getLocaleAssignment_5_1() { return cLocaleAssignment_5_1; }
 
 		//ID
-		public RuleCall getLanguageIDTerminalRuleCall_5_1_0() { return cLanguageIDTerminalRuleCall_5_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
+		public RuleCall getLocaleIDTerminalRuleCall_5_1_0() { return cLocaleIDTerminalRuleCall_5_1_0; }
 
 		//"description"
 		public Keyword getDescriptionKeyword_6() { return cDescriptionKeyword_6; }
@@ -4037,8 +3996,8 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//DocumentInclude returns doc::LDocInclude:
-	//	("include" document=[doc::LDocDocument|QualifiedName] "as" varName=ID | provided?="provided"
-	//	(providedType=ProvidedType | providedJVMType=JvmTypeReference) "as" varName=ID) ";";
+	//	"include" document=[doc::LDocDocument|QualifiedName] "as" varName=ID | provided?="provided" (providedType=ProvidedType
+	//	| providedJVMType=JvmTypeReference) "as" varName=ID;
 	public DocumentIncludeElements getDocumentIncludeAccess() {
 		return (pDocumentInclude != null) ? pDocumentInclude : (pDocumentInclude = new DocumentIncludeElements());
 	}
@@ -4058,7 +4017,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//GeneralDocument returns doc::LDocLayouter:
-	//	"Layouter" name=QualifiedName "{" imports+=XImportDeclaration* includes+=DocumentInclude* ("language" language=ID ";")
+	//	"Layouter" name=QualifiedName "{" imports+=XImportDeclaration* includes+=DocumentInclude* ("locale" locale=ID)?
 	//	content=RichString "}";
 	public GeneralDocumentElements getGeneralDocumentAccess() {
 		return (pGeneralDocument != null) ? pGeneralDocument : (pGeneralDocument = new GeneralDocumentElements());
@@ -4069,7 +4028,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//EntityDocument returns doc::LDocEntityDocument:
-	//	"EntityDocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("language" language=ID ";")
+	//	"EntityDocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("locale" locale=ID)
 	//	("description" "{" description=RichString "}")? fields+=EntityField* "}";
 	public EntityDocumentElements getEntityDocumentAccess() {
 		return (pEntityDocument != null) ? pEntityDocument : (pEntityDocument = new EntityDocumentElements());
@@ -4090,8 +4049,8 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//DTODocument returns doc::LDocDtoDocument:
-	//	"DTODocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("language" language=ID ";")
-	//	("description" "{" description=RichString "}")? ("properties" "{" fields+=DTOProperty* "}")? "}";
+	//	"DTODocument" name=QualifiedName "covers" model=[types::LType|QualifiedName] "{" ("locale" locale=ID)? ("description"
+	//	"{" description=RichString "}")? ("properties" "{" fields+=DTOProperty* "}")? "}";
 	public DTODocumentElements getDTODocumentAccess() {
 		return (pDTODocument != null) ? pDTODocument : (pDTODocument = new DTODocumentElements());
 	}
@@ -4101,7 +4060,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//DTOProperty returns doc::LDocDtoProperty:
-	//	"name" name=ID ";" "description" "{" description=RichString "}";
+	//	"name" name=ID "description" "{" description=RichString "}";
 	public DTOPropertyElements getDTOPropertyAccess() {
 		return (pDTOProperty != null) ? pDTOProperty : (pDTOProperty = new DTOPropertyElements());
 	}
@@ -4111,7 +4070,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//BPMProcessDocument returns doc::LDocBPMProcessDocument:
-	//	"BPMProcessDocument" name=QualifiedName "covers" process=STRING "{" ("language" language=ID ";") "description" "{"
+	//	"BPMProcessDocument" name=QualifiedName "covers" process=STRING "{" ("locale" locale=ID)? "description" "{"
 	//	description=RichString "}" "}";
 	public BPMProcessDocumentElements getBPMProcessDocumentAccess() {
 		return (pBPMProcessDocument != null) ? pBPMProcessDocument : (pBPMProcessDocument = new BPMProcessDocumentElements());
@@ -4122,7 +4081,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//BPMHumanTaskDocument returns doc::LDocHumanTaskDocument:
-	//	"BPMHumanTaskDocument" name=QualifiedName "covers" task=STRING "{" ("language" language=ID ";") "description" "{"
+	//	"BPMHumanTaskDocument" name=QualifiedName "covers" task=STRING "{" ("locale" locale=ID)? "description" "{"
 	//	description=RichString "}" "}";
 	public BPMHumanTaskDocumentElements getBPMHumanTaskDocumentAccess() {
 		return (pBPMHumanTaskDocument != null) ? pBPMHumanTaskDocument : (pBPMHumanTaskDocument = new BPMHumanTaskDocumentElements());
@@ -4133,7 +4092,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//VaaclipseViewDocument returns doc::LDocViewDocument:
-	//	"VaaclipseViewDocument" name=QualifiedName "covers" view=STRING "{" ("language" language=ID ";") "description" "{"
+	//	"VaaclipseViewDocument" name=QualifiedName "covers" view=STRING "{" ("locale" locale=ID)? "description" "{"
 	//	description=RichString "}" "}";
 	public VaaclipseViewDocumentElements getVaaclipseViewDocumentAccess() {
 		return (pVaaclipseViewDocument != null) ? pVaaclipseViewDocument : (pVaaclipseViewDocument = new VaaclipseViewDocumentElements());
@@ -4144,8 +4103,8 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//UIDocument returns doc::LDocUIDocument:
-	//	"UIDocument" name=QualifiedName "covers" ui=STRING "{" ("language" language=ID ";") "description" "{"
-	//	description=RichString "}" "}";
+	//	"UIDocument" name=QualifiedName "covers" ui=STRING "{" ("locale" locale=ID)? "description" "{" description=RichString
+	//	"}" "}";
 	public UIDocumentElements getUIDocumentAccess() {
 		return (pUIDocument != null) ? pUIDocument : (pUIDocument = new UIDocumentElements());
 	}

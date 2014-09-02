@@ -118,12 +118,12 @@ public class ModelExtensions {
   
   public String toLanguage(final LDocNamedDocument doc) {
     String _xifexpression = null;
-    String _language = doc.getLanguage();
-    boolean _notEquals = (!Objects.equal(_language, null));
+    String _locale = doc.getLocale();
+    boolean _notEquals = (!Objects.equal(_locale, null));
     if (_notEquals) {
-      _xifexpression = doc.getLanguage();
+      _xifexpression = doc.getLocale();
     } else {
-      _xifexpression = "en";
+      _xifexpression = "en_US";
     }
     return _xifexpression;
   }

@@ -1704,57 +1704,25 @@ public class LuniferaDocGrammarSemanticSequencer extends XbaseSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName task=STRING language=ID description=RichString)
+	 *     (name=QualifiedName task=STRING locale=ID? description=RichString)
 	 */
 	protected void sequence_BPMHumanTaskDocument(EObject context, LDocHumanTaskDocument semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_HUMAN_TASK_DOCUMENT__TASK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_HUMAN_TASK_DOCUMENT__TASK));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getBPMHumanTaskDocumentAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBPMHumanTaskDocumentAccess().getTaskSTRINGTerminalRuleCall_3_0(), semanticObject.getTask());
-		feeder.accept(grammarAccess.getBPMHumanTaskDocumentAccess().getLanguageIDTerminalRuleCall_5_1_0(), semanticObject.getLanguage());
-		feeder.accept(grammarAccess.getBPMHumanTaskDocumentAccess().getDescriptionRichStringParserRuleCall_8_0(), semanticObject.getDescription());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName process=STRING language=ID description=RichString)
+	 *     (name=QualifiedName process=STRING locale=ID? description=RichString)
 	 */
 	protected void sequence_BPMProcessDocument(EObject context, LDocBPMProcessDocument semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_BPM_PROCESS_DOCUMENT__PROCESS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_BPM_PROCESS_DOCUMENT__PROCESS));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getBPMProcessDocumentAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBPMProcessDocumentAccess().getProcessSTRINGTerminalRuleCall_3_0(), semanticObject.getProcess());
-		feeder.accept(grammarAccess.getBPMProcessDocumentAccess().getLanguageIDTerminalRuleCall_5_1_0(), semanticObject.getLanguage());
-		feeder.accept(grammarAccess.getBPMProcessDocumentAccess().getDescriptionRichStringParserRuleCall_8_0(), semanticObject.getDescription());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName model=[LType|QualifiedName] language=ID description=RichString? fields+=DTOProperty*)
+	 *     (name=QualifiedName model=[LType|QualifiedName] locale=ID? description=RichString? fields+=DTOProperty*)
 	 */
 	protected void sequence_DTODocument(EObject context, LDocDtoDocument semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1784,7 +1752,7 @@ public class LuniferaDocGrammarSemanticSequencer extends XbaseSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName model=[LType|QualifiedName] language=ID description=RichString? fields+=EntityField*)
+	 *     (name=QualifiedName model=[LType|QualifiedName] locale=ID description=RichString? fields+=EntityField*)
 	 */
 	protected void sequence_EntityDocument(EObject context, LDocEntityDocument semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1802,7 +1770,7 @@ public class LuniferaDocGrammarSemanticSequencer extends XbaseSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName imports+=XImportDeclaration* includes+=DocumentInclude* language=ID content=RichString)
+	 *     (name=QualifiedName imports+=XImportDeclaration* includes+=DocumentInclude* locale=ID? content=RichString)
 	 */
 	protected void sequence_GeneralDocument(EObject context, LDocLayouter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2389,50 +2357,18 @@ public class LuniferaDocGrammarSemanticSequencer extends XbaseSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName ui=STRING language=ID description=RichString)
+	 *     (name=QualifiedName ui=STRING locale=ID? description=RichString)
 	 */
 	protected void sequence_UIDocument(EObject context, LDocUIDocument semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_UI_DOCUMENT__UI) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_UI_DOCUMENT__UI));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUIDocumentAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUIDocumentAccess().getUiSTRINGTerminalRuleCall_3_0(), semanticObject.getUi());
-		feeder.accept(grammarAccess.getUIDocumentAccess().getLanguageIDTerminalRuleCall_5_1_0(), semanticObject.getLanguage());
-		feeder.accept(grammarAccess.getUIDocumentAccess().getDescriptionRichStringParserRuleCall_8_0(), semanticObject.getDescription());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName view=STRING language=ID description=RichString)
+	 *     (name=QualifiedName view=STRING locale=ID? description=RichString)
 	 */
 	protected void sequence_VaaclipseViewDocument(EObject context, LDocViewDocument semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_NAMED_DOCUMENT__LANGUAGE));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_DOCUMENT__DESCRIPTION));
-			if(transientValues.isValueTransient(semanticObject, LunDocPackage.Literals.LDOC_VIEW_DOCUMENT__VIEW) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LunDocPackage.Literals.LDOC_VIEW_DOCUMENT__VIEW));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVaaclipseViewDocumentAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVaaclipseViewDocumentAccess().getViewSTRINGTerminalRuleCall_3_0(), semanticObject.getView());
-		feeder.accept(grammarAccess.getVaaclipseViewDocumentAccess().getLanguageIDTerminalRuleCall_5_1_0(), semanticObject.getLanguage());
-		feeder.accept(grammarAccess.getVaaclipseViewDocumentAccess().getDescriptionRichStringParserRuleCall_8_0(), semanticObject.getDescription());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }
