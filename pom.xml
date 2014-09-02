@@ -33,11 +33,13 @@
 			</build>
 			<modules>
 				<!-- P2 bundles -->
-				<module>org.lunifera.doc.dsl.semantic</module>
-				<module>org.lunifera.doc.dsl.api</module>
-				<module>org.lunifera.doc.dsl</module>
-				<module>org.lunifera.doc.dsl.ui</module>
 				<module>org.lunifera.doc.compiler.web</module>
+				<module>org.lunifera.doc.docindexer</module>
+				<module>org.lunifera.doc.dsl</module>
+				<module>org.lunifera.doc.dsl.api</module>
+				<module>org.lunifera.doc.dsl.semantic</module>
+				<module>org.lunifera.doc.dsl.tests</module>
+				<module>org.lunifera.doc.dsl.ui</module>
 
 				<module>org.lunifera.doc.feature</module>
 

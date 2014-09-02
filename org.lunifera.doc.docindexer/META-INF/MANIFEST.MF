@@ -2,13 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DocIndexer
 Bundle-SymbolicName: org.lunifera.doc.docindexer
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.equinox.ds;bundle-version="1.4.101",
  org.eclipse.equinox.util;bundle-version="1.0.500",
  org.eclipse.osgi.services;bundle-version="3.3.100",
- org.lunifera.runtime.solr.server;bundle-version="1.0.0",
+ org.lunifera.runtime.solr.server;bundle-version="0.7.3",
  org.apache.stanbol.commons.solr.core;bundle-version="0.12.0",
  org.lunifera.doc.dsl;bundle-version="0.0.1",
  org.lunifera.doc.dsl.api;bundle-version="0.0.1",
