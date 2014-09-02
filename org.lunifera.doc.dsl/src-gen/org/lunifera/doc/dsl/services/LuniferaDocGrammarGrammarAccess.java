@@ -1180,7 +1180,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	public class RichStringPartElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RichStringPart");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cXExpressionInsideBlockParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cXExpressionOrVarDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cRichStringForLoopParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cRichStringIfParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cRichStringH1ParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
@@ -1232,30 +1232,31 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cRichStringIndexElementParserRuleCall_49 = (RuleCall)cAlternatives.eContents().get(49);
 		
 		//RichStringPart returns xbase::XExpression:
-		//	XExpressionInsideBlock | RichStringForLoop | RichStringIf | RichStringH1 | RichStringH2 | RichStringH3 | RichStringH4
-		//	| RichStringH5 | RichStringH6 | RichStringChapter | RichStringSection | RichStringSubsection | RichStringExample |
-		//	RichStringURL | RichStringRef | RichStringMailto | RichStringSkype | RichStringMovie | RichStringImg | RichStringBold
-		//	| RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode | RichStringTable | RichStringTableRow |
-		//	RichStringTableCell | RichStringList | RichStringOrderedList | RichStringListElement | RichStringOpenView |
-		//	RichStringStartProcess | RichStringEntityRef | RichStringDTORef | RichStringProcessRef | RichStringTaskRef |
-		//	RichStringViewRef | RichStringUIRef | RichStringInfoBox | RichStringErrorBox | RichStringWarningBox |
-		//	RichStringAbstractsBox | RichStringChecklistBox | RichStringBioBox | RichStringSideNoteBox | RichStringContainer |
-		//	RichStringFooter | RichStringHeader | RichStringIndex | RichStringIndexElement;
+		//	XExpressionOrVarDeclaration | RichStringForLoop | RichStringIf | RichStringH1 | RichStringH2 | RichStringH3 |
+		//	RichStringH4 | RichStringH5 | RichStringH6 | RichStringChapter | RichStringSection | RichStringSubsection |
+		//	RichStringExample | RichStringURL | RichStringRef | RichStringMailto | RichStringSkype | RichStringMovie |
+		//	RichStringImg | RichStringBold | RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode |
+		//	RichStringTable | RichStringTableRow | RichStringTableCell | RichStringList | RichStringOrderedList |
+		//	RichStringListElement | RichStringOpenView | RichStringStartProcess | RichStringEntityRef | RichStringDTORef |
+		//	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef | RichStringInfoBox |
+		//	RichStringErrorBox | RichStringWarningBox | RichStringAbstractsBox | RichStringChecklistBox | RichStringBioBox |
+		//	RichStringSideNoteBox | RichStringContainer | RichStringFooter | RichStringHeader | RichStringIndex |
+		//	RichStringIndexElement;
 		public ParserRule getRule() { return rule; }
 
-		//XExpressionInsideBlock | RichStringForLoop | RichStringIf | RichStringH1 | RichStringH2 | RichStringH3 | RichStringH4 |
-		//RichStringH5 | RichStringH6 | RichStringChapter | RichStringSection | RichStringSubsection | RichStringExample |
-		//RichStringURL | RichStringRef | RichStringMailto | RichStringSkype | RichStringMovie | RichStringImg | RichStringBold |
-		//RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode | RichStringTable | RichStringTableRow |
-		//RichStringTableCell | RichStringList | RichStringOrderedList | RichStringListElement | RichStringOpenView |
-		//RichStringStartProcess | RichStringEntityRef | RichStringDTORef | RichStringProcessRef | RichStringTaskRef |
-		//RichStringViewRef | RichStringUIRef | RichStringInfoBox | RichStringErrorBox | RichStringWarningBox |
-		//RichStringAbstractsBox | RichStringChecklistBox | RichStringBioBox | RichStringSideNoteBox | RichStringContainer |
-		//RichStringFooter | RichStringHeader | RichStringIndex | RichStringIndexElement
+		//XExpressionOrVarDeclaration | RichStringForLoop | RichStringIf | RichStringH1 | RichStringH2 | RichStringH3 |
+		//RichStringH4 | RichStringH5 | RichStringH6 | RichStringChapter | RichStringSection | RichStringSubsection |
+		//RichStringExample | RichStringURL | RichStringRef | RichStringMailto | RichStringSkype | RichStringMovie |
+		//RichStringImg | RichStringBold | RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode |
+		//RichStringTable | RichStringTableRow | RichStringTableCell | RichStringList | RichStringOrderedList |
+		//RichStringListElement | RichStringOpenView | RichStringStartProcess | RichStringEntityRef | RichStringDTORef |
+		//RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef | RichStringInfoBox | RichStringErrorBox
+		//| RichStringWarningBox | RichStringAbstractsBox | RichStringChecklistBox | RichStringBioBox | RichStringSideNoteBox |
+		//RichStringContainer | RichStringFooter | RichStringHeader | RichStringIndex | RichStringIndexElement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//XExpressionInsideBlock
-		public RuleCall getXExpressionInsideBlockParserRuleCall_0() { return cXExpressionInsideBlockParserRuleCall_0; }
+		//XExpressionOrVarDeclaration
+		public RuleCall getXExpressionOrVarDeclarationParserRuleCall_0() { return cXExpressionOrVarDeclarationParserRuleCall_0; }
 
 		//RichStringForLoop
 		public RuleCall getRichStringForLoopParserRuleCall_1() { return cRichStringForLoopParserRuleCall_1; }
@@ -4218,15 +4219,16 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//RichStringPart returns xbase::XExpression:
-	//	XExpressionInsideBlock | RichStringForLoop | RichStringIf | RichStringH1 | RichStringH2 | RichStringH3 | RichStringH4
-	//	| RichStringH5 | RichStringH6 | RichStringChapter | RichStringSection | RichStringSubsection | RichStringExample |
-	//	RichStringURL | RichStringRef | RichStringMailto | RichStringSkype | RichStringMovie | RichStringImg | RichStringBold
-	//	| RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode | RichStringTable | RichStringTableRow |
-	//	RichStringTableCell | RichStringList | RichStringOrderedList | RichStringListElement | RichStringOpenView |
-	//	RichStringStartProcess | RichStringEntityRef | RichStringDTORef | RichStringProcessRef | RichStringTaskRef |
-	//	RichStringViewRef | RichStringUIRef | RichStringInfoBox | RichStringErrorBox | RichStringWarningBox |
-	//	RichStringAbstractsBox | RichStringChecklistBox | RichStringBioBox | RichStringSideNoteBox | RichStringContainer |
-	//	RichStringFooter | RichStringHeader | RichStringIndex | RichStringIndexElement;
+	//	XExpressionOrVarDeclaration | RichStringForLoop | RichStringIf | RichStringH1 | RichStringH2 | RichStringH3 |
+	//	RichStringH4 | RichStringH5 | RichStringH6 | RichStringChapter | RichStringSection | RichStringSubsection |
+	//	RichStringExample | RichStringURL | RichStringRef | RichStringMailto | RichStringSkype | RichStringMovie |
+	//	RichStringImg | RichStringBold | RichStringUnderline | RichStringItalic | RichStringSpan | RichStringCode |
+	//	RichStringTable | RichStringTableRow | RichStringTableCell | RichStringList | RichStringOrderedList |
+	//	RichStringListElement | RichStringOpenView | RichStringStartProcess | RichStringEntityRef | RichStringDTORef |
+	//	RichStringProcessRef | RichStringTaskRef | RichStringViewRef | RichStringUIRef | RichStringInfoBox |
+	//	RichStringErrorBox | RichStringWarningBox | RichStringAbstractsBox | RichStringChecklistBox | RichStringBioBox |
+	//	RichStringSideNoteBox | RichStringContainer | RichStringFooter | RichStringHeader | RichStringIndex |
+	//	RichStringIndexElement;
 	public RichStringPartElements getRichStringPartAccess() {
 		return (pRichStringPart != null) ? pRichStringPart : (pRichStringPart = new RichStringPartElements());
 	}
@@ -4860,7 +4862,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//OpMultiAssign:
-	//	"+=" | "-=";
+	//	"+=" | "-=" | "*=" | "/=" | "%=" | "<" "<" "=" | ">" ">"? ">=";
 	public XbaseGrammarAccess.OpMultiAssignElements getOpMultiAssignAccess() {
 		return gaXbase.getOpMultiAssignAccess();
 	}
@@ -4945,7 +4947,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//OpCompare:
-	//	">=" | "<=" | ">" | "<";
+	//	">=" | "<" "=" | ">" | "<";
 	public XbaseGrammarAccess.OpCompareElements getOpCompareAccess() {
 		return gaXbase.getOpCompareAccess();
 	}
@@ -4966,7 +4968,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//OpOther:
-	//	"->" | "..<" | ">" ".." | ".." | "=>" | ">" (=> (">" ">") | ">") | "<" (=> ("<" "<") | "<") | "<>" | "?:" | "<=>";
+	//	"->" | "..<" | ">" ".." | ".." | "=>" | ">" (=> (">" ">") | ">") | "<" (=> ("<" "<") | "<" | "=>") | "<>" | "?:";
 	public XbaseGrammarAccess.OpOtherElements getOpOtherAccess() {
 		return gaXbase.getOpOtherAccess();
 	}
@@ -5038,7 +5040,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XCastedExpression returns XExpression:
-	//	XMemberFeatureCall (=> ({XCastedExpression.target=current} "as") type=JvmTypeReference)*;
+	//	XPostfixOperation (=> ({XCastedExpression.target=current} "as") type=JvmTypeReference)*;
 	public XbaseGrammarAccess.XCastedExpressionElements getXCastedExpressionAccess() {
 		return gaXbase.getXCastedExpressionAccess();
 	}
@@ -5047,14 +5049,33 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		return getXCastedExpressionAccess().getRule();
 	}
 
+	//XPostfixOperation returns XExpression:
+	//	XMemberFeatureCall => ({XPostfixOperation.operand=current} feature=[types::JvmIdentifiableElement|OpPostfix])?;
+	public XbaseGrammarAccess.XPostfixOperationElements getXPostfixOperationAccess() {
+		return gaXbase.getXPostfixOperationAccess();
+	}
+	
+	public ParserRule getXPostfixOperationRule() {
+		return getXPostfixOperationAccess().getRule();
+	}
+
+	//OpPostfix:
+	//	"++" | "--";
+	public XbaseGrammarAccess.OpPostfixElements getOpPostfixAccess() {
+		return gaXbase.getOpPostfixAccess();
+	}
+	
+	public ParserRule getOpPostfixRule() {
+		return getOpPostfixAccess().getRule();
+	}
+
 	//XMemberFeatureCall returns XExpression:
 	//	XPrimaryExpression (=> ({XAssignment.assignable=current} ("." | explicitStatic?="::")
 	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment | =>
 	//	({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ("<"
 	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-	//	feature=[types::JvmIdentifiableElement|FeatureCallID] (=> explicitOperationCall?="("
-	//	(memberCallArguments+=XShortClosure | memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")?
-	//	memberCallArguments+=XClosure?)*;
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
+	//	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? memberCallArguments+=XClosure?)*;
 	public XbaseGrammarAccess.XMemberFeatureCallElements getXMemberFeatureCallAccess() {
 		return gaXbase.getXMemberFeatureCallAccess();
 	}
@@ -5064,9 +5085,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XPrimaryExpression returns XExpression:
-	//	XConstructorCall | XBlockExpression | XSwitchExpression | XFeatureCall | XLiteral | XIfExpression | XForLoopExpression
-	//	| XWhileExpression | XDoWhileExpression | XThrowExpression | XReturnExpression | XTryCatchFinallyExpression |
-	//	XParenthesizedExpression;
+	//	XConstructorCall | XBlockExpression | XSwitchExpression | XSynchronizedExpression | XFeatureCall | XLiteral |
+	//	XIfExpression | XForLoopExpression | XBasicForLoopExpression | XWhileExpression | XDoWhileExpression |
+	//	XThrowExpression | XReturnExpression | XTryCatchFinallyExpression | XParenthesizedExpression;
 	public XbaseGrammarAccess.XPrimaryExpressionElements getXPrimaryExpressionAccess() {
 		return gaXbase.getXPrimaryExpressionAccess();
 	}
@@ -5127,7 +5148,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XExpressionInClosure returns XExpression:
-	//	{XBlockExpression} (expressions+=XExpressionInsideBlock ";"?)*;
+	//	{XBlockExpression} (expressions+=XExpressionOrVarDeclaration ";"?)*;
 	public XbaseGrammarAccess.XExpressionInClosureElements getXExpressionInClosureAccess() {
 		return gaXbase.getXExpressionInClosureAccess();
 	}
@@ -5168,8 +5189,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XSwitchExpression returns XExpression:
-	//	{XSwitchExpression} "switch" (=> (localVarName=ValidID ":")? switch=XExpression | => ("(" localVarName=ValidID ":")
-	//	switch=XExpression ")") "{" cases+=XCasePart+ ("default" ":" default=XExpression)? "}";
+	//	{XSwitchExpression} "switch" (=> ("(" declaredParam=JvmFormalParameter ":") switch=XExpression ")" | =>
+	//	(declaredParam=JvmFormalParameter ":")? switch=XExpression) "{" cases+=XCasePart* ("default" ":" default=XExpression)?
+	//	"}";
 	public XbaseGrammarAccess.XSwitchExpressionElements getXSwitchExpressionAccess() {
 		return gaXbase.getXSwitchExpressionAccess();
 	}
@@ -5179,7 +5201,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XCasePart:
-	//	typeGuard=JvmTypeReference? ("case" case=XExpression)? ":" then=XExpression;
+	//	{XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | ",");
 	public XbaseGrammarAccess.XCasePartElements getXCasePartAccess() {
 		return gaXbase.getXCasePartAccess();
 	}
@@ -5189,7 +5211,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XForLoopExpression returns XExpression:
-	//	{XForLoopExpression} "for" "(" declaredParam=JvmFormalParameter ":" forExpression=XExpression ")"
+	//	=> ({XForLoopExpression} "for" "(" declaredParam=JvmFormalParameter ":") forExpression=XExpression ")"
 	//	eachExpression=XExpression;
 	public XbaseGrammarAccess.XForLoopExpressionElements getXForLoopExpressionAccess() {
 		return gaXbase.getXForLoopExpressionAccess();
@@ -5197,6 +5219,18 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	
 	public ParserRule getXForLoopExpressionRule() {
 		return getXForLoopExpressionAccess().getRule();
+	}
+
+	//XBasicForLoopExpression returns XExpression:
+	//	{XBasicForLoopExpression} "for" "(" (initExpressions+=XExpressionOrVarDeclaration (","
+	//	initExpressions+=XExpressionOrVarDeclaration)*)? ";" expression=XExpression? ";" (updateExpressions+=XExpression (","
+	//	updateExpressions+=XExpression)*)? ")" eachExpression=XExpression;
+	public XbaseGrammarAccess.XBasicForLoopExpressionElements getXBasicForLoopExpressionAccess() {
+		return gaXbase.getXBasicForLoopExpressionAccess();
+	}
+	
+	public ParserRule getXBasicForLoopExpressionRule() {
+		return getXBasicForLoopExpressionAccess().getRule();
 	}
 
 	//XWhileExpression returns XExpression:
@@ -5220,7 +5254,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XBlockExpression returns XExpression:
-	//	{XBlockExpression} "{" (expressions+=XExpressionInsideBlock ";"?)* "}";
+	//	{XBlockExpression} "{" (expressions+=XExpressionOrVarDeclaration ";"?)* "}";
 	public XbaseGrammarAccess.XBlockExpressionElements getXBlockExpressionAccess() {
 		return gaXbase.getXBlockExpressionAccess();
 	}
@@ -5229,14 +5263,14 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 		return getXBlockExpressionAccess().getRule();
 	}
 
-	//XExpressionInsideBlock returns XExpression:
+	//XExpressionOrVarDeclaration returns XExpression:
 	//	XVariableDeclaration | XExpression;
-	public XbaseGrammarAccess.XExpressionInsideBlockElements getXExpressionInsideBlockAccess() {
-		return gaXbase.getXExpressionInsideBlockAccess();
+	public XbaseGrammarAccess.XExpressionOrVarDeclarationElements getXExpressionOrVarDeclarationAccess() {
+		return gaXbase.getXExpressionOrVarDeclarationAccess();
 	}
 	
-	public ParserRule getXExpressionInsideBlockRule() {
-		return getXExpressionInsideBlockAccess().getRule();
+	public ParserRule getXExpressionOrVarDeclarationRule() {
+		return getXExpressionOrVarDeclarationAccess().getRule();
 	}
 
 	//XVariableDeclaration returns XExpression:
@@ -5304,8 +5338,9 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 
 	//XConstructorCall returns XExpression:
 	//	{XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<"
-	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? ("("
-	//	(arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")? arguments+=XClosure?;
+	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? (=>
+	//	explicitConstructorCall?="(" (arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")?
+	//	arguments+=XClosure?;
 	public XbaseGrammarAccess.XConstructorCallElements getXConstructorCallAccess() {
 		return gaXbase.getXConstructorCallAccess();
 	}
@@ -5375,7 +5410,7 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XReturnExpression returns XExpression:
-	//	{XReturnExpression} "return" => expression=XExpression?;
+	//	{XReturnExpression} "return" -> expression=XExpression?;
 	public XbaseGrammarAccess.XReturnExpressionElements getXReturnExpressionAccess() {
 		return gaXbase.getXReturnExpressionAccess();
 	}
@@ -5393,6 +5428,16 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	
 	public ParserRule getXTryCatchFinallyExpressionRule() {
 		return getXTryCatchFinallyExpressionAccess().getRule();
+	}
+
+	//XSynchronizedExpression returns XExpression:
+	//	=> ({XSynchronizedExpression} "synchronized" "(") param=XExpression ")" expression=XExpression;
+	public XbaseGrammarAccess.XSynchronizedExpressionElements getXSynchronizedExpressionAccess() {
+		return gaXbase.getXSynchronizedExpressionAccess();
+	}
+	
+	public ParserRule getXSynchronizedExpressionRule() {
+		return getXSynchronizedExpressionAccess().getRule();
 	}
 
 	//XCatchClause:
@@ -5589,14 +5634,25 @@ public class LuniferaDocGrammarGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//XImportDeclaration:
-	//	"import" (static?="static" extension?="extension"? importedType=[JvmDeclaredType|QualifiedName] "." "*" |
-	//	importedType=[JvmDeclaredType|QualifiedName] | importedNamespace=QualifiedNameWithWildcard) ";"?;
+	//	"import" (static?="static" extension?="extension"? importedType=[JvmDeclaredType|QualifiedNameInStaticImport]
+	//	(wildcard?="*" | memberName=ValidID) | importedType=[JvmDeclaredType|QualifiedName] |
+	//	importedNamespace=QualifiedNameWithWildcard) ";"?;
 	public XtypeGrammarAccess.XImportDeclarationElements getXImportDeclarationAccess() {
 		return gaXbase.getXImportDeclarationAccess();
 	}
 	
 	public ParserRule getXImportDeclarationRule() {
 		return getXImportDeclarationAccess().getRule();
+	}
+
+	//QualifiedNameInStaticImport:
+	//	(ValidID ".")+;
+	public XtypeGrammarAccess.QualifiedNameInStaticImportElements getQualifiedNameInStaticImportAccess() {
+		return gaXbase.getQualifiedNameInStaticImportAccess();
+	}
+	
+	public ParserRule getQualifiedNameInStaticImportRule() {
+		return getQualifiedNameInStaticImportAccess().getRule();
 	}
 
 	//terminal ID:

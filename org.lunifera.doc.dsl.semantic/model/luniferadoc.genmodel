@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.lunifera.doc.dsl.semantic/src" editDirectory="" editorDirectory=""
+    modelPluginID="org.lunifera.doc.dsl.semantic" forceOverwrite="true" modelName="LuniferaDoc"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.ecore.xcore.importer" complianceLevel="7.0" copyrightFields="false"
+    editPluginID="org.eclipse.xtext.xbase.edit" editorPluginID="org.eclipse.xtext.xbase.edit"
+    runtimeVersion="2.9" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../org.lunifera.dsl.semantic.common/model/types.xcore#/1/types ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype ../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase"
+    importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter.xmi">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="EcoreXMI.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>luniferadoc.xcore</foreignModel>
+  <foreignModel>richstring.xcore</foreignModel>
+  <modelPluginVariables>org.eclipse.xtext.xbase.lib</modelPluginVariables>
+  <modelPluginVariables>org.eclipse.emf.ecore.xcore.lib</modelPluginVariables>
+  <genPackages prefix="LunDoc" basePackage="org.lunifera.doc.dsl" disposableProviderFactory="true"
+      fileExtensions="docu" ecorePackage="luniferadoc.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="luniferadoc.ecore#//LDocType">
+      <genEnumLiterals ecoreEnumLiteral="luniferadoc.ecore#//LDocType/DTO"/>
+      <genEnumLiterals ecoreEnumLiteral="luniferadoc.ecore#//LDocType/ENTITY"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="luniferadoc.ecore#//LDocNamedDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocNamedDocument/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocNamedDocument/language"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocInclude">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocInclude/document"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocInclude/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocInclude/provided"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocInclude/providedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocInclude/providedJVMType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="luniferadoc.ecore#//LDocDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDocument/description"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocEntityDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocEntityDocument/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocEntityDocument/model"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocEntityField">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocEntityField/typeField"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocEntityField/description"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocDtoDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDtoDocument/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDtoDocument/model"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocDtoProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocDtoProperty/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDtoProperty/typeField"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocDtoProperty/description"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocBPMProcessDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocBPMProcessDocument/process"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocHumanTaskDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocHumanTaskDocument/task"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocViewDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocViewDocument/view"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocUIDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute luniferadoc.ecore#//LDocUIDocument/ui"/>
+    </genClasses>
+    <genClasses ecoreClass="luniferadoc.ecore#//LDocLayouter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocLayouter/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocLayouter/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference luniferadoc.ecore#//LDocLayouter/includes"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="LunDocRichstring" basePackage="org.lunifera.doc.dsl.luniferadoc"
+      disposableProviderFactory="true" fileExtensions="richstring" ecorePackage="richstring.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="richstring.ecore#//MarkupOrientation">
+      <genEnumLiterals ecoreEnumLiteral="richstring.ecore#//MarkupOrientation/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="richstring.ecore#//MarkupOrientation/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="richstring.ecore#//MarkupOrientation/RIGHT"/>
+    </genEnums>
+    <genClasses ecoreClass="richstring.ecore#//RichString"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringIf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringIf/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringIf/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringIf/elseIfs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringIf/else"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringElseIf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringElseIf/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringElseIf/then"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringLiteral"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringForLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringForLoop/before"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringForLoop/separator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringForLoop/after"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="richstring.ecore#//RichStringMarkup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMarkup/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMarkup/style"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMarkup/small"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMarkup/orientation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringMarkup/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringExample"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringH1"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringH2"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringH3"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringH4"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringH5"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringH6"/>
+    <genClasses image="false" ecoreClass="richstring.ecore#//IndexElement"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringChapter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringChapter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringSection/name"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringSubsection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringSubsection/name"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringURL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringURL/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringURL/text"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringRef/refId"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringBold"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringUnderline"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringItalic"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringImg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringImg/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringImg/alt"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringMailto">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMailto/email"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringMailto/content"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringSkype">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringSkype/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringSkype/content"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringMovie">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMovie/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMovie/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMovie/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringMovie/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringMovie/content"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringCode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringCode/lang"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringCode/content"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringTable"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringTableRow"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringTableCell"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringOpenView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringOpenView/viewId"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringStartProcess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringStartProcess/processId"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringEntityRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringEntityRef/entityDoc"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringDTORef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringDTORef/dtoDoc"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringTaskRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringTaskRef/taskDoc"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringProcessRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringProcessRef/bpmDoc"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringViewRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringViewRef/viewDoc"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringUIRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringUIRef/uiDoc"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringList"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringOrderedList"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringListElement"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringSpan"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringBox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/error"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/warning"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/abstracts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/checklist"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/bio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/sidenote"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute richstring.ecore#//RichStringBox/title"/>
+    </genClasses>
+    <genClasses ecoreClass="richstring.ecore#//RichStringContainer"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringColumnLayout"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringColumn"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringFooter"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringHeader"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringIndex"/>
+    <genClasses ecoreClass="richstring.ecore#//RichStringIndexElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference richstring.ecore#//RichStringIndexElement/indexElement"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

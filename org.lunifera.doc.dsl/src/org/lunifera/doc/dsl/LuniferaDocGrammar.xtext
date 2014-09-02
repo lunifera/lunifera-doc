@@ -111,7 +111,7 @@ InternalRichString returns xbase::XExpression:
 	expressions+=RichStringLiteralInbetween)*);
 
 RichStringPart returns xbase::XExpression:
-	XExpressionInsideBlock | RichStringForLoop | RichStringIf |
+	XExpressionOrVarDeclaration | RichStringForLoop | RichStringIf |
 	RichStringH1 | RichStringH2 | RichStringH3 | RichStringH4 | RichStringH5 | RichStringH6 |
 	RichStringChapter | RichStringSection | RichStringSubsection |
 	RichStringExample | RichStringURL | RichStringRef | RichStringMailto |
