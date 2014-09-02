@@ -2,7 +2,6 @@ package org.lunifera.doc.dsl.jvmmodel
 
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.jdt.annotation.Nullable
 import org.eclipse.xtext.common.types.JvmField
 import org.eclipse.xtext.common.types.JvmGenericType
 import org.eclipse.xtext.common.types.JvmOperation
@@ -62,14 +61,14 @@ class LDocTypesBuilder extends JvmTypesBuilder {
 		include.toSetter(include.varName, include.providedType.toTypeReference(include))
 	}
 
-	def JvmGenericType toDocumentClass(@Nullable LDocNamedDocument doc) {
+	def JvmGenericType toDocumentClass( LDocNamedDocument doc) {
 		val JvmGenericType result = createJvmGenericType(doc, doc.toFqnDocumentClassName);
 		associate(doc, result);
 	}
 
-	@Nullable
-	def JvmOperation toGetter(@Nullable EObject sourceElement, @Nullable String fieldName,
-		@Nullable JvmTypeReference typeRef, @Nullable Procedure1<? super JvmOperation> initializer) {
+	
+	def JvmOperation toGetter( EObject sourceElement,  String fieldName,
+		 JvmTypeReference typeRef,  Procedure1<? super JvmOperation> initializer) {
 		if (sourceElement == null || fieldName == null)
 			return null;
 		val JvmOperation result = typesFactory.createJvmOperation();

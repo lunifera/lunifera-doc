@@ -10,8 +10,6 @@ package org.lunifera.doc.dsl.richstring;
 
 import java.util.BitSet;
 
-import org.eclipse.jdt.annotation.NonNullByDefault;
-import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
@@ -65,17 +63,15 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
  * inherit from this class if they do not want to implement all methods. It is
  * mandatory to implement {@link #forLoopHasNext()}.
  */
-@NonNullByDefault
+
 @SuppressWarnings("restriction")
 public abstract class AbstractRichStringPartAcceptor implements
 		IRichStringPartAcceptor {
 
-	public void acceptSemanticText(CharSequence text,
-			@Nullable RichStringLiteral origin) {
+	public void acceptSemanticText(CharSequence text, RichStringLiteral origin) {
 	}
 
-	public void acceptTemplateText(CharSequence text,
-			@Nullable RichStringLiteral origin) {
+	public void acceptTemplateText(CharSequence text, RichStringLiteral origin) {
 	}
 
 	public void acceptSemanticLineBreak(int charCount,
@@ -101,8 +97,7 @@ public abstract class AbstractRichStringPartAcceptor implements
 			XExpression expression) {
 	}
 
-	public void acceptEndFor(@Nullable XExpression after,
-			CharSequence indentation) {
+	public void acceptEndFor(XExpression after, CharSequence indentation) {
 	}
 
 	public void acceptExpression(XExpression expression,
@@ -460,7 +455,6 @@ public abstract class AbstractRichStringPartAcceptor implements
 	public void acceptIndexElementEnd() {
 	}
 
-	@NonNullByDefault
 	// currently necessary here due to a bug in JDT
 	public static class ForLoopOnce extends AbstractRichStringPartAcceptor {
 
@@ -469,13 +463,13 @@ public abstract class AbstractRichStringPartAcceptor implements
 
 		@Override
 		public void acceptForLoop(JvmFormalParameter parameter,
-				@Nullable XExpression expression) {
+				XExpression expression) {
 			forLoopStackPointer++;
 			forLoopStack.set(forLoopStackPointer);
 		}
 
-		public boolean forLoopHasNext(@Nullable XExpression before,
-				@Nullable XExpression separator, CharSequence indentation) {
+		public boolean forLoopHasNext(XExpression before,
+				XExpression separator, CharSequence indentation) {
 			if (forLoopStack.get(forLoopStackPointer)) {
 				forLoopStack.set(forLoopStackPointer, false);
 				return true;
@@ -484,8 +478,7 @@ public abstract class AbstractRichStringPartAcceptor implements
 		}
 
 		@Override
-		public void acceptEndFor(@Nullable XExpression after,
-				CharSequence indentation) {
+		public void acceptEndFor(XExpression after, CharSequence indentation) {
 			forLoopStackPointer--;
 		}
 	}

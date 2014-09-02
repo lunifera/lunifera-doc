@@ -8,30 +8,32 @@
 
 package org.lunifera.doc.dsl.richstring;
 
-import org.eclipse.jdt.annotation.NonNullByDefault;
-
 /**
- * The indentation handler encapsulates the logic of rich string indentation with respect to template and semantic
- * whitespace per line.
+ * The indentation handler encapsulates the logic of rich string indentation
+ * with respect to template and semantic whitespace per line.
  */
-@NonNullByDefault
+
 public interface IRichStringIndentationHandler {
 
 	/**
-	 * Announce template indentation. The passed indentation is expected to contain the complete whitespace prefix of a
-	 * line. Implementors will extract the new parts from it automatically.
+	 * Announce template indentation. The passed indentation is expected to
+	 * contain the complete whitespace prefix of a line. Implementors will
+	 * extract the new parts from it automatically.
 	 * 
 	 * @param completeIndentation
-	 *            the leading whitespace of a line. May not be <code>null</code>.
+	 *            the leading whitespace of a line. May not be <code>null</code>
+	 *            .
 	 */
 	void pushTemplateIndentation(CharSequence completeIndentation);
 
 	/**
-	 * Announce semantic indentation. The passed indentation is expected to contain the complete whitespace prefix of a
-	 * line. Implementors will extract the new parts from it automatically.
+	 * Announce semantic indentation. The passed indentation is expected to
+	 * contain the complete whitespace prefix of a line. Implementors will
+	 * extract the new parts from it automatically.
 	 * 
 	 * @param completeIndentation
-	 *            the leading whitespace of a line. May not be <code>null</code>.
+	 *            the leading whitespace of a line. May not be <code>null</code>
+	 *            .
 	 */
 	void pushSemanticIndentation(CharSequence completeIndentation);
 

@@ -10,14 +10,13 @@ package org.lunifera.doc.dsl.richstring;
 
 import java.util.LinkedList;
 
-import org.eclipse.jdt.annotation.NonNullByDefault;
-
 import com.google.common.collect.Lists;
 
 /**
- * Default indentation handler for rich strings. Tries to be graceful with inconsistent indentation.
+ * Default indentation handler for rich strings. Tries to be graceful with
+ * inconsistent indentation.
  */
-@NonNullByDefault
+
 public class DefaultIndentationHandler implements IRichStringIndentationHandler {
 
 	protected static abstract class IndentationData {
@@ -86,10 +85,13 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 			if (indentation.toString().startsWith(currentIndentation)) {
 				String trimmedIndentation = indentation.toString().substring(
 						currentIndentation.length());
-				indentationData.add(new TemplateIndentationData(trimmedIndentation));
+				indentationData.add(new TemplateIndentationData(
+						trimmedIndentation));
 			} else {
-				LinkedList<IndentationData> newIndentationData = Lists.newLinkedList();
-				newIndentationData.add(new TemplateIndentationData(indentation));
+				LinkedList<IndentationData> newIndentationData = Lists
+						.newLinkedList();
+				newIndentationData
+						.add(new TemplateIndentationData(indentation));
 				indentationDataStack.add(newIndentationData);
 				indentationData = newIndentationData;
 			}
@@ -104,10 +106,13 @@ public class DefaultIndentationHandler implements IRichStringIndentationHandler 
 			if (indentation.toString().startsWith(currentIndentation)) {
 				String trimmedIndentation = indentation.toString().substring(
 						currentIndentation.length());
-				indentationData.add(new SemanticIndentationData(trimmedIndentation));
+				indentationData.add(new SemanticIndentationData(
+						trimmedIndentation));
 			} else {
-				LinkedList<IndentationData> newIndentationData = Lists.newLinkedList();
-				newIndentationData.add(new SemanticIndentationData(indentation));
+				LinkedList<IndentationData> newIndentationData = Lists
+						.newLinkedList();
+				newIndentationData
+						.add(new SemanticIndentationData(indentation));
 				indentationDataStack.add(newIndentationData);
 				indentationData = newIndentationData;
 			}

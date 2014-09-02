@@ -8,8 +8,6 @@
 
 package org.lunifera.doc.dsl.richstring;
 
-import org.eclipse.jdt.annotation.NonNullByDefault;
-import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.lunifera.doc.dsl.luniferadoc.LDocNamedDocument;
@@ -65,7 +63,7 @@ import org.lunifera.doc.dsl.luniferadoc.richstring.RichStringViewRef;
  * mainly an event sink but may influence the control flow of the
  * {@link RichStringProcessor} by means of {@link #forLoopHasNext()}.
  */
-@NonNullByDefault
+
 public interface IRichStringPartAcceptor {
 
 	/**
@@ -74,8 +72,7 @@ public interface IRichStringPartAcceptor {
 	 * @param origin
 	 *            the value holder for the full text or null, if unknown.
 	 */
-	void acceptSemanticText(CharSequence text,
-			@Nullable RichStringLiteral origin);
+	void acceptSemanticText(CharSequence text, RichStringLiteral origin);
 
 	/**
 	 * @param text
@@ -83,8 +80,7 @@ public interface IRichStringPartAcceptor {
 	 * @param origin
 	 *            the value holder for the full text or null, if unknown.
 	 */
-	void acceptTemplateText(CharSequence text,
-			@Nullable RichStringLiteral origin);
+	void acceptTemplateText(CharSequence text, RichStringLiteral origin);
 
 	/**
 	 * Indicates a semantic line break in a rich string literal.
@@ -194,8 +190,8 @@ public interface IRichStringPartAcceptor {
 	 *            the additional indentation for any line besides the first one.
 	 * @return <code>true</code> if the for-loop body should be evaluated.
 	 */
-	boolean forLoopHasNext(@Nullable XExpression before,
-			@Nullable XExpression separator, CharSequence indentation);
+	boolean forLoopHasNext(XExpression before, XExpression separator,
+			CharSequence indentation);
 
 	/**
 	 * Announces that an
@@ -212,7 +208,7 @@ public interface IRichStringPartAcceptor {
 	 * @param indentation
 	 *            the additional indentation for any line besides the first one.
 	 */
-	void acceptEndFor(@Nullable XExpression after, CharSequence indentation);
+	void acceptEndFor(XExpression after, CharSequence indentation);
 
 	/**
 	 * Announces that an
@@ -239,7 +235,7 @@ public interface IRichStringPartAcceptor {
 	 *            the literal.
 	 */
 	void announceNextLiteral(RichStringLiteral literal);
-	
+
 	void acceptDocumentStart(LDocNamedDocument object);
 
 	void acceptDocumentEnd();

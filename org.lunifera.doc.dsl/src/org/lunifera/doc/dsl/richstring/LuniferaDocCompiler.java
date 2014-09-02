@@ -12,11 +12,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jdt.annotation.NonNullByDefault;
-import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.generator.trace.LocationData;
 import org.eclipse.xtext.util.ITextRegionWithLineInformation;
 import org.eclipse.xtext.util.Strings;
@@ -80,7 +79,6 @@ import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-@NonNullByDefault
 @SuppressWarnings("restriction")
 public class LuniferaDocCompiler extends XbaseCompiler {
 
@@ -92,6 +90,9 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 	@Inject
 	private IBatchTypeResolver batchTypeResolver;
+	
+	@Inject 
+	private TypeReferences typeReferences;
 
 	@Override
 	protected String getFavoriteVariableName(EObject ex) {
@@ -141,7 +142,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			}
 		}
 
-		protected void setCurrentAppendable(@Nullable RichStringLiteral origin) {
+		protected void setCurrentAppendable(RichStringLiteral origin) {
 			if (currentAppendable == null && origin != null) {
 				ITextRegionWithLineInformation region = (ITextRegionWithLineInformation) getLocationInFileProvider()
 						.getSignificantTextRegion(origin,
@@ -159,7 +160,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 		@Override
 		public void acceptSemanticText(CharSequence text,
-				@Nullable RichStringLiteral origin) {
+				RichStringLiteral origin) {
 			setCurrentAppendable(origin);
 			if (text.length() == 0)
 				return;
@@ -674,7 +675,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			currentAppendable = null;
 			pushAppendable(object);
 			appendable.newLine();
-			
+
 			StringBuilder b = new StringBuilder();
 			b.append("<img class=\"lundoc-image");
 			appendCssClasses(object, b);
@@ -1186,7 +1187,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 
 		@Override
 		public void acceptForLoop(JvmFormalParameter parameter,
-				@Nullable XExpression expression) {
+				XExpression expression) {
 			currentAppendable = null;
 			super.acceptForLoop(parameter, expression);
 			if (expression == null)
@@ -1212,7 +1213,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			}
 			debugAppendable.newLine();
 			debugAppendable.append("for(final ");
-			LightweightTypeReference paramType = getTypeResolver()
+			LightweightTypeReference paramType = batchTypeResolver
 					.resolveTypes(parameter).getActualType(parameter);
 			debugAppendable.append(paramType);
 			debugAppendable.append(" ");
@@ -1225,8 +1226,8 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		@Override
-		public boolean forLoopHasNext(@Nullable XExpression before,
-				@Nullable XExpression separator, CharSequence indentation) {
+		public boolean forLoopHasNext(XExpression before,
+				XExpression separator, CharSequence indentation) {
 			currentAppendable = null;
 			if (!super.forLoopHasNext(before, separator, indentation))
 				return false;
@@ -1260,8 +1261,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 		}
 
 		@Override
-		public void acceptEndFor(@Nullable XExpression after,
-				CharSequence indentation) {
+		public void acceptEndFor(XExpression after, CharSequence indentation) {
 			currentAppendable = null;
 			super.acceptEndFor(after, indentation);
 			appendable.decreaseIndentation();
@@ -1337,7 +1337,7 @@ public class LuniferaDocCompiler extends XbaseCompiler {
 			boolean isReferenced) {
 		b = b.trace(richString);
 		// declare variable
-		JvmTypeReference type = getTypeReferences().getTypeForName(
+		JvmTypeReference type = typeReferences.getTypeForName(
 				StringConcatenation.class, richString);
 		String variableName = b
 				.declareSyntheticVariable(richString, "_builder");

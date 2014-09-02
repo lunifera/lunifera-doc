@@ -88,7 +88,7 @@ public class LDocTypesBuilder extends JvmTypesBuilder {
     return _xblockexpression;
   }
   
-  public JvmGenericType toDocumentClass(/* @Nullable  */final LDocNamedDocument doc) {
+  public JvmGenericType toDocumentClass(final LDocNamedDocument doc) {
     JvmGenericType _xblockexpression = null;
     {
       String _fqnDocumentClassName = this._modelExtensions.toFqnDocumentClassName(doc);
@@ -98,8 +98,7 @@ public class LDocTypesBuilder extends JvmTypesBuilder {
     return _xblockexpression;
   }
   
-  /* @Nullable
-   */public JvmOperation toGetter(/* @Nullable  */final EObject sourceElement, /* @Nullable  */final String fieldName, /* @Nullable  */final JvmTypeReference typeRef, /* @Nullable  */final Procedure1<? super JvmOperation> initializer) {
+  public JvmOperation toGetter(final EObject sourceElement, final String fieldName, final JvmTypeReference typeRef, final Procedure1<? super JvmOperation> initializer) {
     boolean _or = false;
     boolean _equals = Objects.equal(sourceElement, null);
     if (_equals) {
